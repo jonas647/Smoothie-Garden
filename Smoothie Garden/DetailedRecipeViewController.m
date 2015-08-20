@@ -15,7 +15,7 @@
 @implementation DetailedRecipeViewController
 {
     NSString *recipeName;
-    NSString *recipeInstructions;
+    NSArray  *recipeInstructions;
     
 }
 
@@ -36,22 +36,22 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     
-    instructionsText.backgroundColor = [UIColor greenColor];
-    
-    NSLog(@"Size for instructions: %f", instructionsText.frame.size.height);
+    instructionsTableView.backgroundColor = [UIColor greenColor];
     
     recipeImage.image = [UIImage imageNamed:@"IMG_0408_iphone.png"];
-    instructionsText.text = @"TEST TEST TEST TEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TEST. Slut";
+    //instructionsText.text = @"TEST TEST TEST TEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TEST. Slut";
+    
+    recipeInstructions = [NSArray arrayWithObjects:@"Take out the blender!",@"Peel the onion",@"Open the fridge",@"Get the frozen berries",@"Push start on the blender", nil];
     
     //Adjust the UITextViews to the size of the text to be presented
-    ingredientsText.frame =     [self newFrameForUITextView:ingredientsText];
-    instructionsText.frame =    [self newFrameForUITextView:instructionsText];
+    ingredientsText.frame =     [self newFrameForUIView:ingredientsText];
+    instructionsTableView.frame =    [self newFrameForUIView:instructionsTableView];
     
     [ingredientsHeightConstraint setConstant:ingredientsText.frame.size.height];
-    [instructionsHeightConstraint setConstant:instructionsText.frame.size.height];
+    [instructionsHeightConstraint setConstant:instructionsTableView.frame.size.height];
+    
     //[instructionsHeightConstraint setConstant:400];
     
-    NSLog(@"Size for instructions: %f", instructionsText.frame.size.height);
     
 }
 
@@ -60,12 +60,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (CGRect) newFrameForUITextView: (UITextView* ) textView {
+- (CGRect) newFrameForUIView: (UIView* ) view {
 
     //Change the height of the UITextViews
-    CGFloat fixedWidth = textView.frame.size.width;
-    CGSize newSize = [textView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
-    CGRect newFrame = textView.frame;
+    CGFloat fixedWidth = view.frame.size.width;
+    CGSize newSize = [view sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
+    CGRect newFrame = view.frame;
     newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
 
     return newFrame;
@@ -81,5 +81,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Table View Delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [recipeInstructions count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tmpTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier         =   @"MainCell";
+    UITableViewCell *cell               =   [tmpTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (nil == cell) {
+        cell    =   [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+
 
 @end

@@ -30,7 +30,7 @@
     //self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor lightGrayColor];
     
-    self.title = @"Garden Smoothie";
+    //self.title = @"Garden Smoothie";
 
     [self.navigationController.navigationBar setBackgroundImage:
      [UIImage imageNamed:@"wood.jpg"]forBarMetrics:UIBarMetricsDefault];

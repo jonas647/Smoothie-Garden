@@ -17,7 +17,8 @@
     IBOutlet UIScrollView *scrollView;
     __weak IBOutlet UITextView *ingredientsText;
     __weak IBOutlet UIImageView *recipeImage;
-    __weak IBOutlet UITextView *instructionsText;
+    
+    __weak IBOutlet UITableView *instructionsTableView;
     __weak IBOutlet NSLayoutConstraint *ingredientsHeightConstraint;
     __weak IBOutlet NSLayoutConstraint *instructionsHeightConstraint;
 }
