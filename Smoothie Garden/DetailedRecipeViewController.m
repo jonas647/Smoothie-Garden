@@ -39,9 +39,17 @@
     instructionsTableView.backgroundColor = [UIColor greenColor];
     
     recipeImage.image = [UIImage imageNamed:@"IMG_0408_iphone.png"];
-    //instructionsText.text = @"TEST TEST TEST TEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TESTTEST TEST TEST. Slut";
     
-    recipeInstructions = [NSArray arrayWithObjects:@"Take out the blender!",@"Peel the onion",@"Open the fridge",@"Get the frozen berries",@"Push start on the blender", nil];
+    recipeInstructions = [NSArray arrayWithObjects:
+                          @"Pressa saften från apelsin och lime",
+                          @"Skala ingefära",
+                          @"Tillsätt hallon,mango och goji-bär",
+                          @"Mixa smoothien till slät konsistens",
+                          @"Sprinkla med gojibär på toppen",
+                          @"Drick och njut i trädgården",
+                          nil];
+    
+    ingredientsText.text = @"En apelsin, En halv lime, 2dl hallon, 1 dl mango, 1 matsked goji-bär, 1cm ingefära";
     
     //Adjust the UITextViews to the size of the text to be presented
     ingredientsText.frame =     [self newFrameForUIView:ingredientsText];
@@ -100,6 +108,14 @@
     }
     
     cell.textLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
+    
+    
+    if (indexPath.row % 2) {
+        cell.backgroundColor = [UIColor lightGrayColor];
+    } else {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
+    
     
     return cell;
 }

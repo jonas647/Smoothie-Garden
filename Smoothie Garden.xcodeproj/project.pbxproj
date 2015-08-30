@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1FC42B1B9331F9007F9A0F /* SmoothieTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */; };
 		DF2503F01B73D914002AA3CE /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2503EF1B73D914002AA3CE /* RecipeTableViewCell.m */; };
 		DF2503F41B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF2503F31B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg */; };
 		DF5B55CD1B73C4EB00F27092 /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B55CC1B73C4EB00F27092 /* RecipeTableViewController.m */; };
+		DF63989F1B8CDE6200C3E966 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF63989E1B8CDE6200C3E966 /* AboutViewController.m */; };
 		DF75DFC91B85CB7B00200D89 /* smoothie_recipes.png in Resources */ = {isa = PBXBuildFile; fileRef = DF75DFC81B85CB7B00200D89 /* smoothie_recipes.png */; };
 		DF75DFCB1B85CD9700200D89 /* Coconut Cocktail-25.png in Resources */ = {isa = PBXBuildFile; fileRef = DF75DFCA1B85CD9700200D89 /* Coconut Cocktail-25.png */; };
 		DF75DFCD1B85CF6500200D89 /* Coconut Cocktail Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = DF75DFCC1B85CF6500200D89 /* Coconut Cocktail Filled-25.png */; };
 		DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF75DFD01B85E40100200D89 /* SWRevealViewController.m */; };
+		DF75DFD71B8A228000200D89 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF75DFD61B8A228000200D89 /* SidebarTableViewController.m */; };
 		DF9C5BEA1B778CD900B46B9D /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5BE91B778CD900B46B9D /* Recipe.m */; };
 		DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */; };
 		DF9C5BF61B77E0CD00B46B9D /* IMG_0430_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = DF9C5BF41B77E0CD00B46B9D /* IMG_0430_iphone.png */; };
@@ -42,16 +45,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF1FC4291B9331F9007F9A0F /* SmoothieTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothieTabBarViewController.h; sourceTree = "<group>"; };
+		DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothieTabBarViewController.m; sourceTree = "<group>"; };
 		DF2503EE1B73D914002AA3CE /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
 		DF2503EF1B73D914002AA3CE /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
 		DF2503F31B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg"; sourceTree = "<group>"; };
 		DF5B55CB1B73C4EB00F27092 /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeTableViewController.h; path = ../RecipeTableViewController.h; sourceTree = "<group>"; };
 		DF5B55CC1B73C4EB00F27092 /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeTableViewController.m; path = ../RecipeTableViewController.m; sourceTree = "<group>"; };
+		DF63989D1B8CDE6200C3E966 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		DF63989E1B8CDE6200C3E966 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		DF75DFC81B85CB7B00200D89 /* smoothie_recipes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoothie_recipes.png; sourceTree = "<group>"; };
 		DF75DFCA1B85CD9700200D89 /* Coconut Cocktail-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coconut Cocktail-25.png"; sourceTree = "<group>"; };
 		DF75DFCC1B85CF6500200D89 /* Coconut Cocktail Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coconut Cocktail Filled-25.png"; sourceTree = "<group>"; };
 		DF75DFCF1B85E40100200D89 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DF75DFD01B85E40100200D89 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DF75DFD51B8A228000200D89 /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarTableViewController.h; sourceTree = "<group>"; };
+		DF75DFD61B8A228000200D89 /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarTableViewController.m; sourceTree = "<group>"; };
 		DF9C5BE81B778CD900B46B9D /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		DF9C5BE91B778CD900B46B9D /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		DF9C5BEB1B77980100B46B9D /* DetailedRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRecipeViewController.h; sourceTree = "<group>"; };
@@ -108,12 +117,26 @@
 		DF5B55CE1B73C51600F27092 /* Custom UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				DF63989C1B8CDD6900C3E966 /* Sidebar */,
 				DF5B55CB1B73C4EB00F27092 /* RecipeTableViewController.h */,
 				DF5B55CC1B73C4EB00F27092 /* RecipeTableViewController.m */,
 				DF9C5BEB1B77980100B46B9D /* DetailedRecipeViewController.h */,
 				DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */,
+				DF75DFD51B8A228000200D89 /* SidebarTableViewController.h */,
+				DF75DFD61B8A228000200D89 /* SidebarTableViewController.m */,
+				DF1FC4291B9331F9007F9A0F /* SmoothieTabBarViewController.h */,
+				DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */,
 			);
 			name = "Custom UIViews";
+			sourceTree = "<group>";
+		};
+		DF63989C1B8CDD6900C3E966 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				DF63989D1B8CDE6200C3E966 /* AboutViewController.h */,
+				DF63989E1B8CDE6200C3E966 /* AboutViewController.m */,
+			);
+			name = Sidebar;
 			sourceTree = "<group>";
 		};
 		DF75DFC71B85CB4D00200D89 /* Images */ = {
@@ -132,13 +155,13 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		DF75DFCE1B85E3E900200D89 /* SMRevealViewController */ = {
+		DF75DFCE1B85E3E900200D89 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
 				DF75DFCF1B85E40100200D89 /* SWRevealViewController.h */,
 				DF75DFD01B85E40100200D89 /* SWRevealViewController.m */,
 			);
-			name = SMRevealViewController;
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		DF9C5BE71B778CBA00B46B9D /* Custom Objects */ = {
@@ -171,7 +194,7 @@
 		DFCB1DB81B6E4B5C009FCAA3 /* Smoothie Garden */ = {
 			isa = PBXGroup;
 			children = (
-				DF75DFCE1B85E3E900200D89 /* SMRevealViewController */,
+				DF75DFCE1B85E3E900200D89 /* SWRevealViewController */,
 				DF9C5BE71B778CBA00B46B9D /* Custom Objects */,
 				DF2503ED1B73D8E2002AA3CE /* Custom UITableViewCells */,
 				DF5B55CE1B73C51600F27092 /* Custom UIViews */,
@@ -325,6 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1FC42B1B9331F9007F9A0F /* SmoothieTabBarViewController.m in Sources */,
+				DF75DFD71B8A228000200D89 /* SidebarTableViewController.m in Sources */,
 				DF5B55CD1B73C4EB00F27092 /* RecipeTableViewController.m in Sources */,
 				DF9C5BEA1B778CD900B46B9D /* Recipe.m in Sources */,
 				DFCB1DC51B6E4B5C009FCAA3 /* SecondViewController.m in Sources */,
@@ -332,6 +357,7 @@
 				DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */,
 				DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */,
 				DFCB1DC21B6E4B5C009FCAA3 /* FirstViewController.m in Sources */,
+				DF63989F1B8CDE6200C3E966 /* AboutViewController.m in Sources */,
 				DFCB1DBC1B6E4B5C009FCAA3 /* main.m in Sources */,
 				DF2503F01B73D914002AA3CE /* RecipeTableViewCell.m in Sources */,
 			);

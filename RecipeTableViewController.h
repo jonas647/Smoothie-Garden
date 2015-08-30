@@ -11,4 +11,7 @@
 
 @interface RecipeTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+
+
 @end

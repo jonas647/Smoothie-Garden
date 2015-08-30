@@ -8,6 +8,8 @@
 
 #import "RecipeTableViewController.h"
 #import "Recipe.h"
+#import "SWRevealViewController.h"
+
 
 #define CELL_HEIGHT 276
 
@@ -22,15 +24,14 @@
 }
 
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     recipes = [NSArray arrayWithObjects:@"Smoothie Masala",@"Green Garden Smoothie",@"Singapore Smoothie", nil];
     
-    //self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor lightGrayColor];
-    
-    //self.title = @"Garden Smoothie";
 
     [self.navigationController.navigationBar setBackgroundImage:
      [UIImage imageNamed:@"wood.jpg"]forBarMetrics:UIBarMetricsDefault];
@@ -47,6 +48,15 @@
     
     
     //self.navigationController.hidesBarsOnSwipe = true;
+    
+    //Set the target for the main menu button
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sideBarButton setTarget: self.revealViewController];
+        [self.sideBarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
     
 }
@@ -88,6 +98,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellIdentifier];
     }
     
+    
+    //Dummy code to just show different images
     int random = arc4random_uniform(2);
     
     UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, 360,CELL_HEIGHT)];
