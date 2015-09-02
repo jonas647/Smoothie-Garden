@@ -9,11 +9,12 @@
 #import "RecipeTableViewController.h"
 #import "Recipe.h"
 #import "SWRevealViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
-
-#define CELL_HEIGHT 276
+#define CELL_HEIGHT 176
 
 @interface RecipeTableViewController ()
+
 
 @end
 
@@ -30,11 +31,8 @@
     [super viewDidLoad];
     
     recipes = [NSArray arrayWithObjects:@"Smoothie Masala",@"Green Garden Smoothie",@"Singapore Smoothie", nil];
-    
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
 
-    [self.navigationController.navigationBar setBackgroundImage:
-     [UIImage imageNamed:@"wood.jpg"]forBarMetrics:UIBarMetricsDefault];
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"wood.jpg"]forBarMetrics:UIBarMetricsDefault];
     
     
     self.tableView.sectionHeaderHeight = 0.0;
@@ -57,6 +55,11 @@
         [self.sideBarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+    
+    
+}
+
+- (void) viewDidLayoutSubviews {
     
     
 }
@@ -102,7 +105,9 @@
     //Dummy code to just show different images
     int random = arc4random_uniform(2);
     
-    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, 360,CELL_HEIGHT)];
+    UIImageView *imv = (UIImageView *)[cell viewWithTag:100];
+    UILabel *titel = (UILabel *)[cell viewWithTag:101];
+    UITextView *desc = (UITextView *)[cell viewWithTag:102];
     
     if (random == 0) {
         imv.image=[UIImage imageNamed:@"IMG_0430_iphone.png"];
@@ -110,20 +115,9 @@
         imv.image=[UIImage imageNamed:@"IMG_0408_iphone.png"];
     }
     
-    //imv.image=[UIImage imageNamed:@"IMG_1412_iphone.JPG"];
+    titel.text = [recipes objectAtIndex:indexPath.row];
+    desc.text = @"Supergod smoothie, drick den nu!";
     
-    //Change size of cell so that the image fills the entire screen
-    //First change size of cell so that it fills entire width
-    [cell setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, self.view.frame.size.width, cell.frame.size.height)];
-    //Then change size of the image to the width of the cell
-    [imv setFrame:CGRectMake(imv.frame.origin.x, imv.frame.origin.y, cell.frame.size.width, imv.frame.size.height)];
-    
-    [cell.contentView addSubview:imv];
-    
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(25, CELL_HEIGHT - 30, 360, 30)];
-    label.text = [recipes objectAtIndex:indexPath.row];
-    label.textColor = [UIColor whiteColor];
-    [cell.contentView addSubview:label];
     
     return cell;
 }
@@ -133,12 +127,12 @@
     selectedRecipe = [recipes objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"DetailedRecipeSegue" sender:self];
 }
-
+/*
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return CELL_HEIGHT;
     
-}
+}*/
 
 /*
 // Override to support conditional editing of the table view.

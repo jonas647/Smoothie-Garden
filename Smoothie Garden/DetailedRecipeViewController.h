@@ -13,7 +13,8 @@
 {
     __weak IBOutlet UIView *contentView;
     IBOutlet UIScrollView *scrollView;
-    __weak IBOutlet UITextView *ingredientsText;
+    
+    __weak IBOutlet UITableView *ingredientsTableView;
     __weak IBOutlet UIImageView *recipeImage;
     __weak IBOutlet UITableView *instructionsTableView;
     __weak IBOutlet NSLayoutConstraint *ingredientsHeightConstraint;

@@ -17,6 +17,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    UIColor *secondaryColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    
+    //Update the colors of where in the app the default color should be used
+    [[UITabBar appearance] setBarTintColor:mainColor];
+    [[UINavigationBar appearance] setBarTintColor:mainColor];
+    [[UITableViewCell appearance] setBackgroundColor:mainColor];
+    [[UITableView appearance] setBackgroundColor:secondaryColor];
+    
+    //[[UITableViewCell appearance].layer setCornerRadius:20.0f];
+    //[[UITableViewCell appearance].layer setMasksToBounds:YES];
+    
+    [[UITableViewCell appearance] setLayoutMargins:UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f)];
+    
+    //Remove the top shadow line
+    //[[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+    
+    //Remove the bottom shadow line
+    //[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    
+    [[UITableViewCell appearance].contentView.layer setBorderWidth:2.0f];
+    [[UITableViewCell appearance].contentView.layer setBorderColor:mainColor.CGColor];
+    
+    //Default font
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"Verdana" size:10.0f]];
+    
+    //Tab bar items
+    [[UITabBar appearance] setTintColor:secondaryColor];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor darkGrayColor], NSForegroundColorAttributeName,
+                                                       nil] forState:UIControlStateNormal];
+    
     return YES;
 }
 

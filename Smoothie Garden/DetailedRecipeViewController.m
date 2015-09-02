@@ -7,6 +7,7 @@
 //
 
 #import "DetailedRecipeViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface DetailedRecipeViewController ()
 
@@ -16,6 +17,7 @@
 {
     NSString *recipeName;
     NSArray  *recipeInstructions;
+    NSArray *ingredients;
     
 }
 
@@ -36,7 +38,6 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     
-    instructionsTableView.backgroundColor = [UIColor greenColor];
     
     recipeImage.image = [UIImage imageNamed:@"IMG_0408_iphone.png"];
     
@@ -49,16 +50,21 @@
                           @"Drick och njut i trädgården",
                           nil];
     
-    ingredientsText.text = @"En apelsin, En halv lime, 2dl hallon, 1 dl mango, 1 matsked goji-bär, 1cm ingefära";
-    
+    ingredients = [NSArray arrayWithObjects:
+                            @"En apelsin",
+                            @"En halv lime",
+                            @"2dl hallon",
+                            @"1dl mango",
+                            @"1 matsked goji-bär",
+                            @"1cm ingefära",
+                            nil];
+                            
     //Adjust the UITextViews to the size of the text to be presented
-    ingredientsText.frame =     [self newFrameForUIView:ingredientsText];
+    ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
     instructionsTableView.frame =    [self newFrameForUIView:instructionsTableView];
     
-    [ingredientsHeightConstraint setConstant:ingredientsText.frame.size.height];
+    [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
     [instructionsHeightConstraint setConstant:instructionsTableView.frame.size.height];
-    
-    //[instructionsHeightConstraint setConstant:400];
     
     
 }
@@ -97,7 +103,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [recipeInstructions count];
+    
+    if ([tableView isEqual:ingredientsTableView]) {
+        return [ingredients count];
+    } else if ([tableView isEqual:instructionsTableView])
+    {
+        return [recipeInstructions count];
+        
+    }
+    
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tmpTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,14 +122,20 @@
         cell    =   [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
-    
-    
     if (indexPath.row % 2) {
         cell.backgroundColor = [UIColor lightGrayColor];
     } else {
         cell.backgroundColor = [UIColor whiteColor];
     }
+    
+    if ([tmpTableView isEqual:ingredientsTableView]) {
+        cell.textLabel.text = [ingredients objectAtIndex:indexPath.row];
+    } else if ([tmpTableView isEqual:instructionsTableView])
+    {
+        cell.textLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
+        
+    }
+    
     
     
     return cell;
