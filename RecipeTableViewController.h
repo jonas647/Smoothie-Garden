@@ -13,5 +13,4 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 
-
 @end

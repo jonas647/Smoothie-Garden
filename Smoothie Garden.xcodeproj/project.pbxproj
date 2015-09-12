@@ -8,21 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		DF1FC42B1B9331F9007F9A0F /* SmoothieTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */; };
+		DF1FC42D1B98D8C8007F9A0F /* Recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF1FC42C1B98D8C8007F9A0F /* Recipes.plist */; };
 		DF2503F01B73D914002AA3CE /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2503EF1B73D914002AA3CE /* RecipeTableViewCell.m */; };
 		DF2503F41B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF2503F31B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg */; };
+		DF459B181BA0CE57002F3162 /* Cocoapuchino_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B141BA0CE57002F3162 /* Cocoapuchino_3x.png */; };
+		DF459B1B1BA0CE57002F3162 /* unbeatable_standing_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B171BA0CE57002F3162 /* unbeatable_standing_3x.png */; };
+		DF459B1F1BA0D95F002F3162 /* GreenGodess_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B1C1BA0D95F002F3162 /* GreenGodess_3x.png */; };
+		DF459B201BA0D95F002F3162 /* Raspberry kiss_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B1D1BA0D95F002F3162 /* Raspberry kiss_3x.png */; };
+		DF459B211BA0D95F002F3162 /* UnBeatable_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B1E1BA0D95F002F3162 /* UnBeatable_3x.png */; };
+		DF459B241BA41819002F3162 /* Menu Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B221BA41819002F3162 /* Menu Filled-100.png */; };
+		DF459B251BA41819002F3162 /* Menu-100.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B231BA41819002F3162 /* Menu-100.png */; };
+		DF459B281BA41900002F3162 /* Menu Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B261BA41900002F3162 /* Menu Filled-25.png */; };
+		DF459B291BA41900002F3162 /* Menu-25.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B271BA41900002F3162 /* Menu-25.png */; };
 		DF5B55CD1B73C4EB00F27092 /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B55CC1B73C4EB00F27092 /* RecipeTableViewController.m */; };
 		DF63989F1B8CDE6200C3E966 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF63989E1B8CDE6200C3E966 /* AboutViewController.m */; };
 		DF75DFC91B85CB7B00200D89 /* smoothie_recipes.png in Resources */ = {isa = PBXBuildFile; fileRef = DF75DFC81B85CB7B00200D89 /* smoothie_recipes.png */; };
-		DF75DFCB1B85CD9700200D89 /* Coconut Cocktail-25.png in Resources */ = {isa = PBXBuildFile; fileRef = DF75DFCA1B85CD9700200D89 /* Coconut Cocktail-25.png */; };
-		DF75DFCD1B85CF6500200D89 /* Coconut Cocktail Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = DF75DFCC1B85CF6500200D89 /* Coconut Cocktail Filled-25.png */; };
 		DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF75DFD01B85E40100200D89 /* SWRevealViewController.m */; };
 		DF75DFD71B8A228000200D89 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF75DFD61B8A228000200D89 /* SidebarTableViewController.m */; };
 		DF9C5BEA1B778CD900B46B9D /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5BE91B778CD900B46B9D /* Recipe.m */; };
 		DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */; };
-		DF9C5BF61B77E0CD00B46B9D /* IMG_0430_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = DF9C5BF41B77E0CD00B46B9D /* IMG_0430_iphone.png */; };
-		DF9C5BF71B77E0CD00B46B9D /* IMG_1412_iphone.JPG in Resources */ = {isa = PBXBuildFile; fileRef = DF9C5BF51B77E0CD00B46B9D /* IMG_1412_iphone.JPG */; };
-		DF9C5BF91B77E58A00B46B9D /* IMG_0408_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = DF9C5BF81B77E58A00B46B9D /* IMG_0408_iphone.png */; };
-		DF9C5BFB1B77EF6200B46B9D /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = DF9C5BFA1B77EF6200B46B9D /* grass.png */; };
+		DFAE5AD41B9F6FB3009E0E15 /* Hearts-100.png in Resources */ = {isa = PBXBuildFile; fileRef = DFAE5AD21B9F6FB3009E0E15 /* Hearts-100.png */; };
+		DFAE5AD51B9F6FB3009E0E15 /* Like Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = DFAE5AD31B9F6FB3009E0E15 /* Like Filled-100.png */; };
 		DFCB1DBC1B6E4B5C009FCAA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DBB1B6E4B5C009FCAA3 /* main.m */; };
 		DFCB1DBF1B6E4B5C009FCAA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DBE1B6E4B5C009FCAA3 /* AppDelegate.m */; };
 		DFCB1DC21B6E4B5C009FCAA3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DC11B6E4B5C009FCAA3 /* FirstViewController.m */; };
@@ -31,7 +37,6 @@
 		DFCB1DCA1B6E4B5C009FCAA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */; };
 		DFCB1DCD1B6E4B5C009FCAA3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */; };
 		DFCB1DD91B6E4B5C009FCAA3 /* Smoothie_GardenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */; };
-		DFE27C191B7D1FDD00BE8A68 /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFE27C181B7D1FDD00BE8A68 /* wood.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,16 +52,24 @@
 /* Begin PBXFileReference section */
 		DF1FC4291B9331F9007F9A0F /* SmoothieTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothieTabBarViewController.h; sourceTree = "<group>"; };
 		DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothieTabBarViewController.m; sourceTree = "<group>"; };
+		DF1FC42C1B98D8C8007F9A0F /* Recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Recipes.plist; sourceTree = "<group>"; };
 		DF2503EE1B73D914002AA3CE /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
 		DF2503EF1B73D914002AA3CE /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
 		DF2503F31B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg"; sourceTree = "<group>"; };
+		DF459B141BA0CE57002F3162 /* Cocoapuchino_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cocoapuchino_3x.png; sourceTree = "<group>"; };
+		DF459B171BA0CE57002F3162 /* unbeatable_standing_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unbeatable_standing_3x.png; sourceTree = "<group>"; };
+		DF459B1C1BA0D95F002F3162 /* GreenGodess_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenGodess_3x.png; sourceTree = "<group>"; };
+		DF459B1D1BA0D95F002F3162 /* Raspberry kiss_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raspberry kiss_3x.png"; sourceTree = "<group>"; };
+		DF459B1E1BA0D95F002F3162 /* UnBeatable_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnBeatable_3x.png; sourceTree = "<group>"; };
+		DF459B221BA41819002F3162 /* Menu Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Filled-100.png"; sourceTree = "<group>"; };
+		DF459B231BA41819002F3162 /* Menu-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-100.png"; sourceTree = "<group>"; };
+		DF459B261BA41900002F3162 /* Menu Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu Filled-25.png"; sourceTree = "<group>"; };
+		DF459B271BA41900002F3162 /* Menu-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu-25.png"; sourceTree = "<group>"; };
 		DF5B55CB1B73C4EB00F27092 /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeTableViewController.h; path = ../RecipeTableViewController.h; sourceTree = "<group>"; };
 		DF5B55CC1B73C4EB00F27092 /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeTableViewController.m; path = ../RecipeTableViewController.m; sourceTree = "<group>"; };
 		DF63989D1B8CDE6200C3E966 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		DF63989E1B8CDE6200C3E966 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		DF75DFC81B85CB7B00200D89 /* smoothie_recipes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoothie_recipes.png; sourceTree = "<group>"; };
-		DF75DFCA1B85CD9700200D89 /* Coconut Cocktail-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coconut Cocktail-25.png"; sourceTree = "<group>"; };
-		DF75DFCC1B85CF6500200D89 /* Coconut Cocktail Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coconut Cocktail Filled-25.png"; sourceTree = "<group>"; };
 		DF75DFCF1B85E40100200D89 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DF75DFD01B85E40100200D89 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DF75DFD51B8A228000200D89 /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarTableViewController.h; sourceTree = "<group>"; };
@@ -65,10 +78,8 @@
 		DF9C5BE91B778CD900B46B9D /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		DF9C5BEB1B77980100B46B9D /* DetailedRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRecipeViewController.h; sourceTree = "<group>"; };
 		DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedRecipeViewController.m; sourceTree = "<group>"; };
-		DF9C5BF41B77E0CD00B46B9D /* IMG_0430_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0430_iphone.png; sourceTree = "<group>"; };
-		DF9C5BF51B77E0CD00B46B9D /* IMG_1412_iphone.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1412_iphone.JPG; sourceTree = "<group>"; };
-		DF9C5BF81B77E58A00B46B9D /* IMG_0408_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0408_iphone.png; sourceTree = "<group>"; };
-		DF9C5BFA1B77EF6200B46B9D /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		DFAE5AD21B9F6FB3009E0E15 /* Hearts-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hearts-100.png"; sourceTree = "<group>"; };
+		DFAE5AD31B9F6FB3009E0E15 /* Like Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like Filled-100.png"; sourceTree = "<group>"; };
 		DFCB1DB61B6E4B5C009FCAA3 /* Smoothie Garden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smoothie Garden.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCB1DBA1B6E4B5C009FCAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCB1DBB1B6E4B5C009FCAA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,7 +95,6 @@
 		DFCB1DD21B6E4B5C009FCAA3 /* Smoothie GardenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smoothie GardenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCB1DD71B6E4B5C009FCAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smoothie_GardenTests.m; sourceTree = "<group>"; };
-		DFE27C181B7D1FDD00BE8A68 /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,15 +152,19 @@
 		DF75DFC71B85CB4D00200D89 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DF75DFCC1B85CF6500200D89 /* Coconut Cocktail Filled-25.png */,
-				DF75DFCA1B85CD9700200D89 /* Coconut Cocktail-25.png */,
+				DF459B261BA41900002F3162 /* Menu Filled-25.png */,
+				DF459B271BA41900002F3162 /* Menu-25.png */,
+				DF459B221BA41819002F3162 /* Menu Filled-100.png */,
+				DF459B231BA41819002F3162 /* Menu-100.png */,
+				DF459B1C1BA0D95F002F3162 /* GreenGodess_3x.png */,
+				DF459B1D1BA0D95F002F3162 /* Raspberry kiss_3x.png */,
+				DF459B1E1BA0D95F002F3162 /* UnBeatable_3x.png */,
+				DF459B141BA0CE57002F3162 /* Cocoapuchino_3x.png */,
+				DF459B171BA0CE57002F3162 /* unbeatable_standing_3x.png */,
+				DFAE5AD21B9F6FB3009E0E15 /* Hearts-100.png */,
+				DFAE5AD31B9F6FB3009E0E15 /* Like Filled-100.png */,
 				DF75DFC81B85CB7B00200D89 /* smoothie_recipes.png */,
-				DFE27C181B7D1FDD00BE8A68 /* wood.jpg */,
-				DF9C5BFA1B77EF6200B46B9D /* grass.png */,
 				DF2503F31B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg */,
-				DF9C5BF41B77E0CD00B46B9D /* IMG_0430_iphone.png */,
-				DF9C5BF51B77E0CD00B46B9D /* IMG_1412_iphone.JPG */,
-				DF9C5BF81B77E58A00B46B9D /* IMG_0408_iphone.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -208,6 +222,7 @@
 				DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */,
 				DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */,
 				DFCB1DB91B6E4B5C009FCAA3 /* Supporting Files */,
+				DF1FC42C1B98D8C8007F9A0F /* Recipes.plist */,
 			);
 			path = "Smoothie Garden";
 			sourceTree = "<group>";
@@ -319,18 +334,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF9C5BFB1B77EF6200B46B9D /* grass.png in Resources */,
-				DF9C5BF91B77E58A00B46B9D /* IMG_0408_iphone.png in Resources */,
-				DF75DFCD1B85CF6500200D89 /* Coconut Cocktail Filled-25.png in Resources */,
-				DFE27C191B7D1FDD00BE8A68 /* wood.jpg in Resources */,
+				DF459B251BA41819002F3162 /* Menu-100.png in Resources */,
+				DF459B281BA41900002F3162 /* Menu Filled-25.png in Resources */,
+				DF1FC42D1B98D8C8007F9A0F /* Recipes.plist in Resources */,
+				DF459B291BA41900002F3162 /* Menu-25.png in Resources */,
+				DF459B181BA0CE57002F3162 /* Cocoapuchino_3x.png in Resources */,
+				DF459B211BA0D95F002F3162 /* UnBeatable_3x.png in Resources */,
+				DFAE5AD51B9F6FB3009E0E15 /* Like Filled-100.png in Resources */,
+				DF459B201BA0D95F002F3162 /* Raspberry kiss_3x.png in Resources */,
+				DF459B1B1BA0CE57002F3162 /* unbeatable_standing_3x.png in Resources */,
 				DF75DFC91B85CB7B00200D89 /* smoothie_recipes.png in Resources */,
 				DF2503F41B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg in Resources */,
 				DFCB1DC81B6E4B5C009FCAA3 /* Main.storyboard in Resources */,
 				DFCB1DCD1B6E4B5C009FCAA3 /* LaunchScreen.xib in Resources */,
-				DF9C5BF61B77E0CD00B46B9D /* IMG_0430_iphone.png in Resources */,
-				DF9C5BF71B77E0CD00B46B9D /* IMG_1412_iphone.JPG in Resources */,
-				DF75DFCB1B85CD9700200D89 /* Coconut Cocktail-25.png in Resources */,
+				DFAE5AD41B9F6FB3009E0E15 /* Hearts-100.png in Resources */,
+				DF459B1F1BA0D95F002F3162 /* GreenGodess_3x.png in Resources */,
 				DFCB1DCA1B6E4B5C009FCAA3 /* Images.xcassets in Resources */,
+				DF459B241BA41819002F3162 /* Menu Filled-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

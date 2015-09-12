@@ -15,6 +15,7 @@
 
 @implementation DetailedRecipeViewController
 {
+    
     NSString *recipeName;
     NSArray  *recipeInstructions;
     NSArray *ingredients;
@@ -29,45 +30,38 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    
-    
     //Get the size (primarily the height) by checking the size of the content view that holds all the subviews
-    scrollView.contentSize=CGSizeMake(contentView.frame.size.width,contentView.frame.size.height);
+    //scrollView.contentSize=CGSizeMake(contentView.frame.size.width,contentView.frame.size.height);
     
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
-    
-    
-    recipeImage.image = [UIImage imageNamed:@"IMG_0408_iphone.png"];
-    
-    recipeInstructions = [NSArray arrayWithObjects:
-                          @"Pressa saften från apelsin och lime",
-                          @"Skala ingefära",
-                          @"Tillsätt hallon,mango och goji-bär",
-                          @"Mixa smoothien till slät konsistens",
-                          @"Sprinkla med gojibär på toppen",
-                          @"Drick och njut i trädgården",
-                          nil];
-    
-    ingredients = [NSArray arrayWithObjects:
-                            @"En apelsin",
-                            @"En halv lime",
-                            @"2dl hallon",
-                            @"1dl mango",
-                            @"1 matsked goji-bär",
-                            @"1cm ingefära",
-                            nil];
+    recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
+    titleName.text = self.selectedRecipe.recipeName;
+    recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
+    ingredients = self.selectedRecipe.ingredients;
                             
     //Adjust the UITextViews to the size of the text to be presented
     ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
-    instructionsTableView.frame =    [self newFrameForUIView:instructionsTableView];
+    recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
     
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
-    [instructionsHeightConstraint setConstant:instructionsTableView.frame.size.height];
+    [recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
+    
+    
+    //Uncomment to Remove the navigation bar background for the detailed items
+    /*
+     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    */
+    
+    //If the recipe is one of the favorites, then make the like button selected
+    if ([[self favoriteRecipes]containsObject:self.selectedRecipe.recipeName]) {
+        likeButton.selected = YES;
+    }
     
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -106,41 +100,68 @@
     
     if ([tableView isEqual:ingredientsTableView]) {
         return [ingredients count];
-    } else if ([tableView isEqual:instructionsTableView])
-    {
-        return [recipeInstructions count];
-        
     }
+    
     
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tmpTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier         =   @"MainCell";
+    static NSString *CellIdentifier         =   @"DetailedRecipeTableCell";
     UITableViewCell *cell               =   [tmpTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (nil == cell) {
         cell    =   [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    if (indexPath.row % 2) {
-        cell.backgroundColor = [UIColor lightGrayColor];
-    } else {
-        cell.backgroundColor = [UIColor whiteColor];
-    }
     
     if ([tmpTableView isEqual:ingredientsTableView]) {
-        cell.textLabel.text = [ingredients objectAtIndex:indexPath.row];
-    } else if ([tmpTableView isEqual:instructionsTableView])
-    {
-        cell.textLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
         
+        UILabel *recipeIngredient = (UILabel*)[cell viewWithTag:100];
+        recipeIngredient.text = [ingredients objectAtIndex:indexPath.row];
     }
+    
     
     
     
     return cell;
 }
 
+- (IBAction)likeRecipe:(id)sender {
+    
+    [self addRecipeToFavorites:self.selectedRecipe];
+    
+}
 
+- (NSArray*) favoriteRecipes {
+    
+    return [[NSUserDefaults standardUserDefaults]arrayForKey:@"FavoriteRecipes"];
+    
+}
 
+- (void) addRecipeToFavorites:(Recipe*) newRecipe {
+    
+    //Load the favorite recipes array
+    NSMutableArray *tempFavoriteRecipes;
+    if ([self favoriteRecipes].count>0) {
+        tempFavoriteRecipes = [[NSMutableArray alloc]initWithArray:[self favoriteRecipes]];
+    } else {
+        tempFavoriteRecipes = [[NSMutableArray alloc]init];
+    }
+    
+    //Check if the array already hold this recipe, if not then add it
+    if (![tempFavoriteRecipes containsObject:newRecipe.recipeName]) {
+        [tempFavoriteRecipes addObject:newRecipe.recipeName];
+    }
+    
+    NSArray *newFavoriteRecipes = [tempFavoriteRecipes copy];
+    
+    NSLog(@"Recipe to save: %@", newRecipe.recipeName);
+    NSLog(@"Saved recipes: %@", newFavoriteRecipes);
+    //Set the new favorite recipes
+    [[NSUserDefaults standardUserDefaults]setObject:newFavoriteRecipes forKey:@"FavoriteRecipes"];
+    
+    //Change the like button to selected
+    likeButton.selected = YES;
+}
+     
 @end

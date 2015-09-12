@@ -7,6 +7,7 @@
 //
 
 #import "RecipeTableViewController.h"
+#import "DetailedRecipeViewController.h"
 #import "Recipe.h"
 #import "SWRevealViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -30,10 +31,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    recipes = [NSArray arrayWithObjects:@"Smoothie Masala",@"Green Garden Smoothie",@"Singapore Smoothie", nil];
-
-    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"wood.jpg"]forBarMetrics:UIBarMetricsDefault];
+    //Validate on what tab bar item is chosen to select what data to show
+    switch ([self.tabBarController selectedIndex]) {
+        case 0:
+            //Show all recipes
+            recipes = [self allRecipesFromPlist];
+            break;
+        case 1:
+            //Show the favorite recipes
+            recipes = [self favoriteRecipes];
+            break;
+        default:
+            break;
+    }
     
+    NSLog(@"Number of loaded recipes: %i", (int)recipes.count);
+    NSLog(@"Selected tab bar: %lu", (unsigned long)[self.tabBarController selectedIndex]);
     
     self.tableView.sectionHeaderHeight = 0.0;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -56,17 +69,67 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    
     
 }
 
-- (void) viewDidLayoutSubviews {
+#pragma mark - Load Recipes
+- (NSArray*) allRecipesFromPlist {
+
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
+    NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepath];
     
+    NSMutableArray *tempRecipes = [[NSMutableArray alloc] init];
+
+    for (NSString *name in recipeDictionary) {
+        Recipe *newRecipe = [[Recipe alloc]init];
+        NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
+        
+        [newRecipe setRecipeType:[[[recipeDictionary objectForKey:name] objectForKey:@"RecipeType"]intValue]];
+        [newRecipe setRecipeCategory:[[[recipeDictionary objectForKey:name] objectForKey:@"RecipeCategory"]intValue]];
+        [newRecipe setRecipeName:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeName"]];
+        [newRecipe setImageName:[[recipeDictionary objectForKey:name] objectForKey:@"ImageName"]];
+        [newRecipe setRecipeDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeDescription"]];
+        [newRecipe setDetailedRecipedescription:[[recipeDictionary objectForKey:name] objectForKey:@"DetailedRecipeDescription"]];
+        [newRecipe setBoosterDescription:[[recipeDictionary objectForKey:name] objectForKey:@"BoosterDescription"]];
+        
+        for (NSString *ingredient in [[recipeDictionary objectForKey:name] objectForKey:@"Ingredients"]) {
+            [tempIngredients addObject:ingredient];
+        }
+        
+        newRecipe.ingredients  = [tempIngredients copy];
+        
+        [tempRecipes addObject:newRecipe];
+    }
     
+    return tempRecipes;
+
 }
 
-- (void) loadCustomRecipes {
+- (NSArray*) favoriteRecipes {
     
+    //Load the favorite recipes array
+    NSArray *favoriteRecipes = [[NSUserDefaults standardUserDefaults]arrayForKey:@"FavoriteRecipes"];
+    NSMutableArray *tempFavoriteRecipes = [[NSMutableArray alloc]init];
     
+    //Iterate all recipes and match with the names saved as favorites to get all favorite recipes to a new array
+    for (Recipe *tempRecipe in [self allRecipesFromPlist]) {
+        
+        for (NSString *tempName in favoriteRecipes) {
+            if ([tempRecipe.recipeName isEqualToString:tempName]) {
+                [tempFavoriteRecipes addObject:tempRecipe];
+            }
+        }
+        
+    }
+    
+    NSLog(@"Returning favorite recipes: %@", tempFavoriteRecipes);
+    NSArray *favoritesToReturn = [NSArray arrayWithArray:tempFavoriteRecipes];
+    return favoritesToReturn;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,30 +166,31 @@
     
     
     //Dummy code to just show different images
-    int random = arc4random_uniform(2);
     
     UIImageView *imv = (UIImageView *)[cell viewWithTag:100];
     UILabel *titel = (UILabel *)[cell viewWithTag:101];
     UITextView *desc = (UITextView *)[cell viewWithTag:102];
     
-    if (random == 0) {
-        imv.image=[UIImage imageNamed:@"IMG_0430_iphone.png"];
-    } else {
-        imv.image=[UIImage imageNamed:@"IMG_0408_iphone.png"];
-    }
-    
-    titel.text = [recipes objectAtIndex:indexPath.row];
-    desc.text = @"Supergod smoothie, drick den nu!";
-    
+    Recipe *recipeForRow = [recipes objectAtIndex:indexPath.row];
+    titel.text = recipeForRow.recipeName;
+    desc.text = recipeForRow.recipeDescription;
+    imv.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
     
     return cell;
 }
 
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Chose row: %li", indexPath.row);
+    
     selectedRecipe = [recipes objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"DetailedRecipeSegue" sender:self];
-}
+    
+    
+    [self performSegueWithIdentifier: @"DetailedRecipeSegue" sender: self];
+    
+}*/
+
 /*
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -175,9 +239,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
- 
-    UIViewController *vcToPushTo = segue.destinationViewController;
-    //vcToPushTo. = selectedRecipe;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
+    vcToPushTo.selectedRecipe = [recipes objectAtIndex:indexPath.row];
+    
+    Recipe *tempRecipe = (Recipe*) [recipes objectAtIndex:indexPath.row];
+    
+    NSLog(@"Recipes: %@", tempRecipe.ingredients);
+    
+    
 }
 
 

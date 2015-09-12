@@ -24,13 +24,16 @@
     //Update the colors of where in the app the default color should be used
     [[UITabBar appearance] setBarTintColor:mainColor];
     [[UINavigationBar appearance] setBarTintColor:mainColor];
-    [[UITableViewCell appearance] setBackgroundColor:mainColor];
-    [[UITableView appearance] setBackgroundColor:secondaryColor];
     
-    //[[UITableViewCell appearance].layer setCornerRadius:20.0f];
-    //[[UITableViewCell appearance].layer setMasksToBounds:YES];
-    
-    [[UITableViewCell appearance] setLayoutMargins:UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f)];
+    NSShadow* shadow = [NSShadow new];
+    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    shadow.shadowColor = [UIColor lightGrayColor];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor lightGrayColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"Apple SD Gothic Neo" size:16.0f],
+                                                            NSShadowAttributeName: shadow
+                                                            }];
+
     
     //Remove the top shadow line
     //[[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
@@ -44,13 +47,15 @@
     [[UITableViewCell appearance].contentView.layer setBorderColor:mainColor.CGColor];
     
     //Default font
-    [[UILabel appearance] setFont:[UIFont fontWithName:@"Verdana" size:10.0f]];
+    //[[UILabel appearance] setFont:[UIFont fontWithName:@"Verdana" size:10.0f]];
     
     //Tab bar items
+    /*
     [[UITabBar appearance] setTintColor:secondaryColor];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        [UIColor darkGrayColor], NSForegroundColorAttributeName,
                                                        nil] forState:UIControlStateNormal];
+    */
     
     return YES;
 }

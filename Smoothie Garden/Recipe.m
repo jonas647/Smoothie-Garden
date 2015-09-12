@@ -10,10 +10,7 @@
 
 @implementation Recipe
 {
-    int         recipeType;
-    NSString    *recipeInstructions;
-    NSArray     *ingredients;
-    NSString    *image;
+    
     
 }
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Recipe A</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Raspberry kiss</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>A refreshing and vitamin packed red smoothie with a little bit of heat</string>
+		<key>DetailedRecipeDescription</key>
+		<string>Sprinkle the smoothie with some extra gojiberries and lime zest </string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>Juice from one orange</string>
+			<string>Juice from half a lime</string>
+			<string>2 dl raspberries</string>
+			<string>1 dl mango</string>
+			<string>1 table spoon of gojiberries</string>
+			<string>1 cm ginger</string>
+		</array>
+		<key>ImageName</key>
+		<string>Raspberry kiss_3x</string>
+	</dict>
+	<key>Recipe B</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Yellow mist</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>All yellow!</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>One Banana</string>
+			<string>1dl Acai</string>
+		</array>
+		<key>ImageName</key>
+		<string>IMG_0408_iphone</string>
+	</dict>
+	<key>Recipe C</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Cocoapuchino</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Cocoapuchino!</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>One Banana</string>
+			<string>1dl Acai</string>
+		</array>
+		<key>ImageName</key>
+		<string>Cocoapuchino_3x</string>
+	</dict>
+	<key>Recipe D</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Unbeatable</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Milk, yoghurt and a lot of berries</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>One Banana</string>
+			<string>1dl Acai</string>
+		</array>
+		<key>ImageName</key>
+		<string>UnBeatable_3x</string>
+	</dict>
+	<key>Recipe E</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green Godess</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Milk, yoghurt and a lot of green berries</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>One Banana</string>
+			<string>1dl Acai</string>
+		</array>
+		<key>ImageName</key>
+		<string>GreenGodess_3x</string>
+	</dict>
+</dict>
+</plist>

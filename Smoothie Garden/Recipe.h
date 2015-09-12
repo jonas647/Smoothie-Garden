@@ -15,4 +15,14 @@
 
 @interface Recipe : NSObject
 
+@property (nonatomic) int recipeType;
+@property (nonatomic) int recipeCategory;
+@property (nonatomic) BOOL favorite;
+@property (nonatomic, strong) NSString *recipeName;
+@property (nonatomic, strong) NSString *recipeDescription;
+@property (nonatomic, strong) NSString *detailedRecipedescription;
+@property (nonatomic, strong) NSString *boosterDescription;
+@property (nonatomic, strong) NSArray *ingredients;
+@property (nonatomic, strong) NSString *imageName;
+
 @end
