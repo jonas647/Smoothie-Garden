@@ -69,10 +69,10 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
     
     
 }
@@ -175,6 +175,8 @@
     titel.text = recipeForRow.recipeName;
     desc.text = recipeForRow.recipeDescription;
     imv.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
+    
+    
     
     return cell;
 }

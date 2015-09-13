@@ -24,6 +24,10 @@
     __weak IBOutlet NSLayoutConstraint *recipeDescriptionHeightConstraint;
     
     __weak IBOutlet UIButton *likeButton;
+    
+    __weak IBOutlet UITextView *boosterDescriptionView;
+    __weak IBOutlet NSLayoutConstraint *boosterDescriptionHeightConstraint;
+    
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;

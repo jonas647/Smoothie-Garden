@@ -53,21 +53,24 @@
 	<key>Recipe C</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Cocoapuchino</string>
+		<string>Nordic Berries</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
 		<key>RecipeDescription</key>
-		<string>Cocoapuchino!</string>
+		<string>Nordic berries are real super berries that contains lots of antioxidants and nutritions</string>
 		<key>DetailedRecipeDescription</key>
-		<string></string>
+		<string>Nordic berries are real super berries that contains lots of antioxidants and nutritions and they are super delicious in this dark blue smoothie. Why not experiment with some other nordic berries like red or black currants, raspberries or wild strawberries? Just switch the blueberries or blackberries with whatever nordic berry you have in your fridge, freezer or garden.</string>
 		<key>BoosterDescription</key>
 		<string></string>
 		<key>Ingredients</key>
 		<array>
 			<string>One Banana</string>
-			<string>1dl Acai</string>
+			<string>1 dl of blueberries</string>
+			<string>1 dl of blackberries</string>
+			<string>1 table spoon of lingonberries</string>
+			<string>1,5 dl of almond milk</string>
 		</array>
 		<key>ImageName</key>
 		<string>Cocoapuchino_3x</string>
@@ -112,6 +115,31 @@
 		<array>
 			<string>One Banana</string>
 			<string>1dl Acai</string>
+		</array>
+		<key>ImageName</key>
+		<string>GreenGodess_3x</string>
+	</dict>
+	<key>Recipe F</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green Kale</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>A creamy yet refreshing green smoothie that will keep you satisfied for a long time.</string>
+		<key>DetailedRecipeDescription</key>
+		<string>A creamy yet refreshing green smoothie that will keep you satisfied for a long time. Perfect before or after a workout. Add some wheatgrass for extra nutrition. It contains potassium, phosphorus, chlorophyll, calcium, magnesium, minerals and vitamins.</string>
+		<key>BoosterDescription</key>
+		<string>Optional booster: 1 tea spoon of wheatgrass</string>
+		<key>Ingredients</key>
+		<array>
+			<string>One Banana</string>
+			<string>2,5 dl mango</string>
+			<string>One leaf of kale</string>
+			<string>2 tea spoons of coconut oil</string>
+			<string>1,5 dl almond milk</string>
 		</array>
 		<key>ImageName</key>
 		<string>GreenGodess_3x</string>

@@ -30,20 +30,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //Get the size (primarily the height) by checking the size of the content view that holds all the subviews
-    //scrollView.contentSize=CGSizeMake(contentView.frame.size.width,contentView.frame.size.height);
-    
     recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
     titleName.text = self.selectedRecipe.recipeName;
     recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
+    boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
     ingredients = self.selectedRecipe.ingredients;
                             
     //Adjust the UITextViews to the size of the text to be presented
     ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
     recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
+    boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
     
+    //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
     [recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
+    [boosterDescriptionHeightConstraint setConstant:boosterDescriptionView.frame.size.height];
     
     
     //Uncomment to Remove the navigation bar background for the detailed items
@@ -57,6 +58,14 @@
     if ([[self favoriteRecipes]containsObject:self.selectedRecipe.recipeName]) {
         likeButton.selected = YES;
     }
+    
+    
+    //Must have the view as selectable in storyboard to get the font working (Apple bug)
+    recipeDescriptionView.selectable = NO;
+    boosterDescriptionView.selectable = NO;
+    
+    //Get the size (primarily the height) by checking the size of the content view that holds all the subviews
+    scrollView.contentSize=CGSizeMake(contentView.frame.size.width,contentView.frame.size.height);
     
     
 }

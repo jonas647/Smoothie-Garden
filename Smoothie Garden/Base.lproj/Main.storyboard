@@ -97,29 +97,47 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pXQ-p3-zX4" id="rbn-AA-QFE">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Smoothie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpf-3Y-pUJ" userLabel="Titel">
-                                            <rect key="frame" x="157" y="8" width="348" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Smoothie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpf-3Y-pUJ" userLabel="Titel">
+                                            <rect key="frame" x="157" y="8" width="141" height="22"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Short text describing the smoothie" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL4-Px-qNR" userLabel="Description text">
-                                            <rect key="frame" x="157" y="37" width="233" height="82.5"/>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raspberry kiss_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="NsZ-8L-8IF" userLabel="Image">
+                                            <rect key="frame" x="8" y="1" width="141" height="130.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="130.5" id="DX1-W9-f9r"/>
+                                                <constraint firstAttribute="width" constant="141" id="vHb-a3-97B"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Short text describing the smoothie" translatesAutoresizingMaskIntoConstraints="NO" id="aL4-Px-qNR" userLabel="Description text">
+                                            <rect key="frame" x="157" y="31" width="435" height="30.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="heightClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="157" y="37" width="435" height="82.5"/>
+                                            </variation>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W91-9E-bT4">
-                                            <rect key="frame" x="8" y="127" width="596" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W91-9E-bT4">
+                                            <rect key="frame" x="8" y="129" width="595.5" height="13.5"/>
                                             <string key="text">-    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -</string>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Raspberry kiss_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="NsZ-8L-8IF" userLabel="Image">
-                                            <rect key="frame" x="8" y="1" width="141" height="130.5"/>
-                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="aL4-Px-qNR" secondAttribute="trailing" constant="8" id="5TY-Yc-8iT"/>
+                                        <constraint firstAttribute="bottom" secondItem="W91-9E-bT4" secondAttribute="bottom" constant="-4" id="AdL-2x-bxW"/>
+                                        <constraint firstItem="NsZ-8L-8IF" firstAttribute="leading" secondItem="rbn-AA-QFE" secondAttribute="leading" constant="8" id="BaA-jF-LlV"/>
+                                        <constraint firstItem="aL4-Px-qNR" firstAttribute="leading" secondItem="NsZ-8L-8IF" secondAttribute="trailing" constant="8" id="BkP-5x-rQX"/>
+                                        <constraint firstItem="dpf-3Y-pUJ" firstAttribute="leading" secondItem="NsZ-8L-8IF" secondAttribute="trailing" constant="8" id="ZOO-qd-0GT"/>
+                                        <constraint firstItem="dpf-3Y-pUJ" firstAttribute="top" secondItem="rbn-AA-QFE" secondAttribute="top" constant="8" id="ZZY-O2-m1n"/>
+                                        <constraint firstItem="NsZ-8L-8IF" firstAttribute="top" secondItem="rbn-AA-QFE" secondAttribute="top" constant="1" id="kRk-aO-VIf"/>
+                                        <constraint firstItem="aL4-Px-qNR" firstAttribute="top" secondItem="dpf-3Y-pUJ" secondAttribute="bottom" constant="1" id="kfV-W5-eyf"/>
+                                        <constraint firstItem="W91-9E-bT4" firstAttribute="leading" secondItem="rbn-AA-QFE" secondAttribute="leading" constant="8" id="v4g-dr-3hG"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="XB0-u5-HDa" kind="show" identifier="DetailedRecipeSegue" id="Bsk-jH-ZiX"/>
@@ -143,7 +161,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZ3-Vs-BwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-484" y="-4286"/>
+            <point key="canvasLocation" x="-486" y="-4287"/>
         </scene>
         <!--Detailed Recipe View Controller-->
         <scene sceneID="KMW-9V-6qC">
@@ -154,23 +172,23 @@
                         <viewControllerLayoutGuide type="bottom" id="UJh-9H-inn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Nf-09-NKs" userLabel="Super view">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1151"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXW-4i-3RD">
-                                <rect key="frame" x="0.0" y="-44" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="-44" width="600" height="1151"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjW-Ab-n0r" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1151"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Smoothie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecd-Oz-4wN" userLabel="Name of Recipe">
-                                                <rect key="frame" x="89" y="235" width="420" height="20.5"/>
+                                                <rect key="frame" x="89" y="485" width="420" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="20" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-sR-0uH" userLabel="Ingredients">
-                                                <rect key="frame" x="89" y="283" width="420" height="100"/>
+                                                <rect key="frame" x="90" y="577" width="420" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="EWL-UI-kPp"/>
@@ -185,7 +203,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCB-i3-BJR">
                                                                     <rect key="frame" x="197" y="2" width="25.5" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="12"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -202,20 +220,10 @@
                                                 </connections>
                                             </tableView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnBeatable_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Me5-ib-bVu" userLabel="Recipe Image">
-                                                <rect key="frame" x="89" y="0.0" width="420" height="220.5"/>
+                                                <rect key="frame" x="89" y="0.0" width="420" height="460.5"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MwP-V1-9Vf" userLabel="Recipe description">
-                                                <rect key="frame" x="89" y="458" width="420" height="28.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="28.5" id="JCf-Sw-mhy"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-b5-fL6" userLabel="Like button">
-                                                <rect key="frame" x="481" y="216" width="42" height="42"/>
+                                                <rect key="frame" x="467" y="463" width="84" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kh7-b5-fL6" secondAttribute="height" multiplier="1:1" id="gFC-pS-cqz"/>
                                                 </constraints>
@@ -229,32 +237,73 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1X-lP-Zce">
-                                                <rect key="frame" x="289" y="416" width="22" height="14.5"/>
+                                                <rect key="frame" x="289" y="697" width="22" height="14.5"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="12"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fx-MU-bzW">
+                                                <rect key="frame" x="289" y="766" width="22" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4Oz-2L-YTV" userLabel="Booster description">
+                                                <rect key="frame" x="90" y="788" width="420" height="44"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="EFJ-NR-mea"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="MwP-V1-9Vf" userLabel="Recipe description">
+                                                <rect key="frame" x="89" y="719" width="420" height="28.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28.5" id="JCf-Sw-mhy"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqP-M5-ib5">
+                                                <rect key="frame" x="89" y="930" width="420" height="114"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="114" id="Kla-G8-p3H"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="G1X-lP-Zce" firstAttribute="top" secondItem="d0t-sR-0uH" secondAttribute="bottom" constant="33" id="5Zl-1s-V57"/>
+                                            <constraint firstItem="G1X-lP-Zce" firstAttribute="top" secondItem="d0t-sR-0uH" secondAttribute="bottom" constant="20" id="5Zl-1s-V57"/>
                                             <constraint firstItem="MwP-V1-9Vf" firstAttribute="centerX" secondItem="Me5-ib-bVu" secondAttribute="centerX" id="6JO-k0-pEY"/>
-                                            <constraint firstItem="Ecd-Oz-4wN" firstAttribute="top" secondItem="Me5-ib-bVu" secondAttribute="bottom" constant="14.5" id="9vr-vk-igW"/>
+                                            <constraint firstItem="Ecd-Oz-4wN" firstAttribute="top" secondItem="Me5-ib-bVu" secondAttribute="bottom" constant="24.5" id="9vr-vk-igW"/>
                                             <constraint firstAttribute="centerX" secondItem="Me5-ib-bVu" secondAttribute="centerX" constant="1" id="Cdh-pZ-nhS"/>
+                                            <constraint firstItem="4Oz-2L-YTV" firstAttribute="top" secondItem="3Fx-MU-bzW" secondAttribute="bottom" constant="8" id="Ez3-qG-7Op"/>
                                             <constraint firstItem="Me5-ib-bVu" firstAttribute="centerX" secondItem="Ecd-Oz-4wN" secondAttribute="centerX" id="G7A-MS-hSr"/>
+                                            <constraint firstItem="4Oz-2L-YTV" firstAttribute="width" secondItem="MwP-V1-9Vf" secondAttribute="width" id="H5n-n6-gQK"/>
                                             <constraint firstItem="d0t-sR-0uH" firstAttribute="width" secondItem="Me5-ib-bVu" secondAttribute="width" id="JRB-Qs-QgR"/>
+                                            <constraint firstItem="vqP-M5-ib5" firstAttribute="width" secondItem="4Oz-2L-YTV" secondAttribute="width" id="MKq-9C-yeo"/>
+                                            <constraint firstItem="vqP-M5-ib5" firstAttribute="top" secondItem="4Oz-2L-YTV" secondAttribute="bottom" constant="98" id="MuT-pj-9B5"/>
                                             <constraint firstItem="Me5-ib-bVu" firstAttribute="height" secondItem="CjW-Ab-n0r" secondAttribute="height" multiplier="0.4" id="PkQ-h6-RBA"/>
-                                            <constraint firstItem="d0t-sR-0uH" firstAttribute="centerX" secondItem="Me5-ib-bVu" secondAttribute="centerX" id="RW9-pE-YX6"/>
+                                            <constraint firstItem="d0t-sR-0uH" firstAttribute="centerX" secondItem="Me5-ib-bVu" secondAttribute="centerX" constant="1" id="RW9-pE-YX6"/>
                                             <constraint firstItem="Me5-ib-bVu" firstAttribute="width" secondItem="Ecd-Oz-4wN" secondAttribute="width" id="XFu-mo-NKo"/>
-                                            <constraint firstItem="d0t-sR-0uH" firstAttribute="top" secondItem="Ecd-Oz-4wN" secondAttribute="bottom" constant="27.5" id="apB-VY-3qt"/>
-                                            <constraint firstItem="kh7-b5-fL6" firstAttribute="leading" secondItem="Me5-ib-bVu" secondAttribute="trailing" constant="-28" id="mRG-qd-5YP"/>
+                                            <constraint firstItem="vqP-M5-ib5" firstAttribute="centerX" secondItem="4Oz-2L-YTV" secondAttribute="centerX" constant="-1" id="YAy-GZ-Ifa"/>
+                                            <constraint firstItem="d0t-sR-0uH" firstAttribute="top" secondItem="Ecd-Oz-4wN" secondAttribute="bottom" constant="71.5" id="apB-VY-3qt"/>
+                                            <constraint firstItem="3Fx-MU-bzW" firstAttribute="top" secondItem="MwP-V1-9Vf" secondAttribute="bottom" constant="18.5" id="cL0-MB-7TC"/>
+                                            <constraint firstItem="4Oz-2L-YTV" firstAttribute="centerX" secondItem="MwP-V1-9Vf" secondAttribute="centerX" constant="1" id="fze-b4-22v"/>
+                                            <constraint firstItem="kh7-b5-fL6" firstAttribute="leading" secondItem="Me5-ib-bVu" secondAttribute="trailing" constant="-42" id="mRG-qd-5YP"/>
                                             <constraint firstItem="MwP-V1-9Vf" firstAttribute="width" secondItem="d0t-sR-0uH" secondAttribute="width" id="p1v-nx-dPl"/>
-                                            <constraint firstItem="Ecd-Oz-4wN" firstAttribute="centerY" secondItem="kh7-b5-fL6" secondAttribute="centerY" constant="8.75" id="tf1-mj-OaW"/>
+                                            <constraint firstItem="G1X-lP-Zce" firstAttribute="centerX" secondItem="3Fx-MU-bzW" secondAttribute="centerX" id="sa0-3L-RQd"/>
+                                            <constraint firstItem="Ecd-Oz-4wN" firstAttribute="centerY" secondItem="kh7-b5-fL6" secondAttribute="centerY" constant="-9.75" id="tf1-mj-OaW"/>
                                             <constraint firstItem="Me5-ib-bVu" firstAttribute="width" secondItem="CjW-Ab-n0r" secondAttribute="width" multiplier="0.7" id="uId-cs-INc"/>
-                                            <constraint firstItem="MwP-V1-9Vf" firstAttribute="top" secondItem="G1X-lP-Zce" secondAttribute="bottom" constant="27.5" id="w1s-6i-qpM"/>
-                                            <constraint firstItem="d0t-sR-0uH" firstAttribute="centerX" secondItem="G1X-lP-Zce" secondAttribute="centerX" constant="-1.75" id="wde-Jh-AB1"/>
+                                            <constraint firstItem="MwP-V1-9Vf" firstAttribute="top" secondItem="G1X-lP-Zce" secondAttribute="bottom" constant="7.5" id="w1s-6i-qpM"/>
+                                            <constraint firstItem="d0t-sR-0uH" firstAttribute="centerX" secondItem="G1X-lP-Zce" secondAttribute="centerX" id="wde-Jh-AB1"/>
                                             <constraint firstItem="Me5-ib-bVu" firstAttribute="top" secondItem="CjW-Ab-n0r" secondAttribute="top" id="zn1-nj-IDH"/>
-                                            <constraint firstItem="kh7-b5-fL6" firstAttribute="width" secondItem="Me5-ib-bVu" secondAttribute="width" multiplier="0.1" id="zyK-EZ-LPN"/>
+                                            <constraint firstItem="kh7-b5-fL6" firstAttribute="width" secondItem="Me5-ib-bVu" secondAttribute="width" multiplier="0.2" id="zyK-EZ-LPN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -279,7 +328,11 @@
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1200"/>
                     <connections>
+                        <outlet property="boosterDescriptionHeightConstraint" destination="EFJ-NR-mea" id="Lhw-tq-0WD"/>
+                        <outlet property="boosterDescriptionView" destination="4Oz-2L-YTV" id="Ohl-tV-OEa"/>
                         <outlet property="contentView" destination="CjW-Ab-n0r" id="unC-ru-la3"/>
                         <outlet property="ingredientsHeightConstraint" destination="EWL-UI-kPp" id="ODT-Db-WmJ"/>
                         <outlet property="ingredientsTableView" destination="d0t-sR-0uH" id="N3K-vh-7ol"/>
@@ -322,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="egE-Yc-bXH" kind="relationship" relationship="rootViewController" id="2Zm-MB-TGN"/>
+                        <segue destination="6bJ-bp-czf" kind="relationship" relationship="rootViewController" id="8ha-BN-gL5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wc8-C5-7s9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,64 +445,82 @@
             <point key="canvasLocation" x="-3810" y="-4143"/>
         </scene>
         <!--Smoothie Garden-->
-        <scene sceneID="xuF-BH-Knj">
+        <scene sceneID="Mwt-8U-43D">
             <objects>
-                <tableViewController id="egE-Yc-bXH" customClass="RecipeTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zxx-1a-Cw1">
+                <tableViewController id="6bJ-bp-czf" customClass="RecipeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" id="7tC-i9-Dsk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeTableCell" rowHeight="139" id="1wg-5u-ZhV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeTableCell" rowHeight="139" id="R6l-iS-zI3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1wg-5u-ZhV" id="bUV-Fk-f0g">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R6l-iS-zI3" id="85X-9b-Ayp">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Smoothie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLe-4p-YjC" userLabel="Titel">
-                                            <rect key="frame" x="157" y="8" width="348" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Smoothie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5j-GD-5aE" userLabel="Titel">
+                                            <rect key="frame" x="157" y="8" width="141" height="22"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Short text describing the smoothie" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXU-mE-Zfg" userLabel="Description text">
-                                            <rect key="frame" x="157" y="37" width="233" height="82.5"/>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raspberry kiss_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-hX-8WQ" userLabel="Image">
+                                            <rect key="frame" x="8" y="1" width="141" height="130.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="130.5" id="4LN-3o-QRu"/>
+                                                <constraint firstAttribute="width" constant="141" id="p9z-Ew-abk"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Short text describing the smoothie" translatesAutoresizingMaskIntoConstraints="NO" id="yMZ-Xt-ELD" userLabel="Description text">
+                                            <rect key="frame" x="157" y="31" width="435" height="30.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="heightClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="157" y="37" width="435" height="82.5"/>
+                                            </variation>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llg-ZZ-34F">
-                                            <rect key="frame" x="8" y="127" width="596" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIG-Sq-ETB">
+                                            <rect key="frame" x="8" y="129" width="595.5" height="13.5"/>
                                             <string key="text">-    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -</string>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Raspberry kiss_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-Ru-Mrv" userLabel="Image">
-                                            <rect key="frame" x="8" y="1" width="141" height="130.5"/>
-                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="MIG-Sq-ETB" secondAttribute="bottom" constant="-4" id="1dv-Hn-EOJ"/>
+                                        <constraint firstItem="U5j-GD-5aE" firstAttribute="leading" secondItem="ahp-hX-8WQ" secondAttribute="trailing" constant="8" id="CfX-vw-Qu1"/>
+                                        <constraint firstItem="U5j-GD-5aE" firstAttribute="top" secondItem="85X-9b-Ayp" secondAttribute="top" constant="8" id="FmL-Yc-fNO"/>
+                                        <constraint firstItem="yMZ-Xt-ELD" firstAttribute="top" secondItem="U5j-GD-5aE" secondAttribute="bottom" constant="1" id="Fzu-Vt-yvf"/>
+                                        <constraint firstItem="yMZ-Xt-ELD" firstAttribute="leading" secondItem="ahp-hX-8WQ" secondAttribute="trailing" constant="8" id="LYq-Rs-byJ"/>
+                                        <constraint firstItem="MIG-Sq-ETB" firstAttribute="leading" secondItem="85X-9b-Ayp" secondAttribute="leading" constant="8" id="UyE-uw-kg6"/>
+                                        <constraint firstAttribute="trailing" secondItem="yMZ-Xt-ELD" secondAttribute="trailing" constant="8" id="VT0-R3-qEv"/>
+                                        <constraint firstItem="ahp-hX-8WQ" firstAttribute="leading" secondItem="85X-9b-Ayp" secondAttribute="leading" constant="8" id="o6x-XS-9cw"/>
+                                        <constraint firstItem="ahp-hX-8WQ" firstAttribute="top" secondItem="85X-9b-Ayp" secondAttribute="top" constant="1" id="pPR-D8-Ni2"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="egE-Yc-bXH" id="O5i-Iq-C3P"/>
-                            <outlet property="delegate" destination="egE-Yc-bXH" id="3u1-2w-NOj"/>
+                            <outlet property="dataSource" destination="6bJ-bp-czf" id="2wI-Cd-uPL"/>
+                            <outlet property="delegate" destination="6bJ-bp-czf" id="plr-Xm-0fQ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="7mn-oq-Pnz"/>
-                    <navigationItem key="navigationItem" title="Smoothie Garden" id="Oxt-c1-xBW">
-                        <barButtonItem key="leftBarButtonItem" image="Menu Filled-25.png" style="plain" id="U6j-T0-3hK">
+                    <tabBarItem key="tabBarItem" title="Item" id="ugm-jA-DKw"/>
+                    <navigationItem key="navigationItem" title="Smoothie Garden" id="eWS-WV-PJY">
+                        <barButtonItem key="leftBarButtonItem" image="Menu Filled-25.png" style="plain" id="uCV-pk-PbC">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="sideBarButton" destination="U6j-T0-3hK" id="TJU-0Q-QlR"/>
+                        <outlet property="sideBarButton" destination="uCV-pk-PbC" id="sUa-9u-N6O"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gKR-42-reg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMp-FP-bS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-484" y="-3303"/>
+            <point key="canvasLocation" x="-486" y="-3303"/>
         </scene>
     </scenes>
     <resources>
