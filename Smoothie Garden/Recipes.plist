@@ -31,13 +31,13 @@
 	<key>Recipe B</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Yellow mist</string>
+		<string>Green Detox</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
 		<key>RecipeDescription</key>
-		<string>All yellow!</string>
+		<string>Greens</string>
 		<key>DetailedRecipeDescription</key>
 		<string></string>
 		<key>BoosterDescription</key>
@@ -48,7 +48,7 @@
 			<string>1dl Acai</string>
 		</array>
 		<key>ImageName</key>
-		<string>IMG_0408_iphone</string>
+		<string>GreenDetox_3x</string>
 	</dict>
 	<key>Recipe C</key>
 	<dict>
@@ -100,7 +100,7 @@
 	<key>Recipe E</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Godess</string>
+		<string>Nutty</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
@@ -117,7 +117,7 @@
 			<string>1dl Acai</string>
 		</array>
 		<key>ImageName</key>
-		<string>GreenGodess_3x</string>
+		<string>Nutty_2_3x</string>
 	</dict>
 	<key>Recipe F</key>
 	<dict>

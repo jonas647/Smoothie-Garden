@@ -65,7 +65,15 @@
     boosterDescriptionView.selectable = NO;
     
     //Get the size (primarily the height) by checking the size of the content view that holds all the subviews
-    scrollView.contentSize=CGSizeMake(contentView.frame.size.width,contentView.frame.size.height);
+    //scrollView.contentSize=CGSizeMake(contentView.frame.size.width,contentView.frame.size.height);
+    
+    //self.view.translatesAutoresizingMaskIntoConstraints = NO;
+    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLog(@"Content view rect: %@", NSStringFromCGRect(contentView.frame));
+    NSLog(@"Scroll view rect: %@", NSStringFromCGRect(scrollView.frame));
+    
     
     
 }
@@ -164,13 +172,19 @@
     
     NSArray *newFavoriteRecipes = [tempFavoriteRecipes copy];
     
-    NSLog(@"Recipe to save: %@", newRecipe.recipeName);
-    NSLog(@"Saved recipes: %@", newFavoriteRecipes);
     //Set the new favorite recipes
     [[NSUserDefaults standardUserDefaults]setObject:newFavoriteRecipes forKey:@"FavoriteRecipes"];
     
     //Change the like button to selected
     likeButton.selected = YES;
 }
-     
+
+#pragma mark - Scroll view delegates
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    
+}
+
+
 @end
