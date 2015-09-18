@@ -11,6 +11,7 @@
 		DF1FC42D1B98D8C8007F9A0F /* Recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF1FC42C1B98D8C8007F9A0F /* Recipes.plist */; };
 		DF2503F01B73D914002AA3CE /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2503EF1B73D914002AA3CE /* RecipeTableViewCell.m */; };
 		DF2503F41B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF2503F31B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg */; };
+		DF379A3A1BA8B9C00092EA47 /* ContentHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */; };
 		DF459B181BA0CE57002F3162 /* Cocoapuchino_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B141BA0CE57002F3162 /* Cocoapuchino_3x.png */; };
 		DF459B1B1BA0CE57002F3162 /* unbeatable_standing_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B171BA0CE57002F3162 /* unbeatable_standing_3x.png */; };
 		DF459B1F1BA0D95F002F3162 /* GreenGodess_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B1C1BA0D95F002F3162 /* GreenGodess_3x.png */; };
@@ -58,6 +59,8 @@
 		DF2503EE1B73D914002AA3CE /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
 		DF2503EF1B73D914002AA3CE /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
 		DF2503F31B73FB55002AA3CE /* Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tree-gazebo-and-bridge-in-Nitobe-Memorial-Garden.jpg"; sourceTree = "<group>"; };
+		DF379A381BA8B9C00092EA47 /* ContentHeightTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentHeightTextView.h; sourceTree = "<group>"; };
+		DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentHeightTextView.m; sourceTree = "<group>"; };
 		DF459B141BA0CE57002F3162 /* Cocoapuchino_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cocoapuchino_3x.png; sourceTree = "<group>"; };
 		DF459B171BA0CE57002F3162 /* unbeatable_standing_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unbeatable_standing_3x.png; sourceTree = "<group>"; };
 		DF459B1C1BA0D95F002F3162 /* GreenGodess_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenGodess_3x.png; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				DF75DFD61B8A228000200D89 /* SidebarTableViewController.m */,
 				DF1FC4291B9331F9007F9A0F /* SmoothieTabBarViewController.h */,
 				DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */,
+				DF379A381BA8B9C00092EA47 /* ContentHeightTextView.h */,
+				DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */,
 			);
 			name = "Custom UIViews";
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 				DF75DFD71B8A228000200D89 /* SidebarTableViewController.m in Sources */,
 				DF5B55CD1B73C4EB00F27092 /* RecipeTableViewController.m in Sources */,
 				DF9C5BEA1B778CD900B46B9D /* Recipe.m in Sources */,
+				DF379A3A1BA8B9C00092EA47 /* ContentHeightTextView.m in Sources */,
 				DFCB1DC51B6E4B5C009FCAA3 /* SecondViewController.m in Sources */,
 				DFCB1DBF1B6E4B5C009FCAA3 /* AppDelegate.m in Sources */,
 				DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */,

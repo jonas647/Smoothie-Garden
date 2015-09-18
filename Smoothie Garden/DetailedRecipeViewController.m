@@ -30,21 +30,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSLog(@"Recipe desc Height Constraint: %f", recipeDescriptionHeightConstraint.constant);
+    
     recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
     titleName.text = self.selectedRecipe.recipeName;
     recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
     boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
     ingredients = self.selectedRecipe.ingredients;
-                            
-    //Adjust the UITextViews to the size of the text to be presented
-    ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
-    recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
-    boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
     
-    //Update the height constraints to adjust the height to the new frames
-    [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
-    [recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
-    [boosterDescriptionHeightConstraint setConstant:boosterDescriptionView.frame.size.height];
+    NSLog(@"Booster frame: %@", NSStringFromCGRect(boosterDescriptionView.frame));
+    NSLog(@"Recipe frame: %@", NSStringFromCGRect(recipeDescriptionView.frame));
+    
+    //Adjust the UITextViews to the size of the text to be presented
+    /*
+    
+    */
+    NSLog(@"Booster frame: %@", NSStringFromCGRect(boosterDescriptionView.frame));
+    NSLog(@"Recipe frame: %@", NSStringFromCGRect(recipeDescriptionView.frame));
+    
+    NSLog(@"Booster desc: %@", boosterDescriptionView.text);
     
     
     //Uncomment to Remove the navigation bar background for the detailed items
@@ -59,25 +63,43 @@
         likeButton.selected = YES;
     }
     
+    [recipeDescriptionView sizeToFit];
+    [recipeDescriptionView layoutIfNeeded];
+    recipeDescriptionView.layoutManager.allowsNonContiguousLayout = false;
+    
+    [boosterDescriptionView sizeToFit];
+    [boosterDescriptionView layoutIfNeeded];
+    boosterDescriptionView.layoutManager.allowsNonContiguousLayout = false;
+    
+    recipeDescriptionView.scrollEnabled = NO;
+    boosterDescriptionView.scrollEnabled = NO;
+    
+    ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
+    recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
+    boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
+    
+    //Update the height constraints to adjust the height to the new frames
+    [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
+    [recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
+    [boosterDescriptionHeightConstraint setConstant:boosterDescriptionView.frame.size.height];
+    
     
     //Must have the view as selectable in storyboard to get the font working (Apple bug)
     recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
     
-    //Get the size (primarily the height) by checking the size of the content view that holds all the subviews
-    //scrollView.contentSize=CGSizeMake(contentView.frame.size.width,contentView.frame.size.height);
     
-    //self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    contentView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSLog(@"Content view rect: %@", NSStringFromCGRect(contentView.frame));
-    NSLog(@"Scroll view rect: %@", NSStringFromCGRect(scrollView.frame));
+    NSLog(@"Recipe desc Height Constraint: %f", recipeDescriptionHeightConstraint.constant);
+    
+  
+}
+
+- (void) viewWillAppear:(BOOL)animated {
     
     
     
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -87,7 +109,7 @@
 
 - (CGRect) newFrameForUIView: (UIView* ) view {
 
-    //Change the height of the UITextViews
+    //Change the height of the UIView
     CGFloat fixedWidth = view.frame.size.width;
     CGSize newSize = [view sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
     CGRect newFrame = view.frame;
@@ -177,13 +199,6 @@
     
     //Change the like button to selected
     likeButton.selected = YES;
-}
-
-#pragma mark - Scroll view delegates
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    
 }
 
 
