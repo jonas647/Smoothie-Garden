@@ -370,7 +370,7 @@
                                                 <rect key="frame" x="108" y="0.0" width="384" height="220.5"/>
                                             </imageView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="28" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PW7-OC-g6q" userLabel="Ingredients table">
-                                                <rect key="frame" x="101" y="291" width="384" height="75"/>
+                                                <rect key="frame" x="101" y="293" width="384" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="avq-Jd-NdC"/>
@@ -402,19 +402,13 @@
                                                 </connections>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRe-7C-tBs">
-                                                <rect key="frame" x="284" y="376" width="32" height="20.5"/>
+                                                <rect key="frame" x="284" y="378" width="32" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3d8-hc-4Zz" userLabel="Title">
-                                                <rect key="frame" x="211" y="252" width="164" height="31.5"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="26"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Recipe description" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="2QX-bq-TlW" userLabel="Recipe description">
-                                                <rect key="frame" x="108" y="392" width="384" height="35"/>
+                                                <rect key="frame" x="108" y="399" width="384" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="03A-Vm-FNp"/>
@@ -423,13 +417,13 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lp8-P9-Fq1">
-                                                <rect key="frame" x="284" y="434.5" width="32" height="20.5"/>
+                                                <rect key="frame" x="284" y="444" width="32" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Booster description" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="26U-la-vyn" userLabel="Booster description">
-                                                <rect key="frame" x="108" y="458" width="384" height="35"/>
+                                                <rect key="frame" x="108" y="474" width="384" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="QSl-lv-MJX"/>
@@ -437,11 +431,31 @@
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3d8-hc-4Zz" userLabel="Title">
+                                                <rect key="frame" x="211" y="252" width="164" height="31.5"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="26"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU2-zp-uzK" userLabel="Like Button">
+                                                <rect key="frame" x="468" y="218" width="77" height="77"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="CU2-zp-uzK" secondAttribute="height" multiplier="1:1" id="Lzw-IR-heO"/>
+                                                </constraints>
+                                                <state key="normal" image="Hearts-100.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" image="Like Filled-100.png"/>
+                                                <state key="highlighted" image="Like Filled-100.png"/>
+                                                <connections>
+                                                    <action selector="likeRecipe:" destination="da5-Hg-VV9" eventType="touchUpInside" id="kJb-nZ-u2z"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="tB4-ch-kmz" secondAttribute="centerX" id="5xR-GI-VMk"/>
-                                            <constraint firstItem="Lp8-P9-Fq1" firstAttribute="top" secondItem="2QX-bq-TlW" secondAttribute="bottom" constant="8" id="7NN-u6-GVg"/>
+                                            <constraint firstItem="Lp8-P9-Fq1" firstAttribute="top" secondItem="2QX-bq-TlW" secondAttribute="bottom" constant="10" id="7NN-u6-GVg"/>
                                             <constraint firstItem="26U-la-vyn" firstAttribute="centerX" secondItem="tB4-ch-kmz" secondAttribute="centerX" id="Amy-DE-V0v"/>
                                             <constraint firstItem="26U-la-vyn" firstAttribute="width" secondItem="tB4-ch-kmz" secondAttribute="width" id="FU1-NZ-JwX"/>
                                             <constraint firstItem="RRe-7C-tBs" firstAttribute="centerX" secondItem="tB4-ch-kmz" secondAttribute="centerX" id="HHG-mO-IeP"/>
@@ -451,14 +465,17 @@
                                             <constraint firstItem="tB4-ch-kmz" firstAttribute="centerX" secondItem="3d8-hc-4Zz" secondAttribute="centerX" constant="6.5" id="PAG-Jk-frd"/>
                                             <constraint firstItem="RRe-7C-tBs" firstAttribute="top" secondItem="PW7-OC-g6q" secondAttribute="bottom" constant="10" id="Pbp-on-HI1"/>
                                             <constraint firstItem="tB4-ch-kmz" firstAttribute="centerX" secondItem="PW7-OC-g6q" secondAttribute="centerX" constant="7" id="VDB-7z-Uwf"/>
+                                            <constraint firstItem="CU2-zp-uzK" firstAttribute="leading" secondItem="tB4-ch-kmz" secondAttribute="trailing" constant="-24" id="VTt-AL-giq"/>
                                             <constraint firstItem="tB4-ch-kmz" firstAttribute="centerX" secondItem="2QX-bq-TlW" secondAttribute="centerX" id="XKM-Zp-K55"/>
-                                            <constraint firstItem="26U-la-vyn" firstAttribute="top" secondItem="Lp8-P9-Fq1" secondAttribute="bottom" constant="3" id="XfA-ou-Osh"/>
+                                            <constraint firstItem="26U-la-vyn" firstAttribute="top" secondItem="Lp8-P9-Fq1" secondAttribute="bottom" constant="10" id="XfA-ou-Osh"/>
                                             <constraint firstAttribute="height" constant="1000" id="enI-gf-rfJ"/>
+                                            <constraint firstItem="CU2-zp-uzK" firstAttribute="centerY" secondItem="3d8-hc-4Zz" secondAttribute="centerY" constant="-11.25" id="evv-dW-LCM"/>
                                             <constraint firstItem="tB4-ch-kmz" firstAttribute="width" secondItem="2QX-bq-TlW" secondAttribute="width" id="fCz-vI-2XF"/>
+                                            <constraint firstItem="CU2-zp-uzK" firstAttribute="width" secondItem="tB4-ch-kmz" secondAttribute="width" multiplier="0.2" id="oxO-DQ-Rqb"/>
                                             <constraint firstItem="tB4-ch-kmz" firstAttribute="width" secondItem="PW7-OC-g6q" secondAttribute="width" id="pVe-N0-U1g"/>
                                             <constraint firstItem="3d8-hc-4Zz" firstAttribute="top" secondItem="tB4-ch-kmz" secondAttribute="bottom" constant="31.5" id="qv4-Y1-u0C"/>
-                                            <constraint firstItem="PW7-OC-g6q" firstAttribute="top" secondItem="3d8-hc-4Zz" secondAttribute="bottom" constant="7.5" id="tM9-2N-OUW"/>
-                                            <constraint firstItem="2QX-bq-TlW" firstAttribute="top" secondItem="RRe-7C-tBs" secondAttribute="bottom" constant="-4.5" id="uo2-39-O8e"/>
+                                            <constraint firstItem="PW7-OC-g6q" firstAttribute="top" secondItem="3d8-hc-4Zz" secondAttribute="bottom" constant="10" id="tM9-2N-OUW"/>
+                                            <constraint firstItem="2QX-bq-TlW" firstAttribute="top" secondItem="RRe-7C-tBs" secondAttribute="bottom" id="uo2-39-O8e"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -494,6 +511,7 @@
                         <outlet property="contentView" destination="Z8m-iu-ZbJ" id="5Ie-hz-RLN"/>
                         <outlet property="ingredientsHeightConstraint" destination="avq-Jd-NdC" id="qTB-iX-Wql"/>
                         <outlet property="ingredientsTableView" destination="PW7-OC-g6q" id="pf8-Kt-kMD"/>
+                        <outlet property="likeButton" destination="CU2-zp-uzK" id="e6W-my-7ER"/>
                         <outlet property="recipeDescriptionHeightConstraint" destination="03A-Vm-FNp" id="kw7-7U-HjC"/>
                         <outlet property="recipeDescriptionView" destination="2QX-bq-TlW" id="Mh8-sj-3Mp"/>
                         <outlet property="recipeImage" destination="tB4-ch-kmz" id="OG8-x0-Wvj"/>

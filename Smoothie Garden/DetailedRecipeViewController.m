@@ -30,26 +30,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"Recipe desc Height Constraint: %f", recipeDescriptionHeightConstraint.constant);
-    
+    //Set all the properties with correct values
     recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
     titleName.text = self.selectedRecipe.recipeName;
     recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
     boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
     ingredients = self.selectedRecipe.ingredients;
-    
-    NSLog(@"Booster frame: %@", NSStringFromCGRect(boosterDescriptionView.frame));
-    NSLog(@"Recipe frame: %@", NSStringFromCGRect(recipeDescriptionView.frame));
-    
-    //Adjust the UITextViews to the size of the text to be presented
-    /*
-    
-    */
-    NSLog(@"Booster frame: %@", NSStringFromCGRect(boosterDescriptionView.frame));
-    NSLog(@"Recipe frame: %@", NSStringFromCGRect(recipeDescriptionView.frame));
-    
-    NSLog(@"Booster desc: %@", boosterDescriptionView.text);
-    
     
     //Uncomment to Remove the navigation bar background for the detailed items
     /*
@@ -63,6 +49,7 @@
         likeButton.selected = YES;
     }
     
+    //Must do this for the UITextview to work with (1) resizing height, (2) have custom font
     [recipeDescriptionView sizeToFit];
     [recipeDescriptionView layoutIfNeeded];
     recipeDescriptionView.layoutManager.allowsNonContiguousLayout = false;
@@ -74,6 +61,7 @@
     recipeDescriptionView.scrollEnabled = NO;
     boosterDescriptionView.scrollEnabled = NO;
     
+    //Update the frame for the different UITextviews
     ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
     recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
     boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
@@ -87,10 +75,6 @@
     //Must have the view as selectable in storyboard to get the font working (Apple bug)
     recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
-    
-    
-    
-    NSLog(@"Recipe desc Height Constraint: %f", recipeDescriptionHeightConstraint.constant);
     
   
 }
@@ -165,9 +149,25 @@
     return cell;
 }
 
+#pragma mark - Handle Recipe Favorites
+
 - (IBAction)likeRecipe:(id)sender {
     
-    [self addRecipeToFavorites:self.selectedRecipe];
+    if (!likeButton.selected) {
+        
+        //Add recipe to the favorites
+        [self addRecipeToFavorites:self.selectedRecipe];
+        
+        //Change the like button to selected
+        likeButton.selected = YES;
+        
+    } else if (likeButton.selected){
+        //Remove recipe from favorites
+        [self removeRecipeFromFavorites:self.selectedRecipe];
+        
+        //Change the like button to unselected
+        likeButton.selected = NO;
+    }
     
 }
 
@@ -175,6 +175,32 @@
     
     return [[NSUserDefaults standardUserDefaults]arrayForKey:@"FavoriteRecipes"];
     
+}
+
+- (void) setNewFavoriteRecipes: (NSArray*) newRecipes {
+    
+    [[NSUserDefaults standardUserDefaults]setObject:newRecipes forKey:@"FavoriteRecipes"];
+    
+}
+
+- (void) removeRecipeFromFavorites: (Recipe*) recipeToRemove {
+    
+    NSMutableArray *tempDeleteRecipe = [[NSMutableArray alloc]init];
+
+    for (NSString *recipe in [self favoriteRecipes]) {
+        if ([recipeToRemove.recipeName isEqualToString:recipe]) {
+            [tempDeleteRecipe addObject:recipe];
+        }
+    }
+    
+    NSMutableArray *tempFavoriteRecipes = [NSMutableArray arrayWithArray:[self favoriteRecipes]];
+    
+    if (tempDeleteRecipe.count>0) {
+        [tempFavoriteRecipes removeObjectsInArray:tempDeleteRecipe];
+    }
+    
+    //Set the new favorite recipes
+    [self setNewFavoriteRecipes:[NSArray arrayWithArray:tempFavoriteRecipes]];
 }
 
 - (void) addRecipeToFavorites:(Recipe*) newRecipe {
@@ -195,11 +221,10 @@
     NSArray *newFavoriteRecipes = [tempFavoriteRecipes copy];
     
     //Set the new favorite recipes
-    [[NSUserDefaults standardUserDefaults]setObject:newFavoriteRecipes forKey:@"FavoriteRecipes"];
+    [self setNewFavoriteRecipes:newFavoriteRecipes];
     
-    //Change the like button to selected
-    likeButton.selected = YES;
 }
+
 
 
 @end

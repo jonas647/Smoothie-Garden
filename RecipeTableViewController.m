@@ -31,22 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Validate on what tab bar item is chosen to select what data to show
-    switch ([self.tabBarController selectedIndex]) {
-        case 0:
-            //Show all recipes
-            recipes = [self allRecipesFromPlist];
-            break;
-        case 1:
-            //Show the favorite recipes
-            recipes = [self favoriteRecipes];
-            break;
-        default:
-            break;
-    }
-    
-    NSLog(@"Number of loaded recipes: %i", (int)recipes.count);
-    NSLog(@"Selected tab bar: %lu", (unsigned long)[self.tabBarController selectedIndex]);
     
     self.tableView.sectionHeaderHeight = 0.0;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -72,8 +56,32 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
+    
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    
+    //Validate on what tab bar item is chosen to select what data to show
+    //This must be in view did appear as the selected index isn't set in the view will appear
+    
+    switch ([self.tabBarController selectedIndex]) {
+        case 0:
+            //Show all recipes
+            recipes = [self allRecipesFromPlist];
+            break;
+        case 1:
+            //Show the favorite recipes
+            recipes = [self favoriteRecipes];
+            break;
+        default:
+            break;
+    }
+    
+    //Reload the view to get the proper recipes showing (favorites can change)
+    [self.tableView reloadData];
     
 }
 
@@ -127,7 +135,7 @@
         
     }
     
-    NSLog(@"Returning favorite recipes: %@", tempFavoriteRecipes);
+    
     NSArray *favoritesToReturn = [NSArray arrayWithArray:tempFavoriteRecipes];
     return favoritesToReturn;
 }
@@ -248,9 +256,6 @@
     vcToPushTo.selectedRecipe = [recipes objectAtIndex:indexPath.row];
     
     Recipe *tempRecipe = (Recipe*) [recipes objectAtIndex:indexPath.row];
-    
-    NSLog(@"Recipes: %@", tempRecipe.ingredients);
-    
     
 }
 
