@@ -19,7 +19,6 @@
     // Override point for customization after application launch.
     
     UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    UIColor *secondaryColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
     
     //Update the colors of where in the app the default color should be used
     [[UITabBar appearance] setBarTintColor:mainColor];
@@ -56,6 +55,15 @@
                                                        [UIColor darkGrayColor], NSForegroundColorAttributeName,
                                                        nil] forState:UIControlStateNormal];
     */
+    
+    //Appearance of the page control
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor lightGrayColor];
+    pageControl.alpha = 0.2;
+    
+    [self.window setTintColor:[UIColor darkGrayColor]];
     
     return YES;
 }

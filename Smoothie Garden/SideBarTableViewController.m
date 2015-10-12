@@ -1,26 +1,18 @@
 //
-//  SidebarTableViewController.m
+//  sidebarTableViewController.m
 //  Smoothie Garden
 //
-//  Created by Jonas C Björkell on 2015-08-23.
-//  Copyright (c) 2015 Jonas C Björkell. All rights reserved.
+//  Created by Jonas C Björkell on 2015-10-11.
+//  Copyright © 2015 Jonas C Björkell. All rights reserved.
 //
 
-#import "SidebarTableViewController.h"
-#import "SmoothieTabBarViewController.h"
+#import "sidebarTableViewController.h"
 
-
-#define CELL_HEIGHT 276
-
-@interface SidebarTableViewController ()
+@interface sidebarTableViewController ()
 
 @end
 
-@implementation SidebarTableViewController
-{
-    NSArray *menuItems;
-}
-
+@implementation sidebarTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,12 +23,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    menuItems = [NSArray arrayWithObjects:@"Add recipes", @"Other apps", @"Settings", @"About", nil];
-    
-    self.tableView.sectionHeaderHeight = 0.0;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    self.revealViewController.delegate = self;
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"unbeatable_standing_3x.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,81 +33,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.alpha = 0.9;
+}
 
+#pragma mark - Table view data source
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    // Return the number of sections.
-    return 1;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    // Return the number of rows in the section.
-    return [menuItems count];
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
-
-
+*/
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
-    static NSString *cellIdentifier = @"mainCell";
-    UITableViewCell *newCell =   [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if (nil == newCell) {
-        newCell    =   [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    newCell.textLabel.text = [NSString stringWithFormat:@"%@", [menuItems objectAtIndex:indexPath.row]];
-    newCell.backgroundColor = [UIColor clearColor];
-    newCell.textLabel.textColor = [UIColor whiteColor];
-    
-    return newCell;
+    return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //UIViewController *tempViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"About"];
-    
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if (revealViewController)
-    {
-        //[self performSegueWithIdentifier:@"AboutSegue" sender:self];
-        //[revealViewController.frontViewController addChildViewController:tempViewController];
-        //[self presentViewController:tempViewController animated:YES completion:nil];
-        SmoothieTabBarViewController *tempcontroller = (SmoothieTabBarViewController*)revealViewController.frontViewController;
-        [tempcontroller showPopupViewController:@"About"];
-        [revealViewController revealToggleAnimated:YES];
-    }
-}
-#pragma mark - SWRevealViewController Delegate Methods
-
-- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
-{
-    NSLog(@"Moving to: %ld", (long)position);
-    
-    if (position == FrontViewPositionLeftSideMost) {
-        /*
-        // Menu will get revealed
-        self.tapGestureRecognizer.enabled = YES;                 // Enable the tap gesture Recognizer
-        self.interactivePopGestureRecognizer.enabled = NO;        // Prevents the iOS7's pan gesture
-        self.topViewController.view.userInteractionEnabled = NO;       // Disable the topViewController's interaction
-        */
-        revealController.frontViewController.view.userInteractionEnabled = NO;
-        NSLog(@"Front disabled");
-    }
-    else if (position == FrontViewPositionLeft){      // Menu will close
-        
-        /*
-        self.tapGestureRecognizer.enabled = NO;
-        self.interactivePopGestureRecognizer.enabled = YES;
-        self.topViewController.view.userInteractionEnabled = YES;*/
-        NSLog(@"Front enabled");
-        revealController.frontViewController.view.userInteractionEnabled = YES;
-    }
-}
-
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

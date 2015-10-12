@@ -13,9 +13,10 @@
 		<key>RecipeDescription</key>
 		<string>A refreshing and vitamin packed red smoothie with a little bit of heat</string>
 		<key>DetailedRecipeDescription</key>
-		<string>Sprinkle the smoothie with some extra gojiberries and lime zest </string>
+		<string>This is a real vitamin kick with a fresh and summery taste. Enjoy it on a hot sunny day or simply when you need some extra energy. The mint can be replaced with ginger.
+Top this smoothie with goji berries and lime cezt.</string>
 		<key>BoosterDescription</key>
-		<string></string>
+		<string>Boost with 1 tbls of soaked goji berries. Try to replace the ginger with mint leaves for a summer fresh taste!</string>
 		<key>Ingredients</key>
 		<array>
 			<string>Juice from one orange</string>
@@ -24,9 +25,10 @@
 			<string>1 dl mango</string>
 			<string>1 table spoon of gojiberries</string>
 			<string>1 cm ginger</string>
+			<string>1 tea spoon honey</string>
 		</array>
 		<key>ImageName</key>
-		<string>Raspberry kiss_3x</string>
+		<string>Tropical</string>
 	</dict>
 	<key>Recipe B</key>
 	<dict>
@@ -37,15 +39,20 @@
 		<key>RecipeCategory</key>
 		<integer>0</integer>
 		<key>RecipeDescription</key>
-		<string>Greens</string>
+		<string>This fresh tasting, detoxing veggie smoothie is kind of like a salad in a glass.</string>
 		<key>DetailedRecipeDescription</key>
-		<string></string>
+		<string>This fresh tasting, detoxing veggie smoothie is kind of like a salad in a glass. Drinking smoothies like this is an easy way to make sure you will get your daily greens. If you like your smoothie a little more sweet and less green-tasting just replace the avocado with 1 dl of mango and the water with some apple juice!</string>
 		<key>BoosterDescription</key>
 		<string></string>
 		<key>Ingredients</key>
 		<array>
-			<string>One Banana</string>
-			<string>1dl Acai</string>
+			<string>5 cm cucumber</string>
+			<string>1/2 a lemon</string>
+			<string>Parsley</string>
+			<string>1 dl of spinach</string>
+			<string>1 pear (chopped without seeds)</string>
+			<string>1/2 avocado</string>
+			<string>1/2 dl of water</string>
 		</array>
 		<key>ImageName</key>
 		<string>GreenDetox_3x</string>
@@ -61,12 +68,12 @@
 		<key>RecipeDescription</key>
 		<string>Nordic berries are real super berries that contains lots of antioxidants and nutritions</string>
 		<key>DetailedRecipeDescription</key>
-		<string>Nordic berries are real super berries that contains lots of antioxidants and nutritions and they are super delicious in this dark blue smoothie. Why not experiment with some other nordic berries like red or black currants, raspberries or wild strawberries? Just switch the blueberries or blackberries with whatever nordic berry you have in your fridge, freezer or garden.</string>
+		<string>Nordic berries are real super berries that contains lots of antioxidants and nutritions and they are super delicious in this dark blue smoothie. Why not experiment with some other nordic berries like red or black currants, raspberries or wild strawberries? Just switch one of the berries in the recipe with whatever nordic berry you have in your fridge, freezer or in your garden.</string>
 		<key>BoosterDescription</key>
 		<string></string>
 		<key>Ingredients</key>
 		<array>
-			<string>One Banana</string>
+			<string>1 banana</string>
 			<string>1 dl of blueberries</string>
 			<string>1 dl of blackberries</string>
 			<string>1 table spoon of lingonberries</string>
@@ -78,21 +85,25 @@
 	<key>Recipe D</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Unbeatable</string>
+		<string>Unbeetable bowl</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
 		<key>RecipeDescription</key>
-		<string>Milk, yoghurt and a lot of berries</string>
+		<string>A creamy ruby-red smoothie</string>
 		<key>DetailedRecipeDescription</key>
-		<string></string>
+		<string>This ruby-red smoothie is rather creamy and can be served as a bowl topped with some extra banana, fresh berries, pumpkin seeds and some goji berries. Beets are known for being anti-inflammatory and detoxifying which is one of the reasons why we love to add it in this smoothie. Together with the acididy from the apple and lemon it tastes fantastic!</string>
 		<key>BoosterDescription</key>
 		<string></string>
 		<key>Ingredients</key>
 		<array>
-			<string>One Banana</string>
-			<string>1dl Acai</string>
+			<string>1 banana</string>
+			<string>2 dl of strawberries</string>
+			<string>2 dl of raspberries </string>
+			<string>1/2 dl of beet juice</string>
+			<string>Juice from 1 apple</string>
+			<string>Juice from 1/2 lemon</string>
 		</array>
 		<key>ImageName</key>
 		<string>UnBeatable_3x</string>
@@ -104,17 +115,22 @@
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>RecipeDescription</key>
-		<string>Milk, yoghurt and a lot of green berries</string>
+		<string>This rich and creamy smoothie is high in protein and is perfect after a workout</string>
 		<key>DetailedRecipeDescription</key>
-		<string></string>
+		<string>This rich and creamy smoothie is high in protein and is perfect after a workout or served as breakfast when you need some extra energy in the morning. The acididy in the raspberry sauce in the bottom of the glass complements the creaminess of the smoothie perfectly.</string>
 		<key>BoosterDescription</key>
 		<string></string>
 		<key>Ingredients</key>
 		<array>
-			<string>One Banana</string>
-			<string>1dl Acai</string>
+			<string>1 banana</string>
+			<string>1 dl of mango</string>
+			<string>1 tbls of nutbutter of your choice</string>
+			<string>1,5 dl of almond milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of raspberries </string>
+			<string>1 tsp of honey</string>
 		</array>
 		<key>ImageName</key>
 		<string>Nutty_2_3x</string>
@@ -126,13 +142,13 @@
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>RecipeDescription</key>
 		<string>A creamy yet refreshing green smoothie that will keep you satisfied for a long time.</string>
 		<key>DetailedRecipeDescription</key>
 		<string>A creamy yet refreshing green smoothie that will keep you satisfied for a long time. Perfect before or after a workout. Add some wheatgrass for extra nutrition. It contains potassium, phosphorus, chlorophyll, calcium, magnesium, minerals and vitamins.</string>
 		<key>BoosterDescription</key>
-		<string>Optional booster: 1 tea spoon of wheatgrass</string>
+		<string>Boost with 1 tea spoon of wheatgrass to cure cancer</string>
 		<key>Ingredients</key>
 		<array>
 			<string>One Banana</string>
@@ -143,6 +159,133 @@
 		</array>
 		<key>ImageName</key>
 		<string>GreenGodess_3x</string>
+	</dict>
+	<key>Recipe G</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Orange</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>1</integer>
+		<key>RecipeDescription</key>
+		<string>C-vitamin kick your life together</string>
+		<key>DetailedRecipeDescription</key>
+		<string>This smoothie is a real C-vitamin kick that will help to keep that cold away. Add some extra ginger to get some healthy heat in your smoothie. Not only will it taste good, it will also boost your immune system a little extra.</string>
+		<key>BoosterDescription</key>
+		<string>Boost with 1 cm of ginger to feel like you&apos;re on top of the world</string>
+		<key>Ingredients</key>
+		<array>
+			<string>Juice from 2 carrots</string>
+			<string>Juice from one orange</string>
+			<string>Juice from 1/2 lemon</string>
+			<string>2 dl mango</string>
+			<string>1,5 dl almond milk</string>
+		</array>
+		<key>ImageName</key>
+		<string>GreenGodess_3x</string>
+	</dict>
+	<key>Recipe H</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Chocolate raspberry shake</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>1</integer>
+		<key>RecipeDescription</key>
+		<string>Healthy candy!</string>
+		<key>DetailedRecipeDescription</key>
+		<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy. Raspberry and chocolate is a match made in heaven! </string>
+		<key>BoosterDescription</key>
+		<string>Add some macca powder for an extra energy kick!</string>
+		<key>Ingredients</key>
+		<array>
+			<string>Juice from 2 carrots</string>
+			<string>Juice from one orange</string>
+			<string>Juice from 1/2 lemon</string>
+			<string>2 dl mango</string>
+			<string>1,5 dl almond milk</string>
+		</array>
+		<key>ImageName</key>
+		<string>Chocolate raspberry shake</string>
+	</dict>
+	<key>Recipe I</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Chocolate raspberry shake</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>1</integer>
+		<key>RecipeDescription</key>
+		<string>Healthy candy!</string>
+		<key>DetailedRecipeDescription</key>
+		<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy. Raspberry and chocolate is a match made in heaven! </string>
+		<key>BoosterDescription</key>
+		<string>Add some macca powder for an extra energy kick!</string>
+		<key>Ingredients</key>
+		<array>
+			<string>Juice from 2 carrots</string>
+			<string>Juice from one orange</string>
+			<string>Juice from 1/2 lemon</string>
+			<string>2 dl mango</string>
+			<string>1,5 dl almond milk</string>
+		</array>
+		<key>ImageName</key>
+		<string>Chocolate raspberry shake</string>
+	</dict>
+	<key>Recipe J</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blueberry pie</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Antioxidant-packed smoothie</string>
+		<key>DetailedRecipeDescription</key>
+		<string>This antioxidant-packed smoothie is not only super healthy, it tastes like a delicious blueberry pie! Add some chia seeds for extra fiber and healthy fats that will keep you full longer.</string>
+		<key>BoosterDescription</key>
+		<string>Boost with 2 table spoons of soaked chia seeds!</string>
+		<key>Ingredients</key>
+		<array>
+			<string>1 banana</string>
+			<string>2 dl of blueberries</string>
+			<string>1,5 dl of almond milk</string>
+			<string>A teaspoon of agave</string>
+			<string>1,5 dl almond milk</string>
+			<string>A pinch of cinnamon and cardamom</string>
+		</array>
+		<key>ImageName</key>
+		<string>blueberrypie</string>
+	</dict>
+	<key>Recipe K</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Better than icecream</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Ice cream!</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Better than icecream</string>
 	</dict>
 </dict>
 </plist>

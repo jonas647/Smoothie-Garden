@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RecipeTableViewCell.h"
 
-@interface RecipeTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RecipeTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) NSArray *recipes;
 
 @end

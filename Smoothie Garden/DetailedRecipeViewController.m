@@ -8,6 +8,7 @@
 
 #import "DetailedRecipeViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ArchivingObject.h"
 
 @interface DetailedRecipeViewController ()
 
@@ -19,6 +20,8 @@
     NSString *recipeName;
     NSArray  *recipeInstructions;
     NSArray *ingredients;
+    ArchivingObject *archivingHelper;
+    float latestContentOffset;
     
 }
 
@@ -30,12 +33,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //Set all the properties with correct values
-    recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
-    titleName.text = self.selectedRecipe.recipeName;
-    recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
-    boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
-    ingredients = self.selectedRecipe.ingredients;
+    //Set all the properties with correct values, print log if it can't be found
+    if ([UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]]) {
+        recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
+    } else {
+        NSLog(@"Wrong class for %@", recipeImage);
+    }
+    if ([self.selectedRecipe.recipeName isKindOfClass:[NSString class]]) {
+        titleName.text = self.selectedRecipe.recipeName;
+    } else {
+        NSLog(@"Wrong class for %@", titleName);
+    }
+    if ([self.selectedRecipe.detailedRecipedescription isKindOfClass:[NSString class]]) {
+        recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;;
+    } else {
+        NSLog(@"Wrong class for %@", recipeDescriptionView);
+    }
+    if ([self.selectedRecipe.boosterDescription isKindOfClass:[NSString class]]) {
+        boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
+    } else {
+        NSLog(@"Wrong class for %@", boosterDescriptionView);
+    }
+    if ([self.selectedRecipe.ingredients isKindOfClass:[NSArray class]]) {
+        ingredients = self.selectedRecipe.ingredients;
+    } else {
+        NSLog(@"Wrong class for %@", ingredients);
+    }
     
     //Uncomment to Remove the navigation bar background for the detailed items
     /*
@@ -45,7 +68,7 @@
     */
     
     //If the recipe is one of the favorites, then make the like button selected
-    if ([[self favoriteRecipes]containsObject:self.selectedRecipe.recipeName]) {
+    if ([[archivingHelper favoriteRecipes]containsObject:self.selectedRecipe.recipeName]) {
         likeButton.selected = YES;
     }
     
@@ -66,17 +89,25 @@
     recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
     boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
     
+    
+    //Set the vertical spacing of the whitebackground to the height of the recipe image to make it positioned just under it
+    //[whiteBackgroundVerticalPositioningConstraint setConstant:recipeImage.frame.size.height];
+    
     //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
     [recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
     [boosterDescriptionHeightConstraint setConstant:boosterDescriptionView.frame.size.height];
     
-    
     //Must have the view as selectable in storyboard to get the font working (Apple bug)
     recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
     
-  
+    
+    //Setup the archiving object
+    archivingHelper = [[ArchivingObject alloc]init];
+    /*
+    [contentViewHeightConstraint setConstant:(ingredientsHeightConstraint.constant+recipeDescriptionHeightConstraint.constant+boosterDescriptionHeightConstraint.constant)*2];
+    NSLog(@"Content view height: %f", contentViewHeightConstraint.constant);*/
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -91,6 +122,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Updating frames
+
 - (CGRect) newFrameForUIView: (UIView* ) view {
 
     //Change the height of the UIView
@@ -100,6 +133,25 @@
     newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
 
     return newFrame;
+}
+
+- (CGRect)zoomRectForImageView:(UIImageView *)imageView withScale:(float)scale withCenter:(CGPoint)center {
+    
+    CGRect zoomRect;
+    
+    // The zoom rect is in the content view's coordinates.
+    // At a zoom scale of 1.0, it would be the size of the
+    // imageScrollView's bounds.
+    // As the zoom scale decreases, so more content is visible,
+    // the size of the rect grows.
+    zoomRect.size.height = imageView.frame.size.height / scale;
+    zoomRect.size.width  = imageView.frame.size.width  / scale;
+    
+    // choose an origin so as to get the right center.
+    zoomRect.origin.x = center.x - (zoomRect.size.width  / 2.0);
+    zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
+    
+    return zoomRect;
 }
 
 
@@ -112,6 +164,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Delegates
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if(scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y <= 150.0) {
+        float percent = (scrollView.contentOffset.y / 150.0);
+        whiteBackground.alpha = percent;
+        
+    } else if (scrollView.contentOffset.y > 150.0){
+        whiteBackground.alpha = 1;
+        float percent = (scrollView.contentOffset.y / 150.0);
+        
+    } else if (scrollView.contentOffset.y < 0) {
+        // do other ... ;
+    }
+    
+    //Never allow an alpha level of lower than 0.6
+    if (whiteBackground.alpha<0.60f) {
+        whiteBackground.alpha = 0.60f;
+    }
+    
+}
 
 #pragma mark - Table View Delegate
 
@@ -156,74 +230,40 @@
     if (!likeButton.selected) {
         
         //Add recipe to the favorites
-        [self addRecipeToFavorites:self.selectedRecipe];
+        [archivingHelper addRecipeToFavorites:self.selectedRecipe];
         
         //Change the like button to selected
         likeButton.selected = YES;
         
     } else if (likeButton.selected){
         //Remove recipe from favorites
-        [self removeRecipeFromFavorites:self.selectedRecipe];
+        [archivingHelper removeRecipeFromFavorites:self.selectedRecipe];
         
         //Change the like button to unselected
         likeButton.selected = NO;
     }
     
+    [self animateLikeButton];
 }
 
-- (NSArray*) favoriteRecipes {
+- (void) animateLikeButton {
     
-    return [[NSUserDefaults standardUserDefaults]arrayForKey:@"FavoriteRecipes"];
+    CGRect likeButtonFrame = likeButton.frame;
+    
+    [UIView animateWithDuration:1.5
+                          delay:0.1
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^
+     {
+         [likeButton setFrame:CGRectMake(likeButtonFrame.origin.x, likeButtonFrame.origin.y, likeButtonFrame.size.width*2, likeButtonFrame.size.height*2)];
+     }
+                     completion:^(BOOL finished)
+     {
+         //[likeButton setFrame:likeButtonFrame];
+     }];
     
 }
 
-- (void) setNewFavoriteRecipes: (NSArray*) newRecipes {
-    
-    [[NSUserDefaults standardUserDefaults]setObject:newRecipes forKey:@"FavoriteRecipes"];
-    
-}
-
-- (void) removeRecipeFromFavorites: (Recipe*) recipeToRemove {
-    
-    NSMutableArray *tempDeleteRecipe = [[NSMutableArray alloc]init];
-
-    for (NSString *recipe in [self favoriteRecipes]) {
-        if ([recipeToRemove.recipeName isEqualToString:recipe]) {
-            [tempDeleteRecipe addObject:recipe];
-        }
-    }
-    
-    NSMutableArray *tempFavoriteRecipes = [NSMutableArray arrayWithArray:[self favoriteRecipes]];
-    
-    if (tempDeleteRecipe.count>0) {
-        [tempFavoriteRecipes removeObjectsInArray:tempDeleteRecipe];
-    }
-    
-    //Set the new favorite recipes
-    [self setNewFavoriteRecipes:[NSArray arrayWithArray:tempFavoriteRecipes]];
-}
-
-- (void) addRecipeToFavorites:(Recipe*) newRecipe {
-    
-    //Load the favorite recipes array
-    NSMutableArray *tempFavoriteRecipes;
-    if ([self favoriteRecipes].count>0) {
-        tempFavoriteRecipes = [[NSMutableArray alloc]initWithArray:[self favoriteRecipes]];
-    } else {
-        tempFavoriteRecipes = [[NSMutableArray alloc]init];
-    }
-    
-    //Check if the array already hold this recipe, if not then add it
-    if (![tempFavoriteRecipes containsObject:newRecipe.recipeName]) {
-        [tempFavoriteRecipes addObject:newRecipe.recipeName];
-    }
-    
-    NSArray *newFavoriteRecipes = [tempFavoriteRecipes copy];
-    
-    //Set the new favorite recipes
-    [self setNewFavoriteRecipes:newFavoriteRecipes];
-    
-}
 
 
 

@@ -12,7 +12,7 @@
 @interface DetailedRecipeViewController : UIViewController
 {
     __weak IBOutlet UIView *contentView;
-    IBOutlet UIScrollView *scrollView;
+    //IBOutlet UIScrollView *scrollView;
     
     __weak IBOutlet UITableView *ingredientsTableView;
     __weak IBOutlet UILabel *titleName;
@@ -28,9 +28,15 @@
     __weak IBOutlet UITextView *boosterDescriptionView;
     __weak IBOutlet NSLayoutConstraint *boosterDescriptionHeightConstraint;
     
+    __weak IBOutlet UIView *whiteBackground;
+    __weak IBOutlet NSLayoutConstraint *whiteBackgroundVerticalPositioningConstraint;
+    __weak IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
+    
+    
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;
+
 - (IBAction)likeRecipe:(id)sender;
 
 @end
