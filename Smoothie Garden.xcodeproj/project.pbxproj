@@ -57,6 +57,7 @@
 		DFCB1DCA1B6E4B5C009FCAA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */; };
 		DFCB1DCD1B6E4B5C009FCAA3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */; };
 		DFCB1DD91B6E4B5C009FCAA3 /* Smoothie_GardenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */; };
+		DFF852B61BCD76C90009093F /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF852B51BCD76C90009093F /* SettingsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		DFCB1DD21B6E4B5C009FCAA3 /* Smoothie GardenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smoothie GardenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCB1DD71B6E4B5C009FCAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smoothie_GardenTests.m; sourceTree = "<group>"; };
+		DFF852B41BCD76C90009093F /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		DFF852B51BCD76C90009093F /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				DF471DF01BCC531A0002EC8B /* SidebarDetailedTableViewController.m */,
 				DF471DFA1BCC5E8E0002EC8B /* AboutTableViewController.h */,
 				DF471DFB1BCC5E8E0002EC8B /* AboutTableViewController.m */,
+				DFF852B41BCD76C90009093F /* SettingsTableViewController.h */,
+				DFF852B51BCD76C90009093F /* SettingsTableViewController.m */,
 			);
 			name = Sidebar;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */,
 				DF471DD81BBB2D470002EC8B /* PageContentViewController.m in Sources */,
 				DF471DEB1BCA848B0002EC8B /* SidebarViewController.m in Sources */,
+				DFF852B61BCD76C90009093F /* SettingsTableViewController.m in Sources */,
 				DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */,
 				DFCB1DC21B6E4B5C009FCAA3 /* FirstViewController.m in Sources */,
 				DF471DFC1BCC5E8E0002EC8B /* AboutTableViewController.m in Sources */,
