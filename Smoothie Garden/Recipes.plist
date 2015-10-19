@@ -213,24 +213,25 @@ Top this smoothie with goji berries and lime cezt.</string>
 	<key>Recipe I</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Chocolate raspberry shake</string>
+		<string>Green machine</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>1</integer>
 		<key>RecipeDescription</key>
-		<string>Healthy candy!</string>
+		<string>Dark green leafy vegetables are good sources of many vitamins</string>
 		<key>DetailedRecipeDescription</key>
-		<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy. Raspberry and chocolate is a match made in heaven! </string>
+		<string>Serve this healthy green smoothie as a light lunch- it will keep you full longer than you think. Adding some green leafs in your smoothie is a great way to increase the daily intake of vegetables. Dark green leafy vegetables are good sources of many vitamins (such as vitamins A, C, K and folate) and minerals (such as iron and calcium). If you don&apos;t have buckthorn at home it can be replaced with lemon juice.</string>
 		<key>BoosterDescription</key>
-		<string>Add some macca powder for an extra energy kick!</string>
+		<string>Add some spirulina to this smoothie for extra nutrition.</string>
 		<key>Ingredients</key>
 		<array>
-			<string>Juice from 2 carrots</string>
-			<string>Juice from one orange</string>
-			<string>Juice from 1/2 lemon</string>
-			<string>2 dl mango</string>
-			<string>1,5 dl almond milk</string>
+			<string>1 frozen banana</string>
+			<string>1/2 avokado</string>
+			<string>1 dl of baby spinach</string>
+			<string>1/2 apple</string>
+			<string>Juice from 2 oranges</string>
+			<string>1 tbls of buckthorn</string>
 		</array>
 		<key>ImageName</key>
 		<string>Chocolate raspberry shake</string>

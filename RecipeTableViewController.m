@@ -35,9 +35,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //This is needed for the reveal controller to work
+    SWRevealViewController *revealController = [self revealViewController];
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
     
+    //Set the target for the main menu button
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sideBarButton setTarget: self.revealViewController];
+        [self.sideBarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    
+    //Adjust the tableview
     self.tableView.sectionHeaderHeight = 0.0;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,14 +63,7 @@
     
     //self.navigationController.hidesBarsOnSwipe = true;
     
-    //Set the target for the main menu button
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.sideBarButton setTarget: self.revealViewController];
-        [self.sideBarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
+    
     
     //Setup the archiving object
     archiveHelper = [[ArchivingObject alloc]init];
@@ -67,8 +75,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
     
-    
+    //When the user comes back to the table view after selecting a recipe she should not see the search window
+    [self.searchController setActive:NO];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -198,6 +210,15 @@
     self.searchController.searchBar.delegate = self;
     self.searchController.delegate = self;
     
+    //Set the background color of the search bar to a lighter color
+    
+    [self.searchController.searchBar setTintColor:[UIColor darkGrayColor]];
+    [self.searchController.searchBar setBarTintColor:[UIColor whiteColor]];
+    
+    [self.searchController.searchBar setAlpha:1.0];
+    
+    self.searchController.searchBar.placeholder = @"Search for ingredients or title";
+
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
     [self.searchController.searchBar sizeToFit];
@@ -262,13 +283,15 @@
     }
     
     //Get the recipes to search among
-    NSArray *recipeSearch = [self recipesFromPlist];
+    //TODO, should not get a new list every time, instead have a current list to work with
+    NSMutableArray *recipeSearch = (NSMutableArray*)[self recipesFromPlist];
     
     //
     //Start with searching for the recipe titles
     //
     
     //Iterate all recipes and save the titles in a new array
+    //Save the recipe name and not the recipe itself since that's what the user searches for
     NSMutableArray *searchResults = [[NSMutableArray alloc]init];
     for (Recipe *r in recipeSearch) {
         [searchResults addObject:r.recipeName];
@@ -277,6 +300,7 @@
     //Match with the search titles
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText]; // if you need case sensitive search avoid '[c]' in the predicate
     
+    //An array that holds all the recipe titles that matches the user search
     NSArray *recipeTitleResults = [searchResults filteredArrayUsingPredicate:predicate];
     
     //Iterate the results to find the recipes that match
@@ -285,10 +309,13 @@
         for (Recipe *tempRecipe in recipeSearch) {
             if ([tempRecipe.recipeName isEqualToString:title]) {
                 [filteredRecipes addObject:tempRecipe];
-                
             }
         }
     }
+    
+    //Remove the found recipes from the recipeSearch so that it only contains recipes that aren't yet matched
+    [recipeSearch removeObjectsInArray:filteredRecipes];
+    
     
     //
     //Then search for the ingredients
@@ -304,10 +331,8 @@
             //Add to the filtered recipes if it isn't already added
             if (![filteredRecipes containsObject:tempRecipe]) {
                 [filteredRecipes addObject:tempRecipe];
-                
             }
         }
-        
     }
     
     // hand over the filtered results to our search results table
@@ -340,14 +365,13 @@
     static NSString *tableCellIdentifier = @"RecipeTableCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCellIdentifier];
     
-    
     // Configure the cell...
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellIdentifier];
     }
     
-    //Dummy code to just show different images
+    //cell.backgroundColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
     
     UIImageView *imv = (UIImageView *)[cell viewWithTag:100];
     UILabel *titel = (UILabel *)[cell viewWithTag:101];
@@ -360,19 +384,26 @@
     
     
     //Check if the IAP has been purchased and if recipes should be unlocked
+    //TODO
     
+    NSLog(@"%@ recipe category: %i", recipeForRow.recipeName, recipeForRow.recipeCategory);
     
+    float alphaValue;
     if (recipeForRow.recipeCategory==1) {
         //Recipe Category 0 means that it's free
         //Recipe Category 1 means that it's locked
+        //Show the locked ones with transparent background
         
-        float alphaValue = 0.18;
-        [imv setAlpha:alphaValue];
-        [titel setAlpha:alphaValue];
-        [desc setAlpha:alphaValue];
+        alphaValue = 0.18;
         
+        
+    } else if (recipeForRow.recipeCategory == 0) {
+        alphaValue = 1;
     }
     
+    [imv setAlpha:alphaValue];
+    [titel setAlpha:alphaValue];
+    [desc setAlpha:alphaValue];
     
     return cell;
 }
@@ -384,9 +415,10 @@
     Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     
     if (selRecipe.recipeCategory == 0) {
+        //Move to screen that shows the recipe
         [self performSegueWithIdentifier:@"showRecipeSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
     } else if (selRecipe.recipeCategory == 1) {
-        //Create UIAlertView and ask the user if he wants to purchase the recipes
+        //Move to screen for in app purchases
         
         [self performSegueWithIdentifier:@"InAppPurchaseSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
         /*

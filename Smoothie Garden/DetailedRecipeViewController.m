@@ -91,7 +91,8 @@
     
     
     //Set the vertical spacing of the whitebackground to the height of the recipe image to make it positioned just under it
-    //[whiteBackgroundVerticalPositioningConstraint setConstant:recipeImage.frame.size.height];
+    //TODO change this to be dependent on the height of the image instead
+    [whiteBackgroundVerticalPositioningConstraint setConstant:self.view.frame.size.width*0.8];
     
     //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
@@ -102,12 +103,13 @@
     recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
     
-    
     //Setup the archiving object
     archivingHelper = [[ArchivingObject alloc]init];
-    /*
-    [contentViewHeightConstraint setConstant:(ingredientsHeightConstraint.constant+recipeDescriptionHeightConstraint.constant+boosterDescriptionHeightConstraint.constant)*2];
-    NSLog(@"Content view height: %f", contentViewHeightConstraint.constant);*/
+    
+    //[contentViewHeightConstraint setConstant:(ingredientsTableView.frame.size.height + recipeDescriptionView.frame.size.height +boosterDescriptionView.frame.size.height)];
+    NSLog(@"Content view height: %f", contentViewHeightConstraint.constant);
+    NSLog(@"White background height: %f", whiteBackgroundVerticalPositioningConstraint.constant);
+    NSLog(@"Image height: %f", recipeImage.frame.size.height);
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -168,13 +170,17 @@
 #pragma mark - Delegates
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    if(scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y <= 150.0) {
-        float percent = (scrollView.contentOffset.y / 150.0);
+    //TODO
+    //Change this to be dependent on the image instead
+    float offsetLimit = self.view.frame.size.width*0.75;
+    
+    if(scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y <= offsetLimit) {
+        float percent = (scrollView.contentOffset.y / offsetLimit);
         whiteBackground.alpha = percent;
         
-    } else if (scrollView.contentOffset.y > 150.0){
+    } else if (scrollView.contentOffset.y > offsetLimit){
         whiteBackground.alpha = 1;
-        float percent = (scrollView.contentOffset.y / 150.0);
+        //float percent = (scrollView.contentOffset.y / 150.0);
         
     } else if (scrollView.contentOffset.y < 0) {
         // do other ... ;

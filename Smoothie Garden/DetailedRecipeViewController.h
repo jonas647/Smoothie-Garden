@@ -32,7 +32,6 @@
     __weak IBOutlet NSLayoutConstraint *whiteBackgroundVerticalPositioningConstraint;
     __weak IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
     
-    
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;

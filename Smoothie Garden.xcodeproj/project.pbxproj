@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF1FC42B1B9331F9007F9A0F /* SmoothieTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */; };
 		DF1FC42D1B98D8C8007F9A0F /* Recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF1FC42C1B98D8C8007F9A0F /* Recipes.plist */; };
 		DF379A3A1BA8B9C00092EA47 /* ContentHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */; };
 		DF459B181BA0CE57002F3162 /* Cocoapuchino_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF459B141BA0CE57002F3162 /* Cocoapuchino_3x.png */; };
@@ -71,8 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF1FC4291B9331F9007F9A0F /* SmoothieTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothieTabBarViewController.h; sourceTree = "<group>"; };
-		DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothieTabBarViewController.m; sourceTree = "<group>"; };
 		DF1FC42C1B98D8C8007F9A0F /* Recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Recipes.plist; sourceTree = "<group>"; };
 		DF379A381BA8B9C00092EA47 /* ContentHeightTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentHeightTextView.h; sourceTree = "<group>"; };
 		DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentHeightTextView.m; sourceTree = "<group>"; };
@@ -182,8 +179,6 @@
 				DF5B55CC1B73C4EB00F27092 /* RecipeTableViewController.m */,
 				DF9C5BEB1B77980100B46B9D /* DetailedRecipeViewController.h */,
 				DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */,
-				DF1FC4291B9331F9007F9A0F /* SmoothieTabBarViewController.h */,
-				DF1FC42A1B9331F9007F9A0F /* SmoothieTabBarViewController.m */,
 				DF379A381BA8B9C00092EA47 /* ContentHeightTextView.h */,
 				DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */,
 			);
@@ -466,7 +461,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF1FC42B1B9331F9007F9A0F /* SmoothieTabBarViewController.m in Sources */,
 				DF471DDE1BBB2F8F0002EC8B /* PageViewRootViewController.m in Sources */,
 				DF5B55CD1B73C4EB00F27092 /* RecipeTableViewController.m in Sources */,
 				DF9C5BEA1B778CD900B46B9D /* Recipe.m in Sources */,
