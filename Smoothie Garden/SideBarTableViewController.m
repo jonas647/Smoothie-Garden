@@ -7,6 +7,7 @@
 //
 
 #import "sidebarTableViewController.h"
+#import "SWRevealViewController.h"
 
 @interface sidebarTableViewController ()
 
@@ -26,6 +27,21 @@
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"unbeatable_standing_3x.png"]];
     [tempImageView setFrame:self.tableView.frame];
     self.tableView.backgroundView = tempImageView;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    
+    //Disable interaction with the front view controller when the side menu is shown
+    [self.revealViewController.frontViewController.view setUserInteractionEnabled:NO];
+    
+    //This is needed for the gesture to work. Not sure why.
+    [self.revealViewController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    
+    //Enable the interaction with the front view controller when the side menu is gone
+    [self.revealViewController.frontViewController.view setUserInteractionEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {

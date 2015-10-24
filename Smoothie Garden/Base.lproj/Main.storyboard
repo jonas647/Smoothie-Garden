@@ -735,34 +735,34 @@
         <scene sceneID="COc-tP-9ra">
             <objects>
                 <tableViewController id="zs4-CG-fjm" customClass="RecipeTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" id="b7t-rV-Yjm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="175" sectionHeaderHeight="22" sectionFooterHeight="22" id="b7t-rV-Yjm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeTableCell" rowHeight="139" id="pXQ-p3-zX4">
-                                <rect key="frame" x="0.0" y="86" width="600" height="139"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeTableCell" id="pXQ-p3-zX4">
+                                <rect key="frame" x="0.0" y="86" width="600" height="175"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pXQ-p3-zX4" id="rbn-AA-QFE">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="138.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="174.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Smoothie" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpf-3Y-pUJ" userLabel="Titel">
-                                            <rect key="frame" x="178" y="8" width="414" height="22"/>
+                                            <rect key="frame" x="211.5" y="8" width="380.5" height="22"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tropical.png" translatesAutoresizingMaskIntoConstraints="NO" id="NsZ-8L-8IF" userLabel="Image">
-                                            <rect key="frame" x="8" y="1" width="162" height="130.5"/>
+                                            <rect key="frame" x="8" y="1" width="195.5" height="157"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NsZ-8L-8IF" secondAttribute="height" multiplier="124:100" id="CYL-ez-HBx"/>
-                                                <constraint firstAttribute="height" constant="130.5" id="DX1-W9-f9r"/>
                                             </constraints>
                                         </imageView>
                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Short text describing the smoothie" translatesAutoresizingMaskIntoConstraints="NO" id="aL4-Px-qNR" userLabel="Description text">
-                                            <rect key="frame" x="178" y="31" width="414" height="30.5"/>
+                                            <rect key="frame" x="211.5" y="31" width="380.5" height="30.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <variation key="heightClass=regular" fixedFrame="YES">
@@ -782,6 +782,7 @@
                                         <constraint firstAttribute="bottom" secondItem="W91-9E-bT4" secondAttribute="bottom" constant="-4" id="AdL-2x-bxW"/>
                                         <constraint firstItem="NsZ-8L-8IF" firstAttribute="leading" secondItem="rbn-AA-QFE" secondAttribute="leading" constant="8" id="BaA-jF-LlV"/>
                                         <constraint firstItem="aL4-Px-qNR" firstAttribute="leading" secondItem="NsZ-8L-8IF" secondAttribute="trailing" constant="8" id="BkP-5x-rQX"/>
+                                        <constraint firstItem="NsZ-8L-8IF" firstAttribute="height" secondItem="rbn-AA-QFE" secondAttribute="height" multiplier="0.9" id="Q56-9Z-St9"/>
                                         <constraint firstItem="dpf-3Y-pUJ" firstAttribute="leading" secondItem="NsZ-8L-8IF" secondAttribute="trailing" constant="8" id="ZOO-qd-0GT"/>
                                         <constraint firstItem="dpf-3Y-pUJ" firstAttribute="top" secondItem="rbn-AA-QFE" secondAttribute="top" constant="8" id="ZZY-O2-m1n"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="dpf-3Y-pUJ" secondAttribute="trailing" id="ef4-3a-Ego"/>

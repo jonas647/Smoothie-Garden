@@ -29,7 +29,7 @@
 		DF471DE61BC710270002EC8B /* blueberrypie.png in Resources */ = {isa = PBXBuildFile; fileRef = DF471DE51BC710270002EC8B /* blueberrypie.png */; settings = {ASSET_TAGS = (); }; };
 		DF471DE81BC715030002EC8B /* Better than icecream.png in Resources */ = {isa = PBXBuildFile; fileRef = DF471DE71BC715030002EC8B /* Better than icecream.png */; settings = {ASSET_TAGS = (); }; };
 		DF471DEB1BCA848B0002EC8B /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DEA1BCA848B0002EC8B /* SidebarViewController.m */; settings = {ASSET_TAGS = (); }; };
-		DF471DEE1BCA8D2D0002EC8B /* sidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DED1BCA8D2D0002EC8B /* sidebarTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DF471DEE1BCA8D2D0002EC8B /* SideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DED1BCA8D2D0002EC8B /* SideBarTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DF471DF11BCC531A0002EC8B /* SidebarDetailedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DF01BCC531A0002EC8B /* SidebarDetailedTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DF471DF31BCC5AC00002EC8B /* Instagram_Icon_Large.png in Resources */ = {isa = PBXBuildFile; fileRef = DF471DF21BCC5AC00002EC8B /* Instagram_Icon_Large.png */; settings = {ASSET_TAGS = (); }; };
 		DF471DF51BCC5B1F0002EC8B /* ThumbFinal_4.9.15.png in Resources */ = {isa = PBXBuildFile; fileRef = DF471DF41BCC5B1F0002EC8B /* ThumbFinal_4.9.15.png */; settings = {ASSET_TAGS = (); }; };
@@ -96,8 +96,8 @@
 		DF471DE71BC715030002EC8B /* Better than icecream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Better than icecream.png"; sourceTree = "<group>"; };
 		DF471DE91BCA848B0002EC8B /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		DF471DEA1BCA848B0002EC8B /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
-		DF471DEC1BCA8D2D0002EC8B /* sidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sidebarTableViewController.h; sourceTree = "<group>"; };
-		DF471DED1BCA8D2D0002EC8B /* sidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sidebarTableViewController.m; sourceTree = "<group>"; };
+		DF471DEC1BCA8D2D0002EC8B /* SideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewController.h; sourceTree = "<group>"; };
+		DF471DED1BCA8D2D0002EC8B /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewController.m; sourceTree = "<group>"; };
 		DF471DEF1BCC531A0002EC8B /* SidebarDetailedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarDetailedTableViewController.h; sourceTree = "<group>"; };
 		DF471DF01BCC531A0002EC8B /* SidebarDetailedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarDetailedTableViewController.m; sourceTree = "<group>"; };
 		DF471DF21BCC5AC00002EC8B /* Instagram_Icon_Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram_Icon_Large.png; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 			children = (
 				DF471DE91BCA848B0002EC8B /* SidebarViewController.h */,
 				DF471DEA1BCA848B0002EC8B /* SidebarViewController.m */,
-				DF471DEC1BCA8D2D0002EC8B /* sidebarTableViewController.h */,
-				DF471DED1BCA8D2D0002EC8B /* sidebarTableViewController.m */,
+				DF471DEC1BCA8D2D0002EC8B /* SideBarTableViewController.h */,
+				DF471DED1BCA8D2D0002EC8B /* SideBarTableViewController.m */,
 				DF471DEF1BCC531A0002EC8B /* SidebarDetailedTableViewController.h */,
 				DF471DF01BCC531A0002EC8B /* SidebarDetailedTableViewController.m */,
 				DF471DFA1BCC5E8E0002EC8B /* AboutTableViewController.h */,
@@ -468,7 +468,7 @@
 				DF379A3A1BA8B9C00092EA47 /* ContentHeightTextView.m in Sources */,
 				DFCB1DC51B6E4B5C009FCAA3 /* SecondViewController.m in Sources */,
 				DFCB1DBF1B6E4B5C009FCAA3 /* AppDelegate.m in Sources */,
-				DF471DEE1BCA8D2D0002EC8B /* sidebarTableViewController.m in Sources */,
+				DF471DEE1BCA8D2D0002EC8B /* SideBarTableViewController.m in Sources */,
 				DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */,
 				DF471DD81BBB2D470002EC8B /* PageContentViewController.m in Sources */,
 				DF471DEB1BCA848B0002EC8B /* SidebarViewController.m in Sources */,

@@ -53,6 +53,7 @@
     self.tableView.sectionHeaderHeight = 0.0;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.scrollsToTop = YES;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -477,13 +478,6 @@
     
     //Reload the table so that the recipe disappears
     [self.tableView reloadData];
-}
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    //If the view is scrolled
-    
 }
 
 /*
