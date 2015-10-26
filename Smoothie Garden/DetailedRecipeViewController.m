@@ -110,6 +110,24 @@
     NSLog(@"Content view height: %f", contentViewHeightConstraint.constant);
     NSLog(@"White background height: %f", whiteBackgroundVerticalPositioningConstraint.constant);
     NSLog(@"Image height: %f", recipeImage.frame.size.height);
+    
+    //Hide the navigation bar
+    /*
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+     */
+    
+    //Hide the navigation bar
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];
+    UIImage *tempImage = [[UIImage alloc]init];
+    [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
+    
+    //Change status bar appearance
 }
 
 - (void) viewWillAppear:(BOOL)animated {

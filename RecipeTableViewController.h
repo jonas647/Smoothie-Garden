@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecipeTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+@interface RecipeTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UIScrollViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;

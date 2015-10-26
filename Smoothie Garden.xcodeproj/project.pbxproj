@@ -56,6 +56,7 @@
 		DFCB1DCA1B6E4B5C009FCAA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */; };
 		DFCB1DCD1B6E4B5C009FCAA3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */; };
 		DFCB1DD91B6E4B5C009FCAA3 /* Smoothie_GardenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */; };
+		DFE8C7971BDD02A2006DA9D4 /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE8C7961BDD02A2006DA9D4 /* RecipeTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		DFF852B61BCD76C90009093F /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF852B51BCD76C90009093F /* SettingsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,8 @@
 		DFCB1DD21B6E4B5C009FCAA3 /* Smoothie GardenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smoothie GardenTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCB1DD71B6E4B5C009FCAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smoothie_GardenTests.m; sourceTree = "<group>"; };
+		DFE8C7951BDD02A2006DA9D4 /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
+		DFE8C7961BDD02A2006DA9D4 /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
 		DFF852B41BCD76C90009093F /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		DFF852B51BCD76C90009093F /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +184,8 @@
 				DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */,
 				DF379A381BA8B9C00092EA47 /* ContentHeightTextView.h */,
 				DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */,
+				DFE8C7951BDD02A2006DA9D4 /* RecipeTableViewCell.h */,
+				DFE8C7961BDD02A2006DA9D4 /* RecipeTableViewCell.m */,
 			);
 			name = "Custom UIViews";
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */,
 				DF471DD81BBB2D470002EC8B /* PageContentViewController.m in Sources */,
 				DF471DEB1BCA848B0002EC8B /* SidebarViewController.m in Sources */,
+				DFE8C7971BDD02A2006DA9D4 /* RecipeTableViewCell.m in Sources */,
 				DFF852B61BCD76C90009093F /* SettingsTableViewController.m in Sources */,
 				DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */,
 				DFCB1DC21B6E4B5C009FCAA3 /* FirstViewController.m in Sources */,

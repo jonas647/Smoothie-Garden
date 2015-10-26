@@ -12,8 +12,9 @@
 #import "SWRevealViewController.h"
 #import "ArchivingObject.h"
 #import <QuartzCore/QuartzCore.h>
+#import "RecipeTableViewCell.h"
 
-#define CELL_HEIGHT 176
+//#define CELL_HEIGHT 176
 
 #define TAB_BAR_ALL 1000
 #define TAB_BAR_FAV 1001
@@ -50,9 +51,9 @@
     }
     
     //Adjust the tableview
-    self.tableView.sectionHeaderHeight = 0.0;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    //self.tableView.sectionHeaderHeight = 0.0;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.scrollsToTop = YES;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -61,28 +62,31 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
-    //self.navigationController.hidesBarsOnSwipe = true;
-    
-    
-    
     //Setup the archiving object
     archiveHelper = [[ArchivingObject alloc]init];
     
-    //Remove the title text from the back button
+    //Remove the title text from the back button (in the Detailed recipe table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    
+    //Reset the navigation bar, set back to being shown
+    [self.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
     //When the user comes back to the table view after selecting a recipe she should not see the search window
     [self.searchController setActive:NO];
+    
 }
+
+
 
 - (void) viewDidAppear:(BOOL)animated {
     
@@ -361,18 +365,17 @@
     return [self.recipes count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *tableCellIdentifier = @"RecipeTableCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCellIdentifier];
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCellIdentifier];
     
     // Configure the cell...
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellIdentifier];
+        cell = [[RecipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellIdentifier];
     }
-    
-    //cell.backgroundColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    /*
+    cell.backgroundColor = [UIColor darkGrayColor];
     
     UIImageView *imv = (UIImageView *)[cell viewWithTag:100];
     UILabel *titel = (UILabel *)[cell viewWithTag:101];
@@ -381,13 +384,20 @@
     Recipe *recipeForRow = [self.recipes objectAtIndex:indexPath.row];
     titel.text = recipeForRow.recipeName;
     desc.text = recipeForRow.recipeDescription;
+    titel.textColor = [UIColor whiteColor];
+    desc.textColor = [UIColor whiteColor];
     imv.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
+    */
+    
+    
+    Recipe *recipeForRow = [self.recipes objectAtIndex:indexPath.row];
+    cell.recipeTitle.text = recipeForRow.recipeName;
+    cell.recipeDescription.text = recipeForRow.recipeDescription;
+    cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
     
     
     //Check if the IAP has been purchased and if recipes should be unlocked
     //TODO
-    
-    NSLog(@"%@ recipe category: %i", recipeForRow.recipeName, recipeForRow.recipeCategory);
     
     float alphaValue;
     if (recipeForRow.recipeCategory==1) {
@@ -402,9 +412,9 @@
         alphaValue = 1;
     }
     
-    [imv setAlpha:alphaValue];
-    [titel setAlpha:alphaValue];
-    [desc setAlpha:alphaValue];
+    //[cell.recipeTitle setAlpha:alphaValue];
+    //[cell.recipeDescription setAlpha:alphaValue];
+    [cell.recipeImage setAlpha:alphaValue];
     
     return cell;
 }
@@ -522,6 +532,24 @@
 }
 */
 
+#pragma mark - Scroll view delegate
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    float offsetY = self.tableView.contentOffset.y;
+    
+    for (RecipeTableViewCell *cell in self.tableView.visibleCells) {
+        
+        float x = cell.recipeImage.frame.origin.x;
+        float w = cell.recipeImage.frame.size.width;
+        float h = cell.recipeImage.frame.size.height;
+        float y = ((offsetY - cell.frame.origin.y) / h) * 25;
+        
+        cell.recipeImage.frame = CGRectMake(x, y, w, h);
+        
+    }
+    
+}
 
 #pragma mark - Navigation
 
