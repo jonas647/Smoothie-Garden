@@ -974,7 +974,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenDetox_3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="McU-NN-rTA" userLabel="Image">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="479.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="McU-NN-rTA" secondAttribute="width" multiplier="80:100" id="Jyb-fb-lZK"/>
                                 </constraints>
@@ -1213,7 +1213,9 @@
                             <constraint firstAttribute="width" secondItem="mug-nL-aG1" secondAttribute="width" id="6gI-gU-gBK"/>
                             <constraint firstItem="8yg-fJ-t4b" firstAttribute="top" secondItem="7QN-ar-Oen" secondAttribute="topMargin" id="6ge-rV-uCw"/>
                             <constraint firstAttribute="trailing" secondItem="8yg-fJ-t4b" secondAttribute="trailing" id="BxQ-Bf-49U"/>
+                            <constraint firstItem="McU-NN-rTA" firstAttribute="width" secondItem="7QN-ar-Oen" secondAttribute="width" priority="900" id="JUO-8C-sSK"/>
                             <constraint firstItem="5eK-rL-6ML" firstAttribute="leading" secondItem="7QN-ar-Oen" secondAttribute="leading" id="LqB-tg-PiH"/>
+                            <constraint firstItem="LRO-gj-q9r" firstAttribute="top" relation="lessThanOrEqual" secondItem="McU-NN-rTA" secondAttribute="bottom" id="UoE-Ts-rFV"/>
                             <constraint firstItem="McU-NN-rTA" firstAttribute="centerX" secondItem="7QN-ar-Oen" secondAttribute="centerX" id="bcJ-jP-Kj1"/>
                             <constraint firstItem="nAn-BD-Tt7" firstAttribute="centerX" secondItem="7QN-ar-Oen" secondAttribute="centerX" id="iiA-eU-97Q"/>
                             <constraint firstItem="LRO-gj-q9r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5eK-rL-6ML" secondAttribute="bottom" id="ll0-gX-VOj"/>
@@ -1221,7 +1223,7 @@
                             <constraint firstItem="8yg-fJ-t4b" firstAttribute="leading" secondItem="7QN-ar-Oen" secondAttribute="leading" id="nrl-h7-aMB"/>
                             <constraint firstItem="nAn-BD-Tt7" firstAttribute="width" secondItem="7QN-ar-Oen" secondAttribute="width" multiplier="0.4" id="ohe-uM-p4k"/>
                             <constraint firstItem="5eK-rL-6ML" firstAttribute="top" secondItem="7QN-ar-Oen" secondAttribute="topMargin" id="qTM-ca-UAf"/>
-                            <constraint firstItem="McU-NN-rTA" firstAttribute="width" secondItem="7QN-ar-Oen" secondAttribute="width" id="wlt-fL-jre"/>
+                            <constraint firstItem="McU-NN-rTA" firstAttribute="width" relation="greaterThanOrEqual" secondItem="7QN-ar-Oen" secondAttribute="width" priority="901" id="wlt-fL-jre"/>
                             <constraint firstItem="nAn-BD-Tt7" firstAttribute="top" secondItem="70L-Qv-xWo" secondAttribute="bottom" id="yAq-WG-KOp"/>
                         </constraints>
                         <variation key="default">
