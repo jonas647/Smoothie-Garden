@@ -22,6 +22,7 @@
     NSArray *ingredients;
     ArchivingObject *archivingHelper;
     float latestContentOffset;
+    BOOL isLikeButtonTouchable;
     
 }
 
@@ -128,10 +129,34 @@
     [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
     
     //Change status bar appearance
+    
+    //TODO
+    //Add gesture for going back to recipe table view with left swipe
+    UISwipeGestureRecognizer * Swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft)];
+    Swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:Swipeleft];
+    
+    //The like button needs to be touchable to start with
+    isLikeButtonTouchable = YES;
+    
+}
+
+
+- (void) viewDidLayoutSubviews {
+    
+    //Make like view hidden until the recipe is liked
+    likeView.layer.cornerRadius = likeView.bounds.size.width/2;
+    likeView.alpha = 0.0;
+    likeView.layer.masksToBounds = YES;
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     
+    
+}
+
+- (void) swipeLeft {
     
     
 }
@@ -209,6 +234,10 @@
         whiteBackground.alpha = 0.60f;
     }
     
+    //Check if the title background is at the top of screen. Then change alpha to make sure all other stuff scrolls under
+    if (CGRectIntersectsRect(titleBackground.frame, statusbarBackground.frame)) {
+        titleBackground.alpha = 1.0f;
+    }
 }
 
 #pragma mark - Table View Delegate
@@ -247,9 +276,15 @@
     return cell;
 }
 
+
 #pragma mark - Handle Recipe Favorites
 
 - (IBAction)likeRecipe:(id)sender {
+    
+    if (!isLikeButtonTouchable) {
+        //If the like button isn't touchable, then don't do anything
+        return;
+    }
     
     if (!likeButton.selected) {
         
@@ -267,23 +302,52 @@
         likeButton.selected = NO;
     }
     
-    [self animateLikeButton];
+    //Animate like if the like button is selected
+    [self animateLike:likeButton.selected];
+    
+    //Set the like button to not touchable to make the user not press it to often, causing animation to mess up
+    isLikeButtonTouchable = NO;
 }
 
-- (void) animateLikeButton {
+- (void) animateLike: (BOOL) like {
     
-    CGRect likeButtonFrame = likeButton.frame;
+    //Save the original rect to use later
+    CGRect originalRect = likeView.frame;
     
-    [UIView animateWithDuration:1.5
+    [UIView animateWithDuration:0.7
                           delay:0.1
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^
      {
-         [likeButton setFrame:CGRectMake(likeButtonFrame.origin.x, likeButtonFrame.origin.y, likeButtonFrame.size.width*2, likeButtonFrame.size.height*2)];
+         
+         //only animate if the recipe is liked
+         if (like) {
+             //Increase the alpha of the likeView
+             likeView.alpha = 0.75;
+         }
      }
                      completion:^(BOOL finished)
      {
-         //[likeButton setFrame:likeButtonFrame];
+
+         [UIView animateWithDuration:0.7
+                               delay:0.1
+                             options: UIViewAnimationOptionTransitionCrossDissolve
+                          animations:^ {
+             
+             //If the recipe is liked, then move it to the favorites
+             if (like) {
+                 [likeView setFrame:CGRectMake(self.view.frame.size.width * 0.65, self.view.frame.size.height, likeView.frame.size.width, likeView.frame.size.height)];
+                 
+                 //Decrease the alpha to 0
+                 likeView.alpha = 0.0;
+             }
+        
+         } completion:^(BOOL finished)
+          {
+            //Move back the likeView to the starting position for the next time the animation is used
+              likeView.frame = originalRect;
+              isLikeButtonTouchable = YES; //Set back to yes to be able to toggle like button
+          }];
      }];
     
 }

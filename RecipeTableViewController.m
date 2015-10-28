@@ -28,6 +28,8 @@
 {
     Recipe *selectedRecipe;
     ArchivingObject *archiveHelper;
+    NSMutableArray *thumbnailImages;
+    
 }
 
 
@@ -69,6 +71,28 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     
+    
+    
+}
+
+- (UIImage*) createThumbnailForImageWithName:(NSString *)sourceName {
+    
+    UIImage* sourceImage = [UIImage imageNamed:sourceName];
+    if (!sourceImage) {
+        //...
+        NSLog(@"Source image is missing: %@", sourceName);
+    }
+    
+    //TODO
+    //Make this device independent
+    CGSize thumbnailSize = CGSizeMake(580, 228);
+    
+    UIGraphicsBeginImageContext(thumbnailSize);
+    [sourceImage drawInRect:CGRectMake(0,0,thumbnailSize.width,thumbnailSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -97,11 +121,22 @@
     
     [self setupSearchController];
     
+    //Set the starting point for the scroller view below the search bar
+    //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
+    
+    //Load all the images and setup thumb images
+    //TODO, change the nsmutablearray to a dictionary so that it's absolutely sure that the right image is at the right recipe
+    thumbnailImages = [[NSMutableArray alloc]init];
+    for (Recipe *r in self.recipes) {
+        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+        [thumbnailImages addObject:tempImage];
+    }
+    
     //Reload the view to get the proper recipes showing (favorites can change)
     [self.tableView reloadData];
     
-    //Set the starting point for the scroller view below the search bar
-    //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
+    //TODO
+    //Now its loading for one second before presenting the uitableview (while creating the thumbnail images)
     
 }
 
@@ -374,27 +409,37 @@
     if (cell == nil) {
         cell = [[RecipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellIdentifier];
     }
-    /*
-    cell.backgroundColor = [UIColor darkGrayColor];
-    
-    UIImageView *imv = (UIImageView *)[cell viewWithTag:100];
-    UILabel *titel = (UILabel *)[cell viewWithTag:101];
-    UITextView *desc = (UITextView *)[cell viewWithTag:102];
-    
-    Recipe *recipeForRow = [self.recipes objectAtIndex:indexPath.row];
-    titel.text = recipeForRow.recipeName;
-    desc.text = recipeForRow.recipeDescription;
-    titel.textColor = [UIColor whiteColor];
-    desc.textColor = [UIColor whiteColor];
-    imv.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
-    */
-    
     
     Recipe *recipeForRow = [self.recipes objectAtIndex:indexPath.row];
     cell.recipeTitle.text = recipeForRow.recipeName;
     cell.recipeDescription.text = recipeForRow.recipeDescription;
-    cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
+    //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
+    cell.recipeImage.image = [thumbnailImages objectAtIndex:indexPath.row];
     
+    //identify the image for the recipe
+    //UIImage *photo = [self.photos objectAtIndex:indexPath.row];
+    // Configure the cell based on photo id
+    
+    /*
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //move to an asynchronous thread to fetch your image data
+        UIImage* thumbnail = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];//get thumbnail from photo id dictionary (fastest)
+    
+                   if (thumbnail) {
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           //return to the main thread to update the UI
+                           if ([[tableView indexPathsForVisibleRows] containsObject:indexPath]) {
+                               //check that the relevant data is still required
+                               RecipeTableViewCell * correctCell = [self.tableView cellForRowAtIndexPath:indexPath];
+                               //get the correct cell (it might have changed)
+                               [correctCell.recipeImage setImage:thumbnail];
+                               [correctCell setNeedsLayout];
+                           }
+                       });
+                   }
+                   });
+    
+    */
     
     //Check if the IAP has been purchased and if recipes should be unlocked
     //TODO
