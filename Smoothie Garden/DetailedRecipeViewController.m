@@ -221,6 +221,7 @@
         float percent = (scrollView.contentOffset.y / offsetLimit);
         whiteBackground.alpha = percent;
         
+        
     } else if (scrollView.contentOffset.y > offsetLimit){
         whiteBackground.alpha = 1;
         //float percent = (scrollView.contentOffset.y / 150.0);
@@ -235,8 +236,12 @@
     }
     
     //Check if the title background is at the top of screen. Then change alpha to make sure all other stuff scrolls under
-    if (CGRectIntersectsRect(titleBackground.frame, statusbarBackground.frame)) {
-        titleBackground.alpha = 1.0f;
+    NSLog(@"%f", CGRectGetMaxY(titleBackground.frame));
+    if (CGRectGetMaxY(titleBackground.frame) >= CGRectGetHeight(self.view.frame)) {
+        NSLog(@"Title box at top");
+        titleBackground.backgroundColor = [UIColor whiteColor];
+    } else {
+        titleBackground.backgroundColor = [UIColor clearColor];
     }
 }
 

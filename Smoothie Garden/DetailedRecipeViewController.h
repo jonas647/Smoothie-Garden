@@ -14,6 +14,7 @@
     __weak IBOutlet UIView *contentView;
     //IBOutlet UIScrollView *scrollView;
     
+    __weak IBOutlet UIView *topViewArea;
     __weak IBOutlet UIView *statusbarBackground;
     __weak IBOutlet UIView *titleBackground;
     __weak IBOutlet UITableView *ingredientsTableView;
