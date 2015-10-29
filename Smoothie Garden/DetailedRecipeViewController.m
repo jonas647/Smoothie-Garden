@@ -228,6 +228,7 @@
         
     } else if (scrollView.contentOffset.y < 0) {
         // do other ... ;
+        
     }
     
     //Never allow an alpha level of lower than 0.6
@@ -236,8 +237,8 @@
     }
     
     //Check if the title background is at the top of screen. Then change alpha to make sure all other stuff scrolls under
-    NSLog(@"%f", CGRectGetMaxY(titleBackground.frame));
-    if (CGRectGetMaxY(titleBackground.frame) >= CGRectGetHeight(self.view.frame)) {
+    
+    if (CGRectIntersectsRect(titleBackground.frame, topViewArea.frame)) {
         NSLog(@"Title box at top");
         titleBackground.backgroundColor = [UIColor whiteColor];
     } else {
