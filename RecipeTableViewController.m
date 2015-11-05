@@ -28,7 +28,7 @@
 {
     Recipe *selectedRecipe;
     ArchivingObject *archiveHelper;
-    NSMutableArray *thumbnailImages;
+    NSMutableDictionary *thumbnailImages;
     NSMutableArray *filteredRecipeArray;
     
 }
@@ -122,10 +122,10 @@
     //Load all the images and setup thumb images
     //TODO, change the nsmutablearray to a dictionary so that it's absolutely sure that the right image is at the right recipe
     //This will also solve the problem with wrong picture for search result table view
-    thumbnailImages = [[NSMutableArray alloc]init];
+    thumbnailImages = [[NSMutableDictionary alloc]init];
     for (Recipe *r in self.recipes) {
         UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        [thumbnailImages addObject:tempImage];
+        [thumbnailImages setObject:tempImage forKey:r.recipeName];
     }
     
     //Reload the view to get the proper recipes showing (favorites can change)
@@ -405,8 +405,12 @@
     Recipe *recipeForRow = [self.recipes objectAtIndex:indexPath.row];
     cell.recipeTitle.text = recipeForRow.recipeName;
     cell.recipeDescription.text = recipeForRow.recipeDescription;
+    
+    //Removed this since it's taking to long and not efficient for the app to create UIImage here
     //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
-    cell.recipeImage.image = [thumbnailImages objectAtIndex:indexPath.row];
+    
+    //Instead get the UIImage from memory, stored in a NSDictionary
+    cell.recipeImage.image = [thumbnailImages objectForKey:recipeForRow.recipeName];
     
     //identify the image for the recipe
     //UIImage *photo = [self.photos objectAtIndex:indexPath.row];
