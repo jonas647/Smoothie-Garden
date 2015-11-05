@@ -29,11 +29,9 @@
     Recipe *selectedRecipe;
     ArchivingObject *archiveHelper;
     NSMutableArray *thumbnailImages;
+    NSMutableArray *filteredRecipeArray;
     
 }
-
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,10 +50,7 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
-    //Adjust the tableview
-    //self.tableView.sectionHeaderHeight = 0.0;
-    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //self.tableView.backgroundColor = [UIColor whiteColor];
+    //Adjust the tableview to scroll to top of tapped at top
     self.tableView.scrollsToTop = YES;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -70,8 +65,8 @@
     //Remove the title text from the back button (in the Detailed recipe table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    
-    
+    //Array for handling the filtered search results
+    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[self recipesFromPlist] count]];;
     
 }
 
@@ -126,6 +121,7 @@
     
     //Load all the images and setup thumb images
     //TODO, change the nsmutablearray to a dictionary so that it's absolutely sure that the right image is at the right recipe
+    //This will also solve the problem with wrong picture for search result table view
     thumbnailImages = [[NSMutableArray alloc]init];
     for (Recipe *r in self.recipes) {
         UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
@@ -246,6 +242,7 @@
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.hidesNavigationBarDuringPresentation = YES;
     
     self.searchController.searchBar.delegate = self;
     self.searchController.delegate = self;
@@ -257,7 +254,7 @@
     
     [self.searchController.searchBar setAlpha:1.0];
     
-    self.searchController.searchBar.placeholder = @"Search for ingredients or title";
+    self.searchController.searchBar.placeholder = @"Search for ingredients or smoothie title";
 
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
@@ -270,6 +267,7 @@
 {
     [self updateSearchResultsForSearchController:self.searchController];
 }
+
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
@@ -307,20 +305,12 @@
     [self.tableView reloadData];
 }
 
+
 #pragma mark - UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     
     //Get the search text
      NSString *searchText = searchController.searchBar.text;
-    
-    // strip out all the leading and trailing spaces
-    NSString *strippedString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    
-    // break up the search terms (separated by spaces)
-    NSArray *searchItems = nil;
-    if (strippedString.length > 0) {
-        searchItems = [strippedString componentsSeparatedByString:@" "];
-    }
     
     //Get the recipes to search among
     //TODO, should not get a new list every time, instead have a current list to work with
@@ -337,15 +327,15 @@
         [searchResults addObject:r.recipeName];
     }
     
-    //Match with the search titles
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText]; // if you need case sensitive search avoid '[c]' in the predicate
-    
     //An array that holds all the recipe titles that matches the user search
-    NSArray *recipeTitleResults = [searchResults filteredArrayUsingPredicate:predicate];
     
-    //Iterate the results to find the recipes that match
+    //For the search string, check if that word matches a recipe title
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText]; // if you need case sensitive search avoid '[c]' in the predicate
+    NSArray *tempRecipeTitles = [searchResults filteredArrayUsingPredicate:predicate];
+    
+    //Iterate the results to find the actual recipe for that string
     NSMutableArray *filteredRecipes = [[NSMutableArray alloc]init];
-    for (NSString *title in recipeTitleResults) {
+    for (NSString *title in tempRecipeTitles) {
         for (Recipe *tempRecipe in recipeSearch) {
             if ([tempRecipe.recipeName isEqualToString:title]) {
                 [filteredRecipes addObject:tempRecipe];
@@ -353,9 +343,11 @@
         }
     }
     
+    //TODO
+    //Make the search work for ingredients
+    
     //Remove the found recipes from the recipeSearch so that it only contains recipes that aren't yet matched
     [recipeSearch removeObjectsInArray:filteredRecipes];
-    
     
     //
     //Then search for the ingredients
@@ -477,34 +469,7 @@
         //Move to screen for in app purchases
         
         [self performSegueWithIdentifier:@"InAppPurchaseSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
-        /*
-        NSString *alertTitle = @"Locked Recipe";
-        NSString *alertMessage = @"Start a healthy lifestyle by unlocking all recipes for $2.99";
-        UIAlertController *alertController = [UIAlertController
-                                              alertControllerWithTitle:alertTitle
-                                              message:alertMessage
-                                              preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *cancelAction = [UIAlertAction
-                                       actionWithTitle:NSLocalizedString(@"Not yet", @"Cancel action")
-                                       style:UIAlertActionStyleCancel
-                                       handler:^(UIAlertAction *action)
-                                       {
-                                           NSLog(@"Cancel action");
-                                       }];
-        
-        UIAlertAction *purchaseAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"Purchase", @"OK action")
-                                   style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction *action)
-                                   {
-                                       NSLog(@"OK action");
-                                   }];
-        
-        [alertController addAction:cancelAction];
-        [alertController addAction:purchaseAction];
-        
-        [self presentViewController:alertController animated:YES completion:nil];*/
+    
     }
     
 }
@@ -581,8 +546,9 @@
 
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    float offsetY = self.tableView.contentOffset.y;
+    //Move all the recipes in the table view cells to create a parallax effect
     
+    float offsetY = self.tableView.contentOffset.y;
     for (RecipeTableViewCell *cell in self.tableView.visibleCells) {
         
         float x = cell.recipeImage.frame.origin.x;

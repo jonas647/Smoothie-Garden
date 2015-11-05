@@ -19,22 +19,22 @@
     // Override point for customization after application launch.
     
     UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    mainColor = [UIColor colorWithRed:245.0f/255.0f green:247.0f/255.0f blue:254.0f/255.0f alpha:1.0f];
+    //mainColor = [UIColor colorWithRed:245.0f/255.0f green:247.0f/255.0f blue:254.0f/255.0f alpha:1.0f];
 
     
-    UIColor *secondaryColor = [UIColor colorWithRed:175.0f/255.0f green:191.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
+    //UIColor *secondaryColor = [UIColor colorWithRed:175.0f/255.0f green:191.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
     
     //Update the colors of where in the app the default color should be used
     [[UITabBar appearance] setBarTintColor:mainColor];
     [[UINavigationBar appearance] setBarTintColor:mainColor];
     
+    /*
     NSShadow* shadow = [NSShadow new];
     shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
     shadow.shadowColor = secondaryColor;
+     */
     [[UINavigationBar appearance] setTitleTextAttributes: @{
-                                                            NSForegroundColorAttributeName: secondaryColor,
                                                             NSFontAttributeName: [UIFont fontWithName:@"Apple SD Gothic Neo" size:16.0f],
-                                                            NSShadowAttributeName: shadow
                                                             }];
     
     //Remove the top shadow line

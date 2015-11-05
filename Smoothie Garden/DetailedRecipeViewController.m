@@ -131,10 +131,8 @@
     //Change status bar appearance
     
     //TODO
-    //Add gesture for going back to recipe table view with left swipe
-    UISwipeGestureRecognizer * Swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft)];
-    Swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:Swipeleft];
+    //Add gesture for going back to recipe table view with left swipe instead of getting main menu?
+
     
     //The like button needs to be touchable to start with
     isLikeButtonTouchable = YES;
@@ -149,14 +147,13 @@
     likeView.alpha = 0.0;
     likeView.layer.masksToBounds = YES;
     
+    //Change the size of the white background & transparent background
+    float distanceBetweenImageAndBottomDescription = boosterDescriptionView.frame.origin.y-recipeImage.frame.origin.y;
+    
+    [contentViewHeightConstraint setConstant:(distanceBetweenImageAndBottomDescription*2)];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    
-    
-}
-
-- (void) swipeLeft {
     
     
 }
@@ -213,9 +210,8 @@
 #pragma mark - Delegates
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    //TODO
-    //Change this to be dependent on the image instead
-    float offsetLimit = self.view.frame.size.width*0.75;
+    //The limit for when the background should be non transparent
+    float offsetLimit = recipeImage.frame.size.height;
     
     if(scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y <= offsetLimit) {
         float percent = (scrollView.contentOffset.y / offsetLimit);
@@ -224,7 +220,6 @@
         
     } else if (scrollView.contentOffset.y > offsetLimit){
         whiteBackground.alpha = 1;
-        //float percent = (scrollView.contentOffset.y / 150.0);
         
     } else if (scrollView.contentOffset.y < 0) {
         // do other ... ;
@@ -239,7 +234,6 @@
     //Check if the title background is at the top of screen. Then change alpha to make sure all other stuff scrolls under
     
     if (CGRectIntersectsRect(titleBackground.frame, topViewArea.frame)) {
-        NSLog(@"Title box at top");
         titleBackground.backgroundColor = [UIColor whiteColor];
     } else {
         titleBackground.backgroundColor = [UIColor clearColor];
@@ -314,6 +308,7 @@
     //Set the like button to not touchable to make the user not press it to often, causing animation to mess up
     isLikeButtonTouchable = NO;
 }
+
 
 - (void) animateLike: (BOOL) like {
     

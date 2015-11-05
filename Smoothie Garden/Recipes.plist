@@ -80,7 +80,7 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>1,5 dl of almond milk</string>
 		</array>
 		<key>ImageName</key>
-		<string>Cocoapuchino_3x</string>
+		<string>Tea and rosehip2</string>
 	</dict>
 	<key>Recipe D</key>
 	<dict>
@@ -287,6 +287,110 @@ Top this smoothie with goji berries and lime cezt.</string>
 		</array>
 		<key>ImageName</key>
 		<string>Better than icecream</string>
+	</dict>
+	<key>Recipe L</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Tea and Rosehip</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Tea plantation and roses</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Tea and rosehip</string>
+	</dict>
+	<key>Recipe M</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Sweet Cherry Pie</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Oh, sweet cherry pie!</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Sweet Cherry Pie</string>
+	</dict>
+	<key>Recipe N</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Cashew &amp; Raspberry</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Raspberries and healthy chunk of nuts</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Cashew &amp; Raspberry</string>
+	</dict>
+	<key>Recipe O</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blueberry Chia</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Blueberry hills</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Blueberry Chia</string>
 	</dict>
 </dict>
 </plist>
