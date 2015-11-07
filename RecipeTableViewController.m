@@ -30,11 +30,15 @@
     ArchivingObject *archiveHelper;
     NSMutableDictionary *thumbnailImages;
     NSMutableArray *filteredRecipeArray;
+    UIActivityIndicatorView *loadingIndicator;
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupActivityIndicator]; //Setup of the activity indicator programmatically
+    [self startActivityIndicator];
     
     //This is needed for the reveal controller to work
     SWRevealViewController *revealController = [self revealViewController];
@@ -78,9 +82,8 @@
         NSLog(@"Source image is missing: %@", sourceName);
     }
     
-    //TODO
-    //Make this device independent
-    CGSize thumbnailSize = CGSizeMake(580, 228);
+    //Size dependent sizing of the thumbnail to make the loading on older devicer quicker
+    CGSize thumbnailSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.width*0.8);
     
     UIGraphicsBeginImageContext(thumbnailSize);
     [sourceImage drawInRect:CGRectMake(0,0,thumbnailSize.width,thumbnailSize.height)];
@@ -114,13 +117,11 @@
     
     self.recipes = [self recipesFromPlist];
     
-    [self setupSearchController];
+    [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     
     //Set the starting point for the scroller view below the search bar
     //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
     
-    //Load all the images and setup thumb images
-    //TODO, change the nsmutablearray to a dictionary so that it's absolutely sure that the right image is at the right recipe
     //This will also solve the problem with wrong picture for search result table view
     thumbnailImages = [[NSMutableDictionary alloc]init];
     for (Recipe *r in self.recipes) {
@@ -130,9 +131,6 @@
     
     //Reload the view to get the proper recipes showing (favorites can change)
     [self.tableView reloadData];
-    
-    //TODO
-    //Now its loading for one second before presenting the uitableview (while creating the thumbnail images)
     
 }
 
@@ -233,6 +231,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Activity indicator for loading
+
+- (void) setupActivityIndicator {
+    
+    loadingIndicator = [[UIActivityIndicatorView alloc]init];
+    
+    [loadingIndicator setFrame:CGRectMake(0,0, self.view.frame.size.width/3, self.view.frame.size.width/3)];
+    [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [loadingIndicator setCenter:self.view.center];
+    loadingIndicator.hidden = NO;
+    [self.view addSubview:loadingIndicator];
+    [self.view bringSubviewToFront:loadingIndicator];
+    
+   
+}
+
+- (void) startActivityIndicator {
+    
+    [loadingIndicator startAnimating];
+    [loadingIndicator setBackgroundColor:[UIColor whiteColor]];
+    
+    
+}
+
+- (void) stopActivityIndicator {
+    
+    [loadingIndicator stopAnimating];
+    [loadingIndicator setHidesWhenStopped:YES];
+}
 
 
 #pragma mark - Search bar
@@ -309,6 +336,8 @@
 #pragma mark - UISearchResultsUpdating
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     
+    //Called when the search result should be updated
+    
     //Get the search text
      NSString *searchText = searchController.searchBar.text;
     
@@ -343,9 +372,6 @@
         }
     }
     
-    //TODO
-    //Make the search work for ingredients
-    
     //Remove the found recipes from the recipeSearch so that it only contains recipes that aren't yet matched
     [recipeSearch removeObjectsInArray:filteredRecipes];
     
@@ -353,12 +379,54 @@
     //Then search for the ingredients
     //
     
+    //Create predicate for all different search words
+    //Validate for both "," and [space]
+    NSArray *separatedString;
+    
+    //Remove leading/ending spaces and commas
+    searchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    searchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+    if ([searchText containsString:@","]) {
+        separatedString = [searchText componentsSeparatedByString:@","];
+    } else
+        separatedString = [searchText componentsSeparatedByString:@" "];
+    
+    
+    //Add all the predicates to an Array to be able to collect all the different searchwords
+    NSMutableArray *allPredicates = [[NSMutableArray alloc]init];
+    for (NSString *str in separatedString) {
+        
+        //Remove blank spaces for all the search texts
+        NSString *tempSearch = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        //Use contain predicate to be able to search anywhere as the recipe ingredient can be "2 Apples". Not always in beginning of search
+        NSPredicate *tempPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",tempSearch];
+        
+        [allPredicates addObject:tempPredicate];
+    }
+    
+    //Create a compound predicate to gather all predicates into one
+    //TODO Change this so that it's possible to search for more than one ingredient!
+    NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:allPredicates];
+    
     //Loop all the recipes and find the ones with recipes that match the search string
     for (Recipe *tempRecipe in recipeSearch) {
         
         //Validate the ingredients array to the predicate and see if it contains the search term. If it does add the recipe to the filtered recipes
         
-        NSArray *matchedIngredients = [tempRecipe.ingredients filteredArrayUsingPredicate:predicate];
+        //Start by adding all ingredients to the same NSString
+        NSString *aggregatedIngredients;
+        for (NSString *ingredient in tempRecipe.ingredients) {
+            aggregatedIngredients = [NSString stringWithFormat:@"%@,%@", aggregatedIngredients,ingredient];
+        }
+        
+        //Add the string to an array to be able to run a predicate on it
+        NSArray *ingredientsInOnestring = [NSArray arrayWithObject:aggregatedIngredients];
+        
+        //Run the predicate to match if all the search words are among the ingredients
+        NSArray *matchedIngredients = [ingredientsInOnestring filteredArrayUsingPredicate:compoundPredicate];
+        
+        //If the ingredients match then the predicate will have added the one object to the matchedIngredients array
         if (matchedIngredients.count>0) {
             //Add to the filtered recipes if it isn't already added
             if (![filteredRecipes containsObject:tempRecipe]) {
@@ -393,6 +461,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //Stop the activity indicator when the last visible object has been shown
+    if([indexPath row] == ((NSIndexPath*)[[tableView indexPathsForVisibleRows] lastObject]).row){
+        //end of loading
+        [loadingIndicator stopAnimating];
+    }
+    
     static NSString *tableCellIdentifier = @"RecipeTableCell";
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCellIdentifier];
     
@@ -411,31 +486,6 @@
     
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:recipeForRow.recipeName];
-    
-    //identify the image for the recipe
-    //UIImage *photo = [self.photos objectAtIndex:indexPath.row];
-    // Configure the cell based on photo id
-    
-    /*
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //move to an asynchronous thread to fetch your image data
-        UIImage* thumbnail = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];//get thumbnail from photo id dictionary (fastest)
-    
-                   if (thumbnail) {
-                       dispatch_async(dispatch_get_main_queue(), ^{
-                           //return to the main thread to update the UI
-                           if ([[tableView indexPathsForVisibleRows] containsObject:indexPath]) {
-                               //check that the relevant data is still required
-                               RecipeTableViewCell * correctCell = [self.tableView cellForRowAtIndexPath:indexPath];
-                               //get the correct cell (it might have changed)
-                               [correctCell.recipeImage setImage:thumbnail];
-                               [correctCell setNeedsLayout];
-                           }
-                       });
-                   }
-                   });
-    
-    */
     
     //Check if the IAP has been purchased and if recipes should be unlocked
     //TODO
@@ -473,7 +523,6 @@
         //Move to screen for in app purchases
         
         [self performSegueWithIdentifier:@"InAppPurchaseSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
-    
     }
     
 }
