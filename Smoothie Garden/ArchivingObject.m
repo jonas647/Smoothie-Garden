@@ -11,6 +11,9 @@
 
 @implementation ArchivingObject
 
+//TODO
+//Make this a singleton
+
 - (NSArray*) favoriteRecipes {
     
     return [[NSUserDefaults standardUserDefaults]arrayForKey:@"FavoriteRecipes"];
@@ -63,7 +66,22 @@
     //Set the new favorite recipes
     [self setNewFavoriteRecipes:newFavoriteRecipes];
     
-    NSLog(@"New favorites: %@", newFavoriteRecipes);
+}
+
+- (BOOL) isRecipeFavorite:(Recipe *)favoriteRecipe {
+    
+    //Iterate all the favorite recipe and match for title
+    //All recipes are saved as titles in the favorite array
+    NSLog(@"Number of favorite recipes: %i", (int)[self favoriteRecipes].count);
+    for (NSString *recipeTitle in [self favoriteRecipes]) {
+        if ([favoriteRecipe.recipeName isEqualToString:recipeTitle]) {
+            return YES;
+        } else
+            NSLog(@"%@ doesn't match %@", favoriteRecipe.recipeName, recipeTitle);
+    }
+    
+    //If no recipe title found then it isn't a favorite
+    return NO;
     
 }
 

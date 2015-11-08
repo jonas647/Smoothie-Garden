@@ -47,7 +47,13 @@
     
     if ([indexPath isEqual:[tableView indexPathForCell:self.instagramCell]])
     {
-        // Move the user to the instagram page
+        // Move the user to the instagram page or open safari if instagram not installed
+        NSURL *instagramURL = [NSURL URLWithString:@"instagram://user?username=smoothie_box"];
+        if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+            [[UIApplication sharedApplication] openURL:instagramURL];
+        } else
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://instagram.com/smoothie_box/"]];
+        
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.facebookLikeCell]]) {
         
         //User likes the Facebook page

@@ -14,6 +14,7 @@
 - (void) addRecipeToFavorites:(Recipe*) newRecipe;
 - (void) removeRecipeFromFavorites: (Recipe*) recipeToRemove;
 - (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
+- (BOOL) isRecipeFavorite: (Recipe*) favoriteRecipe;
 - (NSArray*) favoriteRecipes;
 
 @end

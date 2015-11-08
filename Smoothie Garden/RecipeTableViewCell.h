@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 @property (weak, nonatomic) IBOutlet UILabel *recipeTitle;
 @property (weak, nonatomic) IBOutlet UITextView *recipeDescription;
+@property (weak, nonatomic) IBOutlet UIImageView *likeImage;
 
 @end

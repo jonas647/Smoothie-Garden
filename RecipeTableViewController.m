@@ -37,6 +37,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //TODO
+    //Comment out the stuff linked to favorites or use it in another way
+    //Perhaps sort by liked recipes first
+    
     [self setupActivityIndicator]; //Setup of the activity indicator programmatically
     [self startActivityIndicator];
     
@@ -72,8 +76,6 @@
     //Array for handling the filtered search results
     filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[self recipesFromPlist] count]];
     
-    
-    
 }
 
 - (UIImage*) createThumbnailForImageWithName:(NSString *)sourceName {
@@ -99,6 +101,7 @@
     
     
     //Reset the navigation bar, set back to being shown
+    //Is hidden in the detailed recipe view
     [self.navigationController.navigationBar setBackgroundImage:nil
                                                   forBarMetrics:UIBarMetricsDefault];
 }
@@ -491,6 +494,12 @@
     
     //Check if the IAP has been purchased and if recipes should be unlocked
     //TODO
+    
+    //If the recipe is a favorite, then display the like image
+    if ([archiveHelper isRecipeFavorite:recipeForRow]) {
+        cell.likeImage.hidden = NO;
+    } else
+        cell.likeImage.hidden = YES;
     
     float alphaValue;
     if (recipeForRow.recipeCategory==1) {

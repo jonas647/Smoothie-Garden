@@ -68,10 +68,14 @@
     self.navigationController.navigationBar.translucent = YES;
     */
     
+    //Setup the archiving object
+    archivingHelper = [[ArchivingObject alloc]init];
+    
     //If the recipe is one of the favorites, then make the like button selected
-    if ([[archivingHelper favoriteRecipes]containsObject:self.selectedRecipe.recipeName]) {
+    if ([archivingHelper isRecipeFavorite:self.selectedRecipe]) {
         likeButton.selected = YES;
-    }
+    } else
+        NSLog(@"%@ not liked", self.selectedRecipe.recipeName);
     
     //Must do this for the UITextview to work with (1) resizing height, (2) have custom font
     [recipeDescriptionView sizeToFit];
@@ -103,9 +107,6 @@
     //Must have the view as selectable in storyboard to get the font working (Apple bug)
     recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
-    
-    //Setup the archiving object
-    archivingHelper = [[ArchivingObject alloc]init];
     
     //[contentViewHeightConstraint setConstant:(ingredientsTableView.frame.size.height + recipeDescriptionView.frame.size.height +boosterDescriptionView.frame.size.height)];
     NSLog(@"Content view height: %f", contentViewHeightConstraint.constant);
@@ -335,9 +336,9 @@
                              options: UIViewAnimationOptionTransitionCrossDissolve
                           animations:^ {
              
-             //If the recipe is liked, then move it to the favorites
+             //If the recipe is liked, then make animation and move it to bottom center of screen
              if (like) {
-                 [likeView setFrame:CGRectMake(self.view.frame.size.width * 0.65, self.view.frame.size.height, likeView.frame.size.width, likeView.frame.size.height)];
+                 [likeView setFrame:CGRectMake((self.view.frame.size.width / 2) - likeView.frame.size.width/2, self.view.frame.size.height, likeView.frame.size.width, likeView.frame.size.height)];
                  
                  //Decrease the alpha to 0
                  likeView.alpha = 0.0;

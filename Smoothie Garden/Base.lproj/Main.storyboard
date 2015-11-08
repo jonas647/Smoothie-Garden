@@ -305,7 +305,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Mmv-Ma-uJL" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="ZA6-h5-Xd7"/>
+                                            <segue destination="giH-B2-Frm" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="G1E-I7-PQe"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" alpha="0.25" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oWn-UA-4Zb">
@@ -440,36 +440,12 @@
                     </view>
                     <connections>
                         <segue destination="Z17-aN-0xA" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="bD7-LT-GX7"/>
-                        <segue destination="Mmv-Ma-uJL" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="RLo-qF-6aA"/>
+                        <segue destination="giH-B2-Frm" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="GmQ-nC-cgp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o27-hg-xOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3795" y="-3303"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="sx9-iQ-oMu">
-            <objects>
-                <tabBarController id="Mmv-Ma-uJL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="6Mz-t6-8P4"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="OMe-GT-gkJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="giH-B2-Frm" kind="relationship" relationship="viewControllers" id="nEC-Le-Q7g"/>
-                        <segue destination="rsC-tu-DBz" kind="relationship" relationship="viewControllers" id="JOz-zB-2cy"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x81-AA-nED" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <containerView opaque="NO" contentMode="scaleToFill" id="k0Z-W2-8ma">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                </containerView>
-            </objects>
-            <point key="canvasLocation" x="-2431" y="-3303"/>
+            <point key="canvasLocation" x="-3810" y="-3303"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="wQ6-g4-ofh">
@@ -779,11 +755,11 @@
                         <viewControllerLayoutGuide type="bottom" id="6Ny-L5-exh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kH4-mO-tkD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-RF-661">
-                                <rect key="frame" x="230" y="448" width="141" height="58"/>
+                                <rect key="frame" x="230" y="497" width="141" height="58"/>
                                 <color key="backgroundColor" red="0.34381815970000001" green="1" blue="0.54957573049999997" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
@@ -798,7 +774,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lifetime access to EVERYTHING in the app including ALL future updates" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hLm-hc-C3z">
-                                <rect key="frame" x="15" y="507" width="570" height="36"/>
+                                <rect key="frame" x="15" y="556" width="570" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="fB1-Mx-t42"/>
                                 </constraints>
@@ -834,7 +810,7 @@
             <objects>
                 <tableViewController id="zs4-CG-fjm" customClass="RecipeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="246" sectionHeaderHeight="22" sectionFooterHeight="22" id="b7t-rV-Yjm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -851,12 +827,21 @@
                                                 <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tropical Passion.png" translatesAutoresizingMaskIntoConstraints="NO" id="NsZ-8L-8IF" userLabel="Image">
                                                     <rect key="frame" x="10" y="0.0" width="580" height="227.5"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Like Filled-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="j34-9N-uCS">
+                                                    <rect key="frame" x="556" y="153.5" width="34" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="j34-9N-uCS" secondAttribute="height" multiplier="1:1" id="LtA-dD-F1W"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="NsZ-8L-8IF" secondAttribute="trailing" constant="10" id="4Vu-6n-MpF"/>
                                                 <constraint firstAttribute="bottom" secondItem="NsZ-8L-8IF" secondAttribute="bottom" constant="-40" id="682-lZ-KX8"/>
                                                 <constraint firstItem="NsZ-8L-8IF" firstAttribute="top" secondItem="0hm-aJ-tyT" secondAttribute="top" id="GYq-pf-iHt"/>
+                                                <constraint firstAttribute="bottom" secondItem="j34-9N-uCS" secondAttribute="bottom" id="JgH-ZL-JHf"/>
+                                                <constraint firstItem="j34-9N-uCS" firstAttribute="height" secondItem="NsZ-8L-8IF" secondAttribute="height" multiplier="0.15" id="VqB-JV-OgS"/>
+                                                <constraint firstItem="j34-9N-uCS" firstAttribute="trailing" secondItem="NsZ-8L-8IF" secondAttribute="trailing" id="mNn-B7-yfx"/>
                                                 <constraint firstItem="NsZ-8L-8IF" firstAttribute="leading" secondItem="0hm-aJ-tyT" secondAttribute="leading" constant="10" id="vJh-cw-Cub"/>
                                             </constraints>
                                         </view>
@@ -891,6 +876,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="likeImage" destination="j34-9N-uCS" id="fHN-Qg-iaP"/>
                                     <outlet property="recipeDescription" destination="aL4-Px-qNR" id="8Ic-L0-pgx"/>
                                     <outlet property="recipeImage" destination="NsZ-8L-8IF" id="KGd-V2-xy1"/>
                                     <outlet property="recipeTitle" destination="dpf-3Y-pUJ" id="9n0-jh-FaU"/>
@@ -916,7 +902,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZ3-Vs-BwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-478" y="-4262"/>
+            <point key="canvasLocation" x="-2102" y="-3303"/>
         </scene>
         <!--Recipes-->
         <scene sceneID="kVc-P0-gQz">
@@ -934,21 +920,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kl1-Oz-hNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1380" y="-4262"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="g63-Sl-CoP">
-            <objects>
-                <navigationController id="rsC-tu-DBz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="oAs-Nc-VEa"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="Return-25.png" backIndicatorTransitionMaskImage="unbeatable_standing_3x" id="qbj-f9-XnY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wc8-C5-7s9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1320" y="-3303"/>
+            <point key="canvasLocation" x="-3058" y="-3303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wwz-ZT-sRo">
@@ -1244,7 +1216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohu-N3-vnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="-4262"/>
+            <point key="canvasLocation" x="-1266" y="-3303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y4C-Vv-yvM">
@@ -1292,7 +1264,6 @@
         <image name="Literature Filled-32.png" width="32" height="32"/>
         <image name="Literature-32.png" width="32" height="32"/>
         <image name="Menu Filled-25.png" width="25" height="25"/>
-        <image name="Return-25.png" width="25" height="25"/>
         <image name="ThumbFinal_4.9.15.png" width="1419" height="1368"/>
         <image name="Tropical Passion.png" width="630" height="509"/>
         <image name="fiveStar.png" width="3000" height="700"/>
@@ -1302,6 +1273,6 @@
         <image name="unbeatable_standing_3x" width="1260" height="1018"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RLo-qF-6aA"/>
+        <segue reference="G1E-I7-PQe"/>
     </inferredMetricsTieBreakers>
 </document>
