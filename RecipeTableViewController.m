@@ -70,7 +70,9 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     //Array for handling the filtered search results
-    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[self recipesFromPlist] count]];;
+    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[self recipesFromPlist] count]];
+    
+    
     
 }
 
@@ -380,12 +382,13 @@
     //
     
     //Create predicate for all different search words
-    //Validate for both "," and [space]
     NSArray *separatedString;
     
     //Remove leading/ending spaces and commas
     searchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     searchText = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]];
+    
+    //Validate for both "," and [space] as separators
     if ([searchText containsString:@","]) {
         separatedString = [searchText componentsSeparatedByString:@","];
     } else
@@ -406,7 +409,6 @@
     }
     
     //Create a compound predicate to gather all predicates into one
-    //TODO Change this so that it's possible to search for more than one ingredient!
     NSPredicate *compoundPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:allPredicates];
     
     //Loop all the recipes and find the ones with recipes that match the search string
@@ -607,10 +609,13 @@
         float x = cell.recipeImage.frame.origin.x;
         float w = cell.recipeImage.frame.size.width;
         float h = cell.recipeImage.frame.size.height;
-        float y = ((offsetY - cell.frame.origin.y) / h) * 25;
         
+        float y;
+        y = ((offsetY - cell.frame.origin.y) / h) * 10;
         cell.recipeImage.frame = CGRectMake(x, y, w, h);
         
+        //TODO
+        //Fix the scrolling so that the top 2 images are correctly positioned
     }
     
 }

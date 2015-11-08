@@ -28,7 +28,7 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>1 tea spoon honey</string>
 		</array>
 		<key>ImageName</key>
-		<string>Tropical</string>
+		<string>Raspberry Kiss</string>
 	</dict>
 	<key>Recipe B</key>
 	<dict>
@@ -80,12 +80,12 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>1,5 dl of almond milk</string>
 		</array>
 		<key>ImageName</key>
-		<string>Tea and rosehip2</string>
+		<string>Nordic Berries</string>
 	</dict>
 	<key>Recipe D</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Unbeetable bowl</string>
+		<string>Unbeetable</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
@@ -106,7 +106,7 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>Juice from 1/2 lemon</string>
 		</array>
 		<key>ImageName</key>
-		<string>UnBeatable_3x</string>
+		<string>Unbeetable</string>
 	</dict>
 	<key>Recipe E</key>
 	<dict>
@@ -133,12 +133,12 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>1 tsp of honey</string>
 		</array>
 		<key>ImageName</key>
-		<string>Nutty_2_3x</string>
+		<string>Nutmilk</string>
 	</dict>
 	<key>Recipe F</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Kale</string>
+		<string>Green Coco Kale</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
@@ -158,7 +158,7 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>1,5 dl almond milk</string>
 		</array>
 		<key>ImageName</key>
-		<string>GreenGodess_3x</string>
+		<string>Green Coco Kale</string>
 	</dict>
 	<key>Recipe G</key>
 	<dict>
@@ -183,7 +183,7 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>1,5 dl almond milk</string>
 		</array>
 		<key>ImageName</key>
-		<string>GreenGodess_3x</string>
+		<string>Nutmilk</string>
 	</dict>
 	<key>Recipe H</key>
 	<dict>
@@ -234,7 +234,7 @@ Top this smoothie with goji berries and lime cezt.</string>
 			<string>1 tbls of buckthorn</string>
 		</array>
 		<key>ImageName</key>
-		<string>Chocolate raspberry shake</string>
+		<string>Nutmilk</string>
 	</dict>
 	<key>Recipe J</key>
 	<dict>
@@ -391,6 +391,188 @@ Top this smoothie with goji berries and lime cezt.</string>
 		</array>
 		<key>ImageName</key>
 		<string>Blueberry Chia</string>
+	</dict>
+	<key>Recipe P</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green Rawgurt</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Raw yoghurt!</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Green Rawgurt</string>
+	</dict>
+	<key>Recipe Q</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Placeholder</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Placeholder</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Nutmilk</string>
+	</dict>
+	<key>Recipe R</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Acai Bowl</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Bowl for your breakfast lane</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Acai Bowl</string>
+	</dict>
+	<key>Recipe S</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blue Belly Bliss</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Blues for the stomach</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Bluebelly bliss</string>
+	</dict>
+	<key>Recipe T</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Cashew &amp; Raspberry</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Nut &amp; fruitmix</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Cashew &amp; Raspberry</string>
+	</dict>
+	<key>Recipe U</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Mango Rosehip</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Mangoooo</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Mango Rosehip</string>
+	</dict>
+	<key>Recipe V</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Passion for Chia</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeDescription</key>
+		<string>Passion for Chia instead of Christ</string>
+		<key>DetailedRecipeDescription</key>
+		<string></string>
+		<key>BoosterDescription</key>
+		<string></string>
+		<key>Ingredients</key>
+		<array>
+			<string>3 bananas (2 of them frozen)</string>
+			<string>1,5 dl of frozen strawberries </string>
+			<string>2 tbls of coconut milk</string>
+			<string>Raspberry sauce:</string>
+			<string>1 dl of Raspberries</string>
+			<string>1 tbls Honey</string>
+		</array>
+		<key>ImageName</key>
+		<string>Passion for Chia</string>
 	</dict>
 </dict>
 </plist>

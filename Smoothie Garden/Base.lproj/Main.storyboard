@@ -848,7 +848,7 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hm-aJ-tyT">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="187.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tropical.png" translatesAutoresizingMaskIntoConstraints="NO" id="NsZ-8L-8IF" userLabel="Image">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tropical Passion.png" translatesAutoresizingMaskIntoConstraints="NO" id="NsZ-8L-8IF" userLabel="Image">
                                                     <rect key="frame" x="10" y="0.0" width="580" height="227.5"/>
                                                 </imageView>
                                             </subviews>
@@ -945,9 +945,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="DqU-AX-RA2" kind="relationship" relationship="rootViewController" id="VUV-2P-p1S"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wc8-C5-7s9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1025,32 +1022,16 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19B-4e-Nyj">
-                                                                            <rect key="frame" x="161" y="3" width="68.5" height="20.5"/>
+                                                                            <rect key="frame" x="206" y="3" width="68.5" height="20.5"/>
                                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J24-8x-UsC">
-                                                                            <rect key="frame" x="238" y="3" width="4.5" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2Y-mk-WdG">
-                                                                            <rect key="frame" x="258" y="4" width="58" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="J24-8x-UsC" firstAttribute="leading" secondItem="19B-4e-Nyj" secondAttribute="trailing" constant="8.5" id="7EU-df-z1b"/>
-                                                                        <constraint firstItem="a2Y-mk-WdG" firstAttribute="centerY" secondItem="Ygq-1V-YVW" secondAttribute="centerY" id="IpP-XW-BH7"/>
-                                                                        <constraint firstItem="J24-8x-UsC" firstAttribute="centerY" secondItem="Ygq-1V-YVW" secondAttribute="centerY" id="geC-38-WnF"/>
-                                                                        <constraint firstItem="J24-8x-UsC" firstAttribute="centerX" secondItem="Ygq-1V-YVW" secondAttribute="centerX" id="qm8-ml-Rxk"/>
+                                                                        <constraint firstItem="19B-4e-Nyj" firstAttribute="centerX" secondItem="Ygq-1V-YVW" secondAttribute="centerX" id="6qg-gt-UxY"/>
                                                                         <constraint firstItem="19B-4e-Nyj" firstAttribute="centerY" secondItem="Ygq-1V-YVW" secondAttribute="centerY" id="viV-cr-hqs"/>
-                                                                        <constraint firstItem="a2Y-mk-WdG" firstAttribute="leading" secondItem="J24-8x-UsC" secondAttribute="trailing" constant="16" id="zhm-Wo-0JX"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1301,97 +1282,10 @@
             </objects>
             <point key="canvasLocation" x="-3044" y="-5479"/>
         </scene>
-        <!--Smoothie Box-->
-        <scene sceneID="Al7-fX-3ya">
-            <objects>
-                <tableViewController id="DqU-AX-RA2" customClass="RecipeTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="246" sectionHeaderHeight="22" sectionFooterHeight="22" id="BHH-hr-adm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeTableCell" rowHeight="246" id="RgO-0R-nyL" customClass="RecipeTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="600" height="246"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RgO-0R-nyL" id="dnZ-gB-hD4">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="246"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kna-Vz-J3P">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="187.5"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tropical.png" translatesAutoresizingMaskIntoConstraints="NO" id="uFu-lf-SoV" userLabel="Image">
-                                                    <rect key="frame" x="10" y="0.0" width="580" height="227.5"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="uFu-lf-SoV" firstAttribute="leading" secondItem="kna-Vz-J3P" secondAttribute="leading" constant="10" id="0Ev-3o-5WQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="uFu-lf-SoV" secondAttribute="trailing" constant="10" id="CAt-eW-iAt"/>
-                                                <constraint firstAttribute="bottom" secondItem="uFu-lf-SoV" secondAttribute="bottom" constant="-40" id="R4j-Hj-v77"/>
-                                                <constraint firstItem="uFu-lf-SoV" firstAttribute="top" secondItem="kna-Vz-J3P" secondAttribute="top" id="xX6-Ab-Ir0"/>
-                                            </constraints>
-                                        </view>
-                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Short text describing the smoothie" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-zC-iJb" userLabel="Description text">
-                                            <rect key="frame" x="8" y="215" width="584" height="30.5"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="12"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <variation key="heightClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="157" y="37" width="435" height="82.5"/>
-                                            </variation>
-                                        </textView>
-                                        <label opaque="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Smoothie" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyD-wo-C3S" userLabel="Titel">
-                                            <rect key="frame" x="8" y="189" width="540" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="cbq-zC-iJb" firstAttribute="centerX" secondItem="xyD-wo-C3S" secondAttribute="centerX" constant="22" id="309-LV-v3N"/>
-                                        <constraint firstAttribute="bottom" secondItem="cbq-zC-iJb" secondAttribute="bottom" id="6Hl-sG-z7n"/>
-                                        <constraint firstItem="xyD-wo-C3S" firstAttribute="leading" secondItem="dnZ-gB-hD4" secondAttribute="leading" constant="8" id="FW5-8m-hoc"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="kna-Vz-J3P" secondAttribute="bottom" constant="50" id="Fac-HC-lLC"/>
-                                        <constraint firstAttribute="trailing" secondItem="kna-Vz-J3P" secondAttribute="trailing" id="LTz-9x-e12"/>
-                                        <constraint firstItem="kna-Vz-J3P" firstAttribute="top" secondItem="dnZ-gB-hD4" secondAttribute="top" id="dof-OG-VkT"/>
-                                        <constraint firstItem="kna-Vz-J3P" firstAttribute="leading" secondItem="dnZ-gB-hD4" secondAttribute="leading" id="fAF-WV-xg1"/>
-                                        <constraint firstItem="xyD-wo-C3S" firstAttribute="top" secondItem="uFu-lf-SoV" secondAttribute="bottom" constant="-38.5" id="j9M-5x-qaK"/>
-                                        <constraint firstItem="cbq-zC-iJb" firstAttribute="leading" secondItem="dnZ-gB-hD4" secondAttribute="leadingMargin" id="n78-hj-ZbL"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="cbq-zC-iJb" secondAttribute="trailing" id="z5Q-3I-czc"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="recipeDescription" destination="cbq-zC-iJb" id="xbJ-nd-T2s"/>
-                                    <outlet property="recipeImage" destination="uFu-lf-SoV" id="7HT-He-IKd"/>
-                                    <outlet property="recipeTitle" destination="xyD-wo-C3S" id="siE-iM-gJR"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="DqU-AX-RA2" id="0O2-ET-LFo"/>
-                            <outlet property="delegate" destination="DqU-AX-RA2" id="iR1-eZ-ezf"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="amo-Yi-aW2"/>
-                    <navigationItem key="navigationItem" title="Smoothie Box" id="aO9-Fb-H1R">
-                        <barButtonItem key="leftBarButtonItem" image="Menu Filled-25.png" style="done" id="Ndp-sW-kmj">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="sideBarButton" destination="Ndp-sW-kmj" id="E5y-Pp-RaY"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UUe-Xf-IOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-478" y="-3303"/>
-        </scene>
     </scenes>
     <resources>
         <image name="FB-f-Logo__blue_512.png" width="512" height="512"/>
-        <image name="GreenDetox_3x.png" width="1260" height="1018"/>
+        <image name="GreenDetox_3x.png" width="630" height="509"/>
         <image name="Hearts-100.png" width="100" height="100"/>
         <image name="Instagram_Icon_Large.png" width="512" height="512"/>
         <image name="Like Filled-100.png" width="100" height="100"/>
@@ -1400,7 +1294,7 @@
         <image name="Menu Filled-25.png" width="25" height="25"/>
         <image name="Return-25.png" width="25" height="25"/>
         <image name="ThumbFinal_4.9.15.png" width="1419" height="1368"/>
-        <image name="Tropical.png" width="1260" height="1018"/>
+        <image name="Tropical Passion.png" width="630" height="509"/>
         <image name="fiveStar.png" width="3000" height="700"/>
         <image name="jonas.png" width="600" height="600"/>
         <image name="letter-147563_640.png" width="640" height="457"/>
