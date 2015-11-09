@@ -35,6 +35,8 @@
     __weak IBOutlet NSLayoutConstraint *whiteBackgroundVerticalPositioningConstraint;
     __weak IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
     __weak IBOutlet UIView *likeView;
+    __weak IBOutlet UITableView *recipeTableView;
+    __weak IBOutlet NSLayoutConstraint *recipeTableViewHeightConstraint;
     
 }
 

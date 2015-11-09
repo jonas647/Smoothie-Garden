@@ -108,6 +108,19 @@
     recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
     
+    //Resize the recipe table view to correct height based on content
+    CGFloat tableHeight = 0.0f;
+    for (int i = 0; i < [ingredients count]; i ++) {
+        
+        CGRect frame = [recipeTableView rectForRowAtIndexPath:[NSIndexPath indexPathWithIndex:i]];
+        NSLog(@"row height : %f", frame.size.height);
+        tableHeight += frame.size.height;
+        
+    }
+    [recipeTableView sizeToFit];
+    
+    [recipeTableViewHeightConstraint setConstant:400];
+    
     //[contentViewHeightConstraint setConstant:(ingredientsTableView.frame.size.height + recipeDescriptionView.frame.size.height +boosterDescriptionView.frame.size.height)];
     NSLog(@"Content view height: %f", contentViewHeightConstraint.constant);
     NSLog(@"White background height: %f", whiteBackgroundVerticalPositioningConstraint.constant);
@@ -251,6 +264,8 @@
     
     if ([tableView isEqual:ingredientsTableView]) {
         return [ingredients count];
+    } else if ([tableView isEqual:recipeTableView]) {
+        return [ingredients count];
     }
     
     
@@ -269,14 +284,38 @@
         
         UILabel *recipeIngredient = (UILabel*)[cell viewWithTag:100];
         recipeIngredient.text = [ingredients objectAtIndex:indexPath.row];
+    } else if ([tmpTableView isEqual:recipeTableView]) {
+        
+        UILabel *recipeIngredient = (UILabel*)[cell viewWithTag:101];
+        recipeIngredient.text = [ingredients objectAtIndex:indexPath.row];
+        
     }
-    
-    
-    
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([tableView isEqual:recipeTableView]) {
+        UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
+        UILabel *resizableLabel = (UILabel*)[cell viewWithTag:101];
+        
+        UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, CGFLOAT_MAX)];
+        newLabel.numberOfLines = 0;
+        newLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        newLabel.font = resizableLabel.font;
+        newLabel.text = resizableLabel.text;
+        [newLabel sizeToFit];
+        
+        float cellMargin = cell.frame.size.height/4;
+        
+        return newLabel.frame.size.height + cellMargin*2;
+        
+    } else
+        return 48;
+    
+}
 
 #pragma mark - Handle Recipe Favorites
 
