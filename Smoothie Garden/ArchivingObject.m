@@ -72,12 +72,10 @@
     
     //Iterate all the favorite recipe and match for title
     //All recipes are saved as titles in the favorite array
-    NSLog(@"Number of favorite recipes: %i", (int)[self favoriteRecipes].count);
     for (NSString *recipeTitle in [self favoriteRecipes]) {
         if ([favoriteRecipe.recipeName isEqualToString:recipeTitle]) {
             return YES;
-        } else
-            NSLog(@"%@ doesn't match %@", favoriteRecipe.recipeName, recipeTitle);
+        }
     }
     
     //If no recipe title found then it isn't a favorite
