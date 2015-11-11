@@ -78,6 +78,7 @@
     
 }
 
+
 - (UIImage*) createThumbnailForImageWithName:(NSString *)sourceName {
     
     UIImage* sourceImage = [UIImage imageNamed:sourceName];
@@ -248,7 +249,6 @@
     loadingIndicator.hidden = NO;
     [self.view addSubview:loadingIndicator];
     [self.view bringSubviewToFront:loadingIndicator];
-    
    
 }
 

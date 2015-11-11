@@ -14,6 +14,8 @@
 @property (nonatomic,strong) UIPageViewController *pageViewController;
 @property (nonatomic,strong) NSArray *pageTitles;
 @property (nonatomic,strong) NSArray *pageImages;
+@property (nonatomic,strong) NSArray *leftPageImages;
+@property (nonatomic,strong) NSArray *rightPageImages;
 @property (nonatomic,strong) NSArray *pageTexts;
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index;

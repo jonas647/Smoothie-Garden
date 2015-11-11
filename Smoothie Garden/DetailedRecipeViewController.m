@@ -108,17 +108,9 @@
     recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
     
-    //Resize the recipe table view to correct height based on content
-    CGFloat tableHeight = 0.0f;
-    for (int i = 0; i < [ingredients count]; i ++) {
-        
-        CGRect frame = [recipeTableView rectForRowAtIndexPath:[NSIndexPath indexPathWithIndex:i]];
-        NSLog(@"row height : %f", frame.size.height);
-        tableHeight += frame.size.height;
-        
-    }
-    [recipeTableView sizeToFit];
     
+    //TODO
+    //Fix the height of the recipe table view
     [recipeTableViewHeightConstraint setConstant:400];
     
     //[contentViewHeightConstraint setConstant:(ingredientsTableView.frame.size.height + recipeDescriptionView.frame.size.height +boosterDescriptionView.frame.size.height)];
@@ -298,6 +290,7 @@
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if ([tableView isEqual:recipeTableView]) {
+        //Check the height of the label that populates the cell and resize the cell height after that
         UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
         UILabel *resizableLabel = (UILabel*)[cell viewWithTag:101];
         
@@ -308,12 +301,17 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         newLabel.text = resizableLabel.text;
         [newLabel sizeToFit];
         
-        float cellMargin = cell.frame.size.height/4;
+        //Add margins to the cell height
+        float cellMargin = cell.frame.size.height/2;
         
-        return newLabel.frame.size.height + cellMargin*2;
+        return newLabel.frame.size.height + cellMargin;
         
+    } else if ([tableView isEqual:ingredientsTableView]) {
+        //Return the size of the cell. All cells are the same height
+        UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
+        return cell.frame.size.height;
     } else
-        return 48;
+        return 0;
     
 }
 

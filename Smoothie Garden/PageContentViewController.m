@@ -18,21 +18,56 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.ImageView.image = [UIImage imageNamed:self.imageFile];
-    self.titleLabel.text = self.titleText;
-    self.descriptionTextView.text = self.descriptionText;
+    //Validate the image files for ".png" and make the image view nil if it isn't an image
+    if ([self.imageFile hasSuffix:@".png"]) {
+        self.ImageView.image = [UIImage imageNamed:self.imageFile];
+    } else
+        self.ImageView.image = nil;
     
-    //Must have the view as selectable in storyboard to get the font working (Apple bug)
-    [self.descriptionTextView sizeToFit];
-    [self.descriptionTextView layoutIfNeeded];
-    self.descriptionTextView.layoutManager.allowsNonContiguousLayout = false;
-    self.descriptionTextView.selectable = NO;
+    if ([self.leftImageFile hasSuffix:@".png"]) {
+        self.leftImageView.image = [UIImage imageNamed:self.leftImageFile];
+    } else
+        self.leftImageView.image = nil;
     
-    [self newFrameForUIView:self.descriptionTextView];
+    if ([self.rightImageFile hasSuffix:@".png"]) {
+        self.rightImageView.image = [UIImage imageNamed:self.rightImageFile];
+    } else
+        self.rightImageView.image = nil;
+    
+    if (self.titleText) {
+        self.titleLabel.text = self.titleText;
+    }
+    
+    if (self.descriptionText) {
+        self.descriptionTextView.text = self.descriptionText;
+        
+        //Must have the view as selectable in storyboard to get the font working (Apple bug)
+        [self.descriptionTextView sizeToFit];
+        [self.descriptionTextView layoutIfNeeded];
+        self.descriptionTextView.layoutManager.allowsNonContiguousLayout = false;
+        self.descriptionTextView.selectable = NO;
+        
+        [self newFrameForUIView:self.descriptionTextView];
+    }
+    
     
     
     
 }
+
+- (void) viewDidLayoutSubviews {
+ 
+    NSLog(@"Layout subviews");
+    self.ImageView.layer.cornerRadius = 12.0f;
+    self.leftImageView.layer.cornerRadius = 6.0f;
+    self.rightImageView.layer.cornerRadius = 6.0f;
+    
+    self.ImageView.layer.masksToBounds = YES;
+    self.leftImageView.layer.masksToBounds = YES;
+    self.rightImageView.layer.masksToBounds = YES;
+    NSLog(@"end");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

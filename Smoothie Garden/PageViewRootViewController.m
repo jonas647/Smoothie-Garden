@@ -22,7 +22,9 @@
     
     _pageTitles = @[defaultTitleText,defaultTitleText,defaultTitleText,defaultTitleText];
     _pageTexts = @[@"Over 20 healthy, vegan, lactos-free Smoothie Recipes,", @"Create your own recipe book with your favorite recipes for easy access", @"Free regular updates with new recipes", @"Start a healthy lifestyle now!"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
+    _pageImages = @[@"Sweet Cherry Pie.png", @"page2.png", @"page3.png", @"page4.png"];
+    _leftPageImages =@[@"Passion for Chia.png", @"",@"",@""];
+    _rightPageImages = @[@"Green Coco Kale.png",@"",@"",@""];
     
     
     // Create page view controller
@@ -87,9 +89,22 @@
     }
     // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    pageContentViewController.titleText = self.pageTitles[index];
-    pageContentViewController.imageFile = self.pageImages[index];
-    pageContentViewController.descriptionText = self.pageTexts[index];
+    if (self.pageTitles[index]) {
+        pageContentViewController.titleText = self.pageTitles[index];
+    }
+    if (self.pageImages[index]) {
+        pageContentViewController.imageFile = self.pageImages[index];
+    }
+    if (self.leftPageImages[index]) {
+        pageContentViewController.leftImageFile = self.leftPageImages[index];
+    }
+    if (self.rightPageImages[index]) {
+        pageContentViewController.rightImageFile = self.rightPageImages[index];
+    }
+    if (self.pageTexts[index]) {
+        pageContentViewController.descriptionText = self.pageTexts[index];
+    }
+    NSLog(@"Page content setup");
     pageContentViewController.pageIndex = index;
     return pageContentViewController;
 }
