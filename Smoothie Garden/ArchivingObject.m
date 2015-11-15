@@ -11,8 +11,16 @@
 
 @implementation ArchivingObject
 
-//TODO
-//Make this a singleton
+
++ (ArchivingObject*)sharedInstance {
+    static dispatch_once_t once;
+    static ArchivingObject * sharedInstance;
+    dispatch_once(&once, ^{
+        
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
 
 - (NSArray*) favoriteRecipes {
     
@@ -82,6 +90,21 @@
     return NO;
     
 }
+
+- (void) unlockIAP:(NSString *)iapString {
+
+    //Save to nsuserdefault that the iap names as the string should be unlocked
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:iapString];
+
+}
+
+- (BOOL) isIAPUnlocked:(NSString*) iapString {
+    
+    //Get the iap name from the nsuserdefault and return the YES/NO for that
+    return [[NSUserDefaults standardUserDefaults] objectForKey:iapString];
+    
+}
+
 
 
 @end

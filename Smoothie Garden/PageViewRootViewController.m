@@ -7,12 +7,20 @@
 //
 
 #import "PageViewRootViewController.h"
+#import <StoreKit/StoreKit.h>
+#import "SBIAPHelper.h"
+#import "AppDelegate.h"
+#import "ArchivingObject.h"
+#import "SBActivityIndicatorView.h"
 
 @interface PageViewRootViewController ()
 
 @end
 
 @implementation PageViewRootViewController
+{
+    SBActivityIndicatorView *loadingIndicator;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,6 +56,11 @@
     
     //Move to next page after x number of seconds
     //TODO
+    
+    //Register for notifications from the IAPHelper to be able to unlock the recipes after IAP has been purchased
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+    //Notification to be able to show activity indicator and remove it when the iap has been loaded
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductTransactionNotification object:nil];
     
 }
 
@@ -107,6 +120,42 @@
     NSLog(@"Page content setup");
     pageContentViewController.pageIndex = index;
     return pageContentViewController;
+}
+
+- (IBAction)buyRecipes:(id)sender {
+    
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    //Right now there's only one available purchase so get the first object in the array
+    SKProduct *productToBuy = [delegate.iTunesPurchases objectAtIndex:0];
+    
+    if (productToBuy) {
+        NSLog(@"Buy product");
+        [[SBIAPHelper sharedInstance]buyProduct:productToBuy];
+    
+        //Create loading indicator to show the user that the in app purchase is loading
+        loadingIndicator = [[SBActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/5, self.view.frame.size.width/5)];
+        [loadingIndicator setCenter:self.view.center];
+        [self.view addSubview:loadingIndicator];
+        [self.view bringSubviewToFront:loadingIndicator];
+    
+    } else {
+            NSLog(@"Product not loaded");
+            
+        }
+    
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+
+    NSString * productIdentifier = notification.object;
+    
+    //Use the archiving object singleton to store the unlocked IAP
+    ArchivingObject *archiver = [ArchivingObject sharedInstance];
+    [archiver unlockIAP:productIdentifier];
+    
+    //Remove the loading indicator
+    [loadingIndicator stopAnimating];
 }
 
 -(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController

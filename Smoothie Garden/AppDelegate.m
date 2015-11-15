@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SBIAPHelper.h"
 
 @interface AppDelegate ()
 
@@ -67,6 +68,15 @@
     pageControl.alpha = 0.2;
     
     [self.window setTintColor:[UIColor darkGrayColor]];
+    
+    //Get the in app purchases from the in app purchase helper singleton
+    //Load it here so that the purchases are available when the user tries to buy the IAP
+    [[SBIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            _iTunesPurchases = [NSArray arrayWithArray:products];
+            //array gets populated with skproduct objects
+        }
+    }];
     
     return YES;
 }

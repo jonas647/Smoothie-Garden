@@ -8,12 +8,19 @@
 
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
+#import "SBIAPHelper.h"
+#import "ArchivingObject.h"
+#import "SBActivityIndicatorView.h"
 
 @interface SettingsTableViewController ()
 
 @end
 
 @implementation SettingsTableViewController
+{
+    SBActivityIndicatorView *loadingIndicator;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +40,8 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
         
     }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,6 +115,15 @@
 }
 */
 
+- (void) purchaseRestored: (NSNotification*) notification {
+    
+    NSString * productIdentifier = notification.object;
+    
+    //Use the archiving object singleton to store the unlocked IAP
+    ArchivingObject *archiver = [ArchivingObject sharedInstance];
+    [archiver unlockIAP:productIdentifier];
+}
+
 - (IBAction)resetLikedRecipes:(id)sender {
 }
 
@@ -122,6 +140,28 @@
 }
 
 - (IBAction)restorePurchases:(id)sender {
+    
+    [[SBIAPHelper sharedInstance]restoreCompletedTransactions];
+    
+    //Register for notifications from the IAPHelper to be able to unlock the recipes after IAP has been purchased
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchaseRestored:) name:IAPHelperProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iapHasBeenLoaded) name:IAPHelperProductTransactionNotification object:nil];
+    
+    //Start the activity indicator
+    loadingIndicator = [[SBActivityIndicatorView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width/5, self.view.frame.size.width/5)];
+    [loadingIndicator setCenter:self.view.center];
+    [self.view addSubview:loadingIndicator];
+    [self.view bringSubviewToFront:loadingIndicator];
+    [loadingIndicator startActivityIndicator];
+    
+}
+
+-(void)iapHasBeenLoaded {
+    NSLog(@"Stop loading indicator");
+    [loadingIndicator stopAnimating];
+    
+    
+    
 }
 
 - (IBAction)sendAnalytics:(id)sender {

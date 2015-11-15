@@ -13,6 +13,7 @@
 #import "ArchivingObject.h"
 #import <QuartzCore/QuartzCore.h>
 #import "RecipeTableViewCell.h"
+#import "SBActivityIndicatorView.h"
 
 //#define CELL_HEIGHT 176
 
@@ -27,10 +28,9 @@
 @implementation RecipeTableViewController
 {
     Recipe *selectedRecipe;
-    ArchivingObject *archiveHelper;
     NSMutableDictionary *thumbnailImages;
     NSMutableArray *filteredRecipeArray;
-    UIActivityIndicatorView *loadingIndicator;
+    SBActivityIndicatorView *loadingIndicator;
     
 }
 
@@ -42,7 +42,7 @@
     //Perhaps sort by liked recipes first
     
     [self setupActivityIndicator]; //Setup of the activity indicator programmatically
-    [self startActivityIndicator];
+    [loadingIndicator startActivityIndicator];
     
     //This is needed for the reveal controller to work
     SWRevealViewController *revealController = [self revealViewController];
@@ -66,9 +66,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    //Setup the archiving object
-    archiveHelper = [[ArchivingObject alloc]init];
     
     //Remove the title text from the back button (in the Detailed recipe table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -214,7 +211,7 @@
 - (NSArray*) favoriteRecipes {
     
     //Load the favorite recipes array
-    NSArray *favoriteRecipes = [archiveHelper favoriteRecipes];
+    NSArray *favoriteRecipes = [[ArchivingObject sharedInstance] favoriteRecipes];
     NSMutableArray *tempFavoriteRecipes = [[NSMutableArray alloc]init];
     
     //Iterate all recipes and match with the names saved as favorites to get all favorite recipes to a new array
@@ -237,34 +234,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - In app Purchases
+
+- (BOOL) isRecipeUnlocked: (Recipe*) unlockedRecipe {
+    
+    //If the recipe category is 0 then it's free from start in the app. No need for IAP check
+    //IAP "basicRecipes_01 unlocks the recipes with category 1. It's the only IAP available right now
+    if (unlockedRecipe.recipeCategory == 0) {
+        return YES;
+    } else if (unlockedRecipe.recipeCategory == 1) {
+        return [[ArchivingObject sharedInstance]isIAPUnlocked:@"basicRecipes_01"];
+    } else {
+        NSLog(@"No IAP for recipe category: %i", (int)unlockedRecipe.recipeCategory);
+        return NO;
+    }
+
+}
+
 #pragma mark - Activity indicator for loading
 
 - (void) setupActivityIndicator {
     
-    loadingIndicator = [[UIActivityIndicatorView alloc]init];
+    loadingIndicator = [[SBActivityIndicatorView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width/4, self.view.frame.size.width/4)];
     
-    [loadingIndicator setFrame:CGRectMake(0,0, self.view.frame.size.width/3, self.view.frame.size.width/3)];
-    [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     [loadingIndicator setCenter:self.view.center];
-    loadingIndicator.hidden = NO;
+    
     [self.view addSubview:loadingIndicator];
     [self.view bringSubviewToFront:loadingIndicator];
    
 }
 
-- (void) startActivityIndicator {
-    
-    [loadingIndicator startAnimating];
-    [loadingIndicator setBackgroundColor:[UIColor whiteColor]];
-    
-    
-}
 
-- (void) stopActivityIndicator {
-    
-    [loadingIndicator stopAnimating];
-    [loadingIndicator setHidesWhenStopped:YES];
-}
 
 
 #pragma mark - Search bar
@@ -492,30 +492,26 @@
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:recipeForRow.recipeName];
     
-    //Check if the IAP has been purchased and if recipes should be unlocked
-    //TODO
-    
     //If the recipe is a favorite, then display the like image
-    if ([archiveHelper isRecipeFavorite:recipeForRow]) {
+    if ([[ArchivingObject sharedInstance] isRecipeFavorite:recipeForRow]) {
         cell.likeImage.hidden = NO;
     } else
         cell.likeImage.hidden = YES;
     
+    //Check if the IAP has been purchased and if recipes should be unlocked
+    //If the recipe is of type 0 then it's a free recipe, no need to check for IAP
+    BOOL isRecipeUnlocked = [self isRecipeUnlocked:recipeForRow];
+    
+    //Use alpha value to make the unlocked recipes transparent
     float alphaValue;
-    if (recipeForRow.recipeCategory==1) {
-        //Recipe Category 0 means that it's free
-        //Recipe Category 1 means that it's locked
-        //Show the locked ones with transparent background
+    if (!isRecipeUnlocked) {
         
         alphaValue = 0.18;
         
-        
-    } else if (recipeForRow.recipeCategory == 0) {
+    } else if (isRecipeUnlocked) {
         alphaValue = 1;
     }
     
-    //[cell.recipeTitle setAlpha:alphaValue];
-    //[cell.recipeDescription setAlpha:alphaValue];
     [cell.recipeImage setAlpha:alphaValue];
     
     return cell;
@@ -527,10 +523,10 @@
     
     Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     
-    if (selRecipe.recipeCategory == 0) {
+    if ([self isRecipeUnlocked:selRecipe]) {
         //Move to screen that shows the recipe
         [self performSegueWithIdentifier:@"showRecipeSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
-    } else if (selRecipe.recipeCategory == 1) {
+    } else if (![self isRecipeUnlocked:selRecipe]) {
         //Move to screen for in app purchases
         
         [self performSegueWithIdentifier:@"InAppPurchaseSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
@@ -555,7 +551,7 @@
     //   if you do not perform delete only.
     
     //Remove the recipe from favorites
-    [archiveHelper removeRecipeFromFavorites:[self.recipes objectAtIndex:indexPath.row]];
+    [[ArchivingObject sharedInstance] removeRecipeFromFavorites:[self.recipes objectAtIndex:indexPath.row]];
     
     //Set the new favorite recipe list
     self.recipes = [self recipesFromPlist];

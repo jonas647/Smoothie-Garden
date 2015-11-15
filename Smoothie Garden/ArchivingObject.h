@@ -11,10 +11,13 @@
 
 @interface ArchivingObject : NSObject
 
++ (ArchivingObject *)sharedInstance;
 - (void) addRecipeToFavorites:(Recipe*) newRecipe;
 - (void) removeRecipeFromFavorites: (Recipe*) recipeToRemove;
 - (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
 - (BOOL) isRecipeFavorite: (Recipe*) favoriteRecipe;
 - (NSArray*) favoriteRecipes;
+- (void) unlockIAP: (NSString*) iapString;
+- (BOOL) isIAPUnlocked:(NSString*) iapString;
 
 @end

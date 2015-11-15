@@ -20,6 +20,7 @@
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index;
 
+- (IBAction)buyRecipes:(id)sender;
 
 
 @end
