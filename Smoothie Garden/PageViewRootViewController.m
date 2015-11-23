@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "ArchivingObject.h"
 #import "SBActivityIndicatorView.h"
+#import "SBGoogleAnalyticsHelper.h"
 
 @interface PageViewRootViewController ()
 
@@ -29,7 +30,7 @@
     NSString *defaultTitleText = @"This is what you get!";
     
     _pageTitles = @[defaultTitleText,defaultTitleText,defaultTitleText,defaultTitleText];
-    _pageTexts = @[@"Over 20 healthy, vegan, lactos-free Smoothie Recipes,", @"Create your own recipe book with your favorite recipes for easy access", @"Free regular updates with new recipes", @"Start a healthy lifestyle now!"];
+    _pageTexts = @[@"Over 20 healthy, vegan, lactos-free Smoothie Recipes", @"Create your own recipe book with your favorite recipes for easy access", @"Free regular updates with new recipes", @"Start a healthy lifestyle now!"];
     _pageImages = @[@"Sweet Cherry Pie.png", @"page2.png", @"page3.png", @"page4.png"];
     _leftPageImages =@[@"Passion for Chia.png", @"",@"",@""];
     _rightPageImages = @[@"Green Coco Kale.png",@"",@"",@""];
@@ -56,6 +57,8 @@
     
     //Move to next page after x number of seconds
     //TODO
+    
+    
     
     //Register for notifications from the IAPHelper to be able to unlock the recipes after IAP has been purchased
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
@@ -117,7 +120,7 @@
     if (self.pageTexts[index]) {
         pageContentViewController.descriptionText = self.pageTexts[index];
     }
-    NSLog(@"Page content setup");
+    
     pageContentViewController.pageIndex = index;
     return pageContentViewController;
 }
@@ -130,7 +133,6 @@
     SKProduct *productToBuy = [delegate.iTunesPurchases objectAtIndex:0];
     
     if (productToBuy) {
-        NSLog(@"Buy product");
         [[SBIAPHelper sharedInstance]buyProduct:productToBuy];
     
         //Create loading indicator to show the user that the in app purchase is loading
@@ -139,10 +141,7 @@
         [self.view addSubview:loadingIndicator];
         [self.view bringSubviewToFront:loadingIndicator];
     
-    } else {
-            NSLog(@"Product not loaded");
-            
-        }
+    }
     
 }
 
@@ -156,6 +155,11 @@
     
     //Remove the loading indicator
     [loadingIndicator stopAnimating];
+    
+    //Update analytics of the purchase
+    //TODO
+    // Where should I get the SKProduct?
+    
 }
 
 -(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController

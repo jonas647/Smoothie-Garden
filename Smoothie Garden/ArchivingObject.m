@@ -34,16 +34,16 @@
     
 }
 
-- (void) removeRecipeFromFavorites: (Recipe*) recipeToRemove {
+- (void) removeRecipeFromFavorites: (NSString*) recipeToRemove {
     
     NSMutableArray *tempDeleteRecipe = [[NSMutableArray alloc]init];
     
     for (NSString *recipe in [self favoriteRecipes]) {
-        if ([recipeToRemove.recipeName isEqualToString:recipe]) {
+        if ([recipeToRemove isEqualToString:recipe]) {
             [tempDeleteRecipe addObject:recipe];
         }
     }
-    
+    NSLog(@"Start to remove: %@", tempDeleteRecipe);
     NSMutableArray *tempFavoriteRecipes = [NSMutableArray arrayWithArray:[self favoriteRecipes]];
     
     if (tempDeleteRecipe.count>0) {
@@ -101,7 +101,7 @@
 - (BOOL) isIAPUnlocked:(NSString*) iapString {
     
     //Get the iap name from the nsuserdefault and return the YES/NO for that
-    return [[NSUserDefaults standardUserDefaults] objectForKey:iapString];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:iapString];
     
 }
 

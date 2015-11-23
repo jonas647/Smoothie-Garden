@@ -11,6 +11,10 @@
 #import "SBIAPHelper.h"
 #import "ArchivingObject.h"
 #import "SBActivityIndicatorView.h"
+#import "SBGoogleAnalyticsHelper.h"
+
+
+#import "Recipe.h"
 
 @interface SettingsTableViewController ()
 
@@ -41,7 +45,20 @@
         
     }
     
+    //Update switch button
     
+    if ([SBGoogleAnalyticsHelper isAnalyticsEnabled]) {
+        NSLog(@"Switch is on");
+        [_analyticsSwitch setOn:YES];
+    } else {
+        [_analyticsSwitch setOn:NO];
+        NSLog(@"Switch is off");
+    }
+    
+    
+    
+    //Report to Analytics
+    [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:@"Settings Screen"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,6 +142,17 @@
 }
 
 - (IBAction)resetLikedRecipes:(id)sender {
+    
+    NSArray *allLikedRecipes = [ArchivingObject sharedInstance].favoriteRecipes;
+    
+    NSLog(@"Delete recipes in array: %@", allLikedRecipes);
+    for (NSString *likedRecipe in allLikedRecipes) {
+        
+        NSLog(@"Recipe: %@", likedRecipe);
+        
+        [[ArchivingObject sharedInstance] removeRecipeFromFavorites:likedRecipe];
+    }
+    
 }
 
 - (IBAction)changeMeasurement:(id)sender {
@@ -157,13 +185,21 @@
 }
 
 -(void)iapHasBeenLoaded {
-    NSLog(@"Stop loading indicator");
     [loadingIndicator stopAnimating];
-    
-    
     
 }
 
 - (IBAction)sendAnalytics:(id)sender {
+    
+    //This is not used currently as only regular Google Analytics data is sent and not
+    //data with ad info
+    if ([sender isOn]) {
+        //If the switch isn't enabled then enable analytics
+        [SBGoogleAnalyticsHelper userEnableAnalytics];
+    } else if (![sender isOn]) {
+        //If the switch is enabled then it should disable the analytics on touching the switch
+        [SBGoogleAnalyticsHelper userDisablesAnalytics];
+    }
 }
+
 @end

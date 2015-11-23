@@ -8,6 +8,7 @@
 
 #import "AboutTableViewController.h"
 #import "SWRevealViewController.h"
+#import "SBGoogleAnalyticsHelper.h"
 
 @interface AboutTableViewController ()
 
@@ -33,6 +34,9 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
         
     }
+    
+    //Report to analytics
+    [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:@"About Screen"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +70,11 @@
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.reviewCell]]) {
         
         //Open AppStore
+        NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/1057010706"];
+        if ([[UIApplication sharedApplication]canOpenURL:appStoreUrl]) {
+            [[UIApplication sharedApplication]openURL:appStoreUrl];
+        }
+        
     }
 }
 

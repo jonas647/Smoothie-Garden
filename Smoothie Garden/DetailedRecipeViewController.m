@@ -9,6 +9,7 @@
 #import "DetailedRecipeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ArchivingObject.h"
+#import "SBGoogleAnalyticsHelper.h"
 
 @interface DetailedRecipeViewController ()
 
@@ -134,15 +135,11 @@
     UIImage *tempImage = [[UIImage alloc]init];
     [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
     
-    //Change status bar appearance
-    
-    //TODO
-    //Add gesture for going back to recipe table view with left swipe instead of getting main menu?
-
-    
     //The like button needs to be touchable to start with
     isLikeButtonTouchable = YES;
     
+    //Report to analytics
+    [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:[NSString stringWithFormat:@"Recipe %@", _selectedRecipe.recipeName]];
 }
 
 
@@ -332,12 +329,18 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         //Change the like button to selected
         likeButton.selected = YES;
         
+        //Report the event to analytics
+        [SBGoogleAnalyticsHelper userLikedRecipeName:_selectedRecipe.recipeName];
+        
     } else if (likeButton.selected){
         //Remove recipe from favorites
-        [archivingHelper removeRecipeFromFavorites:self.selectedRecipe];
+        [archivingHelper removeRecipeFromFavorites:self.selectedRecipe.recipeName];
         
         //Change the like button to unselected
         likeButton.selected = NO;
+        
+        //Report to analytics
+        [SBGoogleAnalyticsHelper userDislikedRecipeName:_selectedRecipe.recipeName];
     }
     
     //Animate like if the like button is selected

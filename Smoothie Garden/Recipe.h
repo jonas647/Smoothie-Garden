@@ -25,4 +25,6 @@
 @property (nonatomic, strong) NSArray *ingredients;
 @property (nonatomic, strong) NSString *imageName;
 
++ (NSString*) convertToUsUnitsFrom: (NSString*) metricText;
+
 @end

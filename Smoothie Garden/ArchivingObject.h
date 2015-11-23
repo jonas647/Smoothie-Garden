@@ -13,7 +13,7 @@
 
 + (ArchivingObject *)sharedInstance;
 - (void) addRecipeToFavorites:(Recipe*) newRecipe;
-- (void) removeRecipeFromFavorites: (Recipe*) recipeToRemove;
+- (void) removeRecipeFromFavorites: (NSString*) recipeToRemove;
 - (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
 - (BOOL) isRecipeFavorite: (Recipe*) favoriteRecipe;
 - (NSArray*) favoriteRecipes;

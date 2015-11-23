@@ -13,10 +13,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *measurementButton;
 @property (weak, nonatomic) IBOutlet UIButton *restorePurchasesButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetLikesButton;
+@property (weak, nonatomic) IBOutlet UISwitch *analyticsSwitch;
 
 - (IBAction)resetLikedRecipes:(id)sender;
 - (IBAction)changeMeasurement:(id)sender;
-- (IBAction)restorePurchases:(id)sender;
-- (IBAction)sendAnalytics:(id)sender;
+- (IBAction)restorePurchases: (id)sender;
+- (IBAction)sendAnalytics:    (id)sender;
 
 @end

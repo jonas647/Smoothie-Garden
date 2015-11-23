@@ -8,6 +8,12 @@
 
 #import "AppDelegate.h"
 #import "SBIAPHelper.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+#import "GAILogger.h"
+
+
 
 @interface AppDelegate ()
 
@@ -77,6 +83,42 @@
             //array gets populated with skproduct objects
         }
     }];
+    
+    //Google Analytics
+    
+    //If the analytics key hasn't been touched (first app launch) then set it to enabled
+    BOOL analyticsEnabled;
+    if(![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:@"AnalyticsEnabled"]){
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"AnalyticsEnabled"];
+        analyticsEnabled = YES;
+    } else
+        analyticsEnabled = [[NSUserDefaults standardUserDefaults]boolForKey:@"AnalyticsEnabled"];
+    
+    if (analyticsEnabled) {
+        //Since the key is null if the user hasn't disabled the analytics we need to invert the bool
+        NSLog(@"Analytics Enabled");
+        //If the user has enabled the analytics (or hasn't touched to analytics toggle)
+        
+        // Configure tracker from GoogleService-Info.plist.
+        /*
+        NSError *configureError;
+        [[GGLContext sharedInstance] configureWithError:&configureError];
+        NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+        */
+        
+        // Optional: configure GAI options.
+        GAI *gai = [GAI sharedInstance];
+        gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+        gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app releaseAppDelegate.m
+        
+        //TODO
+        //Implement Google Ad data
+        
+    } else {
+        NSLog(@"Analytics disabled");
+    }
+    
+    //End of Google Analytics
     
     return YES;
 }

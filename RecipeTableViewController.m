@@ -255,7 +255,7 @@
 
 - (void) setupActivityIndicator {
     
-    loadingIndicator = [[SBActivityIndicatorView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width/4, self.view.frame.size.width/4)];
+    loadingIndicator = [[SBActivityIndicatorView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width/5, self.view.frame.size.width/5)];
     
     [loadingIndicator setCenter:self.view.center];
     
@@ -263,9 +263,6 @@
     [self.view bringSubviewToFront:loadingIndicator];
    
 }
-
-
-
 
 #pragma mark - Search bar
 
