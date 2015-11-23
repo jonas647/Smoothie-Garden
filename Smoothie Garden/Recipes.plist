@@ -20,8 +20,6 @@
 			<string>Add a small amount of water if necessary</string>
 			<string></string>
 		</array>
-		<key>BoosterDescription</key>
-		<string>Boost with 1 tbls of soaked goji berries. Try to replace the ginger with mint leaves for a summer fresh taste!</string>
 		<key>Ingredients</key>
 		<array>
 			<dict>
@@ -29,7 +27,7 @@
 				<string>1</string>
 				<key>Measurement</key>
 				<string></string>
-				<key>Ingredient</key>
+				<key>Text</key>
 				<string>frozen banana</string>
 			</dict>
 			<dict>
@@ -37,7 +35,7 @@
 				<string>1</string>
 				<key>Measurement</key>
 				<string></string>
-				<key>Ingredient</key>
+				<key>Text</key>
 				<string>frozen banana</string>
 			</dict>
 			<dict>
@@ -45,7 +43,7 @@
 				<string>1/2</string>
 				<key>Measurement</key>
 				<string></string>
-				<key>Ingredient</key>
+				<key>Text</key>
 				<string>avocado</string>
 			</dict>
 			<dict>
@@ -53,7 +51,7 @@
 				<string>2</string>
 				<key>Measurement</key>
 				<string>tbsp</string>
-				<key>Ingredient</key>
+				<key>Text</key>
 				<string>lemon juice</string>
 			</dict>
 			<dict>
@@ -61,7 +59,7 @@
 				<string>5</string>
 				<key>Measurement</key>
 				<string></string>
-				<key>Ingredient</key>
+				<key>Text</key>
 				<string>leaves of mint</string>
 			</dict>
 			<dict>
@@ -69,7 +67,7 @@
 				<string>1</string>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Ingredient</key>
+				<key>Text</key>
 				<string>spinach</string>
 			</dict>
 		</array>

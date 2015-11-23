@@ -47,7 +47,7 @@
         NSLog(@"Wrong class for %@", titleName);
     }
     if ([self.selectedRecipe.detailedRecipedescription isKindOfClass:[NSString class]]) {
-        recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;;
+        recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
     } else {
         NSLog(@"Wrong class for %@", recipeDescriptionView);
     }

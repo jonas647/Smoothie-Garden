@@ -10,6 +10,18 @@
 
 @implementation Ingredient
 
-
+- (id) initWithQuantity:(NSString *)qty andMeasure:(NSString *)measure andText:(NSString *)txt {
+    
+    if (self = [super init]) { // equivalent to "self does not equal nil"
+        
+        self.quantity = qty;
+        self.measure = measure;
+        self.text = txt;
+        
+        
+    }
+    return self;
+    
+}
 
 @end

@@ -10,15 +10,15 @@
 #import "DetailedRecipeViewController.h"
 #import "Recipe.h"
 #import "SWRevealViewController.h"
-#import "ArchivingObject.h"
+//#import "ArchivingObject.h"
 #import <QuartzCore/QuartzCore.h>
 #import "RecipeTableViewCell.h"
 #import "SBActivityIndicatorView.h"
 
 //#define CELL_HEIGHT 176
-
 #define TAB_BAR_ALL 1000
 #define TAB_BAR_FAV 1001
+
 
 @interface RecipeTableViewController ()
 
@@ -71,7 +71,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     //Array for handling the filtered search results
-    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[self recipesFromPlist] count]];
+    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[Recipe recipesFromPlistFor:TAB_BAR_ALL] count]];
     
 }
 
@@ -118,7 +118,7 @@
     //Validate on what tab bar item is chosen to select what data to show
     //This must be in view did appear as the selected index isn't set in the view will appear
     
-    self.recipes = [self recipesFromPlist];
+    self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
     
     [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     
@@ -137,26 +137,8 @@
     
 }
 
-#pragma mark - Select Recipes
 
-- (NSArray*) recipesFromPlist {
-    
-    switch ([self selectedTabBar]) {
-        case TAB_BAR_ALL:
-            //Show all recipes
-            return [self allRecipesFromPlist];
-            break;
-        case TAB_BAR_FAV:
-            //Show the favorite recipes
-            return [self favoriteRecipes];
-            break;
-        default:
-            break;
-    }
-    
-    return nil;
-}
-
+/*
 - (int) selectedTabBar {
     
     switch ([self.tabBarController selectedIndex]) {
@@ -173,83 +155,14 @@
             break;
     }
     
-}
-
-#pragma mark - Load Recipes
-- (NSArray*) allRecipesFromPlist {
-
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
-    NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepath];
-    
-    NSMutableArray *tempRecipes = [[NSMutableArray alloc] init];
-
-    for (NSString *name in recipeDictionary) {
-        Recipe *newRecipe = [[Recipe alloc]init];
-        NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
-        
-        [newRecipe setRecipeType:[[[recipeDictionary objectForKey:name] objectForKey:@"RecipeType"]intValue]];
-        [newRecipe setRecipeCategory:[[[recipeDictionary objectForKey:name] objectForKey:@"RecipeCategory"]intValue]];
-        [newRecipe setRecipeName:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeName"]];
-        [newRecipe setImageName:[[recipeDictionary objectForKey:name] objectForKey:@"ImageName"]];
-        [newRecipe setRecipeDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeDescription"]];
-        [newRecipe setDetailedRecipedescription:[[recipeDictionary objectForKey:name] objectForKey:@"DetailedRecipeDescription"]];
-        [newRecipe setBoosterDescription:[[recipeDictionary objectForKey:name] objectForKey:@"BoosterDescription"]];
-        
-        for (NSString *ingredient in [[recipeDictionary objectForKey:name] objectForKey:@"Ingredients"]) {
-            [tempIngredients addObject:ingredient];
-        }
-        
-        newRecipe.ingredients  = [tempIngredients copy];
-        
-        [tempRecipes addObject:newRecipe];
-    }
-    
-    return tempRecipes;
-
-}
-
-- (NSArray*) favoriteRecipes {
-    
-    //Load the favorite recipes array
-    NSArray *favoriteRecipes = [[ArchivingObject sharedInstance] favoriteRecipes];
-    NSMutableArray *tempFavoriteRecipes = [[NSMutableArray alloc]init];
-    
-    //Iterate all recipes and match with the names saved as favorites to get all favorite recipes to a new array
-    for (Recipe *tempRecipe in [self allRecipesFromPlist]) {
-        
-        for (NSString *tempName in favoriteRecipes) {
-            if ([tempRecipe.recipeName isEqualToString:tempName]) {
-                [tempFavoriteRecipes addObject:tempRecipe];
-            }
-        }
-        
-    }
-    
-    NSArray *favoritesToReturn = [NSArray arrayWithArray:tempFavoriteRecipes];
-    return favoritesToReturn;
-}
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - In app Purchases
 
-- (BOOL) isRecipeUnlocked: (Recipe*) unlockedRecipe {
-    
-    //If the recipe category is 0 then it's free from start in the app. No need for IAP check
-    //IAP "basicRecipes_01 unlocks the recipes with category 1. It's the only IAP available right now
-    if (unlockedRecipe.recipeCategory == 0) {
-        return YES;
-    } else if (unlockedRecipe.recipeCategory == 1) {
-        return [[ArchivingObject sharedInstance]isIAPUnlocked:@"basicRecipes_01"];
-    } else {
-        NSLog(@"No IAP for recipe category: %i", (int)unlockedRecipe.recipeCategory);
-        return NO;
-    }
-
-}
 
 #pragma mark - Activity indicator for loading
 
@@ -330,7 +243,7 @@
 - (void)didDismissSearchController:(UISearchController *)searchController {
     // do something after the search controller is dismissed
     
-    self.recipes = [self recipesFromPlist];
+    self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
     [self.tableView reloadData];
 }
 
@@ -345,7 +258,7 @@
     
     //Get the recipes to search among
     //TODO, should not get a new list every time, instead have a current list to work with
-    NSMutableArray *recipeSearch = (NSMutableArray*)[self recipesFromPlist];
+    NSMutableArray *recipeSearch = (NSMutableArray*)[Recipe recipesFromPlistFor:TAB_BAR_ALL];
     
     //
     //Start with searching for the recipe titles
@@ -441,7 +354,7 @@
     if (searchText.length>0) {
         self.recipes = filteredRecipes;
     } else {
-        self.recipes = [self recipesFromPlist];
+        self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
     }
     
     [self.tableView reloadData];
@@ -481,7 +394,7 @@
     
     Recipe *recipeForRow = [self.recipes objectAtIndex:indexPath.row];
     cell.recipeTitle.text = recipeForRow.recipeName;
-    cell.recipeDescription.text = recipeForRow.recipeDescription;
+    cell.recipeDescription.text = [recipeForRow.recipeDescription objectAtIndex:0];
     
     //Removed this since it's taking to long and not efficient for the app to create UIImage here
     //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
@@ -490,14 +403,14 @@
     cell.recipeImage.image = [thumbnailImages objectForKey:recipeForRow.recipeName];
     
     //If the recipe is a favorite, then display the like image
-    if ([[ArchivingObject sharedInstance] isRecipeFavorite:recipeForRow]) {
+    if ([recipeForRow isRecipeFavorite]) {
         cell.likeImage.hidden = NO;
     } else
         cell.likeImage.hidden = YES;
     
     //Check if the IAP has been purchased and if recipes should be unlocked
     //If the recipe is of type 0 then it's a free recipe, no need to check for IAP
-    BOOL isRecipeUnlocked = [self isRecipeUnlocked:recipeForRow];
+    BOOL isRecipeUnlocked = [recipeForRow isRecipeUnlocked];
     
     //Use alpha value to make the unlocked recipes transparent
     float alphaValue;
@@ -520,17 +433,18 @@
     
     Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     
-    if ([self isRecipeUnlocked:selRecipe]) {
+    if ([selRecipe isRecipeUnlocked]) {
         //Move to screen that shows the recipe
         [self performSegueWithIdentifier:@"showRecipeSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
-    } else if (![self isRecipeUnlocked:selRecipe]) {
+    } else if (![selRecipe isRecipeUnlocked]) {
         //Move to screen for in app purchases
         
         [self performSegueWithIdentifier:@"InAppPurchaseSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
     }
     
 }
-
+/*
+ //Uncommenting this since it shouldn't be possible to edit rows. Not using the favorite tab any longer.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return YES - we will be able to delete all rows
@@ -540,6 +454,7 @@
         return NO;
     
 }
+*/
 
 // Support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -548,10 +463,10 @@
     //   if you do not perform delete only.
     
     //Remove the recipe from favorites
-    [[ArchivingObject sharedInstance] removeRecipeFromFavorites:[self.recipes objectAtIndex:indexPath.row]];
+    [[self.recipes objectAtIndex:indexPath.row] removeRecipeFromFavorites];
     
     //Set the new favorite recipe list
-    self.recipes = [self recipesFromPlist];
+    self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
     
     //Reload the table so that the recipe disappears
     [self.tableView reloadData];
