@@ -5,574 +5,76 @@
 	<key>Recipe A</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Raspberry kiss</string>
+		<string>Green Rawgurt</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
 		<key>RecipeDescription</key>
-		<string>A refreshing and vitamin packed red smoothie with a little bit of heat</string>
+		<array>
+			<string>This green and creamy smoothie is the perfect lactose-free alternative to traditional yoghurt. Start your day of with this healthy bowl topped with fresh berries, nuts and seeds and you will be energized for hours</string>
+		</array>
 		<key>DetailedRecipeDescription</key>
-		<string>This is a real vitamin kick with a fresh and summery taste. Enjoy it on a hot sunny day or simply when you need some extra energy. The mint can be replaced with ginger.
-Top this smoothie with goji berries and lime cezt.</string>
+		<array>
+			<string>Mix everything in a blender on high speed until smooth</string>
+			<string>Add a small amount of water if necessary</string>
+			<string></string>
+		</array>
 		<key>BoosterDescription</key>
 		<string>Boost with 1 tbls of soaked goji berries. Try to replace the ginger with mint leaves for a summer fresh taste!</string>
 		<key>Ingredients</key>
 		<array>
-			<string>Juice from one orangeJuice from one orangeJuice from one orangeJuice from one orangeJuice from one orangeJuice from one orangeJuice from one orangeJuice from one orangeJuice from one orangeJuice from one orangeJuice from one orange</string>
-			<string>Juice from half a lime</string>
-			<string>2 dl raspberries</string>
-			<string>1 dl mango</string>
-			<string>1 table spoon of gojiberries</string>
-			<string>1 cm ginger</string>
-			<string>1 tea spoon honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Raspberry Kiss</string>
-	</dict>
-	<key>Recipe B</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Green Detox</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>This fresh tasting, detoxing veggie smoothie is kind of like a salad in a glass.</string>
-		<key>DetailedRecipeDescription</key>
-		<string>This fresh tasting, detoxing veggie smoothie is kind of like a salad in a glass. Drinking smoothies like this is an easy way to make sure you will get your daily greens. If you like your smoothie a little more sweet and less green-tasting just replace the avocado with 1 dl of mango and the water with some apple juice!</string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>5 cm cucumber</string>
-			<string>1/2 a lemon</string>
-			<string>Parsley</string>
-			<string>1 dl of spinach</string>
-			<string>1 pear (chopped without seeds)</string>
-			<string>1/2 avocado</string>
-			<string>1/2 dl of water</string>
-		</array>
-		<key>ImageName</key>
-		<string>GreenDetox_3x</string>
-	</dict>
-	<key>Recipe C</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Nordic Berries</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Nordic berries are real super berries that contains lots of antioxidants and nutritions</string>
-		<key>DetailedRecipeDescription</key>
-		<string>Nordic berries are real super berries that contains lots of antioxidants and nutritions and they are super delicious in this dark blue smoothie. Why not experiment with some other nordic berries like red or black currants, raspberries or wild strawberries? Just switch one of the berries in the recipe with whatever nordic berry you have in your fridge, freezer or in your garden.</string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>1 banana</string>
-			<string>1 dl of blueberries</string>
-			<string>1 dl of blackberries</string>
-			<string>1 table spoon of lingonberries</string>
-			<string>1,5 dl of almond milk</string>
-		</array>
-		<key>ImageName</key>
-		<string>Nordic Berries</string>
-	</dict>
-	<key>Recipe D</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Unbeetable</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>A creamy ruby-red smoothie</string>
-		<key>DetailedRecipeDescription</key>
-		<string>This ruby-red smoothie is rather creamy and can be served as a bowl topped with some extra banana, fresh berries, pumpkin seeds and some goji berries. Beets are known for being anti-inflammatory and detoxifying which is one of the reasons why we love to add it in this smoothie. Together with the acididy from the apple and lemon it tastes fantastic!</string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>1 banana</string>
-			<string>2 dl of strawberries</string>
-			<string>2 dl of raspberries </string>
-			<string>1/2 dl of beet juice</string>
-			<string>Juice from 1 apple</string>
-			<string>Juice from 1/2 lemon</string>
-		</array>
-		<key>ImageName</key>
-		<string>Unbeetable</string>
-	</dict>
-	<key>Recipe E</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Nutty</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>1</integer>
-		<key>RecipeDescription</key>
-		<string>This rich and creamy smoothie is high in protein and is perfect after a workout</string>
-		<key>DetailedRecipeDescription</key>
-		<string>This rich and creamy smoothie is high in protein and is perfect after a workout or served as breakfast when you need some extra energy in the morning. The acididy in the raspberry sauce in the bottom of the glass complements the creaminess of the smoothie perfectly.</string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>1 banana</string>
-			<string>1 dl of mango</string>
-			<string>1 tbls of nutbutter of your choice</string>
-			<string>1,5 dl of almond milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of raspberries </string>
-			<string>1 tsp of honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Nutmilk</string>
-	</dict>
-	<key>Recipe F</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Green Coco Kale</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>1</integer>
-		<key>RecipeDescription</key>
-		<string>A creamy yet refreshing green smoothie that will keep you satisfied for a long time.</string>
-		<key>DetailedRecipeDescription</key>
-		<string>A creamy yet refreshing green smoothie that will keep you satisfied for a long time. Perfect before or after a workout. Add some wheatgrass for extra nutrition. It contains potassium, phosphorus, chlorophyll, calcium, magnesium, minerals and vitamins.</string>
-		<key>BoosterDescription</key>
-		<string>Boost with 1 tea spoon of wheatgrass to cure cancer</string>
-		<key>Ingredients</key>
-		<array>
-			<string>One Banana</string>
-			<string>2,5 dl mango</string>
-			<string>One leaf of kale</string>
-			<string>2 tea spoons of coconut oil</string>
-			<string>1,5 dl almond milk</string>
-		</array>
-		<key>ImageName</key>
-		<string>Green Coco Kale</string>
-	</dict>
-	<key>Recipe G</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Orange</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>1</integer>
-		<key>RecipeDescription</key>
-		<string>C-vitamin kick your life together</string>
-		<key>DetailedRecipeDescription</key>
-		<string>This smoothie is a real C-vitamin kick that will help to keep that cold away. Add some extra ginger to get some healthy heat in your smoothie. Not only will it taste good, it will also boost your immune system a little extra.</string>
-		<key>BoosterDescription</key>
-		<string>Boost with 1 cm of ginger to feel like you&apos;re on top of the world</string>
-		<key>Ingredients</key>
-		<array>
-			<string>Juice from 2 carrots</string>
-			<string>Juice from one orange</string>
-			<string>Juice from 1/2 lemon</string>
-			<string>2 dl mango</string>
-			<string>1,5 dl almond milk</string>
-		</array>
-		<key>ImageName</key>
-		<string>Nutmilk</string>
-	</dict>
-	<key>Recipe H</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Chocolate raspberry shake</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>1</integer>
-		<key>RecipeDescription</key>
-		<string>Healthy candy!</string>
-		<key>DetailedRecipeDescription</key>
-		<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy. Raspberry and chocolate is a match made in heaven! </string>
-		<key>BoosterDescription</key>
-		<string>Add some macca powder for an extra energy kick!</string>
-		<key>Ingredients</key>
-		<array>
-			<string>Juice from 2 carrots</string>
-			<string>Juice from one orange</string>
-			<string>Juice from 1/2 lemon</string>
-			<string>2 dl mango</string>
-			<string>1,5 dl almond milk</string>
-		</array>
-		<key>ImageName</key>
-		<string>Chocolate raspberry shake</string>
-	</dict>
-	<key>Recipe I</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Green machine</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>1</integer>
-		<key>RecipeDescription</key>
-		<string>Dark green leafy vegetables are good sources of many vitamins</string>
-		<key>DetailedRecipeDescription</key>
-		<string>Serve this healthy green smoothie as a light lunch- it will keep you full longer than you think. Adding some green leafs in your smoothie is a great way to increase the daily intake of vegetables. Dark green leafy vegetables are good sources of many vitamins (such as vitamins A, C, K and folate) and minerals (such as iron and calcium). If you don&apos;t have buckthorn at home it can be replaced with lemon juice.</string>
-		<key>BoosterDescription</key>
-		<string>Add some spirulina to this smoothie for extra nutrition.</string>
-		<key>Ingredients</key>
-		<array>
-			<string>1 frozen banana</string>
-			<string>1/2 avokado</string>
-			<string>1 dl of baby spinach</string>
-			<string>1/2 apple</string>
-			<string>Juice from 2 oranges</string>
-			<string>1 tbls of buckthorn</string>
-		</array>
-		<key>ImageName</key>
-		<string>Nutmilk</string>
-	</dict>
-	<key>Recipe J</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Blueberry pie</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Antioxidant-packed smoothie</string>
-		<key>DetailedRecipeDescription</key>
-		<string>This antioxidant-packed smoothie is not only super healthy, it tastes like a delicious blueberry pie! Add some chia seeds for extra fiber and healthy fats that will keep you full longer.</string>
-		<key>BoosterDescription</key>
-		<string>Boost with 2 table spoons of soaked chia seeds!</string>
-		<key>Ingredients</key>
-		<array>
-			<string>1 banana</string>
-			<string>2 dl of blueberries</string>
-			<string>1,5 dl of almond milk</string>
-			<string>A teaspoon of agave</string>
-			<string>1,5 dl almond milk</string>
-			<string>A pinch of cinnamon and cardamom</string>
-		</array>
-		<key>ImageName</key>
-		<string>blueberrypie</string>
-	</dict>
-	<key>Recipe K</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Better than icecream</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Ice cream!</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Better than icecream</string>
-	</dict>
-	<key>Recipe L</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Tea and Rosehip</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Tea plantation and roses</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Tea and rosehip</string>
-	</dict>
-	<key>Recipe M</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Sweet Cherry Pie</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Oh, sweet cherry pie!</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Sweet Cherry Pie</string>
-	</dict>
-	<key>Recipe N</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Cashew &amp; Raspberry</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Raspberries and healthy chunk of nuts</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Cashew &amp; Raspberry</string>
-	</dict>
-	<key>Recipe O</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Blueberry Chia</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Blueberry hills</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Blueberry Chia</string>
-	</dict>
-	<key>Recipe P</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Green Rawgurt</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Raw yoghurt!</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
+			<dict>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Ingredient</key>
+				<string>frozen banana</string>
+			</dict>
+			<dict>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Ingredient</key>
+				<string>frozen banana</string>
+			</dict>
+			<dict>
+				<key>Quantity</key>
+				<string>1/2</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Ingredient</key>
+				<string>avocado</string>
+			</dict>
+			<dict>
+				<key>Quantity</key>
+				<string>2</string>
+				<key>Measurement</key>
+				<string>tbsp</string>
+				<key>Ingredient</key>
+				<string>lemon juice</string>
+			</dict>
+			<dict>
+				<key>Quantity</key>
+				<string>5</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Ingredient</key>
+				<string>leaves of mint</string>
+			</dict>
+			<dict>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Ingredient</key>
+				<string>spinach</string>
+			</dict>
 		</array>
 		<key>ImageName</key>
 		<string>Green Rawgurt</string>
-	</dict>
-	<key>Recipe Q</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Placeholder</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Placeholder</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Nutmilk</string>
-	</dict>
-	<key>Recipe R</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Acai Bowl</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Bowl for your breakfast lane</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Acai Bowl</string>
-	</dict>
-	<key>Recipe S</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Blue Belly Bliss</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Blues for the stomach</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Bluebelly bliss</string>
-	</dict>
-	<key>Recipe T</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Cashew &amp; Raspberry</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Nut &amp; fruitmix</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Cashew &amp; Raspberry</string>
-	</dict>
-	<key>Recipe U</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Mango Rosehip</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Mangoooo</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Mango Rosehip</string>
-	</dict>
-	<key>Recipe V</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Passion for Chia</string>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>RecipeDescription</key>
-		<string>Passion for Chia instead of Christ</string>
-		<key>DetailedRecipeDescription</key>
-		<string></string>
-		<key>BoosterDescription</key>
-		<string></string>
-		<key>Ingredients</key>
-		<array>
-			<string>3 bananas (2 of them frozen)</string>
-			<string>1,5 dl of frozen strawberries </string>
-			<string>2 tbls of coconut milk</string>
-			<string>Raspberry sauce:</string>
-			<string>1 dl of Raspberries</string>
-			<string>1 tbls Honey</string>
-		</array>
-		<key>ImageName</key>
-		<string>Passion for Chia</string>
 	</dict>
 </dict>
 </plist>

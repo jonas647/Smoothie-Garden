@@ -23,9 +23,6 @@
         NSLog(@"Separated string contains :%i strings", (int)separatedString.count);
     }
     
-    //Ingredient text is formatted like
-    //"1,dl,of nut milk
-    
     //First object is the quantity
     NSString *quantity = [separatedString objectAtIndex:0];
     
