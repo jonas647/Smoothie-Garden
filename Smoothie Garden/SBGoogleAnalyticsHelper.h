@@ -7,7 +7,6 @@
 //
 
 #import "GoogleAnalyticsHelper.h"
-#import "ArchivingObject.h"
 
 @interface SBGoogleAnalyticsHelper : GoogleAnalyticsHelper
 

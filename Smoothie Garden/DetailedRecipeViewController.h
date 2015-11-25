@@ -21,10 +21,8 @@
     __weak IBOutlet UILabel *titleName;
     __weak IBOutlet UIImageView *recipeImage;
     
-    __weak IBOutlet UITextView *recipeDescriptionView;
     __weak IBOutlet NSLayoutConstraint *ingredientsHeightConstraint;
     
-    __weak IBOutlet NSLayoutConstraint *recipeDescriptionHeightConstraint;
     
     __weak IBOutlet UIButton *likeButton;
     

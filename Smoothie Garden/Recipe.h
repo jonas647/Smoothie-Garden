@@ -27,9 +27,12 @@
 
 
 - (BOOL) isRecipeFavorite;
+- (void) addRecipeToFavorites;
 - (BOOL) isRecipeUnlocked;
-- (void) removeRecipeFromFavorites;
-+ (NSArray*) recipesFromPlistFor: (int) selection;
-+ (NSString*) convertToUsUnitsFrom: (NSString*) metricText;
++ (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
++ (NSArray*) favoriteRecipes;
++ (void) removeRecipeFromFavoritesUsingRecipeName: (NSString*) recipeName;
++ (NSArray*) allRecipesFromPlist;
+
 
 @end

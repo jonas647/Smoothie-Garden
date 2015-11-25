@@ -10,7 +10,6 @@
 #import <StoreKit/StoreKit.h>
 #import "SBIAPHelper.h"
 #import "AppDelegate.h"
-#import "ArchivingObject.h"
 #import "SBActivityIndicatorView.h"
 #import "SBGoogleAnalyticsHelper.h"
 
@@ -150,8 +149,7 @@
     NSString * productIdentifier = notification.object;
     
     //Use the archiving object singleton to store the unlocked IAP
-    ArchivingObject *archiver = [ArchivingObject sharedInstance];
-    [archiver unlockIAP:productIdentifier];
+    [[SBIAPHelper sharedInstance] unlockIAP:productIdentifier];
     
     //Remove the loading indicator
     [loadingIndicator stopAnimating];

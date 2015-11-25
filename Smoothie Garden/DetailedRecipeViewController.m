@@ -8,8 +8,8 @@
 
 #import "DetailedRecipeViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ArchivingObject.h"
 #import "SBGoogleAnalyticsHelper.h"
+#import "Ingredient.h"
 
 @interface DetailedRecipeViewController ()
 
@@ -21,7 +21,6 @@
     NSString *recipeName;
     NSArray  *recipeInstructions;
     NSArray *ingredients;
-    ArchivingObject *archivingHelper;
     float latestContentOffset;
     BOOL isLikeButtonTouchable;
     
@@ -47,20 +46,25 @@
         NSLog(@"Wrong class for %@", titleName);
     }
     if ([self.selectedRecipe.detailedRecipedescription isKindOfClass:[NSString class]]) {
-        recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
+        //recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
     } else {
-        NSLog(@"Wrong class for %@", recipeDescriptionView);
+        //NSLog(@"Wrong class for %@", recipeDescriptionView);
     }
     if ([self.selectedRecipe.boosterDescription isKindOfClass:[NSString class]]) {
-        boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
+        //boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
     } else {
         NSLog(@"Wrong class for %@", boosterDescriptionView);
     }
     if ([self.selectedRecipe.ingredients isKindOfClass:[NSArray class]]) {
         ingredients = self.selectedRecipe.ingredients;
+    } else if ([self.selectedRecipe.detailedRecipedescription isKindOfClass:[NSArray class]]) {
+        recipeInstructions = self.selectedRecipe.detailedRecipedescription;
     } else {
         NSLog(@"Wrong class for %@", ingredients);
     }
+    
+    //TODO why isn't this working above in the IF statement?
+    recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.detailedRecipedescription];
     
     //Uncomment to Remove the navigation bar background for the detailed items
     /*
@@ -69,30 +73,30 @@
     self.navigationController.navigationBar.translucent = YES;
     */
     
-    //Setup the archiving object
-    archivingHelper = [[ArchivingObject alloc]init];
     
     //If the recipe is one of the favorites, then make the like button selected
-    if ([archivingHelper isRecipeFavorite:self.selectedRecipe]) {
+    if ([self.selectedRecipe isRecipeFavorite]) {
         likeButton.selected = YES;
     } else
         NSLog(@"%@ not liked", self.selectedRecipe.recipeName);
     
     //Must do this for the UITextview to work with (1) resizing height, (2) have custom font
+    /*
     [recipeDescriptionView sizeToFit];
     [recipeDescriptionView layoutIfNeeded];
     recipeDescriptionView.layoutManager.allowsNonContiguousLayout = false;
-    
+    */
     [boosterDescriptionView sizeToFit];
     [boosterDescriptionView layoutIfNeeded];
     boosterDescriptionView.layoutManager.allowsNonContiguousLayout = false;
     
-    recipeDescriptionView.scrollEnabled = NO;
+    //recipeDescriptionView.scrollEnabled = NO;
     boosterDescriptionView.scrollEnabled = NO;
     
     //Update the frame for the different UITextviews
     ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
-    recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
+    recipeTableView.frame = [self newFrameForUIView:recipeTableView];
+    //recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
     boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
     
     
@@ -102,22 +106,12 @@
     
     //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
-    [recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
+    //[recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
     [boosterDescriptionHeightConstraint setConstant:boosterDescriptionView.frame.size.height];
     
     //Must have the view as selectable in storyboard to get the font working (Apple bug)
-    recipeDescriptionView.selectable = NO;
+    //recipeDescriptionView.selectable = NO;
     boosterDescriptionView.selectable = NO;
-    
-    
-    //TODO
-    //Fix the height of the recipe table view
-    [recipeTableViewHeightConstraint setConstant:400];
-    
-    //[contentViewHeightConstraint setConstant:(ingredientsTableView.frame.size.height + recipeDescriptionView.frame.size.height +boosterDescriptionView.frame.size.height)];
-    NSLog(@"Content view height: %f", contentViewHeightConstraint.constant);
-    NSLog(@"White background height: %f", whiteBackgroundVerticalPositioningConstraint.constant);
-    NSLog(@"Image height: %f", recipeImage.frame.size.height);
     
     //Hide the navigation bar
     /*
@@ -150,8 +144,17 @@
     likeView.alpha = 0.0;
     likeView.layer.masksToBounds = YES;
     
+    //TODO
+    //Fix the height of the recipe table view
+    float totalTableHeight;
+    for (int i = 0; i<recipeInstructions.count; i++) {
+        totalTableHeight += [self tableView:recipeTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+    }
+    
+    [recipeTableViewHeightConstraint setConstant:totalTableHeight];
+    
     //Change the size of the white background & transparent background
-    float distanceBetweenImageAndBottomDescription = boosterDescriptionView.frame.origin.y-recipeImage.frame.origin.y;
+    float distanceBetweenImageAndBottomDescription = CGRectGetMaxY(recipeTableView.frame)-CGRectGetMinY(recipeImage.frame);
     
     [contentViewHeightConstraint setConstant:(distanceBetweenImageAndBottomDescription*2)];
 }
@@ -251,10 +254,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if ([tableView isEqual:ingredientsTableView]) {
+    if ([tableView isEqual:ingredientsTableView] && ingredients.count>0) {
         return [ingredients count];
-    } else if ([tableView isEqual:recipeTableView]) {
-        return [ingredients count];
+    } else if ([tableView isEqual:recipeTableView] && recipeInstructions.count>0) {
+        return [recipeInstructions count];
     }
     
     
@@ -262,6 +265,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tmpTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *CellIdentifier         =   @"DetailedRecipeTableCell";
     UITableViewCell *cell               =   [tmpTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (nil == cell) {
@@ -271,16 +275,23 @@
     
     if ([tmpTableView isEqual:ingredientsTableView]) {
         
-        UILabel *recipeIngredient = (UILabel*)[cell viewWithTag:100];
-        recipeIngredient.text = [ingredients objectAtIndex:indexPath.row];
+        UILabel *recipeQtyMeasure = (UILabel*)[cell viewWithTag:200];
+        UILabel *recipeIngredientText = (UILabel*)[cell viewWithTag:201];
+    
+        Ingredient *ingredientForRow = [ingredients objectAtIndex:indexPath.row];
+    
+        recipeQtyMeasure.text = [ingredientForRow stringWithQuantityAndMeasure];
+        recipeIngredientText.text = [ingredientForRow stringWithIngredientText];
+        
+        
     } else if ([tmpTableView isEqual:recipeTableView]) {
-        
-        UILabel *recipeIngredient = (UILabel*)[cell viewWithTag:101];
-        recipeIngredient.text = [ingredients objectAtIndex:indexPath.row];
-        
+    
+        UILabel *recipeText = (UILabel*)[cell viewWithTag:300];
+        recipeText.text = [recipeInstructions objectAtIndex:indexPath.row];
     }
     
     return cell;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -291,18 +302,18 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
         UILabel *resizableLabel = (UILabel*)[cell viewWithTag:101];
         
+        //Add margins to the cell height
+        float cellMargin = cell.frame.size.height/2;
+        
         UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, CGFLOAT_MAX)];
         newLabel.numberOfLines = 0;
         newLabel.lineBreakMode = NSLineBreakByWordWrapping;
         newLabel.font = resizableLabel.font;
-        newLabel.text = resizableLabel.text;
+        newLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
         [newLabel sizeToFit];
         
-        //Add margins to the cell height
-        float cellMargin = cell.frame.size.height/2;
-        
         return newLabel.frame.size.height + cellMargin;
-        
+    
     } else if ([tableView isEqual:ingredientsTableView]) {
         //Return the size of the cell. All cells are the same height
         UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
@@ -324,7 +335,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!likeButton.selected) {
         
         //Add recipe to the favorites
-        [archivingHelper addRecipeToFavorites:self.selectedRecipe];
+        [self.selectedRecipe addRecipeToFavorites];
         
         //Change the like button to selected
         likeButton.selected = YES;
@@ -334,7 +345,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         
     } else if (likeButton.selected){
         //Remove recipe from favorites
-        [archivingHelper removeRecipeFromFavorites:self.selectedRecipe.recipeName];
+        [Recipe removeRecipeFromFavoritesUsingRecipeName:self.selectedRecipe.recipeName];
         
         //Change the like button to unselected
         likeButton.selected = NO;

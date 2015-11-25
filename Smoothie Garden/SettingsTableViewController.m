@@ -6,12 +6,15 @@
 //  Copyright © 2015 Jonas C Björkell. All rights reserved.
 //
 
+#define MEASUREMENT_METRIC 1001
+#define MEASUREMENT_US_CUSTOMARY_UNITS 1002
+
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "SBIAPHelper.h"
-#import "ArchivingObject.h"
 #import "SBActivityIndicatorView.h"
 #import "SBGoogleAnalyticsHelper.h"
+#import "Ingredient.h"
 
 
 #import "Recipe.h"
@@ -45,16 +48,22 @@
         
     }
     
-    //Update switch button
+    //Update switch buttons
     
     if ([SBGoogleAnalyticsHelper isAnalyticsEnabled]) {
-        NSLog(@"Switch is on");
         [_analyticsSwitch setOn:YES];
     } else {
         [_analyticsSwitch setOn:NO];
-        NSLog(@"Switch is off");
     }
     
+    if ([Ingredient usedMeasure] == MEASUREMENT_METRIC) {
+        
+        self.measurementButton.selected = NO;
+        
+    } else if ([Ingredient usedMeasure] == MEASUREMENT_US_CUSTOMARY_UNITS) {
+        
+        self.measurementButton.selected = YES;
+    }
     
     
     //Report to Analytics
@@ -136,21 +145,17 @@
     
     NSString * productIdentifier = notification.object;
     
-    //Use the archiving object singleton to store the unlocked IAP
-    ArchivingObject *archiver = [ArchivingObject sharedInstance];
-    [archiver unlockIAP:productIdentifier];
+    //Use the In app helper object singleton to store the unlocked IAP
+    [[SBIAPHelper sharedInstance] unlockIAP:productIdentifier];
 }
 
 - (IBAction)resetLikedRecipes:(id)sender {
     
-    NSArray *allLikedRecipes = [ArchivingObject sharedInstance].favoriteRecipes;
+    NSArray *allLikedRecipes = [Recipe favoriteRecipes];
     
-    NSLog(@"Delete recipes in array: %@", allLikedRecipes);
     for (NSString *likedRecipe in allLikedRecipes) {
         
-        NSLog(@"Recipe: %@", likedRecipe);
-        
-        [[ArchivingObject sharedInstance] removeRecipeFromFavorites:likedRecipe];
+        [Recipe removeRecipeFromFavoritesUsingRecipeName:likedRecipe];
     }
     
 }
@@ -161,7 +166,9 @@
     
     if (tempButton.selected) {
         tempButton.selected = NO;
+        [Ingredient useMeasurementMethod:MEASUREMENT_METRIC];
     } else if (!tempButton.selected) {
+        [Ingredient useMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
         tempButton.selected = YES;
     }
     

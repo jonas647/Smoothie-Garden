@@ -22,4 +22,20 @@
     return sharedInstance;
 }
 
+#pragma mark - IAP
+
+- (void) unlockIAP:(NSString *)iapString {
+    
+    //Save to nsuserdefault that the iap names as the string should be unlocked
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:iapString];
+    
+}
+
+- (BOOL) isIAPUnlocked:(NSString*) iapString {
+    
+    //Get the iap name from the nsuserdefault and return the YES/NO for that
+    return [[NSUserDefaults standardUserDefaults] boolForKey:iapString];
+    
+}
+
 @end

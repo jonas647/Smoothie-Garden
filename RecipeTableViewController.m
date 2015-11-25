@@ -10,7 +10,6 @@
 #import "DetailedRecipeViewController.h"
 #import "Recipe.h"
 #import "SWRevealViewController.h"
-//#import "ArchivingObject.h"
 #import <QuartzCore/QuartzCore.h>
 #import "RecipeTableViewCell.h"
 #import "SBActivityIndicatorView.h"
@@ -71,7 +70,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     //Array for handling the filtered search results
-    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[Recipe recipesFromPlistFor:TAB_BAR_ALL] count]];
+    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[Recipe allRecipesFromPlist] count]];
     
 }
 
@@ -118,7 +117,7 @@
     //Validate on what tab bar item is chosen to select what data to show
     //This must be in view did appear as the selected index isn't set in the view will appear
     
-    self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
+    self.recipes = [Recipe allRecipesFromPlist];
     
     [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     
@@ -243,7 +242,7 @@
 - (void)didDismissSearchController:(UISearchController *)searchController {
     // do something after the search controller is dismissed
     
-    self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
+    self.recipes = [Recipe allRecipesFromPlist];
     [self.tableView reloadData];
 }
 
@@ -258,7 +257,7 @@
     
     //Get the recipes to search among
     //TODO, should not get a new list every time, instead have a current list to work with
-    NSMutableArray *recipeSearch = (NSMutableArray*)[Recipe recipesFromPlistFor:TAB_BAR_ALL];
+    NSMutableArray *recipeSearch = (NSMutableArray*)[Recipe allRecipesFromPlist];
     
     //
     //Start with searching for the recipe titles
@@ -354,7 +353,7 @@
     if (searchText.length>0) {
         self.recipes = filteredRecipes;
     } else {
-        self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
+        self.recipes = [Recipe allRecipesFromPlist];
     }
     
     [self.tableView reloadData];
@@ -454,7 +453,6 @@
         return NO;
     
 }
-*/
 
 // Support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -466,11 +464,12 @@
     [[self.recipes objectAtIndex:indexPath.row] removeRecipeFromFavorites];
     
     //Set the new favorite recipe list
-    self.recipes = [Recipe recipesFromPlistFor:TAB_BAR_ALL];
+    self.recipes = [Recipe allRecipesFromPlist];
     
     //Reload the table so that the recipe disappears
     [self.tableView reloadData];
 }
+ */
 
 /*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

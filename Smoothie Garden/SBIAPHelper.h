@@ -10,9 +10,8 @@
 
 @interface SBIAPHelper : IAPHelper
 
-
-
 + (SBIAPHelper *)sharedInstance;
-
+- (void) unlockIAP: (NSString*) iapString;
+- (BOOL) isIAPUnlocked:(NSString*) iapString;
 
 @end
