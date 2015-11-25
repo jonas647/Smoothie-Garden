@@ -27,7 +27,6 @@
         self.measure = measure;
         self.text = txt;
         
-        
     }
     return self;
     
@@ -98,7 +97,10 @@
         NSString *newMeasureType = measureType;
         if ([measureType isEqualToString:METRIC_deciliter]) {
             //Convert deciliter into cups
+            NSLog(@"-_-_-_-_-_-_--__--__-");
+            NSLog(@"Converting Metric: %f", metricMeasure);
             usMeasure = metricMeasure * 0.42;
+            NSLog(@"To US: %f", usMeasure);
             
             //Set a new text string for the "Cups" instead of "dl"
             newMeasureType = USCUSTOMARY_cup;
@@ -111,6 +113,8 @@
             
         } else
             NSLog(@"No US equivalent for %@", measureType);
+        
+        
         
         //Create the final string by appending the measure type ("Cups") to the quantity
         NSString *usCustomaryString = [NSString stringWithFormat:@"%@ %@", [self roundedNumberFrom:usMeasure], newMeasureType];
@@ -142,7 +146,15 @@
     [formatter setMaximumFractionDigits:1];
     [formatter setRoundingMode: NSNumberFormatterRoundDown];
     
-    return [formatter stringFromNumber:[NSNumber numberWithFloat:roundedValue]];
+    //Check if the quantity is half, then change it to 1/2 instead of 0.5
+    //Otherwise just send back the rounded value (ie. "1", "1.5" etc.
+    if (roundedValue == 0.5) {
+        return @"1/2";
+    } else {
+        return [formatter stringFromNumber:[NSNumber numberWithFloat:roundedValue]];
+    }
+    
+    
 }
 
  //Saved/Archived values
