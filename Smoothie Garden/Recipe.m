@@ -89,38 +89,6 @@
     return (NSArray*)tempObjects;
 }
 
-#pragma mark - Favorite Recipes
-/*
-+ (NSArray*) favoriteRecipes {
-    
-    //Load the favorite recipes array
-    NSArray *favoriteRecipes = [[ArchivingObject sharedInstance] favoriteRecipes];
-    NSMutableArray *tempFavoriteRecipes = [[NSMutableArray alloc]init];
-    
-    //Iterate all recipes and match with the names saved as favorites to get all favorite recipes to a new array
-    for (Recipe *tempRecipe in [self allRecipesFromPlist]) {
-        
-        for (NSString *tempName in favoriteRecipes) {
-            if ([tempRecipe.recipeName isEqualToString:tempName]) {
-                [tempFavoriteRecipes addObject:tempRecipe];
-            }
-        }
-    }
-    
-    NSArray *favoritesToReturn = [NSArray arrayWithArray:tempFavoriteRecipes];
-    return favoritesToReturn;
-}*/
-
-/*
-- (BOOL) isRecipeFavorite {
-    
-    return [[ArchivingObject sharedInstance]isRecipeFavorite:self];
-}
-
-- (void) removeRecipeFromFavorites {
-    [[ArchivingObject sharedInstance]removeRecipeFromFavorites:self.recipeName];
-}*/
-
 #pragma mark - Favorites
 
 + (NSArray*) favoriteRecipes {
@@ -207,7 +175,23 @@
     }
 }
 
+#pragma mark - Search
 
+- (NSString*)stringWithIngredients {
+    
+    //Function will put all the ingredients texts in one long string. To make it easier for the search function.
+    
+    //Start by adding all ingredients to the same NSString
+    NSString *aggregatedIngredients = @"";
+    for (Ingredient *ingredient in self.ingredients) {
+    
+        aggregatedIngredients = [aggregatedIngredients stringByAppendingString:[NSString stringWithFormat:@",%@", ingredient.text]];
+        
+    }
+
+    return aggregatedIngredients;
+    
+}
 
 
 

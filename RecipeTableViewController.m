@@ -329,20 +329,9 @@
         
         //Validate the ingredients array to the predicate and see if it contains the search term. If it does add the recipe to the filtered recipes
         
-        //Start by adding all ingredients to the same NSString
-        NSString *aggregatedIngredients = @"";
-        for (Ingredient *ingredient in tempRecipe.ingredients) {
-            
-            
-            aggregatedIngredients = [aggregatedIngredients stringByAppendingString:[NSString stringWithFormat:@",%@", ingredient.text]];
-            
-        }
-        
-        NSLog(@"Ingredients to match: %@", aggregatedIngredients);
-        
-        //Add the string to an array to be able to run a predicate on it
-        NSArray *ingredientsInOnestring = [NSArray arrayWithObject:aggregatedIngredients];
-        
+        //Add the string with all the ingredients to an array to be able to run a predicate on it
+        NSArray *ingredientsInOnestring = [NSArray arrayWithObject:[tempRecipe stringWithIngredients]];
+                
         //Run the predicate to match if all the search words are among the ingredients
         NSArray *matchedIngredients = [ingredientsInOnestring filteredArrayUsingPredicate:compoundPredicate];
         
