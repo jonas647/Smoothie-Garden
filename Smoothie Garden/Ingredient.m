@@ -157,8 +157,15 @@
     
 }
 
- //Saved/Archived values
+- (int) defaultMeasurementMethodForUser {
+    
+    //TODO
+    //Validate the user country code to see if the user should be set to metric or US at app start
+    
+    return 0;
+}
 
+#pragma mark - Saved and Archived values
 + (int) usedMeasure {
     
     if ([[NSUserDefaults standardUserDefaults]integerForKey:MEASUREMENT_METHOD]) {

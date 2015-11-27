@@ -377,34 +377,40 @@
         [loadingIndicator stopAnimating];
     }
     
+    //Get the custom cell for the recipe 
     static NSString *tableCellIdentifier = @"RecipeTableCell";
-    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCellIdentifier];
+    return [self customCellForRecipe:[self.recipes objectAtIndex:indexPath.row] inTableView:tableView withTableViewCellIdentifier:tableCellIdentifier];
+    
+}
+
+- (UITableViewCell*) customCellForRecipe: (Recipe*) sRecipe inTableView: (UITableView*) tableView withTableViewCellIdentifier: (NSString*) cellIdentifier {
+    
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     // Configure the cell...
     
     if (cell == nil) {
-        cell = [[RecipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellIdentifier];
+        cell = [[RecipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    Recipe *recipeForRow = [self.recipes objectAtIndex:indexPath.row];
-    cell.recipeTitle.text = recipeForRow.recipeName;
-    cell.recipeDescription.text = [recipeForRow.recipeDescription objectAtIndex:0];
+    cell.recipeTitle.text = sRecipe.recipeName;
+    cell.recipeDescription.text = sRecipe.RecipeOverviewDescription;
     
     //Removed this since it's taking to long and not efficient for the app to create UIImage here
     //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
     
     //Instead get the UIImage from memory, stored in a NSDictionary
-    cell.recipeImage.image = [thumbnailImages objectForKey:recipeForRow.recipeName];
+    cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
     
     //If the recipe is a favorite, then display the like image
-    if ([recipeForRow isRecipeFavorite]) {
+    if ([sRecipe isRecipeFavorite]) {
         cell.likeImage.hidden = NO;
     } else
         cell.likeImage.hidden = YES;
     
     //Check if the IAP has been purchased and if recipes should be unlocked
     //If the recipe is of type 0 then it's a free recipe, no need to check for IAP
-    BOOL isRecipeUnlocked = [recipeForRow isRecipeUnlocked];
+    BOOL isRecipeUnlocked = [sRecipe isRecipeUnlocked];
     
     //Use alpha value to make the unlocked recipes transparent
     float alphaValue;
@@ -419,6 +425,7 @@
     [cell.recipeImage setAlpha:alphaValue];
     
     return cell;
+    
 }
 
 #pragma mark - Table view data delegate

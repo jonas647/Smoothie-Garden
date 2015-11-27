@@ -10,6 +10,8 @@
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>This green and creamy smoothie is the perfect lactose-free alternative to traditional yoghurt.</string>
 		<key>RecipeDescription</key>
 		<array>
 			<string>This green and creamy smoothie is the perfect lactose-free alternative to traditional yoghurt. Start your day with this healthy bowl topped with fresh berries, nuts and seeds and you will be energized for hours</string>

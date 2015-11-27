@@ -19,6 +19,7 @@
 @property (nonatomic) int recipeCategory;
 @property (nonatomic) BOOL favorite;
 @property (nonatomic, strong) NSString *recipeName;
+@property (nonatomic, strong) NSString *RecipeOverviewDescription;
 @property (nonatomic, strong) NSArray *recipeDescription;
 @property (nonatomic, strong) NSArray *detailedRecipedescription;
 @property (nonatomic, strong) NSArray *boosterDescription;
