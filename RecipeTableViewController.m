@@ -13,6 +13,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "RecipeTableViewCell.h"
 #import "SBActivityIndicatorView.h"
+#import "Ingredient.h"
 
 //#define CELL_HEIGHT 176
 #define TAB_BAR_ALL 1000
@@ -329,10 +330,15 @@
         //Validate the ingredients array to the predicate and see if it contains the search term. If it does add the recipe to the filtered recipes
         
         //Start by adding all ingredients to the same NSString
-        NSString *aggregatedIngredients;
-        for (NSString *ingredient in tempRecipe.ingredients) {
-            aggregatedIngredients = [NSString stringWithFormat:@"%@,%@", aggregatedIngredients,ingredient];
+        NSString *aggregatedIngredients = @"";
+        for (Ingredient *ingredient in tempRecipe.ingredients) {
+            
+            
+            aggregatedIngredients = [aggregatedIngredients stringByAppendingString:[NSString stringWithFormat:@",%@", ingredient.text]];
+            
         }
+        
+        NSLog(@"Ingredients to match: %@", aggregatedIngredients);
         
         //Add the string to an array to be able to run a predicate on it
         NSArray *ingredientsInOnestring = [NSArray arrayWithObject:aggregatedIngredients];
