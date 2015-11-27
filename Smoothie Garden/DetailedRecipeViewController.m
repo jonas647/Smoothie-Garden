@@ -73,6 +73,7 @@
     self.navigationController.navigationBar.translucent = YES;
     */
     
+    recipeDescription.text = [self.selectedRecipe.recipeDescription objectAtIndex:0];
     
     //If the recipe is one of the favorites, then make the like button selected
     if ([self.selectedRecipe isRecipeFavorite]) {
@@ -98,6 +99,8 @@
     recipeTableView.frame = [self newFrameForUIView:recipeTableView];
     //recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
     boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
+    
+    recipeDescription.frame = [self newFrameForUIView:recipeDescription];
     
     
     //Set the vertical spacing of the whitebackground to the height of the recipe image to make it positioned just under it
