@@ -97,10 +97,7 @@
         NSString *newMeasureType = measureType;
         if ([measureType isEqualToString:METRIC_deciliter]) {
             //Convert deciliter into cups
-            NSLog(@"-_-_-_-_-_-_--__--__-");
-            NSLog(@"Converting Metric: %f", metricMeasure);
             usMeasure = metricMeasure * 0.42;
-            NSLog(@"To US: %f", usMeasure);
             
             //Set a new text string for the "Cups" instead of "dl"
             newMeasureType = USCUSTOMARY_cup;

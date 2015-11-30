@@ -109,6 +109,8 @@
     //When the user comes back to the table view after selecting a recipe she should not see the search window
     [self.searchController setActive:NO];
     
+    //TODO
+    //Change the search controller so that it keeps the search string
 }
 
 

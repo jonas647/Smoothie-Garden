@@ -120,10 +120,6 @@
     
     //End of Google Analytics
     
-    
-    //TODO
-    //
-    
     return YES;
 }
 

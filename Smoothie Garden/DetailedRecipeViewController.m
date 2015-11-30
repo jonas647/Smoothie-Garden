@@ -9,6 +9,7 @@
 #import "DetailedRecipeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SBGoogleAnalyticsHelper.h"
+#import "AppReviewHelper.h"
 #import "Ingredient.h"
 
 @interface DetailedRecipeViewController ()
@@ -137,6 +138,14 @@
     
     //Report to analytics
     [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:[NSString stringWithFormat:@"Recipe %@", _selectedRecipe.recipeName]];
+    
+    //Ask for review
+    if ([AppReviewHelper shouldShowReviewAlert]) {
+        
+        [self performSelector:@selector(showReviewAlertToUser) withObject:nil afterDelay:0.5f];
+        
+    }
+    
 }
 
 
@@ -408,7 +417,54 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
+#pragma mark - Review
 
+- (void) showReviewAlertToUser {
+    
+    //Show an alert to the user asking to review the app
+    
+    NSString *alertTitle = @"Please rate Smoothie Box";
+    NSString *alertText = @"If you like Smoothie Box, please give your feedback and rate it";
+    NSString *cancelText = @"No, don't ask again";
+    NSString *laterText = @"Later";
+    NSString *acceptText = @"Rate";
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle message:alertText preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:acceptText style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        //Open the AppStore link for the user
+        NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/1057010706"];
+        if ([[UIApplication sharedApplication]canOpenURL:appStoreUrl]) {
+            [[UIApplication sharedApplication]openURL:appStoreUrl];
+        }
+    
+        //Update the NSUserDefault to show that the user has given review
+        [AppReviewHelper dontShowAnyMoreReviewAlerts];
+        
+        //Register with Google Analytics
+        [SBGoogleAnalyticsHelper reportEventWithCategory:@"Review" andAction:@"Rate the app" andLabel:@"YES" andValue:nil];
+        
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelText style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        //Update the NSUserDefault so that no more alerts are shown
+        [AppReviewHelper dontShowAnyMoreReviewAlerts];
+        
+        //Register with Google Analytics
+        [SBGoogleAnalyticsHelper reportEventWithCategory:@"Review" andAction:@"Rate the app" andLabel:@"NO" andValue:nil];
+    
+    }];
+    
+    UIAlertAction *laterAction = [UIAlertAction actionWithTitle:laterText style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+    
+    [alert addAction:acceptAction];
+    [alert addAction:laterAction];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+#pragma mark - Alert view delegate
 
 
 @end
