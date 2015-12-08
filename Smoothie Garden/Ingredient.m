@@ -10,22 +10,25 @@
 #define MEASUREMENT_METRIC 1001
 #define MEASUREMENT_US_CUSTOMARY_UNITS 1002
 #define METRIC_deciliter @"dl"
+#define METRIC_centimeter @"cm"
 #define METRIC_teaspoon @"tbsp"
 #define METRIC_tablespoon @"tblsp"
 #define USCUSTOMARY_cup @"cup"
+#define USCUSTOMARY_inch @"inches"
 
 
 #import "Ingredient.h"
 
 @implementation Ingredient
 
-- (id) initWithQuantity:(NSString *)qty andMeasure:(NSString *)measure andText:(NSString *)txt {
+- (id) initWithQuantity:(NSString *)qty andMeasure:(NSString *)measure andText:(NSString *)txt andOptional: (BOOL) optional {
     
     if (self = [super init]) { // equivalent to "self does not equal nil"
         
         self.quantity = qty;
         self.measure = measure;
         self.text = txt;
+        self.optional = optional;
         
     }
     return self;
@@ -37,15 +40,32 @@
     //Check what measurement that should be used
     int usedMeasurementMethod = [Ingredient usedMeasure];
     
+    NSString *justQuantity;
+    
     switch (usedMeasurementMethod) {
         case MEASUREMENT_METRIC:
             //If metric is used then no need for convertion
             //Just put the quantity and measure type together into a string
-            return [NSString stringWithFormat:@"%@ %@", self.quantity, self.measure];
+            justQuantity = [NSString stringWithFormat:@"%@ %@", self.quantity, self.measure];
+            
+            if (self.optional) {
+                NSString *stringWithOptional = [NSString stringWithFormat:@"(optional) %@", justQuantity];
+                return stringWithOptional;
+            } else {
+                return justQuantity;
+            }
             break;
         case MEASUREMENT_US_CUSTOMARY_UNITS:
             //If US customary. Then we need to convert this before returning the string
-            return [self convertToStringUsingMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
+            
+            justQuantity = [self convertToStringUsingMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
+            
+            if (self.optional) {
+                NSString *stringWithOptional = [NSString stringWithFormat:@"(optional) %@", justQuantity];
+                return stringWithOptional;
+            } else {
+                return justQuantity;
+            }
         default:
             NSLog(@"WARNING, trying to use %i for measurement. %i doesn't exist", usedMeasurementMethod, usedMeasurementMethod);
             return nil;
@@ -108,6 +128,11 @@
         } else if ([measureType isEqualToString:METRIC_teaspoon]) {
             usMeasure = metricMeasure; //1 tsp equals 1 tsp
             
+        } else if ([measureType isEqualToString:METRIC_centimeter]) {
+          
+            usMeasure = metricMeasure * 0.3937; //1cm is 0,4 inches
+            newMeasureType = USCUSTOMARY_inch;
+            
         } else
             NSLog(@"No US equivalent for %@", measureType);
         
@@ -130,7 +155,8 @@
     NSString *measureType = self.measure;
     if ([measureType isEqualToString:METRIC_deciliter] ||
         [measureType isEqualToString:METRIC_tablespoon] ||
-        [measureType isEqualToString:METRIC_teaspoon]) {
+        [measureType isEqualToString:METRIC_teaspoon] ||
+        [measureType isEqualToString:METRIC_centimeter]) {
         return YES;
     } else {
         return NO;

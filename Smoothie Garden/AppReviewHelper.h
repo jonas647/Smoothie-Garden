@@ -12,5 +12,6 @@
 
 + (BOOL) shouldShowReviewAlert;
 + (void) dontShowAnyMoreReviewAlerts;
++ (void) firstTimeAppLaunch;
 
 @end

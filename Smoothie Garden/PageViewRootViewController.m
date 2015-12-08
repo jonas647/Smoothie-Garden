@@ -28,11 +28,11 @@
     
     NSString *defaultTitleText = @"This is what you get!";
     
-    _pageTitles = @[defaultTitleText,defaultTitleText,defaultTitleText,defaultTitleText];
-    _pageTexts = @[@"Over 20 healthy, vegan, lactos-free Smoothie Recipes", @"Create your own recipe book with your favorite recipes for easy access", @"Free regular updates with new recipes", @"Start a healthy lifestyle now!"];
-    _pageImages = @[@"Sweet Cherry Pie.png", @"page2.png", @"page3.png", @"page4.png"];
-    _leftPageImages =@[@"Passion for Chia.png", @"",@"",@""];
-    _rightPageImages = @[@"Green Coco Kale.png",@"",@"",@""];
+    _pageTitles = @[defaultTitleText,defaultTitleText,defaultTitleText];
+    _pageTexts = @[@"Over 20 healthy, raw and vegan smoothie Recipes", @"Wide variety of Chia, nut, fruit and vegetable based smoothies", @"Join the Smoothie Box family to live a healthy lifestyle"];
+    _pageImages = @[@"Acai Bowl.png", @"Sweet Cherry Pie.png", @"Tropical Passion.png"];
+    _leftPageImages =@[@"", @"Passion for Chia.png",@""];
+    _rightPageImages = @[@"",@"Green Coco Kale.png",@""];
     
     
     // Create page view controller

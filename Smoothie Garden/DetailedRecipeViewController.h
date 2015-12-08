@@ -27,9 +27,6 @@
     __weak IBOutlet UILabel *recipeDescription;
     __weak IBOutlet UIButton *likeButton;
     
-    __weak IBOutlet UITextView *boosterDescriptionView;
-    __weak IBOutlet NSLayoutConstraint *boosterDescriptionHeightConstraint;
-    
     __weak IBOutlet UIView *whiteBackground;
     __weak IBOutlet NSLayoutConstraint *whiteBackgroundVerticalPositioningConstraint;
     __weak IBOutlet NSLayoutConstraint *contentViewHeightConstraint;

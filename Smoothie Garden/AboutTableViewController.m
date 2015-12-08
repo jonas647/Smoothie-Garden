@@ -6,9 +6,12 @@
 //  Copyright © 2015 Jonas C Björkell. All rights reserved.
 //
 
+#define LABEL_SIZE_SMALL 2
+
 #import "AboutTableViewController.h"
 #import "SWRevealViewController.h"
 #import "SBGoogleAnalyticsHelper.h"
+#import "UIFont+FontSizeBasedOnScreenSize.h"
 
 @interface AboutTableViewController ()
 
@@ -42,6 +45,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) changeFontSizeForAllLabelsIn: (NSArray*) views {
+    
+    //Iterate all the subviews to find the labels and change the font size based on screen size
+    for (UIView *view in self.view.subviews) {
+        
+        //If the view has subviews then check that for subviews as well
+        if ([view isKindOfClass:[UILabel class]]) {
+            UILabel *tempLabel = (UILabel*)view;
+            [tempLabel setFont:[tempLabel.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:tempLabel.font withSize:LABEL_SIZE_SMALL]];
+        }
+    }
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath       *)indexPath

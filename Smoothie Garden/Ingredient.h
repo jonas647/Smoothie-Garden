@@ -10,13 +10,14 @@
 
 @interface Ingredient : NSObject
 
-- (id) initWithQuantity: (NSString*) qty andMeasure: (NSString*) measure andText: (NSString*) txt;
+- (id) initWithQuantity:(NSString *)qty andMeasure:(NSString *)measure andText:(NSString *)txt andOptional: (BOOL) optional;
 - (NSString*) stringWithQuantityAndMeasure;
 - (NSString*) stringWithIngredientText;
 
 @property (nonatomic) NSString *measure;
 @property (nonatomic, strong) NSString *quantity;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic) BOOL optional;
 + (void) useMeasurementMethod: (int) measure ;
 + (int) usedMeasure;
 

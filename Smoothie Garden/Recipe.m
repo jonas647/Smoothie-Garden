@@ -64,10 +64,17 @@
         NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
         for (NSDictionary *dic in [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"]) {
 
+            BOOL isOptional;
+            if ([dic objectForKey:@"Optional"] != nil) {
+                isOptional = [dic objectForKey:@"Optional"];
+            } else {
+                isOptional = NO;
+            }
             
             Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:[dic objectForKey:@"Quantity"]
                                                                  andMeasure:[dic objectForKey:@"Measurement"]
-                                                                    andText:[dic objectForKey:@"Text"]];
+                                                                    andText:[dic objectForKey:@"Text"]
+                                                                andOptional:isOptional];
             [tempIngredients addObject:newIngredient];
         }
         

@@ -12,8 +12,7 @@
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
 #import "GAILogger.h"
-
-
+#import "AppReviewHelper.h"
 
 @interface AppDelegate ()
 
@@ -119,6 +118,9 @@
     }
     
     //End of Google Analytics
+    
+    //App Review start-up
+    [AppReviewHelper firstTimeAppLaunch];
     
     return YES;
 }

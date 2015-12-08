@@ -6,11 +6,16 @@
 //  Copyright (c) 2015 Jonas C Björkell. All rights reserved.
 //
 
+#define LABEL_SIZE_LARGE 1
+#define LABEL_SIZE_SMALL 2
+#define LABEL_SIZE_TINY 3
+
 #import "DetailedRecipeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SBGoogleAnalyticsHelper.h"
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
+#import "UIFont+FontSizeBasedOnScreenSize.h"
 
 @interface DetailedRecipeViewController ()
 
@@ -51,11 +56,6 @@
     } else {
         //NSLog(@"Wrong class for %@", recipeDescriptionView);
     }
-    if ([self.selectedRecipe.boosterDescription isKindOfClass:[NSString class]]) {
-        //boosterDescriptionView.text = self.selectedRecipe.boosterDescription;
-    } else {
-        NSLog(@"Wrong class for %@", boosterDescriptionView);
-    }
     if ([self.selectedRecipe.ingredients isKindOfClass:[NSArray class]]) {
         ingredients = self.selectedRecipe.ingredients;
     } else if ([self.selectedRecipe.detailedRecipedescription isKindOfClass:[NSArray class]]) {
@@ -82,24 +82,9 @@
     } else
         NSLog(@"%@ not liked", self.selectedRecipe.recipeName);
     
-    //Must do this for the UITextview to work with (1) resizing height, (2) have custom font
-    /*
-    [recipeDescriptionView sizeToFit];
-    [recipeDescriptionView layoutIfNeeded];
-    recipeDescriptionView.layoutManager.allowsNonContiguousLayout = false;
-    */
-    [boosterDescriptionView sizeToFit];
-    [boosterDescriptionView layoutIfNeeded];
-    boosterDescriptionView.layoutManager.allowsNonContiguousLayout = false;
-    
-    //recipeDescriptionView.scrollEnabled = NO;
-    boosterDescriptionView.scrollEnabled = NO;
-    
     //Update the frame for the different UITextviews
     ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
     recipeTableView.frame = [self newFrameForUIView:recipeTableView];
-    //recipeDescriptionView.frame =    [self newFrameForUIView:recipeDescriptionView];
-    boosterDescriptionView.frame =   [self newFrameForUIView:boosterDescriptionView];
     
     recipeDescription.frame = [self newFrameForUIView:recipeDescription];
     
@@ -110,22 +95,6 @@
     
     //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
-    //[recipeDescriptionHeightConstraint setConstant:recipeDescriptionView.frame.size.height];
-    [boosterDescriptionHeightConstraint setConstant:boosterDescriptionView.frame.size.height];
-    
-    //Must have the view as selectable in storyboard to get the font working (Apple bug)
-    //recipeDescriptionView.selectable = NO;
-    boosterDescriptionView.selectable = NO;
-    
-    //Hide the navigation bar
-    /*
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
-    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
-     */
     
     //Hide the navigation bar
     self.navigationController.navigationBar.translucent = YES;
@@ -145,6 +114,7 @@
         [self performSelector:@selector(showReviewAlertToUser) withObject:nil afterDelay:0.5f];
         
     }
+    
     
 }
 
@@ -169,6 +139,17 @@
     float distanceBetweenImageAndBottomDescription = CGRectGetMaxY(recipeTableView.frame)-CGRectGetMinY(recipeImage.frame);
     
     [contentViewHeightConstraint setConstant:(distanceBetweenImageAndBottomDescription*2)];
+    
+    //Change font size based on screen size
+    UILabel *by = [self.view viewWithTag:400];
+    UILabel *smoothieBox = [self.view viewWithTag:401];
+    
+    [by setFont:[by.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:by.font withSize:LABEL_SIZE_TINY]];
+    [smoothieBox setFont:[smoothieBox.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:smoothieBox.font withSize:LABEL_SIZE_TINY]];
+    [titleName setFont:[titleName.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:titleName.font withSize:LABEL_SIZE_LARGE]];
+    
+    NSLog(@"Title font: %@", titleName.font);
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -213,7 +194,6 @@
     
     return zoomRect;
 }
-
 
 /*
 #pragma mark - Navigation
@@ -293,13 +273,17 @@
         Ingredient *ingredientForRow = [ingredients objectAtIndex:indexPath.row];
     
         recipeQtyMeasure.text = [ingredientForRow stringWithQuantityAndMeasure];
+        [recipeQtyMeasure.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeQtyMeasure.font withSize:LABEL_SIZE_SMALL];
+        
         recipeIngredientText.text = [ingredientForRow stringWithIngredientText];
+        [recipeIngredientText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeIngredientText.font withSize:LABEL_SIZE_SMALL];
         
         
     } else if ([tmpTableView isEqual:recipeTableView]) {
     
         UILabel *recipeText = (UILabel*)[cell viewWithTag:300];
         recipeText.text = [recipeInstructions objectAtIndex:indexPath.row];
+        [recipeText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeText.font withSize:LABEL_SIZE_SMALL];
     }
     
     return cell;
@@ -312,19 +296,20 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView isEqual:recipeTableView]) {
         //Check the height of the label that populates the cell and resize the cell height after that
         UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
-        UILabel *resizableLabel = (UILabel*)[cell viewWithTag:101];
+        UILabel *resizableLabel = (UILabel*)[cell viewWithTag:300];
         
         //Add margins to the cell height
-        float cellMargin = cell.frame.size.height/2;
+        float cellMargin = cell.frame.size.height;
         
         UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, CGFLOAT_MAX)];
         newLabel.numberOfLines = 0;
         newLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        newLabel.font = resizableLabel.font;
         newLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
+        [newLabel.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:resizableLabel.font withSize:LABEL_SIZE_SMALL];
         [newLabel sizeToFit];
         
         return newLabel.frame.size.height + cellMargin;
+        
     
     } else if ([tableView isEqual:ingredientsTableView]) {
         //Return the size of the cell. All cells are the same height
@@ -424,8 +409,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //Show an alert to the user asking to review the app
     
     NSString *alertTitle = @"Please rate Smoothie Box";
-    NSString *alertText = @"If you like Smoothie Box, please give your feedback and rate it";
-    NSString *cancelText = @"No, don't ask again";
+    NSString *alertText = @"If you like Smoothie Box, please give your feedback and rate us";
+    NSString *cancelText = @"No, please don't ask again";
     NSString *laterText = @"Later";
     NSString *acceptText = @"Rate";
     
@@ -463,8 +448,5 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     [self presentViewController:alert animated:YES completion:nil];
     
 }
-
-#pragma mark - Alert view delegate
-
 
 @end

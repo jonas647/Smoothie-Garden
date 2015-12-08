@@ -9,7 +9,7 @@
 #import "AppReviewHelper.h"
 
 #define HAS_REVIEW_BEEN_GIVEN @"hasReviewBeenGiven"
-#define Treshold_for_showing_review 2 //Change this to change how frequent the app review alert should be shown
+#define Treshold_for_showing_review 8 //Change this to change how frequent the app review alert should be shown
 
 @implementation AppReviewHelper
 
