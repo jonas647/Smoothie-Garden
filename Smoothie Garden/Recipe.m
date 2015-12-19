@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Jonas C Björkell. All rights reserved.
 //
 
-
+//Define the nutrients
+#define NUTRIENT_ENERGY @"Energy"
 
 #define TAB_BAR_ALL 1000
 #define TAB_BAR_FAV 1001
@@ -66,16 +67,18 @@
 
             BOOL isOptional;
             if ([dic objectForKey:@"Optional"] != nil) {
-                isOptional = [dic objectForKey:@"Optional"];
+                isOptional = [[dic objectForKey:@"Optional"]boolValue];
             } else {
                 isOptional = NO;
             }
             
             Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:[dic objectForKey:@"Quantity"]
+                                                                    andType: [dic objectForKey:@"Type"]
                                                                  andMeasure:[dic objectForKey:@"Measurement"]
                                                                     andText:[dic objectForKey:@"Text"]
                                                                 andOptional:isOptional];
             [tempIngredients addObject:newIngredient];
+            
         }
         
         
@@ -199,6 +202,19 @@
 
     return aggregatedIngredients;
     
+}
+
+#pragma mark - Nutrient Information
+
+- (NSDictionary*) nutrientInformation:(NSString *)nutrient {
+
+    NSString *nutrientUnit;
+    NSString *nutrientVolume;
+    NSString *nutrientName = nutrient;
+    
+    
+    
+    return nil;
 }
 
 

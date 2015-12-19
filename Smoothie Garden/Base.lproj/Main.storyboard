@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mbl-e4-zgM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mbl-e4-zgM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -370,6 +370,11 @@
                     <navigationItem key="navigationItem" id="o5f-6d-Wta"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Pu-wa-cl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="5V8-uI-EGC">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="-3058" y="-4143"/>
         </scene>
@@ -588,11 +593,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-RF-661">
-                                <rect key="frame" x="230" y="797" width="141" height="58"/>
+                                <rect key="frame" x="222.5" y="797" width="156" height="58"/>
                                 <color key="backgroundColor" red="0.34381815970000001" green="1" blue="0.54957573049999997" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
-                                <state key="normal" title="Buy all recipes">
+                                <state key="normal" title="Add more recipes">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -605,7 +610,7 @@
                                     <action selector="buyRecipes:" destination="Dyx-WJ-DCt" eventType="touchUpInside" id="4pK-yh-dvM"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lifetime access to EVERYTHING in the app including ALL future updates" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hLm-hc-C3z">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="For just $3 you can start making your daily healthy smoothie" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hLm-hc-C3z">
                                 <rect key="frame" x="15" y="856" width="570" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="fB1-Mx-t42"/>

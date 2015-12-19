@@ -24,9 +24,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"unbeatable_standing_3x.png"]];
+    /*UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"unbeatable_standing_3x.png"]];
     [tempImageView setFrame:self.tableView.frame];
     self.tableView.backgroundView = tempImageView;
+     */
+    
+    self.tableView.backgroundColor = [UIColor colorWithRed:217.0f/255.0f green:213/255.0f blue:210/255.0f alpha:0.8f];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

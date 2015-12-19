@@ -9,7 +9,7 @@
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>RecipeOverviewDescription</key>
 		<string>This green and creamy smoothie is the perfect lactose-free alternative to traditional yoghurt.</string>
 		<key>RecipeDescription</key>
@@ -24,14 +24,18 @@
 		<key>Ingredients</key>
 		<array>
 			<dict>
+				<key>Type</key>
+				<string>Orange</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<string>2</string>
 				<key>Measurement</key>
 				<string></string>
 				<key>Text</key>
 				<string>frozen banana</string>
 			</dict>
 			<dict>
+				<key>Type</key>
+				<string>Avocado</string>
 				<key>Quantity</key>
 				<string>1/2</string>
 				<key>Measurement</key>
@@ -40,6 +44,8 @@
 				<string>avocado</string>
 			</dict>
 			<dict>
+				<key>Type</key>
+				<string>Lemon</string>
 				<key>Quantity</key>
 				<string>2</string>
 				<key>Measurement</key>
@@ -48,6 +54,8 @@
 				<string>lemon juice</string>
 			</dict>
 			<dict>
+				<key>Type</key>
+				<string>Mint Leaves</string>
 				<key>Quantity</key>
 				<string>5</string>
 				<key>Measurement</key>
@@ -56,6 +64,8 @@
 				<string>leaves of mint</string>
 			</dict>
 			<dict>
+				<key>Type</key>
+				<string>Spinach</string>
 				<key>Quantity</key>
 				<string>1</string>
 				<key>Measurement</key>

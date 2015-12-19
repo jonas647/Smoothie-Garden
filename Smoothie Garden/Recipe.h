@@ -31,6 +31,9 @@
 - (void) addRecipeToFavorites;
 - (BOOL) isRecipeUnlocked;
 - (NSString*) stringWithIngredients;
+- (NSDictionary*) nutrientInformation: (NSString*) nutrient;
+
+
 + (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
 + (NSArray*) favoriteRecipes;
 + (void) removeRecipeFromFavoritesUsingRecipeName: (NSString*) recipeName;

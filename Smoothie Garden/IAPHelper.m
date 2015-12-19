@@ -45,7 +45,8 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
             }
             
         }
-        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        NSLog(@"ADDING TRANSACTION OBSERVER");
+        //[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
         
     }
     return self;
@@ -53,13 +54,17 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
 
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler {
     
+    NSLog(@"Request product with completion");
     // 1
     _completionHandler = [completionHandler copy];
     
     // 2
-    _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifiers];
-    _productsRequest.delegate = self;
-    [_productsRequest start];
+    if ([[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifiers]) {
+        _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:_productIdentifiers];
+        _productsRequest.delegate = self;
+        [_productsRequest start];
+    }
+    
     
 }
 
@@ -71,8 +76,13 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
     
     NSLog(@"Buying %@...", product.productIdentifier);
     
-    SKPayment * payment = [SKPayment paymentWithProduct:product];
-    [[SKPaymentQueue defaultQueue] addPayment:payment];
+    if ([SKPayment paymentWithProduct:product]) {
+        
+        NSLog(@"Add payment to queue: %@", product);
+        SKPayment * payment = [SKPayment paymentWithProduct:product];
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+    }
+    
     
 }
 

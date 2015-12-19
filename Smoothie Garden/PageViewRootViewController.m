@@ -131,7 +131,10 @@
     //Right now there's only one available purchase so get the first object in the array
     SKProduct *productToBuy = [delegate.iTunesPurchases objectAtIndex:0];
     
+    NSLog(@"1. Buying: %@", productToBuy);
+    
     if (productToBuy) {
+        NSLog(@"2.");
         [[SBIAPHelper sharedInstance]buyProduct:productToBuy];
     
         //Create loading indicator to show the user that the in app purchase is loading

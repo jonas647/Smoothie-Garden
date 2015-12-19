@@ -57,7 +57,6 @@
 
 - (void) viewDidLayoutSubviews {
  
-    NSLog(@"Layout subviews");
     self.ImageView.layer.cornerRadius = 12.0f;
     self.leftImageView.layer.cornerRadius = 6.0f;
     self.rightImageView.layer.cornerRadius = 6.0f;
@@ -65,7 +64,7 @@
     self.ImageView.layer.masksToBounds = YES;
     self.leftImageView.layer.masksToBounds = YES;
     self.rightImageView.layer.masksToBounds = YES;
-    NSLog(@"end");
+
 }
 
 
