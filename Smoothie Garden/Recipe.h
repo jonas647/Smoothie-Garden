@@ -25,14 +25,17 @@
 @property (nonatomic, strong) NSArray *boosterDescription;
 @property (nonatomic, strong) NSArray *ingredients;
 @property (nonatomic, strong) NSString *imageName;
-
+@property (nonatomic, strong) NSMutableDictionary *totalNutrients;
 
 - (BOOL) isRecipeFavorite;
 - (void) addRecipeToFavorites;
 - (BOOL) isRecipeUnlocked;
 - (NSString*) stringWithIngredients;
-- (NSDictionary*) nutrientInformation: (NSString*) nutrient;
 
+- (NSString*) volumeForNutrient: (NSString*) nutrient;
+- (NSString*) unitForNutrient: (NSString*) nutrient;
+- (NSString*) typeForNutrient: (NSString*) nutrient;
+//- (NSDictionary*) allNutrientInformationForRecipe;
 
 + (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
 + (NSArray*) favoriteRecipes;

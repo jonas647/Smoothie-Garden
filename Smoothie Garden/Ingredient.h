@@ -23,7 +23,10 @@
 
 @property (nonatomic, strong) NutrientCatalog *nutrients;
 
+- (NSString*) totalVolumeForNutrient: (NSString*) nutrient;
 - (NSDictionary*) nutrientDataFor:(NSString *)nutrient;
+- (NSDictionary*) nutrientCatalogWithNoValueForMeasure;
+- (NSDictionary*) allNutrients;
 
 + (void) useMeasurementMethod: (int) measure ;
 + (int) usedMeasure;

@@ -88,6 +88,11 @@
 
 #pragma mark - Nutrient information
 
+- (NSDictionary*) allNutrients {
+    
+    return self.nutrients.nutrientValues;
+}
+
 - (void) setupNutrientDataFromPlist {
     
     NSMutableDictionary *nutrientParentDictionary = [[NSMutableDictionary alloc]init];
@@ -107,48 +112,51 @@
             NSLog(@"Loop %@", dic);
             
             //Only loop when it's of NSDictionary class
-            if (![[nutrientsDictionary objectForKey:dic] isKindOfClass:[NSDictionary class]]) {
-                NSLog(@"%@ is no NSDictionary", dic);
-                break;
-            }
-            
-            //Create a mutable dictionary so that the measurement can be changed
-            NSMutableDictionary *newChildDictionary = [[NSMutableDictionary alloc]init];
-            
-            //Check if the class is dictionary (Unit is not) and if the measure object is available
-            if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Measure"]) {
+            if ([[nutrientsDictionary objectForKey:dic] isKindOfClass:[NSDictionary class]]) {
                 
-                NSString *nutrientVolume = [[nutrientsDictionary objectForKey:dic] objectForKey:@"Measure"]; // How many units that the ingredient consists of
+                //Create a mutable dictionary so that the measurement can be changed
+                NSMutableDictionary *newChildDictionary = [[NSMutableDictionary alloc]init];
                 
-                NSLog(@"Volume is: %@", nutrientVolume);
-                
-                float nutrientVolumeFloat = [nutrientVolume floatValue]; //float value from the string
-                float ingredientVolumeFloat = [self.quantity floatValue]; //float value of the volume from the ingredient
-                
-                NSLog(@"Volume as float: %f", nutrientVolumeFloat);
-                
-                //Depending on the unit calculate the measure based on the ingredient volume
-                if ([[nutrientsDictionary objectForKey:@"Unit"] isEqualToString:@"Piece"]) {
-                    NSLog(@"%@ is measured in pieces", self.type);
+                //Check if the class is dictionary (Unit is not) and if the measure object is available
+                if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Measure"]) {
                     
-                    float newMeasureForNutrient = nutrientVolumeFloat * ingredientVolumeFloat;
+                    NSString *nutrientVolume = [[nutrientsDictionary objectForKey:dic] objectForKey:@"Measure"]; // How many units that the ingredient consists of
                     
-                    NSLog(@"New Measure: %f", newMeasureForNutrient);
+                    NSLog(@"Volume is: %@", nutrientVolume);
                     
-                    //Add the new measure to the dictionary
-                    [newChildDictionary setObject:[NSString stringWithFormat:@"%f", newMeasureForNutrient] forKey:@"Measure"];
+                    float nutrientVolumeFloat = [nutrientVolume floatValue]; //float value from the string
+                    float ingredientVolumeFloat = [self.quantity floatValue]; //float value of the volume from the ingredient
                     
-                    //Add the other objects to the dictionary
-                    [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"] forKey:@"Unit"];
-                    [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"] forKey:@"Type"];
+                    NSLog(@"Volume as float: %f", nutrientVolumeFloat);
                     
-                    //Add the newly created dictionary to the parent dictionary that will hold all the nutrients
-                    [nutrientParentDictionary setObject:newChildDictionary forKey:[NSString stringWithFormat:@"%@", dic]];
-                    
+                    //Depending on the unit calculate the measure based on the ingredient volume
+                    if ([[nutrientsDictionary objectForKey:@"Unit"] isEqualToString:@"Piece"]) {
+                        NSLog(@"%@ is measured in pieces", self.type);
+                        
+                        float newMeasureForNutrient = nutrientVolumeFloat * ingredientVolumeFloat;
+                        
+                        NSLog(@"New Measure: %f", newMeasureForNutrient);
+                        
+                        //Add the new measure to the dictionary
+                        [newChildDictionary setObject:[NSString stringWithFormat:@"%f", newMeasureForNutrient] forKey:@"Measure"];
+                        
+                        //Add the other objects to the dictionary
+                        [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"] forKey:@"Unit"];
+                        [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"] forKey:@"Type"];
+                        
+                        //Add the newly created dictionary to the parent dictionary that will hold all the nutrients
+                        [nutrientParentDictionary setObject:newChildDictionary forKey:[NSString stringWithFormat:@"%@", dic]];
+                        
+                    }
+                } else {
+                    NSLog(@"No object called 'Measure' in %@", [nutrientsDictionary objectForKey:dic]);
                 }
+                
             } else {
-                NSLog(@"No object called 'Measure' in %@", [nutrientsDictionary objectForKey:dic]);
+                NSLog(@"%@ is no NSDictionary", [nutrientsDictionary objectForKey:dic]);
             }
+            
+            
             
             
         }
@@ -177,7 +185,9 @@
     
 }
 
-
+- (NSDictionary*) nutrientCatalogWithNoValueForMeasure {
+    return [self.nutrients dictionaryWithNoVolume];
+}
 - (NSString*) totalVolumeForNutrient: (NSString*) nutrient {
     
     //Returns to total volume for this specific nutrient based on the volume of the ingredient

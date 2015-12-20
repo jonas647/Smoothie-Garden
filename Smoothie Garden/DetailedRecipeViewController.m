@@ -16,6 +16,7 @@
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
+#import "NutritionCollectionViewController.h"
 
 @interface DetailedRecipeViewController ()
 
@@ -447,6 +448,22 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self presentViewController:alert animated:YES completion:nil];
     
+}
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([segue.destinationViewController isKindOfClass:[NutritionCollectionViewController class]]) {
+        
+        NSLog(@"Segue to Nutrition collection view");
+        
+        NutritionCollectionViewController *vcToPushTo = (NutritionCollectionViewController*)segue.destinationViewController;
+        vcToPushTo.selectedRecipe = self.selectedRecipe;
+    }
 }
 
 @end

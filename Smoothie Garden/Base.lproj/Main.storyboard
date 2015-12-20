@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mbl-e4-zgM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mbl-e4-zgM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -470,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akb-qZ-f4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1283" y="-6209"/>
+            <point key="canvasLocation" x="-1416" y="-6270"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Px9-qi-WO5">
@@ -640,7 +640,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="bb0-Pn-1pk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgq-8z-Ril" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-638" y="-6209"/>
+            <point key="canvasLocation" x="-752" y="-6270"/>
         </scene>
         <!--Smoothie Box-->
         <scene sceneID="COc-tP-9ra">
@@ -841,6 +841,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mug-nL-aG1" userLabel="Content view">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1800"/>
                                         <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fxN-CY-tgx">
+                                                <rect key="frame" x="0.0" y="64" width="600" height="447"/>
+                                                <connections>
+                                                    <segue destination="hNP-11-8f3" kind="embed" id="C49-40-DHB"/>
+                                                </connections>
+                                            </containerView>
                                             <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCT-Xh-z3f" userLabel="White Background">
                                                 <rect key="frame" x="0.0" y="200" width="600" height="1600"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1209,6 +1215,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ig-UA-Hog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3044" y="-5479"/>
+        </scene>
+        <!--Nutrition Collection View Controller-->
+        <scene sceneID="Djc-1y-rV8">
+            <objects>
+                <viewController id="hNP-11-8f3" customClass="NutritionCollectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Zd-Bh-g7Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="447"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Asq-0K-s30">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="447"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NDh-6a-BXc">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hqm-pe-uHu">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSv-j9-VKf">
+                                                    <rect key="frame" x="8" y="64.5" width="134" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100mg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FJ-cS-EmZ">
+                                                    <rect key="frame" x="13" y="88" width="124" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="0FJ-cS-EmZ" firstAttribute="leading" secondItem="hqm-pe-uHu" secondAttribute="leadingMargin" constant="5" id="8zT-L1-kev"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="rSv-j9-VKf" secondAttribute="trailing" id="CT1-P0-8yJ"/>
+                                            <constraint firstItem="0FJ-cS-EmZ" firstAttribute="top" secondItem="rSv-j9-VKf" secondAttribute="bottom" constant="3" id="DEs-ni-UAO"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="0FJ-cS-EmZ" secondAttribute="trailing" constant="5" id="M4o-Hc-J4s"/>
+                                            <constraint firstItem="rSv-j9-VKf" firstAttribute="centerY" secondItem="hqm-pe-uHu" secondAttribute="centerY" id="Qg6-i8-tZs"/>
+                                            <constraint firstItem="0FJ-cS-EmZ" firstAttribute="centerX" secondItem="hqm-pe-uHu" secondAttribute="centerX" id="Vse-0W-j5g"/>
+                                            <constraint firstItem="rSv-j9-VKf" firstAttribute="leading" secondItem="hqm-pe-uHu" secondAttribute="leadingMargin" id="oYd-jC-Egs"/>
+                                            <constraint firstItem="rSv-j9-VKf" firstAttribute="centerX" secondItem="hqm-pe-uHu" secondAttribute="centerX" id="vdW-SX-NVS"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTM-RR-OGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-507" y="-3879.5"/>
         </scene>
     </scenes>
     <resources>

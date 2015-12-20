@@ -53,6 +53,34 @@
     return nil;
 }
 
+- (NSDictionary*) dictionaryWithNoVolume {
+    
+    //Create the nutrient dictionary that will hold all information of nutrient
+    NSMutableDictionary *newNutrientDictionary = [[NSMutableDictionary alloc]init];
+    
+    for (NSMutableDictionary *dic in self.nutrientValues) {
+        
+            //Create a new dictionary to hold the nutrient facts
+            NSMutableDictionary *nutrientDic = [[NSMutableDictionary alloc]init];
+            [newNutrientDictionary setObject:nutrientDic forKey:dic];
+            
+            //Set the new objects for the nutrient dictionary
+            NSString *unitString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Unit"];
+            NSString *typeString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Type"];
+            [nutrientDic setObject:unitString forKey:@"Unit"];
+            [nutrientDic setObject:typeString forKey:@"Type"];
+            
+            //For all the nutrients update the volume/measure to 0 so that it can be summarized from the ingredient instead
+            [nutrientDic setObject:@"0" forKey:@"Measure"];
+            
+        
+            
+        
+    }
+    NSLog(@"Returning with zero values %@ as dic", newNutrientDictionary);
+    return newNutrientDictionary;
+}
+
 - (int) numberOfNutrients {
     
     return [self.nutrientValues count];

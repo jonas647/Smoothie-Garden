@@ -17,7 +17,9 @@
 - (NSString*) measuringUnitForIngredient;
 - (NSString*) unitForNutrient:(NSString *)nutrient;
 - (NSString*) volumeForNutrient: (NSString*)nutrient;
+
 - (NSDictionary*) dictionaryForNutrient: (NSString*)nutrient;
+- (NSDictionary*) dictionaryWithNoVolume;
 - (int) numberOfNutrients;
 
 @end

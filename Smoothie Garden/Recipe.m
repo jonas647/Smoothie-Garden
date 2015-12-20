@@ -84,6 +84,8 @@
         
         newRecipe.ingredients = [NSArray arrayWithArray:tempIngredients];
         
+        [newRecipe setupAllNutrientInformationForRecipe];
+        
         [tempRecipes addObject:newRecipe];
     }
     
@@ -206,17 +208,57 @@
 
 #pragma mark - Nutrient Information
 
-- (NSDictionary*) nutrientInformation:(NSString *)nutrient {
-
-    NSString *nutrientUnit;
-    NSString *nutrientVolume;
-    NSString *nutrientName = nutrient;
+- (NSString*) volumeForNutrient: (NSString*) nutrient {
     
+    return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"];
     
-    
-    return nil;
 }
 
+- (NSString*) unitForNutrient: (NSString*) nutrient {
+    
+    return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"];
+}
 
+- (NSString*) typeForNutrient: (NSString*) nutrient {
+    
+    return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Type"];
+}
+
+- (void) setupAllNutrientInformationForRecipe {
+    
+    //Get the nutrient dictionary from the first ingredient. Just to get all the different types.
+    Ingredient *tempIngredient = (Ingredient*) [self.ingredients objectAtIndex:0];
+    NSDictionary *tempNutrientDictionary = [tempIngredient nutrientCatalogWithNoValueForMeasure];
+    
+    NSMutableDictionary *newNutrientParentDictionary = [[NSMutableDictionary alloc]initWithCapacity:tempNutrientDictionary.count];
+   
+    //Loop the dictionary loaded from plist. To update the total volume
+    for (NSMutableDictionary *dic in tempNutrientDictionary) {
+        NSMutableDictionary *newNutrientChildDictionary = [[NSMutableDictionary alloc]initWithCapacity:3];
+        
+        //For each nutrient. Get the nutrient value from the ingredient
+        float volumeForNutrient = 0;
+        for (Ingredient *i in self.ingredients) {
+            volumeForNutrient += [[i totalVolumeForNutrient:[NSString stringWithFormat:@"%@", dic]] floatValue];
+        }
+        
+        //For every nutrient add the volume/measure to the recipe nutrient dictionary
+        [newNutrientChildDictionary setObject:[NSString stringWithFormat:@"%f", volumeForNutrient] forKey:@"Measure"];
+        
+        //Also add the unit and type objects
+        NSString *unitString = [[tempNutrientDictionary objectForKey:dic]objectForKey:@"Unit"];
+        NSString *typeString = [[tempNutrientDictionary objectForKey:dic]objectForKey:@"Type"];
+        [newNutrientChildDictionary setObject:unitString forKey:@"Unit"];
+        [newNutrientChildDictionary setObject:typeString forKey:@"Type"];
+        
+        [newNutrientParentDictionary setObject:newNutrientChildDictionary forKey:dic];
+        
+        NSLog(@"Added a new nutrient to the recipe: %@", newNutrientChildDictionary);
+        
+    }
+    
+    self.totalNutrients = newNutrientParentDictionary;
+    
+}
 
 @end
