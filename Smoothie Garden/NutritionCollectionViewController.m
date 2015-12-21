@@ -33,7 +33,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     NSLog(@"Nutrition collection view init");
     
-    self.nutrientCatalog = [self selectedRecipe ];
+    //self.nutrientCatalog = [self.selectedRecipe];
    
 }
 

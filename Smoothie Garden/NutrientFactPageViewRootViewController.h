@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NutritionCollectionViewController.h"
 
-@interface NutrientFactPageViewRootViewController : UIViewController
+@interface NutrientFactPageViewRootViewController : UIViewController <UIPageViewControllerDataSource>
+
+@property (nonatomic,strong) UIPageViewController *pageViewController;
+@property (nonatomic,strong) NSArray *nutrientDictionaries;
+
+- (NutritionCollectionViewController *)viewControllerAtIndex:(NSUInteger)index;
 
 @end

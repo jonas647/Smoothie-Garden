@@ -210,12 +210,14 @@
 
 - (NSString*) volumeForNutrient: (NSString*) nutrient {
     
+    NSLog(@"%@", [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"]);
     return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"];
     
 }
 
 - (NSString*) unitForNutrient: (NSString*) nutrient {
     
+    NSLog(@"%@",[[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"]);
     return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"];
 }
 

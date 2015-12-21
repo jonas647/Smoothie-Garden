@@ -116,7 +116,6 @@
         
     }
     
-    
 }
 
 
@@ -357,6 +356,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Set the like button to not touchable to make the user not press it to often, causing animation to mess up
     isLikeButtonTouchable = NO;
+}
+
+- (IBAction)nutritionFacts:(id)sender {
 }
 
 

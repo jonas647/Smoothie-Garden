@@ -39,5 +39,6 @@
 @property (nonatomic, strong) Recipe *selectedRecipe;
 
 - (IBAction)likeRecipe:(id)sender;
+- (IBAction)nutritionFacts:(id)sender;
 
 @end
