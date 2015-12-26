@@ -85,6 +85,8 @@ static NSString * const reuseIdentifier = @"Cell";
     return newCell;
 }
 
+
+
 - (NSString*) nutrientTitleFromDictionary: (NSDictionary*) dic {
     
     return [NSString stringWithFormat:@"%@", dic];

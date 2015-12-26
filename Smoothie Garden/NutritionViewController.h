@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
+
 
 @interface NutritionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UIPageControl *pageControl;
+@property (strong, nonatomic) Recipe *selectedRecipe;
+
+- (void) hideCollectionView:(BOOL) hide;
 
 @end

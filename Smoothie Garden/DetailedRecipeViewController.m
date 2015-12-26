@@ -16,7 +16,7 @@
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
-#import "NutritionCollectionViewController.h"
+#import "NutritionViewController.h"
 
 @interface DetailedRecipeViewController ()
 
@@ -30,6 +30,7 @@
     NSArray *ingredients;
     float latestContentOffset;
     BOOL isLikeButtonTouchable;
+    NutritionViewController *nutritionController;
     
 }
 
@@ -136,9 +137,10 @@
     [recipeTableViewHeightConstraint setConstant:totalTableHeight];
     
     //Change the size of the white background & transparent background
-    float distanceBetweenImageAndBottomDescription = CGRectGetMaxY(recipeTableView.frame)-CGRectGetMinY(recipeImage.frame);
+    /*float distanceBetweenImageAndBottomDescription = CGRectGetMaxY(recipeTableView.frame)-CGRectGetMinY(recipeImage.frame);
     
     [contentViewHeightConstraint setConstant:(distanceBetweenImageAndBottomDescription*2)];
+*/
     
     //Change font size based on screen size
     UILabel *by = [self.view viewWithTag:400];
@@ -148,12 +150,8 @@
     [smoothieBox setFont:[smoothieBox.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:smoothieBox.font withSize:LABEL_SIZE_TINY]];
     [titleName setFont:[titleName.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:titleName.font withSize:LABEL_SIZE_LARGE]];
     
-    NSLog(@"Title font: %@", titleName.font);
-    
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    
+    //Update the size of the collection view cells
+    [nutritionController.collectionView.collectionViewLayout invalidateLayout];
     
 }
 
@@ -205,11 +203,38 @@
 }
 */
 
-#pragma mark - Delegates
+#pragma mark - Scrollview Delegates
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
     
     //The limit for when the background should be non transparent
     float offsetLimit = recipeImage.frame.size.height;
+    
+    /*
+    if (scrollView.contentOffset.y >= 10) {
+        
+        [nutritionController hideCollectionView:YES];
+        
+    } else {
+        [nutritionController hideCollectionView:NO];
+    }*/
+    
+    //Update the size of the collection view cells
+    NSLog(@"Invalidate the collection view");
+    [nutritionController.collectionView.collectionViewLayout invalidateLayout];
+    
+    /*
+    NutritionViewController *nutritionView = (NutritionViewController*)[self.view viewWithTag:1000];
+    if (scrollView.contentOffset.y >= 10 && [nutritionView isKindOfClass:[NutritionViewController class]]) {
+        
+        [nutritionView hideCollectionView:YES];
+    } else if ([nutritionView isKindOfClass:[NutritionViewController class]]) {
+        [nutritionView hideCollectionView:NO];
+    } else {
+        NSLog(@"%@ not a collection view", nutritionView);
+        NSLog(@"Children: %@", nutritionView.view.subviews);
+    }*/
+    
     
     if(scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y <= offsetLimit) {
         float percent = (scrollView.contentOffset.y / offsetLimit);
@@ -225,7 +250,7 @@
     }
     
     //Never allow an alpha level of lower than 0.6
-    if (whiteBackground.alpha<0.60f) {
+    if (whiteBackground.alpha < 0.60f) {
         whiteBackground.alpha = 0.60f;
     }
     
@@ -459,12 +484,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController isKindOfClass:[NutritionCollectionViewController class]]) {
+    //Set the recipe to show nutrients for in the nutrition view controller
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"embedNutritionSegue"]) {
+        //nutritionController = (NutritionViewController*) [segue destinationViewController];
+        //nutritionController.selectedRecipe = self.selectedRecipe;
         
-        NSLog(@"Segue to Nutrition collection view");
-        
-        NutritionCollectionViewController *vcToPushTo = (NutritionCollectionViewController*)segue.destinationViewController;
-        vcToPushTo.selectedRecipe = self.selectedRecipe;
     }
 }
 
