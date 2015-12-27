@@ -50,9 +50,6 @@
         [self newFrameForUIView:self.descriptionTextView];
     }
     
-    
-    
-    
 }
 
 - (void) viewDidLayoutSubviews {

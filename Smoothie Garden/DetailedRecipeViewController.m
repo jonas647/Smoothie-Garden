@@ -16,8 +16,7 @@
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
-#import "NutritionViewController.h"
-
+#import "NutrientFactPageViewRootViewController.h"
 @interface DetailedRecipeViewController ()
 
 @end
@@ -30,7 +29,6 @@
     NSArray *ingredients;
     float latestContentOffset;
     BOOL isLikeButtonTouchable;
-    NutritionViewController *nutritionController;
     
 }
 
@@ -150,9 +148,6 @@
     [smoothieBox setFont:[smoothieBox.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:smoothieBox.font withSize:LABEL_SIZE_TINY]];
     [titleName setFont:[titleName.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:titleName.font withSize:LABEL_SIZE_LARGE]];
     
-    //Update the size of the collection view cells
-    [nutritionController.collectionView.collectionViewLayout invalidateLayout];
-    
 }
 
 
@@ -210,36 +205,13 @@
     //The limit for when the background should be non transparent
     float offsetLimit = recipeImage.frame.size.height;
     
-    /*
-    if (scrollView.contentOffset.y >= 10) {
-        
-        [nutritionController hideCollectionView:YES];
-        
-    } else {
-        [nutritionController hideCollectionView:NO];
-    }*/
-    
-    //Update the size of the collection view cells
-    NSLog(@"Invalidate the collection view");
-    [nutritionController.collectionView.collectionViewLayout invalidateLayout];
-    
-    /*
-    NutritionViewController *nutritionView = (NutritionViewController*)[self.view viewWithTag:1000];
-    if (scrollView.contentOffset.y >= 10 && [nutritionView isKindOfClass:[NutritionViewController class]]) {
-        
-        [nutritionView hideCollectionView:YES];
-    } else if ([nutritionView isKindOfClass:[NutritionViewController class]]) {
-        [nutritionView hideCollectionView:NO];
-    } else {
-        NSLog(@"%@ not a collection view", nutritionView);
-        NSLog(@"Children: %@", nutritionView.view.subviews);
-    }*/
-    
-    
     if(scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y <= offsetLimit) {
         float percent = (scrollView.contentOffset.y / offsetLimit);
         whiteBackground.alpha = percent;
         
+        //If the title background intersects the recipe image. Then it's scrolling up.
+        //Make the recipe page view unscrollable by changing the z order
+        //[self.view bringSubviewToFront:recipeScrollView];
         
     } else if (scrollView.contentOffset.y > offsetLimit){
         whiteBackground.alpha = 1;
@@ -247,6 +219,9 @@
     } else if (scrollView.contentOffset.y < 0) {
         // do other ... ;
         
+    } else {
+        //If the title is below the recipe image, then it should be possible to swipe the page view
+        //[self.view bringSubviewToFront:recipeImageView];
     }
     
     //Never allow an alpha level of lower than 0.6
@@ -487,10 +462,19 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //Set the recipe to show nutrients for in the nutrition view controller
     NSString * segueName = segue.identifier;
     if ([segueName isEqualToString: @"embedNutritionSegue"]) {
-        //nutritionController = (NutritionViewController*) [segue destinationViewController];
-        //nutritionController.selectedRecipe = self.selectedRecipe;
+        NutrientFactPageViewRootViewController *newVC = (NutrientFactPageViewRootViewController*)[segue destinationViewController];
+        newVC.selectedRecipe = self.selectedRecipe;
         
     }
+}
+
+#define mark - UIGesturerecognizer
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    NSLog(@"Gesture recognizer should be recognized simultaneously");
+    return YES;
 }
 
 @end

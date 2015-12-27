@@ -441,8 +441,7 @@
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView
-heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
  
     //Hardcoded this value based on the image size to get a good image ratio
     //To get it 100% correct I would need to take in the title and text into this. But I think this is fine

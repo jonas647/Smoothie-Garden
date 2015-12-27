@@ -64,13 +64,14 @@
                                                        [UIColor darkGrayColor], NSForegroundColorAttributeName,
                                                        nil] forState:UIControlStateNormal];
     */
+
     
     //Appearance of the page control
     UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-    pageControl.backgroundColor = [UIColor lightGrayColor];
-    pageControl.alpha = 0.2;
+    pageControl.backgroundColor = [UIColor clearColor];
+    pageControl.alpha = 1;
     
     [self.window setTintColor:[UIColor darkGrayColor]];
     

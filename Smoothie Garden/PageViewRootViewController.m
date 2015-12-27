@@ -74,16 +74,21 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
+    NSLog(@"viewControllerBeforeViewController");
+    
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     if ((index == 0) || (index == NSNotFound))
     {
         return nil;
     }
     index--;
+    
     return [self viewControllerAtIndex:index];
 }
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
+    NSLog(@"viewControllerAfterViewController");
+    
     NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     if (index == NSNotFound)
     {
@@ -99,6 +104,8 @@
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
+    NSLog(@"viewControllerAtIndex");
+    
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
         return nil;
     }
@@ -174,6 +181,8 @@
 
 - (void)changePage:(UIPageViewControllerNavigationDirection)direction {
     NSUInteger pageIndex = ((PageContentViewController *) [_pageViewController.viewControllers objectAtIndex:0]).pageIndex;
+    
+    NSLog(@"Change page");
     
     if (direction == UIPageViewControllerNavigationDirectionForward) {
         pageIndex++;

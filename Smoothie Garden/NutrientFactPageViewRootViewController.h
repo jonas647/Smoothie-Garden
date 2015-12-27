@@ -12,8 +12,10 @@
 @interface NutrientFactPageViewRootViewController : UIViewController <UIPageViewControllerDataSource>
 
 @property (nonatomic,strong) UIPageViewController *pageViewController;
-@property (nonatomic,strong) NSArray *nutrientDictionaries;
+@property (nonatomic,strong) Recipe *selectedRecipe;
 
-- (NutritionCollectionViewController *)viewControllerAtIndex:(NSUInteger)index;
+@property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
+
+- (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
 
 @end

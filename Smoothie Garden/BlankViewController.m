@@ -1,18 +1,18 @@
 //
-//  NutrientFactPageContentViewController.m
+//  BlankViewController.m
 //  Smoothie Box
 //
-//  Created by Jonas C Björkell on 2015-12-19.
+//  Created by Jonas C Björkell on 2015-12-27.
 //  Copyright © 2015 Jonas C Björkell. All rights reserved.
 //
 
-#import "NutrientFactPageContentViewController.h"
+#import "BlankViewController.h"
 
-@interface NutrientFactPageContentViewController ()
+@interface BlankViewController ()
 
 @end
 
-@implementation NutrientFactPageContentViewController
+@implementation BlankViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
-@interface DetailedRecipeViewController : UIViewController <UIScrollViewDelegate>
+@interface DetailedRecipeViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 {
     __weak IBOutlet UIView *contentView;
-    //IBOutlet UIScrollView *scrollView;
     
     __weak IBOutlet UIView *topViewArea;
     __weak IBOutlet UIView *statusbarBackground;
@@ -33,6 +32,10 @@
     __weak IBOutlet UIView *likeView;
     __weak IBOutlet UITableView *recipeTableView;
     __weak IBOutlet NSLayoutConstraint *recipeTableViewHeightConstraint;
+    __weak IBOutlet UIView *recipeImageView; //To be able to change z order
+    
+    __weak IBOutlet UIScrollView *recipeScrollView; //To be able to change z order
+    
     
 }
 

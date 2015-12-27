@@ -83,7 +83,7 @@
 
 - (int) numberOfNutrients {
     
-    return [self.nutrientValues count];
+    return (int)[self.nutrientValues count];
 }
 
 @end
