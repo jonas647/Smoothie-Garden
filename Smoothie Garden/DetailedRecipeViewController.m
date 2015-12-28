@@ -64,6 +64,8 @@
         NSLog(@"Wrong class for %@", ingredients);
     }
     
+    recipeImageView.clipsToBounds = YES; //To be able to stretch zoom the image. Clip the views to only show zoomed area.
+    
     //TODO why isn't this working above in the IF statement?
     recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.detailedRecipedescription];
     
@@ -201,7 +203,7 @@
 #pragma mark - Scrollview Delegates
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    
+    /*
     //The limit for when the background should be non transparent
     float offsetLimit = recipeImage.frame.size.height;
     
@@ -236,6 +238,8 @@
     } else {
         titleBackground.backgroundColor = [UIColor clearColor];
     }
+     
+     */
 }
 
 #pragma mark - Table View Delegate
