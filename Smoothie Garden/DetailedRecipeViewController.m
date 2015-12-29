@@ -110,9 +110,9 @@
 
 - (void) viewDidLayoutSubviews {
     
-    //Make like view hidden until the recipe is liked
-    likeView.layer.cornerRadius = likeView.bounds.size.width/2;
-    likeView.alpha = 0.0;
+    
+    likeView.layer.cornerRadius = likeView.bounds.size.width/2;//Make like view a circle
+    likeView.alpha = 0.0;//Make like view hidden until the recipe is liked
     likeView.layer.masksToBounds = YES;
     
     //TODO
@@ -469,15 +469,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         newVC.selectedRecipe = self.selectedRecipe;
         
     }
-}
-
-#define mark - UIGesturerecognizer
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    
-    NSLog(@"Gesture recognizer should be recognized simultaneously");
-    return YES;
 }
 
 @end

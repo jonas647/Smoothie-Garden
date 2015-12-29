@@ -10,21 +10,15 @@
 #import "NutritionDetailView.h"
 #import "Recipe.h"
 
-@interface NutritionPageContentViewController : UIViewController
+@interface NutritionPageContentViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, strong) Recipe *selectedRecipe;
 
 @property (weak, nonatomic) IBOutlet UILabel *caloriesLabel;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactA;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactB;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactC;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactD;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactE;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactF;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactG;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactH;
-@property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactI;
 
-@property (weak, nonatomic) IBOutlet UIView *nutritionGrid;
+@property (weak, nonatomic) IBOutlet UIView *caloriesView;
+@property (weak, nonatomic) IBOutlet NutritionDetailView *carbsView;
+@property (weak, nonatomic) IBOutlet NutritionDetailView *proteinView;
+@property (weak, nonatomic) IBOutlet NutritionDetailView *fatView;
 
 @end

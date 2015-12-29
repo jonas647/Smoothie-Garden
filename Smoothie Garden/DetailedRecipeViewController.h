@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 
-@interface DetailedRecipeViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate>
+@interface DetailedRecipeViewController : UIViewController <UIScrollViewDelegate>
 {
     __weak IBOutlet UIView *contentView;
     
