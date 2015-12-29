@@ -41,11 +41,6 @@
     // Do any additional setup after loading the view.
     
     //Set all the properties with correct values, print log if it can't be found
-    if ([UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]]) {
-        recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
-    } else {
-        NSLog(@"Wrong class for %@", recipeImage);
-    }
     if ([self.selectedRecipe.recipeName isKindOfClass:[NSString class]]) {
         titleName.text = self.selectedRecipe.recipeName;
     } else {
@@ -63,8 +58,6 @@
     } else {
         NSLog(@"Wrong class for %@", ingredients);
     }
-    
-    recipeImageView.clipsToBounds = YES; //To be able to stretch zoom the image. Clip the views to only show zoomed area.
     
     //TODO why isn't this working above in the IF statement?
     recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.detailedRecipedescription];
@@ -89,11 +82,6 @@
     recipeTableView.frame = [self newFrameForUIView:recipeTableView];
     
     recipeDescription.frame = [self newFrameForUIView:recipeDescription];
-    
-    
-    //Set the vertical spacing of the whitebackground to the height of the recipe image to make it positioned just under it
-    //TODO change this to be dependent on the height of the image instead
-    [whiteBackgroundVerticalPositioningConstraint setConstant:self.view.frame.size.width*0.8];
     
     //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
@@ -136,12 +124,6 @@
     
     [recipeTableViewHeightConstraint setConstant:totalTableHeight];
     
-    //Change the size of the white background & transparent background
-    /*float distanceBetweenImageAndBottomDescription = CGRectGetMaxY(recipeTableView.frame)-CGRectGetMinY(recipeImage.frame);
-    
-    [contentViewHeightConstraint setConstant:(distanceBetweenImageAndBottomDescription*2)];
-*/
-    
     //Change font size based on screen size
     UILabel *by = [self.view viewWithTag:400];
     UILabel *smoothieBox = [self.view viewWithTag:401];
@@ -150,6 +132,23 @@
     [smoothieBox setFont:[smoothieBox.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:smoothieBox.font withSize:LABEL_SIZE_TINY]];
     [titleName setFont:[titleName.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:titleName.font withSize:LABEL_SIZE_LARGE]];
     
+    //Get the total height for the Blank background and the content view
+    
+    float heightForBlankBckgr = titleBackground.frame.size.height + ingredientsHeightConstraint.constant + recipeTableViewHeightConstraint.constant + titleName.frame.size.height;
+    
+    float heightForContentView = heightForBlankBckgr + recipeImageView.frame.size.height;
+    
+    //TODO
+    //Change the height so that it works with height constraints based on the views on screen
+    
+    //[blankBackgroundHeightConstraint setConstant:heightForBlankBckgr];
+    //[contentViewHeightConstraint setConstant:heightForContentView];
+    
+    NSLog(@"Calculated height for Blank: %f", heightForBlankBckgr);
+    NSLog(@"Caluclated height for Content: %f", heightForContentView);
+    NSLog(@"Height for Blank: %f", blankBackgroundHeightConstraint.constant);
+    NSLog(@"Height for Content: %f", contentViewHeightConstraint.constant);
+     
 }
 
 

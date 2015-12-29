@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactH;
 @property (weak, nonatomic) IBOutlet NutritionDetailView *nutritionFactI;
 
-
-- (IBAction)moreNutritionFacts:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *nutritionGrid;
 
 @end

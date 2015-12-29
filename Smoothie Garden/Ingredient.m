@@ -48,12 +48,22 @@
     int usedMeasurementMethod = [Ingredient usedMeasure];
     
     NSString *justQuantity;
+    NSString *quantityOneDecimal;
+    float qty = [self.quantity floatValue];
+    
+    if (qty == (int)qty) {
+        //Qty has integer value without decimals
+        quantityOneDecimal  = [NSString stringWithFormat:@"%.f", qty];
+    } else {
+        quantityOneDecimal = [NSString stringWithFormat:@"%.01f", qty];
+    }
     
     switch (usedMeasurementMethod) {
         case MEASUREMENT_METRIC:
             //If metric is used then no need for convertion
-            //Just put the quantity and measure type together into a string
-            justQuantity = [NSString stringWithFormat:@"%@ %@", self.quantity, self.measure];
+            //Just put the quantity (one decimal) and measure type together into a string
+            
+            justQuantity = [NSString stringWithFormat:@"%@ %@", quantityOneDecimal, self.measure];
             
             if (self.optional) {
                 NSString *stringWithOptional = [NSString stringWithFormat:@"(optional) %@", justQuantity];

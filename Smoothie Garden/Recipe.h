@@ -31,10 +31,12 @@
 - (void) addRecipeToFavorites;
 - (BOOL) isRecipeUnlocked;
 - (NSString*) stringWithIngredients;
-
+- (NSArray*) allNutrientKeys;
+- (NSString*) volumeStringForNutrient: (NSString*) nutrient;
 - (NSString*) volumeForNutrient: (NSString*) nutrient;
 - (NSString*) unitForNutrient: (NSString*) nutrient;
 - (NSString*) typeForNutrient: (NSString*) nutrient;
+- (int) numberOfNutrients;
 //- (NSDictionary*) allNutrientInformationForRecipe;
 
 + (void) setNewFavoriteRecipes: (NSArray*) newRecipes;

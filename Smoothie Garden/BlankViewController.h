@@ -11,5 +11,6 @@
 @interface BlankViewController : UIViewController
 
 //Just used for displaying a blank page in the nutrient page view. For readability.
+//Might get changed in the future
 
 @end

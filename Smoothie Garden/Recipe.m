@@ -208,22 +208,64 @@
 
 #pragma mark - Nutrient Information
 
+- (NSArray*) allNutrientKeys {
+    
+    return [NSArray arrayWithArray:[self.totalNutrients allKeys]];
+}
+
+- (int) numberOfNutrients {
+    
+    NSLog(@"Number of nutrients in recipe");
+    NSLog(@"%i", (int)[self.totalNutrients count]);
+    if (self.totalNutrients) {
+        return (int)[self.totalNutrients count];
+    } else
+        return 0;
+    
+}
+
+- (NSString*) volumeStringForNutrient: (NSString*) nutrient {
+    //Returns the volume with unit
+    float qty = [[self volumeForNutrient:nutrient]floatValue];
+    
+    NSString *quantityOneDecimal;
+    if (qty == (int)qty) {
+        //Qty has integer value without decimals
+        quantityOneDecimal  = [NSString stringWithFormat:@"%.f", qty];
+    } else {
+        quantityOneDecimal = [NSString stringWithFormat:@"%.01f", qty];
+    }
+    
+    return [NSString stringWithFormat:@"%@%@", quantityOneDecimal, [self unitForNutrient:nutrient]];
+}
+
 - (NSString*) volumeForNutrient: (NSString*) nutrient {
     
-    NSLog(@"%@", [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"]);
-    return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"];
+    if ([[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"]) {
+        return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"];
+    } else
+        return [NSString stringWithFormat:@"No object called 'Measure' in %@ or error with nutrient name %@",self.recipeName, nutrient];
+    
     
 }
 
 - (NSString*) unitForNutrient: (NSString*) nutrient {
     
-    NSLog(@"%@",[[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"]);
-    return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"];
+    if ([[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"]) {
+        return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"];
+    } else
+        return [NSString stringWithFormat:@"No object called 'Unit' in %@ or error with nutrient name %@",self.recipeName, nutrient];
+    
+    
 }
 
 - (NSString*) typeForNutrient: (NSString*) nutrient {
     
-    return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Type"];
+    if ([[self.totalNutrients objectForKey:nutrient]objectForKey:@"Type"]) {
+        return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Type"];
+    } else
+        return [NSString stringWithFormat:@"No object called 'Type' in %@ or error with nutrient name %@",self.recipeName, nutrient];
+    
 }
 
 - (void) setupAllNutrientInformationForRecipe {
