@@ -86,6 +86,9 @@
     //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
     
+    //Remove the title text from the back button (in the Detailed nutrient table view controller)
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     //Hide the navigation bar
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];
@@ -136,7 +139,8 @@
     
     float heightForBlankBckgr = titleBackground.frame.size.height + ingredientsHeightConstraint.constant + recipeTableViewHeightConstraint.constant + titleName.frame.size.height;
     
-    float heightForContentView = heightForBlankBckgr + recipeImageView.frame.size.height;
+    //Add 15% to make some space at bottom
+    float heightForContentView = heightForBlankBckgr + recipeImageView.frame.size.height + 1.15;
     
     //TODO
     //Change the height so that it works with height constraints based on the views on screen
@@ -144,10 +148,12 @@
     //[blankBackgroundHeightConstraint setConstant:heightForBlankBckgr];
     //[contentViewHeightConstraint setConstant:heightForContentView];
     
+    /*
     NSLog(@"Calculated height for Blank: %f", heightForBlankBckgr);
     NSLog(@"Caluclated height for Content: %f", heightForContentView);
     NSLog(@"Height for Blank: %f", blankBackgroundHeightConstraint.constant);
     NSLog(@"Height for Content: %f", contentViewHeightConstraint.constant);
+     */
      
 }
 

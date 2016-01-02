@@ -25,9 +25,9 @@
 		<array>
 			<dict>
 				<key>Type</key>
-				<string>Orange</string>
+				<string>Banana</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<string>1</string>
 				<key>Measurement</key>
 				<string></string>
 				<key>Text</key>
@@ -45,7 +45,7 @@
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Lemon</string>
+				<string>Lemon Juice</string>
 				<key>Quantity</key>
 				<string>2</string>
 				<key>Measurement</key>
@@ -72,6 +72,16 @@
 				<string>dl</string>
 				<key>Text</key>
 				<string>spinach</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Mango</string>
+				<key>Quantity</key>
+				<string>1,5</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>mango</string>
 			</dict>
 		</array>
 		<key>ImageName</key>

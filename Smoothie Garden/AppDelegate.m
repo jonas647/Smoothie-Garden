@@ -68,8 +68,8 @@
     
     //Appearance of the page control
     UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.pageIndicatorTintColor = [UIColor blackColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = [UIColor clearColor];
     pageControl.alpha = 1;
     

@@ -7,8 +7,8 @@
 //
 
 #define VIEW_TITLELABEL 101
-#define VIEW_PERCENTLABEL 102
-#define VIEW_VOLUMELABEL 103
+#define VIEW_VOLUMELABEL 102
+#define VIEW_PERCENTLABEL 103
 
 #define NUTRITION_CALORIES @"Energy"
 #define NUTRITION_FAT @"Protein"
@@ -30,81 +30,53 @@
     
     //Make the calories view a circle
     //Make like view hidden until the recipe is liked
-    _caloriesView.layer.cornerRadius = _caloriesView.bounds.size.width/2;
-    _caloriesView.layer.masksToBounds = YES;
+    //_caloriesView.layer.cornerRadius = _caloriesView.bounds.size.width/2;
+    //_caloriesView.layer.masksToBounds = YES;
+    
+    //Make the views like a rectangle
+    float borderWidth = 2.0f;
+    CGColorRef borderColor = [UIColor whiteColor].CGColor;
+    
+    _caloriesView.layer.borderWidth = borderWidth;
+    _caloriesView.layer.borderColor = borderColor;
+    
+    _carbsView.layer.borderWidth = borderWidth;
+    _carbsView.layer.borderColor = borderColor;
+    
+    _proteinView.layer.borderWidth = borderWidth;
+    _proteinView.layer.borderColor = borderColor;
+    
+    _fatView.layer.borderWidth = borderWidth;
+    _fatView.layer.borderColor = borderColor;
     
     //Get all the labels thru the tags on storyboard
-    UILabel *carbsTitle = [_carbsView.nutritionTitle viewWithTag:VIEW_TITLELABEL];
-    UILabel *carbsVolume = [_carbsView.nutritionVolume viewWithTag:VIEW_VOLUMELABEL];
-    UILabel *proteinTitle = [_proteinView.nutritionTitle viewWithTag:VIEW_TITLELABEL];
-    UILabel *proteinVolume = [_proteinView.nutritionVolume viewWithTag:VIEW_VOLUMELABEL];
-    UILabel *fatTitle = [_fatView.nutritionTitle viewWithTag:VIEW_TITLELABEL];
-    UILabel *fatVolume = [_fatView.nutritionVolume viewWithTag:VIEW_VOLUMELABEL];
+    UILabel *carbsTitle = [_carbsView viewWithTag:VIEW_TITLELABEL];
+    UILabel *carbsVolume = [_carbsView viewWithTag:VIEW_VOLUMELABEL];
+    UILabel *proteinTitle = [_proteinView viewWithTag:VIEW_TITLELABEL];
+    UILabel *proteinVolume = [_proteinView viewWithTag:VIEW_VOLUMELABEL];
+    UILabel *fatTitle = [_fatView viewWithTag:VIEW_TITLELABEL];
+    UILabel *fatVolume = [_fatView viewWithTag:VIEW_VOLUMELABEL];
+    UILabel *caloriesTitle = [_caloriesView viewWithTag:VIEW_TITLELABEL];
+    UILabel *caloriesVolume = [_caloriesView viewWithTag:VIEW_VOLUMELABEL];
     
     //The title for the nutrients is obvious
-    carbsTitle.text = NUTRITION_CARBOHYDRATE;
+    carbsTitle.text = @"Carbs"; //Carbs is shorter and looks nicer than Carbohydrates
     proteinTitle.text = NUTRITION_PROTEIN;
     fatTitle.text = NUTRITION_FAT;
+    caloriesTitle.text = NUTRITION_CALORIES;
     
     //Get the information of nutrients volume from the recipe
     
-     carbsVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CARBOHYDRATE];
+    carbsVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CARBOHYDRATE];
     proteinVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
     fatVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
-    _caloriesLabel.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES];
+    caloriesVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES];
     
-    
-    //TODO
-    //Loop all nutritions to find the ones with the highest values for daily intakes
-    
-    //Loop all children in the nutrient grid to populate with the nutrients
-    
-    
-    //For now, just populate with  a few too see that it works
-    
-    /*
-    UILabel *titleLabelA = [self.nutritionFactA viewWithTag:VIEW_TITLELABEL];
-    //UILabel *percentLabel = [self.nutritionFactA viewWithTag:VIEW_PERCENTLABEL];
-    UILabel *volumeLabelA = [self.nutritionFactA viewWithTag:VIEW_VOLUMELABEL];
-    
-    titleLabelA.text = NUTRITION_PROTEIN;
-    volumeLabelA.text = [self.selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
-    
-    UILabel *titleLabelB = [self.nutritionFactB viewWithTag:VIEW_TITLELABEL];
-    //UILabel *percentLabel = [self.nutritionFactB viewWithTag:VIEW_PERCENTLABEL];
-    UILabel *volumeLabelB = [self.nutritionFactB viewWithTag:VIEW_VOLUMELABEL];
-    
-    titleLabelB.text = NUTRITION_FAT;
-    volumeLabelB.text = [self.selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
-    
-    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
-        self.nutritionGrid.backgroundColor = [UIColor clearColor];
-        
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        blurEffectView.frame = self.view.bounds;
-        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        [self.nutritionGrid addSubview:blurEffectView];
-    }
-    else {
-        self.nutritionGrid.backgroundColor = [UIColor whiteColor];
-        self.nutritionGrid.alpha = 0.75;
-    }
- */   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark - Scrollview Delegates
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
- 
-    NSLog(@"scrolling");
-    
 }
 
 #pragma mark - Navigation

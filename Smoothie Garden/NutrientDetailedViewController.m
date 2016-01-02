@@ -26,7 +26,15 @@
     
     self.titleLabel.text = [NSString stringWithFormat:@"Nutrient fact sheet for %@", self.selectedRecipe.recipeName];
     
-    dictionaryKeys = [NSArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
+    self.caloriesLabel.text = [NSString stringWithFormat:@"Total Calories: %@", [self.selectedRecipe volumeStringForNutrient:@"Energy"]];
+    
+    //Remove energy as that's shown at the top as "Kcal"
+    NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
+    [tempKeys removeObject:@"Energy"];
+    
+    //Sort array in alphabetical order and set that as the dictionary keys
+    dictionaryKeys = [tempKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +52,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSLog(@"Returning table view length");
-    return [self.selectedRecipe numberOfNutrients] + NUMBER_OF_STATIC_CELLS_AT_TOP + NUMBER_OF_STATIC_CELLS_AT_BOTTOM;
+    return dictionaryKeys.count + NUMBER_OF_STATIC_CELLS_AT_TOP + NUMBER_OF_STATIC_CELLS_AT_BOTTOM;
 }
 
 /*
@@ -62,16 +70,11 @@
     
     NSString *cellIdentifier;
     if (indexPath.row < NUMBER_OF_STATIC_CELLS_AT_TOP) {
-        // dequeue and configure my static cell for indexPath.row
-        NSLog(@"Returning nutrient header");
         cellIdentifier = @"nutrientHeaderCell";
-    } else if (indexPath.row < [self.selectedRecipe numberOfNutrients] + NUMBER_OF_STATIC_CELLS_AT_TOP) {
-        // normal dynamic logic here
-        NSLog(@"Returning nutrient cell");
+    } else if (indexPath.row < dictionaryKeys.count + NUMBER_OF_STATIC_CELLS_AT_TOP) {
         cellIdentifier = @"nutrientCell";
         
     } else {
-        NSLog(@"Returning disclaimer cell");
         cellIdentifier = @"DisclaimerCell";
     }
     
@@ -81,14 +84,11 @@
         UILabel *nutrientVolume = (UILabel*)[cell viewWithTag:102];
         UILabel *nutrientDailyIntake = (UILabel*)[cell viewWithTag:103];
         
-        nutrientTitle.text = @"Nutrient";
-        nutrientVolume.text = @"200mg";
-        
         NSString *nutrient = [dictionaryKeys objectAtIndex:indexPath.row];
         
         nutrientTitle.text = nutrient;
         nutrientVolume.text = [self.selectedRecipe volumeStringForNutrient:nutrient];
-        nutrientDailyIntake.text = @"46%";
+        nutrientDailyIntake.text = @"nan%";
     }
     
     return cell;
