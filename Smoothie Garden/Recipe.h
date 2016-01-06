@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #pragma mark - Recipe Types
 #define RECIPE_TYPE_SMOOTHIE 1
 #define RECIPE_TYPE_BOWL 2
@@ -33,9 +32,10 @@
 - (NSString*) stringWithIngredients;
 - (NSArray*) allNutrientKeys;
 - (NSString*) volumeStringForNutrient: (NSString*) nutrient;
-- (NSString*) volumeForNutrient: (NSString*) nutrient;
+- (NSString*) volumeForNutrient: (NSString*) nutrient asRoundedValue: (BOOL) rounded ;
 - (NSString*) unitForNutrient: (NSString*) nutrient;
 - (NSString*) typeForNutrient: (NSString*) nutrient;
+- (NSString*) percentOfDailyIntakeFor: (NSString*) nutrient;
 - (int) numberOfNutrients;
 //- (NSDictionary*) allNutrientInformationForRecipe;
 

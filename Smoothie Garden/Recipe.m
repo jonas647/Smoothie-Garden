@@ -81,7 +81,6 @@
             
         }
         
-        
         newRecipe.ingredients = [NSArray arrayWithArray:tempIngredients];
         
         [newRecipe setupAllNutrientInformationForRecipe];
@@ -215,8 +214,6 @@
 
 - (int) numberOfNutrients {
     
-    NSLog(@"Number of nutrients in recipe");
-    NSLog(@"%i", (int)[self.totalNutrients count]);
     if (self.totalNutrients) {
         return (int)[self.totalNutrients count];
     } else
@@ -226,26 +223,42 @@
 
 - (NSString*) volumeStringForNutrient: (NSString*) nutrient {
     //Returns the volume with unit
-    float qty = [[self volumeForNutrient:nutrient]floatValue];
+    float qty = [[self volumeForNutrient:nutrient asRoundedValue:YES]floatValue];
     
-    NSString *quantityOneDecimal;
-    if (qty == (int)qty) {
-        //Qty has integer value without decimals
-        quantityOneDecimal  = [NSString stringWithFormat:@"%.f", qty];
-    } else {
-        quantityOneDecimal = [NSString stringWithFormat:@"%.01f", qty];
-    }
-    
-    return [NSString stringWithFormat:@"%@%@", quantityOneDecimal, [self unitForNutrient:nutrient]];
+    return [NSString stringWithFormat:@"%@%@", [self roundedValueFrom:qty], [self unitForNutrient:nutrient]];
 }
 
-- (NSString*) volumeForNutrient: (NSString*) nutrient {
+- (NSString*) volumeForNutrient: (NSString*) nutrient asRoundedValue: (BOOL) rounded {
     
     if ([[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"]) {
-        return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"];
+        
+        float floatValueForVolume = [[[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"]floatValue];
+        
+        if (rounded == YES) {
+            NSString *roundedValue = [self roundedValueFrom:floatValueForVolume];
+            
+            return roundedValue;
+        } else {
+            return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"];
+        }
+        
     } else
-        return [NSString stringWithFormat:@"No object called 'Measure' in %@ or error with nutrient name %@",self.recipeName, nutrient];
+        return [NSString stringWithFormat:@"No object %@", nutrient];
     
+    
+}
+
+- (NSString*) roundedValueFrom: (float) value {
+
+    NSString *quantityOneDecimal;
+    if (value == (int)value) {
+        //Qty has integer value without decimals
+        quantityOneDecimal  = [NSString stringWithFormat:@"%.f", value];
+    } else {
+        quantityOneDecimal = [NSString stringWithFormat:@"%.01f", value];
+    }
+    
+    return quantityOneDecimal;
     
 }
 
@@ -268,6 +281,29 @@
     
 }
 
+- (NSString*) percentOfDailyIntakeFor:(NSString *)nutrient {
+    
+    //If the daily recommendation doesn't exist, then just put a "-"
+    if (![[self.totalNutrients objectForKey:nutrient]objectForKey:@"DailyRecommendation"]) {
+        return @"-";
+    }
+    
+    //Get the total nutrient in the recipe as a float
+    NSString *totalVolumeOfNutrientInRecipe = [self volumeForNutrient:nutrient asRoundedValue:NO];
+    float totalVolume = [totalVolumeOfNutrientInRecipe floatValue];
+    
+    //Get the daily intake recommendation
+    float dailyRecommendedIntakeForNutrient = [[[self.totalNutrients objectForKey:nutrient]objectForKey:@"DailyRecommendation"]floatValue];
+    
+    //Return percent of the daily intake. And round it to 0 decimals
+    float percentOfDailyIntake = totalVolume / dailyRecommendedIntakeForNutrient;
+    int roundedPercentValue = percentOfDailyIntake *100;
+    
+    //Return with an added %
+    return [NSString stringWithFormat:@"%i%%", roundedPercentValue];
+    
+}
+
 - (void) setupAllNutrientInformationForRecipe {
     
     //Get the nutrient dictionary from the first ingredient. Just to get all the different types.
@@ -278,7 +314,8 @@
    
     //Loop the dictionary loaded from plist. To update the total volume
     for (NSMutableDictionary *dic in tempNutrientDictionary) {
-        NSMutableDictionary *newNutrientChildDictionary = [[NSMutableDictionary alloc]initWithCapacity:3];
+        //Dictionary to hold the unit, type, measure and recommended daily intake
+        NSMutableDictionary *newNutrientChildDictionary = [[NSMutableDictionary alloc]initWithCapacity:4];
         
         //For each nutrient. Get the nutrient value from the ingredient
         float volumeForNutrient = 0;
@@ -295,9 +332,18 @@
         [newNutrientChildDictionary setObject:unitString forKey:@"Unit"];
         [newNutrientChildDictionary setObject:typeString forKey:@"Type"];
         
+        //Add the nutrient fact that's fetched from another plist
+        NSString *filepathToDailyRecommendedNIntake = [[NSBundle mainBundle] pathForResource:@"RecommendedDailyIntake" ofType:@"plist"];
+        NSDictionary *dailyIntakeDictionaryFromPlist = [NSDictionary dictionaryWithContentsOfFile:filepathToDailyRecommendedNIntake];
+        
+        if ([[dailyIntakeDictionaryFromPlist objectForKey:dic]objectForKey:@"DailyRecommendation"]) {
+            NSString *recommendedDailyIntake = [[dailyIntakeDictionaryFromPlist objectForKey:dic]objectForKey:@"DailyRecommendation"];
+            [newNutrientChildDictionary setObject:recommendedDailyIntake forKey:@"DailyRecommendation"];
+        }
+        
+        
         [newNutrientParentDictionary setObject:newNutrientChildDictionary forKey:dic];
         
-        NSLog(@"Added a new nutrient to the recipe: %@", newNutrientChildDictionary);
         
     }
     

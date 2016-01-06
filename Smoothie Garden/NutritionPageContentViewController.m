@@ -59,18 +59,22 @@
     UILabel *caloriesTitle = [_caloriesView viewWithTag:VIEW_TITLELABEL];
     UILabel *caloriesVolume = [_caloriesView viewWithTag:VIEW_VOLUMELABEL];
     
+    //Split the calories string into two "250" and "Kcal"
+    NSString *calorieText = @"Kcal";
+    NSString *calorieVolume = [_selectedRecipe volumeForNutrient:NUTRITION_CALORIES asRoundedValue:YES];
+                               
     //The title for the nutrients is obvious
     carbsTitle.text = @"Carbs"; //Carbs is shorter and looks nicer than Carbohydrates
     proteinTitle.text = NUTRITION_PROTEIN;
     fatTitle.text = NUTRITION_FAT;
-    caloriesTitle.text = NUTRITION_CALORIES;
+    caloriesTitle.text = calorieText;
     
     //Get the information of nutrients volume from the recipe
     
     carbsVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CARBOHYDRATE];
     proteinVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
     fatVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
-    caloriesVolume.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES];
+    caloriesVolume.text = calorieVolume;
     
 }
 

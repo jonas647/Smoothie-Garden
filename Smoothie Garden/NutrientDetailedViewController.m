@@ -88,7 +88,7 @@
         
         nutrientTitle.text = nutrient;
         nutrientVolume.text = [self.selectedRecipe volumeStringForNutrient:nutrient];
-        nutrientDailyIntake.text = @"nan%";
+        nutrientDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:nutrient];
     }
     
     return cell;

@@ -223,8 +223,6 @@
     
 }
 
-
-
 #pragma mark - Convertion of measurement
 
 - (NSString*) convertToStringUsingMeasurementMethod: (int) usedMeasurementMethod {
