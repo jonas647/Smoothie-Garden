@@ -80,6 +80,15 @@
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.facebookPageCell]]) {
         
         //Move the user to Facebook page
+        //TODO add smoothie box facebook
+        NSURL *fbURL = [NSURL URLWithString:@"fb://profile/<id>"];
+        if ([[UIApplication sharedApplication] canOpenURL:fbURL]){
+            [[UIApplication sharedApplication] openURL:fbURL];
+        }
+        else {
+            //Open the url as usual
+        }
+        
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.emailCell]]) {
         
         //Open email template

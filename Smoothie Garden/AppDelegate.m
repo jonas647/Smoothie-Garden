@@ -8,11 +8,9 @@
 
 #import "AppDelegate.h"
 #import "SBIAPHelper.h"
-#import "GAI.h"
-#import "GAIDictionaryBuilder.h"
-#import "GAIFields.h"
-#import "GAILogger.h"
+#import <Google/Analytics.h>
 #import "AppReviewHelper.h"
+
 
 @interface AppDelegate ()
 
@@ -100,19 +98,14 @@
         //If the user has enabled the analytics (or hasn't touched to analytics toggle)
         
         // Configure tracker from GoogleService-Info.plist.
-        /*
         NSError *configureError;
         [[GGLContext sharedInstance] configureWithError:&configureError];
         NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
-        */
         
         // Optional: configure GAI options.
         GAI *gai = [GAI sharedInstance];
         gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
-        gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app releaseAppDelegate.m
-        
-        //TODO
-        //Implement Google Ad data
+        gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release (TODO)
         
     } else {
         NSLog(@"Analytics disabled");

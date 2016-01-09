@@ -108,6 +108,7 @@
         
     }
     
+    
 }
 
 
@@ -302,30 +303,50 @@
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
+    
     if ([tableView isEqual:recipeTableView]) {
         //Check the height of the label that populates the cell and resize the cell height after that
-        UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
+        
         UILabel *resizableLabel = (UILabel*)[cell viewWithTag:300];
         
         //Add margins to the cell height
         float cellMargin = cell.frame.size.height;
         
-        UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, CGFLOAT_MAX)];
-        newLabel.numberOfLines = 0;
-        newLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        newLabel.text = [recipeInstructions objectAtIndex:indexPath.row];
-        [newLabel.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:resizableLabel.font withSize:LABEL_SIZE_SMALL];
-        [newLabel sizeToFit];
         
-        return newLabel.frame.size.height + cellMargin;
+        return [self labelHeightFor:resizableLabel andScreenSize:LABEL_SIZE_LARGE] + cellMargin;
         
     
     } else if ([tableView isEqual:ingredientsTableView]) {
         //Return the size of the cell. All cells are the same height
-        UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
-        return cell.frame.size.height;
+        
+        int ingredientText = 200;
+        int volumeText = 201;
+        
+        UILabel *ingredientLabel = (UILabel*)[cell viewWithTag:ingredientText];
+        UILabel *volumeLabel = (UILabel*)[cell viewWithTag:volumeText];
+        
+        float heightForIngredientLabel = [self labelHeightFor:ingredientLabel andScreenSize:LABEL_SIZE_SMALL];
+        float heightForVolumeLabel = [self labelHeightFor:volumeLabel andScreenSize:LABEL_SIZE_SMALL];
+        
+        float highestLabel = MAX(heightForIngredientLabel, heightForVolumeLabel);
+        return highestLabel;
     } else
         return 0;
+    
+}
+
+- (float) labelHeightFor: (UILabel*) label andScreenSize: (int) screenSize{
+    
+    //Need to split the width of the label to get a proper height. Not sure why...
+    UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, label.frame.size.width/2, CGFLOAT_MAX)];
+    newLabel.numberOfLines = 0;
+    newLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    newLabel.text = label.text;
+    [newLabel.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:label.font withSize:screenSize];
+    [newLabel sizeToFit];
+    
+    return newLabel.frame.size.height;
     
 }
 

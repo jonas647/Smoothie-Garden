@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Recipe A</key>
+	<key>Recipe 1</key>
 	<dict>
 		<key>Sorting</key>
 		<integer>0</integer>
@@ -13,15 +13,15 @@
 		<key>RecipeCategory</key>
 		<integer>0</integer>
 		<key>RecipeOverviewDescription</key>
-		<string>This green and creamy smoothie is the perfect lactose-free alternative to traditional yoghurt.</string>
+		<string>This green and creamy smoothie is the perfect lactose free and vegan alternative to traditional yoghurt</string>
 		<key>RecipeDescription</key>
 		<array>
-			<string>This green and creamy smoothie is the perfect lactose-free alternative to traditional yoghurt. Start your day with this healthy bowl topped with fresh berries, nuts and seeds and you will be energized for hours</string>
+			<string>This green and creamy smoothie is the perfect lactose free and vegan alternative to traditional yoghurt. Start your day of with this healthy bowl topped with fresh berries, nuts and seeds and you will stay energized for hours</string>
 		</array>
 		<key>DetailedRecipeDescription</key>
 		<array>
 			<string>Mix everything in a blender on high speed until smooth</string>
-			<string>Add a small amount of water if necessary</string>
+			<string>Add a small splash of water if the frozen ingredients doesn’t blend</string>
 		</array>
 		<key>Ingredients</key>
 		<array>
@@ -88,6 +88,114 @@
 		</array>
 		<key>ImageName</key>
 		<string>Green Rawgurt</string>
+	</dict>
+	<key>Recipe 2</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Veggie detox</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>Drinking veggie smoothies is an easy way to get your daily greens</string>
+		<key>RecipeDescription</key>
+		<array>
+			<string>This fresh and detoxing veggie smoothie is like drinking a salad. Drinking smoothies like this is an easy way to make sure you get your daily greens. Add some parsley for extra iron. If you like your smoothie sweeter and less green-tasting just replace the avocado with equal amounts of mango. </string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Mix everything in a blender on high speed until smooth</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Cucumber</string>
+				<key>Quantity</key>
+				<string>5</string>
+				<key>Measurement</key>
+				<string>cm</string>
+				<key>Text</key>
+				<string>cucumber</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Lemon</string>
+				<key>Quantity</key>
+				<string>1/2</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>lemon</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Spinach</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>spinach</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Apple</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>apple (chopped without seeds)</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Avocado</string>
+				<key>Quantity</key>
+				<string>1/2</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>avocado</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Water</string>
+				<key>Quantity</key>
+				<string>2</string>
+				<key>Measurement</key>
+				<string>tbsp</string>
+				<key>Text</key>
+				<string>water</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Ice Cubes</string>
+				<key>Quantity</key>
+				<string>4</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>ice cubes</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Parsley</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>sprig</string>
+				<key>Text</key>
+				<string>parsley</string>
+				<key>Optional</key>
+				<true/>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>veggie detox high res</string>
 	</dict>
 </dict>
 </plist>

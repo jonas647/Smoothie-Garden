@@ -36,7 +36,6 @@
 - (NSString*) volumeForNutrient: (NSString*)nutrient {
     
     //Return the measure (units, volume) for the nutrient.
-    NSLog(@"Measure for %@", nutrient);
     return [[self.nutrientValues objectForKey:nutrient]objectForKey:@"Measure"];
 }
 
@@ -77,7 +76,6 @@
             
         
     }
-    NSLog(@"Returning with zero values %@ as dic", newNutrientDictionary);
     return newNutrientDictionary;
 }
 

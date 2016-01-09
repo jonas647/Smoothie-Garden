@@ -36,11 +36,14 @@
     NSMutableDictionary *thumbnailImages;
     NSMutableArray *filteredRecipeArray;
     SBActivityIndicatorView *loadingIndicator;
+    float imageParallaxEffectFactor;
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    imageParallaxEffectFactor = 25;
     
     //TODO
     //Comment out the stuff linked to favorites or use it in another way
@@ -139,7 +142,7 @@
         [thumbnailImages setObject:tempImage forKey:r.recipeName];
     }
     
-    //Reload the view to get the proper recipes showing (favorites can change)
+    //Reload the view to get the proper recipes showing
     [self.tableView reloadData];
     
 }
@@ -456,6 +459,11 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //This is needed to get proper parallax effect and no stuttering image when loading the table view
+    [self updateParallaxEffectForCell:(RecipeTableViewCell*) cell];
+}
 
 #pragma mark - Table view data delegate
 
@@ -473,6 +481,26 @@
     }
     
 }
+
+#pragma mark - Parallax effect for recipe image
+
+- (void) updateParallaxEffectForCell: (RecipeTableViewCell*) cellToDisplay {
+    
+    //Offset of the current position in table view
+    float offsetY = self.tableView.contentOffset.y;
+    
+    //Only the Y position matters since only vertical scrolling
+    float x = cellToDisplay.recipeImage.frame.origin.x;
+    float w = cellToDisplay.recipeImage.frame.size.width;
+    float h = cellToDisplay.recipeImage.frame.size.height;
+    
+    //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
+    float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
+    cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
+    
+}
+
+
 /*
  //Uncommenting this since it shouldn't be possible to edit rows. Not using the favorite tab any longer.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -550,19 +578,9 @@
     
     //Move all the recipes in the table view cells to create a parallax effect
     
-    float offsetY = self.tableView.contentOffset.y;
     for (RecipeTableViewCell *cell in self.tableView.visibleCells) {
-        
-        float x = cell.recipeImage.frame.origin.x;
-        float w = cell.recipeImage.frame.size.width;
-        float h = cell.recipeImage.frame.size.height;
-        
-        float y;
-        y = ((offsetY - cell.frame.origin.y) / h) * 10;
-        cell.recipeImage.frame = CGRectMake(x, y, w, h);
-        
-        //TODO
-        //Fix the scrolling so that the top 2 images are correctly positioned
+    
+        [self updateParallaxEffectForCell:cell];
     }
     
 }

@@ -26,7 +26,7 @@
     
     self.titleLabel.text = [NSString stringWithFormat:@"Nutrient fact sheet for %@", self.selectedRecipe.recipeName];
     
-    self.caloriesLabel.text = [NSString stringWithFormat:@"Total Calories: %@", [self.selectedRecipe volumeStringForNutrient:@"Energy"]];
+    self.caloriesLabel.text = [NSString stringWithFormat:@"Energy: %@", [self.selectedRecipe volumeStringForNutrient:@"Energy"]];
     
     //Remove energy as that's shown at the top as "Kcal"
     NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];

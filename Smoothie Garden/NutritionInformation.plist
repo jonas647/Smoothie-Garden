@@ -295,7 +295,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>17</string>
+			<string>9.2</string>
 			<key>Type</key>
 			<string>Proximate</string>
 		</dict>
@@ -304,7 +304,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>23.77</string>
+			<string>11.75</string>
 			<key>Type</key>
 			<string>Proximate</string>
 		</dict>
@@ -313,7 +313,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>30.58</string>
+			<string>20.96</string>
 			<key>Type</key>
 			<string>Proximate</string>
 		</dict>
@@ -322,7 +322,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>6.78</string>
+			<string>2.67</string>
 			<key>Type</key>
 			<string>Proximate</string>
 		</dict>
@@ -331,7 +331,7 @@
 			<key>Unit</key>
 			<string>Kcal</string>
 			<key>Measure</key>
-			<string>365</string>
+			<string>227</string>
 			<key>Type</key>
 			<string>Proximate</string>
 		</dict>
@@ -340,7 +340,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>0.52</string>
+			<string>0.83</string>
 			<key>Type</key>
 			<string>Mineral</string>
 		</dict>
@@ -349,7 +349,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>30</string>
+			<string>18</string>
 			<key>Type</key>
 			<string>Mineral</string>
 		</dict>
@@ -358,7 +358,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>73</string>
+			<string>39</string>
 			<key>Type</key>
 			<string>Mineral</string>
 		</dict>
@@ -367,7 +367,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>122</string>
+			<string>73</string>
 			<key>Type</key>
 			<string>Mineral</string>
 		</dict>
@@ -376,7 +376,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>1067</string>
+			<string>690</string>
 			<key>Type</key>
 			<string>Mineral</string>
 		</dict>
@@ -385,7 +385,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>6</string>
+			<string>11</string>
 			<key>Type</key>
 			<string>Mineral</string>
 		</dict>
@@ -394,7 +394,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>1.22</string>
+			<string>0.92</string>
 			<key>Type</key>
 			<string>Mineral</string>
 		</dict>
@@ -403,7 +403,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>52.9</string>
+			<string>12</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -412,7 +412,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>0.064</string>
+			<string>0.102</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -421,7 +421,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>0.161</string>
+			<string>0.194</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -430,7 +430,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>2.043</string>
+			<string>2.6</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -439,7 +439,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>0.237</string>
+			<string>0.39</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -448,7 +448,7 @@
 			<key>Unit</key>
 			<string>µg</string>
 			<key>Measure</key>
-			<string>106</string>
+			<string>121</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -466,7 +466,7 @@
 			<key>Unit</key>
 			<string>µg</string>
 			<key>Measure</key>
-			<string>21</string>
+			<string>10</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -475,7 +475,7 @@
 			<key>Unit</key>
 			<string>IU</string>
 			<key>Measure</key>
-			<string>426</string>
+			<string>200</string>
 			<key>Type</key>
 			<string>Vitamin</string>
 		</dict>
@@ -502,7 +502,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>5.958</string>
+			<string>2.891</string>
 			<key>Type</key>
 			<string>Fat</string>
 		</dict>
@@ -511,7 +511,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>16.760</string>
+			<string>13.327</string>
 			<key>Type</key>
 			<string>Fat</string>
 		</dict>
@@ -520,7 +520,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>5.095</string>
+			<string>2.47</string>
 			<key>Type</key>
 			<string>Fat</string>
 		</dict>
@@ -547,7 +547,7 @@
 			<key>Unit</key>
 			<string>g</string>
 			<key>Measure</key>
-			<string>7.36</string>
+			<string>0.41</string>
 			<key>Type</key>
 			<string>Proximates</string>
 		</dict>
@@ -556,7 +556,7 @@
 			<key>Unit</key>
 			<string>mg</string>
 			<key>Measure</key>
-			<string>8.09</string>
+			<string>2.68</string>
 			<key>Type</key>
 			<string>Vitamins</string>
 		</dict>
@@ -565,7 +565,7 @@
 			<key>Unit</key>
 			<string>µg</string>
 			<key>Measure</key>
-			<string>0</string>
+			<string>28.6</string>
 			<key>Type</key>
 			<string>Vitamins</string>
 		</dict>
@@ -7130,6 +7130,2866 @@
 			<string>µg</string>
 			<key>Measure</key>
 			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Beet Juice</key>
+	<dict>
+		<key>Comment</key>
+		<string>Nutrition facts are from beet but with removed fiber</string>
+		<key>Unit</key>
+		<string>Piece</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.2</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>7.84</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.14</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>1.32</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>35</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.66</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>13</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>19</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>33</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>266</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>64</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.29</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>4</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.025</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.033</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.274</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.055</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>89</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>2</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>27</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.022</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.026</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.049</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>5.54</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.03</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0.2</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Strawberries</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Dl</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>1.3</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>5.74</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.07</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.27</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>22</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.47</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>10</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>7</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>8</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>93</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>1</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.08</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>25.9</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.014</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.023</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.29</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.018</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>11</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>1</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>28</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.004</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.009</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.034</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>2.87</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.18</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>1.4</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Apple Juice</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Piece</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.2</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>14.04</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.16</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.12</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>57</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.15</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>10</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>6</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>9</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>125</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>5</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.02</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>1.1</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.026</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.021</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.091</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.022</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>1</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.027</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.007</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.048</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>11.93</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.01</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Lime</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Piece</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>1.1</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>4.24</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.08</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.28</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>12</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.24</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>13</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>2</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>7</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>41</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>1</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.04</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>11.7</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.012</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.008</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.08</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.017</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>3</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>1</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>20</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.009</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.008</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.022</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.68</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.09</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0.2</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Gojiberries</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Tbsp</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.7</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>4.32</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.02</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.8</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>20</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.31</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>11</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>120</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>17</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.4</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>2.7</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.2</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>1502</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>2.55</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Dried plums</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Piece</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.7</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>6.07</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.04</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.21</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>23</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.09</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>4</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>4</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>7</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>70</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.04</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.1</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.005</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.018</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.179</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.019</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>4</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>74</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.008</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.005</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.006</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>3.62</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.004</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>5.7</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Psyllium seeds</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Tbsp</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>10</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>10</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>20</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>1.7</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>9</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Passion fruit</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Piece</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>1.9</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>4.21</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.13</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.4</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>17</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.29</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>2</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>5</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>12</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>63</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>5</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.02</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>5.4</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.023</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.27</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.018</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>3</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>12</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>229</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.011</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.015</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.074</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>2.02</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0.1</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Coconut milk tbsp</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Tbsp</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.3</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.83</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>3.58</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.34</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>34</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.25</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>2</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>6</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>15</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>39</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>2</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.1</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.4</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.004</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.114</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.005</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>2</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>3.171</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.152</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.039</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.5</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.02</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+	</dict>
+	<key>Coconut milk dl</key>
+	<dict>
+		<key>Comment</key>
+		<string></string>
+		<key>Unit</key>
+		<string>Dl</string>
+		<key>Fiber</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>2.2</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Carbohydrate</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>5.61</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Fat</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>24.15</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Protein</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>2.32</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Energy</key>
+		<dict>
+			<key>Unit</key>
+			<string>Kcal</string>
+			<key>Measure</key>
+			<string>233</string>
+			<key>Type</key>
+			<string>Proximate</string>
+		</dict>
+		<key>Iron, Fe</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>1.66</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Calcium, Ca</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>16</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Magnesium, Mg</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>37</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Phosphorus, P</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>101</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Potassium, K</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>266</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Sodium, Na</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>15</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Zinc, Zn</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.68</string>
+			<key>Type</key>
+			<string>Mineral</string>
+		</dict>
+		<key>Vitamin C</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>2.8</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Thiamin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.026</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Riboflavin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Niacin</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.77</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-6</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.033</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Folate, DFE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>16</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin B-12</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, RAE</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin A, IU	</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D (D2 + D3)</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Vitamin D</key>
+		<dict>
+			<key>Unit</key>
+			<string>IU</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Vitamin</string>
+		</dict>
+		<key>Fatty acids, total saturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>21.411</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total monounsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>1.027</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total polyunsaturated</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0.264</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Fatty acids, total trans</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Cholesterol</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0</string>
+			<key>Type</key>
+			<string>Fat</string>
+		</dict>
+		<key>Sugar</key>
+		<dict>
+			<key>Unit</key>
+			<string>g</string>
+			<key>Measure</key>
+			<string>3.38</string>
+			<key>Type</key>
+			<string>Proximates</string>
+		</dict>
+		<key>Vitamin E</key>
+		<dict>
+			<key>Unit</key>
+			<string>mg</string>
+			<key>Measure</key>
+			<string>0.15</string>
+			<key>Type</key>
+			<string>Vitamins</string>
+		</dict>
+		<key>Vitamin K</key>
+		<dict>
+			<key>Unit</key>
+			<string>µg</string>
+			<key>Measure</key>
+			<string>0.1</string>
 			<key>Type</key>
 			<string>Vitamins</string>
 		</dict>

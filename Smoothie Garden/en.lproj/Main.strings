@@ -1,0 +1,219 @@
+
+/* Class = "UILabel"; text = "250"; ObjectID = "1en-ql-Q9u"; */
+"1en-ql-Q9u.text" = "250";
+
+/* Class = "UILabel"; text = "Day 1"; ObjectID = "3z0-RA-e7e"; */
+"3z0-RA-e7e.text" = "Day 1";
+
+/* Class = "UILabel"; text = "Jonas Björkell - Programming & App Design"; ObjectID = "4Rh-Y3-40s"; */
+"4Rh-Y3-40s.text" = "Jonas Björkell - Programming & App Design";
+
+/* Class = "UILabel"; text = "Email us for feedback"; ObjectID = "5Yh-CP-lgT"; */
+"5Yh-CP-lgT.text" = "Email us for feedback";
+
+/* Class = "UILabel"; text = "8g"; ObjectID = "6cH-Dh-2Et"; */
+"6cH-Dh-2Et.text" = "8g";
+
+/* Class = "UILabel"; text = "% of DI"; ObjectID = "6xw-9Q-F36"; */
+"6xw-9Q-F36.text" = "% of DI";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "8CP-xI-LfN"; */
+"8CP-xI-LfN.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Follow us"; ObjectID = "8CP-xI-LfN"; */
+"8CP-xI-LfN.headerTitle" = "Follow us";
+
+/* Class = "UITabBarItem"; title = "All recipes"; ObjectID = "8WE-pM-OY1"; */
+"8WE-pM-OY1.title" = "All recipes";
+
+/* Class = "UIButton"; normalTitle = "Reset all liked recipes"; ObjectID = "8nz-ZM-24x"; */
+"8nz-ZM-24x.normalTitle" = "Reset all liked recipes";
+
+/* Class = "UILabel"; text = "Nutrient fact sheet for Smoothie"; ObjectID = "ALN-1k-wYw"; */
+"ALN-1k-wYw.text" = "Nutrient fact sheet for Smoothie";
+
+/* Class = "UIButton"; normalTitle = "Metric"; ObjectID = "Azb-2p-T7V"; */
+"Azb-2p-T7V.normalTitle" = "Metric";
+
+/* Class = "UIButton"; selectedTitle = "US Customary Units"; ObjectID = "Azb-2p-T7V"; */
+"Azb-2p-T7V.selectedTitle" = "US Customary Units";
+
+/* Class = "UILabel"; text = "by"; ObjectID = "Bbt-gC-srx"; */
+"Bbt-gC-srx.text" = "by";
+
+/* Class = "UILabel"; text = "Smoothie name"; ObjectID = "Dw6-s1-rof"; */
+"Dw6-s1-rof.text" = "Smoothie name";
+
+/* Class = "UIButton"; normalTitle = "Add more recipes"; ObjectID = "EEP-RF-661"; */
+"EEP-RF-661.normalTitle" = "Add more recipes";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "FW3-Ia-rdr"; */
+"FW3-Ia-rdr.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Weight and measures"; ObjectID = "FW3-Ia-rdr"; */
+"FW3-Ia-rdr.headerTitle" = "Weight and measures";
+
+/* Class = "UILabel"; text = "Every ingredient is carefully selected to achieve the perfect blend between healthy and delicious. Always free from animal product, gluten and no added sugar"; ObjectID = "FyQ-RC-jDi"; */
+"FyQ-RC-jDi.text" = "Every ingredient is carefully selected to achieve the perfect blend between healthy and delicious. Always free from animal product, gluten and no added sugar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "H62-Ld-SRR"; */
+"H62-Ld-SRR.text" = "Label";
+
+/* Class = "UILabel"; text = "Like Smoothie Box Facebook Page to stay in touch"; ObjectID = "HZG-hY-CWY"; */
+"HZG-hY-CWY.text" = "Like Smoothie Box Facebook Page to stay in touch";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ie5-Z3-Jul"; */
+"Ie5-Z3-Jul.text" = "Label";
+
+/* Class = "UILabel"; text = "0.7g"; ObjectID = "JI3-kp-ijV"; */
+"JI3-kp-ijV.text" = "0.7g";
+
+/* Class = "UILabel"; text = "% of DI"; ObjectID = "Jka-XQ-egK"; */
+"Jka-XQ-egK.text" = "% of DI";
+
+/* Class = "UILabel"; text = "Ingredient text"; ObjectID = "Jtr-fs-o1S"; */
+"Jtr-fs-o1S.text" = "Ingredient text";
+
+/* Class = "UILabel"; text = "Miriam Björkell - Recipes & Photos"; ObjectID = "Khv-SR-gje"; */
+"Khv-SR-gje.text" = "Miriam Björkell - Recipes & Photos";
+
+/* Class = "UILabel"; text = "Carbs"; ObjectID = "LHu-H1-bfi"; */
+"LHu-H1-bfi.text" = "Carbs";
+
+/* Class = "UILabel"; text = "Breakfast"; ObjectID = "O3i-WO-NAH"; */
+"O3i-WO-NAH.text" = "Breakfast";
+
+/* Class = "UILabel"; text = "Challenge yourself to a 3-day smoothie detox. Follow our well planned detox plan where each smoothie is selected to create a perfectly balanced nutrious meal"; ObjectID = "R2C-kS-Tx6"; */
+"R2C-kS-Tx6.text" = "Challenge yourself to a 3-day smoothie detox. Follow our well planned detox plan where each smoothie is selected to create a perfectly balanced nutrious meal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Rl4-Tv-FHY"; */
+"Rl4-Tv-FHY.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Detailed nutrient fact sheet"; ObjectID = "SWD-q9-32K"; */
+"SWD-q9-32K.normalTitle" = "Detailed nutrient fact sheet";
+
+/* Class = "UILabel"; text = "If you like Smoothie Box, please rate us on AppStore"; ObjectID = "UEz-rZ-icy"; */
+"UEz-rZ-icy.text" = "If you like Smoothie Box, please rate us on AppStore";
+
+/* Class = "UILabel"; text = "Recipes"; ObjectID = "Veq-XS-RZc"; */
+"Veq-XS-RZc.text" = "Recipes";
+
+/* Class = "UIButton"; normalTitle = "Restore Purchases"; ObjectID = "W9L-sv-ZYh"; */
+"W9L-sv-ZYh.normalTitle" = "Restore Purchases";
+
+/* Class = "UILabel"; text = "Quantity & Measurement"; ObjectID = "WcX-zF-00g"; */
+"WcX-zF-00g.text" = "Quantity & Measurement";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "Xla-Gq-Jbd"; */
+"Xla-Gq-Jbd.text" = "Settings";
+
+/* Class = "UILabel"; text = "Smoothie Box"; ObjectID = "YbZ-zo-hmC"; */
+"YbZ-zo-hmC.text" = "Smoothie Box";
+
+/* Class = "UILabel"; text = "3g"; ObjectID = "ZdR-dU-6T6"; */
+"ZdR-dU-6T6.text" = "3g";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "ZeV-fF-o6R"; */
+"ZeV-fF-o6R.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Rate us"; ObjectID = "ZeV-fF-o6R"; */
+"ZeV-fF-o6R.headerTitle" = "Rate us";
+
+/* Class = "UITextView"; text = "Short text describing the smoothie"; ObjectID = "aL4-Px-qNR"; */
+"aL4-Px-qNR.text" = "Short text describing the smoothie";
+
+/* Class = "UILabel"; text = "Percent daily values are based on a 2000 calorie diet. Your daily values may be higher or lower depending on your calorie needs."; ObjectID = "bPn-PP-Qfq"; */
+"bPn-PP-Qfq.text" = "Percent daily values are based on a 2000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.";
+
+/* Class = "UILabel"; text = "We will always respond to your questions on our Facebook page"; ObjectID = "bfJ-nQ-RBt"; */
+"bfJ-nQ-RBt.text" = "We will always respond to your questions on our Facebook page";
+
+/* Class = "UILabel"; text = "Nutrient"; ObjectID = "c5w-Fd-PD2"; */
+"c5w-Fd-PD2.text" = "Nutrient";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "cEK-e2-cKS"; */
+"cEK-e2-cKS.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Liked Recipes"; ObjectID = "cEK-e2-cKS"; */
+"cEK-e2-cKS.headerTitle" = "Liked Recipes";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "dTk-JI-3A0"; */
+"dTk-JI-3A0.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Kcal"; ObjectID = "dkj-wT-Vt1"; */
+"dkj-wT-Vt1.text" = "Kcal";
+
+/* Class = "UILabel"; text = "Name of Smoothie"; ObjectID = "dpf-3Y-pUJ"; */
+"dpf-3Y-pUJ.text" = "Name of Smoothie";
+
+/* Class = "UILabel"; text = "Follow Smoothie Box on Instagram for daily updates"; ObjectID = "du8-6R-i3f"; */
+"du8-6R-i3f.text" = "Follow Smoothie Box on Instagram for daily updates";
+
+/* Class = "UINavigationItem"; title = "Smoothie Box"; ObjectID = "eRY-fT-6cl"; */
+"eRY-fT-6cl.title" = "Smoothie Box";
+
+/* Class = "UILabel"; text = "Nutrient"; ObjectID = "fc7-lH-9D5"; */
+"fc7-lH-9D5.text" = "Nutrient";
+
+/* Class = "UINavigationController"; title = "Recipes"; ObjectID = "giH-B2-Frm"; */
+"giH-B2-Frm.title" = "Recipes";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "gqU-NR-jNn"; */
+"gqU-NR-jNn.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Fat"; ObjectID = "h0K-VX-OcP"; */
+"h0K-VX-OcP.text" = "Fat";
+
+/* Class = "UITextView"; text = "For just $3 you can start making your daily healthy smoothie"; ObjectID = "hLm-hc-C3z"; */
+"hLm-hc-C3z.text" = "For just $3 you can start making your daily healthy smoothie";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "jOl-5N-FuN"; */
+"jOl-5N-FuN.title" = "About";
+
+/* Class = "UILabel"; text = "All recipes are curated by Smoothie Box"; ObjectID = "kD1-8l-bFb"; */
+"kD1-8l-bFb.text" = "All recipes are curated by Smoothie Box";
+
+/* Class = "UILabel"; text = "∙"; ObjectID = "lOy-ec-Ss3"; */
+"lOy-ec-Ss3.text" = "∙";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "nOX-8i-r2L"; */
+"nOX-8i-r2L.text" = "About";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "npH-Nk-lhc"; */
+"npH-Nk-lhc.title" = "Item";
+
+/* Class = "UILabel"; text = "Smoothie Box Challenge"; ObjectID = "o1h-g1-WWX"; */
+"o1h-g1-WWX.text" = "Smoothie Box Challenge";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "pAW-v0-wBb"; */
+"pAW-v0-wBb.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Credits"; ObjectID = "pAW-v0-wBb"; */
+"pAW-v0-wBb.headerTitle" = "Credits";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "rH3-YL-MMh"; */
+"rH3-YL-MMh.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Support"; ObjectID = "rH3-YL-MMh"; */
+"rH3-YL-MMh.headerTitle" = "Support";
+
+/* Class = "UILabel"; text = "Volume"; ObjectID = "sgW-Mv-YYA"; */
+"sgW-Mv-YYA.text" = "Volume";
+
+/* Class = "UILabel"; text = "Volume"; ObjectID = "t8U-79-3fS"; */
+"t8U-79-3fS.text" = "Volume";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "tRQ-LE-pEK"; */
+"tRQ-LE-pEK.title" = "Settings";
+
+/* Class = "UILabel"; text = "Protein"; ObjectID = "vLZ-yU-EOB"; */
+"vLZ-yU-EOB.text" = "Protein";
+
+/* Class = "UILabel"; text = "Total Calories: "; ObjectID = "vqN-vh-3Tw"; */
+"vqN-vh-3Tw.text" = "Total Calories: ";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "xTC-ol-j3v"; */
+"xTC-ol-j3v.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Purchases"; ObjectID = "xTC-ol-j3v"; */
+"xTC-ol-j3v.headerTitle" = "Purchases";

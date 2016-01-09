@@ -196,7 +196,7 @@
     
     
     if (nutrientParentDictionary) {
-        NSLog(@"Setting nutrients for %@: %@",self.type,  nutrientParentDictionary);
+        
         self.nutrients = [[NutrientCatalog alloc]initWithDictionary:nutrientParentDictionary];
     } else {
         NSLog(@"No nutrients for %@", self.type);
