@@ -77,14 +77,6 @@
     } else
         NSLog(@"%@ not liked", self.selectedRecipe.recipeName);
     
-    //Update the frame for the different UITextviews
-    ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
-    recipeTableView.frame = [self newFrameForUIView:recipeTableView];
-    
-    recipeDescription.frame = [self newFrameForUIView:recipeDescription];
-    
-    //Update the height constraints to adjust the height to the new frames
-    [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
     
     //Remove the title text from the back button (in the Detailed nutrient table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -109,11 +101,20 @@
     }
     
     
+    
 }
 
 
 - (void) viewDidLayoutSubviews {
     
+    //Update the frame for the different UITextviews
+    ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
+    recipeTableView.frame = [self newFrameForUIView:recipeTableView];
+    
+    recipeDescription.frame = [self newFrameForUIView:recipeDescription];
+    
+    //Update the height constraints to adjust the height to the new frames
+    [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
     
     likeView.layer.cornerRadius = likeView.bounds.size.width/2;//Make like view a circle
     likeView.alpha = 0.0;//Make like view hidden until the recipe is liked
@@ -137,8 +138,14 @@
     [titleName setFont:[titleName.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:titleName.font withSize:LABEL_SIZE_LARGE]];
     
     //Get the total height for the Blank background and the content view
+    /*
+    float heightForBlankBckgr = titleBackground.frame.size.height + ingredientsTableView.frame.size.height + recipeTableView.frame.size.height + titleName.frame.size.height + recipeDescription.frame.size.height;
     
-    float heightForBlankBckgr = titleBackground.frame.size.height + ingredientsHeightConstraint.constant + recipeTableViewHeightConstraint.constant + titleName.frame.size.height;
+    
+    NSLog(@"Height for Title: %f", titleBackground.frame.size.height);
+    NSLog(@"Height for Ingredients: %f", ingredientsTableView.frame.size.height);
+    NSLog(@"Height for Recipe table: %f", recipeTableView.frame.size.height);
+    NSLog(@"Height for Description: %f", recipeDescription.frame.size.height);
     
     //Add 15% to make some space at bottom
     float heightForContentView = heightForBlankBckgr + recipeImageView.frame.size.height + 1.15;
@@ -146,16 +153,34 @@
     //TODO
     //Change the height so that it works with height constraints based on the views on screen
     
-    //[blankBackgroundHeightConstraint setConstant:heightForBlankBckgr];
-    //[contentViewHeightConstraint setConstant:heightForContentView];
     
-    /*
+    [blankBackgroundHeightConstraint setConstant:heightForBlankBckgr];
+    [contentViewHeightConstraint setConstant:heightForContentView];
+    
+    
     NSLog(@"Calculated height for Blank: %f", heightForBlankBckgr);
     NSLog(@"Caluclated height for Content: %f", heightForContentView);
     NSLog(@"Height for Blank: %f", blankBackgroundHeightConstraint.constant);
     NSLog(@"Height for Content: %f", contentViewHeightConstraint.constant);
+    */
+
+    /*
+    blankBackgroundToTop.constant = recipeImageView.frame.size.height;
+    titleBackgroundToTop.constant = recipeImageView.frame.size.height + titleBackground.frame.size.height;
      */
-     
+    
+    /*titleBackgroundToTop.constant = recipeImageView.frame.size.height;
+    blankBackgroundToTop.constant = recipeImageView.frame.size.height + titleBackground.frame.size.height;
+    
+    NSLog(@"Blank background to top: %f", blankBackgroundToTop.constant);
+     */
+    
+    //[recipeImageViewHeight setConstant:self.view.frame.size.width*0.8];
+    
+    //TODO
+    //Do this the proper way
+    [blankBackgroundToTop setConstant:452];
+    
 }
 
 
@@ -246,6 +271,13 @@
     }
      
      */
+    /*
+    if (CGRectContainsPoint(titleBackground.frame, CGPointMake(0, 0))) {
+        NSLog(@"Title intersecting status bar background");
+        [titleBackground setFrame:CGRectMake(statusbarBackground.frame.origin.x, statusbarBackground.frame.origin.y, titleBackground.frame.size.width, titleBackground.frame.size.height)];
+    }
+    NSLog(@"Title frame: %@", NSStringFromCGRect(titleBackground.frame));
+    */
 }
 
 #pragma mark - Table View Delegate

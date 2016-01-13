@@ -197,5 +197,114 @@
 		<key>ImageName</key>
 		<string>veggie detox high res</string>
 	</dict>
+	<key>Recipe 3</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Orange is the new black</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away</string>
+		<key>RecipeDescription</key>
+		<array>
+			<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away. The ginger adds some healthy heat and has anti-inflammatory effects. Not only does this smoothie taste great, it will also boost your immune system</string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Juice the carrots, orange, lemon and ginger in a juice extractor</string>
+			<string>Mix the juice with the mango in a blender on high speed until smooth</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Cucumber</string>
+				<key>Quantity</key>
+				<string>5</string>
+				<key>Measurement</key>
+				<string>cm</string>
+				<key>Text</key>
+				<string>cucumber</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Lemon</string>
+				<key>Quantity</key>
+				<string>1/2</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>lemon</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Spinach</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>spinach</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Apple</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>apple (chopped without seeds)</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Avocado</string>
+				<key>Quantity</key>
+				<string>1/2</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>avocado</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Water</string>
+				<key>Quantity</key>
+				<string>2</string>
+				<key>Measurement</key>
+				<string>tbsp</string>
+				<key>Text</key>
+				<string>water</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Ice Cubes</string>
+				<key>Quantity</key>
+				<string>4</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>ice cubes</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Parsley</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>sprig</string>
+				<key>Text</key>
+				<string>parsley</string>
+				<key>Optional</key>
+				<true/>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>veggie detox high res</string>
+	</dict>
 </dict>
 </plist>
