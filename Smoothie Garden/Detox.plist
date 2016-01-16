@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Day1</key>
+	<dict>
+		<key>9AM</key>
+		<string>Layered blueberry and chia smoothie</string>
+		<key>12AM</key>
+		<string>Unbeetable smoothie</string>
+		<key>4PM</key>
+		<string>Green rawgurt</string>
+		<key>7PM</key>
+		<string>Cashew and raspberry smoothie</string>
+	</dict>
+	<key>Day2</key>
+	<dict>
+		<key>9AM</key>
+		<string>Orange is the new black</string>
+		<key>12AM</key>
+		<string>Acai Bowl</string>
+		<key>4PM</key>
+		<string>Passion for chia</string>
+		<key>7PM</key>
+		<string>Veggie detox</string>
+	</dict>
+	<key>Day3</key>
+	<dict>
+		<key>9AM</key>
+		<string>Mango and grapefruit detox</string>
+		<key>12AM</key>
+		<string>Nuts about raspberries</string>
+		<key>4PM</key>
+		<string>Green kale</string>
+		<key>7PM</key>
+		<string>Raspberry and coconut smoothie</string>
+	</dict>
+</dict>
+</plist>

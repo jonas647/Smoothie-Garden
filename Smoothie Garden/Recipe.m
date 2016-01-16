@@ -18,26 +18,6 @@
 
 @implementation Recipe
 
-#pragma mark - Selection of Recipes
-
-+ (NSArray*) recipesFromPlistFor: (int) selection {
-    
-    switch (selection) {
-        case TAB_BAR_ALL:
-            //Show all recipes
-            return [self allRecipesFromPlist];
-            break;
-        case TAB_BAR_FAV:
-            //Show the favorite recipes
-            return [self favoriteRecipes];
-            break;
-        default:
-            break;
-    }
-    
-    return nil;
-}
-
 #pragma mark - Load Recipes
 + (NSArray*) allRecipesFromPlist {
 

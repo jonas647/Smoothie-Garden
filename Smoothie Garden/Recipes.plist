@@ -222,17 +222,27 @@
 		<array>
 			<dict>
 				<key>Type</key>
-				<string>Cucumber</string>
+				<string>Carrot</string>
 				<key>Quantity</key>
-				<string>5</string>
+				<string>2</string>
 				<key>Measurement</key>
-				<string>cm</string>
+				<string></string>
 				<key>Text</key>
-				<string>cucumber</string>
+				<string>carrots</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Lemon</string>
+				<string>Orange</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>orange</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Lemon Juice</string>
 				<key>Quantity</key>
 				<string>1/2</string>
 				<key>Measurement</key>
@@ -242,69 +252,201 @@
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Spinach</string>
+				<string>Mango</string>
+				<key>Quantity</key>
+				<string>2</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen mango</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Ginger</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>cm</string>
+				<key>Text</key>
+				<string>ginger</string>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>Orange is the New Black</string>
+	</dict>
+	<key>Recipe 4</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Scandinavian berries</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>Nordic berries are true super berries that contains lots of antioxidants and nutrients</string>
+		<key>RecipeDescription</key>
+		<array>
+			<string>Scandinavian berries are true super berries that contains lots of antioxidants and nutrients and they are super delicious in this dark blue smoothie. Why not experiment with some other Scandinavian berries like red or black currants, raspberries or wild strawberries? Just switch one of the berries in the recipe with whatever nordic berry you have in the fridge, freezer or in your garden.</string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Mix everything in a blender on high speed until smooth</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Banana</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>banana</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Blueberries</string>
 				<key>Quantity</key>
 				<string>1</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Text</key>
-				<string>spinach</string>
+				<string>frozen blueberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Apple</string>
+				<string>Blackberries</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen blackberries</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Lingonberries</string>
+				<key>Quantity</key>
+				<string>0.5</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen lingonberries</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Almond milk</string>
+				<key>Quantity</key>
+				<string>1.5</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>almond milk</string>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>Nordic Berries</string>
+	</dict>
+	<key>Recipe 5</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Chocolate and raspberry shake</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy</string>
+		<key>RecipeDescription</key>
+		<array>
+			<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy. Raspberry and chocolate really is a match made in heaven and raw cacao nibs are extremely high in antioxidants. Add some macca powder for an extra energy kick.</string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Mix everything in a blender on high speed until smooth</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Banana</string>
 				<key>Quantity</key>
 				<string>1</string>
 				<key>Measurement</key>
 				<string></string>
 				<key>Text</key>
-				<string>apple (chopped without seeds)</string>
+				<string>frozen banana</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Avocado</string>
+				<string>Raspberries</string>
 				<key>Quantity</key>
-				<string>1/2</string>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen raspberries</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Date</string>
+				<key>Quantity</key>
+				<string>1</string>
 				<key>Measurement</key>
 				<string></string>
 				<key>Text</key>
-				<string>avocado</string>
+				<string>medjool date</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Water</string>
+				<string>Raw Cacao</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<string>1</string>
 				<key>Measurement</key>
 				<string>tbsp</string>
 				<key>Text</key>
-				<string>water</string>
+				<string>raw cacao nibs</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Ice Cubes</string>
+				<string>Almond milk</string>
 				<key>Quantity</key>
-				<string>4</string>
+				<string>1.5</string>
 				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>almond milk</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Vanilla powder</string>
+				<key>Quantity</key>
 				<string></string>
+				<key>Measurement</key>
+				<string>a pinch</string>
 				<key>Text</key>
-				<string>ice cubes</string>
+				<string>vanilla powder</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Parsley</string>
+				<string>Macca powder</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<string>0.5</string>
 				<key>Measurement</key>
-				<string>sprig</string>
+				<string>tbsp</string>
 				<key>Text</key>
-				<string>parsley</string>
+				<string>macca powder</string>
 				<key>Optional</key>
 				<true/>
 			</dict>
 		</array>
 		<key>ImageName</key>
-		<string>veggie detox high res</string>
+		<string>Chocolate raspberry shake</string>
 	</dict>
 </dict>
 </plist>

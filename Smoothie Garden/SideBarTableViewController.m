@@ -29,7 +29,7 @@
     self.tableView.backgroundView = tempImageView;
      */
     
-    self.tableView.backgroundColor = [UIColor colorWithRed:217.0f/255.0f green:213/255.0f blue:210/255.0f alpha:0.8f];
+    //self.tableView.backgroundColor = [UIColor colorWithRed:217.0f/255.0f green:213/255.0f blue:210/255.0f alpha:0.8f];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

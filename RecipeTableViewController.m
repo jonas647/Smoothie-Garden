@@ -16,10 +16,6 @@
 #import "Ingredient.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
 
-//#define CELL_HEIGHT 176
-#define TAB_BAR_ALL 1000
-#define TAB_BAR_FAV 1001
-
 #define LABEL_SIZE_LARGE 1
 #define LABEL_SIZE_SMALL 2
 
@@ -43,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    imageParallaxEffectFactor = 25;
+    imageParallaxEffectFactor = 15;
     
     //TODO
     //Comment out the stuff linked to favorites or use it in another way
@@ -79,7 +75,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     //Array for handling the filtered search results
-    filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[Recipe allRecipesFromPlist] count]];
+    //filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[Recipe allRecipesFromPlist] count]];
     
 }
 
