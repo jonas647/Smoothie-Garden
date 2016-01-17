@@ -10,6 +10,7 @@
 #import "SBIAPHelper.h"
 #import <Google/Analytics.h>
 #import "AppReviewHelper.h"
+#import "Ingredient.h"
 
 
 @interface AppDelegate ()
@@ -115,6 +116,10 @@
     
     //App Review start-up
     [AppReviewHelper firstTimeAppLaunch];
+    
+    //TODO
+    //Check Country, If English then set measurement as US customary units at start (if hans't been set earlier)
+    
     
     return YES;
 }

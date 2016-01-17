@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    imageParallaxEffectFactor = 15;
+    imageParallaxEffectFactor = 20;
     
     //TODO
     //Comment out the stuff linked to favorites or use it in another way
@@ -409,7 +409,7 @@
     [cell.recipeDescription sizeToFit];
     
     //Removed this since it's taking to long and not efficient for the app to create UIImage here
-    //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
+    //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", sRecipe.imageName]];
     
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
@@ -482,10 +482,15 @@
 
 - (void) updateParallaxEffectForCell: (RecipeTableViewCell*) cellToDisplay {
     
+    
     //Offset of the current position in table view
     float offsetY = self.tableView.contentOffset.y;
     
+    
     //Only the Y position matters since only vertical scrolling
+    //float x = cellToDisplay.recipeImage.frame.origin.x;
+    //float w = cellToDisplay.recipeImage.frame.size.width;
+    //float h = cellToDisplay.recipeImage.frame.size.height;
     float x = cellToDisplay.recipeImage.frame.origin.x;
     float w = cellToDisplay.recipeImage.frame.size.width;
     float h = cellToDisplay.recipeImage.frame.size.height;
@@ -493,6 +498,9 @@
     //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
     float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
     cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
+     
+     
+    
     
 }
 

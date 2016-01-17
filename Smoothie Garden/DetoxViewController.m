@@ -21,6 +21,7 @@
 #import "UIFont+FontSizeBasedOnScreenSize.h"
 #import "SBGoogleAnalyticsHelper.h"
 #import "SWRevealViewController.h"
+#import "DetailedRecipeViewController.h"
 
 @interface DetoxViewController ()
 {
@@ -67,6 +68,9 @@
         UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
         [thumbnailImages setObject:tempImage forKey:r.recipeName];
     }
+    
+    //Remove the title text from the back button (in the Detailed recipe table view controller)
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)setupDetoxDayFor:(NSString*) day {
@@ -117,7 +121,7 @@
      
         [nextView setAlpha:0.0f];
     }
-    [UIView animateWithDuration: 1.0 animations:^{
+    [UIView animateWithDuration: 0.3 animations:^{
         [nextView setAlpha:1.0f];
         [currentView setAlpha:0.0f];
     }];
@@ -129,6 +133,24 @@
     
     //Keep track of the new selected button/view
     viewForSelectedButton = nextView;
+    
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+    NSString* selectedCategory = [sectionCategories objectAtIndex: indexPath.section];
+    Recipe *selectedRecipe = [self recipeForCategory:selectedCategory];
+
+    if ([selectedRecipe isRecipeUnlocked]) {
+        //Move to screen that shows the recipe
+        [self performSegueWithIdentifier:@"showDetoxRecipeSegue" sender:selectedRecipe];
+    } else if (![selectedRecipe isRecipeUnlocked]) {
+        //Move to screen for in app purchases
+        [self performSegueWithIdentifier:@"InAppPurchaseDetoxSegue" sender:nil];
+    }
+    
     
 }
 
@@ -210,19 +232,27 @@
     }
     
     NSString* category = [sectionCategories objectAtIndex: indexPath.section];
-    Recipe *recipeToShow;
-    if ([category isEqualToString:NINE_AM_SMOOTHIE]) {
-        recipeToShow = nineAM;
-    } else if ([category isEqualToString:TWELVE_AM_SMOOTHIE]) {
-        recipeToShow = twelveAM;
-    } else if ([category isEqualToString:FOUR_PM_SMOOTHIE]) {
-        recipeToShow = fourPM;
-    } else if ([category isEqualToString:SEVEN_PM_SMOOTHIE]) {
-        recipeToShow = sevenPM;
-    }
+    Recipe *recipeToShow = [self recipeForCategory:category];
     
     
     return [self customCellForRecipe:recipeToShow inTableView:tableView withTableViewCellIdentifier:tableCellIdentifier];
+    
+}
+
+- (Recipe*) recipeForCategory: (NSString*) category {
+    
+    Recipe *recipeToReturn;
+    
+    if ([category isEqualToString:NINE_AM_SMOOTHIE]) {
+        recipeToReturn = nineAM;
+    } else if ([category isEqualToString:TWELVE_AM_SMOOTHIE]) {
+        recipeToReturn = twelveAM;
+    } else if ([category isEqualToString:FOUR_PM_SMOOTHIE]) {
+        recipeToReturn = fourPM;
+    } else if ([category isEqualToString:SEVEN_PM_SMOOTHIE]) {
+        recipeToReturn = sevenPM;
+    }
+    return recipeToReturn;
     
 }
 
@@ -302,4 +332,20 @@
         [self setupDetoxDayFor:@"Day3"];
     }
 }
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
+        
+        DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
+        vcToPushTo.selectedRecipe = (Recipe*)sender;
+        
+    }
+    
+}
+
+
 @end

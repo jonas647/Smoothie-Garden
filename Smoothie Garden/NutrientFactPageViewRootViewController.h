@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "NutritionCollectionViewController.h"
+#import "SBPageViewRootViewController.h"
 
-@interface NutrientFactPageViewRootViewController : UIViewController <UIPageViewControllerDataSource>
+@interface NutrientFactPageViewRootViewController : SBPageViewRootViewController <UIPageViewControllerDataSource>
 
-@property (nonatomic,strong) UIPageViewController *pageViewController;
+//@property (nonatomic,strong) UIPageViewController *pageViewController;
 @property (nonatomic,strong) Recipe *selectedRecipe;
 
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 
-- (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
+
 
 @end

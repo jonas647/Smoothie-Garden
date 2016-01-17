@@ -26,13 +26,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *defaultTitleText = @"This is what you get!";
+    NSString *defaultTitleText = @"Upgrade your Smoothie Box!";
     
-    _pageTitles = @[defaultTitleText,defaultTitleText,defaultTitleText];
-    _pageTexts = @[@"Over 20 healthy, raw and vegan smoothie Recipes", @"Wide variety of Chia, nut, fruit and vegetable based smoothies", @"Join the Smoothie Box family to live a healthy lifestyle"];
-    _pageImages = @[@"Acai Bowl.png", @"Sweet Cherry Pie.png", @"Tropical Passion.png"];
-    _leftPageImages =@[@"", @"Passion for Chia.png",@""];
-    _rightPageImages = @[@"",@"Green Coco Kale.png",@""];
+    _pageTitles = @[defaultTitleText,defaultTitleText,defaultTitleText, defaultTitleText];
+    _pageTexts = @[@"Over 20 healthy, raw and vegan smoothie Recipes",
+                   @"Wide variety of Chia, nut, fruit and vegetable based smoothies",
+                   @"Challenge yourself with the Smoothie Box Detox",
+                   @"Join the Smoothie Box family to live a healthy lifestyle"];
+    _pageImages = @[@"Acai Bowl.png", @"Sweet Cherry Pie.png", @"Tropical Passion.png", @"Tropical Passion.png"];
+    _leftPageImages =@[@"", @"Passion for Chia.png",@"", @""];
+    _rightPageImages = @[@"",@"Green Coco Kale.png",@"",@""];
     
     
     // Create page view controller

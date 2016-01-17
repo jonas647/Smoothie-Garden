@@ -15,10 +15,6 @@
 @end
 
 @implementation NutrientFactPageViewRootViewController
-{
-    //SBActivityIndicatorView *loadingIndicator;
-    NSMutableArray *vc;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,9 +22,9 @@
     
     _recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
    
-    vc = [[NSMutableArray alloc]init];
-    [vc addObject:@"BlankViewController"];
-    [vc addObject:@"NutrientPageContentController"];
+    self.viewControllers = [[NSMutableArray alloc]init];
+    [self.viewControllers addObject:@"BlankViewController"];
+    [self.viewControllers addObject:@"NutrientPageContentController"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NutrientPageViewController"];
@@ -46,9 +42,7 @@
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    [self.view bringSubviewToFront:_pageViewController.view];
-    
-    
+    [self.view bringSubviewToFront:self.pageViewController.view];
     
 }
 
@@ -56,12 +50,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (NSUInteger) indexForViewController: (UIViewController*) viewController {
     
     NSString * ident = viewController.restorationIdentifier;
-    
-    NSLog(@"Identifier for vc: %@", viewController.restorationIdentifier);
     
     return [vc indexOfObject:ident];
 }
@@ -69,7 +61,6 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSLog(@"Previous view controller");
     NSUInteger index = [self indexForViewController:viewController];
     
     if (index == 0 || index == NSNotFound) {
@@ -82,7 +73,6 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSLog(@"Next view controller");
     NSUInteger index = [self indexForViewController:viewController];
     
     if (index >= [vc count] || index == NSNotFound)
@@ -94,22 +84,26 @@
     return [self viewControllerAtIndex:index];
 }
 
-
+*/
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index
 {
-    if (index > [vc count]) {
+    if (index > [self.viewControllers count]) {
         NSLog(@"View nil at index: %i", (int)index);
         return nil;
     }
     
+    
+    //UIViewController *controllerAtIndex = [self.storyboard instantiateViewControllerWithIdentifier:[vc objectAtIndex:index]];
+    //return controllerAtIndex;
+    
+    
+    
     // Create a new view controller and pass suitable data.
     if (index == 0) {
-        NSLog(@"Blank view at index: %i", (int)index);
         BlankViewController *blankView = (BlankViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"BlankViewController"];
         
         return blankView;
     } else if (index == 1) {
-    NSLog(@"Nutrition view at index: %i", (int)index);
         NutritionPageContentViewController *nutritionPage = (NutritionPageContentViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"NutrientPageContentController"];
         
         nutritionPage.selectedRecipe = self.selectedRecipe;
@@ -118,8 +112,9 @@
     } else {
         return nil;
     }
+    
 }
-
+/*
 #pragma mark - Page Control
 
 -(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
@@ -132,8 +127,6 @@
 }
 
 - (void)changePage:(UIPageViewControllerNavigationDirection)direction {
-    
-    NSLog(@"Change page");
     
     NSUInteger pageIndex = [self indexForViewController:[_pageViewController.viewControllers objectAtIndex:0]];
     
@@ -155,6 +148,7 @@
                                    animated:YES
                                  completion:nil];
 }
+*/
 
 /*
 #pragma mark - Navigation

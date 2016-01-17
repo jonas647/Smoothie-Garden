@@ -151,12 +151,7 @@
 
 - (IBAction)resetLikedRecipes:(id)sender {
     
-    NSArray *allLikedRecipes = [Recipe favoriteRecipes];
-    
-    for (NSString *likedRecipe in allLikedRecipes) {
-        
-        [Recipe removeRecipeFromFavoritesUsingRecipeName:likedRecipe];
-    }
+    [self showAlertForResetLikes];
     
 }
 
@@ -207,6 +202,43 @@
         //If the switch is enabled then it should disable the analytics on touching the switch
         [SBGoogleAnalyticsHelper userDisablesAnalytics];
     }
+}
+
+- (void) showAlertForResetLikes {
+    //Show an alert to the user asking to review the app
+    
+    NSString *alertTitle = @"Are you sure you want to reset your liked recipes?";
+    //NSString *alertText; //Add if you want to add a body text to the alert
+    NSString *cancelText = @"No";
+    NSString *acceptText = @"Yes";
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:acceptText style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+       
+        //Loop all recipes and remove the like
+        NSArray *allLikedRecipes = [Recipe favoriteRecipes];
+        
+        for (NSString *likedRecipe in allLikedRecipes) {
+            
+            [Recipe removeRecipeFromFavoritesUsingRecipeName:likedRecipe];
+        }
+        
+        //Register with Google Analytics
+        [SBGoogleAnalyticsHelper reportEventWithCategory:@"Reset All" andAction:@"Like Recipe" andLabel:@"YES" andValue:nil];
+        
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelText style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        
+        //Register with Google Analytics
+        [SBGoogleAnalyticsHelper reportEventWithCategory:@"Reset All" andAction:@"Like Recipe" andLabel:@"NO" andValue:nil];
+        
+    }];
+    
+    [alert addAction:acceptAction];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
