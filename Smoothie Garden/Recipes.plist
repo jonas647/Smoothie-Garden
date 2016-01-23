@@ -206,7 +206,7 @@
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>RecipeOverviewDescription</key>
 		<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away</string>
 		<key>RecipeDescription</key>
@@ -447,6 +447,357 @@
 		</array>
 		<key>ImageName</key>
 		<string>Chocolate raspberry shake</string>
+	</dict>
+	<key>Recipe 6</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Tropical Passion</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>A yellow tropical smoothie with lots of vitamins and minerals that nourishes skin, nails and hair. </string>
+		<key>RecipeDescription</key>
+		<array>
+			<string>A yellow tropical smoothie with lots of minerals and vitamins that nourishes skin, nails and hair. Super delicious and great for that inner glow and extra energy. Top with roasted coconut flakes and enjoy right away</string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Scoop out the passion fruit in a glass</string>
+			<string>Mix everything else in a blender on high speed until smooth</string>
+			<string>Pour the smoothie over the passion fruit</string>
+			<string>Top with some coconut flakes</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Passion Fruit</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>passion fruit</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Mango</string>
+				<key>Quantity</key>
+				<string>2</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen mango</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Banana</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>small banana</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Almond milk</string>
+				<key>Quantity</key>
+				<string>1.5</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>almond milk</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Coconut oil</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>tsp</string>
+				<key>Text</key>
+				<string>coconut oil</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Honey</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>tsp</string>
+				<key>Text</key>
+				<string>honey</string>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>Tropical Passion</string>
+	</dict>
+	<key>Recipe 7</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Raspberry Kiss</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>This smoothie is a real vitamin kick with a fresh and summery taste</string>
+		<key>RecipeDescription</key>
+		<array>
+			<string>This is a real vitamin kick with a fresh and summery taste. Enjoy it on a hot sunny day or simply when you need some extra energy. The mint can be replaced with ginger if prefered. Top this smoothie with some goji berries and grated lime peel.</string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Mix everything in a blender on high speed until smooth</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Orange</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>orange</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Raspberries</string>
+				<key>Quantity</key>
+				<string>2</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen raspberries</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Mango</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen mango</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Lime</string>
+				<key>Quantity</key>
+				<string>0.5</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>lime</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Mint leaves</string>
+				<key>Quantity</key>
+				<string>6</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>mint leaves</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Honey</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>tsp</string>
+				<key>Text</key>
+				<string>honey</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Gojiberries</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>tbsp</string>
+				<key>Text</key>
+				<string>dried gojiberries</string>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>Raspberry Kiss</string>
+	</dict>
+	<key>Recipe 8</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Passion for Chia</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>This delicious layered smoothie and chia bowl will give you a perfect start to the day</string>
+		<key>RecipeDescription</key>
+		<array>
+			<string>This is great served as breakfast and will give you a perfect start of the day. Have the soaked chia seeds prepared in the fridge and you will save some valuable time in the morning. </string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Have the pre-soaked chia ready when mixing the smoothie</string>
+			<string>Mix everything but the chia and the passion fruit in a blender on high speed until smooth</string>
+			<string>Layer the soaked chia seeds with the smoothie and the passion fruit</string>
+			<string>Top with fresh berries and enjoy right away</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Chia seed, soaked</string>
+				<key>Quantity</key>
+				<string>2</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>pre-soaked chia seeds in almond milk</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Banana</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>frozen banana</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Mango</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen mango</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Raspberries</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen raspberries</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Almond milk</string>
+				<key>Quantity</key>
+				<string>0.5</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>almond milk</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Honey</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>tsp</string>
+				<key>Text</key>
+				<string>honey</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Passion Fruit</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>passion fruit</string>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>Passion for Chia</string>
+	</dict>
+	<key>Recipe 9</key>
+	<dict>
+		<key>Sorting</key>
+		<integer>0</integer>
+		<key>RecipeName</key>
+		<string>Acai Bowl</string>
+		<key>RecipeType</key>
+		<integer>0</integer>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeOverviewDescription</key>
+		<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal.</string>
+		<key>RecipeDescription</key>
+		<array>
+			<string> Acai bowls are super trendy right now- and for a very good reason. Packed with vitamins and antioxidants, acai bowls are the perfect meal. A lot of the fun with smoothiebowls lies in the toppings where the options are endless. Experiment with chia seeds, nut butter, fresh fruit and berries, seeds or whatever you have at home in your pantry, fridge or garden.</string>
+		</array>
+		<key>DetailedRecipeDescription</key>
+		<array>
+			<string>Mix everything in a blender on high speed until smooth</string>
+			<string>Add topping before serving</string>
+		</array>
+		<key>Ingredients</key>
+		<array>
+			<dict>
+				<key>Type</key>
+				<string>Strawberries</string>
+				<key>Quantity</key>
+				<string>2.5</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Text</key>
+				<string>frozen strawberries</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Acai</string>
+				<key>Quantity</key>
+				<string>100</string>
+				<key>Measurement</key>
+				<string>g</string>
+				<key>Text</key>
+				<string>acai</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Banana</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Text</key>
+				<string>frozen banana</string>
+			</dict>
+			<dict>
+				<key>Type</key>
+				<string>Honey</string>
+				<key>Quantity</key>
+				<string>1</string>
+				<key>Measurement</key>
+				<string>tsp</string>
+				<key>Text</key>
+				<string>honey</string>
+			</dict>
+		</array>
+		<key>ImageName</key>
+		<string>Acai Bowl</string>
 	</dict>
 </dict>
 </plist>

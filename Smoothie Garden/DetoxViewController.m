@@ -111,11 +111,9 @@
     } else if ([day isEqualToString:@"Day3"]) {
         nextView = _day3View;
     }
+
     
-    //Update color of the next view
-    [nextView setBackgroundColor:backgroundColor];
-    
-    
+    /*
     //Make the previously selected button fade out and the new one fade in
     if (nextView != viewForSelectedButton) {
      
@@ -126,10 +124,13 @@
         [currentView setAlpha:0.0f];
     }];
     
-    
+    */
     //Update the background color of the previous view
     [currentView setBackgroundColor:[UIColor clearColor]];
-    [currentView setAlpha:1.0f];
+    //[currentView setAlpha:1.0f];
+    
+    //Update color of the next view
+    [nextView setBackgroundColor:backgroundColor];
     
     //Keep track of the new selected button/view
     viewForSelectedButton = nextView;

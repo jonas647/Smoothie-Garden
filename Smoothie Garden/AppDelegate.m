@@ -68,11 +68,11 @@
     //Appearance of the page control
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor blackColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor groupTableViewBackgroundColor];
     pageControl.backgroundColor = [UIColor clearColor];
     pageControl.alpha = 1;
     
-    [self.window setTintColor:[UIColor darkGrayColor]];
+    [self.window setTintColor:[UIColor blackColor]];
     
     //Get the in app purchases from the in app purchase helper singleton
     //Load it here so that the purchases are available when the user tries to buy the IAP

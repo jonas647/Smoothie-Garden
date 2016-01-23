@@ -36,8 +36,6 @@
         [newRecipe setRecipeOverviewDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeOverviewDescription"]];
         [newRecipe setRecipeDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeDescription"]];
         [newRecipe setDetailedRecipedescription:[[recipeDictionary objectForKey:name] objectForKey:@"DetailedRecipeDescription"]];
-        //[newRecipe setBoosterDescription:[[recipeDictionary objectForKey:name] objectForKey:@"BoosterDescription"]];
-        
         
         newRecipe.detailedRecipedescription = [Recipe arrayForObject:name withArrayKey:@"DetailedRecipeDescription" inDictionary:recipeDictionary];
         newRecipe.recipeDescription = [Recipe arrayForObject:name withArrayKey:@"RecipeDescription" inDictionary:recipeDictionary];
@@ -247,7 +245,7 @@
     if ([[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"]) {
         return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Unit"];
     } else
-        return [NSString stringWithFormat:@"No object called 'Unit' in %@ or error with nutrient name %@",self.recipeName, nutrient];
+        return [NSString stringWithFormat:@"No 'Unit' for %@", nutrient];
     
     
 }
@@ -257,7 +255,7 @@
     if ([[self.totalNutrients objectForKey:nutrient]objectForKey:@"Type"]) {
         return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Type"];
     } else
-        return [NSString stringWithFormat:@"No object called 'Type' in %@ or error with nutrient name %@",self.recipeName, nutrient];
+        return [NSString stringWithFormat:@"No 'Type' for %@", nutrient];
     
 }
 
@@ -325,6 +323,9 @@
         [newNutrientParentDictionary setObject:newNutrientChildDictionary forKey:dic];
         
         
+    }
+    if ([self.recipeName isEqualToString:@"Passion for Chia"]) {
+        NSLog(@"Setting total nutrients for %@, %@", self.recipeName, newNutrientParentDictionary);
     }
     
     self.totalNutrients = newNutrientParentDictionary;

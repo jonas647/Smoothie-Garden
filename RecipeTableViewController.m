@@ -28,11 +28,14 @@
 
 @implementation RecipeTableViewController
 {
+    NSArray *allRecipes;
     Recipe *selectedRecipe;
     NSMutableDictionary *thumbnailImages;
     NSMutableArray *filteredRecipeArray;
     SBActivityIndicatorView *loadingIndicator;
     float imageParallaxEffectFactor;
+    UIFont *smallSizeFont;
+    UIFont *largeSizeFont;
     
 }
 
@@ -125,6 +128,7 @@
     //This must be in view did appear as the selected index isn't set in the view will appear
     
     self.recipes = [Recipe allRecipesFromPlist];
+    allRecipes = self.recipes;
     
     [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     
@@ -137,6 +141,9 @@
         UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
         [thumbnailImages setObject:tempImage forKey:r.recipeName];
     }
+    
+    //Update the font to be used in the table views. Based on size.
+    //TODO
     
     //Reload the view to get the proper recipes showing
     [self.tableView reloadData];
@@ -249,7 +256,7 @@
 - (void)didDismissSearchController:(UISearchController *)searchController {
     // do something after the search controller is dismissed
     
-    self.recipes = [Recipe allRecipesFromPlist];
+    self.recipes = allRecipes;
     [self.tableView reloadData];
 }
 
@@ -264,7 +271,7 @@
     
     //Get the recipes to search among
     //TODO, should not get a new list every time, instead have a current list to work with
-    NSMutableArray *recipeSearch = (NSMutableArray*)[Recipe allRecipesFromPlist];
+    NSMutableArray *recipeSearch = (NSMutableArray*)self.recipes;
     
     //
     //Start with searching for the recipe titles
@@ -314,6 +321,7 @@
         separatedString = [searchText componentsSeparatedByString:@" "];
     
     
+    
     //Add all the predicates to an Array to be able to collect all the different searchwords
     NSMutableArray *allPredicates = [[NSMutableArray alloc]init];
     for (NSString *str in separatedString) {
@@ -350,11 +358,12 @@
         }
     }
     
-    // hand over the filtered results to our search results table
+    //Hand over the filtered results to our search results table
+    //If there's no search string then just show all recipes
     if (searchText.length>0) {
         self.recipes = filteredRecipes;
     } else {
-        self.recipes = [Recipe allRecipesFromPlist];
+        self.recipes = allRecipes;
     }
     
     [self.tableView reloadData];
@@ -386,7 +395,6 @@
     //Get the custom cell for the recipe 
     static NSString *tableCellIdentifier = @"RecipeTableCell";
     return [self customCellForRecipe:[self.recipes objectAtIndex:indexPath.row] inTableView:tableView withTableViewCellIdentifier:tableCellIdentifier];
-    
 }
 
 - (RecipeTableViewCell*) customCellForRecipe: (Recipe*) sRecipe inTableView: (UITableView*) tableView withTableViewCellIdentifier: (NSString*) cellIdentifier {
@@ -399,20 +407,23 @@
         cell = [[RecipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
+    
     cell.recipeTitle.text = sRecipe.recipeName;
     cell.recipeDescription.text = sRecipe.RecipeOverviewDescription;
     
+    /*
     [cell.recipeTitle setFont:[cell.recipeTitle.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:cell.recipeTitle.font withSize:LABEL_SIZE_LARGE]];
     [cell.recipeDescription setFont:[cell.recipeDescription.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:cell.recipeDescription.font withSize:LABEL_SIZE_SMALL]];
     
     [cell.recipeTitle sizeToFit];
     [cell.recipeDescription sizeToFit];
-    
+    */
     //Removed this since it's taking to long and not efficient for the app to create UIImage here
     //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", sRecipe.imageName]];
     
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
+    
     
     //If the recipe is a favorite, then display the like image
     if ([sRecipe isRecipeFavorite]) {
@@ -420,11 +431,14 @@
     } else
         cell.likeImage.hidden = YES;
     
+    
     //Check if the IAP has been purchased and if recipes should be unlocked
     //If the recipe is of type 0 then it's a free recipe, no need to check for IAP
     BOOL isRecipeUnlocked = [sRecipe isRecipeUnlocked];
     
     //Use alpha value to make the unlocked recipes transparent
+    
+    
     float alphaValue;
     if (!isRecipeUnlocked) {
         
@@ -444,14 +458,15 @@
  
     //Hardcoded this value based on the image size to get a good image ratio
     //To get it 100% correct I would need to take in the title and text into this. But I think this is fine
-    //return self.view.frame.size.width * 0.80;
+    return self.view.frame.size.width*0.9;
     
+    /*
     RecipeTableViewCell *cell = [self customCellForRecipe:[self.recipes objectAtIndex:indexPath.row] inTableView:tableView withTableViewCellIdentifier:@"RecipeTableCell"];
     float heightForImage = [UIScreen mainScreen].bounds.size.width*0.75; //Hardcoding since the image has wrong height. Not sure why.
     float heightForTitle = cell.recipeTitle.frame.size.height;
     float heightForDescription = cell.recipeDescription.frame.size.height;
     
-    return heightForImage+heightForTitle+heightForDescription;
+    return heightForImage+heightForTitle+heightForDescription;*/
     
 }
 
@@ -478,6 +493,22 @@
     
 }
 
+#pragma mark - Table view sorting
+
+- (void) sortAndReloadTable {
+    
+    // Set ascending:NO so that "YES" would appear ahead of "NO"
+    NSSortDescriptor *boolDescr = [[NSSortDescriptor alloc] initWithKey:@"favorite" ascending:NO];
+    // String are alphabetized in ascending order
+    NSSortDescriptor *strDescr = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
+    // Combine the two
+    NSArray *sortDescriptors = @[boolDescr, strDescr];
+    // Sort your array
+    self.recipes = [self.recipes sortedArrayUsingDescriptors:sortDescriptors];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Parallax effect for recipe image
 
 - (void) updateParallaxEffectForCell: (RecipeTableViewCell*) cellToDisplay {
@@ -488,9 +519,6 @@
     
     
     //Only the Y position matters since only vertical scrolling
-    //float x = cellToDisplay.recipeImage.frame.origin.x;
-    //float w = cellToDisplay.recipeImage.frame.size.width;
-    //float h = cellToDisplay.recipeImage.frame.size.height;
     float x = cellToDisplay.recipeImage.frame.origin.x;
     float w = cellToDisplay.recipeImage.frame.size.width;
     float h = cellToDisplay.recipeImage.frame.size.height;
@@ -498,9 +526,6 @@
     //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
     float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
     cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
-     
-     
-    
     
 }
 

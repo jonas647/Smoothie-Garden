@@ -37,6 +37,8 @@
     
     [self.view bringSubviewToFront:self.pageViewController.view];
     
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
