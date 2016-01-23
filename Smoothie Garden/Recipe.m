@@ -36,10 +36,12 @@
         [newRecipe setRecipeOverviewDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeOverviewDescription"]];
         [newRecipe setRecipeDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeDescription"]];
         [newRecipe setDetailedRecipedescription:[[recipeDictionary objectForKey:name] objectForKey:@"DetailedRecipeDescription"]];
+        [newRecipe setSorting:[[[recipeDictionary objectForKey:name]objectForKey:@"Sorting"]intValue]];
         
         newRecipe.detailedRecipedescription = [Recipe arrayForObject:name withArrayKey:@"DetailedRecipeDescription" inDictionary:recipeDictionary];
         newRecipe.recipeDescription = [Recipe arrayForObject:name withArrayKey:@"RecipeDescription" inDictionary:recipeDictionary];
         
+        //Loop all the ingredient names for the recipe from the plist and add the ingredient to the recipe
         NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
         for (NSDictionary *dic in [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"]) {
 
@@ -55,6 +57,7 @@
                                                                  andMeasure:[dic objectForKey:@"Measurement"]
                                                                     andText:[dic objectForKey:@"Text"]
                                                                 andOptional:isOptional];
+            
             [tempIngredients addObject:newIngredient];
             
         }
@@ -62,6 +65,16 @@
         newRecipe.ingredients = [NSArray arrayWithArray:tempIngredients];
         
         [newRecipe setupAllNutrientInformationForRecipe];
+        
+        //Flag the recipe as liked or not
+        //TODO
+        //Change the current handling of likes to something better... have a globally saved recipe list that's loaded into memory on start-up?
+        newRecipe.favorite = NO;
+        for (NSString *recipeTitle in [Recipe favoriteRecipes]) {
+            if ([newRecipe.recipeName isEqualToString:recipeTitle]) {
+                newRecipe.favorite = YES;
+            }
+        }
         
         [tempRecipes addObject:newRecipe];
     }

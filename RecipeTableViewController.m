@@ -42,7 +42,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    imageParallaxEffectFactor = 20;
+    imageParallaxEffectFactor = 15;
     
     //TODO
     //Comment out the stuff linked to favorites or use it in another way
@@ -129,6 +129,7 @@
     
     self.recipes = [Recipe allRecipesFromPlist];
     allRecipes = self.recipes;
+    [self sortAndReloadTable];
     
     [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     
@@ -146,8 +147,8 @@
     //TODO
     
     //Reload the view to get the proper recipes showing
-    [self.tableView reloadData];
-    
+    //[self.tableView reloadData];
+    [self sortAndReloadTable];
 }
 
 
@@ -257,7 +258,8 @@
     // do something after the search controller is dismissed
     
     self.recipes = allRecipes;
-    [self.tableView reloadData];
+    [self sortAndReloadTable];
+    //[self.tableView reloadData];
 }
 
 
@@ -366,7 +368,8 @@
         self.recipes = allRecipes;
     }
     
-    [self.tableView reloadData];
+    [self sortAndReloadTable];
+    //[self.tableView reloadData];
 }
 
 
@@ -499,10 +502,10 @@
     
     // Set ascending:NO so that "YES" would appear ahead of "NO"
     NSSortDescriptor *boolDescr = [[NSSortDescriptor alloc] initWithKey:@"favorite" ascending:NO];
-    // String are alphabetized in ascending order
-    NSSortDescriptor *strDescr = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
+    // Sorted in 1,2,3 (ascending order)
+    NSSortDescriptor *intDescr = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
     // Combine the two
-    NSArray *sortDescriptors = @[boolDescr, strDescr];
+    NSArray *sortDescriptors = @[boolDescr, intDescr];
     // Sort your array
     self.recipes = [self.recipes sortedArrayUsingDescriptors:sortDescriptors];
     

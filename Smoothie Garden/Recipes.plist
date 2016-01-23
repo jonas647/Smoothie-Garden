@@ -92,7 +92,7 @@
 	<key>Recipe 2</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>RecipeName</key>
 		<string>Veggie detox</string>
 		<key>RecipeType</key>
@@ -200,7 +200,7 @@
 	<key>Recipe 3</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>2</integer>
 		<key>RecipeName</key>
 		<string>Orange is the new black</string>
 		<key>RecipeType</key>
@@ -277,7 +277,7 @@
 	<key>Recipe 4</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>3</integer>
 		<key>RecipeName</key>
 		<string>Scandinavian berries</string>
 		<key>RecipeType</key>
@@ -353,7 +353,7 @@
 	<key>Recipe 5</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>4</integer>
 		<key>RecipeName</key>
 		<string>Chocolate and raspberry shake</string>
 		<key>RecipeType</key>
@@ -451,7 +451,7 @@
 	<key>Recipe 6</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>5</integer>
 		<key>RecipeName</key>
 		<string>Tropical Passion</string>
 		<key>RecipeType</key>
@@ -540,7 +540,7 @@
 	<key>Recipe 7</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>6</integer>
 		<key>RecipeName</key>
 		<string>Raspberry Kiss</string>
 		<key>RecipeType</key>
@@ -636,7 +636,7 @@
 	<key>Recipe 8</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>7</integer>
 		<key>RecipeName</key>
 		<string>Passion for Chia</string>
 		<key>RecipeType</key>
@@ -735,7 +735,7 @@
 	<key>Recipe 9</key>
 	<dict>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>RecipeName</key>
 		<string>Acai Bowl</string>
 		<key>RecipeType</key>
