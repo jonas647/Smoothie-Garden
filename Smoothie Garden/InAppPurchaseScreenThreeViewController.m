@@ -1,33 +1,32 @@
 //
-//  InAppPurchaseScreenOneViewController.m
+//  InAppPurchaseScreenThreeViewController.m
 //  Smoothie Box
 //
-//  Created by Jonas C Björkell on 2016-01-17.
+//  Created by Jonas C Björkell on 2016-01-30.
 //  Copyright © 2016 Jonas C Björkell. All rights reserved.
 //
 
-#import "InAppPurchaseScreenOneViewController.h"
+#import "InAppPurchaseScreenThreeViewController.h"
 
-@interface InAppPurchaseScreenOneViewController ()
+@interface InAppPurchaseScreenThreeViewController ()
 
 @end
 
-@implementation InAppPurchaseScreenOneViewController
+@implementation InAppPurchaseScreenThreeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void) viewDidLayoutSubviews {
     
-    self.centerImage.layer.cornerRadius = 12.0f;
-    self.leftImage.layer.cornerRadius = 6.0f;
-    self.rightImage.layer.cornerRadius = 6.0f;
+    self.fakeTableView.layer.cornerRadius = 6.0f;
+    self.fakeTableView.layer.masksToBounds = YES;
+    self.fakeTableView.layer.borderWidth = 1.0f;
+    self.fakeTableView.layer.borderColor = [[UIColor lightGrayColor]CGColor];
     
-    self.centerImage.layer.masksToBounds = YES;
-    self.leftImage.layer.masksToBounds = YES;
-    self.rightImage.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {

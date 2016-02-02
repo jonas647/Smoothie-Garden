@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *purchaseButton;
 @property (weak, nonatomic) IBOutlet UIView *pageViewSize;
 
+- (IBAction)buyRecipes:(id)sender;
 
 @end

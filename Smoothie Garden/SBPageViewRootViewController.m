@@ -8,11 +8,13 @@
 
 #import "SBPageViewRootViewController.h"
 
+
 @interface SBPageViewRootViewController ()
 
 @end
 
 @implementation SBPageViewRootViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,11 +65,10 @@
 
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index
 {
-    if (index > [_viewControllers count]) {
+    if (index >= [_viewControllers count]) {
         NSLog(@"View nil at index: %i", (int)index);
         return nil;
     }
-    
     
     UIViewController *controllerAtIndex = [self.storyboard instantiateViewControllerWithIdentifier:[_viewControllers objectAtIndex:index]];
     return controllerAtIndex;
@@ -108,7 +109,6 @@
                                    animated:YES
                                  completion:nil];
 }
-
 
 
 /*

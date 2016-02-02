@@ -26,6 +26,8 @@
     
     self.titleLabel.text = [NSString stringWithFormat:@"Nutrient fact sheet for %@", self.selectedRecipe.recipeName];
     
+    self.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
+    
     self.caloriesLabel.text = [NSString stringWithFormat:@"Energy: %@", [self.selectedRecipe volumeStringForNutrient:@"Energy"]];
     
     //Remove energy as that's shown at the top as "Kcal"

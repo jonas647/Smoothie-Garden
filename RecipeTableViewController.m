@@ -272,8 +272,7 @@
      NSString *searchText = searchController.searchBar.text;
     
     //Get the recipes to search among
-    //TODO, should not get a new list every time, instead have a current list to work with
-    NSMutableArray *recipeSearch = (NSMutableArray*)self.recipes;
+    NSMutableArray *recipeSearch = [[NSMutableArray alloc]initWithArray:self.recipes];
     
     //
     //Start with searching for the recipe titles
@@ -304,7 +303,7 @@
     
     //Remove the found recipes from the recipeSearch so that it only contains recipes that aren't yet matched
     [recipeSearch removeObjectsInArray:filteredRecipes];
-    
+
     //
     //Then search for the ingredients
     //

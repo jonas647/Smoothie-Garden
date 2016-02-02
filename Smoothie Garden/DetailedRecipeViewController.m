@@ -382,6 +382,76 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
+/*
+- (CGFloat) highestCellHeightInTableView: (UITableView*) tableView {
+    
+    float highestCellHeight = 0;
+    NSMutableArray *cellsInTable = [[NSMutableArray alloc]init];
+    
+     //Iterate all the sections and the rows to find the one with the highest height
+     for (NSInteger j = 0; j < [tableView numberOfSections]; ++j)
+     {
+     NSLog(@"Number of rows in section %i: %i",(int)j, (int)[tableView numberOfRowsInSection:0]);
+     for (NSInteger i = 0; i < [tableView numberOfRowsInSection:j]; ++i)
+     {
+     NSLog(@"Adding row %i from section %i", (int)i,(int)j);
+     NSLog(@"For table view: %@", tableView);
+     if ([tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]]) {
+     [cellsInTable addObject:[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]]];;
+     }
+     
+     }
+     }
+    
+    if ([tableView isEqual:recipeTableView]) {
+        
+    } else if ([tableView isEqual:ingredientsTableView]) {
+        
+    }
+    
+    NSLog(@"number of cells added for %@ %lu", tableView, cellsInTable.count);
+    
+    //For every cell, check the height of the views in the cell
+    for (UITableViewCell *cell in cellsInTable) {
+        //TODO
+        //Make custom cell instead for improved readability
+        float cellHeight = 0;
+        
+        //There are different uiviews in the different tables, therefore check what table it is
+        if ([tableView isEqual:recipeTableView]) {
+            UILabel *resizableLabel = (UILabel*)[cell viewWithTag:300];
+            
+            //Add margins to the cell height
+            float cellMargin = cell.frame.size.height;
+            cellHeight = [self labelHeightFor:resizableLabel andScreenSize:LABEL_SIZE_LARGE] + cellMargin;
+            
+        } else if ([tableView isEqual:ingredientsTableView]) {
+            int ingredientText = 200;
+            int volumeText = 201;
+            
+            UILabel *ingredientLabel = (UILabel*)[cell viewWithTag:ingredientText];
+            UILabel *volumeLabel = (UILabel*)[cell viewWithTag:volumeText];
+            
+            float heightForIngredientLabel = [self labelHeightFor:ingredientLabel andScreenSize:LABEL_SIZE_SMALL];
+            float heightForVolumeLabel = [self labelHeightFor:volumeLabel andScreenSize:LABEL_SIZE_SMALL];
+            
+            //Set the height to the heighest of the labels, they are on one side of the middle button and they can differ in height.
+            cellHeight = MAX(heightForIngredientLabel, heightForVolumeLabel);
+            
+        }
+        
+        if (cellHeight > highestCellHeight) {
+            highestCellHeight = cellHeight;
+        }
+        
+        
+    }
+    
+    return highestCellHeight;
+    
+}
+*/
+
 #pragma mark - Handle Recipe Favorites
 
 - (IBAction)likeRecipe:(id)sender {

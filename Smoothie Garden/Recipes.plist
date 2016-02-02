@@ -57,7 +57,7 @@
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Mint Leaves</string>
+				<string>Mint leaves</string>
 				<key>Quantity</key>
 				<string>5</string>
 				<key>Measurement</key>
@@ -173,7 +173,7 @@
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Ice Cubes</string>
+				<string>Water</string>
 				<key>Quantity</key>
 				<string>4</string>
 				<key>Measurement</key>
@@ -206,7 +206,7 @@
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>RecipeOverviewDescription</key>
 		<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away</string>
 		<key>RecipeDescription</key>
@@ -660,13 +660,13 @@
 		<array>
 			<dict>
 				<key>Type</key>
-				<string>Chia seed, soaked</string>
+				<string>Chia seeds dl</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<string>0.5</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Text</key>
-				<string>pre-soaked chia seeds in almond milk</string>
+				<string>chia seeds</string>
 			</dict>
 			<dict>
 				<key>Type</key>

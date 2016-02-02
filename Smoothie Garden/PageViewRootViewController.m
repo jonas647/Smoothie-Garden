@@ -74,6 +74,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Activity indicator for loading
+
+- (void) setupActivityIndicator {
+    
+    loadingIndicator = [[SBActivityIndicatorView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width/5, self.view.frame.size.width/5)];
+    
+    [loadingIndicator setCenter:self.view.center];
+    
+    [self.view addSubview:loadingIndicator];
+    [self.view bringSubviewToFront:loadingIndicator];
+    
+}
+
+#pragma mark - UIPage View
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
@@ -134,6 +148,7 @@
     return pageContentViewController;
 }
 
+#pragma mark - 
 - (IBAction)buyRecipes:(id)sender {
     
     AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;

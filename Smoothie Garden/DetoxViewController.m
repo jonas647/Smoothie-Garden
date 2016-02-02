@@ -71,6 +71,8 @@
     
     //Remove the title text from the back button (in the Detailed recipe table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    
 }
 
 - (void)setupDetoxDayFor:(NSString*) day {
@@ -113,21 +115,8 @@
     }
 
     
-    /*
-    //Make the previously selected button fade out and the new one fade in
-    if (nextView != viewForSelectedButton) {
-     
-        [nextView setAlpha:0.0f];
-    }
-    [UIView animateWithDuration: 0.3 animations:^{
-        [nextView setAlpha:1.0f];
-        [currentView setAlpha:0.0f];
-    }];
-    
-    */
     //Update the background color of the previous view
     [currentView setBackgroundColor:[UIColor clearColor]];
-    //[currentView setAlpha:1.0f];
     
     //Update color of the next view
     [nextView setBackgroundColor:backgroundColor];
@@ -168,14 +157,17 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     _tableView.frame = [self newFrameForUIView:_tableView];
     [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
     
     //Reset the navigation bar, set back to being shown
     //Is hidden in the detailed recipe view
-    [self.navigationController.navigationBar setBackgroundImage:nil
-                                                  forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    
+    //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -239,6 +231,8 @@
     return [self customCellForRecipe:recipeToShow inTableView:tableView withTableViewCellIdentifier:tableCellIdentifier];
     
 }
+
+
 
 - (Recipe*) recipeForCategory: (NSString*) category {
     

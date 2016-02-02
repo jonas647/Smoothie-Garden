@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface InAppPurchaseScreenOneViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *centerImage;
+@property (weak, nonatomic) IBOutlet UIImageView *leftImage;
+@property (weak, nonatomic) IBOutlet UIImageView *rightImage;
 
 @end

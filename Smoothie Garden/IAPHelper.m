@@ -1,6 +1,5 @@
 //
-//  SMIAPHelper.m
-//  Scuba Kid
+//  IAPHelper.m
 //
 //  Created by Jonas C Björkell on 2014-11-03.
 //  Copyright (c) 2014 Jonas C Björkell. All rights reserved.
@@ -12,6 +11,7 @@
 
 NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
 NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTransactionNotification";
+NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductResponseForTransaction"; //Used for updating that we have connection with the appstore. Used for removing a running activity indicator for exemple
 
 // 2
 @interface IAPHelper () <SKProductsRequestDelegate>
@@ -46,7 +46,7 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
             
         }
         NSLog(@"ADDING TRANSACTION OBSERVER");
-        //[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
         
     }
     return self;
@@ -81,6 +81,9 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
         NSLog(@"Add payment to queue: %@", product);
         SKPayment * payment = [SKPayment paymentWithProduct:product];
         [[SKPaymentQueue defaultQueue] addPayment:payment];
+        
+        [self notificationForResponseFromStore];
+        
     }
     
     
@@ -124,7 +127,7 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
 {
-    [self notificationForResponseForTransaction];
+    [self notificationForResponseFromStore];
 }
 
 #pragma mark -  SKPaymentTransactionObserver
@@ -138,6 +141,7 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
                 [self completeTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
+                NSLog(@"Transaction failed");
                 [self failedTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
@@ -148,7 +152,7 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
     };
     
     //Notify that the transaction has been completed
-    [self notificationForResponseForTransaction];
+    //[self notificationForResponseForTransaction];
 }
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
@@ -178,6 +182,7 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
     }
     
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+    [self notificationForResponseFromStore];
     
 }
 
@@ -192,8 +197,6 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
     
 }
 
-
-
 - (void)restoreCompletedTransactions {
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
     
@@ -201,6 +204,12 @@ NSString *const IAPHelperProductTransactionNotification = @"IAPHelperProductTran
 
 - (void) notificationForResponseForTransaction {
     [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductTransactionNotification object:nil userInfo:nil];
+}
+
+- (void) notificationForResponseFromStore{
+    //TODO
+    //Is this needed?
+    [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductResponseForTransaction object:nil userInfo:nil];
 }
 
 @end

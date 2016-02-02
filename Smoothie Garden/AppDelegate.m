@@ -31,28 +31,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //Core Data, to save data in the app
-    
-    
-    
-    
-    //End of Core data
-    
     UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    //mainColor = [UIColor colorWithRed:245.0f/255.0f green:247.0f/255.0f blue:254.0f/255.0f alpha:1.0f];
-
-    
-    //UIColor *secondaryColor = [UIColor colorWithRed:175.0f/255.0f green:191.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
-    
     //Update the colors of where in the app the default color should be used
-    [[UITabBar appearance] setBarTintColor:mainColor];
-    [[UINavigationBar appearance] setBarTintColor:mainColor];
     
-    /*
-    NSShadow* shadow = [NSShadow new];
-    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
-    shadow.shadowColor = secondaryColor;
-     */
+    [[UINavigationBar appearance] setBarTintColor:mainColor];
+    [[UINavigationBar appearance] setBackgroundColor:mainColor];
+    [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+  
+    [[UINavigationBar appearance] setBarTintColor:mainColor];
+
     [[UINavigationBar appearance] setTitleTextAttributes: @{
                                                             NSFontAttributeName: [UIFont fontWithName:@"Apple SD Gothic Neo" size:16.0f],
                                                             }];

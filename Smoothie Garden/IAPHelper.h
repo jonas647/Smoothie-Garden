@@ -1,6 +1,5 @@
 //
 //  IAPHelper.h
-//  Scuba Kid
 //
 //  Created by Jonas C Björkell on 2014-11-03.
 //  Copyright (c) 2014 Jonas C Björkell. All rights reserved.
@@ -9,6 +8,7 @@
 
 UIKIT_EXTERN NSString *const IAPHelperProductPurchasedNotification;
 UIKIT_EXTERN NSString *const IAPHelperProductTransactionNotification;
+UIKIT_EXTERN NSString *const IAPHelperProductResponseForTransaction;
 
 typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * products);
 

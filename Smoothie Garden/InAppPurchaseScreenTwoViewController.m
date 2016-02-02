@@ -1,18 +1,18 @@
 //
-//  InAppPurchaseScreenOneViewController.m
+//  InAppPurchaseScreenTwoViewController.m
 //  Smoothie Box
 //
-//  Created by Jonas C Björkell on 2016-01-17.
+//  Created by Jonas C Björkell on 2016-01-30.
 //  Copyright © 2016 Jonas C Björkell. All rights reserved.
 //
 
-#import "InAppPurchaseScreenOneViewController.h"
+#import "InAppPurchaseScreenTwoViewController.h"
 
-@interface InAppPurchaseScreenOneViewController ()
+@interface InAppPurchaseScreenTwoViewController ()
 
 @end
 
-@implementation InAppPurchaseScreenOneViewController
+@implementation InAppPurchaseScreenTwoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,12 +22,24 @@
 - (void) viewDidLayoutSubviews {
     
     self.centerImage.layer.cornerRadius = 12.0f;
-    self.leftImage.layer.cornerRadius = 6.0f;
-    self.rightImage.layer.cornerRadius = 6.0f;
-    
     self.centerImage.layer.masksToBounds = YES;
-    self.leftImage.layer.masksToBounds = YES;
-    self.rightImage.layer.masksToBounds = YES;
+    
+    //Add border to the nutrient views
+    float borderWidth = 2.0f;
+    CGColorRef borderColor = [UIColor whiteColor].CGColor;
+    
+    _caloriesView.layer.borderWidth = borderWidth;
+    _caloriesView.layer.borderColor = borderColor;
+    
+    _carbsView.layer.borderWidth = borderWidth;
+    _carbsView.layer.borderColor = borderColor;
+    
+    _proteinView.layer.borderWidth = borderWidth;
+    _proteinView.layer.borderColor = borderColor;
+    
+    _fatView.layer.borderWidth = borderWidth;
+    _fatView.layer.borderColor = borderColor;
+
 }
 
 - (void)didReceiveMemoryWarning {

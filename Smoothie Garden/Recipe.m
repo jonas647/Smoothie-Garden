@@ -298,10 +298,12 @@
 - (void) setupAllNutrientInformationForRecipe {
     
     //Get the nutrient dictionary from the first ingredient. Just to get all the different types.
+    //IMPORTANT that the first ingredient exist in the nutrient dictionary. So need to add all the ingredients there even if it's 0 on everything (water, ice)
     Ingredient *tempIngredient = (Ingredient*) [self.ingredients objectAtIndex:0];
     NSDictionary *tempNutrientDictionary = [tempIngredient nutrientCatalogWithNoValueForMeasure];
     
     NSMutableDictionary *newNutrientParentDictionary = [[NSMutableDictionary alloc]initWithCapacity:tempNutrientDictionary.count];
+    
    
     //Loop the dictionary loaded from plist. To update the total volume
     for (NSMutableDictionary *dic in tempNutrientDictionary) {
@@ -316,6 +318,9 @@
         
         //For every nutrient add the volume/measure to the recipe nutrient dictionary
         [newNutrientChildDictionary setObject:[NSString stringWithFormat:@"%f", volumeForNutrient] forKey:@"Measure"];
+        
+        
+        
         
         //Also add the unit and type objects
         NSString *unitString = [[tempNutrientDictionary objectForKey:dic]objectForKey:@"Unit"];
@@ -335,10 +340,22 @@
         
         [newNutrientParentDictionary setObject:newNutrientChildDictionary forKey:dic];
         
+        if ([self.recipeName isEqualToString:@"Passion for Chia"]) {
+           
+            NSLog(@"Adding %f for %@", volumeForNutrient, dic);
+            NSLog(@"Child dictionary: %@", newNutrientChildDictionary);
+        }
+        
         
     }
-    if ([self.recipeName isEqualToString:@"Passion for Chia"]) {
+    if ([self.recipeName isEqualToString:@"Passion for Chia"] || [self.recipeName isEqualToString:@"Green Rawgurt"]) {
+        NSLog(@"Number of ingredients: %i", (int)self.ingredients.count);
+        NSLog(@"Temp ingredient (for number of nutrients): %@", tempIngredient);
+        
+        NSLog(@"Temp dictionary with ingredients, count: %i",(int) tempNutrientDictionary.count);
+        
         NSLog(@"Setting total nutrients for %@, %@", self.recipeName, newNutrientParentDictionary);
+        
     }
     
     self.totalNutrients = newNutrientParentDictionary;
