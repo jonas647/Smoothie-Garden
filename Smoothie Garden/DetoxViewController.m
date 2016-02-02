@@ -72,6 +72,9 @@
     //Remove the title text from the back button (in the Detailed recipe table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
+    //Need to change the backgroundcolor here. If changed in the appdelegate it's also added to the transparent navigation bars
+    UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    [self.navigationController.navigationBar setBackgroundColor:mainColor];
     
 }
 

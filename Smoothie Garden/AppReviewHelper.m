@@ -50,8 +50,6 @@
     
     [[NSUserDefaults standardUserDefaults]setInteger:numberOfTimesShown forKey:[NSString stringWithFormat:@"recipeShown_numberOfTimes"]];
     
-    NSLog(@"Number of times recipes shown: %i", (int)numberOfTimesShown);
-    
 }
 
 + (int) tresholdForShowingAlert {
@@ -79,8 +77,7 @@
     
     if(![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:HAS_REVIEW_BEEN_GIVEN]){
         [[NSUserDefaults standardUserDefaults]setBool:NO forKey:HAS_REVIEW_BEEN_GIVEN];
-    } else
-        NSLog(@"Key %@ exists", HAS_REVIEW_BEEN_GIVEN);
+    }
         
     
 }

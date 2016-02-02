@@ -1089,16 +1089,16 @@
                                             <constraint firstItem="LRO-gj-q9r" firstAttribute="leading" secondItem="mug-nL-aG1" secondAttribute="leading" id="0EJ-4m-QHq"/>
                                             <constraint firstAttribute="trailing" secondItem="Xvn-K3-Rt9" secondAttribute="trailing" id="6jq-sv-ZX6"/>
                                             <constraint firstAttribute="trailing" secondItem="LRO-gj-q9r" secondAttribute="trailing" id="8u9-Cr-yA5"/>
-                                            <constraint firstAttribute="bottom" secondItem="Xvn-K3-Rt9" secondAttribute="bottom" constant="50" id="EZo-hW-cb5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xvn-K3-Rt9" secondAttribute="bottom" constant="50" identifier="BlankBckgrToBottom" id="EZo-hW-cb5"/>
                                             <constraint firstItem="ecO-nY-W5s" firstAttribute="height" secondItem="LRO-gj-q9r" secondAttribute="height" multiplier="0.1" id="Mbx-ba-DE8"/>
                                             <constraint firstItem="ecO-nY-W5s" firstAttribute="centerX" secondItem="mug-nL-aG1" secondAttribute="centerX" id="Spv-Be-pVF"/>
-                                            <constraint firstItem="Xvn-K3-Rt9" firstAttribute="top" secondItem="LRO-gj-q9r" secondAttribute="bottom" id="Yyy-uR-ZvO"/>
+                                            <constraint firstItem="Xvn-K3-Rt9" firstAttribute="top" relation="lessThanOrEqual" secondItem="LRO-gj-q9r" secondAttribute="bottom" identifier="BlankBckgrTopToTitle" id="Yyy-uR-ZvO"/>
                                             <constraint firstItem="T8S-qR-HQM" firstAttribute="centerX" secondItem="mug-nL-aG1" secondAttribute="centerX" id="a8w-Q6-LH7"/>
-                                            <constraint firstItem="T8S-qR-HQM" firstAttribute="top" secondItem="mug-nL-aG1" secondAttribute="top" id="beI-5P-gFX"/>
                                             <constraint firstItem="ecO-nY-W5s" firstAttribute="width" secondItem="LRO-gj-q9r" secondAttribute="width" id="ct8-tO-Df6"/>
+                                            <constraint firstItem="LRO-gj-q9r" firstAttribute="top" secondItem="mug-nL-aG1" secondAttribute="top" priority="250" constant="80" id="eCq-zO-e5Y"/>
                                             <constraint firstItem="Xvn-K3-Rt9" firstAttribute="leading" secondItem="mug-nL-aG1" secondAttribute="leading" id="eYW-PM-OC0"/>
-                                            <constraint firstItem="ecO-nY-W5s" firstAttribute="top" secondItem="LRO-gj-q9r" secondAttribute="bottom" id="fFf-kg-wXX"/>
-                                            <constraint firstItem="Xvn-K3-Rt9" firstAttribute="top" secondItem="mug-nL-aG1" secondAttribute="top" constant="400" id="gW8-HD-tLW"/>
+                                            <constraint firstItem="ecO-nY-W5s" firstAttribute="top" secondItem="LRO-gj-q9r" secondAttribute="bottom" identifier="AlphaViewToTitle" id="fFf-kg-wXX"/>
+                                            <constraint firstItem="Xvn-K3-Rt9" firstAttribute="top" secondItem="mug-nL-aG1" secondAttribute="top" constant="400" identifier="BlankBckgrToTop" id="gW8-HD-tLW"/>
                                             <constraint firstItem="LRO-gj-q9r" firstAttribute="top" relation="lessThanOrEqual" secondItem="T8S-qR-HQM" secondAttribute="bottom" id="gje-ba-foL"/>
                                             <constraint firstItem="Xvn-K3-Rt9" firstAttribute="centerX" secondItem="mug-nL-aG1" secondAttribute="centerX" id="j9x-FX-B3h"/>
                                         </constraints>
@@ -1151,7 +1151,7 @@
                             <constraint firstItem="T8S-qR-HQM" firstAttribute="width" relation="greaterThanOrEqual" secondItem="7QN-ar-Oen" secondAttribute="width" id="Enc-9h-qcz"/>
                             <constraint firstItem="LRO-gj-q9r" firstAttribute="height" secondItem="7QN-ar-Oen" secondAttribute="height" multiplier="0.2" id="KYW-H2-khA"/>
                             <constraint firstItem="5eK-rL-6ML" firstAttribute="leading" secondItem="7QN-ar-Oen" secondAttribute="leading" id="LqB-tg-PiH"/>
-                            <constraint firstItem="T8S-qR-HQM" firstAttribute="top" secondItem="5eK-rL-6ML" secondAttribute="bottom" id="aPJ-dm-cq8"/>
+                            <constraint firstItem="T8S-qR-HQM" firstAttribute="top" secondItem="5eK-rL-6ML" secondAttribute="bottom" identifier="RecipeImageViewTopToStatusBar" id="aPJ-dm-cq8"/>
                             <constraint firstItem="nAn-BD-Tt7" firstAttribute="centerX" secondItem="7QN-ar-Oen" secondAttribute="centerX" id="iiA-eU-97Q"/>
                             <constraint firstItem="lJk-rK-mzv" firstAttribute="top" secondItem="8yg-fJ-t4b" secondAttribute="bottom" identifier="ScrollViewBottom" id="nA6-V1-CsL"/>
                             <constraint firstItem="8yg-fJ-t4b" firstAttribute="leading" secondItem="7QN-ar-Oen" secondAttribute="leading" id="nrl-h7-aMB"/>

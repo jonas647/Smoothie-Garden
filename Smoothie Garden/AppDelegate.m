@@ -35,7 +35,6 @@
     //Update the colors of where in the app the default color should be used
     
     [[UINavigationBar appearance] setBarTintColor:mainColor];
-    [[UINavigationBar appearance] setBackgroundColor:mainColor];
     [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
   
     [[UINavigationBar appearance] setBarTintColor:mainColor];
