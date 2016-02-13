@@ -9,11 +9,10 @@
 #define LABEL_SIZE_LARGE 1
 #define LABEL_SIZE_SMALL 2
 
-#define NINE_AM_SMOOTHIE @"9 AM Smoothie"
-#define TWELVE_AM_SMOOTHIE @"12 AM Smoothie"
-#define FOUR_PM_SMOOTHIE @"4 PM Smoothie"
-#define SEVEN_PM_SMOOTHIE @"7 PM Smoothie"
-
+#define NINE_AM_SMOOTHIE @"LOCALIZE_9 AM"
+#define TWELVE_AM_SMOOTHIE @"LOCALIZE_12 AM"
+#define FOUR_PM_SMOOTHIE @"LOCALIZE_4 PM"
+#define SEVEN_PM_SMOOTHIE @"LOCALIZE_7 PM"
 
 #import "DetoxViewController.h"
 #import "Recipe.h"
@@ -207,8 +206,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    
-    return [sectionCategories objectAtIndex:section];
+    //Return the localized string with the time of the day
+    return NSLocalizedString([sectionCategories objectAtIndex:section], @"Time of day");
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
@@ -234,8 +233,6 @@
     return [self customCellForRecipe:recipeToShow inTableView:tableView withTableViewCellIdentifier:tableCellIdentifier];
     
 }
-
-
 
 - (Recipe*) recipeForCategory: (NSString*) category {
     

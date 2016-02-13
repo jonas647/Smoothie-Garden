@@ -210,7 +210,7 @@
     
     [self.searchController.searchBar setAlpha:1.0];
     
-    self.searchController.searchBar.placeholder = @"Search for ingredients or smoothie title";
+    self.searchController.searchBar.placeholder = NSLocalizedString(@"LOCALIZE_Search", @"Search for recipe or ingredient");
 
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
@@ -413,13 +413,6 @@
     cell.recipeTitle.text = sRecipe.recipeName;
     cell.recipeDescription.text = sRecipe.RecipeOverviewDescription;
     
-    /*
-    [cell.recipeTitle setFont:[cell.recipeTitle.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:cell.recipeTitle.font withSize:LABEL_SIZE_LARGE]];
-    [cell.recipeDescription setFont:[cell.recipeDescription.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:cell.recipeDescription.font withSize:LABEL_SIZE_SMALL]];
-    
-    [cell.recipeTitle sizeToFit];
-    [cell.recipeDescription sizeToFit];
-    */
     //Removed this since it's taking to long and not efficient for the app to create UIImage here
     //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", sRecipe.imageName]];
     
@@ -462,14 +455,6 @@
     //To get it 100% correct I would need to take in the title and text into this. But I think this is fine
     return self.view.frame.size.width*0.9;
     
-    /*
-    RecipeTableViewCell *cell = [self customCellForRecipe:[self.recipes objectAtIndex:indexPath.row] inTableView:tableView withTableViewCellIdentifier:@"RecipeTableCell"];
-    float heightForImage = [UIScreen mainScreen].bounds.size.width*0.75; //Hardcoding since the image has wrong height. Not sure why.
-    float heightForTitle = cell.recipeTitle.frame.size.height;
-    float heightForDescription = cell.recipeDescription.frame.size.height;
-    
-    return heightForImage+heightForTitle+heightForDescription;*/
-    
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -481,6 +466,10 @@
 #pragma mark - Table view data delegate
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    Recipe *tempRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
+    NSLog(@"Is %@ unlocked", tempRecipe.recipeName);
     
     Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     
@@ -625,6 +614,9 @@
     
     if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        Recipe *selectedRec = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
+        NSLog(@"Selected recipe: %@", selectedRec.recipeName);
         
         DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
         vcToPushTo.selectedRecipe = [self.recipes objectAtIndex:indexPath.row];

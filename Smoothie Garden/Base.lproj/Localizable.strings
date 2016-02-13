@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Smoothie Box
+
+  Created by Jonas C Björkell on 2016-02-04.
+  Copyright © 2016 Jonas C Björkell. All rights reserved.
+*/
+
+
+"LOCALIZE_Day 1" = "Day 1";
+"LOCALIZE_Day 2" = "Day 2";
+"LOCALIZE_Day 3" = "Day 3";
+"LOCALIZE_9 AM" = "9 AM";
+"LOCALIZE_12 AM" = "12 AM";
+"LOCALIZE_4 PM" = "4 PM";
+"LOCALIZE_7 PM" = "7 PM";
+"LOCALIZE_Nutrition Facts" = "Nutrition Facts"; //Is this in use?
+"LOCALIZE_Energy" = "Energy"; //Is this in use?
+"LOCALIZE_Please rate" = "Please rate Smoothie Box";
+"LOCALIZE_Give Feedback" = "If you like Smoothie Box, please give your feedback and rate us";
+"LOCALIZE_No, please don't ask again" = "No, please don't ask again";
+"LOCALIZE_Later" = "Later";
+"LOCALIZE_Rate" = "Rate";
+"LOCALIZE_Search" = "Search for ingredients or smoothie title";
+"LOCALIZE_Kcal" = "Kcal";
+"LOCALIZE_Protein" = "Protein";
+"LOCALIZE_Fat" = "Fat";
+"LOCALIZE_Carbohydrate" = "Carbohydrate";
+"LOCALIZE_Carbs" = "Carbs";
+"LOCALIZE_Reset likes" = "Are you sure you want to reset your liked recipes?";
+"LOCALIZE_Yes" = "Yes";
+"LOCALIZE_No" = "No";
+"LOCALIZE_No Purchase Header" = "No Purchase";
+"LOCALIZE_No Purchase Text" = "Unfortunately your purchase couldn't be handled right now. Please try again later.";
+"LOCALIZE_OK" = "OK";
+"LOCALIZE_Optional" = "optional";

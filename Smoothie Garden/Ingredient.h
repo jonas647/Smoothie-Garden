@@ -11,13 +11,13 @@
 
 @interface Ingredient : NSObject
 
-- (id) initWithQuantity:(NSString *)qty andType: (NSString*) type andMeasure:(NSString *)measure andText:(NSString *)txt andOptional: (BOOL) optional;
+- (id) initWithQuantity:(float )qty andType:(NSString*) type andMeasure:(NSString*)measure andIngredientName:(NSString *)txt andOptional: (BOOL) optional;
 - (NSString*) stringWithQuantityAndMeasure;
 - (NSString*) stringWithIngredientText;
 
 @property (nonatomic, strong) NSString *measure;
 @property (nonatomic, strong) NSString *type;
-@property (nonatomic, strong) NSString *quantity;
+@property (nonatomic) float quantity;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic) BOOL optional;
 

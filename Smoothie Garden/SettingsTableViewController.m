@@ -207,10 +207,10 @@
 - (void) showAlertForResetLikes {
     //Show an alert to the user asking to review the app
     
-    NSString *alertTitle = @"Are you sure you want to reset your liked recipes?";
+    NSString *alertTitle = NSLocalizedString(@"LOCALIZE_Reset likes", @"Do you want to reset all liked recipes?");
     //NSString *alertText; //Add if you want to add a body text to the alert
-    NSString *cancelText = @"No";
-    NSString *acceptText = @"Yes";
+    NSString *cancelText = NSLocalizedString(@"LOCALIZE_NO", nil);
+    NSString *acceptText = NSLocalizedString(@"LOCALIZE_YES", nil);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
     

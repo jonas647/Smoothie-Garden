@@ -16,7 +16,7 @@
 #define NUTRITION_CARBOHYDRATE @"Carbohydrate"
 
 #import "NutritionPageContentViewController.h"
-#import "NutrientTableViewController.h"
+#import "NutrientDetailedViewController.h"
 
 @interface NutritionPageContentViewController ()
 
@@ -60,13 +60,13 @@
     UILabel *caloriesVolume = [_caloriesView viewWithTag:VIEW_VOLUMELABEL];
     
     //Split the calories string into two "250" and "Kcal"
-    NSString *calorieText = @"Kcal";
+    NSString *calorieText = NSLocalizedString(@"LOCALIZE_Kcal", nil);
     NSString *calorieVolume = [_selectedRecipe volumeForNutrient:NUTRITION_CALORIES asRoundedValue:YES];
                                
     //The title for the nutrients is obvious
-    carbsTitle.text = @"Carbs"; //Carbs is shorter and looks nicer than Carbohydrates
-    proteinTitle.text = NUTRITION_PROTEIN;
-    fatTitle.text = NUTRITION_FAT;
+    carbsTitle.text = NSLocalizedString(@"LOCALIZE_Carbs", nil); //Carbs is shorter and looks nicer than Carbohydrates
+    proteinTitle.text = NSLocalizedString(NUTRITION_PROTEIN, nil) ;
+    fatTitle.text = NSLocalizedString(NUTRITION_FAT, nil) ;
     caloriesTitle.text = calorieText;
     
     //Get the information of nutrients volume from the recipe
@@ -93,7 +93,7 @@
     //Set the recipe to show nutrients for in the nutrition view controller
     NSString * segueName = segue.identifier;
     if ([segueName isEqualToString: @"DetailNutrientsSegue"]) {
-        NutrientTableViewController *newVC = (NutrientTableViewController*)[segue destinationViewController];
+        NutrientDetailedViewController *newVC = (NutrientDetailedViewController*)[segue destinationViewController];
         newVC.selectedRecipe = self.selectedRecipe;
         
     }

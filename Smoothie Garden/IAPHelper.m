@@ -177,7 +177,7 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
     if (transaction.error.code != SKErrorPaymentCancelled)
     {
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
-        UIAlertView *errorView = [[UIAlertView alloc]initWithTitle:@"No Purchase" message:@"Unfortunately your purchase couldn't be handled right now. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *errorView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"LOCALIZE_No Purchase Header", nil) message:NSLocalizedString(@"LOCALIZE_No Purchase Text", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"LOCALIZE_OK", nil) otherButtonTitles: nil];
         [errorView show];
     }
     
@@ -187,8 +187,6 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 }
 
 - (void)provideContentForProductIdentifier:(NSString *)productIdentifier {
-    
-    NSLog(@"Setting up notification: %@", productIdentifier);
     
     [_purchasedProductIdentifiers addObject:productIdentifier];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:productIdentifier];

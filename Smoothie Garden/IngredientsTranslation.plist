@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Banana</key>
+	<dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>banan</string>
+			<key>en</key>
+			<string>banana</string>
+		</dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>bananer</string>
+			<key>en</key>
+			<string>bananas</string>
+		</dict>
+	</dict>
+	<key>Frozen Banana</key>
+	<dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>fryst banan</string>
+			<key>en</key>
+			<string>frozen banana</string>
+		</dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta bananer</string>
+			<key>en</key>
+			<string>frozen bananas</string>
+		</dict>
+	</dict>
+	<key>Avocado</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>avokado</string>
+			<key>en</key>
+			<string>avocado</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>avokado</string>
+			<key>en</key>
+			<string>avocado</string>
+		</dict>
+	</dict>
+	<key>Mango</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>mango</string>
+			<key>en</key>
+			<string>mango</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>mango</string>
+			<key>en</key>
+			<string>mango</string>
+		</dict>
+	</dict>
+	<key>Frozen Mango</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>fryst mango</string>
+			<key>en</key>
+			<string>frozen mango</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>fryst mango</string>
+			<key>en</key>
+			<string>frozen mango</string>
+		</dict>
+	</dict>
+	<key>Lemon Juice</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>citronjuice</string>
+			<key>en</key>
+			<string>citronjuice</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>citronjuice</string>
+			<key>en</key>
+			<string>citronjuice</string>
+		</dict>
+	</dict>
+	<key>Lemon</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>citroner</string>
+			<key>en</key>
+			<string>lemons</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>citron</string>
+			<key>en</key>
+			<string>lemon</string>
+		</dict>
+	</dict>
+	<key>Spinach</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>spenat</string>
+			<key>en</key>
+			<string>spinach</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>spenat</string>
+			<key>en</key>
+			<string>spinach</string>
+		</dict>
+	</dict>
+	<key>Cucumber</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>gurkor</string>
+			<key>en</key>
+			<string>cucumbers</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>gurka</string>
+			<key>en</key>
+			<string>cucumber</string>
+		</dict>
+	</dict>
+	<key>Apple</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>äpplen</string>
+			<key>en</key>
+			<string>apples</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>äpple</string>
+			<key>en</key>
+			<string>apple</string>
+		</dict>
+	</dict>
+	<key>Apple, Chopped</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>äpplen (hackade utan kärnhus)</string>
+			<key>en</key>
+			<string>apples (chopped without seeds)</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>äpple (hackat utan kärnhus)</string>
+			<key>en</key>
+			<string>apple (chopped without seeds)</string>
+		</dict>
+	</dict>
+	<key>Parsley</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>persilja</string>
+			<key>en</key>
+			<string>persilja</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>persilja</string>
+			<key>en</key>
+			<string>persilja</string>
+		</dict>
+	</dict>
+	<key>Carrot</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>morötter</string>
+			<key>en</key>
+			<string>carrots</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>morot</string>
+			<key>en</key>
+			<string>carrot</string>
+		</dict>
+	</dict>
+	<key>Orange</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>apelsiner</string>
+			<key>en</key>
+			<string>oranges</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>apelsin</string>
+			<key>en</key>
+			<string>orange</string>
+		</dict>
+	</dict>
+	<key>Ginger</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>ingefära</string>
+			<key>en</key>
+			<string>ginger</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>ingefära</string>
+			<key>en</key>
+			<string>ginger</string>
+		</dict>
+	</dict>
+	<key>Blueberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta blåbär</string>
+			<key>en</key>
+			<string>frozen blueberries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta blåbär</string>
+			<key>en</key>
+			<string>frozen blueberry</string>
+		</dict>
+	</dict>
+	<key>Blackberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta björnbär</string>
+			<key>en</key>
+			<string>frozen blackberries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta björnbär</string>
+			<key>en</key>
+			<string>frozen blackberry</string>
+		</dict>
+	</dict>
+	<key>Lingonberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta lingon</string>
+			<key>en</key>
+			<string>frozen lingonberries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta lingon</string>
+			<key>en</key>
+			<string>frozen lingonberry</string>
+		</dict>
+	</dict>
+	<key>Almond</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>mandlar</string>
+			<key>en</key>
+			<string>almonds</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>mandel</string>
+			<key>en</key>
+			<string>almond</string>
+		</dict>
+	</dict>
+	<key>Date</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>medjool-dadel</string>
+			<key>en</key>
+			<string>medjool date</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>medjool-dadlar</string>
+			<key>en</key>
+			<string>medjool dates</string>
+		</dict>
+	</dict>
+	<key>Raspberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta hallon</string>
+			<key>en</key>
+			<string>frozen raspberries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta hallon</string>
+			<key>en</key>
+			<string>frozen raspberry</string>
+		</dict>
+	</dict>
+	<key>Raw Cacao</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>raw kakao nibs</string>
+			<key>en</key>
+			<string>raw cacao nibs</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>raw kakao nibs</string>
+			<key>en</key>
+			<string>raw cacao nibs</string>
+		</dict>
+	</dict>
+	<key>Macca Powder</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>macca-pulver</string>
+			<key>en</key>
+			<string>macca powder</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>macca-pulver</string>
+			<key>en</key>
+			<string>macca powder</string>
+		</dict>
+	</dict>
+	<key>Oat</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>havre</string>
+			<key>en</key>
+			<string>oat</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>havre</string>
+			<key>en</key>
+			<string>oat</string>
+		</dict>
+	</dict>
+	<key>Agave</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>agave</string>
+			<key>en</key>
+			<string>agave</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>agave</string>
+			<key>en</key>
+			<string>agave</string>
+		</dict>
+	</dict>
+	<key>Peanut Butter</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>jordnötssmör</string>
+			<key>en</key>
+			<string>peanut butter</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>jordnötssmör</string>
+			<key>en</key>
+			<string>peanut butter</string>
+		</dict>
+	</dict>
+	<key>Roasted Coconut Flakes</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>rostade kokosflingor</string>
+			<key>en</key>
+			<string>roasted coconut flakes</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>rostade kokosflingor</string>
+			<key>en</key>
+			<string>roasted coconut flakes</string>
+		</dict>
+	</dict>
+	<key>Honey</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>honung</string>
+			<key>en</key>
+			<string>honey</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>honung</string>
+			<key>en</key>
+			<string>honey</string>
+		</dict>
+	</dict>
+	<key>Beet Juice</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>rödbetsjuice</string>
+			<key>en</key>
+			<string>beetjuice</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>rödbetsjuice</string>
+			<key>en</key>
+			<string>beetjuice</string>
+		</dict>
+	</dict>
+	<key>Strawberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>frysta jordgubbar</string>
+			<key>en</key>
+			<string>frozen strawberries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>fryst jordgubbe</string>
+			<key>en</key>
+			<string>frozen strawberry</string>
+		</dict>
+	</dict>
+	<key>Apple Juice</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>äppeljuice</string>
+			<key>en</key>
+			<string>appel juice</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>äppeljuice</string>
+			<key>en</key>
+			<string>appel juice</string>
+		</dict>
+	</dict>
+	<key>Lime</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>lime</string>
+			<key>en</key>
+			<string>lime</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>lime</string>
+			<key>en</key>
+			<string>lime</string>
+		</dict>
+	</dict>
+	<key>Gojiberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>torkade gojibär</string>
+			<key>en</key>
+			<string>dried gojiberries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>torkat gojibär</string>
+			<key>en</key>
+			<string>dried gojiberry</string>
+		</dict>
+	</dict>
+	<key>Dried Plums</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>torkade plommon</string>
+			<key>en</key>
+			<string>dried plums</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>torkat plommon</string>
+			<key>en</key>
+			<string>dried plum</string>
+		</dict>
+	</dict>
+	<key>Psyllium Seeds</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>psylliumfrön</string>
+			<key>en</key>
+			<string>psyllium seeds</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>psylliumfrö</string>
+			<key>en</key>
+			<string>psyllium seed</string>
+		</dict>
+	</dict>
+	<key>Passion Fruit</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>passionsfrukt</string>
+			<key>en</key>
+			<string>passion fruits</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>passionsfrukt</string>
+			<key>en</key>
+			<string>passion fruit</string>
+		</dict>
+	</dict>
+	<key>Coconut Milk dl</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosmjölk</string>
+			<key>en</key>
+			<string>coconut milk</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosmjölk</string>
+			<key>en</key>
+			<string>coconut milk</string>
+		</dict>
+	</dict>
+	<key>Coconut Milk tbsp</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosmjölk</string>
+			<key>en</key>
+			<string>coconut milk</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosmjölk</string>
+			<key>en</key>
+			<string>coconut milk</string>
+		</dict>
+	</dict>
+	<key>Grapefruit</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>grapefrukt</string>
+			<key>en</key>
+			<string>grape fruits</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>grapefrukt</string>
+			<key>en</key>
+			<string>grape fruit</string>
+		</dict>
+	</dict>
+	<key>Rosehip</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>nyponskalspulver</string>
+			<key>en</key>
+			<string>rosehip powder</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>nyponskalspulver</string>
+			<key>en</key>
+			<string>rosehip powder</string>
+		</dict>
+	</dict>
+	<key>Cherries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>körsbär</string>
+			<key>en</key>
+			<string>cherries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>körsbär</string>
+			<key>en</key>
+			<string>cherry</string>
+		</dict>
+	</dict>
+	<key>Cashew Nuts</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>cashew-nötter</string>
+			<key>en</key>
+			<string>cashew nuts</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>cashew-nöt</string>
+			<key>en</key>
+			<string>cashew nut</string>
+		</dict>
+	</dict>
+	<key>Coconut Oil</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosolja</string>
+			<key>en</key>
+			<string>coconut oil</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosolja</string>
+			<key>en</key>
+			<string>coconut oil</string>
+		</dict>
+	</dict>
+	<key>Acai</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>acai</string>
+			<key>en</key>
+			<string>acai</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>acai</string>
+			<key>en</key>
+			<string>acai</string>
+		</dict>
+	</dict>
+	<key>Chia Seeds tbsp</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>chia-frön</string>
+			<key>en</key>
+			<string>chia seeds</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>chia-frö</string>
+			<key>en</key>
+			<string>chia seed</string>
+		</dict>
+	</dict>
+	<key>Chia Seeds dl</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>chia-frön</string>
+			<key>en</key>
+			<string>chia seeds</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>chia-frö</string>
+			<key>en</key>
+			<string>chia seed</string>
+		</dict>
+	</dict>
+	<key>Almond Milk</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>mandelmjölk</string>
+			<key>en</key>
+			<string>almond milk</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>mandelmjölk</string>
+			<key>en</key>
+			<string>almond milk</string>
+		</dict>
+	</dict>
+	<key>Mint Leaves</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>myntablad</string>
+			<key>en</key>
+			<string>mint leaves</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>myntablad</string>
+			<key>en</key>
+			<string>mint leaf</string>
+		</dict>
+	</dict>
+	<key>Water</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>vatten</string>
+			<key>en</key>
+			<string>water</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>vatten</string>
+			<key>en</key>
+			<string>water</string>
+		</dict>
+	</dict>
+	<key>Ice Cubes</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>isbitar</string>
+			<key>en</key>
+			<string>ice cubes</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>isbit</string>
+			<key>en</key>
+			<string>ice cube</string>
+		</dict>
+	</dict>
+	<key>Vanilla Powder</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>vaniljpulver</string>
+			<key>en</key>
+			<string>vanilla powder</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>vaniljpulver</string>
+			<key>en</key>
+			<string>vanilla powder</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

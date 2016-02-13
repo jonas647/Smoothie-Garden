@@ -23,22 +23,85 @@
 
 @implementation Ingredient
 
-- (id) initWithQuantity:(NSString *)qty andType:(NSString*) type andMeasure:(NSString *)measure andText:(NSString *)txt andOptional: (BOOL) optional {
+- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andIngredientName:(NSString *)txt andOptional: (BOOL) optional {
     
     if (self = [super init]) { // equivalent to "self does not equal nil"
         
         self.quantity = qty;
         self.type = type; //Used for matching with the nutrient plist
         self.measure = measure;
-        self.text = txt;
         self.optional = optional;
         
+        
+        //Check if it's a plural number of ingredients. Needed to set the text for the ingredient.
+        BOOL pluralIngredient = NO;
+        if (self.quantity>1) {
+            pluralIngredient = YES;
+        };
+        
+        self.text = [self ingredientTextForIngredient:txt andPlural:pluralIngredient];
         
         [self setupNutrientDataFromPlist];
     
     }
     
     return self;
+    
+}
+
+- (NSString*) ingredientTextForIngredient: (NSString*) ingredient andPlural: (BOOL) plural {
+    
+    //Get the plist that has all the ingredient texts
+    NSString *filepathToIngredientTexts = [[NSBundle mainBundle] pathForResource:@"IngredientsTranslation" ofType:@"plist"];
+    NSDictionary *ingredientDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToIngredientTexts];
+    
+    //Get the dictionary for this ingredient
+    NSDictionary *thisIngredients = [ingredientDictionary objectForKey:ingredient];
+    
+    //Get the current language
+    NSString *language = [self currentLanguage];
+    
+    NSString *ingredientText;
+    if (plural == YES) {
+        //Get the plural text with the current language
+        ingredientText = [[thisIngredients objectForKey:@"Pluralis"]objectForKey:language];
+    } else if (plural == NO) {
+        //Singularis text
+        ingredientText = [[thisIngredients objectForKey:@"Singularis"]objectForKey:language];
+    }
+    if (ingredientText == nil) {
+        NSLog(@"No translation for %@", ingredient);
+        return ingredient;
+    }
+
+    return ingredientText;
+}
+
+- (NSString*) currentLanguage {
+    
+    //Identify the language of the device
+    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
+    //Return the two first characters, ie. "en"
+    return [currentLanguage substringToIndex:2];
+    
+}
+
+- (NSString*) localizedMeasure {
+    
+    //Get the plist that has all the measurements
+    NSString *filepathToMeasurementTexts = [[NSBundle mainBundle] pathForResource:@"Measurement" ofType:@"plist"];
+    NSDictionary *measurementDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToMeasurementTexts];
+    
+    //Current language
+    NSString *language = [self currentLanguage];
+    
+    //Get the localized measurement. If it's null then return blank space. (as in "1 [blank] banana")
+    if ([[measurementDictionary objectForKey:self.measure]objectForKey:language]) {
+        return [[measurementDictionary objectForKey:self.measure]objectForKey:language];
+    } else {
+        return @"";
+    }
     
 }
 
@@ -49,7 +112,7 @@
     
     NSString *justQuantity;
     NSString *quantityOneDecimal;
-    float qty = [self.quantity floatValue];
+    float qty = self.quantity;
     
     if (qty == (int)qty) {
         //Qty has integer value without decimals
@@ -63,7 +126,7 @@
             //If metric is used then no need for convertion
             //Just put the quantity (one decimal) and measure type together into a string
             
-            justQuantity = [NSString stringWithFormat:@"%@ %@", quantityOneDecimal, self.measure];
+            justQuantity = [NSString stringWithFormat:@"%@ %@", quantityOneDecimal, [self localizedMeasure]];
             
             if (self.optional) {
                 NSString *stringWithOptional = [NSString stringWithFormat:@"(optional) %@", justQuantity];
@@ -129,7 +192,7 @@
                     NSString *nutrientVolume = [[nutrientsDictionary objectForKey:dic] objectForKey:@"Measure"]; // How many units that the ingredient consists of
                     
                     float nutrientVolumeFloat = [nutrientVolume floatValue]; //float value from the string
-                    float ingredientVolumeFloat = [self.quantity floatValue]; //float value of the volume from the ingredient
+                    float ingredientVolumeFloat = self.quantity; //float value of the volume from the ingredient
         
                     //Depending on the unit calculate the measure based on the ingredient volume
                     
@@ -232,7 +295,7 @@
     switch (usedMeasurementMethod) {
         case MEASUREMENT_US_CUSTOMARY_UNITS:
             //Call the method for the US Customary units
-            return [self stringWithquantity:self.quantity usingUSCustomaryUnitsFor:self.measure];
+            return [self quantity:self.quantity usingUSCustomaryUnitsFor:self.measure];
             break;
             
         default:
@@ -242,19 +305,13 @@
     }
 }
 
-- (NSString*) stringWithquantity: (NSString*) qty usingUSCustomaryUnitsFor: (NSString*) measureType {
+- (NSString*) quantity: (float) qty usingUSCustomaryUnitsFor: (NSString*) measureType {
     
     
     //If the measure type is converted then convert to US Customary
     //If not, just return the same string as for metric
     if ([self isMeasureTypeConverted]) {
-        float metricMeasure = 0.0;
-        if ([qty floatValue]) {
-            metricMeasure = [qty floatValue];
-        } else {
-            NSLog(@"Metric measure isn't of float value: %@", qty);
-        }
-        
+        float metricMeasure = qty;
         float usMeasure;
         NSString *newMeasureType = measureType;
         if ([measureType isEqualToString:METRIC_deciliter]) {
@@ -285,7 +342,7 @@
         
         return usCustomaryString;
     } else {
-        return [NSString stringWithFormat:@"%@ %@", qty, measureType];
+        return [NSString stringWithFormat:@"%f %@", qty, measureType];
     }
     
     

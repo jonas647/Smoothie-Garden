@@ -24,11 +24,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.titleLabel.text = [NSString stringWithFormat:@"Nutrient fact sheet for %@", self.selectedRecipe.recipeName];
-    
     self.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
     
-    self.caloriesLabel.text = [NSString stringWithFormat:@"Energy: %@", [self.selectedRecipe volumeStringForNutrient:@"Energy"]];
+    self.caloriesLabel.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"LOCALIZE_Energy", @"Energy"), [self.selectedRecipe volumeStringForNutrient:@"Energy"]];
     
     //Remove energy as that's shown at the top as "Kcal"
     NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
@@ -53,20 +51,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"Returning table view length");
     return dictionaryKeys.count + NUMBER_OF_STATIC_CELLS_AT_TOP + NUMBER_OF_STATIC_CELLS_AT_BOTTOM;
 }
-
-/*
- 
- //No title since we're using a view to present the column data
- 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    NSString *sectionName = @"Nutrition Facts";
-    return sectionName;
-}
-*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

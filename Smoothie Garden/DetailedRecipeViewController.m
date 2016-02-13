@@ -17,6 +17,7 @@
 #import "Ingredient.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
 #import "NutrientFactPageViewRootViewController.h"
+
 @interface DetailedRecipeViewController ()
 
 @end
@@ -60,7 +61,13 @@
     }
     
     //TODO why isn't this working above in the IF statement?
-    recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.detailedRecipedescription];
+    if (self.selectedRecipe.detailedRecipedescription.count>0) {
+        recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.detailedRecipedescription];
+    }
+    if (self.selectedRecipe.recipeDescription.count>0) {
+        recipeDescription.text = [self.selectedRecipe.recipeDescription objectAtIndex:0];
+    }
+    
     
     //Uncomment to Remove the navigation bar background for the detailed items
     /*
@@ -69,7 +76,6 @@
     self.navigationController.navigationBar.translucent = YES;
     */
     
-    recipeDescription.text = [self.selectedRecipe.recipeDescription objectAtIndex:0];
     
     //If the recipe is one of the favorites, then make the like button selected
     if ([self.selectedRecipe isRecipeFavorite]) {
@@ -137,46 +143,6 @@
     [smoothieBox setFont:[smoothieBox.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:smoothieBox.font withSize:LABEL_SIZE_TINY]];
     [titleName setFont:[titleName.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:titleName.font withSize:LABEL_SIZE_LARGE]];
     
-    //Get the total height for the Blank background and the content view
-    /*
-    float heightForBlankBckgr = titleBackground.frame.size.height + ingredientsTableView.frame.size.height + recipeTableView.frame.size.height + titleName.frame.size.height + recipeDescription.frame.size.height;
-    
-    
-    NSLog(@"Height for Title: %f", titleBackground.frame.size.height);
-    NSLog(@"Height for Ingredients: %f", ingredientsTableView.frame.size.height);
-    NSLog(@"Height for Recipe table: %f", recipeTableView.frame.size.height);
-    NSLog(@"Height for Description: %f", recipeDescription.frame.size.height);
-    
-    //Add 15% to make some space at bottom
-    float heightForContentView = heightForBlankBckgr + recipeImageView.frame.size.height + 1.15;
-    
-    //TODO
-    //Change the height so that it works with height constraints based on the views on screen
-    
-    
-    [blankBackgroundHeightConstraint setConstant:heightForBlankBckgr];
-    [contentViewHeightConstraint setConstant:heightForContentView];
-    
-    
-    NSLog(@"Calculated height for Blank: %f", heightForBlankBckgr);
-    NSLog(@"Caluclated height for Content: %f", heightForContentView);
-    NSLog(@"Height for Blank: %f", blankBackgroundHeightConstraint.constant);
-    NSLog(@"Height for Content: %f", contentViewHeightConstraint.constant);
-    */
-
-    /*
-    blankBackgroundToTop.constant = recipeImageView.frame.size.height;
-    titleBackgroundToTop.constant = recipeImageView.frame.size.height + titleBackground.frame.size.height;
-     */
-    
-    /*titleBackgroundToTop.constant = recipeImageView.frame.size.height;
-    blankBackgroundToTop.constant = recipeImageView.frame.size.height + titleBackground.frame.size.height;
-    
-    NSLog(@"Blank background to top: %f", blankBackgroundToTop.constant);
-     */
-    
-    //[recipeImageViewHeight setConstant:self.view.frame.size.width*0.8];
-    
     //TODO
     //Do this the proper way
     [blankBackgroundToTop setConstant:452];
@@ -231,54 +197,6 @@
 }
 */
 
-#pragma mark - Scrollview Delegates
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    /*
-    //The limit for when the background should be non transparent
-    float offsetLimit = recipeImage.frame.size.height;
-    
-    if(scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y <= offsetLimit) {
-        float percent = (scrollView.contentOffset.y / offsetLimit);
-        whiteBackground.alpha = percent;
-        
-        //If the title background intersects the recipe image. Then it's scrolling up.
-        //Make the recipe page view unscrollable by changing the z order
-        //[self.view bringSubviewToFront:recipeScrollView];
-        
-    } else if (scrollView.contentOffset.y > offsetLimit){
-        whiteBackground.alpha = 1;
-        
-    } else if (scrollView.contentOffset.y < 0) {
-        // do other ... ;
-        
-    } else {
-        //If the title is below the recipe image, then it should be possible to swipe the page view
-        //[self.view bringSubviewToFront:recipeImageView];
-    }
-    
-    //Never allow an alpha level of lower than 0.6
-    if (whiteBackground.alpha < 0.60f) {
-        whiteBackground.alpha = 0.60f;
-    }
-    
-    //Check if the title background is at the top of screen. Then change alpha to make sure all other stuff scrolls under
-    
-    if (CGRectIntersectsRect(titleBackground.frame, topViewArea.frame)) {
-        titleBackground.backgroundColor = [UIColor whiteColor];
-    } else {
-        titleBackground.backgroundColor = [UIColor clearColor];
-    }
-     
-     */
-    /*
-    if (CGRectContainsPoint(titleBackground.frame, CGPointMake(0, 0))) {
-        NSLog(@"Title intersecting status bar background");
-        [titleBackground setFrame:CGRectMake(statusbarBackground.frame.origin.x, statusbarBackground.frame.origin.y, titleBackground.frame.size.width, titleBackground.frame.size.height)];
-    }
-    NSLog(@"Title frame: %@", NSStringFromCGRect(titleBackground.frame));
-    */
-}
 
 #pragma mark - Table View Delegate
 
@@ -543,11 +461,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Show an alert to the user asking to review the app
     
-    NSString *alertTitle = @"Please rate Smoothie Box";
-    NSString *alertText = @"If you like Smoothie Box, please give your feedback and rate us";
-    NSString *cancelText = @"No, please don't ask again";
-    NSString *laterText = @"Later";
-    NSString *acceptText = @"Rate";
+    NSString *alertTitle = NSLocalizedString(@"LOCALIZE_Please rate", nil);
+    NSString *alertText = NSLocalizedString(@"LOCALIZE_Give Feedback", nil);
+    NSString *cancelText = NSLocalizedString(@"LOCALIZE_No, please don't ask again", nil); 
+    NSString *laterText = NSLocalizedString(@"LOCALIZE_Later", nil);
+    NSString *acceptText = NSLocalizedString(@"LOCALIZE_Rate", nil);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle message:alertText preferredStyle:UIAlertControllerStyleAlert];
     

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Jonas C Björkell. All rights reserved.
 //
 
+
 //Define the nutrients
 #define NUTRIENT_ENERGY @"Energy"
 
@@ -21,25 +22,34 @@
 #pragma mark - Load Recipes
 + (NSArray*) allRecipesFromPlist {
 
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
-    NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    //The plist with the recipe directory
+    NSString *filepathToRecipeMaster = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
+    NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeMaster];
+    
+    NSLog(@"Choosing language");
+    //The plist with the recipe translation depending on the language of the device
+    NSDictionary *localizedRecipeDescriptions = [Recipe localizedRecipeDescriptions];
     
     NSMutableArray *tempRecipes = [[NSMutableArray alloc] init];
     
     for (NSString *name in recipeDictionary) {
         Recipe *newRecipe = [[Recipe alloc]init];
         
-        [newRecipe setRecipeType:[[[recipeDictionary objectForKey:name] objectForKey:@"RecipeType"]intValue]];
-        [newRecipe setRecipeCategory:[[[recipeDictionary objectForKey:name] objectForKey:@"RecipeCategory"]intValue]];
-        [newRecipe setRecipeName:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeName"]];
-        [newRecipe setImageName:[[recipeDictionary objectForKey:name] objectForKey:@"ImageName"]];
-        [newRecipe setRecipeOverviewDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeOverviewDescription"]];
-        [newRecipe setRecipeDescription:[[recipeDictionary objectForKey:name] objectForKey:@"RecipeDescription"]];
-        [newRecipe setDetailedRecipedescription:[[recipeDictionary objectForKey:name] objectForKey:@"DetailedRecipeDescription"]];
-        [newRecipe setSorting:[[[recipeDictionary objectForKey:name]objectForKey:@"Sorting"]intValue]];
+        NSDictionary *tempRecipeDictionary = [recipeDictionary objectForKey:name];
         
-        newRecipe.detailedRecipedescription = [Recipe arrayForObject:name withArrayKey:@"DetailedRecipeDescription" inDictionary:recipeDictionary];
-        newRecipe.recipeDescription = [Recipe arrayForObject:name withArrayKey:@"RecipeDescription" inDictionary:recipeDictionary];
+        //Update the recipe attributes from the global plist
+        [newRecipe setRecipeType:[[tempRecipeDictionary objectForKey:@"RecipeType"]intValue]];
+        [newRecipe setRecipeCategory:[[tempRecipeDictionary objectForKey:@"RecipeCategory"]intValue]];
+        [newRecipe setImageName:[tempRecipeDictionary objectForKey:@"ImageName"]];
+        [newRecipe setSorting:[[tempRecipeDictionary objectForKey:@"Sorting"]intValue]];
+        
+        //Update the recipe attribtues from the localized file
+        NSDictionary *localizedDescriptionsForNewRecipe = [localizedRecipeDescriptions objectForKey:name];
+        
+        [newRecipe setRecipeName:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]];
+        [newRecipe setRecipeOverviewDescription:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeOverviewDescription"]];
+        [newRecipe setDetailedRecipedescription:[NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"DetailedRecipeDescription"]]];
+        newRecipe.recipeDescription = [NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeDescription"]];
         
         //Loop all the ingredient names for the recipe from the plist and add the ingredient to the recipe
         NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
@@ -52,11 +62,9 @@
                 isOptional = NO;
             }
             
-            Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:[dic objectForKey:@"Quantity"]
-                                                                    andType: [dic objectForKey:@"Type"]
-                                                                 andMeasure:[dic objectForKey:@"Measurement"]
-                                                                    andText:[dic objectForKey:@"Text"]
-                                                                andOptional:isOptional];
+            float quantity = [[dic objectForKey:@"Quantity"]floatValue];
+            
+            Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:[dic objectForKey:@"Type"] andMeasure:[dic objectForKey:@"Measurement"] andIngredientName:[dic objectForKey:@"Type"] andOptional:isOptional];
             
             [tempIngredients addObject:newIngredient];
             
@@ -76,20 +84,39 @@
             }
         }
         
-        [tempRecipes addObject:newRecipe];
+        if (newRecipe) {
+            [tempRecipes addObject:newRecipe];
+        }
+        
     }
     
     return tempRecipes;
     
 }
 
-+ (NSArray*) arrayForObject: (NSString*) obj withArrayKey: (NSString*) key inDictionary: (NSDictionary*) dic {
++ (NSDictionary*) localizedRecipeDescriptions{
     
-    NSMutableArray *tempObjects = [[NSMutableArray alloc]init];
-    for (NSString *textString in [[dic objectForKey:obj] objectForKey:key]) {
-        [tempObjects addObject:textString];
+    //Identify the language of the device
+    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
+    //Recipe description path depending on localization
+    NSString *recipeDescriptionPath;
+    
+    if ([currentLanguage hasPrefix:@"sv"]) {
+        NSLog(@"Swedish");
+        recipeDescriptionPath = @"Swedish_recipeTexts";
+    } else if ([currentLanguage hasPrefix:@"en"]) {
+        NSLog(@"English");
+        recipeDescriptionPath = @"English_recipeTexts";
+    } else {
+        NSLog(@"Language: %@", currentLanguage);
+        recipeDescriptionPath = @"English_recipeTexts";
     }
-    return (NSArray*)tempObjects;
+    
+    NSLog(@"Text file: %@", recipeDescriptionPath);
+    NSString *filepathToRecipeTranslation = [[NSBundle mainBundle] pathForResource:recipeDescriptionPath ofType:@"plist"];
+    return [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeTranslation];
+    
 }
 
 #pragma mark - Favorites

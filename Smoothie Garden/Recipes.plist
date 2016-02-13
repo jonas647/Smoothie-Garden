@@ -6,84 +6,59 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>0</integer>
-		<key>RecipeName</key>
-		<string>Green Rawgurt</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>This green and creamy smoothie is the perfect lactose free and vegan alternative to traditional yoghurt</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This green and creamy smoothie is the perfect lactose free and vegan alternative to traditional yoghurt. Start your day of with this healthy bowl topped with fresh berries, nuts and seeds and you will stay energized for hours</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-			<string>Add a small splash of water if the frozen ingredients doesn’t blend</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
-				<string>Banana</string>
+				<string>Frozen Banana</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>frozen banana</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Avocado</string>
 				<key>Quantity</key>
-				<string>1/2</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>avocado</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Lemon Juice</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<integer>2</integer>
 				<key>Measurement</key>
 				<string>tbsp</string>
-				<key>Text</key>
-				<string>lemon juice</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Mint leaves</string>
+				<string>Mint Leaves</string>
 				<key>Quantity</key>
-				<string>5</string>
+				<integer>5</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>leaves of mint</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Spinach</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>spinach</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Mango</string>
 				<key>Quantity</key>
-				<string>1,5</string>
+				<real>1.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>mango</string>
 			</dict>
 		</array>
 		<key>ImageName</key>
@@ -93,103 +68,75 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>1</integer>
-		<key>RecipeName</key>
-		<string>Veggie detox</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>Drinking veggie smoothies is an easy way to get your daily greens</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This fresh and detoxing veggie smoothie is like drinking a salad. Drinking smoothies like this is an easy way to make sure you get your daily greens. Add some parsley for extra iron. If you like your smoothie sweeter and less green-tasting just replace the avocado with equal amounts of mango. </string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
 				<string>Cucumber</string>
 				<key>Quantity</key>
-				<string>5</string>
+				<integer>5</integer>
 				<key>Measurement</key>
 				<string>cm</string>
-				<key>Text</key>
-				<string>cucumber</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Lemon</string>
 				<key>Quantity</key>
-				<string>1/2</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>lemon</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Spinach</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>spinach</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Apple</string>
+				<string>Apple, Chopped</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>apple (chopped without seeds)</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Avocado</string>
 				<key>Quantity</key>
-				<string>1/2</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>avocado</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Water</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<integer>2</integer>
 				<key>Measurement</key>
 				<string>tbsp</string>
-				<key>Text</key>
-				<string>water</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Water</string>
+				<string>Ice Cubes</string>
 				<key>Quantity</key>
-				<string>4</string>
+				<integer>4</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>ice cubes</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Parsley</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>sprig</string>
-				<key>Text</key>
-				<string>parsley</string>
 				<key>Optional</key>
 				<true/>
 			</dict>
@@ -201,60 +148,41 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>2</integer>
-		<key>RecipeName</key>
-		<string>Orange is the new black</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>1</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away. The ginger adds some healthy heat and has anti-inflammatory effects. Not only does this smoothie taste great, it will also boost your immune system</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Juice the carrots, orange, lemon and ginger in a juice extractor</string>
-			<string>Mix the juice with the mango in a blender on high speed until smooth</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
 				<string>Carrot</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<integer>2</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>carrots</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Orange</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>orange</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Lemon Juice</string>
 				<key>Quantity</key>
-				<string>1/2</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>lemon</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Mango</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<integer>2</integer>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Text</key>
@@ -264,11 +192,9 @@
 				<key>Type</key>
 				<string>Ginger</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>cm</string>
-				<key>Text</key>
-				<string>ginger</string>
 			</dict>
 		</array>
 		<key>ImageName</key>
@@ -278,73 +204,51 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>3</integer>
-		<key>RecipeName</key>
-		<string>Scandinavian berries</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>Nordic berries are true super berries that contains lots of antioxidants and nutrients</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>Scandinavian berries are true super berries that contains lots of antioxidants and nutrients and they are super delicious in this dark blue smoothie. Why not experiment with some other Scandinavian berries like red or black currants, raspberries or wild strawberries? Just switch one of the berries in the recipe with whatever nordic berry you have in the fridge, freezer or in your garden.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
 				<string>Banana</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>banana</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Blueberries</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen blueberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Blackberries</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen blackberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Lingonberries</string>
 				<key>Quantity</key>
-				<string>0.5</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen lingonberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Almond milk</string>
+				<string>Almond Milk</string>
 				<key>Quantity</key>
-				<string>1.5</string>
+				<real>1.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>almond milk</string>
 			</dict>
 		</array>
 		<key>ImageName</key>
@@ -354,81 +258,59 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>4</integer>
-		<key>RecipeName</key>
-		<string>Chocolate and raspberry shake</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy. Raspberry and chocolate really is a match made in heaven and raw cacao nibs are extremely high in antioxidants. Add some macca powder for an extra energy kick.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
-				<string>Banana</string>
+				<string>Frozen Banana</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>frozen banana</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Raspberries</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen raspberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Date</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>medjool date</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Raw Cacao</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tbsp</string>
-				<key>Text</key>
-				<string>raw cacao nibs</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Almond milk</string>
 				<key>Quantity</key>
-				<string>1.5</string>
+				<real>1.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>almond milk</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Vanilla powder</string>
+				<string>Vanilla Powder</string>
 				<key>Quantity</key>
-				<string></string>
+				<integer>1</integer>
 				<key>Measurement</key>
-				<string>a pinch</string>
+				<string>pinch</string>
 				<key>Text</key>
 				<string>vanilla powder</string>
 			</dict>
@@ -436,11 +318,9 @@
 				<key>Type</key>
 				<string>Macca Powder</string>
 				<key>Quantity</key>
-				<string>0.5</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string>tbsp</string>
-				<key>Text</key>
-				<string>macca powder</string>
 				<key>Optional</key>
 				<true/>
 			</dict>
@@ -452,86 +332,59 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>5</integer>
-		<key>RecipeName</key>
-		<string>Tropical Passion</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>A yellow tropical smoothie with lots of vitamins and minerals that nourishes skin, nails and hair. </string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>A yellow tropical smoothie with lots of minerals and vitamins that nourishes skin, nails and hair. Super delicious and great for that inner glow and extra energy. Top with roasted coconut flakes and enjoy right away</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Scoop out the passion fruit in a glass</string>
-			<string>Mix everything else in a blender on high speed until smooth</string>
-			<string>Pour the smoothie over the passion fruit</string>
-			<string>Top with some coconut flakes</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
 				<string>Passion Fruit</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>passion fruit</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Mango</string>
+				<string>Frozen Mango</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<integer>2</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen mango</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Banana</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>small banana</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Almond milk</string>
 				<key>Quantity</key>
-				<string>1.5</string>
+				<real>1.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>almond milk</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Coconut oil</string>
+				<string>Coconut Oil</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tsp</string>
-				<key>Text</key>
-				<string>coconut oil</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Honey</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tsp</string>
-				<key>Text</key>
-				<string>honey</string>
 			</dict>
 		</array>
 		<key>ImageName</key>
@@ -541,93 +394,67 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>6</integer>
-		<key>RecipeName</key>
-		<string>Raspberry Kiss</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>This smoothie is a real vitamin kick with a fresh and summery taste</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This is a real vitamin kick with a fresh and summery taste. Enjoy it on a hot sunny day or simply when you need some extra energy. The mint can be replaced with ginger if prefered. Top this smoothie with some goji berries and grated lime peel.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
 				<string>Orange</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>orange</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Raspberries</string>
 				<key>Quantity</key>
-				<string>2</string>
+				<integer>2</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen raspberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Mango</string>
+				<string>Frozen Mango</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen mango</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Lime</string>
 				<key>Quantity</key>
-				<string>0.5</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>lime</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Mint leaves</string>
 				<key>Quantity</key>
-				<string>6</string>
+				<integer>6</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>mint leaves</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Honey</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tsp</string>
-				<key>Text</key>
-				<string>honey</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Gojiberries</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tbsp</string>
-				<key>Text</key>
-				<string>dried gojiberries</string>
 			</dict>
 		</array>
 		<key>ImageName</key>
@@ -637,96 +464,67 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>7</integer>
-		<key>RecipeName</key>
-		<string>Passion for Chia</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>This delicious layered smoothie and chia bowl will give you a perfect start to the day</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This is great served as breakfast and will give you a perfect start of the day. Have the soaked chia seeds prepared in the fridge and you will save some valuable time in the morning. </string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Have the pre-soaked chia ready when mixing the smoothie</string>
-			<string>Mix everything but the chia and the passion fruit in a blender on high speed until smooth</string>
-			<string>Layer the soaked chia seeds with the smoothie and the passion fruit</string>
-			<string>Top with fresh berries and enjoy right away</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
 				<string>Chia seeds dl</string>
 				<key>Quantity</key>
-				<string>0.5</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>chia seeds</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Banana</string>
+				<string>Frozen Banana</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>frozen banana</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Mango</string>
+				<string>Frozen Mango</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen mango</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Raspberries</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen raspberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Almond milk</string>
 				<key>Quantity</key>
-				<string>0.5</string>
+				<real>0.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>almond milk</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Honey</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tsp</string>
-				<key>Text</key>
-				<string>honey</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Passion Fruit</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>passion fruit</string>
 			</dict>
 		</array>
 		<key>ImageName</key>
@@ -736,64 +534,43 @@
 	<dict>
 		<key>Sorting</key>
 		<integer>8</integer>
-		<key>RecipeName</key>
-		<string>Acai Bowl</string>
 		<key>RecipeType</key>
 		<integer>0</integer>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>RecipeOverviewDescription</key>
-		<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal.</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string> Acai bowls are super trendy right now- and for a very good reason. Packed with vitamins and antioxidants, acai bowls are the perfect meal. A lot of the fun with smoothiebowls lies in the toppings where the options are endless. Experiment with chia seeds, nut butter, fresh fruit and berries, seeds or whatever you have at home in your pantry, fridge or garden.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-			<string>Add topping before serving</string>
-		</array>
 		<key>Ingredients</key>
 		<array>
 			<dict>
 				<key>Type</key>
 				<string>Strawberries</string>
 				<key>Quantity</key>
-				<string>2.5</string>
+				<real>2.5</real>
 				<key>Measurement</key>
 				<string>dl</string>
-				<key>Text</key>
-				<string>frozen strawberries</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Acai</string>
 				<key>Quantity</key>
-				<string>100</string>
+				<integer>100</integer>
 				<key>Measurement</key>
 				<string>g</string>
-				<key>Text</key>
-				<string>acai</string>
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Banana</string>
+				<string>Frozen Banana</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-				<key>Text</key>
-				<string>frozen banana</string>
 			</dict>
 			<dict>
 				<key>Type</key>
 				<string>Honey</string>
 				<key>Quantity</key>
-				<string>1</string>
+				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tsp</string>
-				<key>Text</key>
-				<string>honey</string>
 			</dict>
 		</array>
 		<key>ImageName</key>

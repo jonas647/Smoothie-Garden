@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NutritionCollectionViewController.h"
 #import "SBPageViewRootViewController.h"
+#import "Recipe.h"
 
 @interface NutrientFactPageViewRootViewController : SBPageViewRootViewController <UIPageViewControllerDataSource>
 
 //@property (nonatomic,strong) UIPageViewController *pageViewController;
 @property (nonatomic,strong) Recipe *selectedRecipe;
-
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 
 

@@ -13,7 +13,6 @@
 
 @property (nonatomic,strong) Recipe *selectedRecipe;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *caloriesLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 
