@@ -267,10 +267,7 @@
     }
     
     cell.recipeTitle.text = sRecipe.recipeName;
-    cell.recipeDescription.text = sRecipe.RecipeOverviewDescription;
-    
-    //[cell.recipeTitle setFont:[cell.recipeTitle.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:cell.recipeTitle.font withSize:LABEL_SIZE_LARGE]];
-    //[cell.recipeDescription setFont:[cell.recipeDescription.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:cell.recipeDescription.font withSize:LABEL_SIZE_SMALL]];
+    cell.recipeDescription.text = sRecipe.shortDescription;
     
     [cell.recipeTitle sizeToFit];
     [cell.recipeDescription sizeToFit];

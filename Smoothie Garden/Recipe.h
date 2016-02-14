@@ -19,9 +19,9 @@
 @property (nonatomic) BOOL favorite;
 @property (nonatomic) int sorting; //Used to sort the recipe in the table
 @property (nonatomic, strong) NSString *recipeName;
-@property (nonatomic, strong) NSString *RecipeOverviewDescription;
-@property (nonatomic, strong) NSArray *recipeDescription;
-@property (nonatomic, strong) NSArray *detailedRecipedescription;
+@property (nonatomic, strong) NSString *shortDescription;
+@property (nonatomic, strong) NSArray *instructions;
+@property (nonatomic, strong) NSArray *longDescription;
 @property (nonatomic, strong) NSArray *boosterDescription;
 @property (nonatomic, strong) NSArray *ingredients;
 @property (nonatomic, strong) NSString *imageName;

@@ -2,577 +2,85 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Recipe 1</key>
+	<key>Recipe1</key>
 	<dict>
-		<key>Sorting</key>
-		<integer>0</integer>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
 		<key>Ingredients</key>
-		<array>
+		<dict>
+			<key>Banana</key>
 			<dict>
-				<key>Type</key>
-				<string>Frozen Banana</string>
 				<key>Quantity</key>
 				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Avocado</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Lemon Juice</string>
-				<key>Quantity</key>
-				<integer>2</integer>
-				<key>Measurement</key>
-				<string>tbsp</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Mint Leaves</string>
-				<key>Quantity</key>
-				<integer>5</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Spinach</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Mango</string>
-				<key>Quantity</key>
-				<real>1.5</real>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>Green Rawgurt</string>
-	</dict>
-	<key>Recipe 2</key>
-	<dict>
-		<key>Sorting</key>
-		<integer>1</integer>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>Ingredients</key>
-		<array>
-			<dict>
-				<key>Type</key>
-				<string>Cucumber</string>
-				<key>Quantity</key>
-				<integer>5</integer>
-				<key>Measurement</key>
-				<string>cm</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Lemon</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Spinach</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Apple, Chopped</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Avocado</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Water</string>
-				<key>Quantity</key>
-				<integer>2</integer>
-				<key>Measurement</key>
-				<string>tbsp</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Ice Cubes</string>
-				<key>Quantity</key>
-				<integer>4</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Parsley</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>sprig</string>
-				<key>Optional</key>
-				<true/>
-			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>veggie detox high res</string>
-	</dict>
-	<key>Recipe 3</key>
-	<dict>
-		<key>Sorting</key>
-		<integer>2</integer>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>1</integer>
-		<key>Ingredients</key>
-		<array>
-			<dict>
-				<key>Type</key>
-				<string>Carrot</string>
-				<key>Quantity</key>
-				<integer>2</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Orange</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Lemon Juice</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Mango</string>
-				<key>Quantity</key>
-				<integer>2</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-				<key>Text</key>
-				<string>frozen mango</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Ginger</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>cm</string>
-			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>Orange is the New Black</string>
-	</dict>
-	<key>Recipe 4</key>
-	<dict>
-		<key>Sorting</key>
-		<integer>3</integer>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>Ingredients</key>
-		<array>
-			<dict>
 				<key>Type</key>
 				<string>Banana</string>
-				<key>Quantity</key>
-				<integer>1</integer>
 				<key>Measurement</key>
 				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Blueberries</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Blackberries</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Lingonberries</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Almond Milk</string>
-				<key>Quantity</key>
-				<real>1.5</real>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>Nordic Berries</string>
-	</dict>
-	<key>Recipe 5</key>
-	<dict>
-		<key>Sorting</key>
-		<integer>4</integer>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>Ingredients</key>
-		<array>
-			<dict>
-				<key>Type</key>
-				<string>Frozen Banana</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Raspberries</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Date</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Raw Cacao</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>tbsp</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Almond Milk</string>
-				<key>Quantity</key>
-				<real>1.5</real>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Vanilla Powder</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>pinch</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Macca Powder</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string>tbsp</string>
 				<key>Optional</key>
-				<true/>
+				<false/>
 			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>Chocolate raspberry shake</string>
-	</dict>
-	<key>Recipe 6</key>
-	<dict>
-		<key>Sorting</key>
-		<integer>5</integer>
-		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>Ingredients</key>
-		<array>
+			<key>Frozen Mango</key>
 			<dict>
-				<key>Type</key>
-				<string>Passion Fruit</string>
 				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
+				<integer>2</integer>
 				<key>Type</key>
 				<string>Frozen Mango</string>
-				<key>Quantity</key>
-				<integer>2</integer>
 				<key>Measurement</key>
 				<string>dl</string>
+				<key>Optional</key>
+				<false/>
 			</dict>
+			<key>Kale</key>
 			<dict>
-				<key>Type</key>
-				<string>Banana</string>
 				<key>Quantity</key>
 				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
 				<key>Type</key>
-				<string>Almond Milk</string>
-				<key>Quantity</key>
-				<real>1.5</real>
+				<string>Kale</string>
 				<key>Measurement</key>
-				<string>dl</string>
+				<string>leaf</string>
+				<key>Optional</key>
+				<false/>
 			</dict>
+			<key>Coconut Oil</key>
 			<dict>
+				<key>Quantity</key>
+				<integer>2</integer>
 				<key>Type</key>
 				<string>Coconut Oil</string>
-				<key>Quantity</key>
-				<integer>1</integer>
 				<key>Measurement</key>
 				<string>tsp</string>
+				<key>Optional</key>
+				<false/>
 			</dict>
+			<key>Almond Milk</key>
 			<dict>
+				<key>Quantity</key>
+				<real>1.5</real>
 				<key>Type</key>
-				<string>Honey</string>
+				<string>Almond Milk</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+			</dict>
+			<key>Wheatgrass</key>
+			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
+				<key>Type</key>
+				<string>wheatgrass</string>
 				<key>Measurement</key>
 				<string>tsp</string>
+				<key>Optional</key>
+				<true/>
 			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>Tropical Passion</string>
-	</dict>
-	<key>Recipe 7</key>
-	<dict>
-		<key>Sorting</key>
-		<integer>6</integer>
-		<key>RecipeType</key>
-		<integer>0</integer>
+		</dict>
 		<key>RecipeCategory</key>
 		<integer>0</integer>
-		<key>Ingredients</key>
-		<array>
-			<dict>
-				<key>Type</key>
-				<string>Orange</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Raspberries</string>
-				<key>Quantity</key>
-				<integer>2</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Frozen Mango</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Lime</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Mint Leaves</string>
-				<key>Quantity</key>
-				<integer>6</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Honey</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>tsp</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Gojiberries</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>tbsp</string>
-			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>Raspberry Kiss</string>
-	</dict>
-	<key>Recipe 8</key>
-	<dict>
-		<key>Sorting</key>
-		<integer>7</integer>
 		<key>RecipeType</key>
-		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>Ingredients</key>
-		<array>
-			<dict>
-				<key>Type</key>
-				<string>Chia seeds dl</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Frozen Banana</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Frozen Mango</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Raspberries</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Almond milk</string>
-				<key>Quantity</key>
-				<real>0.5</real>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Honey</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>tsp</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Passion Fruit</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>ImageName</key>
-		<string>Passion for Chia</string>
-	</dict>
-	<key>Recipe 9</key>
-	<dict>
+		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>8</integer>
-		<key>RecipeType</key>
 		<integer>0</integer>
-		<key>RecipeCategory</key>
-		<integer>0</integer>
-		<key>Ingredients</key>
-		<array>
-			<dict>
-				<key>Type</key>
-				<string>Strawberries</string>
-				<key>Quantity</key>
-				<real>2.5</real>
-				<key>Measurement</key>
-				<string>dl</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Acai</string>
-				<key>Quantity</key>
-				<integer>100</integer>
-				<key>Measurement</key>
-				<string>g</string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Frozen Banana</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>Type</key>
-				<string>Honey</string>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Measurement</key>
-				<string>tsp</string>
-			</dict>
-		</array>
 		<key>ImageName</key>
-		<string>Acai Bowl</string>
+		<string>Green Coco Kale</string>
 	</dict>
 </dict>
 </plist>

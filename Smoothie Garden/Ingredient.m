@@ -23,12 +23,12 @@
 
 @implementation Ingredient
 
-- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andIngredientName:(NSString *)txt andOptional: (BOOL) optional {
+- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andOptional: (BOOL) optional {
     
     if (self = [super init]) { // equivalent to "self does not equal nil"
         
         self.quantity = qty;
-        self.type = type; //Used for matching with the nutrient plist
+        self.type = type; //Used for matching with the nutrient plist and localization
         self.measure = measure;
         self.optional = optional;
         
@@ -40,10 +40,10 @@
         };
         
         //Set the text that should be shown for the ingredient in the recipe
-        self.text = [self setupIngredientTextForIngredient:txt andPlural:pluralIngredient];
+        self.text = [self setupIngredientTextForIngredient:type andPlural:pluralIngredient];
         
         //Set the search strings by getting the string for the plural/singular that wasn't set to the text for the ingredient and then join that string with the text string
-        NSString *pluralSingularString = [self setupIngredientTextForIngredient:txt andPlural:!pluralIngredient];
+        NSString *pluralSingularString = [self setupIngredientTextForIngredient:type andPlural:!pluralIngredient];
         NSString *jointString = [NSString stringWithFormat:@"%@ %@", self.text, pluralSingularString];
         
         //Set the searchable string
@@ -118,8 +118,6 @@
     //Check what measurement that should be used. Metric or US
     int usedMeasurementMethod = [Ingredient usedMeasure];
     
-    NSLog(@"Using measurement: %i", usedMeasurementMethod);
-    
     //Initialize a number formatter
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
     numberFormatter.locale = [NSLocale currentLocale];// this ensures the right separator behavior
@@ -142,7 +140,7 @@
     NSString *quantityString;
     
     //If quantity smaller than one it's always rounded to closest 0,5. so smaller than one means 0,5. Will show as 1/2 instead
-    if (qty > 1) {
+    if (qty < 1) {
         quantityString = @"1/2";
     } else {
         NSLog(@"%@: %f is larger than 1", self.type, qty);

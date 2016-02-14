@@ -11,7 +11,7 @@
 
 @interface Ingredient : NSObject
 
-- (id) initWithQuantity:(float )qty andType:(NSString*) type andMeasure:(NSString*)measure andIngredientName:(NSString *)txt andOptional: (BOOL) optional;
+- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andOptional: (BOOL) optional;
 - (NSString*) stringWithQuantityAndMeasure;
 - (NSString*) stringWithIngredientText;
 

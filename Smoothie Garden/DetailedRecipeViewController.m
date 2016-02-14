@@ -46,25 +46,20 @@
     } else {
         NSLog(@"Wrong class for %@", titleName);
     }
-    if ([self.selectedRecipe.detailedRecipedescription isKindOfClass:[NSString class]]) {
-        //recipeDescriptionView.text = self.selectedRecipe.detailedRecipedescription;
-    } else {
-        //NSLog(@"Wrong class for %@", recipeDescriptionView);
-    }
     if ([self.selectedRecipe.ingredients isKindOfClass:[NSArray class]]) {
         ingredients = self.selectedRecipe.ingredients;
-    } else if ([self.selectedRecipe.detailedRecipedescription isKindOfClass:[NSArray class]]) {
-        recipeInstructions = self.selectedRecipe.detailedRecipedescription;
+    } else if ([self.selectedRecipe.longDescription isKindOfClass:[NSArray class]]) {
+        recipeInstructions = self.selectedRecipe.longDescription;
     } else {
         NSLog(@"Wrong class for %@", ingredients);
     }
     
     //TODO why isn't this working above in the IF statement?
-    if (self.selectedRecipe.detailedRecipedescription.count>0) {
-        recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.detailedRecipedescription];
+    if (self.selectedRecipe.instructions.count>0) {
+        recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.instructions];
     }
-    if (self.selectedRecipe.recipeDescription.count>0) {
-        recipeDescription.text = [self.selectedRecipe.recipeDescription objectAtIndex:0];
+    if (self.selectedRecipe.longDescription.count>0) {
+        recipeDescription.text = [self.selectedRecipe.longDescription objectAtIndex:0];
     }
     
     

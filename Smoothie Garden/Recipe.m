@@ -31,6 +31,10 @@
     
     NSMutableArray *tempRecipes = [[NSMutableArray alloc] init];
     
+    NSLog(@"Localized: %@", localizedRecipeDescriptions);
+    
+    NSLog(@"Recipe master: %@", recipeDictionary);
+    
     for (NSString *name in recipeDictionary) {
         Recipe *newRecipe = [[Recipe alloc]init];
         
@@ -46,24 +50,21 @@
         NSDictionary *localizedDescriptionsForNewRecipe = [localizedRecipeDescriptions objectForKey:name];
         
         [newRecipe setRecipeName:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]];
-        [newRecipe setRecipeOverviewDescription:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeOverviewDescription"]];
-        [newRecipe setDetailedRecipedescription:[NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"DetailedRecipeDescription"]]];
-        newRecipe.recipeDescription = [NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeDescription"]];
+        [newRecipe setShortDescription:[localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]];
+        [newRecipe setLongDescription:[NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]]];
+        newRecipe.instructions = [NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]];
         
         //Loop all the ingredient names for the recipe from the plist and add the ingredient to the recipe
         NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
-        for (NSDictionary *dic in [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"]) {
-
-            BOOL isOptional;
-            if ([dic objectForKey:@"Optional"] != nil) {
-                isOptional = [[dic objectForKey:@"Optional"]boolValue];
-            } else {
-                isOptional = NO;
-            }
+        NSDictionary *ingredientDictionary = [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"];
+        for (NSDictionary *dic in ingredientDictionary) {
             
-            float quantity = [[dic objectForKey:@"Quantity"]floatValue];
+            BOOL isOptional =[[[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]boolValue];
+            float quantity = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]floatValue];
+            NSString *type = [[ingredientDictionary objectForKey:dic]objectForKey:@"Type"];
+            NSString *measurement = [[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"];
             
-            Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:[dic objectForKey:@"Type"] andMeasure:[dic objectForKey:@"Measurement"] andIngredientName:[dic objectForKey:@"Type"] andOptional:isOptional];
+            Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:type andMeasure:measurement andOptional:isOptional];
             
             [tempIngredients addObject:newIngredient];
             
@@ -88,6 +89,8 @@
         }
         
     }
+    
+    NSLog(@"Recipe to setup: %@", tempRecipes);
     
     return tempRecipes;
     
@@ -329,6 +332,7 @@
     
     NSMutableDictionary *newNutrientParentDictionary = [[NSMutableDictionary alloc]initWithCapacity:tempNutrientDictionary.count];
     
+    NSLog(@"Setting up nutrients");
    
     //Loop the dictionary loaded from plist. To update the total volume
     for (NSMutableDictionary *dic in tempNutrientDictionary) {

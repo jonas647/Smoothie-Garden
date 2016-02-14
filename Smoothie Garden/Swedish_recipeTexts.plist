@@ -2,148 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Recipe 1</key>
+	<key>Recipe1</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Veggie Detox</string>
-		<key>RecipeOverviewDescription</key>
-		<string>Med den här gröna smoothien täcker man en stor del av det rekommenderade dagliga grönsaksbehovet</string>
-		<key>RecipeDescription</key>
+		<string>Green Kale</string>
+		<key>ShortDescription</key>
+		<string>En krämig och uppfriskande grön smoothie som passar perfekt före eller efter ett träningspass</string>
+		<key>LongDescription</key>
 		<array>
-			<string>Genom att dricka en grön smoothie som denna har man täckt en stor del av det rekommenderade dagliga grönsaksbehovet. Kroppen har dessutom lättare att ta upp näringen från grönsaker och frukter i mixad form. Tillsätt en kvist persilja för extra järn och smak. Vill man ha en mer fruktig och söt smak kan man byta ut avokadon mot en lika stor del mängd mango.</string>
+			<string>En krämig och uppfriskande grön smoothie som passar perfekt före eller efter ett träningspass.</string>
+			<string>Grönkål och andra mörkgröna bladgrönsaker har alkaliserande egenskaper, är rika på antioxidanter och verkar antiinflammatoriskt.</string>
+			<string>Lägg till vetegräs för extra mycket näring.</string>
 		</array>
-		<key>DetailedRecipeDescription</key>
+		<key>Instructions</key>
 		<array>
 			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
-		</array>
-	</dict>
-	<key>Recipe 2</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Green Rawgurt</string>
-		<key>RecipeOverviewDescription</key>
-		<string>This green and creamy smoothie is the perfect lactose free and vegan alternative to traditional yoghurt</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This green and creamy smoothie is the perfect lactose free and vegan alternative to traditional yoghurt. Start your day of with this healthy bowl topped with fresh berries, nuts and seeds and you will stay energized for hours</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-			<string>Add a small splash of water if the frozen ingredients doesn’t blend</string>
-		</array>
-	</dict>
-	<key>Recipe 3</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Orange is the new black</string>
-		<key>RecipeOverviewDescription</key>
-		<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away. The ginger adds some healthy heat and has anti-inflammatory effects. Not only does this smoothie taste great, it will also boost your immune system</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Juice the carrots, orange, lemon and ginger in a juice extractor</string>
-			<string>Mix the juice with the mango in a blender on high speed until smooth</string>
-		</array>
-	</dict>
-	<key>Recipe 4</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Scandinavian berries</string>
-		<key>RecipeOverviewDescription</key>
-		<string>Nordic berries are true super berries that contains lots of antioxidants and nutrients</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>Scandinavian berries are true super berries that contains lots of antioxidants and nutrients and they are super delicious in this dark blue smoothie. Why not experiment with some other Scandinavian berries like red or black currants, raspberries or wild strawberries? Just switch one of the berries in the recipe with whatever nordic berry you have in the fridge, freezer or in your garden.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-		</array>
-	</dict>
-	<key>Recipe 5</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Chocolate and raspberry shake</string>
-		<key>RecipeOverviewDescription</key>
-		<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This creamy and chocolaty smoothie is great when you crave something sweet but still want to stay healthy. Raspberry and chocolate really is a match made in heaven and raw cacao nibs are extremely high in antioxidants. Add some macca powder for an extra energy kick.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-		</array>
-	</dict>
-	<key>Recipe 6</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Tropical Passion</string>
-		<key>RecipeOverviewDescription</key>
-		<string>A yellow tropical smoothie with lots of vitamins and minerals that nourishes skin, nails and hair. </string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>A yellow tropical smoothie with lots of minerals and vitamins that nourishes skin, nails and hair. Super delicious and great for that inner glow and extra energy. Top with roasted coconut flakes and enjoy right away</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Scoop out the passion fruit in a glass</string>
-			<string>Mix everything else in a blender on high speed until smooth</string>
-			<string>Pour the smoothie over the passion fruit</string>
-			<string>Top with some coconut flakes</string>
-		</array>
-	</dict>
-	<key>Recipe 7</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Raspberry Kiss</string>
-		<key>RecipeOverviewDescription</key>
-		<string>This smoothie is a real vitamin kick with a fresh and summery taste</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This is a real vitamin kick with a fresh and summery taste. Enjoy it on a hot sunny day or simply when you need some extra energy. The mint can be replaced with ginger if prefered. Top this smoothie with some goji berries and grated lime peel.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-		</array>
-	</dict>
-	<key>Recipe 8</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Passion for Chia</string>
-		<key>RecipeOverviewDescription</key>
-		<string>This delicious layered smoothie and chia bowl will give you a perfect start to the day</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string>This is great served as breakfast and will give you a perfect start of the day. Have the soaked chia seeds prepared in the fridge and you will save some valuable time in the morning. </string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Have the pre-soaked chia ready when mixing the smoothie</string>
-			<string>Mix everything but the chia and the passion fruit in a blender on high speed until smooth</string>
-			<string>Layer the soaked chia seeds with the smoothie and the passion fruit</string>
-			<string>Top with fresh berries and enjoy right away</string>
-		</array>
-	</dict>
-	<key>Recipe 9</key>
-	<dict>
-		<key>RecipeName</key>
-		<string>Acai Bowl</string>
-		<key>RecipeOverviewDescription</key>
-		<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal.</string>
-		<key>RecipeDescription</key>
-		<array>
-			<string> Acai bowls are super trendy right now- and for a very good reason. Packed with vitamins and antioxidants, acai bowls are the perfect meal. A lot of the fun with smoothiebowls lies in the toppings where the options are endless. Experiment with chia seeds, nut butter, fresh fruit and berries, seeds or whatever you have at home in your pantry, fridge or garden.</string>
-		</array>
-		<key>DetailedRecipeDescription</key>
-		<array>
-			<string>Mix everything in a blender on high speed until smooth</string>
-			<string>Add topping before serving</string>
 		</array>
 	</dict>
 </dict>

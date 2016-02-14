@@ -721,16 +721,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>kokosolja</string>
+			<string>kallpressad kokosolja</string>
 			<key>en</key>
-			<string>coconut oil</string>
+			<string>virgin coconut oil</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>kokosolja</string>
+			<string>kallpressad kokosolja</string>
 			<key>en</key>
-			<string>coconut oil</string>
+			<string>virgin coconut oil</string>
 		</dict>
 	</dict>
 	<key>Acai</key>
@@ -867,6 +867,40 @@
 			<string>vaniljpulver</string>
 			<key>en</key>
 			<string>vanilla powder</string>
+		</dict>
+	</dict>
+	<key>Kale</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>grönkål</string>
+			<key>en</key>
+			<string>kale</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>grönkål</string>
+			<key>en</key>
+			<string>kale</string>
+		</dict>
+	</dict>
+	<key>Wheatgrass</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>vetegräs</string>
+			<key>en</key>
+			<string>wheatgrass</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>vetegräs</string>
+			<key>en</key>
+			<string>wheatgrass</string>
 		</dict>
 	</dict>
 </dict>

@@ -405,7 +405,7 @@
     
     
     cell.recipeTitle.text = sRecipe.recipeName;
-    cell.recipeDescription.text = sRecipe.RecipeOverviewDescription;
+    cell.recipeDescription.text = sRecipe.shortDescription;
     
     //Removed this since it's taking to long and not efficient for the app to create UIImage here
     //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", sRecipe.imageName]];

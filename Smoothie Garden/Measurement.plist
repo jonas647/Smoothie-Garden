@@ -65,5 +65,12 @@
 		<key>sv</key>
 		<string>tum</string>
 	</dict>
+	<key>leaf</key>
+	<dict>
+		<key>en</key>
+		<string>leaf</string>
+		<key>sv</key>
+		<string>blad</string>
+	</dict>
 </dict>
 </plist>
