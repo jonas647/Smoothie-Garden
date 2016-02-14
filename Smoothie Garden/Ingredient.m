@@ -40,10 +40,10 @@
         };
         
         //Set the text that should be shown for the ingredient in the recipe
-        self.text = [self ingredientTextForIngredient:txt andPlural:pluralIngredient];
+        self.text = [self setupIngredientTextForIngredient:txt andPlural:pluralIngredient];
         
         //Set the search strings by getting the string for the plural/singular that wasn't set to the text for the ingredient and then join that string with the text string
-        NSString *pluralSingularString = [self ingredientTextForIngredient:txt andPlural:!pluralIngredient];
+        NSString *pluralSingularString = [self setupIngredientTextForIngredient:txt andPlural:!pluralIngredient];
         NSString *jointString = [NSString stringWithFormat:@"%@ %@", self.text, pluralSingularString];
         
         //Set the searchable string
@@ -57,7 +57,7 @@
     
 }
 
-- (NSString*) ingredientTextForIngredient: (NSString*) ingredient andPlural: (BOOL) plural {
+- (NSString*) setupIngredientTextForIngredient: (NSString*) ingredient andPlural: (BOOL) plural {
     
     //Get the plist that has all the ingredient texts
     NSString *filepathToIngredientTexts = [[NSBundle mainBundle] pathForResource:@"IngredientsTranslation" ofType:@"plist"];
@@ -115,44 +115,76 @@
 
 - (NSString*) stringWithQuantityAndMeasure {
     
-    //Check what measurement that should be used
+    //Check what measurement that should be used. Metric or US
     int usedMeasurementMethod = [Ingredient usedMeasure];
     
-    NSString *justQuantity;
-    NSString *quantityOneDecimal;
+    NSLog(@"Using measurement: %i", usedMeasurementMethod);
+    
+    //Initialize a number formatter
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
+    numberFormatter.locale = [NSLocale currentLocale];// this ensures the right separator behavior
+    numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    numberFormatter.usesGroupingSeparator = YES;
+    
+    //Quantity of the ingredient
     float qty = self.quantity;
     
+    //Set number of decimals depending on the quantity. If it's an integer then now decimals
     if (qty == (int)qty) {
         //Qty has integer value without decimals
-        quantityOneDecimal  = [NSString stringWithFormat:@"%.f", qty];
+        numberFormatter.maximumFractionDigits = 0;
     } else {
-        quantityOneDecimal = [NSString stringWithFormat:@"%.01f", qty];
+        //One decimal
+        numberFormatter.maximumFractionDigits = 1;
     }
     
+    //Final string to show to the user as quantity
+    NSString *quantityString;
+    
+    //If quantity smaller than one it's always rounded to closest 0,5. so smaller than one means 0,5. Will show as 1/2 instead
+    if (qty > 1) {
+        quantityString = @"1/2";
+    } else {
+        NSLog(@"%@: %f is larger than 1", self.type, qty);
+        quantityString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:qty]];
+    }
+    
+    //"optional" string in local language
+    NSString *optional = NSLocalizedString(@"LOCALIZE_Optional", nil);
+    
+    //Joined string of quantity and measure
+    NSString *qtyMeasure;
+    
+    //Converted qty
+    float convertedQuantity;
+    
+    //Depending on US/Metric, add the measure to the quantity
     switch (usedMeasurementMethod) {
         case MEASUREMENT_METRIC:
             //If metric is used then no need for convertion
             //Just put the quantity (one decimal) and measure type together into a string
             
-            justQuantity = [NSString stringWithFormat:@"%@ %@", quantityOneDecimal, [self localizedMeasure]];
+            qtyMeasure = [NSString stringWithFormat:@"%@ %@", quantityString, [self localizedMeasure]];
             
             if (self.optional) {
-                NSString *stringWithOptional = [NSString stringWithFormat:@"(optional) %@", justQuantity];
+                
+                NSString *stringWithOptional = [NSString stringWithFormat:@"(%@) %@", optional,qtyMeasure];
                 return stringWithOptional;
             } else {
-                return justQuantity;
+                return qtyMeasure;
             }
             break;
         case MEASUREMENT_US_CUSTOMARY_UNITS:
             //If US customary. Then we need to convert this before returning the string
             
-            justQuantity = [self convertToStringUsingMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
+            convertedQuantity = [self convertUsingMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
+            qtyMeasure = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:convertedQuantity]];
             
             if (self.optional) {
-                NSString *stringWithOptional = [NSString stringWithFormat:@"(optional) %@", justQuantity];
+                NSString *stringWithOptional = [NSString stringWithFormat:@"(%@) %@", optional,qtyMeasure];
                 return stringWithOptional;
             } else {
-                return justQuantity;
+                return qtyMeasure;
             }
         default:
             NSLog(@"WARNING, trying to use %i for measurement. %i doesn't exist", usedMeasurementMethod, usedMeasurementMethod);
@@ -296,7 +328,7 @@
 
 #pragma mark - Convertion of measurement
 
-- (NSString*) convertToStringUsingMeasurementMethod: (int) usedMeasurementMethod {
+- (float) convertUsingMeasurementMethod: (int) usedMeasurementMethod {
     
     //Create this mid-method to be able to add more measurements in the future. Are there any more?
     
@@ -308,12 +340,12 @@
             
         default:
             NSLog(@"Converting using a measurement method not in use: %i", usedMeasurementMethod);
-            return nil;
+            return 0;
             break;
     }
 }
 
-- (NSString*) quantity: (float) qty usingUSCustomaryUnitsFor: (NSString*) measureType {
+- (float) quantity: (float) qty usingUSCustomaryUnitsFor: (NSString*) measureType {
     
     
     //If the measure type is converted then convert to US Customary
@@ -343,14 +375,14 @@
         } else
             NSLog(@"No US equivalent for %@", measureType);
         
+        //Round the value
+        NSLog(@"Us measure: %f", usMeasure);
+        float roundedValue = round(2.0f * usMeasure) / 2.0f;
+        NSLog(@"Rounded: %f", roundedValue);
         
-        
-        //Create the final string by appending the measure type ("Cups") to the quantity
-        NSString *usCustomaryString = [NSString stringWithFormat:@"%@ %@", [self roundedNumberFrom:usMeasure], newMeasureType];
-        
-        return usCustomaryString;
+        return roundedValue;
     } else {
-        return [NSString stringWithFormat:@"%f %@", qty, measureType];
+        return qty;
     }
     
     
@@ -373,6 +405,7 @@
 - (NSString*) roundedNumberFrom: (float) number {
     float roundedValue = round(2.0f * number) / 2.0f;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setLocale:[NSLocale currentLocale]];
     [formatter setMaximumFractionDigits:1];
     [formatter setRoundingMode: NSNumberFormatterRoundDown];
     

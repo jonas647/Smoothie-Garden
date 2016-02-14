@@ -204,7 +204,7 @@
 "hXW-or-GLG.text" = "Detailed description";
 
 /* Class = "UINavigationItem"; title = "About"; ObjectID = "jOl-5N-FuN"; */
-"jOl-5N-FuN.title" = "Om oss";
+"jOl-5N-FuN.title" = "Om Smoothie Box";
 
 /* Class = "UILabel"; text = "All recipes are curated by Smoothie Box"; ObjectID = "kD1-8l-bFb"; */
 "kD1-8l-bFb.text" = "Alla recept är framtagna av Smoothie Box";
@@ -219,7 +219,7 @@
 "mfG-C9-fM5.text" = "Frukost";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "nOX-8i-r2L"; */
-"nOX-8i-r2L.text" = "Om Smoothie Box";
+"nOX-8i-r2L.text" = "Om oss";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "npH-Nk-lhc"; */
 "npH-Nk-lhc.title" = "Item";

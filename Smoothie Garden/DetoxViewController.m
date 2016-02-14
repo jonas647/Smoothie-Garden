@@ -72,9 +72,31 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     //Need to change the backgroundcolor here. If changed in the appdelegate it's also added to the transparent navigation bars
-    UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    [self.navigationController.navigationBar setBackgroundColor:mainColor];
+    //UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    //[self.navigationController.navigationBar setBackgroundColor:mainColor];
     
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    _tableView.frame = [self newFrameForUIView:_tableView];
+    [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
+    
+    //Reset the navigation bar, set back to being shown
+    //Is hidden in the detailed recipe view
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)setupDetoxDayFor:(NSString*) day {
@@ -158,24 +180,7 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    _tableView.frame = [self newFrameForUIView:_tableView];
-    [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
-    
-    //Reset the navigation bar, set back to being shown
-    //Is hidden in the detailed recipe view
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    
-    //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (CGRect) newFrameForUIView: (UIView* ) view {
     

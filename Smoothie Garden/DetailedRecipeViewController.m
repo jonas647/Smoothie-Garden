@@ -39,7 +39,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     //Set all the properties with correct values, print log if it can't be found
     if ([self.selectedRecipe.recipeName isKindOfClass:[NSString class]]) {

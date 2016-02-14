@@ -688,7 +688,7 @@
             <objects>
                 <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="zs4-CG-fjm" customClass="RecipeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="490" sectionHeaderHeight="22" sectionFooterHeight="60" id="b7t-rV-Yjm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="s4X-Nf-LML" userLabel="Footer Cell">
@@ -818,8 +818,6 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="900"/>
                     <connections>
                         <outlet property="sideBarButton" destination="Qe7-Z9-gU3" id="pCv-Zq-0Da"/>
                         <segue destination="6g5-lL-91E" kind="show" identifier="showRecipeSegue" id="MRX-Ol-pKv"/>
@@ -1953,7 +1951,7 @@
         <!--Navigation Controller-->
         <scene sceneID="flV-7U-DkJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OBa-0E-o4h" sceneMemberID="viewController">
+                <navigationController id="OBa-0E-o4h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dgY-qK-9o6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2473,7 +2471,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="G1E-I7-PQe"/>
-        <segue reference="kZ1-X8-5aw"/>
-        <segue reference="h1i-bX-42W"/>
+        <segue reference="MRX-Ol-pKv"/>
+        <segue reference="kUF-4E-Kmo"/>
     </inferredMetricsTieBreakers>
 </document>

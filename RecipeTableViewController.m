@@ -77,9 +77,6 @@
     //Remove the title text from the back button (in the Detailed recipe table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    //Array for handling the filtered search results
-    //filteredRecipeArray = [NSMutableArray arrayWithCapacity:[[Recipe allRecipesFromPlist] count]];
-    
 }
 
 
