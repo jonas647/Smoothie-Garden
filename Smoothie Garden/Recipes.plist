@@ -298,7 +298,7 @@
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Almond milk</string>
+				<string>Almond Milk</string>
 				<key>Quantity</key>
 				<real>1.5</real>
 				<key>Measurement</key>
@@ -311,8 +311,6 @@
 				<integer>1</integer>
 				<key>Measurement</key>
 				<string>pinch</string>
-				<key>Text</key>
-				<string>vanilla powder</string>
 			</dict>
 			<dict>
 				<key>Type</key>
@@ -364,7 +362,7 @@
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Almond milk</string>
+				<string>Almond Milk</string>
 				<key>Quantity</key>
 				<real>1.5</real>
 				<key>Measurement</key>
@@ -434,7 +432,7 @@
 			</dict>
 			<dict>
 				<key>Type</key>
-				<string>Mint leaves</string>
+				<string>Mint Leaves</string>
 				<key>Quantity</key>
 				<integer>6</integer>
 				<key>Measurement</key>

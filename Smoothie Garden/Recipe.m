@@ -215,8 +215,9 @@
     NSString *aggregatedIngredients = @"";
     for (Ingredient *ingredient in self.ingredients) {
     
-        aggregatedIngredients = [aggregatedIngredients stringByAppendingString:[NSString stringWithFormat:@",%@", ingredient.text]];
-        
+        aggregatedIngredients = [aggregatedIngredients stringByAppendingString:[NSString stringWithFormat:@",%@", ingredient.searchString]];
+        NSString* text = [NSString stringWithFormat:@"%@", ingredient.searchString];
+        NSLog(@"Ingredient: %@", text);
     }
 
     return aggregatedIngredients;
@@ -254,6 +255,8 @@
         
         if (rounded == YES) {
             NSString *roundedValue = [self roundedValueFrom:floatValueForVolume];
+            
+            NSLog(@"Returning %@", roundedValue);
             
             return roundedValue;
         } else {

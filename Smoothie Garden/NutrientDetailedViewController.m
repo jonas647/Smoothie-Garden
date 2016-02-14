@@ -37,6 +37,38 @@
     
 }
 
+- (NSString*) localizedNameForNutrient: (NSString*) nutrientName {
+    
+    //Get the plist that has all the nutrient names
+    NSString *filepathToNutrients = [[NSBundle mainBundle] pathForResource:@"NutritionTranslation" ofType:@"plist"];
+    NSDictionary *nutrientTextDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToNutrients];
+    
+    //Dictionary of the specific nutrient
+    NSDictionary *thisNutrient = [nutrientTextDictionary objectForKey:nutrientName];
+    
+    //Current language
+    NSString *language = [self currentLanguage];
+    
+    if ([thisNutrient objectForKey:language]) {
+        return [thisNutrient objectForKey:language];
+    } else {
+        NSLog(@"No translation for %@", nutrientName);
+        return nutrientName;
+    }
+    
+    
+}
+
+- (NSString*) currentLanguage {
+    
+    //Identify the language of the device
+    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
+    //Return the two first characters, ie. "en"
+    return [currentLanguage substringToIndex:2];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -74,7 +106,7 @@
         
         NSString *nutrient = [dictionaryKeys objectAtIndex:indexPath.row];
         
-        nutrientTitle.text = nutrient;
+        nutrientTitle.text = [self localizedNameForNutrient:nutrient]; //This is not good for performance. TODO - change this
         nutrientVolume.text = [self.selectedRecipe volumeStringForNutrient:nutrient];
         nutrientDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:nutrient];
     }

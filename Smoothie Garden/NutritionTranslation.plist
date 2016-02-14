@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Carbohydrate</key>
+	<dict>
+		<key>en</key>
+		<string>Carbohydrate</string>
+		<key>sv</key>
+		<string>Kolhydrater</string>
+	</dict>
+	<key>Fat</key>
+	<dict>
+		<key>en</key>
+		<string>Fat</string>
+		<key>sv</key>
+		<string>Fett</string>
+	</dict>
+	<key>Protein</key>
+	<dict>
+		<key>en</key>
+		<string>Protein</string>
+		<key>sv</key>
+		<string>Protein</string>
+	</dict>
+	<key>Energy</key>
+	<dict>
+		<key>en</key>
+		<string>Energy</string>
+		<key>sv</key>
+		<string>Energi</string>
+	</dict>
+	<key>Iron, Fe</key>
+	<dict>
+		<key>en</key>
+		<string>Iron, Fe</string>
+		<key>sv</key>
+		<string>Järn</string>
+	</dict>
+	<key>Calcium, Ca</key>
+	<dict>
+		<key>en</key>
+		<string>Calcium, Ca</string>
+		<key>sv</key>
+		<string>Kalcium, Ca</string>
+	</dict>
+	<key>Magnesium, Mg</key>
+	<dict>
+		<key>en</key>
+		<string>Magnesium, Mg</string>
+		<key>sv</key>
+		<string>Magnesium, Mg</string>
+	</dict>
+	<key>Phosphorus, P</key>
+	<dict>
+		<key>en</key>
+		<string>Phosphorus, P</string>
+		<key>sv</key>
+		<string>Fosfor, P</string>
+	</dict>
+	<key>Potassium, K</key>
+	<dict>
+		<key>en</key>
+		<string>Potassium, K</string>
+		<key>sv</key>
+		<string>Potassium, K</string>
+	</dict>
+	<key>Sodium, Na</key>
+	<dict>
+		<key>en</key>
+		<string>Sodium, Na</string>
+		<key>sv</key>
+		<string>Natrium, Na</string>
+	</dict>
+	<key>Zinc, Zn</key>
+	<dict>
+		<key>en</key>
+		<string>Zink, Zn</string>
+		<key>sv</key>
+		<string>Zink, Zn</string>
+	</dict>
+	<key>Vitamin C</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin C</string>
+		<key>sv</key>
+		<string>Vitamin C</string>
+	</dict>
+	<key>Thiamin</key>
+	<dict>
+		<key>en</key>
+		<string>Thiamin</string>
+		<key>sv</key>
+		<string>Tiamin</string>
+	</dict>
+	<key>Riboflavin</key>
+	<dict>
+		<key>en</key>
+		<string>Riboflavin</string>
+		<key>sv</key>
+		<string>Riboflavin</string>
+	</dict>
+	<key>Niacin</key>
+	<dict>
+		<key>en</key>
+		<string>Niacin</string>
+		<key>sv</key>
+		<string>Niacin</string>
+	</dict>
+	<key>Vitamin B-6</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin B-6</string>
+		<key>sv</key>
+		<string>Vitamin B-6</string>
+	</dict>
+	<key>Folate, DFE</key>
+	<dict>
+		<key>en</key>
+		<string>Folate, DFE</string>
+		<key>sv</key>
+		<string>Folat</string>
+	</dict>
+	<key>Vitamin B-12</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin B-12</string>
+		<key>sv</key>
+		<string>Vitamin B-12</string>
+	</dict>
+	<key>Vitamin A, RAE</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin A, RAE</string>
+		<key>sv</key>
+		<string>Vitamin A, RAE</string>
+	</dict>
+	<key>Vitamin A, IU	</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin A, IU</string>
+		<key>sv</key>
+		<string>Vitamin A, IU</string>
+	</dict>
+	<key>Vitamin D (D2 + D3)</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin D (D2 + D3)</string>
+		<key>sv</key>
+		<string>Vitamin D (D2 + D3)</string>
+	</dict>
+	<key>Vitamin D</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin D</string>
+		<key>sv</key>
+		<string>Vitamin D</string>
+	</dict>
+	<key>Fatty acids, total saturated</key>
+	<dict>
+		<key>en</key>
+		<string>Fatty acids, total saturated</string>
+		<key>sv</key>
+		<string>Fettsyror, totalt mättade</string>
+	</dict>
+	<key>Fatty acids, total monounsaturated</key>
+	<dict>
+		<key>en</key>
+		<string>Fatty acids, total monounsaturated</string>
+		<key>sv</key>
+		<string>Fettsyror, totalt enkelomättade</string>
+	</dict>
+	<key>Fatty acids, total polyunsaturated</key>
+	<dict>
+		<key>en</key>
+		<string>Fatty acids, total polyunsaturated</string>
+		<key>sv</key>
+		<string>Fettsyror, totalt fleromättade</string>
+	</dict>
+	<key>Fatty acids, total trans</key>
+	<dict>
+		<key>en</key>
+		<string>Fatty acids, total trans</string>
+		<key>sv</key>
+		<string>Fettsyror, transfett</string>
+	</dict>
+	<key>Cholesterol</key>
+	<dict>
+		<key>en</key>
+		<string>Cholesterol</string>
+		<key>sv</key>
+		<string>Kolesterol</string>
+	</dict>
+	<key>Vitamin E</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin E</string>
+		<key>sv</key>
+		<string>Vitamin E</string>
+	</dict>
+	<key>Vitamin K</key>
+	<dict>
+		<key>en</key>
+		<string>Vitamin K</string>
+		<key>sv</key>
+		<string>Vitamin K</string>
+	</dict>
+	<key>Fiber</key>
+	<dict>
+		<key>en</key>
+		<string>Fiber</string>
+		<key>sv</key>
+		<string>Fiber</string>
+	</dict>
+	<key>Sugar</key>
+	<dict>
+		<key>en</key>
+		<string>Sugar</string>
+		<key>sv</key>
+		<string>Socker</string>
+	</dict>
+</dict>
+</plist>

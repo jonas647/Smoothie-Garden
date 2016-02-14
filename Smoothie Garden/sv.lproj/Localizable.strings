@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Smoothie Box
+
+  Created by Jonas C Björkell on 2016-02-04.
+  Copyright © 2016 Jonas C Björkell. All rights reserved.
+*/
+
+
+"LOCALIZE_Day 1" = "Dag 1";
+"LOCALIZE_Day 2" = "Dag 2";
+"LOCALIZE_Day 3" = "Dag 3";
+"LOCALIZE_9 AM" = "Morgon";
+"LOCALIZE_12 AM" = "Lunch";
+"LOCALIZE_4 PM" = "Eftermiddag";
+"LOCALIZE_7 PM" = "Kväll";
+"LOCALIZE_Nutrition Facts" = "Näringsfakta"; //Is this in use?
+"LOCALIZE_Energy" = "Energi";
+"LOCALIZE_Please rate" = "Recensera Smoothie Box";
+"LOCALIZE_Give Feedback" = "Lämna en recension om du gillar Smoothie Box. Det hjälper oss otroligt mycket!";
+"LOCALIZE_No, please don't ask again" = "Nej, fråga inte igen";
+"LOCALIZE_Later" = "Senare";
+"LOCALIZE_Rate" = "Recensera";
+"LOCALIZE_Search" = "Sök efter ingrediens eller smoothie";
+"LOCALIZE_Kcal" = "Kcal";
+"LOCALIZE_Protein" = "Protein";
+"LOCALIZE_Fat" = "Fett";
+"LOCALIZE_Carbohydrate" = "Kolhydrater";
+"LOCALIZE_Carbs" = "Kolhydrater";
+"LOCALIZE_Reset likes" = "Är du säker på att du vill återställa gillade recept?";
+"LOCALIZE_Yes" = "Ja";
+"LOCALIZE_No" = "Nej";
+"LOCALIZE_No Purchase Header" = "Inget genomfört köp";
+"LOCALIZE_No Purchase Text" = "Tyvärr kunde inte ditt köp hanteras just nu. Försök igen senare";
+"LOCALIZE_OK" = "OK";
+"LOCALIZE_Optional" = "valfritt";

@@ -117,7 +117,7 @@
 "UDj-xo-lhi.normalTitle" = "Dag 3";
 
 /* Class = "UILabel"; text = "If you like Smoothie Box, please rate us on AppStore"; ObjectID = "UEz-rZ-icy"; */
-"UEz-rZ-icy.text" = "Lämna en recension om du gillar att använda Smoothie box";
+"UEz-rZ-icy.text" = "Lämna gärna en recension om du gillar Smoothie box";
 
 /* Class = "UILabel"; text = "Fat"; ObjectID = "VTb-Yx-QZn"; */
 "VTb-Yx-QZn.text" = "Fett";
@@ -204,7 +204,7 @@
 "hXW-or-GLG.text" = "Detailed description";
 
 /* Class = "UINavigationItem"; title = "About"; ObjectID = "jOl-5N-FuN"; */
-"jOl-5N-FuN.title" = "Om Smoothie Box";
+"jOl-5N-FuN.title" = "Om oss";
 
 /* Class = "UILabel"; text = "All recipes are curated by Smoothie Box"; ObjectID = "kD1-8l-bFb"; */
 "kD1-8l-bFb.text" = "Alla recept är framtagna av Smoothie Box";

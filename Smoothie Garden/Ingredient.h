@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic) float quantity;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *searchString;
 @property (nonatomic) BOOL optional;
 
 @property (nonatomic, strong) NutrientCatalog *nutrients;
