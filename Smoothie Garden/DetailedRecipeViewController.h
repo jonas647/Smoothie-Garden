@@ -36,6 +36,11 @@
     __weak IBOutlet NSLayoutConstraint *recipeImageViewHeight;
     __weak IBOutlet NSLayoutConstraint *blankBackgroundToTop;
     __weak IBOutlet NSLayoutConstraint *titleBackgroundToTop;
+    
+    __weak IBOutlet UITableView *longDescriptionTable;
+    __weak IBOutlet NSLayoutConstraint *longDescriptionTableHeightConstraint;
+    
+    
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;

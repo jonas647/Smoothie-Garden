@@ -27,6 +27,7 @@
     
     NSString *recipeName;
     NSArray  *recipeInstructions;
+    NSArray *recipeDescriptions;
     NSArray *ingredients;
     float latestContentOffset;
     BOOL isLikeButtonTouchable;
@@ -39,37 +40,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     
-    //Set all the properties with correct values, print log if it can't be found
-    if ([self.selectedRecipe.recipeName isKindOfClass:[NSString class]]) {
-        titleName.text = self.selectedRecipe.recipeName;
-    } else {
-        NSLog(@"Wrong class for %@", titleName);
-    }
-    if ([self.selectedRecipe.ingredients isKindOfClass:[NSArray class]]) {
-        ingredients = self.selectedRecipe.ingredients;
-    } else if ([self.selectedRecipe.longDescription isKindOfClass:[NSArray class]]) {
-        recipeInstructions = self.selectedRecipe.longDescription;
-    } else {
-        NSLog(@"Wrong class for %@", ingredients);
-    }
-    
-    //TODO why isn't this working above in the IF statement?
-    if (self.selectedRecipe.instructions.count>0) {
-        recipeInstructions = [NSArray arrayWithArray:self.selectedRecipe.instructions];
-    }
-    if (self.selectedRecipe.longDescription.count>0) {
-        recipeDescription.text = [self.selectedRecipe.longDescription objectAtIndex:0];
-    }
-    
-    
-    //Uncomment to Remove the navigation bar background for the detailed items
-    /*
-     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    */
-    
+    ingredients = self.selectedRecipe.ingredients;
+    recipeInstructions = self.selectedRecipe.instructions;
+    recipeDescriptions = self.selectedRecipe.longDescription;
     
     //If the recipe is one of the favorites, then make the like button selected
     if ([self.selectedRecipe isRecipeFavorite]) {
@@ -100,8 +75,6 @@
         
     }
     
-    
-    
 }
 
 
@@ -110,23 +83,22 @@
     //Update the frame for the different UITextviews
     ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
     recipeTableView.frame = [self newFrameForUIView:recipeTableView];
-    
-    recipeDescription.frame = [self newFrameForUIView:recipeDescription];
+    longDescriptionTable.frame = [self newFrameForUIView:longDescriptionTable];
     
     //Update the height constraints to adjust the height to the new frames
     [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
+    
+    //longDescriptionTable.frame = [self newFrameForUIView:longDescriptionTable];
+    [longDescriptionTableHeightConstraint setConstant:longDescriptionTable.frame.size.height];
     
     likeView.layer.cornerRadius = likeView.bounds.size.width/2;//Make like view a circle
     likeView.alpha = 0.0;//Make like view hidden until the recipe is liked
     likeView.layer.masksToBounds = YES;
     
-    //TODO
-    //Fix the height of the recipe table view
     float totalTableHeight;
     for (int i = 0; i<recipeInstructions.count; i++) {
         totalTableHeight += [self tableView:recipeTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
     }
-    
     [recipeTableViewHeightConstraint setConstant:totalTableHeight];
     
     //Change font size based on screen size
@@ -204,6 +176,8 @@
         return [ingredients count];
     } else if ([tableView isEqual:recipeTableView] && recipeInstructions.count>0) {
         return [recipeInstructions count];
+    } else if ([tableView isEqual:longDescriptionTable] && recipeDescriptions.count >0) {
+        return [recipeDescriptions count];
     }
     
     
@@ -238,14 +212,19 @@
         UILabel *recipeText = (UILabel*)[cell viewWithTag:300];
         recipeText.text = [recipeInstructions objectAtIndex:indexPath.row];
         [recipeText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeText.font withSize:LABEL_SIZE_SMALL];
+    } else if ([tmpTableView isEqual:longDescriptionTable]) {
+        
+        UILabel *descriptionText = (UILabel*)[cell viewWithTag:101];
+        descriptionText.text = [recipeDescriptions objectAtIndex:indexPath.row];
+        [descriptionText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:descriptionText.font withSize:LABEL_SIZE_SMALL];
+        
     }
     
     return cell;
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView
-heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
     
@@ -275,7 +254,19 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         
         float highestLabel = MAX(heightForIngredientLabel, heightForVolumeLabel);
         return highestLabel;
-    } else
+    } else if ([tableView isEqual:longDescriptionTable]) {
+        
+        int descriptionText = 101;
+        UILabel *descriptionLabel = (UILabel*)[cell viewWithTag:descriptionText];
+        
+        float heightForDescriptionLabel = [self labelHeightFor:descriptionLabel andScreenSize:LABEL_SIZE_SMALL];
+        
+        //Add margins to the cell height
+        float cellMargin = cell.frame.size.height;
+        
+        return heightForDescriptionLabel + cellMargin;
+        
+    }
         return 0;
     
 }
