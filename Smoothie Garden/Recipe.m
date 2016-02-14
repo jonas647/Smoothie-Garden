@@ -26,7 +26,6 @@
     NSString *filepathToRecipeMaster = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
     NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeMaster];
     
-    NSLog(@"Choosing language");
     //The plist with the recipe translation depending on the language of the device
     NSDictionary *localizedRecipeDescriptions = [Recipe localizedRecipeDescriptions];
     
@@ -103,17 +102,14 @@
     NSString *recipeDescriptionPath;
     
     if ([currentLanguage hasPrefix:@"sv"]) {
-        NSLog(@"Swedish");
         recipeDescriptionPath = @"Swedish_recipeTexts";
     } else if ([currentLanguage hasPrefix:@"en"]) {
-        NSLog(@"English");
         recipeDescriptionPath = @"English_recipeTexts";
     } else {
-        NSLog(@"Language: %@", currentLanguage);
+        //English if any other language is the default
         recipeDescriptionPath = @"English_recipeTexts";
     }
     
-    NSLog(@"Text file: %@", recipeDescriptionPath);
     NSString *filepathToRecipeTranslation = [[NSBundle mainBundle] pathForResource:recipeDescriptionPath ofType:@"plist"];
     return [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeTranslation];
     
@@ -216,8 +212,7 @@
     for (Ingredient *ingredient in self.ingredients) {
     
         aggregatedIngredients = [aggregatedIngredients stringByAppendingString:[NSString stringWithFormat:@",%@", ingredient.searchString]];
-        NSString* text = [NSString stringWithFormat:@"%@", ingredient.searchString];
-        NSLog(@"Ingredient: %@", text);
+       
     }
 
     return aggregatedIngredients;

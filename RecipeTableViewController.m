@@ -272,7 +272,7 @@
      NSString *searchText = searchController.searchBar.text;
     
     //Get the recipes to search among
-    NSMutableArray *recipeSearch = [[NSMutableArray alloc]initWithArray:self.recipes];
+    NSMutableArray *recipeSearch = [[NSMutableArray alloc]initWithArray:allRecipes];
     
     //
     //Start with searching for the recipe titles
@@ -321,8 +321,6 @@
     } else
         separatedString = [searchText componentsSeparatedByString:@" "];
     
-    
-    
     //Add all the predicates to an Array to be able to collect all the different searchwords
     NSMutableArray *allPredicates = [[NSMutableArray alloc]init];
     for (NSString *str in separatedString) {
@@ -368,7 +366,6 @@
     }
     
     [self sortAndReloadTable];
-    //[self.tableView reloadData];
 }
 
 
