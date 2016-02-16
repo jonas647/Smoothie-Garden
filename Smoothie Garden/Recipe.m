@@ -31,46 +31,117 @@
     
     NSMutableArray *tempRecipes = [[NSMutableArray alloc] init];
     
-    NSLog(@"Localized: %@", localizedRecipeDescriptions);
-    
-    NSLog(@"Recipe master: %@", recipeDictionary);
-    
     for (NSString *name in recipeDictionary) {
+        NSLog(@"Setting up %@", name);
         Recipe *newRecipe = [[Recipe alloc]init];
         
         NSDictionary *tempRecipeDictionary = [recipeDictionary objectForKey:name];
         
         //Update the recipe attributes from the global plist
-        [newRecipe setRecipeType:[[tempRecipeDictionary objectForKey:@"RecipeType"]intValue]];
-        [newRecipe setRecipeCategory:[[tempRecipeDictionary objectForKey:@"RecipeCategory"]intValue]];
-        [newRecipe setImageName:[tempRecipeDictionary objectForKey:@"ImageName"]];
-        [newRecipe setSorting:[[tempRecipeDictionary objectForKey:@"Sorting"]intValue]];
+        if ([tempRecipeDictionary objectForKey:@"RecipeType"]) {
+            [newRecipe setRecipeType:[[tempRecipeDictionary objectForKey:@"RecipeType"]intValue]];
+        } else {
+            NSLog(@"Recipe type missing for %@", name);
+        }
+        if ([tempRecipeDictionary objectForKey:@"RecipeCategory"]) {
+            [newRecipe setRecipeCategory:[[tempRecipeDictionary objectForKey:@"RecipeCategory"]intValue]];
+        } else {
+            NSLog(@"Recipe category missing for %@", name);
+        }
+        if ([tempRecipeDictionary objectForKey:@"ImageName"]) {
+            [newRecipe setImageName:[tempRecipeDictionary objectForKey:@"ImageName"]];
+        } else {
+            NSLog(@"Image name missing for %@", name);
+        }
+        if ([tempRecipeDictionary objectForKey:@"Sorting"]) {
+            [newRecipe setSorting:[[tempRecipeDictionary objectForKey:@"Sorting"]intValue]];
+        } else {
+            NSLog(@"Sorting missing for %@", name);
+        }
         
         //Update the recipe attribtues from the localized file
         NSDictionary *localizedDescriptionsForNewRecipe = [localizedRecipeDescriptions objectForKey:name];
         
-        [newRecipe setRecipeName:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]];
-        [newRecipe setShortDescription:[localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]];
-        [newRecipe setLongDescription:[NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]]];
-        newRecipe.instructions = [NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]];
+        if ([localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]) {
+            [newRecipe setRecipeName:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]];
+        } else {
+            NSLog(@"Localized name missing for %@", name);
+        }
+        if ([localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]) {
+            [newRecipe setShortDescription:[localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]];
+        } else {
+            NSLog(@"Localized short desc missing for %@", name);
+        }
+        if ([localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]) {
+            [newRecipe setLongDescription:[NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]]];
+        } else {
+            NSLog(@"Localized long desc missing for %@", name);
+        }
+        if ([localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]) {
+            newRecipe.instructions = [NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]];
+        } else {
+            NSLog(@"Localized instructions missing for %@", name);
+        }
         
         //Loop all the ingredient names for the recipe from the plist and add the ingredient to the recipe
         NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
-        NSDictionary *ingredientDictionary = [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"];
+        NSDictionary *ingredientDictionary;
+        
+        if ([[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"]) {
+            ingredientDictionary = [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"];
+        }
+        
         for (NSDictionary *dic in ingredientDictionary) {
             
-            BOOL isOptional =[[[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]boolValue];
-            float quantity = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]floatValue];
-            NSString *type = [[ingredientDictionary objectForKey:dic]objectForKey:@"Type"];
-            NSString *measurement = [[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"];
+            BOOL isOptional;
+            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]) {
+                isOptional =[[[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]boolValue];
+            } else {
+                NSLog(@"Optional flag not set for: %@", dic);
+            }
+            float quantity;
+            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]) {
+                quantity = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]floatValue];
+            } else {
+                NSLog(@"Quantity not set for: %@", dic);
+            }
             
-            Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:type andMeasure:measurement andOptional:isOptional];
+            NSString *ingredientType;
+            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Type"]) {
+                ingredientType = [[ingredientDictionary objectForKey:dic]objectForKey:@"Type"];
+            } else {
+                NSLog(@"Type not set for: %@", dic);
+            }
+            
+            NSString *measurement;
+            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"]) {
+                measurement = [[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"];
+            } else {
+                NSLog(@"Measurement not set for: %@", dic);
+            }
+            
+            int sorting;
+            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Sorting"]) {
+                sorting = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Sorting"]intValue];
+            } else {
+                NSLog(@"Sorting sequence not set for: %@", dic);
+            }
+            
+            
+            Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:ingredientType andMeasure:measurement andOptional:isOptional andSorting:sorting];
+            
             
             [tempIngredients addObject:newIngredient];
             
         }
         
-        newRecipe.ingredients = [NSArray arrayWithArray:tempIngredients];
+        //Sort the array by sorting order
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        
+        //Store the ingredients for the recipe
+         NSArray *sortedIngredients = [tempIngredients sortedArrayUsingDescriptors:sortDescriptors];
+        newRecipe.ingredients = sortedIngredients;
         
         [newRecipe setupAllNutrientInformationForRecipe];
         
@@ -84,13 +155,14 @@
             }
         }
         
-        if (newRecipe) {
+        if (newRecipe != nil) {
             [tempRecipes addObject:newRecipe];
+        } else {
+            NSLog(@"Can't add recipe to db");
         }
         
     }
     
-    NSLog(@"Recipe to setup: %@", tempRecipes);
     
     return tempRecipes;
     
@@ -128,7 +200,12 @@
 
 + (void) setNewFavoriteRecipes: (NSArray*) newRecipes {
     
-    [[NSUserDefaults standardUserDefaults]setObject:newRecipes forKey:@"FavoriteRecipes"];
+    if (newRecipes) {
+        [[NSUserDefaults standardUserDefaults]setObject:newRecipes forKey:@"FavoriteRecipes"];
+    } else {
+        NSLog(@"Issues in saving favorite recipes");
+    }
+    
     
 }
 
@@ -331,8 +408,6 @@
     NSDictionary *tempNutrientDictionary = [tempIngredient nutrientCatalogWithNoValueForMeasure];
     
     NSMutableDictionary *newNutrientParentDictionary = [[NSMutableDictionary alloc]initWithCapacity:tempNutrientDictionary.count];
-    
-    NSLog(@"Setting up nutrients");
    
     //Loop the dictionary loaded from plist. To update the total volume
     for (NSMutableDictionary *dic in tempNutrientDictionary) {
@@ -351,20 +426,32 @@
         //Also add the unit and type objects
         NSString *unitString = [[tempNutrientDictionary objectForKey:dic]objectForKey:@"Unit"];
         NSString *typeString = [[tempNutrientDictionary objectForKey:dic]objectForKey:@"Type"];
-        [newNutrientChildDictionary setObject:unitString forKey:@"Unit"];
-        [newNutrientChildDictionary setObject:typeString forKey:@"Type"];
+        if (unitString) {
+            [newNutrientChildDictionary setObject:unitString forKey:@"Unit"];
+        } else {
+            NSLog(@"Unit string for %@ doesn't exist", dic);
+        }
+        if (typeString) {
+            [newNutrientChildDictionary setObject:typeString forKey:@"Type"];
+        } else {
+            NSLog(@"Type string for %@ doesn't exist", dic);
+        }
         
         //Add the nutrient fact that's fetched from another plist
-        NSString *filepathToDailyRecommendedNIntake = [[NSBundle mainBundle] pathForResource:@"RecommendedDailyIntake" ofType:@"plist"];
-        NSDictionary *dailyIntakeDictionaryFromPlist = [NSDictionary dictionaryWithContentsOfFile:filepathToDailyRecommendedNIntake];
+        NSString *filepathToDailyRecommendedIntake = [[NSBundle mainBundle] pathForResource:@"RecommendedDailyIntake" ofType:@"plist"];
+        NSDictionary *dailyIntakeDictionaryFromPlist = [NSDictionary dictionaryWithContentsOfFile:filepathToDailyRecommendedIntake];
         
         if ([[dailyIntakeDictionaryFromPlist objectForKey:dic]objectForKey:@"DailyRecommendation"]) {
             NSString *recommendedDailyIntake = [[dailyIntakeDictionaryFromPlist objectForKey:dic]objectForKey:@"DailyRecommendation"];
             [newNutrientChildDictionary setObject:recommendedDailyIntake forKey:@"DailyRecommendation"];
         }
         
+        if (newNutrientChildDictionary) {
+            [newNutrientParentDictionary setObject:newNutrientChildDictionary forKey:dic];
+        } else {
+            NSLog(@"No nutrient child dictionary could be setup for: %@", dic);
+        }
         
-        [newNutrientParentDictionary setObject:newNutrientChildDictionary forKey:dic];
         
     }
     

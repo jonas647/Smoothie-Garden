@@ -109,16 +109,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>citroner</string>
+			<string>citroner (juice)</string>
 			<key>en</key>
-			<string>lemons</string>
+			<string>lemons (juice)</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>citron</string>
+			<string>citron (juice)</string>
 			<key>en</key>
-			<string>lemon</string>
+			<string>lemon (juice)</string>
 		</dict>
 	</dict>
 	<key>Spinach</key>
@@ -228,16 +228,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>apelsiner</string>
+			<string>apelsiner (juice)</string>
 			<key>en</key>
-			<string>oranges</string>
+			<string>oranges (juice)</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>apelsin</string>
+			<string>apelsin (juice)</string>
 			<key>en</key>
-			<string>orange</string>
+			<string>orange (juice)</string>
 		</dict>
 	</dict>
 	<key>Ginger</key>
@@ -478,21 +478,21 @@
 			<string>honey</string>
 		</dict>
 	</dict>
-	<key>Beet Juice</key>
+	<key>Beet</key>
 	<dict>
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>rödbetsjuice</string>
+			<string>rödbetor</string>
 			<key>en</key>
-			<string>beetjuice</string>
+			<string>beets</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>rödbetsjuice</string>
+			<string>rödbeta</string>
 			<key>en</key>
-			<string>beetjuice</string>
+			<string>beet</string>
 		</dict>
 	</dict>
 	<key>Strawberries</key>
@@ -534,16 +534,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>lime</string>
+			<string>lime (juice)</string>
 			<key>en</key>
-			<string>lime</string>
+			<string>lime (juice)</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>lime</string>
+			<string>lime (juice)</string>
 			<key>en</key>
-			<string>lime</string>
+			<string>lime (juice)</string>
 		</dict>
 	</dict>
 	<key>Gojiberries</key>
@@ -901,6 +901,74 @@
 			<string>vetegräs</string>
 			<key>en</key>
 			<string>wheatgrass</string>
+		</dict>
+	</dict>
+	<key>Buckthorn</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>havtorn</string>
+			<key>en</key>
+			<string>buckthorn</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>havtorn</string>
+			<key>en</key>
+			<string>buckthorn</string>
+		</dict>
+	</dict>
+	<key>Spirulina</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>spirulina</string>
+			<key>en</key>
+			<string>spirulina</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>spirulina</string>
+			<key>en</key>
+			<string>spirulina</string>
+		</dict>
+	</dict>
+	<key>Cinnamon</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>kanel</string>
+			<key>en</key>
+			<string>cinnamon</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>kanel</string>
+			<key>en</key>
+			<string>cinnamon</string>
+		</dict>
+	</dict>
+	<key>Cardamom</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>kardemumma</string>
+			<key>en</key>
+			<string>cardamom</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>kardemumma</string>
+			<key>en</key>
+			<string>cardamom</string>
 		</dict>
 	</dict>
 </dict>

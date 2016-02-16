@@ -46,6 +46,7 @@
     recipeInstructions = self.selectedRecipe.instructions;
     recipeDescriptions = self.selectedRecipe.longDescription;
     
+    
     //If the recipe is one of the favorites, then make the like button selected
     if ([self.selectedRecipe isRecipeFavorite]) {
         likeButton.selected = YES;
@@ -100,6 +101,9 @@
         totalTableHeight += [self tableView:recipeTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
     }
     [recipeTableViewHeightConstraint setConstant:totalTableHeight];
+    
+    
+    titleName.text = self.selectedRecipe.recipeName;
     
     //Change font size based on screen size
     UILabel *by = [self.view viewWithTag:400];
@@ -262,7 +266,7 @@
         float heightForDescriptionLabel = [self labelHeightFor:descriptionLabel andScreenSize:LABEL_SIZE_SMALL];
         
         //Add margins to the cell height
-        float cellMargin = cell.frame.size.height;
+        float cellMargin = cell.frame.size.height/2;
         
         return heightForDescriptionLabel + cellMargin;
         

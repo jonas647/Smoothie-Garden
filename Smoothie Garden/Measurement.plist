@@ -40,9 +40,9 @@
 	<key>pinch</key>
 	<dict>
 		<key>en</key>
-		<string>dl</string>
+		<string>pinch</string>
 		<key>sv</key>
-		<string>dl</string>
+		<string>nypa</string>
 	</dict>
 	<key>g</key>
 	<dict>

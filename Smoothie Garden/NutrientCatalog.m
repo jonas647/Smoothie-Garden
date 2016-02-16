@@ -59,21 +59,35 @@
     
     for (NSMutableDictionary *dic in self.nutrientValues) {
         
-            //Create a new dictionary to hold the nutrient facts
-            NSMutableDictionary *nutrientDic = [[NSMutableDictionary alloc]init];
-            [newNutrientDictionary setObject:nutrientDic forKey:dic];
-            
-            //Set the new objects for the nutrient dictionary
-            NSString *unitString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Unit"];
-            NSString *typeString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Type"];
-            [nutrientDic setObject:unitString forKey:@"Unit"];
-            [nutrientDic setObject:typeString forKey:@"Type"];
-            
-            //For all the nutrients update the volume/measure to 0 so that it can be summarized from the ingredient instead
-            [nutrientDic setObject:@"0" forKey:@"Measure"];
-            
+        //Create a new dictionary to hold the nutrient facts
+        NSMutableDictionary *nutrientDic = [[NSMutableDictionary alloc]init];
         
-            
+        if (nutrientDic) {
+            [newNutrientDictionary setObject:nutrientDic forKey:dic];
+        } else {
+            NSLog(@"%@ doesn't exist", dic);
+        }
+        
+        //Set the new objects for the nutrient dictionary
+        NSString *unitString;
+        if ([self.nutrientValues objectForKey:dic]) {
+            unitString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Unit"];
+        } else {
+            NSLog(@"No unit found in nutrient values");
+        }
+        
+        NSString *typeString;
+        if ([self.nutrientValues objectForKey:dic]) {
+            typeString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Type"];
+        } else {
+            NSLog(@"No type found in nutrient values");
+        }
+        
+        [nutrientDic setObject:unitString forKey:@"Unit"];
+        [nutrientDic setObject:typeString forKey:@"Type"];
+        
+        //For all the nutrients update the volume/measure to 0 so that it can be summarized from the ingredient instead
+        [nutrientDic setObject:@"0" forKey:@"Measure"];
         
     }
     return newNutrientDictionary;

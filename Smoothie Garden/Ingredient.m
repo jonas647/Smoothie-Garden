@@ -23,7 +23,7 @@
 
 @implementation Ingredient
 
-- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andOptional: (BOOL) optional {
+- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andOptional: (BOOL) optional andSorting:(int)sorting {
     
     if (self = [super init]) { // equivalent to "self does not equal nil"
         
@@ -31,7 +31,7 @@
         self.type = type; //Used for matching with the nutrient plist and localization
         self.measure = measure;
         self.optional = optional;
-        
+        self.sorting = sorting;
         
         //Check if it's a plural number of ingredients. Needed to set the text for the ingredient.
         BOOL pluralIngredient = NO;
@@ -140,7 +140,9 @@
     NSString *quantityString;
     
     //If quantity smaller than one it's always rounded to closest 0,5. so smaller than one means 0,5. Will show as 1/2 instead
-    if (qty < 1) {
+    if (qty == 0) {
+        quantityString = @"";
+    } else if (qty < 1) {
         quantityString = @"1/2";
     } else {
         NSLog(@"%@: %f is larger than 1", self.type, qty);
@@ -241,45 +243,33 @@
                     float newMeasureForNutrient = nutrientVolumeFloat * ingredientVolumeFloat;
                     
                     //Add the new measure to the dictionary
-                    [newChildDictionary setObject:[NSString stringWithFormat:@"%f", newMeasureForNutrient] forKey:@"Measure"];
+                    if ([NSString stringWithFormat:@"%f", newMeasureForNutrient]) {
+                        [newChildDictionary setObject:[NSString stringWithFormat:@"%f", newMeasureForNutrient] forKey:@"Measure"];
+                    } else {
+                        NSLog(@"Measure %f can't be saved for : %@", newMeasureForNutrient, dic);
+                    }
                     
                     //Add the other objects to the dictionary
-                    [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"] forKey:@"Unit"];
-                    [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"] forKey:@"Type"];
+                    if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"]) {
+                        [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"] forKey:@"Unit"];
+                    } else {
+                        NSLog(@"Can't save Unit in %@", dic);
+                    }
+                    
+                    if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"]) {
+                        [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"] forKey:@"Type"];
+                    } else {
+                        NSLog(@"Can't save Type in %@", dic);
+                    }
                     
                     //Add the newly created dictionary to the parent dictionary that will hold all the nutrients
-                    [nutrientParentDictionary setObject:newChildDictionary forKey:[NSString stringWithFormat:@"%@", dic]];
-                    
-                    /*
-                    if ([[nutrientsDictionary objectForKey:@"Unit"] isEqualToString:@"Piece"]) {
-                        NSLog(@"%@ is measured in pieces", self.type);
-                        
-                        float newMeasureForNutrient = nutrientVolumeFloat * ingredientVolumeFloat;
-                        
-                        NSLog(@"New Measure: %f", newMeasureForNutrient);
-                        
-                        //Add the new measure to the dictionary
-                        [newChildDictionary setObject:[NSString stringWithFormat:@"%f", newMeasureForNutrient] forKey:@"Measure"];
-                        
-                        //Add the other objects to the dictionary
-                        [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"] forKey:@"Unit"];
-                        [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"] forKey:@"Type"];
-                        
-                        //Add the newly created dictionary to the parent dictionary that will hold all the nutrients
+                    if (newChildDictionary) {
                         [nutrientParentDictionary setObject:newChildDictionary forKey:[NSString stringWithFormat:@"%@", dic]];
-                        
-                    } else if ([[nutrientsDictionary objectForKey:@"Unit"] isEqualToString:@"G"]) {
+                    } else {
+                        NSLog(@"Child dictionary with ingredient not created properly");
+                    }
                     
-                        
                     
-                } else if ([[nutrientsDictionary objectForKey:@"Unit"] isEqualToString:@"Mg"]) {
-                    
-                
-                } else {
-                    
-                
-                }*/
-                
                 }else {
                 NSLog(@"%@ is no NSDictionary", [nutrientsDictionary objectForKey:dic]);
             
@@ -409,7 +399,9 @@
     
     //Check if the quantity is half, then change it to 1/2 instead of 0.5
     //Otherwise just send back the rounded value (ie. "1", "1.5" etc.
-    if (roundedValue == 0.5) {
+    if (roundedValue == 0) {
+        return @"";
+    } else if (roundedValue == 0.5) {
         return @"1/2";
     } else {
         return [formatter stringFromNumber:[NSNumber numberWithFloat:roundedValue]];

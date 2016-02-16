@@ -65,7 +65,12 @@
     thumbnailImages = [[NSMutableDictionary alloc]init];
     for (Recipe *r in allRecipes) {
         UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        [thumbnailImages setObject:tempImage forKey:r.recipeName];
+        if (tempImage != nil) {
+            [thumbnailImages setObject:tempImage forKey:r.recipeName];
+        } else {
+            NSLog(@"Recipe image is nil");
+        }
+        
     }
     
     //Remove the title text from the back button (in the Detailed recipe table view controller)

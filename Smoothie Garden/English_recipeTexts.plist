@@ -20,5 +20,258 @@
 			<string>Mix all the ingredients in a blender on high speed until smooth</string>
 		</array>
 	</dict>
+	<key>Recipe2</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green Rawgurt</string>
+		<key>ShortDescription</key>
+		<string>This green and creamy smoothie is a great vegan alternative to traditional yoghurt</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This green and creamy smoothie is a great vegan alternative to traditional yoghurt.</string>
+			<string>Start your day with this healthy bowl, topped with fresh berries, nuts and seeds.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+			<string>Add a small splash of water if the frozen ingredients doesn’t blend</string>
+		</array>
+	</dict>
+	<key>Recipe3</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Veggie Detox</string>
+		<key>ShortDescription</key>
+		<string>This fresh and detoxing veggie smoothie is like drinking a salad</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Drinking green smoothies is an easy way of making sure you get your daily greens and this fresh and detoxing veggie smoothie is like drinking a salad.</string>
+			<string>Add some parsley for extra iron and flavour.</string>
+			<string>If you like your smoothie less green-tasting and a little sweeter just replace the avocado with equal amounts of mango.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe4</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green Machine</string>
+		<key>ShortDescription</key>
+		<string>Adding leafy greens to the smoothie is a great way of increasing your daily intake of vegetables</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Adding leafy greens to the smoothie is a great way of increasing your daily intake of vegetables.</string>
+			<string>Dark green leafy vegetables are good sources of many vitamins (such as vitamins A, C, K and folate) and minerals. </string>
+			<string>Add some spirulina for extra nutrition.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe5</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Orange is the new black</string>
+		<key>ShortDescription</key>
+		<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away.</string>
+			<string>Not only does this it taste great, it will also boost your immune system. The ginger adds some healthy heat and has anti-inflammatory properties.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Juice the carrots, orange, lemon and ginger in a juice extractor.</string>
+			<string>Mix the juice with the mango in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe6</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Scandinavian berries</string>
+		<key>ShortDescription</key>
+		<string>Scandinavian berries are true super berries that contains lots of antioxidants and nutrients</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Scandinavian berries are true super berries that contains lots of antioxidants and nutrients.</string>
+			<string>Try experimenting with other Scandinavian berries as well, like red or black currants, raspberries or wild strawberries. Just switch one of the berries in the recipe to whatever nordic berry you have in the fridge, freezer or in your garden.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe7</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Chocolate and raspberry shake</string>
+		<key>ShortDescription</key>
+		<string>This creamy and chocolaty smoothie is simply the best when you crave something sweet but still want to stay healthy</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This creamy and chocolaty smoothie is simply the best when you crave something sweet but still want to stay healthy.</string>
+			<string>Raspberry and chocolate tastes fantastic together and raw cacao nibs are extremely high in antioxidants.</string>
+			<string>Add some macca powder for an extra energy kick.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe8</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blueberry pie</string>
+		<key>ShortDescription</key>
+		<string>This antioxidant-packed smoothie is not only super healthy, it also tastes like a delicious blueberry pie</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This antioxidant-packed smoothie is not only super healthy, it also tastes like a delicious blueberry pie</string>
+			<string>Add chia seeds for extra fiber and healthy fats.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe9</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Peanut butter jelly</string>
+		<key>ShortDescription</key>
+		<string>This rich and creamy smoothie is high in protein and is perfect after a workout or served as breakfast</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This rich smoothie is high in protein and perfect after a workout or served as breakfast when you need some extra energy in the morning. </string>
+			<string>The fresh raspberry sauce complements the creamy smoothie perfectly.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Start with the raspberry sauce by blending the raspberries with honey and pour it in a glass.</string>
+			<string>Mix the rest of the ingredients in a blender on high speed until smooth.</string>
+			<string>Pour the smoothie over the raspberry sauce and serve right away.</string>
+		</array>
+	</dict>
+	<key>Recipe10</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Unbeetable</string>
+		<key>ShortDescription</key>
+		<string>Beets are known for being anti-inflammatory and detoxifying and they taste great in this ruby red smoothie</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Beets are known for being anti-inflammatory and detoxifying which is one of the reasons they are great to put in your smoothie.</string>
+			<string>They also taste fantastic together with the tarty apple and lemon in this ruby red smoothie.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Juice the beet, apple and lemon in a juice extractor.</string>
+			<string>Mix the juice together with the raspberries, strawberries and banana in a blender on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe11</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Raspberry kick</string>
+		<key>ShortDescription</key>
+		<string>This smoothie is a real vitamin kick with a fresh and summery taste</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This smoothie is a real vitamin kick with a fresh and summery taste. Enjoy it on a hot sunny day or simply when you need some extra energy. </string>
+			<string>The mint can be replaced with ginger if preferred.</string>
+			<string>Top this smoothie with some goji berries and grated lime peel.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe12</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blue belly bliss</string>
+		<key>ShortDescription</key>
+		<string>This dark blue smoothie is your stomach’s best friend</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This dark blue smoothie is your stomach’s best friend. Drink it for breakfast or between meals. It contains lots of fibre and will get your stomach working.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe13</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Layered blueberry and chia smoothie</string>
+		<key>ShortDescription</key>
+		<string>This layered blueberry and chia smoothie is great served as breakfast and will give you a perfect start of the day</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This layered blueberry and chia smoothie is great served as breakfast and will give you a perfect start of the day. Have the soaked chia seeds prepared in the fridge to save some valuable time in the morning.</string>
+			<string>Top with your favourite berries, fruits, nuts and seeds.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Stir 0,5 dl chia seeds with 1,5 dl almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
+			<string>When the chiapudding is ready, mix all the other ingredients in a blender on high speed until smooth</string>
+			<string>Layer the soaked chia seeds with the blueberry smoothie in a bowl or a in a glass with topping and eat with a spoon</string>
+		</array>
+	</dict>
+	<key>Recipe14</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Passion for chia</string>
+		<key>ShortDescription</key>
+		<string>This layered passion fruit and chia smoothie is perfect served as a dessert or as breakfast</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This layered passion fruit and chia smoothie is perfect served as a dessert or as breakfast.</string>
+			<string>Have the soaked chia seeds prepared in the fridge and you will save some valuable time in the morning. </string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Stir 0,5 dl chiaseeds with 1,5 dl almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
+			<string>When the chiapudding is ready, mix the banana, mango, raspberries, almond milk and honey in a blender on high speed until smooth.</string>
+			<string>Layer the soaked chia seeds with the smoothie and the passion fruit. Top with fresh berries and eat it with a spoon.</string>
+		</array>
+	</dict>
+	<key>Recipe15</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Strawberry nicecream with raspberry swirl</string>
+		<key>ShortDescription</key>
+		<string>Enjoy this pink and dreamy nicecream when you need some extra energy and vitamins or simply when you crave something sweet</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Enjoy this pink and dreamy nicecream when you need some extra energy and vitamins or simply when you crave something sweet</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Start preparing the raspberry sauce by blending the raspberries with honey</string>
+			<string>Mix bananas, strawberries and coconut milk in a blender on high speed until smooth. Consistency should be thick and creamy</string>
+			<string>Pour the strawberry nicecream oven the raspberry sauce in a glass or in a bowl. Stir with a spoon to create a beautiful swirl</string>
+		</array>
+	</dict>
+	<key>Recipe16</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Mango and grapefruit detox</string>
+		<key>ShortDescription</key>
+		<string>This mango and grapefruit smoothie is both imune and metabolist boosting</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This mango and grapefruit smoothie is both imune and metabolist boosting.</string>
+			<string>Grapefruit is high in vitamin C and antioxidants and has detoxing qualities</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+		</array>
+	</dict>
 </dict>
 </plist>

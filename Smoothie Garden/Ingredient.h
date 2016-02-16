@@ -11,7 +11,7 @@
 
 @interface Ingredient : NSObject
 
-- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andOptional: (BOOL) optional;
+- (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andOptional: (BOOL) optional andSorting: (int) sorting;
 - (NSString*) stringWithQuantityAndMeasure;
 - (NSString*) stringWithIngredientText;
 
@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *searchString;
 @property (nonatomic) BOOL optional;
+@property (nonatomic) int sorting;
 
 @property (nonatomic, strong) NutrientCatalog *nutrients;
 

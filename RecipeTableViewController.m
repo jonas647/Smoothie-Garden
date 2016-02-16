@@ -44,10 +44,6 @@
     
     imageParallaxEffectFactor = 15;
     
-    //TODO
-    //Comment out the stuff linked to favorites or use it in another way
-    //Perhaps sort by liked recipes first
-    
     [self setupActivityIndicator]; //Setup of the activity indicator programmatically
     [loadingIndicator startActivityIndicator];
     
@@ -126,7 +122,6 @@
     
     self.recipes = [Recipe allRecipesFromPlist];
     allRecipes = self.recipes;
-    [self sortAndReloadTable];
     
     [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     
@@ -147,26 +142,6 @@
     //[self.tableView reloadData];
     [self sortAndReloadTable];
 }
-
-
-/*
-- (int) selectedTabBar {
-    
-    switch ([self.tabBarController selectedIndex]) {
-        case 0:
-            //Show all recipes
-            return TAB_BAR_ALL;
-            break;
-        case 1:
-            //Show the favorite recipes
-            return TAB_BAR_FAV;
-            break;
-        default:
-            return 0;
-            break;
-    }
-    
-}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
