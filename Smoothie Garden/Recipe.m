@@ -32,7 +32,7 @@
     NSMutableArray *tempRecipes = [[NSMutableArray alloc] init];
     
     for (NSString *name in recipeDictionary) {
-        NSLog(@"Setting up %@", name);
+        
         Recipe *newRecipe = [[Recipe alloc]init];
         
         NSDictionary *tempRecipeDictionary = [recipeDictionary objectForKey:name];

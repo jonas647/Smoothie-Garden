@@ -535,39 +535,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Purchases" footerTitle=" " id="xTC-ol-j3v">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g7Y-Ra-EI7">
-                                        <rect key="frame" x="0.0" y="234" width="600" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g7Y-Ra-EI7" id="hKE-Te-YF1">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-sv-ZYh">
-                                                    <rect key="frame" x="8" y="8.5" width="584" height="33"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <state key="normal" title="Restore Purchases">
-                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="restorePurchases:" destination="mEs-mC-93l" eventType="touchUpInside" id="fhC-ON-PmP"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="W9L-sv-ZYh" secondAttribute="trailing" id="cU2-Vs-6Rh"/>
-                                                <constraint firstItem="W9L-sv-ZYh" firstAttribute="centerY" secondItem="hKE-Te-YF1" secondAttribute="centerY" id="t9S-tQ-hez"/>
-                                                <constraint firstItem="W9L-sv-ZYh" firstAttribute="leading" secondItem="hKE-Te-YF1" secondAttribute="leadingMargin" id="ypz-Sr-c6D"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Liked Recipes" footerTitle=" " id="cEK-e2-cKS">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8eB-ZS-Pf9">
-                                        <rect key="frame" x="0.0" y="364" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="234" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8eB-ZS-Pf9" id="4gE-VD-212">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
@@ -602,7 +573,6 @@
                     <connections>
                         <outlet property="measurementButton" destination="Azb-2p-T7V" id="P8x-J8-ust"/>
                         <outlet property="resetLikesButton" destination="8nz-ZM-24x" id="UBK-Nu-vry"/>
-                        <outlet property="restorePurchasesButton" destination="W9L-sv-ZYh" id="afM-jA-wIy"/>
                         <outlet property="sidebarButton" destination="S1D-ko-z8g" id="KH6-X7-GLu"/>
                     </connections>
                 </tableViewController>

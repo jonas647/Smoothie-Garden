@@ -39,6 +39,9 @@
     
     //This is needed for the gesture to work. Not sure why.
     [self.revealViewController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    
 }
 
 - (void) viewWillDisappear:(BOOL)animated {

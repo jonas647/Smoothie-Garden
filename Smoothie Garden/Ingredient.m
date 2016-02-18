@@ -145,7 +145,6 @@
     } else if (qty < 1) {
         quantityString = @"1/2";
     } else {
-        NSLog(@"%@: %f is larger than 1", self.type, qty);
         quantityString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:qty]];
     }
     

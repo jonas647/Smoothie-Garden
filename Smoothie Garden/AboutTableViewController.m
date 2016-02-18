@@ -42,6 +42,11 @@
     [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:@"About Screen"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -60,7 +65,7 @@
     }
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath       *)indexPath
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     //TODO
     //Implement handling of all buttons

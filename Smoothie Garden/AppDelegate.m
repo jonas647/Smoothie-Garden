@@ -77,12 +77,19 @@
     
     //Get the in app purchases from the in app purchase helper singleton
     //Load it here so that the purchases are available when the user tries to buy the IAP
+    
+    //For now inactivating this since IAP will be replaced by premium app
+    //Instead set the IAP flag to YES. This will make it possible to change to IAP later and the ones downloading paid app now will get the IAP.
+    [[SBIAPHelper sharedInstance] unlockIAP:@"basicRecipes_01"];
+    
+    /*
     [[SBIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             _iTunesPurchases = [NSArray arrayWithArray:products];
             //array gets populated with skproduct objects
         }
     }];
+    */
     
     //Google Analytics
     
@@ -96,7 +103,8 @@
     
     if (analyticsEnabled) {
         //Since the key is null if the user hasn't disabled the analytics we need to invert the bool
-        NSLog(@"Analytics Enabled");
+   
+        
         //If the user has enabled the analytics (or hasn't touched to analytics toggle)
         
         // Configure tracker from GoogleService-Info.plist.

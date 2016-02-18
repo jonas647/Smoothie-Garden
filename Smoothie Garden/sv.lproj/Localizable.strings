@@ -20,14 +20,14 @@
 "LOCALIZE_Give Feedback" = "Lämna en recension om du gillar Smoothie Box. Det hjälper oss otroligt mycket!";
 "LOCALIZE_No, please don't ask again" = "Nej, fråga inte igen";
 "LOCALIZE_Later" = "Senare";
-"LOCALIZE_Rate" = "Recensera";
+"LOCALIZE_Rate" = "Recensera nu";
 "LOCALIZE_Search" = "Sök efter ingrediens eller smoothie";
 "LOCALIZE_Kcal" = "Kcal";
 "LOCALIZE_Protein" = "Protein";
 "LOCALIZE_Fat" = "Fett";
 "LOCALIZE_Carbohydrate" = "Kolhydrater";
 "LOCALIZE_Carbs" = "Kolhydrater";
-"LOCALIZE_Reset likes" = "Är du säker på att du vill återställa gillade recept?";
+"LOCALIZE_Reset likes" = "Vill du återställa gillade recept?";
 "LOCALIZE_Yes" = "Ja";
 "LOCALIZE_No" = "Nej";
 "LOCALIZE_No Purchase Header" = "Inget genomfört köp";

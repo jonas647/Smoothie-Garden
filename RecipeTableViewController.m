@@ -436,10 +436,6 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    Recipe *tempRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
-    NSLog(@"Is %@ unlocked", tempRecipe.recipeName);
-    
     Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     
     if ([selRecipe isRecipeUnlocked]) {

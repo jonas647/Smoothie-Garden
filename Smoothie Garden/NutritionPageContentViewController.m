@@ -11,8 +11,8 @@
 #define VIEW_PERCENTLABEL 103
 
 #define NUTRITION_CALORIES @"Energy"
-#define NUTRITION_FAT @"Protein"
-#define NUTRITION_PROTEIN @"Fat"
+#define NUTRITION_FAT @"Fat"
+#define NUTRITION_PROTEIN @"Protein"
 #define NUTRITION_CARBOHYDRATE @"Carbohydrate"
 
 #import "NutritionPageContentViewController.h"

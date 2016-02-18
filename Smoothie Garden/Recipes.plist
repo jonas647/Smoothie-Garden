@@ -92,7 +92,7 @@
 		<key>Sorting</key>
 		<integer>0</integer>
 		<key>ImageName</key>
-		<string>Green Coco Kale</string>
+		<string>Green Kale</string>
 	</dict>
 	<key>Recipe2</key>
 	<dict>
@@ -300,7 +300,7 @@
 		<key>Sorting</key>
 		<integer>2</integer>
 		<key>ImageName</key>
-		<string>Veggie Detox</string>
+		<string>veggie detox high res</string>
 	</dict>
 	<key>Recipe4</key>
 	<dict>
@@ -1191,7 +1191,7 @@
 				<key>Quantity</key>
 				<real>0.5</real>
 				<key>Type</key>
-				<string>Chia Seeds</string>
+				<string>Chia Seeds dl</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1274,7 +1274,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>12</integer>
 		<key>ImageName</key>
-		<string>Bluebelly bliss</string>
+		<string>Layered blueberry and chia smoothie</string>
 	</dict>
 	<key>Recipe14</key>
 	<dict>
@@ -1484,7 +1484,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>14</integer>
 		<key>ImageName</key>
-		<string>Strawberry icecream</string>
+		<string>Strawberry Nicecream</string>
 	</dict>
 	<key>Recipe16</key>
 	<dict>

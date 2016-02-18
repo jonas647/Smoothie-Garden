@@ -209,8 +209,8 @@
     
     NSString *alertTitle = NSLocalizedString(@"LOCALIZE_Reset likes", @"Do you want to reset all liked recipes?");
     //NSString *alertText; //Add if you want to add a body text to the alert
-    NSString *cancelText = NSLocalizedString(@"LOCALIZE_NO", nil);
-    NSString *acceptText = NSLocalizedString(@"LOCALIZE_YES", nil);
+    NSString *cancelText = NSLocalizedString(@"LOCALIZE_No", nil);
+    NSString *acceptText = NSLocalizedString(@"LOCALIZE_Yes", nil);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
     
