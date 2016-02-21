@@ -57,7 +57,24 @@
     //Report to Analytics
     [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:@"Detox Screen"];
     
-    allRecipes = [Recipe allRecipesFromPlist];
+    
+    
+    //Remove the title text from the back button (in the Detailed recipe table view controller)
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    //Need to change the backgroundcolor here. If changed in the appdelegate it's also added to the transparent navigation bars
+    //UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    //[self.navigationController.navigationBar setBackgroundColor:mainColor];
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //Load here to show user view before recipes are fully loaded
+    allRecipes = [Recipe recipeMaster];
+    
     sectionCategories = @[NINE_AM_SMOOTHIE,TWELVE_AM_SMOOTHIE,FOUR_PM_SMOOTHIE,SEVEN_PM_SMOOTHIE];
     
     [self setupDetoxDayFor:@"Day1"];
@@ -72,19 +89,6 @@
         }
         
     }
-    
-    //Remove the title text from the back button (in the Detailed recipe table view controller)
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    //Need to change the backgroundcolor here. If changed in the appdelegate it's also added to the transparent navigation bars
-    //UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    //[self.navigationController.navigationBar setBackgroundColor:mainColor];
-    
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
     _tableView.frame = [self newFrameForUIView:_tableView];
     [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];

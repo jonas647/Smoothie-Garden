@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NutrientCatalog : NSObject
+@interface NutrientCatalog : NSObject <NSCoding>
 
 @property (nonatomic,strong) NSString *measuringUnit;
 @property (nonatomic,strong) NSDictionary *nutrientValues;

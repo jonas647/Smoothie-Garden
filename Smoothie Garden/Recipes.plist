@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Version</key>
+	<integer>1</integer>
 	<key>Recipe1</key>
 	<dict>
 		<key>Ingredients</key>
@@ -786,7 +788,7 @@
 		<key>Sorting</key>
 		<integer>7</integer>
 		<key>ImageName</key>
-		<string>Blueberry pie</string>
+		<string>Blueberry Pie</string>
 	</dict>
 	<key>Recipe9</key>
 	<dict>
@@ -1101,7 +1103,7 @@
 		<key>Sorting</key>
 		<integer>10</integer>
 		<key>ImageName</key>
-		<string>Raspberry kick</string>
+		<string>Raspberry Kick</string>
 	</dict>
 	<key>Recipe12</key>
 	<dict>
@@ -1274,7 +1276,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>12</integer>
 		<key>ImageName</key>
-		<string>Layered blueberry and chia smoothie</string>
+		<string>Blueberry Chia</string>
 	</dict>
 	<key>Recipe14</key>
 	<dict>

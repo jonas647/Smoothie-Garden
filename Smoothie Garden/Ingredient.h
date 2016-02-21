@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NutrientCatalog.h"
 
-@interface Ingredient : NSObject
+@interface Ingredient : NSObject <NSCoding>
 
 - (id) initWithQuantity:(float)qty andType:(NSString*) type andMeasure:(NSString*)measure andOptional: (BOOL) optional andSorting: (int) sorting;
 - (NSString*) stringWithQuantityAndMeasure;
@@ -22,7 +22,6 @@
 @property (nonatomic, strong) NSString *searchString;
 @property (nonatomic) BOOL optional;
 @property (nonatomic) int sorting;
-
 @property (nonatomic, strong) NutrientCatalog *nutrients;
 
 - (NSString*) totalVolumeForNutrient: (NSString*) nutrient;

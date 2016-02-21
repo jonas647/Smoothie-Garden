@@ -18,6 +18,16 @@
 #define USCUSTOMARY_cup @"cup"
 #define USCUSTOMARY_inch @"inches"
 
+//For NSCoding
+#define NSCoding_Measure @"iMeasure"
+#define NSCoding_Type @"iType"
+#define NSCoding_Qty @"iQty"
+#define NSCoding_Text @"iText"
+#define NSCoding_SearchString @"iSearchString"
+#define NSCoding_Optional @"iOptional"
+#define NSCoding_Sorting @"iSorting"
+#define NSCoding_Nutrients @"iNutrients"
+
 
 #import "Ingredient.h"
 
@@ -433,6 +443,36 @@
     
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    
+    if(self = [super init]) {
+        
+        [self setMeasure:[aDecoder decodeObjectForKey:NSCoding_Measure]];
+        [self setType:[aDecoder decodeObjectForKey:NSCoding_Type]];
+        [self setQuantity:[aDecoder decodeFloatForKey:NSCoding_Qty]];
+        [self setText:[aDecoder decodeObjectForKey:NSCoding_Text]];
+        [self setSearchString:[aDecoder decodeObjectForKey:NSCoding_SearchString]];
+        [self setOptional:[aDecoder decodeBoolForKey:NSCoding_Optional]];
+        [self setSorting:[aDecoder decodeIntForKey:NSCoding_Sorting]];
+        [self setNutrients:[aDecoder decodeObjectForKey:NSCoding_Nutrients]];
+        
+    }
+    
+    return self;
+    
+}
+- (void) encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:self.measure forKey:NSCoding_Measure];
+    [aCoder encodeObject:self.type forKey:NSCoding_Type];
+    [aCoder encodeFloat:self.quantity forKey:NSCoding_Qty];
+    [aCoder encodeObject:self.text forKey:NSCoding_Text];
+    [aCoder encodeObject:self.searchString forKey:NSCoding_SearchString];
+    [aCoder encodeBool:self.optional forKey:NSCoding_Optional];
+    [aCoder encodeInt:self.sorting forKey:NSCoding_Sorting];
+    [aCoder encodeObject:self.nutrients forKey:NSCoding_Nutrients];
+    
+}
 
 
 @end

@@ -12,7 +12,7 @@
 #define RECIPE_TYPE_BOWL 2
 
 
-@interface Recipe : NSObject
+@interface Recipe : NSObject <NSCoding>
 
 @property (nonatomic) int recipeType;
 @property (nonatomic) int recipeCategory;
@@ -22,7 +22,6 @@
 @property (nonatomic, strong) NSString *shortDescription;
 @property (nonatomic, strong) NSArray *instructions;
 @property (nonatomic, strong) NSArray *longDescription;
-@property (nonatomic, strong) NSArray *boosterDescription;
 @property (nonatomic, strong) NSArray *ingredients;
 @property (nonatomic, strong) NSString *imageName;
 @property (nonatomic, strong) NSMutableDictionary *totalNutrients;
@@ -43,7 +42,9 @@
 + (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
 + (NSArray*) favoriteRecipes;
 + (void) removeRecipeFromFavoritesUsingRecipeName: (NSString*) recipeName;
-+ (NSArray*) allRecipesFromPlist;
++ (NSArray*) recipeMaster;
+
+
 
 
 @end

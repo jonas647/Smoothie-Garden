@@ -42,6 +42,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
+    
+    //Set the starting point for the scroller view below the search bar
+    //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
+    
+    //This will also solve the problem with wrong picture for search result table view
+    
     imageParallaxEffectFactor = 15;
     
     [self setupActivityIndicator]; //Setup of the activity indicator programmatically
@@ -97,6 +104,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    //Better to have this in DidAppear instead of DidLoad to show activity indicator for user
+    self.recipes = [Recipe recipeMaster];
+    allRecipes = self.recipes;
+    
+    thumbnailImages = [[NSMutableDictionary alloc]init];
+    for (Recipe *r in self.recipes) {
+        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+        [thumbnailImages setObject:tempImage forKey:r.recipeName];
+    }
+    
     
     //Reset the navigation bar, set back to being shown
     //Is hidden in the detailed recipe view
@@ -117,12 +134,11 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     
-    //Validate on what tab bar item is chosen to select what data to show
-    //This must be in view did appear as the selected index isn't set in the view will appear
+    NSLog(@"Recipe view did appear");
     
-    self.recipes = [Recipe allRecipesFromPlist];
-    allRecipes = self.recipes;
     
+    
+    /*
     [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     
     //Set the starting point for the scroller view below the search bar
@@ -134,6 +150,7 @@
         UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
         [thumbnailImages setObject:tempImage forKey:r.recipeName];
     }
+     */
     
     //Update the font to be used in the table views. Based on size.
     //TODO
@@ -141,6 +158,8 @@
     //Reload the view to get the proper recipes showing
     //[self.tableView reloadData];
     [self sortAndReloadTable];
+    
+    NSLog(@"View did appear finished");
 }
 
 - (void)didReceiveMemoryWarning {

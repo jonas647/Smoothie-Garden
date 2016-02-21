@@ -8,6 +8,10 @@
 
 #import "NutrientCatalog.h"
 
+//NSCoding
+#define NSCoding_NutrientValues @"NutrientValues"
+#define NSCoding_MeasuringUnit @"Unit"
+
 @implementation NutrientCatalog
 
 
@@ -96,6 +100,25 @@
 - (int) numberOfNutrients {
     
     return (int)[self.nutrientValues count];
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    
+    if(self = [super init]) {
+        
+        [self setNutrientValues:[aDecoder decodeObjectForKey:NSCoding_NutrientValues]];
+        [self setMeasuringUnit:[aDecoder decodeObjectForKey:NSCoding_MeasuringUnit]];
+        
+    }
+    
+    return self;
+    
+}
+- (void) encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:self.nutrientValues forKey:NSCoding_NutrientValues];
+    [aCoder encodeObject:self.measuringUnit forKey:NSCoding_MeasuringUnit];
+    
 }
 
 @end

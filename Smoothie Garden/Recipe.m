@@ -10,8 +10,19 @@
 //Define the nutrients
 #define NUTRIENT_ENERGY @"Energy"
 
-#define TAB_BAR_ALL 1000
-#define TAB_BAR_FAV 1001
+//NSCoding macros
+#define NSCoding_RecipeType @"rType"
+#define NSCoding_RecipeCategory @"rCategory"
+#define NSCoding_Favorite @"rFavorite"
+#define NSCoding_Sorting @"rSorting"
+#define NSCoding_RecipeName @"rName"
+#define NSCoding_ShortDescription @"rShortDescription"
+#define NSCoding_LongDescription @"rLongDescription"
+#define NSCoding_Instructions @"rInstructions"
+#define NSCoding_Ingredients @"rIngredients"
+#define NSCoding_ImageName @"rImageName"
+#define NSCoding_TotalNutrients @"rTotalNutrients"
+
 
 #import "Recipe.h"
 #import "Ingredient.h"
@@ -20,12 +31,79 @@
 @implementation Recipe
 
 #pragma mark - Load Recipes
-+ (NSArray*) allRecipesFromPlist {
 
++ (NSArray*) recipeMaster {
+    
+    if ([self shouldUpdateRecipePersistentStore]) {
+        
+        [self saveRecipesToPersistentStore];
+    }
+    
+    return [self allRecipesFromPersistentStore];
+}
+
++ (BOOL) shouldUpdateRecipePersistentStore {
+    
+    //If the version has never been saved then load recipes
+    if(![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:@"RecipeVersion"]){
+        return YES;
+    } else {
+        //Check what version of the recipes that are saved
+        
+        NSString *filepathToRecipeMaster = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
+        NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeMaster];
+        
+        int versionOfRecipeList = [[recipeDictionary objectForKey:@"Version"]intValue];
+        int currentVersion = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"RecipeVersion"];
+        //If the version is lower than the last updated plist then load the recipes
+        if (currentVersion < versionOfRecipeList) {
+            
+            return YES;
+        } else {
+            
+            return NO;
+        }
+    }
+}
+
++ (void) saveRecipesToPersistentStore {
+    
     //The plist with the recipe directory
     NSString *filepathToRecipeMaster = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
     NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeMaster];
     
+    //Load all the recipes into array
+    NSArray *recipes = [self allRecipesFromDictionary:recipeDictionary];
+    
+    //Load the version number
+    int version;
+    if ([recipeDictionary objectForKey:@"Version"]) {
+        version = [[recipeDictionary objectForKey:@"Version"]intValue];
+    } else {
+        NSLog(@"No version information in plist");
+    }
+    
+    //Save to NSUserDefault
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:recipes];
+    [defaults setObject:data forKey:@"SavedRecipes"];
+    [defaults setObject:[NSNumber numberWithInt:version] forKey:@"RecipeVersion"];
+    [defaults synchronize];
+
+}
+
++ (NSArray*) allRecipesFromPersistentStore {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [defaults objectForKey:@"SavedRecipes"];
+    NSArray *recipeArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    [defaults synchronize];
+    
+    return recipeArray;
+}
+
++ (NSArray*) allRecipesFromDictionary: (NSDictionary*) recipeDictionary {
+
     //The plist with the recipe translation depending on the language of the device
     NSDictionary *localizedRecipeDescriptions = [Recipe localizedRecipeDescriptions];
     
@@ -35,134 +113,136 @@
         
         Recipe *newRecipe = [[Recipe alloc]init];
         
-        NSDictionary *tempRecipeDictionary = [recipeDictionary objectForKey:name];
-        
-        //Update the recipe attributes from the global plist
-        if ([tempRecipeDictionary objectForKey:@"RecipeType"]) {
-            [newRecipe setRecipeType:[[tempRecipeDictionary objectForKey:@"RecipeType"]intValue]];
-        } else {
-            NSLog(@"Recipe type missing for %@", name);
-        }
-        if ([tempRecipeDictionary objectForKey:@"RecipeCategory"]) {
-            [newRecipe setRecipeCategory:[[tempRecipeDictionary objectForKey:@"RecipeCategory"]intValue]];
-        } else {
-            NSLog(@"Recipe category missing for %@", name);
-        }
-        if ([tempRecipeDictionary objectForKey:@"ImageName"]) {
-            [newRecipe setImageName:[tempRecipeDictionary objectForKey:@"ImageName"]];
-        } else {
-            NSLog(@"Image name missing for %@", name);
-        }
-        if ([tempRecipeDictionary objectForKey:@"Sorting"]) {
-            [newRecipe setSorting:[[tempRecipeDictionary objectForKey:@"Sorting"]intValue]];
-        } else {
-            NSLog(@"Sorting missing for %@", name);
-        }
-        
-        //Update the recipe attribtues from the localized file
-        NSDictionary *localizedDescriptionsForNewRecipe = [localizedRecipeDescriptions objectForKey:name];
-        
-        if ([localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]) {
-            [newRecipe setRecipeName:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]];
-        } else {
-            NSLog(@"Localized name missing for %@", name);
-        }
-        if ([localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]) {
-            [newRecipe setShortDescription:[localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]];
-        } else {
-            NSLog(@"Localized short desc missing for %@", name);
-        }
-        if ([localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]) {
-            [newRecipe setLongDescription:[NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]]];
-        } else {
-            NSLog(@"Localized long desc missing for %@", name);
-        }
-        if ([localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]) {
-            newRecipe.instructions = [NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]];
-        } else {
-            NSLog(@"Localized instructions missing for %@", name);
-        }
-        
-        //Loop all the ingredient names for the recipe from the plist and add the ingredient to the recipe
-        NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
-        NSDictionary *ingredientDictionary;
-        
-        if ([[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"]) {
-            ingredientDictionary = [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"];
-        }
-        
-        for (NSDictionary *dic in ingredientDictionary) {
+        //Need to check if it's a nsdictionary as the version is saved in the dictionary as well
+        if ([[recipeDictionary objectForKey:name]isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *tempRecipeDictionary = [recipeDictionary objectForKey:name];
             
-            BOOL isOptional;
-            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]) {
-                isOptional =[[[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]boolValue];
+            //Update the recipe attributes from the global plist
+            if ([tempRecipeDictionary objectForKey:@"RecipeType"]) {
+                [newRecipe setRecipeType:[[tempRecipeDictionary objectForKey:@"RecipeType"]intValue]];
             } else {
-                NSLog(@"Optional flag not set for: %@", dic);
+                NSLog(@"Recipe type missing for %@", name);
             }
-            float quantity;
-            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]) {
-                quantity = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]floatValue];
+            if ([tempRecipeDictionary objectForKey:@"RecipeCategory"]) {
+                [newRecipe setRecipeCategory:[[tempRecipeDictionary objectForKey:@"RecipeCategory"]intValue]];
             } else {
-                NSLog(@"Quantity not set for: %@", dic);
+                NSLog(@"Recipe category missing for %@", name);
             }
-            
-            NSString *ingredientType;
-            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Type"]) {
-                ingredientType = [[ingredientDictionary objectForKey:dic]objectForKey:@"Type"];
+            if ([tempRecipeDictionary objectForKey:@"ImageName"]) {
+                [newRecipe setImageName:[tempRecipeDictionary objectForKey:@"ImageName"]];
             } else {
-                NSLog(@"Type not set for: %@", dic);
+                NSLog(@"Image name missing for %@", name);
             }
-            
-            NSString *measurement;
-            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"]) {
-                measurement = [[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"];
+            if ([tempRecipeDictionary objectForKey:@"Sorting"]) {
+                [newRecipe setSorting:[[tempRecipeDictionary objectForKey:@"Sorting"]intValue]];
             } else {
-                NSLog(@"Measurement not set for: %@", dic);
+                NSLog(@"Sorting missing for %@", name);
             }
             
-            int sorting;
-            if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Sorting"]) {
-                sorting = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Sorting"]intValue];
+            //Update the recipe attribtues from the localized file
+            NSDictionary *localizedDescriptionsForNewRecipe = [localizedRecipeDescriptions objectForKey:name];
+            
+            if ([localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]) {
+                [newRecipe setRecipeName:[localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]];
             } else {
-                NSLog(@"Sorting sequence not set for: %@", dic);
+                NSLog(@"Localized name missing for %@", name);
+            }
+            if ([localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]) {
+                [newRecipe setShortDescription:[localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]];
+            } else {
+                NSLog(@"Localized short desc missing for %@", name);
+            }
+            if ([localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]) {
+                [newRecipe setLongDescription:[NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"LongDescription"]]];
+            } else {
+                NSLog(@"Localized long desc missing for %@", name);
+            }
+            if ([localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]) {
+                newRecipe.instructions = [NSArray arrayWithArray:[localizedDescriptionsForNewRecipe objectForKey:@"Instructions"]];
+            } else {
+                NSLog(@"Localized instructions missing for %@", name);
             }
             
+            //Loop all the ingredient names for the recipe from the plist and add the ingredient to the recipe
+            NSMutableArray *tempIngredients = [[NSMutableArray alloc]init];
+            NSDictionary *ingredientDictionary;
             
-            Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:ingredientType andMeasure:measurement andOptional:isOptional andSorting:sorting];
+            if ([[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"]) {
+                ingredientDictionary = [[recipeDictionary objectForKey:name]objectForKey:@"Ingredients"];
+            }
             
+            for (NSDictionary *dic in ingredientDictionary) {
+                
+                BOOL isOptional;
+                if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]) {
+                    isOptional =[[[ingredientDictionary objectForKey:dic]objectForKey:@"Optional"]boolValue];
+                } else {
+                    NSLog(@"Optional flag not set for: %@", dic);
+                }
+                float quantity;
+                if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]) {
+                    quantity = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Quantity"]floatValue];
+                } else {
+                    NSLog(@"Quantity not set for: %@", dic);
+                }
+                
+                NSString *ingredientType;
+                if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Type"]) {
+                    ingredientType = [[ingredientDictionary objectForKey:dic]objectForKey:@"Type"];
+                } else {
+                    NSLog(@"Type not set for: %@", dic);
+                }
+                
+                NSString *measurement;
+                if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"]) {
+                    measurement = [[ingredientDictionary objectForKey:dic]objectForKey:@"Measurement"];
+                } else {
+                    NSLog(@"Measurement not set for: %@", dic);
+                }
+                
+                int sorting;
+                if ([[ingredientDictionary objectForKey:dic]objectForKey:@"Sorting"]) {
+                    sorting = [[[ingredientDictionary objectForKey:dic]objectForKey:@"Sorting"]intValue];
+                } else {
+                    NSLog(@"Sorting sequence not set for: %@", dic);
+                }
+                
+                
+                Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:ingredientType andMeasure:measurement andOptional:isOptional andSorting:sorting];
+                
+                
+                [tempIngredients addObject:newIngredient];
+                
+            }
             
-            [tempIngredients addObject:newIngredient];
+            //Sort the array by sorting order
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
+            NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
             
+            //Store the ingredients for the recipe
+            NSArray *sortedIngredients = [tempIngredients sortedArrayUsingDescriptors:sortDescriptors];
+            newRecipe.ingredients = sortedIngredients;
+            
+            [newRecipe setupAllNutrientInformationForRecipe];
+            
+            //Flag the recipe as liked or not
+            //TODO
+            //Change the current handling of likes to something better... have a globally saved recipe list that's loaded into memory on start-up?
+            newRecipe.favorite = NO;
+            for (NSString *recipeTitle in [Recipe favoriteRecipes]) {
+                if ([newRecipe.recipeName isEqualToString:recipeTitle]) {
+                    newRecipe.favorite = YES;
+                }
+            }
+            
+            if (newRecipe != nil) {
+                
+                [tempRecipes addObject:newRecipe];
+            } else {
+                NSLog(@"Can't add recipe to db");
+            }
         }
-        
-        //Sort the array by sorting order
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-        
-        //Store the ingredients for the recipe
-         NSArray *sortedIngredients = [tempIngredients sortedArrayUsingDescriptors:sortDescriptors];
-        newRecipe.ingredients = sortedIngredients;
-        
-        [newRecipe setupAllNutrientInformationForRecipe];
-        
-        //Flag the recipe as liked or not
-        //TODO
-        //Change the current handling of likes to something better... have a globally saved recipe list that's loaded into memory on start-up?
-        newRecipe.favorite = NO;
-        for (NSString *recipeTitle in [Recipe favoriteRecipes]) {
-            if ([newRecipe.recipeName isEqualToString:recipeTitle]) {
-                newRecipe.favorite = YES;
-            }
-        }
-        
-        if (newRecipe != nil) {
-            [tempRecipes addObject:newRecipe];
-        } else {
-            NSLog(@"Can't add recipe to db");
-        }
-        
     }
-    
     
     return tempRecipes;
     
@@ -457,6 +537,43 @@
     
     self.totalNutrients = newNutrientParentDictionary;
     
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    
+    if(self = [super init]) {
+        
+        [self setRecipeType:[aDecoder decodeIntForKey:NSCoding_RecipeType]];
+        [self setRecipeCategory:[aDecoder decodeIntForKey:NSCoding_RecipeCategory]];
+        [self setFavorite:[aDecoder decodeBoolForKey:NSCoding_Favorite]];
+        [self setSorting:[aDecoder decodeIntForKey:NSCoding_Sorting]];
+        [self setRecipeName:[aDecoder decodeObjectForKey:NSCoding_RecipeName]];
+        [self setShortDescription:[aDecoder decodeObjectForKey:NSCoding_ShortDescription]];
+        [self setLongDescription:[aDecoder decodeObjectForKey:NSCoding_LongDescription]];
+        [self setInstructions:[aDecoder decodeObjectForKey:NSCoding_Instructions]];
+        [self setIngredients:[aDecoder decodeObjectForKey:NSCoding_Ingredients]];
+        [self setImageName:[aDecoder decodeObjectForKey:NSCoding_ImageName]];
+        [self setTotalNutrients:[aDecoder decodeObjectForKey:NSCoding_TotalNutrients]];
+        
+    }
+    
+    return self;
+    
+}
+- (void) encodeWithCoder:(NSCoder *)aCoder {
+
+    [aCoder encodeInt:self.recipeType forKey:NSCoding_RecipeType];
+    [aCoder encodeInt:self.recipeCategory forKey:NSCoding_RecipeCategory];
+    [aCoder encodeBool:self.favorite forKey:NSCoding_Favorite];
+    [aCoder encodeInt:self.sorting forKey:NSCoding_Sorting];
+    [aCoder encodeObject:self.recipeName forKey:NSCoding_RecipeName];
+    [aCoder encodeObject:self.shortDescription forKey:NSCoding_ShortDescription];
+    [aCoder encodeObject:self.longDescription forKey:NSCoding_LongDescription];
+    [aCoder encodeObject:self.instructions forKey:NSCoding_Instructions];
+    [aCoder encodeObject:self.ingredients forKey:NSCoding_Ingredients];
+    [aCoder encodeObject:self.imageName forKey:NSCoding_ImageName];
+    [aCoder encodeObject:self.totalNutrients forKey:NSCoding_TotalNutrients];
+
 }
 
 @end
