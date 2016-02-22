@@ -273,5 +273,107 @@
 			<string>Mix all the ingredients in a blender on high speed until smooth</string>
 		</array>
 	</dict>
+	<key>Recipe17</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Mango rosehip</string>
+		<key>ShortDescription</key>
+		<string>This yellow smoothie is packed with vitamin C and great served as breakfast</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This yellow smoothie is packed with vitamin C and great served as breakfast.</string>
+			<string>Rosehip has a fresh taste that goes well together with the sweetness from the banana and mango.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe18</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Valentine</string>
+		<key>ShortDescription</key>
+		<string>Drinking this smoothie is a great and delicious way to get plenty of energy, boosting vitamins and healthy fats</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Drinking this smoothie is a great and delicious way to get plenty of energy, boosting vitamins and healthy fats</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe19</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Sweet strawberry pie</string>
+		<key>ShortDescription</key>
+		<string>This smoothie is high in protein, antioxidants and has anti-inflammatory properties</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Cinnamon is known to lower blood sugar levels and for being anti- bacterial.</string>
+			<string>This smoothie is also high in protein, antioxidants and has anti-inflammatory properties, enjoy without the guilt! </string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Start making the mango sauce by mixing the mango with the honey.</string>
+			<string>Mix the rest of the ingredients in a blender on high speed until smooth.</string>
+			<string>Pour the smoothie over the mango sauce and serve right away.</string>
+		</array>
+	</dict>
+	<key>Recipe20</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Cashew and raspberry smoothie</string>
+		<key>ShortDescription</key>
+		<string>This creamy and rich smoothie is full of proteins, healthy fats and energizing vitamins</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This creamy and rich smoothie is full of proteins, healthy fats and energizing vitamins. Perfect after a workout or as a luxurious breakfast.</string>
+			<string>Make sure you make some extra chia jam while you&apos;re at it and serve it together with pancakes, porridge or on toasts. Delicious!</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Start by preparing the chia and raspberry jam. Mix the raspberries and then add the chia seeds and honey. Let it set for 15 minutes.</string>
+			<string>Mix all the other ingredients in a blender on high speed until smooth.</string>
+			<string>Fill a glass halfway with the smoothie and then add a layer of raspberry jam before filling the glass up with the rest of the smoothie.</string>
+			<string>Drink it with a straw or eat with a spoon.</string>
+		</array>
+	</dict>
+	<key>Recipe21</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Tropical passion</string>
+		<key>ShortDescription</key>
+		<string>A yellow tropical smoothie with lots of vitamins and minerals that nourishes skin, nails and hair.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>A yellow tropical smoothie with lots of minerals and vitamins that nourishes skin, nails and hair. Super delicious and great for that inner glow and extra energy.</string>
+			<string>Make sure you make some extra chia jam while you&apos;re at it and serve it together with pancakes, porridge or on toasts. Delicious!</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Scoop out the passion fruit in a glass.</string>
+			<string>Mix all the other ingredients in a blender on high speed until smooth.</string>
+			<string>Pour the smoothie over the passion fruit.</string>
+		</array>
+	</dict>
+	<key>Recipe22</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Acai bowl</string>
+		<key>ShortDescription</key>
+		<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Acai bowls are super trendy right now - and for a very good reason. Packed with vitamins and antioxidants, acai bowls are the perfect meal. </string>
+			<string>A lot of the fun with smoothiebowls lies in the toppings where the options are endless. Experiment with nut butter, fresh fruit and berries, seeds or whatever you have at home in your pantry, fridge or garden.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth. Add topping before serving. </string>
+		</array>
+	</dict>
 </dict>
 </plist>

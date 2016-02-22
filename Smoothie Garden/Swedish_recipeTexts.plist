@@ -274,5 +274,107 @@ Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten
 			<string>Mixa på hög hastighet till krämig konsistens</string>
 		</array>
 	</dict>
+	<key>Recipe17</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Mango rosehip</string>
+		<key>ShortDescription</key>
+		<string>En krämig och frisk smoothie packad med C-vitamin</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Det här är en krämig och frisk smoothie packad med C-vitamin.</string>
+			<string>Nypon har en frisk och syrlig smak som passar utmärkt med sötman i bananen och mangon. </string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa på hög hastighet till krämig konsistens</string>
+		</array>
+	</dict>
+	<key>Recipe18</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Valentine</string>
+		<key>ShortDescription</key>
+		<string>Stärk immunförsvaret och tillför kroppen massor med näring, energi och vitaminer med den här söt-syrliga smoothien.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Stärk immunförsvaret och tillför kroppen massor med näring, energi och vitaminer med den här söt-syrliga smoothien.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa på hög hastighet till krämig konsistens</string>
+		</array>
+	</dict>
+	<key>Recipe19</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Sweet strawberry pie</string>
+		<key>ShortDescription</key>
+		<string>Den här fylliga och krämiga smoothien är rik på proteiner, vitaminer och nyttiga fetter</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Kanel är känt för sina hälsofrämjande egenskaper, kryddan verkar exempelvis blodtryckssänkande och har antibakteriella egenskaper.</string>
+			<string>Den här fylliga och krämiga smoothien är dessutom rik på proteiner, vitaminer och nyttiga fetter och gör att du håller dig mätt länge.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Börja att göra mangosåsen genom att mixa mango och honung.</string>
+			<string>Mixa alla övriga ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Häll smoothien över mangosåsen och drick direkt.</string>
+		</array>
+	</dict>
+	<key>Recipe20</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Cashew and raspberry smoothie</string>
+		<key>ShortDescription</key>
+		<string>En krämig och fyllig smoothie som är full av proteiner, nyttiga fetter och energigivande vitaminer.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En krämig och fyllig smoothie som är full av proteiner, nyttiga fetter och energigivande vitaminer.</string>
+			<string>Perfekt som återhämtning efter träningen eller som en mättande och lyxig frukost. Se till att göra lite extra chiasylt när du ändå är igång och ät till pannkakor, gröt eller på en toast.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Börja med chia- och hallonsylten. Mixa hallonen och tillsätt sedan chiafrön och honung. Blanda och låt stå svalt i ca 15 minuter.</string>
+			<string>Blanda resterande ingredienser i en mixer på hög hastighet till krämig konsistens.</string>
+			<string>Lägg ett lager av chia- och hallonsylt i mitten av glaset mellan smoothien. Drick med sugrör eller ät med sked.</string>
+		</array>
+	</dict>
+	<key>Recipe21</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Tropical passion</string>
+		<key>ShortDescription</key>
+		<string>En tropisk gul smoothie full av vitaminer och mineraler som när hår, hud och naglar.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En tropisk gul smoothie full av vitaminer och mineraler som när hår, hud och naglar. </string>
+			<string>Perfekt som återhämtning efter träningen eller som en mättande och lyxig frukost. Se till att göra lite extra chiasylt när du ändå är igång och ät till pannkakor, gröt eller på en toast.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Gröp ur passionsfrukten i ett glas.</string>
+			<string>Mixa alla andra ingredienser  på hög hastighet till krämig konsistens.</string>
+			<string>Häll smoothien över passionsfrukten.</string>
+		</array>
+	</dict>
+	<key>Recipe22</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Acai bowl</string>
+		<key>ShortDescription</key>
+		<string>Acai bowls är både goda och fyllda med vitaminer och antioxidanter vilket gör den till den perfekta måltiden</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Acai bowls är både goda och fyllda med vitaminer och antioxidanter. </string>
+			<string>Mycket av det roliga med smoothie bowls ligger i toppingen där valmöjligheterna är oändliga. Experimentera med nötsmör,färska bär och frukter, frön eller gojibär.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa alla ingredienser på hög hastighet till krämig och tjock konsistens. </string>
+			<string>Servera med valfri topping.</string>
+		</array>
+	</dict>
 </dict>
 </plist>

@@ -167,6 +167,7 @@
     //Converted qty
     float convertedQuantity;
     
+    
     //Depending on US/Metric, add the measure to the quantity
     switch (usedMeasurementMethod) {
         case MEASUREMENT_METRIC:
@@ -186,7 +187,8 @@
         case MEASUREMENT_US_CUSTOMARY_UNITS:
             //If US customary. Then we need to convert this before returning the string
             
-            convertedQuantity = [self convertUsingMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
+            
+            qtyMeasure = [self convertUsingMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
             qtyMeasure = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:convertedQuantity]];
             
             if (self.optional) {
@@ -325,7 +327,7 @@
 
 #pragma mark - Convertion of measurement
 
-- (float) convertUsingMeasurementMethod: (int) usedMeasurementMethod {
+- (NSString*) convertUsingMeasurementMethod: (int) usedMeasurementMethod {
     
     //Create this mid-method to be able to add more measurements in the future. Are there any more?
     
@@ -342,15 +344,16 @@
     }
 }
 
-- (float) quantity: (float) qty usingUSCustomaryUnitsFor: (NSString*) measureType {
-    
+- (NSString*) quantity: (float) qty usingUSCustomaryUnitsFor: (NSString*) measureType {
     
     //If the measure type is converted then convert to US Customary
     //If not, just return the same string as for metric
     if ([self isMeasureTypeConverted]) {
+        
         float metricMeasure = qty;
         float usMeasure;
         NSString *newMeasureType = measureType;
+        
         if ([measureType isEqualToString:METRIC_deciliter]) {
             //Convert deciliter into cups
             usMeasure = metricMeasure * 0.42;
@@ -372,16 +375,17 @@
         } else
             NSLog(@"No US equivalent for %@", measureType);
         
-        //Round the value
-        NSLog(@"Us measure: %f", usMeasure);
-        float roundedValue = round(2.0f * usMeasure) / 2.0f;
-        NSLog(@"Rounded: %f", roundedValue);
+        //Convert with nsnumber formatter
         
-        return roundedValue;
+        
+        
+        //Round the value
+        NSString *roundedValue = [self roundedNumberFrom:usMeasure];
+        
+        return [NSString stringWithFormat:@"%@ %@", roundedValue, newMeasureType];
     } else {
-        return qty;
+        return [NSString stringWithFormat:@"%@ %@", [self roundedNumberFrom:qty], measureType];
     }
-    
     
 }
 

@@ -72,6 +72,23 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    
+    
+    _tableView.frame = [self newFrameForUIView:_tableView];
+    [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
+    
+    //Reset the navigation bar, set back to being shown
+    //Is hidden in the detailed recipe view
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
     //Load here to show user view before recipes are fully loaded
     allRecipes = [Recipe recipeMaster];
     
@@ -89,18 +106,6 @@
         }
         
     }
-    
-    _tableView.frame = [self newFrameForUIView:_tableView];
-    [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
-    
-    //Reset the navigation bar, set back to being shown
-    //Is hidden in the detailed recipe view
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.translucent = NO;
-    
-    //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    
 }
 
 - (void)didReceiveMemoryWarning {

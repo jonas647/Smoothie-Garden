@@ -104,15 +104,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    //Better to have this in DidAppear instead of DidLoad to show activity indicator for user
-    self.recipes = [Recipe recipeMaster];
-    allRecipes = self.recipes;
     
-    thumbnailImages = [[NSMutableDictionary alloc]init];
-    for (Recipe *r in self.recipes) {
-        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        [thumbnailImages setObject:tempImage forKey:r.recipeName];
-    }
     
     
     //Reset the navigation bar, set back to being shown
@@ -134,9 +126,15 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     
-    NSLog(@"Recipe view did appear");
+    //Better to have this in DidAppear instead of DidLoad to show activity indicator for user
+    self.recipes = [Recipe recipeMaster];
+    allRecipes = self.recipes;
     
-    
+    thumbnailImages = [[NSMutableDictionary alloc]init];
+    for (Recipe *r in self.recipes) {
+        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+        [thumbnailImages setObject:tempImage forKey:r.recipeName];
+    }
     
     /*
     [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
@@ -158,8 +156,7 @@
     //Reload the view to get the proper recipes showing
     //[self.tableView reloadData];
     [self sortAndReloadTable];
-    
-    NSLog(@"View did appear finished");
+
 }
 
 - (void)didReceiveMemoryWarning {

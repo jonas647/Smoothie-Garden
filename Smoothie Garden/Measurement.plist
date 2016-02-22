@@ -72,5 +72,12 @@
 		<key>sv</key>
 		<string>blad</string>
 	</dict>
+	<key>litre</key>
+	<dict>
+		<key>en</key>
+		<string>l</string>
+		<key>sv</key>
+		<string>l</string>
+	</dict>
 </dict>
 </plist>
