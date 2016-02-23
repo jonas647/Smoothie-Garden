@@ -18,6 +18,7 @@
 @implementation NutrientDetailedViewController
 {
     NSArray *dictionaryKeys;
+    NSArray *localizedKeys;
 }
 
 - (void)viewDidLoad {
@@ -32,12 +33,42 @@
     NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
     [tempKeys removeObject:@"Energy"];
     
-    //Sort array in alphabetical order and set that as the dictionary keys
-    dictionaryKeys = [tempKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    //Handle localization for nutrients if english isn't used on the phone
+    if (![[self currentLanguage] isEqualToString: @"en"] ) {
+        
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        NSMutableArray *tempLocalizedKeys = [[NSMutableArray alloc]init];
+        for (NSString *tempNutrientKey in tempKeys) {
+            
+            //Set an object that's the master key for the localized key
+            NSString *localizedKey = [self localizedNameIn:[self currentLanguage] forNutrient:tempNutrientKey];
+            [dic setObject:tempNutrientKey forKey:localizedKey];
+            
+            //Add the localized key
+            [tempLocalizedKeys addObject:localizedKey];
+        }
+        
+        //Create the localized sorted array
+        localizedKeys = [tempLocalizedKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        
+        //Sort the master key in the same order as localized key
+        NSMutableArray *tempMasterKeys = [[NSMutableArray alloc]init];
+        for (NSString *localizedKey in localizedKeys) {
+            
+            NSString *masterKey = [dic objectForKey:localizedKey];
+            [tempMasterKeys addObject:masterKey];
+        }
+        
+        dictionaryKeys = [NSArray arrayWithArray:tempMasterKeys];
+    } else {
+        
+        //Sort the array of keys alphabetically
+        dictionaryKeys = [tempKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    }
     
 }
 
-- (NSString*) localizedNameForNutrient: (NSString*) nutrientName {
+- (NSString*) localizedNameIn: (NSString*) language forNutrient: (NSString*) nutrientName {
     
     //Get the plist that has all the nutrient names
     NSString *filepathToNutrients = [[NSBundle mainBundle] pathForResource:@"NutritionTranslation" ofType:@"plist"];
@@ -46,17 +77,12 @@
     //Dictionary of the specific nutrient
     NSDictionary *thisNutrient = [nutrientTextDictionary objectForKey:nutrientName];
     
-    //Current language
-    NSString *language = [self currentLanguage];
-    
     if ([thisNutrient objectForKey:language]) {
         return [thisNutrient objectForKey:language];
     } else {
         NSLog(@"No translation for %@", nutrientName);
         return nutrientName;
     }
-    
-    
 }
 
 - (NSString*) currentLanguage {
@@ -106,7 +132,7 @@
         
         NSString *nutrient = [dictionaryKeys objectAtIndex:indexPath.row];
         
-        nutrientTitle.text = [self localizedNameForNutrient:nutrient]; //This is not good for performance. TODO - change this
+        nutrientTitle.text = [localizedKeys objectAtIndex:indexPath.row]; //This is not good for performance. TODO - change this
         nutrientVolume.text = [self.selectedRecipe volumeStringForNutrient:nutrient];
         nutrientDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:nutrient];
     }

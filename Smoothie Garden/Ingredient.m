@@ -370,9 +370,6 @@
     } else if ([measureType isEqualToString:METRIC_centimeter]) {
         
         newMeasureType = USCUSTOMARY_inch;
-        
-    } else {
-        NSLog(@"No US equivalent for %@", measureType);
     }
     
     
