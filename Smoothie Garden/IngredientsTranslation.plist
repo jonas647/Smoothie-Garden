@@ -196,14 +196,14 @@
 			<key>sv</key>
 			<string>persilja</string>
 			<key>en</key>
-			<string>persilja</string>
+			<string>parsley</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
 			<string>persilja</string>
 			<key>en</key>
-			<string>persilja</string>
+			<string>parsley</string>
 		</dict>
 	</dict>
 	<key>Carrot</key>
@@ -271,7 +271,7 @@
 			<key>sv</key>
 			<string>frysta blåbär</string>
 			<key>en</key>
-			<string>frozen blueberry</string>
+			<string>frozen blueberries</string>
 		</dict>
 	</dict>
 	<key>Blackberries</key>
@@ -288,7 +288,7 @@
 			<key>sv</key>
 			<string>frysta björnbär</string>
 			<key>en</key>
-			<string>frozen blackberry</string>
+			<string>frozen blackberries</string>
 		</dict>
 	</dict>
 	<key>Lingonberries</key>
@@ -305,7 +305,7 @@
 			<key>sv</key>
 			<string>frysta lingon</string>
 			<key>en</key>
-			<string>frozen lingonberry</string>
+			<string>frozen lingonberries</string>
 		</dict>
 	</dict>
 	<key>Almond</key>
@@ -320,9 +320,9 @@
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>mandel</string>
+			<string>mandlar</string>
 			<key>en</key>
-			<string>almond</string>
+			<string>almonds</string>
 		</dict>
 	</dict>
 	<key>Date</key>
@@ -347,6 +347,23 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
+			<string>hallon</string>
+			<key>en</key>
+			<string>raspberries</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>hallon</string>
+			<key>en</key>
+			<string>raspberries</string>
+		</dict>
+	</dict>
+	<key>Frozen Raspberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
 			<string>frysta hallon</string>
 			<key>en</key>
 			<string>frozen raspberries</string>
@@ -356,7 +373,7 @@
 			<key>sv</key>
 			<string>frysta hallon</string>
 			<key>en</key>
-			<string>frozen raspberry</string>
+			<string>frozen raspberries</string>
 		</dict>
 	</dict>
 	<key>Raw Cacao</key>
@@ -507,9 +524,9 @@
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>fryst jordgubbe</string>
+			<string>frysta jordgubbar</string>
 			<key>en</key>
-			<string>frozen strawberry</string>
+			<string>frozen strawberries</string>
 		</dict>
 	</dict>
 	<key>Apple Juice</key>
@@ -558,9 +575,9 @@
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>torkat gojibär</string>
+			<string>torkade gojibär</string>
 			<key>en</key>
-			<string>dried gojiberry</string>
+			<string>dried gojiberries</string>
 		</dict>
 	</dict>
 	<key>Dried Plums</key>
@@ -653,19 +670,19 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>grapefrukt</string>
+			<string>grapefrukt (juice)</string>
 			<key>en</key>
-			<string>grape fruits</string>
+			<string>grape fruits (juice)</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>grapefrukt</string>
+			<string>grapefrukt (juice)</string>
 			<key>en</key>
-			<string>grape fruit</string>
+			<string>grape fruit (juice)</string>
 		</dict>
 	</dict>
-	<key>Rosehip</key>
+	<key>Rosehip Powder</key>
 	<dict>
 		<key>Pluralis</key>
 		<dict>
@@ -699,21 +716,21 @@
 			<string>cherry</string>
 		</dict>
 	</dict>
-	<key>Cashew Nuts</key>
+	<key>Cashew Nut</key>
 	<dict>
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>cashew-nötter</string>
+			<string>cashewnötter</string>
 			<key>en</key>
 			<string>cashew nuts</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>cashew-nöt</string>
+			<string>cashewnötter</string>
 			<key>en</key>
-			<string>cashew nut</string>
+			<string>cashew nuts</string>
 		</dict>
 	</dict>
 	<key>Coconut Oil</key>
@@ -738,16 +755,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>acai</string>
+			<string>fryst acai</string>
 			<key>en</key>
-			<string>acai</string>
+			<string>frozen acai</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>acai</string>
+			<string>fryst acai</string>
 			<key>en</key>
-			<string>acai</string>
+			<string>frozen acai</string>
 		</dict>
 	</dict>
 	<key>Chia Seeds tbsp</key>
@@ -755,16 +772,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>chia-frön</string>
+			<string>chiafrön</string>
 			<key>en</key>
 			<string>chia seeds</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>chia-frö</string>
+			<string>chiafrön</string>
 			<key>en</key>
-			<string>chia seed</string>
+			<string>chia seeds</string>
 		</dict>
 	</dict>
 	<key>Chia Seeds dl</key>
@@ -772,16 +789,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>chia-frön</string>
+			<string>chiafrön</string>
 			<key>en</key>
 			<string>chia seeds</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>chia-frö</string>
+			<string>chiafrön</string>
 			<key>en</key>
-			<string>chia seed</string>
+			<string>chia seeds</string>
 		</dict>
 	</dict>
 	<key>Almond Milk</key>

@@ -66,7 +66,7 @@
         //Create a new dictionary to hold the nutrient facts
         NSMutableDictionary *nutrientDic = [[NSMutableDictionary alloc]init];
         
-        if (nutrientDic) {
+        if (nutrientDic != nil) {
             [newNutrientDictionary setObject:nutrientDic forKey:dic];
         } else {
             NSLog(@"%@ doesn't exist", dic);
@@ -74,14 +74,14 @@
         
         //Set the new objects for the nutrient dictionary
         NSString *unitString;
-        if ([self.nutrientValues objectForKey:dic]) {
+        if ([self.nutrientValues objectForKey:dic] != nil) {
             unitString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Unit"];
         } else {
             NSLog(@"No unit found in nutrient values");
         }
         
         NSString *typeString;
-        if ([self.nutrientValues objectForKey:dic]) {
+        if ([self.nutrientValues objectForKey:dic] != nil) {
             typeString = [[self.nutrientValues objectForKey:dic]objectForKey:@"Type"];
         } else {
             NSLog(@"No type found in nutrient values");

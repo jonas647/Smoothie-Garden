@@ -15,6 +15,7 @@
 #import "SBGoogleAnalyticsHelper.h"
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
+#import "RecipeManager.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
 #import "NutrientFactPageViewRootViewController.h"
 
@@ -32,6 +33,8 @@
     float latestContentOffset;
     BOOL isLikeButtonTouchable;
     
+    UIButton *rightBarButton;
+    
 }
 
 - (void) awakeFromNib {
@@ -46,15 +49,31 @@
     recipeInstructions = self.selectedRecipe.instructions;
     recipeDescriptions = self.selectedRecipe.longDescription;
     
-    
     //If the recipe is one of the favorites, then make the like button selected
-    if ([self.selectedRecipe isRecipeFavorite]) {
+    if ([[RecipeManager sharedInstance]isRecipeFavorite:self.selectedRecipe]) {
         likeButton.selected = YES;
-    } else
-        NSLog(@"%@ not liked", self.selectedRecipe.recipeName);
+        [rightBarButton setSelected:YES];
+    }
     
     //Remove the title text from the back button (in the Detailed nutrient table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    
+    //Setup right bar button with custom image
+    UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    rightBarButton = customButton;
+    
+    UIImage *buttonImage = [UIImage imageNamed:@"Hearts-100.png"];
+    UIImage *selectedButtonImage = [UIImage imageNamed:@"Like Filled-100.png"];
+    [customButton setBackgroundImage:buttonImage  forState:UIControlStateNormal];
+    [customButton setBackgroundImage:selectedButtonImage  forState:UIControlStateSelected];
+    [customButton addTarget:self action:@selector(likeRecipe) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView: customButton];
+    
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+    
+    
     
     //Hide the navigation bar
     self.navigationController.navigationBar.translucent = YES;
@@ -114,7 +133,7 @@
     
     //TODO
     //Do this the proper way
-    [blankBackgroundToTop setConstant:452];
+    [blankBackgroundToTop setConstant:0.8*[UIScreen mainScreen].bounds.size.height];
     
 }
 
@@ -200,6 +219,7 @@
         
         UILabel *recipeQtyMeasure = (UILabel*)[cell viewWithTag:200];
         UILabel *recipeIngredientText = (UILabel*)[cell viewWithTag:201];
+        UILabel *separator = (UILabel*)[cell viewWithTag:202];
     
         Ingredient *ingredientForRow = [ingredients objectAtIndex:indexPath.row];
     
@@ -208,6 +228,11 @@
         
         recipeIngredientText.text = [ingredientForRow stringWithIngredientText];
         [recipeIngredientText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeIngredientText.font withSize:LABEL_SIZE_SMALL];
+        
+        //If it's a blank ingredient then make the separator transparent
+        if ([recipeIngredientText.text isEqualToString:@""]) {
+            [separator setTextColor:[UIColor clearColor]];
+        }
         
         
     } else if ([tmpTableView isEqual:recipeTableView]) {
@@ -360,6 +385,55 @@
 
 #pragma mark - Handle Recipe Favorites
 
+- (void) likeRecipe {
+  
+    
+    if (!isLikeButtonTouchable) {
+        //If the like button isn't touchable, then don't do anything
+        return;
+    }
+    
+    if (!likeButton.selected) {
+        
+        //Add recipe to the favorites. Run in background thread
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [[RecipeManager sharedInstance]addRecipeToFavorites:self.selectedRecipe];
+            
+        });
+        
+        
+        //Change the like button to selected
+        likeButton.selected = YES;
+        
+        rightBarButton.selected = YES;
+        
+        //Report the event to analytics
+        [SBGoogleAnalyticsHelper userLikedRecipeName:_selectedRecipe.recipeName];
+        
+    } else if (likeButton.selected){
+        //Remove recipe from favorites in background thread
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [[RecipeManager sharedInstance]removeRecipeFromFavorites:self.selectedRecipe];
+            
+        });
+        
+        //Change the like button to unselected
+        likeButton.selected = NO;
+        
+        rightBarButton.selected = NO;
+        
+        //Report to analytics
+        [SBGoogleAnalyticsHelper userDislikedRecipeName:_selectedRecipe.recipeName];
+    }
+    
+    //Set the like button to not touchable to make the user not press it to often, causing animation to mess up
+    isLikeButtonTouchable = NO;
+    
+    //Animate like if the like button is selected
+    [self animateLike:likeButton.selected];
+    
+}
+/*
 - (IBAction)likeRecipe:(id)sender {
     
     if (!isLikeButtonTouchable) {
@@ -375,6 +449,8 @@
         //Change the like button to selected
         likeButton.selected = YES;
         
+        rightBarButton.selected = YES;
+        
         //Report the event to analytics
         [SBGoogleAnalyticsHelper userLikedRecipeName:_selectedRecipe.recipeName];
         
@@ -384,6 +460,10 @@
         
         //Change the like button to unselected
         likeButton.selected = NO;
+        
+        rightBarButton.selected = NO;
+        
+        self.navigationItem.rightBarButtonItem.enabled = NO;
         
         //Report to analytics
         [SBGoogleAnalyticsHelper userDislikedRecipeName:_selectedRecipe.recipeName];
@@ -395,10 +475,7 @@
     //Set the like button to not touchable to make the user not press it to often, causing animation to mess up
     isLikeButtonTouchable = NO;
 }
-
-- (IBAction)nutritionFacts:(id)sender {
-}
-
+*/
 
 - (void) animateLike: (BOOL) like {
     

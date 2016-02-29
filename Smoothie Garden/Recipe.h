@@ -26,9 +26,10 @@
 @property (nonatomic, strong) NSString *imageName;
 @property (nonatomic, strong) NSMutableDictionary *totalNutrients;
 
-- (BOOL) isRecipeFavorite;
-- (void) addRecipeToFavorites;
-- (BOOL) isRecipeUnlocked;
+
+//- (BOOL) isRecipeFavorite;
+//- (void) addRecipeToFavorites;
+//- (BOOL) isRecipeUnlocked;
 - (NSString*) stringWithIngredients;
 - (NSArray*) allNutrientKeys;
 - (NSString*) volumeStringForNutrient: (NSString*) nutrient;
@@ -39,11 +40,14 @@
 - (int) numberOfNutrients;
 //- (NSDictionary*) allNutrientInformationForRecipe;
 
+/*
 + (void) setNewFavoriteRecipes: (NSArray*) newRecipes;
 + (NSArray*) favoriteRecipes;
 + (void) removeRecipeFromFavoritesUsingRecipeName: (NSString*) recipeName;
-+ (NSArray*) recipeMaster;
 
++ (NSArray*) recipeMaster;
+*/
+- (void) setupAllNutrientInformationForRecipe ;
 
 
 

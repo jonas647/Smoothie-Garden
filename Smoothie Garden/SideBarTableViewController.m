@@ -56,10 +56,12 @@
 }
 
 #pragma mark - Table view delegate
+/*
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.alpha = 0.9;
 }
+ */
 
 #pragma mark - Table view data source
 /*

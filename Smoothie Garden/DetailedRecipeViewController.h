@@ -45,6 +45,6 @@
 
 @property (nonatomic, strong) Recipe *selectedRecipe;
 
-- (IBAction)likeRecipe:(id)sender;
+//- (IBAction)likeRecipe:(id)sender;
 
 @end

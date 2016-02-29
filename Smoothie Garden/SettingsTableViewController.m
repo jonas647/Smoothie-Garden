@@ -15,9 +15,7 @@
 #import "SBActivityIndicatorView.h"
 #import "SBGoogleAnalyticsHelper.h"
 #import "Ingredient.h"
-
-
-#import "Recipe.h"
+#import "RecipeManager.h"
 
 @interface SettingsTableViewController ()
 
@@ -50,18 +48,23 @@
     
     //Update switch buttons
     
+    /*
+     //Not currently in use, user can't switch of basic analytics
     if ([SBGoogleAnalyticsHelper isAnalyticsEnabled]) {
         [_analyticsSwitch setOn:YES];
     } else {
         [_analyticsSwitch setOn:NO];
     }
+     */
     
     if ([Ingredient usedMeasure] == MEASUREMENT_METRIC) {
         
+        self.measurementSegmentControl.selectedSegmentIndex = 0;
         self.measurementButton.selected = NO;
         
     } else if ([Ingredient usedMeasure] == MEASUREMENT_US_CUSTOMARY_UNITS) {
         
+        self.measurementSegmentControl.selectedSegmentIndex = 1;
         self.measurementButton.selected = YES;
     }
     
@@ -76,6 +79,13 @@
 }
 
 #pragma mark - Table view data source
+
+- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
+    
+    UITableViewHeaderFooterView *v = (UITableViewHeaderFooterView *)view;
+    v.backgroundView.backgroundColor = [UIColor clearColor];
+}
+
 /*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
@@ -141,14 +151,16 @@
 }
 */
 
+/*
 - (void) purchaseRestored: (NSNotification*) notification {
+    //Not used right now since IAP isn't in place
     
     NSString * productIdentifier = notification.object;
     
     //Use the In app helper object singleton to store the unlocked IAP
     [[SBIAPHelper sharedInstance] unlockIAP:productIdentifier];
 }
-
+*/
 - (IBAction)resetLikedRecipes:(id)sender {
     
     [self showAlertForResetLikes];
@@ -156,20 +168,20 @@
 }
 
 - (IBAction)changeMeasurement:(id)sender {
+  
+    UISegmentedControl *segmentControl = (UISegmentedControl*)sender;
     
-    UIButton *tempButton = (UIButton*)sender;
-    
-    if (tempButton.selected) {
-        tempButton.selected = NO;
+    if (segmentControl.selectedSegmentIndex == 0) {
         [Ingredient useMeasurementMethod:MEASUREMENT_METRIC];
-    } else if (!tempButton.selected) {
+    } else if (segmentControl.selectedSegmentIndex == 1) {
         [Ingredient useMeasurementMethod:MEASUREMENT_US_CUSTOMARY_UNITS];
-        tempButton.selected = YES;
     }
     
 }
 
+/*
 - (IBAction)restorePurchases:(id)sender {
+    //Not used right now since IAP isn't in place
     
     [[SBIAPHelper sharedInstance]restoreCompletedTransactions];
     
@@ -185,12 +197,13 @@
     [loadingIndicator startActivityIndicator];
     
 }
+ */
 
 -(void)iapHasBeenLoaded {
     [loadingIndicator stopAnimating];
     
 }
-
+/*
 - (IBAction)sendAnalytics:(id)sender {
     
     //This is not used currently as only regular Google Analytics data is sent and not
@@ -203,7 +216,36 @@
         [SBGoogleAnalyticsHelper userDisablesAnalytics];
     }
 }
+ */
 
+/*
+- (IBAction)changeLanguage:(id)sender {
+    
+    //Not used right now
+    UISegmentedControl *segmentControl = (UISegmentedControl*)sender;
+    
+    NSString *language;
+    
+    switch (segmentControl.selectedSegmentIndex) {
+        case 0:
+            language = @"en";
+            break;
+        case 1:
+            language = @"sv";
+            break;
+        case 2:
+            language = nil;
+            break;
+        default:
+            break;
+    }
+    
+    if (language != nil) {
+        [[NSUserDefaults standardUserDefaults]setObject:language forKey:@"selectedLanguage"];
+    }
+    
+}
+*/
 - (void) showAlertForResetLikes {
     //Show an alert to the user asking to review the app
     
@@ -216,14 +258,9 @@
     
     UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:acceptText style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
        
-        //Loop all recipes and remove the like
-        NSArray *allLikedRecipes = [Recipe favoriteRecipes];
-        
-        for (NSString *likedRecipe in allLikedRecipes) {
-            
-            [Recipe removeRecipeFromFavoritesUsingRecipeName:likedRecipe];
-        }
-        
+        //Remove all liked recipes
+        [[RecipeManager sharedInstance]removeAllFavorites];
+    
         //Register with Google Analytics
         [SBGoogleAnalyticsHelper reportEventWithCategory:@"Reset All" andAction:@"Like Recipe" andLabel:@"YES" andValue:nil];
         

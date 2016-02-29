@@ -25,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
+    self.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.selectedRecipe.imageName]];
     
     self.caloriesLabel.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"LOCALIZE_Energy", @"Energy"), [self.selectedRecipe volumeStringForNutrient:@"Energy"]];
     
@@ -33,20 +33,31 @@
     NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
     [tempKeys removeObject:@"Energy"];
     
+    NSLog(@"Loading nutrients in language: %@", [self currentLanguage]);
+    
     //Handle localization for nutrients if english isn't used on the phone
     if (![[self currentLanguage] isEqualToString: @"en"] ) {
+        NSLog(@"in language: %@", [self currentLanguage]);
         
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         NSMutableArray *tempLocalizedKeys = [[NSMutableArray alloc]init];
         for (NSString *tempNutrientKey in tempKeys) {
             
+            NSLog(@"Setting up localized keys");
             //Set an object that's the master key for the localized key
             NSString *localizedKey = [self localizedNameIn:[self currentLanguage] forNutrient:tempNutrientKey];
-            [dic setObject:tempNutrientKey forKey:localizedKey];
-            
+            if (localizedKey != nil) {
+                [dic setObject:tempNutrientKey forKey:localizedKey];
+                
+            } else {
+                NSLog(@"Localized key not available for: %@", tempNutrientKey);
+                [dic setObject:tempNutrientKey forKey:tempNutrientKey];
+            }
             //Add the localized key
             [tempLocalizedKeys addObject:localizedKey];
+            
         }
+        NSLog(@"Finished setting up localized keys for nutrients");
         
         //Create the localized sorted array
         localizedKeys = [tempLocalizedKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -61,7 +72,7 @@
         
         dictionaryKeys = [NSArray arrayWithArray:tempMasterKeys];
     } else {
-        
+     
         //Sort the array of keys alphabetically
         dictionaryKeys = [tempKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     }
@@ -132,7 +143,14 @@
         
         NSString *nutrient = [dictionaryKeys objectAtIndex:indexPath.row];
         
-        nutrientTitle.text = [localizedKeys objectAtIndex:indexPath.row]; //This is not good for performance. TODO - change this
+        //If there's a localized key then show that, otherwise go for the english
+        if ([localizedKeys objectAtIndex:indexPath.row]) {
+            nutrientTitle.text = [localizedKeys objectAtIndex:indexPath.row];
+        } else {
+            nutrientTitle.text = [dictionaryKeys objectAtIndex:indexPath.row];
+        }
+        
+        
         nutrientVolume.text = [self.selectedRecipe volumeStringForNutrient:nutrient];
         nutrientDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:nutrient];
     }

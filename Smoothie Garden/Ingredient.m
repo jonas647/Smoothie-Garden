@@ -97,15 +97,19 @@
 
 - (NSString*) currentLanguage {
     
-    //Identify the language of the device
-    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
-    
-    //Return the two first characters, ie. "en"
-    return [currentLanguage substringToIndex:2];
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"]!= nil) {
+        return [[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"];
+    } else {
+        //Identify the language of the device
+        NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+        
+        //Return the two first characters, ie. "en"
+        return [currentLanguage substringToIndex:2];
+    }
     
 }
 
-- (NSString*) localizedMeasure {
+- (NSString*) localizedMeasureFor: (NSString*) measure {
     
     //Get the plist that has all the measurements
     NSString *filepathToMeasurementTexts = [[NSBundle mainBundle] pathForResource:@"Measurement" ofType:@"plist"];
@@ -115,8 +119,8 @@
     NSString *language = [self currentLanguage];
     
     //Get the localized measurement. If it's null then return blank space. (as in "1 [blank] banana")
-    if ([[measurementDictionary objectForKey:self.measure]objectForKey:language]) {
-        return [[measurementDictionary objectForKey:self.measure]objectForKey:language];
+    if ([[measurementDictionary objectForKey:measure]objectForKey:language]) {
+        return [[measurementDictionary objectForKey:measure]objectForKey:language];
     } else {
         return @"";
     }
@@ -163,6 +167,9 @@
     
     //"Cups" or "dl"
     NSString *measure = [self convertMeasureTypeTo:usedMeasurementMethod];
+    
+    //Localize measure
+    measure = [self localizedMeasureFor:measure];
     
     //Joined string of quantity and measure
     NSString *qtyMeasure = [NSString stringWithFormat:@"%@ %@", quantityString, measure];
@@ -219,34 +226,31 @@
         
                     //Depending on the unit calculate the measure based on the ingredient volume
                     
-                    
-                    //TODO
-                    //Should the unit be saved on the ingredients?
-                    
                     float newMeasureForNutrient = nutrientVolumeFloat * ingredientVolumeFloat;
                     
                     //Add the new measure to the dictionary
-                    if ([NSString stringWithFormat:@"%f", newMeasureForNutrient]) {
+                    if ([NSString stringWithFormat:@"%f", newMeasureForNutrient] != nil) {
+                        
                         [newChildDictionary setObject:[NSString stringWithFormat:@"%f", newMeasureForNutrient] forKey:@"Measure"];
                     } else {
                         NSLog(@"Measure %f can't be saved for : %@", newMeasureForNutrient, dic);
                     }
                     
                     //Add the other objects to the dictionary
-                    if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"]) {
+                    if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"] != nil) {
                         [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Unit"] forKey:@"Unit"];
                     } else {
                         NSLog(@"Can't save Unit in %@", dic);
                     }
                     
-                    if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"]) {
+                    if ([[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"] != nil) {
                         [newChildDictionary setObject:[[nutrientsDictionary objectForKey:dic] objectForKey:@"Type"] forKey:@"Type"];
                     } else {
                         NSLog(@"Can't save Type in %@", dic);
                     }
                     
                     //Add the newly created dictionary to the parent dictionary that will hold all the nutrients
-                    if (newChildDictionary) {
+                    if (newChildDictionary != nil) {
                         [nutrientParentDictionary setObject:newChildDictionary forKey:[NSString stringWithFormat:@"%@", dic]];
                     } else {
                         NSLog(@"Child dictionary with ingredient not created properly");

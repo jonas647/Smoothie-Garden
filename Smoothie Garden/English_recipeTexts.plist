@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Language</key>
+	<string>en</string>
 	<key>Recipe1</key>
 	<dict>
 		<key>RecipeName</key>
@@ -243,7 +245,7 @@
 	<key>Recipe15</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Strawberry nicecream with raspberry swirl</string>
+		<string>Strawberry nicecream with a raspberry swirl</string>
 		<key>ShortDescription</key>
 		<string>Enjoy this pink and dreamy nicecream when you need some extra energy and vitamins or simply when you crave something sweet</string>
 		<key>LongDescription</key>
@@ -362,7 +364,7 @@
 	<key>Recipe22</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Acai bowl</string>
+		<string>Acai Bowl</string>
 		<key>ShortDescription</key>
 		<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal.</string>
 		<key>LongDescription</key>
@@ -373,6 +375,41 @@
 		<key>Instructions</key>
 		<array>
 			<string>Mix all the ingredients in a blender on high speed until smooth. Add topping before serving. </string>
+		</array>
+	</dict>
+	<key>Recipe23</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Raspberry and coconut smoothie</string>
+		<key>ShortDescription</key>
+		<string>This coconut and raspberry smoothie is both creamy and refreshing. It will satisfy your sweet tooth in a healthy way.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This coconut and raspberry smoothie is both creamy and refreshing.It will satisfy your sweet tooth in a healthy way.</string>
+			<string>Top it with some fresh raspberries and roasted coconut flakes. Enjoy right away. Cheers!</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe24</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Almond milk</string>
+		<key>ShortDescription</key>
+		<string>Homemade almond milk tastes amazing and makes a perfect liquid base in smoothies</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Homemade almond milk tastes amazing and makes a perfect liquid base in smoothies.</string>
+			<string>It can be stored in the fridge up to 3-4 days.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Soak the almonds in water for 12-48 hours. Cover them with about one inch of water and store them in the fridge. The longer they soak the creamier the milk will be.</string>
+			<string>Drain and rinse the nuts before mixing them with fresh cold water, dates and vanilla powder on high speed for 2-3 minutes.</string>
+			<string>Strain the liquid through a fine-mesh kitchen towel or a nut bag to separate the liquid from the nut meal.</string>
+			<string>Press out as much liquid as possible and keep the milk in a glass bottle in the fridge.</string>
 		</array>
 	</dict>
 </dict>

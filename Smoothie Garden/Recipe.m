@@ -31,7 +31,7 @@
 @implementation Recipe
 
 #pragma mark - Load Recipes
-
+/*
 + (NSArray*) recipeMaster {
     
     if ([self shouldUpdateRecipePersistentStore]) {
@@ -55,12 +55,19 @@
         
         int versionOfRecipeList = [[recipeDictionary objectForKey:@"Version"]intValue];
         int currentVersion = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"RecipeVersion"];
+        
+        //Get the language of the recipes and verify vs language on the phone
+        NSString *recipeLanguage = [recipeDictionary objectForKey:@"Language"];
+        NSString *userLanguage = [self currentLanguage];
+        
         //If the version is lower than the last updated plist then load the recipes
+        //If the user language is another than the recipe language. Then load the recipes
         if (currentVersion < versionOfRecipeList) {
             
             return YES;
+        } else if (![userLanguage isEqualToString:recipeLanguage]) {
+            return YES;
         } else {
-            
             return NO;
         }
     }
@@ -148,6 +155,7 @@
                 NSLog(@"Localized name missing for %@", name);
             }
             if ([localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]) {
+                
                 [newRecipe setShortDescription:[localizedDescriptionsForNewRecipe objectForKey:@"ShortDescription"]];
             } else {
                 NSLog(@"Localized short desc missing for %@", name);
@@ -236,7 +244,6 @@
             }
             
             if (newRecipe != nil) {
-                
                 [tempRecipes addObject:newRecipe];
             } else {
                 NSLog(@"Can't add recipe to db");
@@ -251,7 +258,7 @@
 + (NSDictionary*) localizedRecipeDescriptions{
     
     //Identify the language of the device
-    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString *currentLanguage = [self currentLanguage];
     
     //Recipe description path depending on localization
     NSString *recipeDescriptionPath;
@@ -267,6 +274,16 @@
     
     NSString *filepathToRecipeTranslation = [[NSBundle mainBundle] pathForResource:recipeDescriptionPath ofType:@"plist"];
     return [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeTranslation];
+    
+}
+
++ (NSString*) currentLanguage {
+    
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"]!= nil) {
+        return [[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"];
+    } else {
+        return [[NSLocale preferredLanguages] objectAtIndex:0];
+    }
     
 }
 
@@ -289,6 +306,9 @@
     
 }
 
+*/
+
+/*
 + (void) removeRecipeFromFavoritesUsingRecipeName: (NSString*) recipeName {
     
     NSMutableArray *tempDeleteRecipe = [[NSMutableArray alloc]init];
@@ -307,6 +327,10 @@
     
     //Set the new favorite recipes
     [Recipe setNewFavoriteRecipes:[NSArray arrayWithArray:tempFavoriteRecipes]];
+    
+    //TODO change this, it's awful! But I do this in order to save the favorites to memory.
+    //Favorites are saved in an own NSUserDefault array that is verified when all recipes are created
+    [Recipe saveRecipesToPersistentStore];
 }
 
 - (void) addRecipeToFavorites {
@@ -329,6 +353,11 @@
     //Set the new favorite recipes
     [Recipe setNewFavoriteRecipes:newFavoriteRecipes];
     
+    //TODO change this, it's awful! But I do this in order to save the favorites to memory.
+    //Favorites are saved in an own NSUserDefault array that is verified when all recipes are created
+    [Recipe saveRecipesToPersistentStore];
+    
+    
 }
 
 - (BOOL) isRecipeFavorite {
@@ -343,10 +372,15 @@
     
     //If no recipe title found then it isn't a favorite
     return NO;
+    
 }
+ */
 
 #pragma mark - In app Purchases
 
+
+//Not currently in use
+/*
 - (BOOL) isRecipeUnlocked {
     
     //If the recipe category is 0 then it's free from start in the app. No need for IAP check
@@ -360,7 +394,7 @@
         return NO;
     }
 }
-
+*/
 #pragma mark - Search
 
 - (NSString*)stringWithIngredients {
@@ -411,8 +445,6 @@
         if (rounded == YES) {
             NSString *roundedValue = [self roundedValueFrom:floatValueForVolume];
             
-            NSLog(@"Returning %@", roundedValue);
-            
             return roundedValue;
         } else {
             return [[self.totalNutrients objectForKey:nutrient]objectForKey:@"Measure"];
@@ -461,7 +493,7 @@
     
     //If the daily recommendation doesn't exist, then just put a "-"
     if (![[self.totalNutrients objectForKey:nutrient]objectForKey:@"DailyRecommendation"]) {
-        return @"-";
+        return @"n/a";
     }
     
     //Get the total nutrient in the recipe as a float
@@ -475,8 +507,15 @@
     float percentOfDailyIntake = totalVolume / dailyRecommendedIntakeForNutrient;
     int roundedPercentValue = percentOfDailyIntake *100;
     
-    //Return with an added %
-    return [NSString stringWithFormat:@"%i%%", roundedPercentValue];
+    //If the Daily intake is smaller than 1% and the total volume is bigger than 0 show that a value exist for the user
+    if (roundedPercentValue<1 && totalVolume>0) {
+        return @"<1%";
+    } else {
+        //Return with an added %
+        return [NSString stringWithFormat:@"%i%%", roundedPercentValue];
+    }
+    
+    
     
 }
 

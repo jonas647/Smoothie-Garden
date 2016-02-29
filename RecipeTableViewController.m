@@ -8,13 +8,15 @@
 
 #import "RecipeTableViewController.h"
 #import "DetailedRecipeViewController.h"
-#import "Recipe.h"
 #import "SWRevealViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "RecipeTableViewCell.h"
 #import "SBActivityIndicatorView.h"
 #import "Ingredient.h"
+#import "Recipe.h"
+#import "RecipeManager.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
+
 
 #define LABEL_SIZE_LARGE 1
 #define LABEL_SIZE_SMALL 2
@@ -37,48 +39,74 @@
     UIFont *smallSizeFont;
     UIFont *largeSizeFont;
     
+    
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
-    
-    //Set the starting point for the scroller view below the search bar
-    //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
-    
-    //This will also solve the problem with wrong picture for search result table view
-    
-    imageParallaxEffectFactor = 15;
     
     [self setupActivityIndicator]; //Setup of the activity indicator programmatically
     [loadingIndicator startActivityIndicator];
     
-    //This is needed for the reveal controller to work
-    SWRevealViewController *revealController = [self revealViewController];
-    [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
     
-    //Set the target for the main menu button
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.sideBarButton setTarget: self.revealViewController];
-        [self.sideBarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
     
-    //Adjust the tableview to scroll to top of tapped at top
-    self.tableView.scrollsToTop = YES;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //Do background work
+        self.recipes = [[RecipeManager sharedInstance] recipesMaster];
+        allRecipes = self.recipes;
+        
+        thumbnailImages = [[NSMutableDictionary alloc]init];
+        for (Recipe *r in self.recipes) {
+            UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+            [thumbnailImages setObject:tempImage forKey:r.recipeName];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //Update UI
+            [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
+            
+            //Set the starting point for the scroller view below the search bar
+            //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
+            
+            //This will also solve the problem with wrong picture for search result table view
+            
+            imageParallaxEffectFactor = 15;
+            
+            //This is needed for the reveal controller to work
+            SWRevealViewController *revealController = [self revealViewController];
+            [revealController panGestureRecognizer];
+            [revealController tapGestureRecognizer];
+            
+            //Set the target for the main menu button
+            SWRevealViewController *revealViewController = self.revealViewController;
+            if ( revealViewController )
+            {
+                [self.sideBarButton setTarget: self.revealViewController];
+                [self.sideBarButton setAction: @selector( revealToggle: )];
+                [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+            }
+            
+            //Adjust the tableview to scroll to top of tapped at top
+            self.tableView.scrollsToTop = YES;
+            
+            // Uncomment the following line to preserve selection between presentations.
+            // self.clearsSelectionOnViewWillAppear = NO;
+            
+            // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+            // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+            
+            //Remove the title text from the back button (in the Detailed recipe table view controller)
+            self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+            
+            [self sortAndReloadTable];
+            
+        });
+    });
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    //Remove the title text from the back button (in the Detailed recipe table view controller)
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
 }
 
@@ -104,59 +132,36 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    
-    
-    
     //Reset the navigation bar, set back to being shown
     //Is hidden in the detailed recipe view
     [self.navigationController.navigationBar setBackgroundImage:nil
                                                   forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
-    //When the user comes back to the table view after selecting a recipe she should not see the search window
-    [self.searchController setActive:NO];
+    //Uncomment to see the last search
+    //[self.searchController setActive:NO];
     
-    //TODO
-    //Change the search controller so that it keeps the search string
 }
 
 
 
 - (void) viewDidAppear:(BOOL)animated {
     
-    //Better to have this in DidAppear instead of DidLoad to show activity indicator for user
-    self.recipes = [Recipe recipeMaster];
-    allRecipes = self.recipes;
     
-    thumbnailImages = [[NSMutableDictionary alloc]init];
-    for (Recipe *r in self.recipes) {
-        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        [thumbnailImages setObject:tempImage forKey:r.recipeName];
-    }
-    
+    //Remove this to reload the table for liked recipes, but takes a bit longer before user can scroll
     /*
-    [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
-    
-    //Set the starting point for the scroller view below the search bar
-    //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
-    
-    //This will also solve the problem with wrong picture for search result table view
-    thumbnailImages = [[NSMutableDictionary alloc]init];
-    for (Recipe *r in self.recipes) {
-        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        [thumbnailImages setObject:tempImage forKey:r.recipeName];
-    }
+     
+    [self sortAndReloadTable];
      */
     
-    //Update the font to be used in the table views. Based on size.
-    //TODO
-    
-    //Reload the view to get the proper recipes showing
-    //[self.tableView reloadData];
-    [self sortAndReloadTable];
 
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -245,9 +250,6 @@
 - (void)didDismissSearchController:(UISearchController *)searchController {
     // do something after the search controller is dismissed
     
-    self.recipes = allRecipes;
-    [self sortAndReloadTable];
-    //[self.tableView reloadData];
 }
 
 
@@ -398,27 +400,23 @@
     cell.recipeTitle.text = sRecipe.recipeName;
     cell.recipeDescription.text = sRecipe.shortDescription;
     
-    //Removed this since it's taking to long and not efficient for the app to create UIImage here
-    //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", sRecipe.imageName]];
-    
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
     
-    
     //If the recipe is a favorite, then display the like image
-    if ([sRecipe isRecipeFavorite]) {
+    if ([[RecipeManager sharedInstance] isRecipeFavorite:sRecipe]) {
         cell.likeImage.hidden = NO;
     } else
         cell.likeImage.hidden = YES;
     
     
+    //Not in use right now
     //Check if the IAP has been purchased and if recipes should be unlocked
     //If the recipe is of type 0 then it's a free recipe, no need to check for IAP
-    BOOL isRecipeUnlocked = [sRecipe isRecipeUnlocked];
+    /*
+    BOOL isRecipeUnlocked = [[RecipeManager sharedInstance] isRecipeUnlocked];
     
     //Use alpha value to make the unlocked recipes transparent
-    
-    
     float alphaValue;
     if (!isRecipeUnlocked) {
         
@@ -429,7 +427,7 @@
     }
     
     [cell.recipeImage setAlpha:alphaValue];
-    
+    */
     return cell;
     
 }
@@ -452,8 +450,12 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     
+    [self performSegueWithIdentifier:@"showRecipeSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
+    
+    //Not in use right now
+    /*
+    Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     if ([selRecipe isRecipeUnlocked]) {
         //Move to screen that shows the recipe
         [self performSegueWithIdentifier:@"showRecipeSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
@@ -462,7 +464,7 @@
         
         [self performSegueWithIdentifier:@"InAppPurchaseSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
     }
-    
+    */
 }
 
 #pragma mark - Table view sorting
@@ -498,6 +500,8 @@
     //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
     float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
     cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
+    
+    NSLog(@"y pos: %f", y );
     
 }
 

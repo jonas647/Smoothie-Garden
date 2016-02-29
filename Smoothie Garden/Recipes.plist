@@ -302,7 +302,7 @@
 		<key>Sorting</key>
 		<integer>2</integer>
 		<key>ImageName</key>
-		<string>veggie detox high res</string>
+		<string>Veggie Detox</string>
 	</dict>
 	<key>Recipe4</key>
 	<dict>
@@ -499,7 +499,7 @@
 		<key>Sorting</key>
 		<integer>4</integer>
 		<key>ImageName</key>
-		<string>Orange is the New Black</string>
+		<string>Orange is the new Black</string>
 	</dict>
 	<key>Recipe6</key>
 	<dict>
@@ -683,7 +683,7 @@
 		<key>Sorting</key>
 		<integer>6</integer>
 		<key>ImageName</key>
-		<string>Chocolate raspberry shake</string>
+		<string>Chocolate and Raspberry Shake</string>
 	</dict>
 	<key>Recipe8</key>
 	<dict>
@@ -759,7 +759,7 @@
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Cinnamon</string>
+				<string>Cardamom</string>
 				<key>Measurement</key>
 				<string>pinch</string>
 				<key>Optional</key>
@@ -767,12 +767,12 @@
 				<key>Sorting</key>
 				<integer>5</integer>
 			</dict>
-			<key>Chia Seeds, tbsp</key>
+			<key>Chia Seeds tbsp</key>
 			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Chia Seeds, tbsp</string>
+				<string>Chia Seeds tbsp</string>
 				<key>Measurement</key>
 				<string>tbsp</string>
 				<key>Optional</key>
@@ -805,7 +805,7 @@
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>0</integer>
+				<integer>3</integer>
 			</dict>
 			<key>Peanut Butter</key>
 			<dict>
@@ -818,7 +818,7 @@
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>1</integer>
+				<integer>4</integer>
 			</dict>
 			<key>Almond Milk</key>
 			<dict>
@@ -831,7 +831,7 @@
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>2</integer>
+				<integer>5</integer>
 			</dict>
 			<key>Roasted Coconut Flakes</key>
 			<dict>
@@ -844,20 +844,20 @@
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>3</integer>
+				<integer>6</integer>
 			</dict>
 			<key>Cardamom</key>
 			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Cinnamon</string>
+				<string>Cardamom</string>
 				<key>Measurement</key>
 				<string>pinch</string>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>4</integer>
+				<integer>7</integer>
 			</dict>
 			<key>Blank Space</key>
 			<dict>
@@ -870,20 +870,20 @@
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>0</integer>
+				<integer>2</integer>
 			</dict>
 			<key>Raspberries</key>
 			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>5</integer>
+				<integer>0</integer>
 			</dict>
 			<key>Honey</key>
 			<dict>
@@ -896,7 +896,7 @@
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>6</integer>
+				<integer>1</integer>
 			</dict>
 		</dict>
 		<key>RecipeCategory</key>
@@ -906,7 +906,7 @@
 		<key>Sorting</key>
 		<integer>8</integer>
 		<key>ImageName</key>
-		<string>Peanut butter jelly</string>
+		<string>Peanut Butter Jelly</string>
 	</dict>
 	<key>Recipe10</key>
 	<dict>
@@ -1087,7 +1087,7 @@
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Goji Berries</string>
+				<string>Gojiberries</string>
 				<key>Measurement</key>
 				<string>tbsp</string>
 				<key>Optional</key>
@@ -1182,7 +1182,7 @@
 		<key>Sorting</key>
 		<integer>11</integer>
 		<key>ImageName</key>
-		<string>Bluebelly bliss</string>
+		<string>Bluebelly Bliss</string>
 	</dict>
 	<key>Recipe13</key>
 	<dict>
@@ -1214,6 +1214,32 @@
 				<key>Sorting</key>
 				<integer>1</integer>
 			</dict>
+			<key>almond milk - 2</key>
+			<dict>
+				<key>Quantity</key>
+				<real>0.5</real>
+				<key>Type</key>
+				<string>Almond Milk</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>6</integer>
+			</dict>
+			<key>blank</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>0</integer>
+				<key>Type</key>
+				<string></string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>2</integer>
+			</dict>
 			<key>frozen blueberries
 frozen blueberries
 blueberries</key>
@@ -1227,7 +1253,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>3</integer>
+				<integer>5</integer>
 			</dict>
 			<key>raspberries</key>
 			<dict>
@@ -1253,7 +1279,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>2</integer>
+				<integer>3</integer>
 			</dict>
 			<key>honey</key>
 			<dict>
@@ -1266,7 +1292,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>5</integer>
+				<integer>7</integer>
 			</dict>
 		</dict>
 		<key>RecipeCategory</key>
@@ -1276,7 +1302,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>12</integer>
 		<key>ImageName</key>
-		<string>Blueberry Chia</string>
+		<string>Layered Blueberry Chia Smoothie</string>
 	</dict>
 	<key>Recipe14</key>
 	<dict>
@@ -1287,7 +1313,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<real>0.5</real>
 				<key>Type</key>
-				<string>Chia Seeds</string>
+				<string>Chia Seeds dl</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1298,7 +1324,7 @@ blueberries</key>
 			<key>almond milk</key>
 			<dict>
 				<key>Quantity</key>
-				<real>0.5</real>
+				<real>1.5</real>
 				<key>Type</key>
 				<string>Almond Milk</string>
 				<key>Measurement</key>
@@ -1418,7 +1444,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>2</integer>
 				<key>Type</key>
-				<string>Coconut Milk</string>
+				<string>Coconut Milk tbsp</string>
 				<key>Measurement</key>
 				<string>tbsp</string>
 				<key>Optional</key>
@@ -1431,7 +1457,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1486,7 +1512,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>14</integer>
 		<key>ImageName</key>
-		<string>Strawberry Nicecream</string>
+		<string>Strawberry Nicecream with Raspberry Swirl</string>
 	</dict>
 	<key>Recipe16</key>
 	<dict>
@@ -1552,7 +1578,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>15</integer>
 		<key>ImageName</key>
-		<string>Mango grapefruit detox</string>
+		<string>Mango and Grapefruit Detox</string>
 	</dict>
 	<key>Recipe17</key>
 	<dict>
@@ -1631,7 +1657,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>16</integer>
 		<key>ImageName</key>
-		<string>Mango rosehip</string>
+		<string>Mango Rosehip</string>
 	</dict>
 	<key>Recipe18</key>
 	<dict>
@@ -1655,7 +1681,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Frozen Raspberries</string>
+				<string>Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1668,7 +1694,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Frozen Strawberries</string>
+				<string>Strawberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1734,7 +1760,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>16</integer>
+		<integer>18</integer>
 		<key>ImageName</key>
 		<string>Valentine</string>
 	</dict>
@@ -1768,6 +1794,19 @@ blueberries</key>
 				<key>Sorting</key>
 				<integer>1</integer>
 			</dict>
+			<key>Blank</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>0</integer>
+				<key>Type</key>
+				<string></string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>2</integer>
+			</dict>
 			<key>Banana</key>
 			<dict>
 				<key>Quantity</key>
@@ -1779,33 +1818,33 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>2</integer>
+				<integer>3</integer>
 			</dict>
 			<key>Frozen Strawberries</key>
 			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Frozen Strawberries</string>
-				<key>Measurement</key>
-				<string>dl</string>
-				<key>Optional</key>
-				<false/>
-				<key>Sorting</key>
-				<integer>3</integer>
-			</dict>
-			<key>Frozen Raspberries</key>
-			<dict>
-				<key>Quantity</key>
-				<integer>1</integer>
-				<key>Type</key>
-				<string>Frozen Raspberries</string>
+				<string>Strawberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
 				<integer>4</integer>
+			</dict>
+			<key>Frozen Raspberries</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Raspberries</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>5</integer>
 			</dict>
 			<key>Peanut Butter</key>
 			<dict>
@@ -1818,7 +1857,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>5</integer>
+				<integer>6</integer>
 			</dict>
 			<key>Cinnamon</key>
 			<dict>
@@ -1831,7 +1870,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>7</integer>
+				<integer>8</integer>
 			</dict>
 			<key>Almond Milk</key>
 			<dict>
@@ -1844,7 +1883,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>6</integer>
+				<integer>7</integer>
 			</dict>
 		</dict>
 		<key>RecipeCategory</key>
@@ -1854,7 +1893,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>17</integer>
 		<key>ImageName</key>
-		<string>Sweet strawberry pie</string>
+		<string>Sweet Strawberry Pie</string>
 	</dict>
 	<key>Recipe20</key>
 	<dict>
@@ -1871,20 +1910,20 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>0</integer>
+				<integer>5</integer>
 			</dict>
 			<key>Cashew</key>
 			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Cashew</string>
+				<string>Cashew Nut</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>1</integer>
+				<integer>6</integer>
 			</dict>
 			<key>Almond Milk</key>
 			<dict>
@@ -1897,20 +1936,20 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>2</integer>
+				<integer>7</integer>
 			</dict>
-			<key>Cardomom</key>
+			<key>Cardamom</key>
 			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Cardomom</string>
+				<string>Cardamom</string>
 				<key>Measurement</key>
 				<string>pinch</string>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>3</integer>
+				<integer>8</integer>
 			</dict>
 			<key>Cinnamon</key>
 			<dict>
@@ -1923,7 +1962,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>4</integer>
+				<integer>9</integer>
 			</dict>
 			<key>Vanilla Powder</key>
 			<dict>
@@ -1936,20 +1975,20 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>5</integer>
+				<integer>10</integer>
 			</dict>
 			<key>Raspberries</key>
 			<dict>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>6</integer>
+				<integer>0</integer>
 			</dict>
 			<key>Chia Seeds tbsp</key>
 			<dict>
@@ -1962,7 +2001,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>7</integer>
+				<integer>1</integer>
 			</dict>
 			<key>Honey</key>
 			<dict>
@@ -1975,7 +2014,20 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>8</integer>
+				<integer>3</integer>
+			</dict>
+			<key>Blank</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>0</integer>
+				<key>Type</key>
+				<string></string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>4</integer>
 			</dict>
 		</dict>
 		<key>RecipeCategory</key>
@@ -2077,7 +2129,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>19</integer>
 		<key>ImageName</key>
-		<string>Tropical passion</string>
+		<string>Tropical Passion</string>
 	</dict>
 	<key>Recipe22</key>
 	<dict>
@@ -2101,7 +2153,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>100</integer>
 				<key>Type</key>
-				<string>Acai Bowl</string>
+				<string>Acai</string>
 				<key>Measurement</key>
 				<string>g</string>
 				<key>Optional</key>
@@ -2180,7 +2232,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Banana</string>
+				<string>Frozen Banana</string>
 				<key>Measurement</key>
 				<string></string>
 				<key>Optional</key>
@@ -2193,7 +2245,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Coconut Milk</string>
+				<string>Coconut Milk dl</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -2209,18 +2261,18 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>21</integer>
 		<key>ImageName</key>
-		<string>Raspberry and coconut smoothie</string>
+		<string>Raspberry and Coconut Smoothie</string>
 	</dict>
 	<key>Recipe24</key>
 	<dict>
 		<key>Ingredients</key>
 		<dict>
-			<key>Almond Milk</key>
+			<key>Almond</key>
 			<dict>
 				<key>Quantity</key>
 				<real>2.5</real>
 				<key>Type</key>
-				<string>Almonds</string>
+				<string>Almond</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>

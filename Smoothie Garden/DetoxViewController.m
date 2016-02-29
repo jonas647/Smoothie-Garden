@@ -16,6 +16,7 @@
 
 #import "DetoxViewController.h"
 #import "Recipe.h"
+#import "RecipeManager.h"
 #import "DetoxTableViewCell.h"
 #import "UIFont+FontSizeBasedOnScreenSize.h"
 #import "SBGoogleAnalyticsHelper.h"
@@ -42,7 +43,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        //Load here to show user view before recipes are fully loaded
+        allRecipes = [[RecipeManager sharedInstance]recipesMaster];
+        
+        sectionCategories = @[NINE_AM_SMOOTHIE,TWELVE_AM_SMOOTHIE,FOUR_PM_SMOOTHIE,SEVEN_PM_SMOOTHIE];
+        
+        thumbnailImages = [[NSMutableDictionary alloc]init];
+        for (Recipe *r in allRecipes) {
+            UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+            if (tempImage != nil) {
+                [thumbnailImages setObject:tempImage forKey:r.recipeName];
+            } else {
+                NSLog(@"Recipe image is nil");
+            }
+            
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            [self setupDetoxDayFor:@"Day1"];
+            
+            _tableView.frame = [self newFrameForUIView:_tableView];
+            [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
+        });
+        
+        
+    });
     
     if (self.revealViewController != nil) {
         
@@ -56,8 +85,6 @@
     
     //Report to Analytics
     [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:@"Detox Screen"];
-    
-    
     
     //Remove the title text from the back button (in the Detailed recipe table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -73,14 +100,12 @@
     [super viewWillAppear:animated];
     
     
-    
-    _tableView.frame = [self newFrameForUIView:_tableView];
-    [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
-    
     //Reset the navigation bar, set back to being shown
     //Is hidden in the detailed recipe view
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.translucent = NO;
+    
+    
     
     //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
@@ -89,23 +114,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
-    //Load here to show user view before recipes are fully loaded
-    allRecipes = [Recipe recipeMaster];
     
-    sectionCategories = @[NINE_AM_SMOOTHIE,TWELVE_AM_SMOOTHIE,FOUR_PM_SMOOTHIE,SEVEN_PM_SMOOTHIE];
-    
-    [self setupDetoxDayFor:@"Day1"];
-    
-    thumbnailImages = [[NSMutableDictionary alloc]init];
-    for (Recipe *r in allRecipes) {
-        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        if (tempImage != nil) {
-            [thumbnailImages setObject:tempImage forKey:r.recipeName];
-        } else {
-            NSLog(@"Recipe image is nil");
-        }
-        
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -166,8 +175,12 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSString* selectedCategory = [sectionCategories objectAtIndex: indexPath.section];
+    Recipe *selectedRecipe = [self recipeForCategory:selectedCategory];
+    [self performSegueWithIdentifier:@"showDetoxRecipeSegue" sender:selectedRecipe];
     
-    
+    /*
+     Not in use now since IAP not active
     NSString* selectedCategory = [sectionCategories objectAtIndex: indexPath.section];
     Recipe *selectedRecipe = [self recipeForCategory:selectedCategory];
 
@@ -179,7 +192,7 @@
         [self performSegueWithIdentifier:@"InAppPurchaseDetoxSegue" sender:nil];
     }
     
-    
+    */
 }
 
 - (Recipe*) recipeWithRecipeName: (NSString*) name {
@@ -215,6 +228,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //#warning Potentially incomplete method implementation.
     // Return the number of sections.
+    NSLog(@"Number of sections: %i", (int)sectionCategories.count);
     return sectionCategories.count;
 }
 
@@ -292,9 +306,12 @@
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
     
+    //Not in use since IAP isn't active
+    /*
     //Check if the IAP has been purchased and if recipes should be unlocked
     //If the recipe is of type 0 then it's a free recipe, no need to check for IAP
     BOOL isRecipeUnlocked = [sRecipe isRecipeUnlocked];
+    
     
     //Use alpha value to make the unlocked recipes transparent
     float alphaValue;
@@ -307,7 +324,7 @@
     }
     
     [cell.recipeImage setAlpha:alphaValue];
-    
+    */
     return cell;
     
 }

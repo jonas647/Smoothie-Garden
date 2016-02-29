@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.selectedRecipe.imageName]];
+    _recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.selectedRecipe.imageName]];
    
     self.viewControllers = [[NSMutableArray alloc]init];
     [self.viewControllers addObject:@"BlankViewController"];
