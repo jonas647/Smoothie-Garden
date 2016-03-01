@@ -38,40 +38,40 @@
     float imageParallaxEffectFactor;
     UIFont *smallSizeFont;
     UIFont *largeSizeFont;
-    
-    
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
     [self setupActivityIndicator]; //Setup of the activity indicator programmatically
     [loadingIndicator startActivityIndicator];
     
-    
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //Do background work
-        self.recipes = [[RecipeManager sharedInstance] recipesMaster];
-        allRecipes = self.recipes;
-        
+    //First run a dispatch group that sets up the thumbnail images so that there is no risk that the thumbnails aren't ready when the uitableviews are populated
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
+        //Create thumbnail images to display in tableview
         thumbnailImages = [[NSMutableDictionary alloc]init];
-        for (Recipe *r in self.recipes) {
+        for (Recipe *r in [[RecipeManager sharedInstance] recipesMaster]) {
             UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
             [thumbnailImages setObject:tempImage forKey:r.recipeName];
         }
+    });
+    
+    //Run a dispatch group that sets up the recipes and then run the UI stuff
+    dispatch_group_notify(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
+        
+        //Set the table view array
+        self.recipes = [[RecipeManager sharedInstance] recipesMaster];
+        allRecipes = self.recipes;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            //Update UI
-            [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
-            
             //Set the starting point for the scroller view below the search bar
             //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
             
             //This will also solve the problem with wrong picture for search result table view
             
+            //How much parallax effect the images will have. The higher the bigger vertical move.
             imageParallaxEffectFactor = 15;
             
             //This is needed for the reveal controller to work
@@ -91,22 +91,12 @@
             //Adjust the tableview to scroll to top of tapped at top
             self.tableView.scrollsToTop = YES;
             
-            // Uncomment the following line to preserve selection between presentations.
-            // self.clearsSelectionOnViewWillAppear = NO;
-            
-            // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-            // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-            
             //Remove the title text from the back button (in the Detailed recipe table view controller)
             self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
             
             [self sortAndReloadTable];
-            
         });
     });
-    
-    
-    
     
 }
 
@@ -137,11 +127,12 @@
     [self.navigationController.navigationBar setBackgroundImage:nil
                                                   forBarMetrics:UIBarMetricsDefault];
     
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
-    //Uncomment to see the last search
+    //Uncomment to remove the last search
     //[self.searchController setActive:NO];
     
 }
@@ -152,15 +143,9 @@
     
     
     //Remove this to reload the table for liked recipes, but takes a bit longer before user can scroll
-    /*
+    
+    
      
-    [self sortAndReloadTable];
-     */
-    
-
-    
-    
-    
     
 }
 
@@ -168,8 +153,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 #pragma mark - Activity indicator for loading
 
@@ -400,6 +383,9 @@
     cell.recipeTitle.text = sRecipe.recipeName;
     cell.recipeDescription.text = sRecipe.shortDescription;
     
+    NSLog(@"Recipe name: %@", sRecipe.recipeName);
+    NSLog(@"Thumbnails: %@", thumbnailImages);
+    
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
     
@@ -471,14 +457,7 @@
 
 - (void) sortAndReloadTable {
     
-    // Set ascending:NO so that "YES" would appear ahead of "NO"
-    NSSortDescriptor *boolDescr = [[NSSortDescriptor alloc] initWithKey:@"favorite" ascending:NO];
-    // Sorted in 1,2,3 (ascending order)
-    NSSortDescriptor *intDescr = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
-    // Combine the two
-    NSArray *sortDescriptors = @[boolDescr, intDescr];
-    // Sort your array
-    self.recipes = [self.recipes sortedArrayUsingDescriptors:sortDescriptors];
+    //No need for sorting as this is done in the recipe master
     
     [self.tableView reloadData];
 }
@@ -500,8 +479,6 @@
     //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
     float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
     cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
-    
-    NSLog(@"y pos: %f", y );
     
 }
 
@@ -601,7 +578,6 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
         Recipe *selectedRec = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
-        NSLog(@"Selected recipe: %@", selectedRec.recipeName);
         
         DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
         vcToPushTo.selectedRecipe = [self.recipes objectAtIndex:indexPath.row];

@@ -236,7 +236,7 @@
                 
             }
             
-            //Sort the array by sorting order
+            //Sort the array with ingredients by sorting order
             NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
             NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
             
@@ -263,8 +263,15 @@
             }
         }
     }
+    //Sort the recipes by favorites and sorting order
+    // Set ascending:NO so that "YES" would appear ahead of "NO"
+    NSSortDescriptor *boolDescr = [[NSSortDescriptor alloc] initWithKey:@"favorite" ascending:NO];
+    // Sorted in 1,2,3 (ascending order)
+    NSSortDescriptor *intDescr = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
+    // Combine the two
+    NSArray *sortDescriptors = @[boolDescr, intDescr];
     
-    return tempRecipes;
+    return [tempRecipes sortedArrayUsingDescriptors:sortDescriptors];
     
 }
 
