@@ -12,6 +12,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:250.0f/255.0f blue:250.0f/255.0f alpha:1.0f];
+    [self setSelectedBackgroundView:bgColorView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

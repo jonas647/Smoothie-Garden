@@ -383,9 +383,6 @@
     cell.recipeTitle.text = sRecipe.recipeName;
     cell.recipeDescription.text = sRecipe.shortDescription;
     
-    NSLog(@"Recipe name: %@", sRecipe.recipeName);
-    NSLog(@"Thumbnails: %@", thumbnailImages);
-    
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
     
@@ -428,6 +425,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSLog(@"Will display cell");
     //This is needed to get proper parallax effect and no stuttering image when loading the table view
     [self updateParallaxEffectForCell:(RecipeTableViewCell*) cell];
 }
@@ -479,7 +477,7 @@
     //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
     float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
     cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
-    
+    NSLog(@"Y: %f", y);
 }
 
 
@@ -576,8 +574,6 @@
     
     if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        
-        Recipe *selectedRec = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
         
         DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
         vcToPushTo.selectedRecipe = [self.recipes objectAtIndex:indexPath.row];
