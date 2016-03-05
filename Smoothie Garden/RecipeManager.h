@@ -15,7 +15,6 @@
 - (NSArray*) recipesMaster;
 
 #pragma mark - Favorites
-- (NSArray*) favoritesMaster;
 - (BOOL) isRecipeFavorite: (Recipe*) favorite;
 - (void) addRecipeToFavorites: (Recipe*) recipeToSave;
 - (void) removeRecipeFromFavorites:(Recipe*) recipeToRemove;

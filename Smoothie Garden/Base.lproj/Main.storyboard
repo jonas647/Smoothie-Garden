@@ -1096,7 +1096,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-gj-q9r" userLabel="Title Background">
-                                                <rect key="frame" x="0.0" y="208" width="600" height="192"/>
+                                                <rect key="frame" x="0.0" y="144" width="600" height="256"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrW-yV-DL4" userLabel="Like Button">
                                                         <rect key="frame" x="451" y="85" width="144" height="144"/>
@@ -1152,7 +1152,7 @@
                                                 </variation>
                                             </view>
                                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecO-nY-W5s" userLabel="Alpha view top">
-                                                <rect key="frame" x="0.0" y="400" width="600" height="19"/>
+                                                <rect key="frame" x="0.0" y="400" width="600" height="25.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -1221,7 +1221,7 @@
                             <constraint firstItem="LRO-gj-q9r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5eK-rL-6ML" secondAttribute="bottom" id="79M-AF-vG7"/>
                             <constraint firstAttribute="trailing" secondItem="8yg-fJ-t4b" secondAttribute="trailing" id="BxQ-Bf-49U"/>
                             <constraint firstItem="T8S-qR-HQM" firstAttribute="width" relation="greaterThanOrEqual" secondItem="7QN-ar-Oen" secondAttribute="width" id="Enc-9h-qcz"/>
-                            <constraint firstItem="LRO-gj-q9r" firstAttribute="height" secondItem="7QN-ar-Oen" secondAttribute="height" multiplier="0.12" id="KYW-H2-khA"/>
+                            <constraint firstItem="LRO-gj-q9r" firstAttribute="height" secondItem="7QN-ar-Oen" secondAttribute="height" multiplier="0.16" id="KYW-H2-khA"/>
                             <constraint firstItem="5eK-rL-6ML" firstAttribute="leading" secondItem="7QN-ar-Oen" secondAttribute="leading" id="LqB-tg-PiH"/>
                             <constraint firstItem="T8S-qR-HQM" firstAttribute="top" secondItem="5eK-rL-6ML" secondAttribute="bottom" identifier="RecipeImageViewTopToStatusBar" id="aPJ-dm-cq8"/>
                             <constraint firstItem="nAn-BD-Tt7" firstAttribute="centerX" secondItem="7QN-ar-Oen" secondAttribute="centerX" id="iiA-eU-97Q"/>

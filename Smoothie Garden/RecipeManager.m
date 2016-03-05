@@ -13,7 +13,6 @@
 @implementation RecipeManager {
     
     NSArray *recipeMaster;
-    NSArray *favoriteMaster;
 }
 
 + (RecipeManager*)sharedInstance {
@@ -35,8 +34,7 @@
         }
         
         recipeMaster = [self allRecipesFromPersistentStore];
-        
-        favoriteMaster = [self favoriteRecipesFromPersistentStore];
+    
         
     }
     return self;
@@ -44,11 +42,7 @@
 
 - (NSArray*) recipesMaster {
     
-    return recipeMaster;
-}
-
-- (NSArray*) favoritesMaster {
-    return favoriteMaster;
+    return [self sortRecipesInArray:recipeMaster];
 }
 
 #pragma mark - Persistent Store
@@ -57,38 +51,46 @@
     
     //If the version has never been saved then load recipes
     if(![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:@"RecipeVersion"]){
+
         return YES;
     } else {
         //Check what version of the recipes that are saved
-        
-        NSString *filepathToRecipeMaster = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
-        NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeMaster];
+        NSDictionary *recipeDictionary = [self recipeDictionaryFromPlist];
         
         int versionOfRecipeList = [[recipeDictionary objectForKey:@"Version"]intValue];
         int currentVersion = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"RecipeVersion"];
         
-        //Get the language of the recipes and verify vs language on the phone
-        NSString *recipeLanguage = [recipeDictionary objectForKey:@"Language"];
+        NSDictionary *localizedRecipeDictionary = [self localizedRecipeDescriptions];
+        NSString *recipeLanguage = [localizedRecipeDictionary objectForKey:@"Language"];
         NSString *userLanguage = [self currentLanguage];
         
         //If the version is lower than the last updated plist then load the recipes
         //If the user language is another than the recipe language. Then load the recipes
         if (currentVersion < versionOfRecipeList) {
-            
+     
             return YES;
         } else if (![userLanguage isEqualToString:recipeLanguage]) {
+         
             return YES;
         } else {
+       
             return NO;
         }
     }
 }
 
+- (void) updateRecipesInPersistentStore {
+    
+    //Load the recipe dictionary just to get the version number
+    NSDictionary *recipeDictionary = [self recipeDictionaryFromPlist];
+    int version = [[recipeDictionary objectForKey:@"Version"]intValue];
+    
+    [self saveToPersistentStore:self.recipesMaster withVersion:version];
+}
+
 - (void) saveRecipesToPersistentStore {
     
-    //The plist with the recipe directory
-    NSString *filepathToRecipeMaster = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
-    NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeMaster];
+    NSDictionary *recipeDictionary = [self recipeDictionaryFromPlist];
     
     //Load all the recipes into array
     NSArray *recipes = [self allRecipesFromDictionary:recipeDictionary];
@@ -101,9 +103,14 @@
         NSLog(@"No version information in plist");
     }
     
+    [self saveToPersistentStore:recipes withVersion:version];
+}
+
+- (void) saveToPersistentStore: (NSArray*) recipeToSave withVersion: (int) version {
+    
     //Save to NSUserDefault
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:recipes];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:recipeToSave];
     [defaults setObject:data forKey:@"SavedRecipes"];
     [defaults setObject:[NSNumber numberWithInt:version] forKey:@"RecipeVersion"];
     [defaults synchronize];
@@ -118,6 +125,15 @@
     [defaults synchronize];
     
     return recipeArray;
+}
+
+- (NSDictionary*) recipeDictionaryFromPlist {
+    
+    //The plist with the recipe directory
+    NSString *filepathToRecipeMaster = [[NSBundle mainBundle] pathForResource:@"Recipes" ofType:@"plist"];
+    NSDictionary *recipeDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToRecipeMaster];
+    
+    return recipeDictionary;
 }
 
 #pragma mark - Dictionary
@@ -231,9 +247,7 @@
                 
                 Ingredient *newIngredient = [[Ingredient alloc]initWithQuantity:quantity andType:ingredientType andMeasure:measurement andOptional:isOptional andSorting:sorting];
                 
-                
                 [tempIngredients addObject:newIngredient];
-                
             }
             
             //Sort the array with ingredients by sorting order
@@ -246,16 +260,6 @@
             
             [newRecipe setupAllNutrientInformationForRecipe];
             
-            //Flag the recipe as liked or not
-            //TODO
-            //Change the current handling of likes to something better... have a globally saved recipe list that's loaded into memory on start-up?
-            newRecipe.favorite = NO;
-            for (NSString *recipeTitle in [self favoritesMaster]) {
-                if ([newRecipe.recipeName isEqualToString:recipeTitle]) {
-                    newRecipe.favorite = YES;
-                }
-            }
-            
             if (newRecipe != nil) {
                 [tempRecipes addObject:newRecipe];
             } else {
@@ -263,15 +267,9 @@
             }
         }
     }
-    //Sort the recipes by favorites and sorting order
-    // Set ascending:NO so that "YES" would appear ahead of "NO"
-    NSSortDescriptor *boolDescr = [[NSSortDescriptor alloc] initWithKey:@"favorite" ascending:NO];
-    // Sorted in 1,2,3 (ascending order)
-    NSSortDescriptor *intDescr = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
-    // Combine the two
-    NSArray *sortDescriptors = @[boolDescr, intDescr];
     
-    return [tempRecipes sortedArrayUsingDescriptors:sortDescriptors];
+    
+    return tempRecipes;
     
 }
 
@@ -302,7 +300,7 @@
     if ([[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"]!= nil) {
         return [[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"];
     } else {
-        return [[NSLocale preferredLanguages] objectAtIndex:0];
+        return [[[NSLocale preferredLanguages] objectAtIndex:0]substringToIndex:2];
     }
     
 }
@@ -311,86 +309,76 @@
 
 - (NSArray*) favoriteRecipesFromPersistentStore {
     
-    return [[NSUserDefaults standardUserDefaults]arrayForKey:@"FavoriteRecipes"];
+    if (!recipeMaster) {
+        recipeMaster = [self allRecipesFromPersistentStore];
+    }
     
-}
-
-- (void) setNewFavoriteRecipes: (NSArray*) newRecipes {
+    NSMutableArray *tempFavorites = [[NSMutableArray alloc]init];
+    for (Recipe *tempRecipe in recipeMaster) {
+        if (tempRecipe.favorite == YES) {
+            [tempFavorites addObject:tempRecipe];
+        }
+    }
     
-    [[NSUserDefaults standardUserDefaults]setObject:newRecipes forKey:@"FavoriteRecipes"];
-    favoriteMaster = newRecipes;
+    return tempFavorites;
     
 }
 
 - (void) removeRecipeFromFavorites:(Recipe*) recipeToRemove {
     
-    NSMutableArray *tempDeleteRecipe = [[NSMutableArray alloc]init];
+    recipeToRemove.favorite = NO;
     
-    NSArray *favoriteRecipes = [self favoritesMaster];
-    
-    for (NSString *recipe in favoriteRecipes) {
-        if ([recipeToRemove.recipeName isEqualToString:recipe]) {
-            [tempDeleteRecipe addObject:recipe];
-        }
-    }
-    
-    NSMutableArray *tempFavoriteRecipes = [NSMutableArray arrayWithArray:favoriteRecipes];
-    if (tempDeleteRecipe.count>0) {
-        [tempFavoriteRecipes removeObjectsInArray:tempDeleteRecipe];
-    }
-    
-    //Set the new favorite recipes
-    [self setNewFavoriteRecipes:[NSArray arrayWithArray:tempFavoriteRecipes]];
-    
-    //TODO change this, it's awful! But I do this in order to save the favorites to memory.
-    //Favorites are saved in an own NSUserDefault array that is verified when all recipes are created
-    [self saveRecipesToPersistentStore];
+    //Need to save the updated recipes to persistent store
+    [self updateRecipesInPersistentStore];
 }
 
 - (void) removeAllFavorites {
     
-    [self setNewFavoriteRecipes:nil];
+    //[self setNewFavoriteRecipes:nil];
 
+    //Loop all recipes and remove the favorite flag
+    for (Recipe *r in self.recipesMaster) {
+        if (r.favorite) {
+            [r setFavorite:NO];
+        }
+    }
+    
+    //Need to save the updated recipes to persistent store
+    [self updateRecipesInPersistentStore];
 }
 
 - (void) addRecipeToFavorites: (Recipe*) recipeToSave {
     
-    //Load the favorite recipes array
-    NSMutableArray *tempFavoriteRecipes;
-    if ([self favoritesMaster].count>0) {
-        tempFavoriteRecipes = [[NSMutableArray alloc]initWithArray:[self favoritesMaster]];
-    } else {
-        tempFavoriteRecipes = [[NSMutableArray alloc]init];
-    }
     
-    //Check if the array already hold this recipe, if not then add it
-    if (![tempFavoriteRecipes containsObject:recipeToSave.recipeName]) {
-        [tempFavoriteRecipes addObject:recipeToSave.recipeName];
-    }
+    recipeToSave.favorite = YES;
     
-    NSArray *newFavoriteRecipes = [tempFavoriteRecipes copy];
+    //Need to save the updated recipes to persistent store
+    [self updateRecipesInPersistentStore];
     
-    //Set the new favorite recipes
-    [self setNewFavoriteRecipes:newFavoriteRecipes];
-    
-    //TODO change this, it's awful! But I do this in order to save the favorites to memory.
-    //Favorites are saved in an own NSUserDefault array that is verified when all recipes are created
-    [self saveRecipesToPersistentStore];
 }
 
 - (BOOL) isRecipeFavorite: (Recipe*) favorite {
     
-    //Iterate all the favorite recipe and match for title
-    //All recipes are saved as titles in the favorite array
-    for (NSString *recipeTitle in [self favoritesMaster]) {
-        if ([favorite.recipeName isEqualToString:recipeTitle]) {
-            return YES;
-        }
-    }
+    return favorite.favorite;
+
+}
+
+#pragma mark - Sorting
+
+- (NSArray*) sortRecipesInArray: (NSArray*) recipeArray {
     
-    //If no recipe title found then it isn't a favorite
-    return NO;
+    //Sort the recipes by favorites and sorting order
+    // Set ascending:NO so that "YES" would appear ahead of "NO"
+    //Commenting out for now as we don't want to order by favorite recipes
+    //NSSortDescriptor *boolDescr = [[NSSortDescriptor alloc] initWithKey:@"favorite" ascending:NO];
+    // Sorted in 1,2,3 (ascending order)
+    NSSortDescriptor *intDescr = [[NSSortDescriptor alloc] initWithKey:@"sorting" ascending:YES];
+    // Combine the two
+    NSArray *sortDescriptors = @[intDescr];
+    
+    return [recipeArray sortedArrayUsingDescriptors:sortDescriptors];
     
 }
+
 
 @end

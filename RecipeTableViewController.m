@@ -31,7 +31,7 @@
 @implementation RecipeTableViewController
 {
     NSArray *allRecipes;
-    Recipe *selectedRecipe;
+    NSIndexPath *indexOfSelectedObject;
     NSMutableDictionary *thumbnailImages;
     NSMutableArray *filteredRecipeArray;
     SBActivityIndicatorView *loadingIndicator;
@@ -62,8 +62,7 @@
     dispatch_group_notify(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
         
         //Set the table view array
-        self.recipes = [[RecipeManager sharedInstance] recipesMaster];
-        allRecipes = self.recipes;
+        [self setupRecipesFromRecipeMaster];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //Set the starting point for the scroller view below the search bar
@@ -101,25 +100,6 @@
 }
 
 
-- (UIImage*) createThumbnailForImageWithName:(NSString *)sourceName {
-    
-    UIImage* sourceImage = [UIImage imageNamed:sourceName];
-    if (!sourceImage) {
-        //...
-        NSLog(@"Source image is missing: %@", sourceName);
-    }
-    
-    //Size dependent sizing of the thumbnail to make the loading on older devicer quicker
-    CGSize thumbnailSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.width*0.8);
-    
-    UIGraphicsBeginImageContext(thumbnailSize);
-    [sourceImage drawInRect:CGRectMake(0,0,thumbnailSize.width,thumbnailSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     
     //Reset the navigation bar, set back to being shown
@@ -127,7 +107,14 @@
     [self.navigationController.navigationBar setBackgroundImage:nil
                                                   forBarMetrics:UIBarMetricsDefault];
     
-    
+    //Update the uitableviewcell that was presented (if returning from detail view
+    if (indexOfSelectedObject) {
+        [self.tableView beginUpdates];
+        
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexOfSelectedObject] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self.tableView endUpdates];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -152,6 +139,35 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void) setupRecipesFromRecipeMaster {
+    //Set the table view array
+    self.recipes = [[RecipeManager sharedInstance] recipesMaster];
+    
+    allRecipes = self.recipes;
+    
+    
+}
+
+- (UIImage*) createThumbnailForImageWithName:(NSString *)sourceName {
+    
+    UIImage* sourceImage = [UIImage imageNamed:sourceName];
+    if (!sourceImage) {
+        //...
+        NSLog(@"Source image is missing: %@", sourceName);
+    }
+    
+    //Size dependent sizing of the thumbnail to make the loading on older devicer quicker
+    CGSize thumbnailSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.width*0.8);
+    
+    UIGraphicsBeginImageContext(thumbnailSize);
+    [sourceImage drawInRect:CGRectMake(0,0,thumbnailSize.width,thumbnailSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 #pragma mark - Activity indicator for loading
@@ -434,6 +450,8 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //Save the index of the touched object so that we can reload that row when coming back from detailed view
+    indexOfSelectedObject = indexPath;
     
     [self performSegueWithIdentifier:@"showRecipeSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
     
@@ -477,80 +495,7 @@
     //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
     float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
     cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
-    NSLog(@"Y: %f", y);
 }
-
-
-/*
- //Uncommenting this since it shouldn't be possible to edit rows. Not using the favorite tab any longer.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return YES - we will be able to delete all rows
-    if ([self selectedTabBar]==TAB_BAR_FAV) {
-        return YES;
-    } else
-        return NO;
-    
-}
-
-// Support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Perform the real delete action here. Note: you may need to check editing style
-    //   if you do not perform delete only.
-    
-    //Remove the recipe from favorites
-    [[self.recipes objectAtIndex:indexPath.row] removeRecipeFromFavorites];
-    
-    //Set the new favorite recipe list
-    self.recipes = [Recipe allRecipesFromPlist];
-    
-    //Reload the table so that the recipe disappears
-    [self.tableView reloadData];
-}
- */
-
-/*
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Chose row: %li", indexPath.row);
-    
-    selectedRecipe = [recipes objectAtIndex:indexPath.row];
-    
-    
-    [self performSegueWithIdentifier: @"DetailedRecipeSegue" sender: self];
-    
-}*/
-
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return CELL_HEIGHT;
-    
-}*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Scroll view delegate
 
