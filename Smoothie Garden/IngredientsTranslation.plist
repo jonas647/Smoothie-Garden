@@ -670,14 +670,14 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>grapefrukt (juice)</string>
+			<string>Grapefrukt (juice)</string>
 			<key>en</key>
 			<string>grape fruits (juice)</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>grapefrukt (juice)</string>
+			<string>Grapefrukt (juice)</string>
 			<key>en</key>
 			<string>grape fruit (juice)</string>
 		</dict>

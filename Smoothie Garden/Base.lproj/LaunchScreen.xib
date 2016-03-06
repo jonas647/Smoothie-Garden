@@ -14,16 +14,47 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ox6-jg-nDB">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6s-bK-Rtf" userLabel="Label">
-                            <rect key="frame" x="170" y="426" width="140.5" height="29"/>
-                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLR-wZ-8eI">
+                            <rect key="frame" x="136" y="210" width="208.5" height="60"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch icon" translatesAutoresizingMaskIntoConstraints="NO" id="sny-ev-QfF">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6s-bK-Rtf" userLabel="Label">
+                                    <rect key="frame" x="68" y="15.5" width="140.5" height="29"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="leading" secondItem="sny-ev-QfF" secondAttribute="trailing" constant="8" id="E6w-B6-Sro"/>
+                                <constraint firstAttribute="bottom" secondItem="sny-ev-QfF" secondAttribute="bottom" id="THP-qG-p2U"/>
+                                <constraint firstItem="sny-ev-QfF" firstAttribute="leading" secondItem="pLR-wZ-8eI" secondAttribute="leading" id="Tgg-Gq-Wmn"/>
+                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="centerY" secondItem="pLR-wZ-8eI" secondAttribute="centerY" id="ew0-3d-GhW"/>
+                                <constraint firstItem="sny-ev-QfF" firstAttribute="top" secondItem="pLR-wZ-8eI" secondAttribute="top" id="iL3-XP-MA2"/>
+                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="centerY" secondItem="pLR-wZ-8eI" secondAttribute="centerY" id="jt8-tg-tHc"/>
+                                <constraint firstAttribute="trailing" secondItem="e6s-bK-Rtf" secondAttribute="trailing" id="mdd-pY-x1l"/>
+                                <constraint firstItem="sny-ev-QfF" firstAttribute="leading" secondItem="pLR-wZ-8eI" secondAttribute="leading" id="nzX-p9-FjZ"/>
+                                <constraint firstAttribute="trailing" secondItem="e6s-bK-Rtf" secondAttribute="trailing" id="tg5-SS-tB1"/>
+                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="leading" secondItem="sny-ev-QfF" secondAttribute="trailing" constant="8" id="vSg-Am-lm4"/>
+                                <constraint firstItem="sny-ev-QfF" firstAttribute="centerY" secondItem="e6s-bK-Rtf" secondAttribute="centerY" id="ynN-yg-4Sk"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="nzX-p9-FjZ"/>
+                                    <exclude reference="ynN-yg-4Sk"/>
+                                    <exclude reference="jt8-tg-tHc"/>
+                                    <exclude reference="mdd-pY-x1l"/>
+                                    <exclude reference="vSg-Am-lm4"/>
+                                </mask>
+                            </variation>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="e6s-bK-Rtf" secondAttribute="bottom" constant="25" id="NLa-5e-U8g"/>
-                        <constraint firstItem="e6s-bK-Rtf" firstAttribute="centerX" secondItem="Ox6-jg-nDB" secondAttribute="centerX" id="T0S-T4-nXr"/>
+                        <constraint firstItem="pLR-wZ-8eI" firstAttribute="centerY" secondItem="Ox6-jg-nDB" secondAttribute="centerY" id="1FH-B0-FnA"/>
+                        <constraint firstItem="pLR-wZ-8eI" firstAttribute="centerX" secondItem="Ox6-jg-nDB" secondAttribute="centerX" id="3eD-0Q-ly7"/>
                     </constraints>
                 </view>
             </subviews>
@@ -39,4 +70,7 @@
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="Launch icon" width="60" height="60"/>
+    </resources>
 </document>

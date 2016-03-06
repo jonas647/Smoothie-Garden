@@ -231,7 +231,9 @@
         
         //If it's a blank ingredient then make the separator transparent
         if ([recipeIngredientText.text isEqualToString:@""]) {
-            [separator setTextColor:[UIColor clearColor]];
+            //[separator setTextColor:[UIColor clearColor]];
+            [separator setText:@"x"];
+            [separator setFont:[UIFont fontWithName:separator.font.fontName size:10]];
         }
         
         
@@ -264,7 +266,6 @@
         //Add margins to the cell height
         float cellMargin = cell.frame.size.height;
         
-        
         return [self labelHeightFor:resizableLabel andScreenSize:LABEL_SIZE_LARGE] + cellMargin;
         
     
@@ -280,7 +281,8 @@
         float heightForIngredientLabel = [self labelHeightFor:ingredientLabel andScreenSize:LABEL_SIZE_SMALL];
         float heightForVolumeLabel = [self labelHeightFor:volumeLabel andScreenSize:LABEL_SIZE_SMALL];
         
-        float highestLabel = MAX(heightForIngredientLabel, heightForVolumeLabel);
+        float cellMargin = cell.frame.size.height/3;
+        float highestLabel = MAX(heightForIngredientLabel, heightForVolumeLabel) + cellMargin;
         return highestLabel;
     } else if ([tableView isEqual:longDescriptionTable]) {
         

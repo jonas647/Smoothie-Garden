@@ -512,21 +512,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-2p-T7V">
-                                                    <rect key="frame" x="8" y="7" width="255" height="30"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="Metric">
-                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <state key="selected" title="US Customary Units">
-                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="changeMeasurement:" destination="mEs-mC-93l" eventType="touchUpInside" id="H4C-I5-aP7"/>
-                                                    </connections>
-                                                </button>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VDG-AR-szD">
                                                     <rect key="frame" x="8" y="11" width="107" height="29"/>
                                                     <segments>
@@ -543,11 +528,6 @@
                                                 <constraint firstItem="VDG-AR-szD" firstAttribute="leading" secondItem="gft-LY-4Wa" secondAttribute="leadingMargin" id="502-dE-A58"/>
                                                 <constraint firstItem="VDG-AR-szD" firstAttribute="centerY" secondItem="gft-LY-4Wa" secondAttribute="centerY" id="ndJ-hp-Gqi"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="Azb-2p-T7V"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -615,7 +595,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="measurementButton" destination="Azb-2p-T7V" id="P8x-J8-ust"/>
                         <outlet property="measurementSegmentControl" destination="VDG-AR-szD" id="g3d-wy-9xZ"/>
                         <outlet property="sidebarButton" destination="S1D-ko-z8g" id="KH6-X7-GLu"/>
                     </connections>
@@ -1108,24 +1087,21 @@
                                                         </state>
                                                         <state key="selected" image="Like Filled-100.png"/>
                                                         <state key="highlighted" image="Like Filled-100.png"/>
-                                                        <connections>
-                                                            <action selector="likeRecipe:" destination="6g5-lL-91E" eventType="touchUpInside" id="btY-Hd-bL9"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw6-s1-rof" userLabel="Title">
-                                                        <rect key="frame" x="10" y="22" width="580" height="38"/>
+                                                        <rect key="frame" x="105" y="22" width="390" height="38"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbt-gC-srx">
-                                                        <rect key="frame" x="289.5" y="62.5" width="21" height="24"/>
+                                                        <rect key="frame" x="289" y="63" width="21" height="24"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="401" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie Box" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbZ-zo-hmC" userLabel="Smoothie Box">
-                                                        <rect key="frame" x="238.5" y="89.5" width="122" height="24"/>
+                                                        <rect key="frame" x="238" y="90" width="122" height="24"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1134,6 +1110,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="Bbt-gC-srx" firstAttribute="top" secondItem="Dw6-s1-rof" secondAttribute="bottom" constant="3" id="5Vk-CQ-VWO"/>
+                                                    <constraint firstItem="Dw6-s1-rof" firstAttribute="width" secondItem="LRO-gj-q9r" secondAttribute="width" multiplier="0.65" id="5cf-OL-NuA"/>
                                                     <constraint firstItem="Bbt-gC-srx" firstAttribute="centerX" secondItem="Dw6-s1-rof" secondAttribute="centerX" id="Hiq-Z5-J3D"/>
                                                     <constraint firstItem="SrW-yV-DL4" firstAttribute="height" secondItem="LRO-gj-q9r" secondAttribute="height" multiplier="0.45" id="JxR-kK-Mtr"/>
                                                     <constraint firstItem="Dw6-s1-rof" firstAttribute="top" secondItem="LRO-gj-q9r" secondAttribute="top" constant="22" id="LYA-IH-1xP"/>
@@ -1148,6 +1125,10 @@
                                                 <variation key="default">
                                                     <mask key="subviews">
                                                         <exclude reference="SrW-yV-DL4"/>
+                                                    </mask>
+                                                    <mask key="constraints">
+                                                        <exclude reference="NSf-Y5-Tgx"/>
+                                                        <exclude reference="o25-Xc-NKU"/>
                                                     </mask>
                                                 </variation>
                                             </view>

@@ -1450,7 +1450,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>2</integer>
+				<integer>5</integer>
 			</dict>
 			<key>raspberries</key>
 			<dict>
@@ -1463,7 +1463,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>3</integer>
+				<integer>0</integer>
 			</dict>
 			<key>strawberries</key>
 			<dict>
@@ -1476,7 +1476,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>1</integer>
+				<integer>4</integer>
 			</dict>
 			<key>frozen banana</key>
 			<dict>
@@ -1489,7 +1489,7 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>0</integer>
+				<integer>3</integer>
 			</dict>
 			<key>honey</key>
 			<dict>
@@ -1502,7 +1502,20 @@ blueberries</key>
 				<key>Optional</key>
 				<false/>
 				<key>Sorting</key>
-				<integer>4</integer>
+				<integer>1</integer>
+			</dict>
+			<key>blank</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>0</integer>
+				<key>Type</key>
+				<string></string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>2</integer>
 			</dict>
 		</dict>
 		<key>RecipeCategory</key>

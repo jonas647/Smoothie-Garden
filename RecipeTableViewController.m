@@ -441,7 +441,6 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"Will display cell");
     //This is needed to get proper parallax effect and no stuttering image when loading the table view
     [self updateParallaxEffectForCell:(RecipeTableViewCell*) cell];
 }
