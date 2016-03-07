@@ -49,6 +49,7 @@
 
 - (BOOL) shouldUpdateRecipePersistentStore {
     
+    NSLog(@"Should update persistent store?");
     //If the version has never been saved then load recipes
     if(![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:@"RecipeVersion"]){
 
@@ -60,8 +61,7 @@
         int versionOfRecipeList = [[recipeDictionary objectForKey:@"Version"]intValue];
         int currentVersion = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"RecipeVersion"];
         
-        NSDictionary *localizedRecipeDictionary = [self localizedRecipeDescriptions];
-        NSString *recipeLanguage = [localizedRecipeDictionary objectForKey:@"Language"];
+        NSString *recipeLanguage = [[NSUserDefaults standardUserDefaults]objectForKey:@"RecipeLanguage"];
         NSString *userLanguage = [self currentLanguage];
         
         //If the version is lower than the last updated plist then load the recipes
@@ -113,6 +113,7 @@
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:recipeToSave];
     [defaults setObject:data forKey:@"SavedRecipes"];
     [defaults setObject:[NSNumber numberWithInt:version] forKey:@"RecipeVersion"];
+    [defaults setObject:[self currentLanguage] forKey:@"RecipeLanguage"]; //Save the current language
     [defaults synchronize];
     
 }

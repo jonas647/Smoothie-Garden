@@ -69,7 +69,7 @@
     //Appearance of the page control
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor blackColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor groupTableViewBackgroundColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = [UIColor clearColor];
     pageControl.alpha = 1;
     

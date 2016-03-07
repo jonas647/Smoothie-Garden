@@ -812,6 +812,7 @@
                                     <outlet property="recipeDescription" destination="Jp4-jv-W3U" id="6A3-zH-oub"/>
                                     <outlet property="recipeImage" destination="NsZ-8L-8IF" id="KGd-V2-xy1"/>
                                     <outlet property="recipeTitle" destination="dpf-3Y-pUJ" id="9n0-jh-FaU"/>
+                                    <outlet property="topImageConstraint" destination="6dL-Ol-JL4" id="buy-7S-SOm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

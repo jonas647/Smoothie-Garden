@@ -10,6 +10,7 @@
 #define NUMBER_OF_STATIC_CELLS_AT_BOTTOM 1
 
 #import "NutrientDetailedViewController.h"
+#import "SBGoogleAnalyticsHelper.h"
 
 @interface NutrientDetailedViewController ()
 
@@ -33,11 +34,8 @@
     NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
     [tempKeys removeObject:@"Energy"];
     
-    NSLog(@"Loading nutrients in language: %@", [self currentLanguage]);
-    
     //Handle localization for nutrients if english isn't used on the phone
     if (![[self currentLanguage] isEqualToString: @"en"] ) {
-        NSLog(@"in language: %@", [self currentLanguage]);
         
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         NSMutableArray *tempLocalizedKeys = [[NSMutableArray alloc]init];
@@ -57,7 +55,6 @@
             [tempLocalizedKeys addObject:localizedKey];
             
         }
-        NSLog(@"Finished setting up localized keys for nutrients");
         
         //Create the localized sorted array
         localizedKeys = [tempLocalizedKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -76,6 +73,10 @@
         //Sort the array of keys alphabetically
         dictionaryKeys = [tempKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     }
+    
+    //Report to analytics
+    [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:[NSString stringWithFormat:@"Nutrient Facts"]];
+    [SBGoogleAnalyticsHelper reportEventWithCategory:@"Nutrient Fact" andAction:@"Watching" andLabel:[NSString stringWithFormat:@"%@", self.selectedRecipe.recipeName] andValue:nil];
     
 }
 

@@ -26,11 +26,11 @@
 		<key>RecipeName</key>
 		<string>Green Rawgurt</string>
 		<key>ShortDescription</key>
-		<string>Ett utmärkt grönt alternativ till traditionell yoghurt
+		<string>Ett grönt alternativ till traditionell yoghurt
 </string>
 		<key>LongDescription</key>
 		<array>
-			<string>Ett utmärkt grönt alternativ till traditionell yoghurt.</string>
+			<string>Ett grönt alternativ till traditionell yoghurt.</string>
 			<string>Servera i en skål till frukost och toppa med färska bär, frukter, nötter och frön.</string>
 		</array>
 		<key>Instructions</key>
@@ -260,9 +260,7 @@
 		<array>
 			<string>Börja med hallonsåsen genom att mixa hallon och honung</string>
 			<string>Mixa sedan bananer, jordgubbar och kokosmjölk på hög hastighet till krämig och tjock konsistens.</string>
-			<string>Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten av glaset och uppåt i cirklar för att skapa en vacker virvel
-Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten av glaset och uppåt i cirklar för att skapa en vacker virvel
-Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten av glaset och uppåt i cirklar för att skapa en vacker virvel</string>
+			<string>Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten av glaset och uppåt i cirklar för att skapa en vacker virvel.</string>
 		</array>
 	</dict>
 	<key>Recipe16</key>
@@ -270,7 +268,7 @@ Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten
 		<key>RecipeName</key>
 		<string>Mango and grapefruit detox</string>
 		<key>ShortDescription</key>
-		<string>En frisk smoothie som boostar både metabolismen och immunförsvaret</string>
+		<string>Boostar både metabolismen och immunförsvaret</string>
 		<key>LongDescription</key>
 		<array>
 			<string>En frisk smoothie som boostar både metabolismen och immunförsvaret</string>

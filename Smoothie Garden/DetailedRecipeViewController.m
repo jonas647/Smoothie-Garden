@@ -37,10 +37,6 @@
     
 }
 
-- (void) awakeFromNib {
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
    
@@ -73,6 +69,10 @@
     
     self.navigationItem.rightBarButtonItem = barButtonItem;
     
+    //If the recipe is liked then make the like button selected
+    if (self.selectedRecipe.favorite) {
+        [customButton setSelected:YES];
+    }
     
     
     //Hide the navigation bar

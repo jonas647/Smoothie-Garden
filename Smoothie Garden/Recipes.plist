@@ -92,7 +92,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>21</integer>
 		<key>ImageName</key>
 		<string>Green Kale</string>
 	</dict>
@@ -184,7 +184,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>1</integer>
+		<integer>15</integer>
 		<key>ImageName</key>
 		<string>Green Rawgurt</string>
 	</dict>
@@ -300,7 +300,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>2</integer>
+		<integer>11</integer>
 		<key>ImageName</key>
 		<string>Veggie Detox</string>
 	</dict>
@@ -418,7 +418,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>3</integer>
+		<integer>0</integer>
 		<key>ImageName</key>
 		<string>Green Machine</string>
 	</dict>
@@ -497,7 +497,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>4</integer>
+		<integer>1</integer>
 		<key>ImageName</key>
 		<string>Orange is the new Black</string>
 	</dict>
@@ -576,7 +576,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>5</integer>
+		<integer>12</integer>
 		<key>ImageName</key>
 		<string>Scandinavian Berries</string>
 	</dict>
@@ -681,7 +681,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>6</integer>
+		<integer>10</integer>
 		<key>ImageName</key>
 		<string>Chocolate and Raspberry Shake</string>
 	</dict>
@@ -786,7 +786,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>7</integer>
+		<integer>2</integer>
 		<key>ImageName</key>
 		<string>Blueberry Pie</string>
 	</dict>
@@ -904,7 +904,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>8</integer>
+		<integer>16</integer>
 		<key>ImageName</key>
 		<string>Peanut Butter Jelly</string>
 	</dict>
@@ -996,7 +996,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>9</integer>
+		<integer>13</integer>
 		<key>ImageName</key>
 		<string>Unbeetable</string>
 	</dict>
@@ -1101,7 +1101,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>10</integer>
+		<integer>3</integer>
 		<key>ImageName</key>
 		<string>Raspberry Kick</string>
 	</dict>
@@ -1180,7 +1180,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>11</integer>
+		<integer>9</integer>
 		<key>ImageName</key>
 		<string>Bluebelly Bliss</string>
 	</dict>
@@ -1300,7 +1300,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>12</integer>
+		<integer>5</integer>
 		<key>ImageName</key>
 		<string>Layered Blueberry Chia Smoothie</string>
 	</dict>
@@ -1431,7 +1431,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>13</integer>
+		<integer>18</integer>
 		<key>ImageName</key>
 		<string>Passion for Chia</string>
 	</dict>
@@ -1523,7 +1523,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>14</integer>
+		<integer>22</integer>
 		<key>ImageName</key>
 		<string>Strawberry Nicecream with Raspberry Swirl</string>
 	</dict>
@@ -1589,7 +1589,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>15</integer>
+		<integer>17</integer>
 		<key>ImageName</key>
 		<string>Mango and Grapefruit Detox</string>
 	</dict>
@@ -1668,7 +1668,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>16</integer>
+		<integer>4</integer>
 		<key>ImageName</key>
 		<string>Mango Rosehip</string>
 	</dict>
@@ -1773,7 +1773,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>18</integer>
+		<integer>8</integer>
 		<key>ImageName</key>
 		<string>Valentine</string>
 	</dict>
@@ -1904,7 +1904,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>17</integer>
+		<integer>19</integer>
 		<key>ImageName</key>
 		<string>Sweet Strawberry Pie</string>
 	</dict>
@@ -2048,7 +2048,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>18</integer>
+		<integer>6</integer>
 		<key>ImageName</key>
 		<string>Cashew and raspberry smoothie</string>
 	</dict>
@@ -2140,7 +2140,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>19</integer>
+		<integer>20</integer>
 		<key>ImageName</key>
 		<string>Tropical Passion</string>
 	</dict>
@@ -2206,7 +2206,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>20</integer>
+		<integer>14</integer>
 		<key>ImageName</key>
 		<string>Acai Bowl</string>
 	</dict>
@@ -2272,7 +2272,7 @@ blueberries</key>
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>21</integer>
+		<integer>7</integer>
 		<key>ImageName</key>
 		<string>Raspberry and Coconut Smoothie</string>
 	</dict>

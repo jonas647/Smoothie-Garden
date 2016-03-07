@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *likeImage;
 @property (weak, nonatomic) IBOutlet UIView *imageFrame;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDescription;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topImageConstraint;
 
 
 @end

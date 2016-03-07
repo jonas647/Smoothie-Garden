@@ -481,10 +481,10 @@
 
 - (void) updateParallaxEffectForCell: (RecipeTableViewCell*) cellToDisplay {
     
+    NSLog(@"BEFORE Y: %f", cellToDisplay.recipeImage.frame.origin.y);
     
     //Offset of the current position in table view
     float offsetY = self.tableView.contentOffset.y;
-    
     
     //Only the Y position matters since only vertical scrolling
     float x = cellToDisplay.recipeImage.frame.origin.x;
@@ -493,7 +493,10 @@
     
     //Check where the cell is and split for height and add the parallax factor. Got this from "the internet"...
     float y = ((offsetY - cellToDisplay.frame.origin.y) / h) * imageParallaxEffectFactor;
+    NSLog(@"%f - %f /%f = %f", offsetY, cellToDisplay.frame.origin.y, h, y);
     cellToDisplay.recipeImage.frame = CGRectMake(x, y, w, h);
+    
+    NSLog(@"AFTER Y: %f", cellToDisplay.recipeImage.frame.origin.y);
 }
 
 #pragma mark - Scroll view delegate
