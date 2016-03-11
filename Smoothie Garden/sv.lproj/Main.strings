@@ -32,17 +32,8 @@
 /* Class = "UITabBarItem"; title = "All recipes"; ObjectID = "8WE-pM-OY1"; */
 "8WE-pM-OY1.title" = "Alla recept";
 
-/* Class = "UIButton"; normalTitle = "Reset all liked recipes"; ObjectID = "8nz-ZM-24x"; */
-"8nz-ZM-24x.normalTitle" = "Återställ gillade recept";
-
-/* Class = "UIButton"; normalTitle = "Metric"; ObjectID = "Azb-2p-T7V"; */
-"Azb-2p-T7V.normalTitle" = "Metriska systemet";
-
-/* Class = "UIButton"; selectedTitle = "US Customary Units"; ObjectID = "Azb-2p-T7V"; */
-"Azb-2p-T7V.selectedTitle" = "Amerikanska enheter";
-
 /* Class = "UILabel"; text = "by"; ObjectID = "Bbt-gC-srx"; */
-"Bbt-gC-srx.text" = "by";
+"Bbt-gC-srx.text" = "av";
 
 /* Class = "UILabel"; text = "Carbs"; ObjectID = "CKV-GL-hZ2"; */
 "CKV-GL-hZ2.text" = "Kolhydrater";
@@ -53,13 +44,13 @@
 /* Class = "UILabel"; text = "Smoothie name"; ObjectID = "Dw6-s1-rof"; */
 "Dw6-s1-rof.text" = "Smoothie name";
 
-/* Class = "UIButton"; normalTitle = "Uppgradera Smoothie Box"; ObjectID = "EEP-RF-661"; */
-"EEP-RF-661.normalTitle" = "Uppgradera Smoothie Box";
+/* Class = "UIButton"; normalTitle = "Upgrade Smoothie Box"; ObjectID = "EEP-RF-661"; */
+"EEP-RF-661.normalTitle" = "Upgrade Smoothie Box";
 
 /* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "FW3-Ia-rdr"; */
 "FW3-Ia-rdr.footerTitle" = " ";
 
-/* Class = "UITableViewSection"; headerTitle = "Weight and measures"; ObjectID = "FW3-Ia-rdr"; */
+/* Class = "UITableViewSection"; headerTitle = "Measurement"; ObjectID = "FW3-Ia-rdr"; */
 "FW3-Ia-rdr.headerTitle" = "Vikt och mått-enheter";
 
 /* Class = "UILabel"; text = "Challenge yourself with a three day smoothie box detox with nourishing and antioxidant-packed smoothies.We put together a balanced selection of four delicious smoothies per day for three days that will give you a new start and lots of energy. Exclude caffeine, sugar, gluten and lactose during the detoxing to get maximum results."; ObjectID = "Fu5-qw-mUV"; */
@@ -89,11 +80,14 @@
 /* Class = "UILabel"; text = "% of DI"; ObjectID = "Jka-XQ-egK"; */
 "Jka-XQ-egK.text" = "% av DI";
 
+/* Class = "UILabel"; text = "Description of smoothie"; ObjectID = "Jp4-jv-W3U"; */
+"Jp4-jv-W3U.text" = "Description of smoothie";
+
 /* Class = "UILabel"; text = "Ingredient text"; ObjectID = "Jtr-fs-o1S"; */
 "Jtr-fs-o1S.text" = "Ingredient text";
 
 /* Class = "UILabel"; text = "Miriam Björkell - Recipes & Photos"; ObjectID = "Khv-SR-gje"; */
-"Khv-SR-gje.text" = "Miriam Björkell - Recept & foton";
+"Khv-SR-gje.text" = "Miriam Björkell - Recept & Foton";
 
 /* Class = "UILabel"; text = "Carbs"; ObjectID = "LHu-H1-bfi"; */
 "LHu-H1-bfi.text" = "Kolhydrater";
@@ -101,8 +95,11 @@
 /* Class = "UILabel"; text = "12AM"; ObjectID = "O79-8o-OTO"; */
 "O79-8o-OTO.text" = "Lunch";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "Rl4-Tv-FHY"; */
-"Rl4-Tv-FHY.text" = "Label";
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "OeZ-Yk-7QW"; */
+"OeZ-Yk-7QW.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Liked Recipes"; ObjectID = "OeZ-Yk-7QW"; */
+"OeZ-Yk-7QW.headerTitle" = "Gillade recept";
 
 /* Class = "UILabel"; text = "Smoothie title"; ObjectID = "RnD-Gb-vWM"; */
 "RnD-Gb-vWM.text" = "Smoothie title";
@@ -113,20 +110,26 @@
 /* Class = "UIButton"; normalTitle = "Detailed nutrient fact sheet"; ObjectID = "SWD-q9-32K"; */
 "SWD-q9-32K.normalTitle" = "Detaljerad näringsfakta";
 
+/* Class = "UIButton"; normalTitle = "Reset all liked recipes"; ObjectID = "SgH-gH-E11"; */
+"SgH-gH-E11.normalTitle" = "Återställ gillade recept";
+
 /* Class = "UIButton"; normalTitle = "Day 3"; ObjectID = "UDj-xo-lhi"; */
 "UDj-xo-lhi.normalTitle" = "Dag 3";
 
-/* Class = "UILabel"; text = "If you like Smoothie Box, please rate us on AppStore"; ObjectID = "UEz-rZ-icy"; */
+/* Class = "UILabel"; text = "If you like Smoothie Box, please rate us"; ObjectID = "UEz-rZ-icy"; */
 "UEz-rZ-icy.text" = "Lämna gärna en recension om du gillar Smoothie box";
+
+/* Class = "UISegmentedControl"; VDG-AR-szD.segmentTitles[0] = "Metric"; ObjectID = "VDG-AR-szD"; */
+"VDG-AR-szD.segmentTitles[0]" = "Metriska systemet";
+
+/* Class = "UISegmentedControl"; VDG-AR-szD.segmentTitles[1] = "US"; ObjectID = "VDG-AR-szD"; */
+"VDG-AR-szD.segmentTitles[1]" = "US";
 
 /* Class = "UILabel"; text = "Fat"; ObjectID = "VTb-Yx-QZn"; */
 "VTb-Yx-QZn.text" = "Fett";
 
 /* Class = "UILabel"; text = "Recipes"; ObjectID = "Veq-XS-RZc"; */
 "Veq-XS-RZc.text" = "Recept";
-
-/* Class = "UIButton"; normalTitle = "Restore Purchases"; ObjectID = "W9L-sv-ZYh"; */
-"W9L-sv-ZYh.normalTitle" = "Återställ tidigare köp";
 
 /* Class = "UILabel"; text = "Quantity & Measurement"; ObjectID = "WcX-zF-00g"; */
 "WcX-zF-00g.text" = "Kvantitet & mått";
@@ -149,9 +152,6 @@
 /* Class = "UITableViewSection"; headerTitle = "Rate us"; ObjectID = "ZeV-fF-o6R"; */
 "ZeV-fF-o6R.headerTitle" = "Recensera Smoothie Box";
 
-/* Class = "UITextView"; text = "Short text describing the smoothie"; ObjectID = "aL4-Px-qNR"; */
-"aL4-Px-qNR.text" = "Short text describing the smoothie";
-
 /* Class = "UILabel"; text = "Percent daily values are based on a 2000 calorie diet. Your daily values may be higher or lower depending on your calorie needs."; ObjectID = "bPn-PP-Qfq"; */
 "bPn-PP-Qfq.text" = "Dagliga intaget grundar sig på en diet på 2000 kalorier. Ditt dagliga intag kan vara högre eller lägre beroende på ditt personliga behov";
 
@@ -161,17 +161,8 @@
 /* Class = "UILabel"; text = "Nutrient"; ObjectID = "c5w-Fd-PD2"; */
 "c5w-Fd-PD2.text" = "Näringsvärde";
 
-/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "cEK-e2-cKS"; */
-"cEK-e2-cKS.footerTitle" = " ";
-
-/* Class = "UITableViewSection"; headerTitle = "Liked Recipes"; ObjectID = "cEK-e2-cKS"; */
-"cEK-e2-cKS.headerTitle" = "Gillade Recept";
-
 /* Class = "UILabel"; text = "Protein"; ObjectID = "cRA-Mt-cbs"; */
 "cRA-Mt-cbs.text" = "Protein";
-
-/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "dTk-JI-3A0"; */
-"dTk-JI-3A0.headerTitle" = " ";
 
 /* Class = "UILabel"; text = "Kcal"; ObjectID = "dkj-wT-Vt1"; */
 "dkj-wT-Vt1.text" = "Kcal";
@@ -185,8 +176,14 @@
 /* Class = "UINavigationItem"; title = "Smoothie Box Recipes"; ObjectID = "eRY-fT-6cl"; */
 "eRY-fT-6cl.title" = "Smoothie Box Recept";
 
+/* Class = "UIButton"; normalTitle = "Reset all liked recipes"; ObjectID = "fF7-b2-vT4"; */
+"fF7-b2-vT4.normalTitle" = "Återställ gillade recept";
+
 /* Class = "UILabel"; text = "Nutrient"; ObjectID = "fc7-lH-9D5"; */
 "fc7-lH-9D5.text" = "Näringsvärde";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fdp-UB-FKZ"; */
+"fdp-UB-FKZ.text" = "Label";
 
 /* Class = "UILabel"; text = "Kcal"; ObjectID = "gHA-7l-aQy"; */
 "gHA-7l-aQy.text" = "Kcal";
@@ -204,10 +201,10 @@
 "hXW-or-GLG.text" = "Detailed description";
 
 /* Class = "UINavigationItem"; title = "About"; ObjectID = "jOl-5N-FuN"; */
-"jOl-5N-FuN.title" = "Om Smoothie Box";
+"jOl-5N-FuN.title" = "About";
 
 /* Class = "UILabel"; text = "All recipes are curated by Smoothie Box"; ObjectID = "kD1-8l-bFb"; */
-"kD1-8l-bFb.text" = "Alla recept är framtagna av Smoothie Box";
+"kD1-8l-bFb.text" = "Alla recept är noggrannt framtagna av Smoothie Box";
 
 /* Class = "UILabel"; text = "∙"; ObjectID = "lOy-ec-Ss3"; */
 "lOy-ec-Ss3.text" = "∙";
@@ -219,7 +216,7 @@
 "mfG-C9-fM5.text" = "Frukost";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "nOX-8i-r2L"; */
-"nOX-8i-r2L.text" = "Om oss";
+"nOX-8i-r2L.text" = "Kontakta oss";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "npH-Nk-lhc"; */
 "npH-Nk-lhc.title" = "Item";
@@ -234,7 +231,7 @@
 "pAW-v0-wBb.headerTitle" = "Credits";
 
 /* Class = "UILabel"; text = "Upgrade your Smoothie Box!"; ObjectID = "qVp-B4-98K"; */
-"qVp-B4-98K.text" = "Uppgradera Smoothie Box!";
+"qVp-B4-98K.text" = "Upgrade your Smoothie Box!";
 
 /* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "rH3-YL-MMh"; */
 "rH3-YL-MMh.footerTitle" = " ";
@@ -255,19 +252,13 @@
 "t8U-79-3fS.text" = "Volym";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "tRQ-LE-pEK"; */
-"tRQ-LE-pEK.title" = "Inställningar";
+"tRQ-LE-pEK.title" = "In";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "vLZ-yU-EOB"; */
 "vLZ-yU-EOB.text" = "Protein";
 
 /* Class = "UILabel"; text = "Total Calories: "; ObjectID = "vqN-vh-3Tw"; */
-"vqN-vh-3Tw.text" = "Totala kalorier: ";
-
-/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "xTC-ol-j3v"; */
-"xTC-ol-j3v.footerTitle" = " ";
-
-/* Class = "UITableViewSection"; headerTitle = "Purchases"; ObjectID = "xTC-ol-j3v"; */
-"xTC-ol-j3v.headerTitle" = "Köp";
+"vqN-vh-3Tw.text" = "Kalorier: ";
 
 /* Class = "UILabel"; text = "3g"; ObjectID = "zqb-vX-KXX"; */
 "zqb-vX-KXX.text" = "3g";

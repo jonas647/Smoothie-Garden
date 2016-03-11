@@ -78,27 +78,29 @@
         NSURL *instagramURL = [NSURL URLWithString:@"instagram://user?username=smoothie_box"];
         if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
             [[UIApplication sharedApplication] openURL:instagramURL];
-        } else
+        } else {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://instagram.com/smoothie_box/"]];
+        }
         
-    } else if ([indexPath isEqual:[tableView indexPathForCell:self.facebookLikeCell]]) {
-        
-        //User likes the Facebook page
-    } else if ([indexPath isEqual:[tableView indexPathForCell:self.facebookPageCell]]) {
+    } else if ([indexPath isEqual:[tableView indexPathForCell:self.facebookPageCell]] ||
+               [indexPath isEqual:[tableView indexPathForCell:self.facebookLikeCell]]) {
         
         //Move the user to Facebook page
-        //TODO add smoothie box facebook
-        NSURL *fbURL = [NSURL URLWithString:@"fb://profile/<id>"];
+        NSURL *fbURL = [NSURL URLWithString:@"fb://profile/140319949657893"];
         if ([[UIApplication sharedApplication] canOpenURL:fbURL]){
             [[UIApplication sharedApplication] openURL:fbURL];
         }
         else {
             //Open the url as usual
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/smoothieboxapp/"]];
         }
         
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.emailCell]]) {
         
         //Open email template
+        //TODO - add proper email address
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:foo@example.com?subject=Smoothie%20Box%20Feedback"]];
+        
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.reviewCell]]) {
         
         //Open AppStore
