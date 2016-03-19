@@ -47,7 +47,6 @@
     
     //If the recipe is one of the favorites, then make the like button selected
     if ([[RecipeManager sharedInstance]isRecipeFavorite:self.selectedRecipe]) {
-        likeButton.selected = YES;
         [rightBarButton setSelected:YES];
     }
     
@@ -395,7 +394,7 @@
         return;
     }
     
-    if (!likeButton.selected) {
+    if (!rightBarButton.selected) {
         
         //Add recipe to the favorites. Run in background thread
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -405,14 +404,12 @@
         
         
         //Change the like button to selected
-        likeButton.selected = YES;
-        
         rightBarButton.selected = YES;
         
         //Report the event to analytics
         [SBGoogleAnalyticsHelper userLikedRecipeName:_selectedRecipe.recipeName];
         
-    } else if (likeButton.selected){
+    } else if (rightBarButton.selected){
         //Remove recipe from favorites in background thread
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [[RecipeManager sharedInstance]removeRecipeFromFavorites:self.selectedRecipe];
@@ -420,8 +417,6 @@
         });
         
         //Change the like button to unselected
-        likeButton.selected = NO;
-        
         rightBarButton.selected = NO;
         
         //Report to analytics
@@ -432,52 +427,9 @@
     isLikeButtonTouchable = NO;
     
     //Animate like if the like button is selected
-    [self animateLike:likeButton.selected];
+    [self animateLike:rightBarButton.selected];
     
 }
-/*
-- (IBAction)likeRecipe:(id)sender {
-    
-    if (!isLikeButtonTouchable) {
-        //If the like button isn't touchable, then don't do anything
-        return;
-    }
-    
-    if (!likeButton.selected) {
-        
-        //Add recipe to the favorites
-        [self.selectedRecipe addRecipeToFavorites];
-        
-        //Change the like button to selected
-        likeButton.selected = YES;
-        
-        rightBarButton.selected = YES;
-        
-        //Report the event to analytics
-        [SBGoogleAnalyticsHelper userLikedRecipeName:_selectedRecipe.recipeName];
-        
-    } else if (likeButton.selected){
-        //Remove recipe from favorites
-        [Recipe removeRecipeFromFavoritesUsingRecipeName:self.selectedRecipe.recipeName];
-        
-        //Change the like button to unselected
-        likeButton.selected = NO;
-        
-        rightBarButton.selected = NO;
-        
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-        
-        //Report to analytics
-        [SBGoogleAnalyticsHelper userDislikedRecipeName:_selectedRecipe.recipeName];
-    }
-    
-    //Animate like if the like button is selected
-    [self animateLike:likeButton.selected];
-    
-    //Set the like button to not touchable to make the user not press it to often, causing animation to mess up
-    isLikeButtonTouchable = NO;
-}
-*/
 
 - (void) animateLike: (BOOL) like {
     

@@ -13,7 +13,6 @@
 {
     __weak IBOutlet UIView *contentView;
     
-    __weak IBOutlet UIView *topViewArea;
     __weak IBOutlet UIView *statusbarBackground;
     __weak IBOutlet UIView *titleBackground;
     __weak IBOutlet UITableView *ingredientsTableView;
@@ -22,20 +21,13 @@
     
     __weak IBOutlet NSLayoutConstraint *ingredientsHeightConstraint;
     __weak IBOutlet NSLayoutConstraint *recipeTableViewHeightConstraint;
-    __weak IBOutlet UILabel *recipeDescription;
-    
-    __weak IBOutlet UIButton *likeButton;
     
     __weak IBOutlet UIView *likeView;
     __weak IBOutlet UITableView *recipeTableView;
-
-    __weak IBOutlet NSLayoutConstraint *blankBackgroundHeightConstraint;
-    __weak IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
     
     
     __weak IBOutlet NSLayoutConstraint *recipeImageViewHeight;
     __weak IBOutlet NSLayoutConstraint *blankBackgroundToTop;
-    __weak IBOutlet NSLayoutConstraint *titleBackgroundToTop;
     
     __weak IBOutlet UITableView *longDescriptionTable;
     __weak IBOutlet NSLayoutConstraint *longDescriptionTableHeightConstraint;

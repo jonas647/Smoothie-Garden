@@ -688,13 +688,6 @@
                             <rect key="frame" x="0.0" y="576" width="600" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyQ-RC-jDi">
-                                    <rect key="frame" x="15" y="108" width="570" height="36"/>
-                                    <string key="text">Every ingredient is carefully selected to achieve the perfect blend between healthy and delicious. Always free from animal product, gluten and no added sugar</string>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tea-32530_640-gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="bk8-pd-Qb2">
                                     <rect key="frame" x="279" y="30" width="43" height="43"/>
                                     <constraints>
@@ -712,20 +705,11 @@
                             <constraints>
                                 <constraint firstItem="kD1-8l-bFb" firstAttribute="width" secondItem="s4X-Nf-LML" secondAttribute="width" multiplier="0.95" id="3pp-dC-Vc0"/>
                                 <constraint firstItem="kD1-8l-bFb" firstAttribute="top" secondItem="bk8-pd-Qb2" secondAttribute="bottom" constant="5" id="8Up-vj-BB1"/>
-                                <constraint firstItem="FyQ-RC-jDi" firstAttribute="top" secondItem="kD1-8l-bFb" secondAttribute="bottom" constant="8" id="DUa-uB-iWv"/>
-                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FyQ-RC-jDi" secondAttribute="bottom" id="Eof-rk-z6w"/>
                                 <constraint firstItem="bk8-pd-Qb2" firstAttribute="width" secondItem="s4X-Nf-LML" secondAttribute="width" multiplier="1:14" id="IwF-uH-RRm"/>
-                                <constraint firstItem="FyQ-RC-jDi" firstAttribute="centerX" secondItem="s4X-Nf-LML" secondAttribute="centerX" id="bPJ-cB-Hpj"/>
-                                <constraint firstItem="FyQ-RC-jDi" firstAttribute="width" secondItem="kD1-8l-bFb" secondAttribute="width" id="dsv-QT-3JF"/>
                                 <constraint firstItem="bk8-pd-Qb2" firstAttribute="top" secondItem="s4X-Nf-LML" secondAttribute="top" constant="30" id="ouT-tf-3uA"/>
                                 <constraint firstItem="kD1-8l-bFb" firstAttribute="centerX" secondItem="s4X-Nf-LML" secondAttribute="centerX" id="pL1-jp-KlU"/>
                                 <constraint firstItem="bk8-pd-Qb2" firstAttribute="centerX" secondItem="s4X-Nf-LML" secondAttribute="centerX" id="rDn-PX-Phg"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="subviews">
-                                    <exclude reference="FyQ-RC-jDi"/>
-                                </mask>
-                            </variation>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeTableCell" id="pXQ-p3-zX4" customClass="RecipeTableViewCell">
@@ -1079,17 +1063,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-gj-q9r" userLabel="Title Background">
                                                 <rect key="frame" x="0.0" y="144" width="600" height="256"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrW-yV-DL4" userLabel="Like Button">
-                                                        <rect key="frame" x="451" y="85" width="144" height="144"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="SrW-yV-DL4" secondAttribute="height" multiplier="1:1" id="y7u-sy-DDv"/>
-                                                        </constraints>
-                                                        <state key="normal" image="Hearts-100.png">
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <state key="selected" image="Like Filled-100.png"/>
-                                                        <state key="highlighted" image="Like Filled-100.png"/>
-                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw6-s1-rof" userLabel="Title">
                                                         <rect key="frame" x="105" y="22" width="390" height="38"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
@@ -1114,20 +1087,14 @@
                                                     <constraint firstItem="Bbt-gC-srx" firstAttribute="top" secondItem="Dw6-s1-rof" secondAttribute="bottom" constant="3" id="5Vk-CQ-VWO"/>
                                                     <constraint firstItem="Dw6-s1-rof" firstAttribute="width" secondItem="LRO-gj-q9r" secondAttribute="width" multiplier="0.65" id="5cf-OL-NuA"/>
                                                     <constraint firstItem="Bbt-gC-srx" firstAttribute="centerX" secondItem="Dw6-s1-rof" secondAttribute="centerX" id="Hiq-Z5-J3D"/>
-                                                    <constraint firstItem="SrW-yV-DL4" firstAttribute="height" secondItem="LRO-gj-q9r" secondAttribute="height" multiplier="0.45" id="JxR-kK-Mtr"/>
                                                     <constraint firstItem="Dw6-s1-rof" firstAttribute="top" secondItem="LRO-gj-q9r" secondAttribute="top" constant="22" id="LYA-IH-1xP"/>
-                                                    <constraint firstItem="SrW-yV-DL4" firstAttribute="top" secondItem="Bbt-gC-srx" secondAttribute="bottom" id="Mea-rl-oEm"/>
                                                     <constraint firstAttribute="trailing" secondItem="Dw6-s1-rof" secondAttribute="trailing" constant="10" id="NSf-Y5-Tgx"/>
                                                     <constraint firstItem="YbZ-zo-hmC" firstAttribute="top" secondItem="Bbt-gC-srx" secondAttribute="bottom" constant="3" id="dwj-Y6-Vgn"/>
                                                     <constraint firstItem="Dw6-s1-rof" firstAttribute="leading" secondItem="LRO-gj-q9r" secondAttribute="leading" constant="10" id="o25-Xc-NKU"/>
                                                     <constraint firstItem="Dw6-s1-rof" firstAttribute="centerX" secondItem="LRO-gj-q9r" secondAttribute="centerX" id="pWR-84-LqI"/>
-                                                    <constraint firstAttribute="trailing" secondItem="SrW-yV-DL4" secondAttribute="trailing" constant="5" id="u5J-Be-Z2f"/>
                                                     <constraint firstItem="YbZ-zo-hmC" firstAttribute="centerX" secondItem="Bbt-gC-srx" secondAttribute="centerX" id="vT7-HW-gPb"/>
                                                 </constraints>
                                                 <variation key="default">
-                                                    <mask key="subviews">
-                                                        <exclude reference="SrW-yV-DL4"/>
-                                                    </mask>
                                                     <mask key="constraints">
                                                         <exclude reference="NSf-Y5-Tgx"/>
                                                         <exclude reference="o25-Xc-NKU"/>
@@ -1224,7 +1191,6 @@
                         <outlet property="contentView" destination="mug-nL-aG1" id="Zgv-85-GuN"/>
                         <outlet property="ingredientsHeightConstraint" destination="B7m-2s-YBE" id="agS-1k-5U9"/>
                         <outlet property="ingredientsTableView" destination="7m7-iv-rxa" id="Vmb-f5-Ibt"/>
-                        <outlet property="likeButton" destination="SrW-yV-DL4" id="QcB-He-UE2"/>
                         <outlet property="likeView" destination="nAn-BD-Tt7" id="PrN-h9-2Pb"/>
                         <outlet property="longDescriptionTable" destination="5ug-QA-uRy" id="N3N-av-FUF"/>
                         <outlet property="longDescriptionTableHeightConstraint" destination="VRy-7b-bRu" id="Pxf-OH-4mU"/>
