@@ -98,6 +98,7 @@
 
 - (void) viewDidLayoutSubviews {
     
+    /*
     //Update the frame for the different UITextviews
     ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
     recipeTableView.frame = [self newFrameForUIView:recipeTableView];
@@ -109,16 +110,26 @@
     //longDescriptionTable.frame = [self newFrameForUIView:longDescriptionTable];
     [longDescriptionTableHeightConstraint setConstant:longDescriptionTable.frame.size.height];
     
-    likeView.layer.cornerRadius = likeView.bounds.size.width/2;//Make like view a circle
-    likeView.alpha = 0.0;//Make like view hidden until the recipe is liked
-    likeView.layer.masksToBounds = YES;
-    
     float totalTableHeight;
     for (int i = 0; i<recipeInstructions.count; i++) {
         totalTableHeight += [self tableView:recipeTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
     }
     [recipeTableViewHeightConstraint setConstant:totalTableHeight];
     
+    
+    */
+    
+    ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
+    recipeTableViewHeightConstraint.constant = recipeTableView.contentSize.height;
+    longDescriptionTableHeightConstraint.constant = longDescriptionTable.contentSize.height;
+    
+    [ingredientsTableView layoutIfNeeded];
+    [recipeTableView layoutIfNeeded];
+    [longDescriptionTable layoutIfNeeded];
+    
+    likeView.layer.cornerRadius = likeView.bounds.size.width/2;//Make like view a circle
+    likeView.alpha = 0.0;//Make like view hidden until the recipe is liked
+    likeView.layer.masksToBounds = YES;
     
     titleName.text = self.selectedRecipe.recipeName;
     
@@ -297,7 +308,7 @@
         
     }
         return 0;
-    
+
 }
 
 - (float) labelHeightFor: (UILabel*) label andScreenSize: (int) screenSize{
@@ -401,7 +412,6 @@
             [[RecipeManager sharedInstance]addRecipeToFavorites:self.selectedRecipe];
             
         });
-        
         
         //Change the like button to selected
         rightBarButton.selected = YES;

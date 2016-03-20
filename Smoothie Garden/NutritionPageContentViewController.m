@@ -66,7 +66,7 @@
     //The title for the nutrients is obvious
     carbsTitle.text = NSLocalizedString(@"LOCALIZE_Carbs", nil); //Carbs is shorter and looks nicer than Carbohydrates
     proteinTitle.text = NSLocalizedString(NUTRITION_PROTEIN, nil) ;
-    fatTitle.text = NSLocalizedString(NUTRITION_FAT, nil) ;
+    fatTitle.text = NSLocalizedString(@"LOCALIZE_Fat", nil) ;
     caloriesTitle.text = calorieText;
     
     //Get the information of nutrients volume from the recipe

@@ -201,7 +201,7 @@
 "hXW-or-GLG.text" = "Detailed description";
 
 /* Class = "UINavigationItem"; title = "About"; ObjectID = "jOl-5N-FuN"; */
-"jOl-5N-FuN.title" = "About";
+"jOl-5N-FuN.title" = "Kontakta oss";
 
 /* Class = "UILabel"; text = "All recipes are curated by Smoothie Box"; ObjectID = "kD1-8l-bFb"; */
 "kD1-8l-bFb.text" = "Alla recept är noggrannt framtagna av Smoothie Box";
@@ -252,7 +252,7 @@
 "t8U-79-3fS.text" = "Volym";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "tRQ-LE-pEK"; */
-"tRQ-LE-pEK.title" = "In";
+"tRQ-LE-pEK.title" = "Inställningar";
 
 /* Class = "UILabel"; text = "Protein"; ObjectID = "vLZ-yU-EOB"; */
 "vLZ-yU-EOB.text" = "Protein";
