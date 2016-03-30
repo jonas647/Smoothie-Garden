@@ -7,7 +7,7 @@
 	<key>Recipe1</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Kale</string>
+		<string>Green kale</string>
 		<key>ShortDescription</key>
 		<string>En krämig och uppfriskande grön smoothie som passar perfekt före eller efter ett träningspass</string>
 		<key>LongDescription</key>
@@ -18,13 +18,13 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe2</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Rawgurt</string>
+		<string>Green rawgurt</string>
 		<key>ShortDescription</key>
 		<string>Ett grönt alternativ till traditionell yoghurt
 </string>
@@ -35,31 +35,33 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
-			<string>Tillsätt en liten skvätt vatten om de frysta ingredienserna inte mixas</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Tillsätt en skvätt vatten om de frysta ingredienserna inte mixas.</string>
 		</array>
 	</dict>
 	<key>Recipe3</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Veggie Detox</string>
+		<string>Veggie detox</string>
 		<key>ShortDescription</key>
-		<string>Med den här gröna smoothien täcker man en stor del av det dagliga grönsaksbehovet</string>
+		<string>Med den här gröna smoothien täcks en stor del av det dagliga grönsaksbehovet</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Genom att dricka en grön smoothie som den här täcker man en stor del av det dagliga grönsaksbehovet. Kroppen har dessutom lättare att ta upp näringen från grönsaker i mixad form.</string>
+			<string>Genom att dricka en grön smoothie som den här täcks en stor del av det dagliga grönsaksbehovet. Kroppen har dessutom lättare att ta upp näringen från grönsaker i mixad form.</string>
 			<string>Tillsätt en kvist persilja för extra järn och smak. </string>
-			<string>Vill man ha en fruktig och söt smak kan avokadon bytas ut mot samma mängd mango.</string>
+			<string>För en fruktig och söt smak kan avokadon bytas ut mot samma mängd mango.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+			<string>Pressa citron till juice.</string>
+			<string>Hacka äpple och ta bort kärnhus.</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe4</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Machine</string>
+		<string>Green machine</string>
 		<key>ShortDescription</key>
 		<string>Att tillsätta gröna blad i smoothien är ett enkelt sätt att öka det dagliga intaget av grönsaker</string>
 		<key>LongDescription</key>
@@ -70,7 +72,8 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+			<string>Pressa apelsin och lime till juice.</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe5</key>
@@ -81,13 +84,13 @@
 		<string>Det här är en riktig vitaminbomb som hjälper till att hålla förkylningar borta</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Det här är en riktig vitaminbomb som hjälper till att hålla förkylningar borta</string>
-			<string>Ingefäran tillför lite hetta till smaken och har dessutom anti-inflammatoriska egenskaper.</string>
+			<string>Det här är en riktig vitaminbomb som hjälper till att hålla förkylningar borta.</string>
+			<string>Ingefäran tillför en aning hetta till smaken och har dessutom anti-inflammatoriska egenskaper.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Använd en råsaftcentrifug till morötterna, apelsinen, citronen och ingefäran</string>
-			<string>Mixa juicen med mangon på hög hastighet till krämig konsistens</string>
+			<string>Använd en råsaftcentrifug till morot, apelsin, citron och ingefära.</string>
+			<string>Mixa juicen med mango på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe6</key>
@@ -99,7 +102,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Nordiska bär är våra egna superbär som innehåller rikligt med näring och antioxidanter. </string>
-			<string>Experimentera gärna med andra nordiska bär som röda eller svarta vinbär, hallon eller smultron. Byt bara ut ett bär i receptet mot det du har hemma i kylen, frysen eller i trädgården</string>
+			<string>Experimentera gärna med andra nordiska bär som röda eller svarta vinbär, hallon eller smultron. Byt bara ut ett bär i receptet mot det som finns i kylen, frysen eller i trädgården.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -111,7 +114,7 @@
 		<key>RecipeName</key>
 		<string>Chocolate and raspberry shake</string>
 		<key>ShortDescription</key>
-		<string>Perfekt när du vill ha något sött men fortfarande vill vara hälsosam</string>
+		<string>Perfekt när du vill ha något sött men fortfarande vara hälsosam</string>
 		<key>LongDescription</key>
 		<array>
 			<string>Choklad och hallon är en oslagbar kombination. Rå kakao innehåller dessutom rikligt med antioxidanter vilket gör den här smoothien perfekt när du är sugen på något sött och behöver energi men fortfarande vill vara nyttig.</string>
@@ -130,8 +133,8 @@
 		<string>Den här antioxidantrika smoothien smakar som blåbärspaj och ger rikligt med energi och näring</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Den här antioxidantrika smoothien smakar som blåbärspaj och ger rikligt med energi och näring</string>
-			<string>Boosta med chiafrön för extra fibrer och nyttiga fetter som håller dig mätt längre.</string>
+			<string>Den här antioxidantrika smoothien smakar som blåbärspaj och ger rikligt med energi och näring.</string>
+			<string>Boosta med chiafrön för extra fibrer och nyttiga fetter som gör att du håller dig mätt länge.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -143,7 +146,7 @@
 		<key>RecipeName</key>
 		<string>Peanut butter jelly</string>
 		<key>ShortDescription</key>
-		<string>En proteinrik smoothie fylld med energi och näring
+		<string>En proteinrik och matig smoothie som serveras med en frisk hallonsås
 </string>
 		<key>LongDescription</key>
 		<array>
@@ -152,9 +155,9 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Börja med hallonsåsen genom att mixa hallon med honung och häll upp i ett glas</string>
-			<string>Mixa resterande ingredienser på hög hastighet till krämig konsistens</string>
-			<string>Häll smoothien över hallonsåsen och servera direkt</string>
+			<string>Mixa hallon med honung och häll upp hallonsåsen i ett glas.</string>
+			<string>Mixa resterande ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Häll smoothien försiktigt över hallonsåsen över ett vinklat glas.</string>
 		</array>
 	</dict>
 	<key>Recipe10</key>
@@ -169,26 +172,26 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Använd en råsaftcentrifug till rödbetan, äpplet och citronen.</string>
+			<string>Använd en råsaftcentrifug till rödbeta, äpple och citron.</string>
 			<string>Mixa juicen med hallon, jordgubbar och banan på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe11</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Raspberry Kick</string>
+		<string>Raspberry kick</string>
 		<key>ShortDescription</key>
 		<string>En riktig vitaminkick med en frisk och somrig smak
 </string>
 		<key>LongDescription</key>
 		<array>
 			<string>Det här är en riktig vitaminkick med en frisk och somrig smak. Drick den en varm och solig sommardag eller helt enkelt när du behöver lite extra energi. </string>
-			<string>Om man vill variera smaken kan myntan ersättas med ingefära.</string>
-			<string>Toppa med gojibär och rivet limeskal.</string>
+			<string>För att variera smaken kan myntan ersättas med ingefära.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+			<string>Pressa apelsin och lime till juice.</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe12</key>
@@ -200,12 +203,12 @@
 </string>
 		<key>LongDescription</key>
 		<array>
-			<string>Den här mörkblåa smoothien är magens bästa vän och kan med fördel drickas till frukost eller mellan måltider</string>
+			<string>Den här mörkblåa smoothien är magens bästa vän och kan med fördel drickas till frukost eller mellan måltider.</string>
 			<string>Psylliumfrön innehåller mängder av vattenlösliga fibrer som tillsammans med plommonen får magen att arbeta. </string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe13</key>
@@ -216,15 +219,16 @@
 		<string>En blåbärs- och chiasmoothie fylld med vitaminer, antioxidanter, fibrer och nyttiga fetter</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Den här blåbärs- och chiasmoothien är den perfekta frukosten. Med vitaminer, antioxidanter, fibrer och nyttiga fetter ger den en perfekt start på dagen</string>
-			<string>Ha de blötlagda chiafrönen redo i kylskåpet så sparar du värdefull tid på morgon</string>
+			<string>Den här blåbärs- och chiasmoothien är den perfekta frukosten. Med vitaminer, antioxidanter, fibrer och nyttiga fetter ger den en perfekt start på dagen.</string>
+			<string>Blötlägg chiafrön i mandelmjölk kvällen innan och förvara i kylskåpet så sparar du värdefull tid på morgonen.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Blötlägg en halv dl chiafrön i 1,5 dl mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår.</string>
-			<string>Efter ytterligare 10 minuter i kylen är chiapuddingen klar men den går också att förbereda redan kvällen innan.</string>
-			<string>Mixa sedan alla övriga ingredienser på hög hastighet till krämig konsistens</string>
-			<string>Varva chiapuddingen med blåbärssmoothien i en skål eller i ett glas och ät med sked</string>
+			<string>Blötlägg chiafrön i mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår.</string>
+			<string>Tillsätt eventuellt mer chiafrön eller mandelmjölk. Chiapuddingen ska inte vara för rinnig.</string>
+			<string>Efter ytterligare 10 minuter är chiapuddingen klar men den går också att förbereda redan kvällen innan och förvara i kylen.</string>
+			<string>Mixa banan, hallon, blåbär, mandelmjölk och honung på hög hastighet till krämig konsistens.</string>
+			<string>Varva chiapuddingen med blåbärssmoothien i en skål eller i ett glas och ät med sked.</string>
 		</array>
 	</dict>
 	<key>Recipe14</key>
@@ -235,15 +239,16 @@
 		<string>En söt och fruktig smoothie som varvas med krämig chiapudding och syrlig passionsfrukt </string>
 		<key>LongDescription</key>
 		<array>
-			<string>En söt och fruktig smoothie som varvas med krämig chiapudding och syrlig passionsfrukt </string>
-			<string>Toppa med dina favoritbär, frukter, nötter och frön.</string>
+			<string>En söt och fruktig smoothie som varvas med krämig chiapudding och syrlig passionsfrukt.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Blötlägg en halv dl chiafrön i 1,5 dl mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår.</string>
-			<string>Efter ytterligare 10 minuter i kylen är chiapuddingen klar men den går också att förbereda redan kvällen innan.</string>
-			<string>Mixa sedan banan, mango, hallon, mandelmjölk och honung på hög hastighet till krämig konsistens.</string>
-			<string>Varva chiapudding med passionsfrukt och smoothie i en skål eller i ett glas och ät med sked</string>
+			<string>Blötlägg chiafrön i mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår.</string>
+			<string>Tillsätt eventuellt mer chiafrön eller mandelmjölk. Chiapuddingen ska inte vara för rinnig.</string>
+			<string>Efter ytterligare 10 minuter är chiapuddingen klar men den går också att förbereda redan kvällen innan och förvara i kylen.</string>
+			<string>Mixa banan, mango, hallon, mandelmjölk och honung på hög hastighet till krämig konsistens.</string>
+			<string>Varva chiapudding med passionsfrukt och smoothie i en skål eller i ett glas.</string>
+			<string>Toppa med dina favoritfrukter och bär. Ät med sked.</string>
 		</array>
 	</dict>
 	<key>Recipe15</key>
@@ -254,12 +259,12 @@
 		<string>En krämig och söt smoothie som är omöjlig att sluta äta - precis som glass</string>
 		<key>LongDescription</key>
 		<array>
-			<string>En krämig och söt smoothie som är omöjlig att sluta äta - precis som glass</string>
+			<string>En krämig och söt smoothie som är omöjlig att sluta äta - precis som glass.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Börja med hallonsåsen genom att mixa hallon och honung</string>
-			<string>Mixa sedan bananer, jordgubbar och kokosmjölk på hög hastighet till krämig och tjock konsistens.</string>
+			<string>Mixa hallon och honung till en hallonsås.</string>
+			<string>Mixa bananer, jordgubbar och kokosmjölk på hög hastighet till krämig och tjock konsistens.</string>
 			<string>Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten av glaset och uppåt i cirklar för att skapa en vacker virvel.</string>
 		</array>
 	</dict>
@@ -271,12 +276,13 @@
 		<string>Boostar både metabolismen och immunförsvaret</string>
 		<key>LongDescription</key>
 		<array>
-			<string>En frisk smoothie som boostar både metabolismen och immunförsvaret</string>
-			<string>Grapefruktens syrliga och lite beska toner gifter sig fint med den söta mangon och apelsinen och skapar en spännande och lite mer vuxen smak</string>
+			<string>En frisk smoothie som boostar både metabolismen och immunförsvaret.</string>
+			<string>Grapefruktens syrliga och beska toner gifter sig fint med de sötare frukterna och skapar en spännande och mer vuxen smak.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa på hög hastighet till krämig konsistens</string>
+			<string>Pressa apelsein och grapefrukt till juice.</string>
+			<string>Mixa på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe17</key>
@@ -293,7 +299,8 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa på hög hastighet till krämig konsistens</string>
+			<string>Pressa apelsin till juice.</string>
+			<string>Mixa på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe18</key>
@@ -301,20 +308,20 @@
 		<key>RecipeName</key>
 		<string>Valentine</string>
 		<key>ShortDescription</key>
-		<string>Stärk immunförsvaret och tillför kroppen massor med näring, energi och vitaminer med den här söt-syrliga smoothien.</string>
+		<string>Stärk immunförsvaret och tillför kroppen massor med näring, energi och vitaminer med den här söt-syrliga smoothien</string>
 		<key>LongDescription</key>
 		<array>
 			<string>Stärk immunförsvaret och tillför kroppen massor med näring, energi och vitaminer med den här söt-syrliga smoothien.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa på hög hastighet till krämig konsistens</string>
+			<string>Mixa på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe19</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Sweet strawberry pie</string>
+		<string>Sweet raspberry pie</string>
 		<key>ShortDescription</key>
 		<string>Rik på proteiner, vitaminer och nyttiga fetter
 </string>
@@ -325,9 +332,9 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Börja att göra mangosåsen genom att mixa mango och honung.</string>
+			<string>Mixa mango och honung till en mangosås.</string>
 			<string>Mixa alla övriga ingredienser på hög hastighet till krämig konsistens.</string>
-			<string>Häll smoothien över mangosåsen och drick direkt.</string>
+			<string>Häll smoothien försiktigt över mangosåsen i ett lutat glas och drick direkt.</string>
 		</array>
 	</dict>
 	<key>Recipe20</key>
@@ -343,9 +350,10 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Börja med chia- och hallonsylten. Mixa hallonen och tillsätt sedan chiafrön och honung. Blanda och låt stå svalt i ca 15 minuter.</string>
-			<string>Blanda resterande ingredienser i en mixer på hög hastighet till krämig konsistens.</string>
-			<string>Lägg ett lager av chia- och hallonsylt i mitten av glaset mellan smoothien. Drick med sugrör eller ät med sked.</string>
+			<string>Mixa hallon och tillsätt sedan chiafrön och honung. Blanda och låt sylten stå svalt i ca 15 minuter.</string>
+			<string>Mixa övriga ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Lägg ett lager av chia- och hallonsylt och häll försiktigt upp resten av smoothien.</string>
+			<string>Drick med sugrör eller ät med sked.</string>
 		</array>
 	</dict>
 	<key>Recipe21</key>
@@ -353,7 +361,7 @@
 		<key>RecipeName</key>
 		<string>Tropical passion</string>
 		<key>ShortDescription</key>
-		<string>En tropisk gul smoothie full av vitaminer och mineraler som när hår, hud och naglar.</string>
+		<string>En tropisk gul smoothie full av vitaminer och mineraler som när hår, hud och naglar</string>
 		<key>LongDescription</key>
 		<array>
 			<string>En tropisk gul smoothie full av vitaminer och mineraler som när hår, hud och naglar. </string>
@@ -361,23 +369,24 @@
 		<key>Instructions</key>
 		<array>
 			<string>Gröp ur passionsfrukten i ett glas.</string>
-			<string>Mixa alla andra ingredienser  på hög hastighet till krämig konsistens.</string>
+			<string>Mixa övriga ingredienser på hög hastighet till krämig konsistens.</string>
 			<string>Häll smoothien över passionsfrukten.</string>
 		</array>
 	</dict>
 	<key>Recipe22</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Acai Bowl</string>
+		<string>Acai bowl</string>
 		<key>ShortDescription</key>
 		<string>Acai bowls är både goda och fyllda med vitaminer och antioxidanter</string>
 		<key>LongDescription</key>
 		<array>
 			<string>Acai bowls är både goda och fyllda med vitaminer och antioxidanter. </string>
-			<string>Mycket av det roliga med smoothie bowls ligger i toppingen där valmöjligheterna är oändliga. Experimentera med nötsmör,färska bär och frukter, frön eller gojibär.</string>
+			<string>Mycket av det roliga med smoothie bowls ligger i toppingen där valmöjligheterna är oändliga. Experimentera med nötsmör, färska bär och frukter, frön eller gojibär.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Låt den frusna bananen ligga i rumstemperatur i några minuter.</string>
 			<string>Mixa alla ingredienser på hög hastighet till krämig och tjock konsistens. </string>
 			<string>Servera med valfri topping.</string>
 		</array>
@@ -387,15 +396,16 @@
 		<key>RecipeName</key>
 		<string>Raspberry and coconut smoothie</string>
 		<key>ShortDescription</key>
-		<string>En uppfriskande och krämig smoothie som tillfredsställer ditt sötsug på ett nyttigt sätt</string>
+		<string>En uppfriskande och krämig smoothie som tillfredsställer sötsuget på ett nyttigt sätt</string>
 		<key>LongDescription</key>
 		<array>
-			<string>En uppfriskande och krämig smoothie som tillfredsställer ditt sötsug på ett nyttigt sätt.</string>
+			<string>En uppfriskande och krämig smoothie som tillfredsställer ditt sötsuget på ett nyttigt sätt.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Pressa apelsin till juice.</string>
 			<string>Mixa alla ingredienser på hög hastighet till krämig och tjock konsistens. </string>
-			<string>Toppa med färska hallon och rostade kokosflingor. Drick på en gång. Skål!</string>
+			<string>Toppa med färska hallon och rostade kokosflingor.</string>
 		</array>
 	</dict>
 	<key>Recipe24</key>
@@ -403,11 +413,11 @@
 		<key>RecipeName</key>
 		<string>Almond milk</string>
 		<key>ShortDescription</key>
-		<string>Egengjord nötmjölk är fantastiskt god och utgör en perfekt vätskebas i smoothies.</string>
+		<string>Egengjord nötmjölk är fantastiskt god och utgör en perfekt vätskebas i smoothies</string>
 		<key>LongDescription</key>
 		<array>
 			<string>Egengjord nötmjölk är fantastiskt god och utgör en perfekt vätskebas i smoothies. Den är lätt att göra och kan förvaras i kylskåpet i upp till 3-4 dagar.</string>
-			<string>Använd nötmassan som blir över och använd i en rawfood dessert. </string>
+			<string>Använd nötmassan som blir över och använd i en rawfood-dessert. </string>
 		</array>
 		<key>Instructions</key>
 		<array>

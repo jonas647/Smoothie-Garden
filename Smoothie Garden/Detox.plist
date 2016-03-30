@@ -9,7 +9,7 @@
 		<key>12AM</key>
 		<string>Unbeetable</string>
 		<key>4PM</key>
-		<string>Green Rawgurt</string>
+		<string>Green rawgurt</string>
 		<key>7PM</key>
 		<string>Cashew and raspberry smoothie</string>
 	</dict>
@@ -18,11 +18,11 @@
 		<key>9AM</key>
 		<string>Orange is the new black</string>
 		<key>12AM</key>
-		<string>Acai Bowl</string>
+		<string>Acai bowl</string>
 		<key>4PM</key>
 		<string>Passion for chia</string>
 		<key>7PM</key>
-		<string>Veggie Detox</string>
+		<string>Veggie detox</string>
 	</dict>
 	<key>Day3</key>
 	<dict>
@@ -31,7 +31,7 @@
 		<key>12AM</key>
 		<string>Peanut butter jelly</string>
 		<key>4PM</key>
-		<string>Green Kale</string>
+		<string>Green kale</string>
 		<key>7PM</key>
 		<string>Raspberry and coconut smoothie</string>
 	</dict>

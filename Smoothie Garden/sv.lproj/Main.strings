@@ -33,7 +33,7 @@
 "8WE-pM-OY1.title" = "Alla recept";
 
 /* Class = "UILabel"; text = "by"; ObjectID = "Bbt-gC-srx"; */
-"Bbt-gC-srx.text" = "av";
+"Bbt-gC-srx.text" = "by";
 
 /* Class = "UILabel"; text = "Carbs"; ObjectID = "CKV-GL-hZ2"; */
 "CKV-GL-hZ2.text" = "Kolhydrater";

@@ -58,8 +58,8 @@
     UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     rightBarButton = customButton;
     
-    UIImage *buttonImage = [UIImage imageNamed:@"Hearts-100.png"];
-    UIImage *selectedButtonImage = [UIImage imageNamed:@"Like Filled-100.png"];
+    UIImage *buttonImage = [UIImage imageNamed:@"Heart Outline"];
+    UIImage *selectedButtonImage = [UIImage imageNamed:@"Heart Filled"];
     [customButton setBackgroundImage:buttonImage  forState:UIControlStateNormal];
     [customButton setBackgroundImage:selectedButtonImage  forState:UIControlStateSelected];
     [customButton addTarget:self action:@selector(likeRecipe) forControlEvents:UIControlEventTouchUpInside];

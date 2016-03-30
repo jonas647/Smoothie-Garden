@@ -28,12 +28,15 @@
     
     if ((self = [super init])) {
         
+        //Check if the persistent store should be updated
         if ([self shouldUpdateRecipePersistentStore]) {
             
+            //Save the recipes to persistent store (NSUserDefault for now)
             [self saveRecipesToPersistentStore];
         }
         
-        recipeMaster = [self allRecipesFromPersistentStore];
+        //Save the recipe master from the persistent store
+        recipeMaster = [self sortRecipesInArray:[self allRecipesFromPersistentStore]];
     
         
     }
@@ -42,7 +45,7 @@
 
 - (NSArray*) recipesMaster {
     
-    return [self sortRecipesInArray:recipeMaster];
+    return recipeMaster;
 }
 
 #pragma mark - Persistent Store

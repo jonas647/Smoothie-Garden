@@ -7,7 +7,7 @@
 	<key>Recipe1</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Kale</string>
+		<string>Green kale</string>
 		<key>ShortDescription</key>
 		<string>A creamy yet refreshing green smoothie that will keep you energized for hours</string>
 		<key>LongDescription</key>
@@ -25,7 +25,7 @@
 	<key>Recipe2</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Rawgurt</string>
+		<string>Green rawgurt</string>
 		<key>ShortDescription</key>
 		<string>This green and creamy smoothie is a great vegan alternative to traditional yoghurt</string>
 		<key>LongDescription</key>
@@ -42,7 +42,7 @@
 	<key>Recipe3</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Veggie Detox</string>
+		<string>Veggie detox</string>
 		<key>ShortDescription</key>
 		<string>This fresh and detoxing veggie smoothie is like drinking a salad</string>
 		<key>LongDescription</key>
@@ -53,13 +53,15 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mix all the ingredients in a blender on high speed until smooth</string>
+			<string>Squeeze the juice out of the lemon.</string>
+			<string>Chop the apple and remove the seeds.</string>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
 		</array>
 	</dict>
 	<key>Recipe4</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Green Machine</string>
+		<string>Green machine</string>
 		<key>ShortDescription</key>
 		<string>Adding leafy greens to the smoothie is a great way of increasing your daily intake of vegetables</string>
 		<key>LongDescription</key>
@@ -70,6 +72,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Squeeze the juice out of the orange and lime.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth</string>
 		</array>
 	</dict>
@@ -309,7 +312,7 @@
 	<key>Recipe19</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Sweet strawberry pie</string>
+		<string>Sweet raspberry pie</string>
 		<key>ShortDescription</key>
 		<string>This smoothie is high in protein, antioxidants and has anti-inflammatory properties</string>
 		<key>LongDescription</key>
@@ -364,7 +367,7 @@
 	<key>Recipe22</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Acai Bowl</string>
+		<string>Acai bowl</string>
 		<key>ShortDescription</key>
 		<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal.</string>
 		<key>LongDescription</key>
@@ -374,6 +377,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Have the frozen banana in room temperature for a few minutes.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth. Add topping before serving. </string>
 		</array>
 	</dict>

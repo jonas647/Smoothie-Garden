@@ -109,16 +109,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>citroner (juice)</string>
+			<string>citroner</string>
 			<key>en</key>
-			<string>lemons (juice)</string>
+			<string>lemons</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>citron (juice)</string>
+			<string>citron</string>
 			<key>en</key>
-			<string>lemon (juice)</string>
+			<string>lemon</string>
 		</dict>
 	</dict>
 	<key>Spinach</key>
@@ -228,16 +228,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>apelsiner (juice)</string>
+			<string>apelsiner</string>
 			<key>en</key>
-			<string>oranges (juice)</string>
+			<string>oranges</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>apelsin (juice)</string>
+			<string>apelsin</string>
 			<key>en</key>
-			<string>orange (juice)</string>
+			<string>orange</string>
 		</dict>
 	</dict>
 	<key>Ginger</key>
@@ -551,16 +551,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>lime (juice)</string>
+			<string>lime</string>
 			<key>en</key>
-			<string>lime (juice)</string>
+			<string>lime</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>lime (juice)</string>
+			<string>lime</string>
 			<key>en</key>
-			<string>lime (juice)</string>
+			<string>lime</string>
 		</dict>
 	</dict>
 	<key>Gojiberries</key>
@@ -670,16 +670,16 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>Grapefrukt (juice)</string>
+			<string>grapefrukt</string>
 			<key>en</key>
-			<string>grape fruits (juice)</string>
+			<string>grape fruits</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>Grapefrukt (juice)</string>
+			<string>grapefrukt</string>
 			<key>en</key>
-			<string>grape fruit (juice)</string>
+			<string>grape fruit</string>
 		</dict>
 	</dict>
 	<key>Rosehip Powder</key>

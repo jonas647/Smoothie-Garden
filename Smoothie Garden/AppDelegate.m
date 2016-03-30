@@ -24,6 +24,7 @@
     NSManagedObjectModel *_managedObjectModel;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
      */
+    
 }
 
 
