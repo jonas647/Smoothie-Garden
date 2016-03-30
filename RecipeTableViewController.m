@@ -15,13 +15,7 @@
 #import "Ingredient.h"
 #import "Recipe.h"
 #import "RecipeManager.h"
-#import "UIFont+FontSizeBasedOnScreenSize.h"
-
-
-#define LABEL_SIZE_LARGE 1
-#define LABEL_SIZE_SMALL 2
-
-
+#import "DeviceHelper.h"
 
 @interface RecipeTableViewController ()
 
@@ -36,8 +30,8 @@
     NSMutableArray *filteredRecipeArray;
     SBActivityIndicatorView *loadingIndicator;
     float imageParallaxEffectFactor;
-    UIFont *smallSizeFont;
-    UIFont *largeSizeFont;
+    float titleTextSize;
+    float descriptionTextSize;
 }
 
 - (void)viewDidLoad {
@@ -47,56 +41,67 @@
     [self setupActivityIndicator]; //Setup of the activity indicator programmatically
     [loadingIndicator startActivityIndicator];
     
-    //First run a dispatch group that sets up the thumbnail images so that there is no risk that the thumbnails aren't ready when the uitableviews are populated
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_async(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
-        //Create thumbnail images to display in tableview
-        thumbnailImages = [[NSMutableDictionary alloc]init];
-        for (Recipe *r in [[RecipeManager sharedInstance] recipesMaster]) {
-            UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-            [thumbnailImages setObject:tempImage forKey:r.recipeName];
-        }
-    });
     
-    //Run a dispatch group that sets up the recipes and then run the UI stuff
-    dispatch_group_notify(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
-        
-        //Set the table view array
-        [self setupRecipesFromRecipeMaster];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //Set the starting point for the scroller view below the search bar
-            //self.tableView.contentInset = UIEdgeInsetsMake(-40.0f, 0.0f, 0.0f, 0.0);
-            
-            //This will also solve the problem with wrong picture for search result table view
-            
-            //How much parallax effect the images will have. The higher the bigger vertical move.
-            imageParallaxEffectFactor = 15;
-            
-            //This is needed for the reveal controller to work
-            SWRevealViewController *revealController = [self revealViewController];
-            [revealController panGestureRecognizer];
-            [revealController tapGestureRecognizer];
-            
-            //Set the target for the main menu button
-            SWRevealViewController *revealViewController = self.revealViewController;
-            if ( revealViewController )
-            {
-                [self.sideBarButton setTarget: self.revealViewController];
-                [self.sideBarButton setAction: @selector( revealToggle: )];
-                [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-            }
-            
-            //Adjust the tableview to scroll to top of tapped at top
-            self.tableView.scrollsToTop = YES;
-            
-            //Remove the title text from the back button (in the Detailed recipe table view controller)
-            self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-            
-            [self sortAndReloadTable];
-        });
-    });
+    //Create thumbnail images to display in tableview
+    thumbnailImages = [[NSMutableDictionary alloc]init];
+    for (Recipe *r in [[RecipeManager sharedInstance] recipesMaster]) {
+        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+        [thumbnailImages setObject:tempImage forKey:r.recipeName];
+    }
     
+    //Set the table view array
+    [self setupRecipesFromRecipeMaster];
+    
+    //How much parallax effect the images will have. The higher the bigger vertical move.
+    imageParallaxEffectFactor = 15;
+    
+    //This is needed for the reveal controller to work
+    SWRevealViewController *revealController = [self revealViewController];
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
+    
+    //Set the target for the main menu button
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sideBarButton setTarget: self.revealViewController];
+        [self.sideBarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    
+    //Adjust the tableview to scroll to top of tapped at top
+    self.tableView.scrollsToTop = YES;
+    
+    //Remove the title text from the back button (in the Detailed recipe table view controller)
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+    if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
+        
+        titleTextSize = 16;
+        descriptionTextSize = 12;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
+        
+        
+        titleTextSize = 18;
+        descriptionTextSize = 14;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
+        
+        titleTextSize = 22;
+        descriptionTextSize = 18;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
+        
+        //Just to test on simulator
+        titleTextSize = 16;
+        descriptionTextSize = 12;
+    } else {
+        // If a new device is released before the app is updated
+        titleTextSize = 18;
+        descriptionTextSize = 14;
+    }
+
 }
 
 
@@ -399,6 +404,10 @@
     cell.recipeTitle.text = sRecipe.recipeName;
     cell.recipeDescription.text = sRecipe.shortDescription;
     
+    //Size of font depending on device
+    cell.recipeTitle.font = [UIFont fontWithName:cell.recipeTitle.font.fontName size:titleTextSize];
+    cell.recipeDescription.font = [UIFont fontWithName:cell.recipeTitle.font.fontName size:descriptionTextSize];
+    
     //Instead get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
     
@@ -473,7 +482,6 @@
 - (void) sortAndReloadTable {
     
     //No need for sorting as this is done in the recipe master
-    
     [self.tableView reloadData];
 }
 

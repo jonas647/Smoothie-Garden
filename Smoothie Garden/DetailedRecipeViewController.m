@@ -16,8 +16,8 @@
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "RecipeManager.h"
-#import "UIFont+FontSizeBasedOnScreenSize.h"
 #import "NutrientFactPageViewRootViewController.h"
+#import "DeviceHelper.h"
 
 @interface DetailedRecipeViewController ()
 
@@ -34,6 +34,13 @@
     BOOL isLikeButtonTouchable;
     
     UIButton *rightBarButton;
+    
+    float marginBetweenTextCells;
+    float sizeForByText;
+    float sizeForSmoothieBoxText;
+    float sizeForTitleText;
+    
+    float sizeForRecipeDescriptions;
     
 }
 
@@ -93,32 +100,58 @@
         
     }
     
+    //Hide the servings view if almond milk is shown since this is for one liter
+    if ([self.selectedRecipe.recipeName isEqualToString:@"Almond milk"]) {
+        servingView.hidden = YES;
+    }
+    
+    //Set the text sizes depending on device
+    if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
+        
+        sizeForByText = 9;
+        sizeForSmoothieBoxText = 11;
+        sizeForTitleText = 16;
+        sizeForRecipeDescriptions = 16;
+        marginBetweenTextCells = 20;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
+        
+        sizeForByText = 10;
+        sizeForSmoothieBoxText = 13;
+        sizeForTitleText = 24;
+        sizeForRecipeDescriptions = 20;
+        marginBetweenTextCells = 30;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
+        
+        sizeForByText = 11;
+        sizeForSmoothieBoxText = 14;
+        sizeForTitleText = 30;
+        sizeForRecipeDescriptions = 24;
+        marginBetweenTextCells = 35;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
+        
+        //Just to test on simulator
+        sizeForByText = 8;
+        sizeForSmoothieBoxText = 10;
+        sizeForTitleText = 20;
+        sizeForRecipeDescriptions = 16;
+        marginBetweenTextCells = 30;
+    } else {
+        // If a new device is released before the app is updated
+        sizeForByText = 8;
+        sizeForSmoothieBoxText = 10;
+        sizeForTitleText = 20;
+        sizeForRecipeDescriptions = 16;
+        marginBetweenTextCells = 30;
+    }
 }
 
 
 - (void) viewDidLayoutSubviews {
     
-    /*
-    //Update the frame for the different UITextviews
-    ingredientsTableView.frame =     [self newFrameForUIView:ingredientsTableView];
-    recipeTableView.frame = [self newFrameForUIView:recipeTableView];
-    longDescriptionTable.frame = [self newFrameForUIView:longDescriptionTable];
-    
-    //Update the height constraints to adjust the height to the new frames
-    [ingredientsHeightConstraint setConstant:ingredientsTableView.frame.size.height];
-    
-    //longDescriptionTable.frame = [self newFrameForUIView:longDescriptionTable];
-    [longDescriptionTableHeightConstraint setConstant:longDescriptionTable.frame.size.height];
-    
-    float totalTableHeight;
-    for (int i = 0; i<recipeInstructions.count; i++) {
-        totalTableHeight += [self tableView:recipeTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-    }
-    [recipeTableViewHeightConstraint setConstant:totalTableHeight];
-    
-    
-    */
-    
+    //Update the height constraints to fit the contents
     ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
     recipeTableViewHeightConstraint.constant = recipeTableView.contentSize.height;
     longDescriptionTableHeightConstraint.constant = longDescriptionTable.contentSize.height;
@@ -127,22 +160,23 @@
     [recipeTableView layoutIfNeeded];
     [longDescriptionTable layoutIfNeeded];
     
+    //Set the likeview attributes (shows when a recipe is liked)
     likeView.layer.cornerRadius = likeView.bounds.size.width/2;//Make like view a circle
     likeView.alpha = 0.0;//Make like view hidden until the recipe is liked
     likeView.layer.masksToBounds = YES;
     
+    //The title of the view should be the recipe title
     titleName.text = self.selectedRecipe.recipeName;
     
-    //Change font size based on screen size
+    //Change font size based on screen size. If another screen, then just go with what the storyboard says
     UILabel *by = [self.view viewWithTag:400];
     UILabel *smoothieBox = [self.view viewWithTag:401];
     
-    [by setFont:[by.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:by.font withSize:LABEL_SIZE_TINY]];
-    [smoothieBox setFont:[smoothieBox.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:smoothieBox.font withSize:LABEL_SIZE_TINY]];
-    [titleName setFont:[titleName.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:titleName.font withSize:LABEL_SIZE_LARGE]];
+    [self setFontSizeForLabel:by size:sizeForByText];
+    [self setFontSizeForLabel:smoothieBox size:sizeForSmoothieBoxText];
+    [self setFontSizeForLabel:titleName size:sizeForTitleText];
     
-    //TODO
-    //Do this the proper way
+    //Set the height constraint of where the title should begin. Below the image.
     [blankBackgroundToTop setConstant:0.8*[UIScreen mainScreen].bounds.size.height];
     
 }
@@ -151,6 +185,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Update font sizes
+
+- (void) setFontSizeForLabel: (UILabel*) label size: (float) size {
+    
+    [label setFont:[UIFont fontWithName:label.font.fontName size:size]];
+    
 }
 
 #pragma mark - Updating frames
@@ -234,10 +276,10 @@
         Ingredient *ingredientForRow = [ingredients objectAtIndex:indexPath.row];
     
         recipeQtyMeasure.text = [ingredientForRow stringWithQuantityAndMeasure];
-        [recipeQtyMeasure.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeQtyMeasure.font withSize:LABEL_SIZE_SMALL];
+        recipeQtyMeasure.font = [UIFont fontWithName:recipeQtyMeasure.font.fontName size:sizeForRecipeDescriptions];
         
         recipeIngredientText.text = [ingredientForRow stringWithIngredientText];
-        [recipeIngredientText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeIngredientText.font withSize:LABEL_SIZE_SMALL];
+        recipeIngredientText.font = [UIFont fontWithName:recipeQtyMeasure.font.fontName size:sizeForRecipeDescriptions];
         
         //If it's a blank ingredient then make the separator transparent
         if ([recipeIngredientText.text isEqualToString:@""]) {
@@ -251,17 +293,16 @@
     
         UILabel *recipeText = (UILabel*)[cell viewWithTag:300];
         recipeText.text = [recipeInstructions objectAtIndex:indexPath.row];
-        [recipeText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:recipeText.font withSize:LABEL_SIZE_SMALL];
+        recipeText.font = [UIFont fontWithName:recipeText.font.fontName size:sizeForRecipeDescriptions];
     } else if ([tmpTableView isEqual:longDescriptionTable]) {
         
         UILabel *descriptionText = (UILabel*)[cell viewWithTag:101];
         descriptionText.text = [recipeDescriptions objectAtIndex:indexPath.row];
-        [descriptionText.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:descriptionText.font withSize:LABEL_SIZE_SMALL];
+        descriptionText.font = [UIFont fontWithName:descriptionText.font.fontName size:sizeForRecipeDescriptions];
         
     }
     
     return cell;
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -302,7 +343,7 @@
         float heightForDescriptionLabel = [self labelHeightFor:descriptionLabel andScreenSize:LABEL_SIZE_SMALL];
         
         //Add margins to the cell height
-        float cellMargin = cell.frame.size.height/2;
+        float cellMargin = cell.frame.size.height/3;
         
         return heightForDescriptionLabel + cellMargin;
         
@@ -318,7 +359,7 @@
     newLabel.numberOfLines = 0;
     newLabel.lineBreakMode = NSLineBreakByWordWrapping;
     newLabel.text = label.text;
-    [newLabel.font fontSizeBasedOnScreenSize_fontBasedOnScreenSizeForFont:label.font withSize:screenSize];
+    newLabel.font = [UIFont fontWithName:newLabel.font.fontName size:sizeForRecipeDescriptions];
     [newLabel sizeToFit];
     
     return newLabel.frame.size.height;

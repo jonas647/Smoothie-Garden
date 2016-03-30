@@ -80,8 +80,7 @@
     //Load it here so that the purchases are available when the user tries to buy the IAP
     
     //For now inactivating this since IAP will be replaced by premium app
-    //Instead set the IAP flag to YES. This will make it possible to change to IAP later and the ones downloading paid app now will get the IAP.
-    [[SBIAPHelper sharedInstance] unlockIAP:@"basicRecipes_01"];
+    //[[SBIAPHelper sharedInstance] unlockIAP:@"basicRecipes_01"];
     
     /*
     [[SBIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
@@ -129,7 +128,6 @@
     
     //TODO
     //Check Country, If English then set measurement as US customary units at start (if hans't been set earlier)
-    
     
     return YES;
 }

@@ -25,8 +25,7 @@
     imgBottomInitial = self.imageBottomConstraint.constant;
     
     imageParallaxFactor = 20;
-    
-    
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -720,16 +720,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="490"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAW-Fn-FHy">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAW-Fn-FHy">
                                             <rect key="frame" x="0.0" y="358" width="600" height="129"/>
                                             <subviews>
-                                                <label opaque="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Smoothie" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpf-3Y-pUJ" userLabel="Titel">
-                                                    <rect key="frame" x="5" y="0.0" width="595" height="20.5"/>
+                                                <label opaque="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Smoothie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpf-3Y-pUJ" userLabel="Titel">
+                                                    <rect key="frame" x="5" y="0.0" width="590" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description of smoothie" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jp4-jv-W3U">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description of smoothie" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jp4-jv-W3U">
                                                     <rect key="frame" x="5" y="28" width="590" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -739,7 +739,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Jp4-jv-W3U" secondAttribute="trailing" constant="5" id="0Mm-RQ-Rb9"/>
-                                                <constraint firstAttribute="trailing" secondItem="dpf-3Y-pUJ" secondAttribute="trailing" id="F5f-MF-OoT"/>
+                                                <constraint firstAttribute="trailing" secondItem="dpf-3Y-pUJ" secondAttribute="trailing" constant="5" id="F5f-MF-OoT"/>
                                                 <constraint firstItem="dpf-3Y-pUJ" firstAttribute="leading" secondItem="VAW-Fn-FHy" secondAttribute="leading" constant="5" id="LkU-Zg-aIw"/>
                                                 <constraint firstItem="Jp4-jv-W3U" firstAttribute="top" secondItem="dpf-3Y-pUJ" secondAttribute="bottom" constant="7.5" id="UpP-ut-c3n"/>
                                                 <constraint firstItem="Jp4-jv-W3U" firstAttribute="leading" secondItem="VAW-Fn-FHy" secondAttribute="leading" constant="5" id="gDI-3f-LRz"/>
@@ -929,29 +929,17 @@
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-UB-FKZ">
-                                                                                    <rect key="frame" x="8" y="11" width="584" height="21.5"/>
+                                                                                    <rect key="frame" x="8" y="11.5" width="584" height="21.5"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="bottomMargin" secondItem="fdp-UB-FKZ" secondAttribute="bottom" constant="5" id="20e-hY-fgm"/>
-                                                                                <constraint firstItem="fdp-UB-FKZ" firstAttribute="top" secondItem="4ef-Yr-0dx" secondAttribute="topMargin" constant="5" id="7fH-Pa-Vdo"/>
-                                                                                <constraint firstItem="fdp-UB-FKZ" firstAttribute="centerY" secondItem="4ef-Yr-0dx" secondAttribute="centerY" id="Dny-oq-Vbu"/>
+                                                                                <constraint firstItem="fdp-UB-FKZ" firstAttribute="centerY" secondItem="4ef-Yr-0dx" secondAttribute="centerY" id="AXb-7l-S8g"/>
                                                                                 <constraint firstAttribute="trailingMargin" secondItem="fdp-UB-FKZ" secondAttribute="trailing" id="FeZ-C0-xi7"/>
-                                                                                <constraint firstItem="fdp-UB-FKZ" firstAttribute="centerY" secondItem="4ef-Yr-0dx" secondAttribute="centerY" id="IPC-ed-Uft"/>
                                                                                 <constraint firstItem="fdp-UB-FKZ" firstAttribute="leading" secondItem="4ef-Yr-0dx" secondAttribute="leadingMargin" id="Ngs-7z-0GL"/>
-                                                                                <constraint firstItem="fdp-UB-FKZ" firstAttribute="centerX" secondItem="4ef-Yr-0dx" secondAttribute="centerX" id="URO-VM-oNE"/>
                                                                             </constraints>
-                                                                            <variation key="default">
-                                                                                <mask key="constraints">
-                                                                                    <exclude reference="20e-hY-fgm"/>
-                                                                                    <exclude reference="7fH-Pa-Vdo"/>
-                                                                                    <exclude reference="IPC-ed-Uft"/>
-                                                                                    <exclude reference="URO-VM-oNE"/>
-                                                                                </mask>
-                                                                            </variation>
                                                                         </tableViewCellContentView>
                                                                     </tableViewCell>
                                                                 </prototypes>
@@ -1131,7 +1119,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-gj-q9r" userLabel="Title Background">
                                                 <rect key="frame" x="0.0" y="266" width="600" height="134"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw6-s1-rof" userLabel="Title">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dw6-s1-rof" userLabel="Title">
                                                         <rect key="frame" x="105" y="22" width="390" height="38"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1272,6 +1260,7 @@
                         <outlet property="recipeImageViewHeight" destination="0Ez-is-RSP" id="aSG-tr-gh3"/>
                         <outlet property="recipeTableView" destination="y1j-8m-9aw" id="kLa-Nj-sMK"/>
                         <outlet property="recipeTableViewHeightConstraint" destination="q30-bK-0q2" id="qvg-od-IJ2"/>
+                        <outlet property="servingView" destination="BaT-5x-ZFr" id="Bwq-Ob-TCI"/>
                         <outlet property="statusbarBackground" destination="5eK-rL-6ML" id="6CF-aK-LRH"/>
                         <outlet property="titleBackground" destination="LRO-gj-q9r" id="3hi-Iu-gPY"/>
                         <outlet property="titleName" destination="Dw6-s1-rof" id="JIb-cn-mC7"/>
@@ -2552,7 +2541,7 @@
         <image name="FB Thumb" width="473" height="456"/>
         <image name="Five Star" width="104" height="25"/>
         <image name="Green Coco Kale.png" width="630" height="509"/>
-        <image name="Hamburger Menu" width="45" height="45"/>
+        <image name="Hamburger Menu" width="37" height="37"/>
         <image name="Heart Filled" width="171" height="171"/>
         <image name="Instagram" width="171" height="171"/>
         <image name="Jonas" width="45" height="45"/>

@@ -32,6 +32,7 @@
     __weak IBOutlet UITableView *longDescriptionTable;
     __weak IBOutlet NSLayoutConstraint *longDescriptionTableHeightConstraint;
     
+    __weak IBOutlet UIView *servingView;
     
 }
 
