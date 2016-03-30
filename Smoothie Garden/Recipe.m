@@ -169,8 +169,6 @@
         return [NSString stringWithFormat:@"%i%%", roundedPercentValue];
     }
     
-    
-    
 }
 
 - (void) setupAllNutrientInformationForRecipe {

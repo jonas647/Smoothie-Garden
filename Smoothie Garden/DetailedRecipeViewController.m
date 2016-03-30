@@ -110,24 +110,24 @@
         
         sizeForByText = 9;
         sizeForSmoothieBoxText = 11;
-        sizeForTitleText = 16;
-        sizeForRecipeDescriptions = 16;
+        sizeForTitleText = 18;
+        sizeForRecipeDescriptions = 18;
         marginBetweenTextCells = 20;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
         sizeForByText = 10;
         sizeForSmoothieBoxText = 13;
-        sizeForTitleText = 24;
-        sizeForRecipeDescriptions = 20;
+        sizeForTitleText = 22;
+        sizeForRecipeDescriptions = 22;
         marginBetweenTextCells = 30;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
         sizeForByText = 11;
         sizeForSmoothieBoxText = 14;
-        sizeForTitleText = 30;
-        sizeForRecipeDescriptions = 24;
+        sizeForTitleText = 26;
+        sizeForRecipeDescriptions = 26;
         marginBetweenTextCells = 35;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
@@ -140,11 +140,11 @@
         marginBetweenTextCells = 30;
     } else {
         // If a new device is released before the app is updated
-        sizeForByText = 8;
-        sizeForSmoothieBoxText = 10;
-        sizeForTitleText = 20;
-        sizeForRecipeDescriptions = 16;
-        marginBetweenTextCells = 30;
+        sizeForByText = 9;
+        sizeForSmoothieBoxText = 11;
+        sizeForTitleText = 18;
+        sizeForRecipeDescriptions = 18;
+        marginBetweenTextCells = 20;
     }
 }
 

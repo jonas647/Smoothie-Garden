@@ -77,29 +77,29 @@
     
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
-        titleTextSize = 16;
-        descriptionTextSize = 12;
+        titleTextSize = 17;
+        descriptionTextSize = 13;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
         
-        titleTextSize = 18;
-        descriptionTextSize = 14;
+        titleTextSize = 19;
+        descriptionTextSize = 15;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
-        titleTextSize = 22;
+        titleTextSize = 23;
         descriptionTextSize = 18;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
         //Just to test on simulator
-        titleTextSize = 16;
-        descriptionTextSize = 12;
+        titleTextSize = 17;
+        descriptionTextSize = 13;
     } else {
         // If a new device is released before the app is updated
-        titleTextSize = 18;
-        descriptionTextSize = 14;
+        titleTextSize = 17;
+        descriptionTextSize = 13;
     }
 
 }

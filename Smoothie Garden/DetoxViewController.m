@@ -18,10 +18,10 @@
 #import "Recipe.h"
 #import "RecipeManager.h"
 #import "DetoxTableViewCell.h"
-#import "UIFont+FontSizeBasedOnScreenSize.h"
 #import "SBGoogleAnalyticsHelper.h"
 #import "SWRevealViewController.h"
 #import "DetailedRecipeViewController.h"
+#import "DeviceHelper.h"
 
 @interface DetoxViewController ()
 {
@@ -35,6 +35,9 @@
     NSArray *sectionCategories;
     
     UIView *viewForSelectedButton;
+    
+    float titleFontSize;
+    float descriptionFontSize;
 }
 
 @end
@@ -44,36 +47,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Load here to show user view before recipes are fully loaded
+    allRecipes = [[RecipeManager sharedInstance]recipesMaster];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        //Load here to show user view before recipes are fully loaded
-        allRecipes = [[RecipeManager sharedInstance]recipesMaster];
-        
-        sectionCategories = @[NINE_AM_SMOOTHIE,TWELVE_AM_SMOOTHIE,FOUR_PM_SMOOTHIE,SEVEN_PM_SMOOTHIE];
-        
-        thumbnailImages = [[NSMutableDictionary alloc]init];
-        for (Recipe *r in allRecipes) {
-            UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-            if (tempImage != nil) {
-                [thumbnailImages setObject:tempImage forKey:r.recipeName];
-            } else {
-                NSLog(@"Recipe image is nil");
-            }
-            
+    sectionCategories = @[NINE_AM_SMOOTHIE,TWELVE_AM_SMOOTHIE,FOUR_PM_SMOOTHIE,SEVEN_PM_SMOOTHIE];
+    
+    thumbnailImages = [[NSMutableDictionary alloc]init];
+    for (Recipe *r in allRecipes) {
+        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+        if (tempImage != nil) {
+            [thumbnailImages setObject:tempImage forKey:r.recipeName];
+        } else {
+            NSLog(@"Recipe image is nil");
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self setupDetoxDayFor:@"Day1"];
-
-            _tableView.frame = [self newFrameForUIView:_tableView];
-            [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
-        });
-        
-        
-    });
+    }
     
+    [self setupDetoxDayFor:@"Day1"];
+    
+    _tableView.frame = [self newFrameForUIView:_tableView];
+    [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
+        
     if (self.revealViewController != nil) {
         
         [self.view addGestureRecognizer:[self.revealViewController panGestureRecognizer]];
@@ -94,7 +88,41 @@
     //UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
     //[self.navigationController.navigationBar setBackgroundColor:mainColor];
     
+    //Set the text sizes depending on device
+    if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
+        
+        titleFontSize = 16;
+        descriptionFontSize = 13;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
+        
+        titleFontSize = 18;
+        descriptionFontSize = 14;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
+        
+        titleFontSize = 22;
+        descriptionFontSize = 16;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
+        
+        //Just to test on simulator
+        titleFontSize = 22;
+        descriptionFontSize = 16;
+        
+    } else {
+        
+        // If a new device is released before the app is updated
+        titleFontSize = 14;
+        descriptionFontSize = 10;
+    }
+}
+
+- (void) viewDidLayoutSubviews {
     
+    //Set the introduction text font based on device
+    self.introductionText.font = [UIFont fontWithName:self.introductionText.font.fontName size:titleFontSize+2];
+    //[self.introductionText sizeToFit];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -264,6 +292,7 @@
     Recipe *recipeToShow = [self recipeForCategory:category];
     
     
+    
     return [self customCellForRecipe:recipeToShow inTableView:tableView withTableViewCellIdentifier:tableCellIdentifier];
     
 }
@@ -297,6 +326,9 @@
     
     cell.recipeTitle.text = sRecipe.recipeName;
     cell.recipeDescription.text = sRecipe.shortDescription;
+    
+    cell.recipeTitle.font = [UIFont fontWithName:cell.recipeTitle.font.fontName size:titleFontSize];
+    cell.recipeDescription.font = [UIFont fontWithName:cell.recipeDescription.font.fontName size:descriptionFontSize];
     
     [cell.recipeTitle sizeToFit];
     [cell.recipeDescription sizeToFit];

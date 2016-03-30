@@ -6,13 +6,10 @@
 //  Copyright © 2016 Jonas C Björkell. All rights reserved.
 //
 
-#define IPHONE_4        @[@"iPhone3,1",@"iPhone3,3",@"iPhone4,1"]
-#define IPHONE_5        @[@"iPhone5,1",@"iPhone5,2",@"iPhone5,3",@"iPhone5,4",@"iPhone6,1",@"iPhone6,2"]
-#define IPHONE_6        @[@"iPhone7,2", @"iPhone8,1"]
-#define IPHONE_6PLUS    @[@"iPhone7,1", @"iPhone8,2"]
-#define IPAD
-
-
+#define IPHONE_4        @[@"iPhone 4",@"Verizon iPhone 4",@"iPhone 4S"]
+#define IPHONE_5        @[@"iPhone 5 (GSM)",@"iPhone 5 (GSM+CDMA)",@"iPhone 5c (GSM)",@"iPhone 5c (GSM+CDMA)",@"iPhone 5s (GSM)",@"iPhone 5s (GSM+CDMA)"]
+#define IPHONE_6        @[@"iPhone 6", @"iPhone 6s"]
+#define IPHONE_6PLUS    @[@"iPhone 6 Plus", @"iPhone 6s Plus"]
 
 #import "DeviceHelper.h"
 #import <sys/sysctl.h>
