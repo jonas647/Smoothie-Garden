@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<integer>4</integer>
+	<integer>6</integer>
 	<key>Recipe1</key>
 	<dict>
 		<key>Ingredients</key>
@@ -420,7 +420,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>ImageName</key>
 		<string>Green Machine</string>
 	</dict>
@@ -499,7 +499,7 @@
 		<key>RecipeType</key>
 		<integer>1</integer>
 		<key>Sorting</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>ImageName</key>
 		<string>Orange is the new Black</string>
 	</dict>
@@ -604,7 +604,7 @@
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1024,7 +1024,7 @@
 				<key>Quantity</key>
 				<integer>2</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1262,7 +1262,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1367,7 +1367,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1683,7 +1683,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Frozen Banana</string>
+				<string>Banana</string>
 				<key>Measurement</key>
 				<string></string>
 				<key>Optional</key>
@@ -1696,7 +1696,7 @@ blueberries</key>
 				<key>Quantity</key>
 				<integer>1</integer>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -2052,7 +2052,7 @@ blueberries</key>
 		<key>Sorting</key>
 		<integer>6</integer>
 		<key>ImageName</key>
-		<string>Cashew and raspberry smoothie</string>
+		<string>Cashew and Raspberry Smoothie</string>
 	</dict>
 	<key>Recipe21</key>
 	<dict>
@@ -2216,12 +2216,12 @@ blueberries</key>
 	<dict>
 		<key>Ingredients</key>
 		<dict>
-			<key>Strawberries</key>
+			<key>Raspberries</key>
 			<dict>
 				<key>Quantity</key>
 				<real>1.5</real>
 				<key>Type</key>
-				<string>Raspberries</string>
+				<string>Frozen Raspberries</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>

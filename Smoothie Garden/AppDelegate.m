@@ -8,10 +8,15 @@
 
 #import "AppDelegate.h"
 #import "SBIAPHelper.h"
-#import <Google/Analytics.h>
+//#import <Google/Analytics.h>
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 
+/** Google Analytics configuration constants **/
+static NSString *const kGaPropertyId = @"UA-51056320-4"; // Placeholder property ID.
+static NSString *const kTrackingPreferenceKey = @"allowTracking";
+static BOOL const kGaDryRun = NO;
+static int const kGaDispatchPeriod = 20;
 
 @interface AppDelegate ()
 
@@ -108,6 +113,7 @@
         //If the user has enabled the analytics (or hasn't touched to analytics toggle)
         
         // Configure tracker from GoogleService-Info.plist.
+        /*
         NSError *configureError;
         [[GGLContext sharedInstance] configureWithError:&configureError];
         NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
@@ -116,6 +122,19 @@
         GAI *gai = [GAI sharedInstance];
         gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
         gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release (TODO)
+        */
+        
+        //Doing this initiliazation so that I can activate bitcode (Google/Analytics doesn't include this but GoogleAnalytics does...)
+        // Optional: automatically send uncaught exceptions to Google Analytics.
+        [GAI sharedInstance].trackUncaughtExceptions = YES;
+        [GAI sharedInstance].dryRun = kGaDryRun;
+        // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+        [GAI sharedInstance].dispatchInterval = kGaDispatchPeriod;
+        // Optional: set debug to YES for extra debugging information.
+        //[GAI sharedInstance].debug = YES;
+        // Create tracker instance.
+        [[GAI sharedInstance]trackerWithTrackingId:kGaPropertyId];
+
         
     } else {
         NSLog(@"Analytics disabled");

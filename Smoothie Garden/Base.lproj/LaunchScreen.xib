@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,47 +16,25 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ox6-jg-nDB">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLR-wZ-8eI">
-                            <rect key="frame" x="136" y="210" width="208.5" height="60"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch icon" translatesAutoresizingMaskIntoConstraints="NO" id="sny-ev-QfF">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6s-bK-Rtf" userLabel="Label">
-                                    <rect key="frame" x="68" y="15.5" width="140.5" height="29"/>
-                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6s-bK-Rtf" userLabel="Label">
+                            <rect key="frame" x="167" y="416" width="146.5" height="28.5"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2a 1024 transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="pQk-fZ-cEQ">
+                            <rect key="frame" x="84" y="84" width="312" height="312"/>
                             <constraints>
-                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="leading" secondItem="sny-ev-QfF" secondAttribute="trailing" constant="8" id="E6w-B6-Sro"/>
-                                <constraint firstAttribute="bottom" secondItem="sny-ev-QfF" secondAttribute="bottom" id="THP-qG-p2U"/>
-                                <constraint firstItem="sny-ev-QfF" firstAttribute="leading" secondItem="pLR-wZ-8eI" secondAttribute="leading" id="Tgg-Gq-Wmn"/>
-                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="centerY" secondItem="pLR-wZ-8eI" secondAttribute="centerY" id="ew0-3d-GhW"/>
-                                <constraint firstItem="sny-ev-QfF" firstAttribute="top" secondItem="pLR-wZ-8eI" secondAttribute="top" id="iL3-XP-MA2"/>
-                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="centerY" secondItem="pLR-wZ-8eI" secondAttribute="centerY" id="jt8-tg-tHc"/>
-                                <constraint firstAttribute="trailing" secondItem="e6s-bK-Rtf" secondAttribute="trailing" id="mdd-pY-x1l"/>
-                                <constraint firstItem="sny-ev-QfF" firstAttribute="leading" secondItem="pLR-wZ-8eI" secondAttribute="leading" id="nzX-p9-FjZ"/>
-                                <constraint firstAttribute="trailing" secondItem="e6s-bK-Rtf" secondAttribute="trailing" id="tg5-SS-tB1"/>
-                                <constraint firstItem="e6s-bK-Rtf" firstAttribute="leading" secondItem="sny-ev-QfF" secondAttribute="trailing" constant="8" id="vSg-Am-lm4"/>
-                                <constraint firstItem="sny-ev-QfF" firstAttribute="centerY" secondItem="e6s-bK-Rtf" secondAttribute="centerY" id="ynN-yg-4Sk"/>
+                                <constraint firstAttribute="width" secondItem="pQk-fZ-cEQ" secondAttribute="height" multiplier="1:1" id="UJ6-ZW-HOd"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="nzX-p9-FjZ"/>
-                                    <exclude reference="ynN-yg-4Sk"/>
-                                    <exclude reference="jt8-tg-tHc"/>
-                                    <exclude reference="mdd-pY-x1l"/>
-                                    <exclude reference="vSg-Am-lm4"/>
-                                </mask>
-                            </variation>
-                        </view>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="pLR-wZ-8eI" firstAttribute="centerY" secondItem="Ox6-jg-nDB" secondAttribute="centerY" id="1FH-B0-FnA"/>
-                        <constraint firstItem="pLR-wZ-8eI" firstAttribute="centerX" secondItem="Ox6-jg-nDB" secondAttribute="centerX" id="3eD-0Q-ly7"/>
+                        <constraint firstItem="pQk-fZ-cEQ" firstAttribute="centerY" secondItem="Ox6-jg-nDB" secondAttribute="centerY" id="1Vf-gn-Ack"/>
+                        <constraint firstItem="e6s-bK-Rtf" firstAttribute="centerX" secondItem="Ox6-jg-nDB" secondAttribute="centerX" id="2Is-zX-QFL"/>
+                        <constraint firstItem="pQk-fZ-cEQ" firstAttribute="centerX" secondItem="Ox6-jg-nDB" secondAttribute="centerX" id="QUJ-nu-JpJ"/>
+                        <constraint firstItem="pQk-fZ-cEQ" firstAttribute="width" secondItem="Ox6-jg-nDB" secondAttribute="width" multiplier="0.65" id="TXw-S9-oex"/>
+                        <constraint firstItem="e6s-bK-Rtf" firstAttribute="top" secondItem="pQk-fZ-cEQ" secondAttribute="bottom" constant="20" id="hKw-9g-FbM"/>
                     </constraints>
                 </view>
             </subviews>
@@ -71,6 +51,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Launch icon" width="60" height="60"/>
+        <image name="2a 1024 transparent.png" width="1024" height="1024"/>
     </resources>
 </document>

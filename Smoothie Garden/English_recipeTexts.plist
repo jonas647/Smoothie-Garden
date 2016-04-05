@@ -13,7 +13,6 @@
 		<key>LongDescription</key>
 		<array>
 			<string>A creamy yet refreshing green smoothie that will keep you energized for hours.</string>
-			<string>This is the perfect smoothie before or after a workout.</string>
 			<string>Kale and other leafy greens contains antioxidants and has alkalising and anti-inflammatory qualities.</string>
 			<string>Add a teaspoon of wheatgrass for an extra nutrition boost.</string>
 		</array>
@@ -47,9 +46,9 @@
 		<string>This fresh and detoxing veggie smoothie is like drinking a salad</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Drinking green smoothies is an easy way of making sure you get your daily greens and this fresh and detoxing veggie smoothie is like drinking a salad.</string>
+			<string>Drinking green smoothies is an easy way of making sure you get your daily greens. This fresh and detoxing veggie smoothie is like drinking a salad.</string>
 			<string>Add some parsley for extra iron and flavour.</string>
-			<string>If you like your smoothie less green-tasting and a little sweeter just replace the avocado with equal amounts of mango.</string>
+			<string>For a sweeter and less green-tasting smoothie just replace the avocado with equal amounts of mango.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -67,7 +66,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Adding leafy greens to the smoothie is a great way of increasing your daily intake of vegetables.</string>
-			<string>Dark green leafy vegetables are good sources of many vitamins (such as vitamins A, C, K and folate) and minerals. </string>
+			<string>Dark green leafy vegetables are good sources of many vitamins (such as vitamins A, C, K and folate) and minerals (like iron and calcium). </string>
 			<string>Add some spirulina for extra nutrition.</string>
 		</array>
 		<key>Instructions</key>
@@ -85,7 +84,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>This smoothie will give you a great C-vitamin kick that will help to keep that cold away.</string>
-			<string>Not only does this it taste great, it will also boost your immune system. The ginger adds some healthy heat and has anti-inflammatory properties.</string>
+			<string>Not only does it taste great, it will also boost your immune system. The ginger adds some healthy heat and has anti-inflammatory properties.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -102,7 +101,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Scandinavian berries are true super berries that contains lots of antioxidants and nutrients.</string>
-			<string>Try experimenting with other Scandinavian berries as well, like red or black currants, raspberries or wild strawberries. Just switch one of the berries in the recipe to whatever nordic berry you have in the fridge, freezer or in your garden.</string>
+			<string>Try experimenting with other Scandinavian berries, like red or black currants, raspberries or wild strawberries. Just switch one of the berries in the recipe to whatever berry you have in the fridge, freezer or in your garden.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -114,10 +113,10 @@
 		<key>RecipeName</key>
 		<string>Chocolate and raspberry shake</string>
 		<key>ShortDescription</key>
-		<string>This creamy and chocolaty smoothie is simply the best when you crave something sweet but still want to stay healthy</string>
+		<string>This creamy and chocolaty smoothie is the best when you crave something sweet but still want to stay healthy</string>
 		<key>LongDescription</key>
 		<array>
-			<string>This creamy and chocolaty smoothie is simply the best when you crave something sweet but still want to stay healthy.</string>
+			<string>This creamy and chocolaty smoothie is the best when you crave something sweet but still want to stay healthy.</string>
 			<string>Raspberry and chocolate tastes fantastic together and raw cacao nibs are extremely high in antioxidants.</string>
 			<string>Add some macca powder for an extra energy kick.</string>
 		</array>
@@ -145,7 +144,7 @@
 	<key>Recipe9</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Peanut butter jelly</string>
+		<string>Peanut butter and jelly</string>
 		<key>ShortDescription</key>
 		<string>This rich and creamy smoothie is high in protein and is perfect after a workout or served as breakfast</string>
 		<key>LongDescription</key>
@@ -155,9 +154,9 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Start with the raspberry sauce by blending the raspberries with honey and pour it in a glass.</string>
+			<string>Blend the raspberries with honey and pour the raspberry sauce in a glass.</string>
 			<string>Mix the rest of the ingredients in a blender on high speed until smooth.</string>
-			<string>Pour the smoothie over the raspberry sauce and serve right away.</string>
+			<string>Gently pour the smoothie over the raspberry sauce.</string>
 		</array>
 	</dict>
 	<key>Recipe10</key>
@@ -165,7 +164,7 @@
 		<key>RecipeName</key>
 		<string>Unbeetable</string>
 		<key>ShortDescription</key>
-		<string>Beets are known for being anti-inflammatory and detoxifying and they taste great in this ruby red smoothie</string>
+		<string>Beets are known for being anti-inflammatory and detoxifying</string>
 		<key>LongDescription</key>
 		<array>
 			<string>Beets are known for being anti-inflammatory and detoxifying which is one of the reasons they are great to put in your smoothie.</string>
@@ -187,10 +186,10 @@
 		<array>
 			<string>This smoothie is a real vitamin kick with a fresh and summery taste. Enjoy it on a hot sunny day or simply when you need some extra energy. </string>
 			<string>The mint can be replaced with ginger if preferred.</string>
-			<string>Top this smoothie with some goji berries and grated lime peel.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Squeeze the juice out of the orange and lime.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth</string>
 		</array>
 	</dict>
@@ -222,9 +221,12 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Stir 0,5 dl chia seeds with 1,5 dl almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
-			<string>When the chiapudding is ready, mix all the other ingredients in a blender on high speed until smooth</string>
-			<string>Layer the soaked chia seeds with the blueberry smoothie in a bowl or a in a glass with topping and eat with a spoon</string>
+			<string>Soak chia seeds with almond milk and stir with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps.</string>
+			<string>If needed, add more chia seeds or almond milk. The consistency shouldn&apos;t be runny.</string>
+			<string>The chia pudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
+			<string>Mix banana, raspberries, blueberries, almond milk and honey in a blender on high speed until smooth</string>
+			<string>Layer the soaked chia seeds with the blueberry smoothie in a bowl or a in a glass.</string>
+			<string>Add your favorite fruits and berries as topping. Eat with a spoon.</string>
 		</array>
 	</dict>
 	<key>Recipe14</key>
@@ -236,13 +238,16 @@
 		<key>LongDescription</key>
 		<array>
 			<string>This layered passion fruit and chia smoothie is perfect served as a dessert or as breakfast.</string>
-			<string>Have the soaked chia seeds prepared in the fridge and you will save some valuable time in the morning. </string>
+			<string>Have the soaked chia seeds prepared in the fridge to save some valuable time in the morning. </string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Stir 0,5 dl chiaseeds with 1,5 dl almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
-			<string>When the chiapudding is ready, mix the banana, mango, raspberries, almond milk and honey in a blender on high speed until smooth.</string>
-			<string>Layer the soaked chia seeds with the smoothie and the passion fruit. Top with fresh berries and eat it with a spoon.</string>
+			<string>Soak chia seeds with almond milk and stir with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps.</string>
+			<string>If needed, add more chia seeds or almond milk. The consistency shouldn&apos;t be runny.</string>
+			<string>The chia pudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
+			<string>Mix banana, mango, raspberries, almond milk and honey in a blender on high speed until smooth.</string>
+			<string>Layer the soaked chia seeds with the smoothie and the passion fruit in a bowl or a in a glass.</string>
+			<string>Add your favorite fruits and berries as topping. Eat with a spoon.</string>
 		</array>
 	</dict>
 	<key>Recipe15</key>
@@ -257,8 +262,8 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Start preparing the raspberry sauce by blending the raspberries with honey</string>
-			<string>Mix bananas, strawberries and coconut milk in a blender on high speed until smooth. Consistency should be thick and creamy</string>
+			<string>Blend the raspberries with honey to a raspberry sauce.</string>
+			<string>Mix bananas, strawberries and coconut milk in a blender on high speed until smooth. Consistency should be thick and creamy.</string>
 			<string>Pour the strawberry nicecream oven the raspberry sauce in a glass or in a bowl. Stir with a spoon to create a beautiful swirl</string>
 		</array>
 	</dict>
@@ -275,6 +280,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Squeeze the juice out of the orange and grapefruit.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth</string>
 		</array>
 	</dict>
@@ -291,6 +297,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Squeeze the juice out of the orange.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth</string>
 		</array>
 	</dict>
@@ -317,14 +324,14 @@
 		<string>This smoothie is high in protein, antioxidants and has anti-inflammatory properties</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Cinnamon is known to lower blood sugar levels and for being anti- bacterial.</string>
-			<string>This smoothie is also high in protein, antioxidants and has anti-inflammatory properties, enjoy without the guilt! </string>
+			<string>Cinnamon is known to lower blood sugar levels and for being anti-bacterial.</string>
+			<string>This smoothie is also high in protein, antioxidants and has anti-inflammatory properties, so enjoy without the guilt! </string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Start making the mango sauce by mixing the mango with the honey.</string>
+			<string>Mix the mango with the honey to a mango sauce.</string>
 			<string>Mix the rest of the ingredients in a blender on high speed until smooth.</string>
-			<string>Pour the smoothie over the mango sauce and serve right away.</string>
+			<string>Gently pour the smoothie over the mango sauce.</string>
 		</array>
 	</dict>
 	<key>Recipe20</key>
@@ -336,13 +343,13 @@
 		<key>LongDescription</key>
 		<array>
 			<string>This creamy and rich smoothie is full of proteins, healthy fats and energizing vitamins. Perfect after a workout or as a luxurious breakfast.</string>
-			<string>Make sure you make some extra chia jam while you&apos;re at it and serve it together with pancakes, porridge or on toasts. Delicious!</string>
+			<string>Make sure you make some extra chia jam while you&apos;re at it and serve it together with pancakes, porridge or on toasts. It&apos;s delicious!</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Start by preparing the chia and raspberry jam. Mix the raspberries and then add the chia seeds and honey. Let it set for 15 minutes.</string>
+			<string>Mix the raspberries and add the chia seeds and honey. Let the raspberry jam set for 15 minutes.</string>
 			<string>Mix all the other ingredients in a blender on high speed until smooth.</string>
-			<string>Fill a glass halfway with the smoothie and then add a layer of raspberry jam before filling the glass up with the rest of the smoothie.</string>
+			<string>Fill a glass halfway with the smoothie and then add a layer of raspberry jam before filling the glass with the rest of the smoothie.</string>
 			<string>Drink it with a straw or eat with a spoon.</string>
 		</array>
 	</dict>
@@ -351,11 +358,10 @@
 		<key>RecipeName</key>
 		<string>Tropical passion</string>
 		<key>ShortDescription</key>
-		<string>A yellow tropical smoothie with lots of vitamins and minerals that nourishes skin, nails and hair.</string>
+		<string>A yellow tropical smoothie with lots of vitamins and minerals that nourishes skin, nails and hair</string>
 		<key>LongDescription</key>
 		<array>
 			<string>A yellow tropical smoothie with lots of minerals and vitamins that nourishes skin, nails and hair. Super delicious and great for that inner glow and extra energy.</string>
-			<string>Make sure you make some extra chia jam while you&apos;re at it and serve it together with pancakes, porridge or on toasts. Delicious!</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -372,8 +378,8 @@
 		<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal.</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Acai bowls are super trendy right now - and for a very good reason. Packed with vitamins and antioxidants, acai bowls are the perfect meal. </string>
-			<string>A lot of the fun with smoothiebowls lies in the toppings where the options are endless. Experiment with nut butter, fresh fruit and berries, seeds or whatever you have at home in your pantry, fridge or garden.</string>
+			<string>Packed with vitamins and antioxidants, acai bowls are the perfect meal. </string>
+			<string>A lot of the fun with smoothiebowls lies in the toppings where the options are endless. Experiment with nut butter, seeds, fresh fruit and berries or whatever you have at home in your pantry, fridge or garden.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -386,15 +392,16 @@
 		<key>RecipeName</key>
 		<string>Raspberry and coconut smoothie</string>
 		<key>ShortDescription</key>
-		<string>This coconut and raspberry smoothie is both creamy and refreshing. It will satisfy your sweet tooth in a healthy way.</string>
+		<string>This coconut and raspberry smoothie will satisfy your sweet tooth in a healthy way.</string>
 		<key>LongDescription</key>
 		<array>
-			<string>This coconut and raspberry smoothie is both creamy and refreshing.It will satisfy your sweet tooth in a healthy way.</string>
-			<string>Top it with some fresh raspberries and roasted coconut flakes. Enjoy right away. Cheers!</string>
+			<string>This coconut and raspberry smoothie is both creamy and refreshing. It will satisfy your sweet tooth in a healthy way.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
+			<string>Squeeze the juice out of the orange.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+			<string>Top it with some fresh raspberries and roasted coconut flakes.</string>
 		</array>
 	</dict>
 	<key>Recipe24</key>
@@ -410,10 +417,10 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Soak the almonds in water for 12-48 hours. Cover them with about one inch of water and store them in the fridge. The longer they soak the creamier the milk will be.</string>
-			<string>Drain and rinse the nuts before mixing them with fresh cold water, dates and vanilla powder on high speed for 2-3 minutes.</string>
+			<string>Soak the almonds in water for 12-48 hours. Cover them with about one inch of water and store them in the fridge. The longer they soak the creamier the milk will get.</string>
+			<string>Drain and rinse the nuts before mixing them with one liter of fresh cold water, dates and vanilla powder on high speed for 2-3 minutes.</string>
 			<string>Strain the liquid through a fine-mesh kitchen towel or a nut bag to separate the liquid from the nut meal.</string>
-			<string>Press out as much liquid as possible and keep the milk in a glass bottle in the fridge.</string>
+			<string>Press out as much liquid as possible and store the milk in a glass bottle in the fridge.</string>
 		</array>
 	</dict>
 </dict>

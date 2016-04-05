@@ -144,7 +144,7 @@
 	<key>Recipe9</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Peanut butter jelly</string>
+		<string>Peanut butter and jelly</string>
 		<key>ShortDescription</key>
 		<string>En proteinrik och matig smoothie som serveras med en frisk hallonsås
 </string>
@@ -228,7 +228,8 @@
 			<string>Tillsätt eventuellt mer chiafrön eller mandelmjölk. Chiapuddingen ska inte vara för rinnig.</string>
 			<string>Efter ytterligare 10 minuter är chiapuddingen klar men den går också att förbereda redan kvällen innan och förvara i kylen.</string>
 			<string>Mixa banan, hallon, blåbär, mandelmjölk och honung på hög hastighet till krämig konsistens.</string>
-			<string>Varva chiapuddingen med blåbärssmoothien i en skål eller i ett glas och ät med sked.</string>
+			<string>Varva chiapuddingen med blåbärssmoothien i en skål eller i ett glas.</string>
+			<string>Toppa med dina favoritfrukter och bär. Ät med sked.</string>
 		</array>
 	</dict>
 	<key>Recipe14</key>
@@ -382,7 +383,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Acai bowls är både goda och fyllda med vitaminer och antioxidanter. </string>
-			<string>Mycket av det roliga med smoothie bowls ligger i toppingen där valmöjligheterna är oändliga. Experimentera med nötsmör, färska bär och frukter, frön eller gojibär.</string>
+			<string>Mycket av det roliga med smoothie bowls ligger i toppingen där valmöjligheterna är oändliga. Experimentera med nötsmör, frön, färska bär och frukter.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -422,7 +423,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Lägg mandlarna i blöt och förvara dem svalt i 12-48 timmar. Ju längre mandlarna ligger i vattenbadet desto krämigare blir mjölken.</string>
-			<string>Häll av vattnet och skölj mandlarna innan du mixar dem tillsammans med färskt kallt vatten, dadlar och vaniljpulver på hög hastighet i 2-3 minuter.</string>
+			<string>Häll av vattnet och skölj mandlarna innan du mixar dem tillsammans med en liter färskt kallt vatten, dadlar och vaniljpulver på hög hastighet i 2-3 minuter.</string>
 			<string>Sila mjölken genom en kökshandduk eller en nötmjölkspåse. Pressa ut så mycket av vätskan som möjligt. Häll upp i en glaskanna och förvara i kylskåpet.</string>
 		</array>
 	</dict>

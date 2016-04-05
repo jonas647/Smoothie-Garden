@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "2a 1024 transparent-2.png",
+      "filename" : "Raspberry Kiss.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "2a 1024 transparent-1.png",
+      "filename" : "Raspberry Kiss@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "2a 1024 transparent.png",
+      "filename" : "Raspberry Kiss@3x.png",
       "scale" : "3x"
     }
   ],

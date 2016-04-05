@@ -93,8 +93,6 @@
     
     NSString *currentPlatform = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
     
-    NSLog(@"Platform is: %@", [self platformType:currentPlatform]);
-    
     if ([devices containsObject:[self platformType:currentPlatform]]) {
         return YES;
     } else {

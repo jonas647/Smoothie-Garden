@@ -52,7 +52,6 @@
 
 - (BOOL) shouldUpdateRecipePersistentStore {
     
-    NSLog(@"Should update persistent store?");
     //If the version has never been saved then load recipes
     if(![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:@"RecipeVersion"]){
 
