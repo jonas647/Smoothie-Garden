@@ -988,5 +988,22 @@
 			<string>cardamom</string>
 		</dict>
 	</dict>
+	<key>Coconut Water</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosvatten</string>
+			<key>en</key>
+			<string>coconut water</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>kokosvatten</string>
+			<key>en</key>
+			<string>coconut water</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

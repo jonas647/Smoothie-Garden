@@ -66,7 +66,6 @@
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     if (index >= [_viewControllers count]) {
-        NSLog(@"View nil at index: %i", (int)index);
         return nil;
     }
     

@@ -27,8 +27,6 @@
     
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     
-    NSLog(@"Reporting with default tracker: %@", tracker);
-    
     [tracker set:kGAIScreenName value:screenName];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }

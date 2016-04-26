@@ -46,7 +46,7 @@ static int const kGaDispatchPeriod = 20;
     [[UINavigationBar appearance] setBarTintColor:mainColor];
 
     [[UINavigationBar appearance] setTitleTextAttributes: @{
-                                                            NSFontAttributeName: [UIFont fontWithName:@"Apple SD Gothic Neo" size:16.0f],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:16.0f],
                                                             }];
     
     //Remove the top shadow line

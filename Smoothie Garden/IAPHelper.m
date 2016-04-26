@@ -45,7 +45,7 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
             }
             
         }
-        NSLog(@"ADDING TRANSACTION OBSERVER");
+        
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
         
     }
@@ -54,7 +54,7 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler {
     
-    NSLog(@"Request product with completion");
+    
     // 1
     _completionHandler = [completionHandler copy];
     
@@ -74,7 +74,7 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 
 - (void)buyProduct:(SKProduct *)product {
     
-    NSLog(@"Buying %@...", product.productIdentifier);
+    
     
     if ([SKPayment paymentWithProduct:product]) {
         
@@ -95,7 +95,7 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
     
-    NSLog(@"Loaded list of products...");
+    
     _productsRequest = nil;
     
     NSArray * skProducts = response.products;
@@ -114,7 +114,7 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
     
-    NSLog(@"Failed to load list of products.");
+    
     _productsRequest = nil;
     
     _completionHandler(NO, nil);
@@ -156,7 +156,6 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 }
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
-    NSLog(@"completeTransaction...");
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
@@ -164,7 +163,6 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
-    NSLog(@"restoreTransaction...");
     
     [self provideContentForProductIdentifier:transaction.originalTransaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
@@ -173,7 +171,6 @@ NSString *const IAPHelperProductResponseForTransaction = @"IAPHelperProductRespo
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
     
-    NSLog(@"failedTransaction...");
     if (transaction.error.code != SKErrorPaymentCancelled)
     {
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);

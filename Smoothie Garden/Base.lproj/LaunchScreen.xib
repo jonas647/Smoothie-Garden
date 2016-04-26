@@ -21,7 +21,7 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2a 1024 transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="pQk-fZ-cEQ">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch icon" translatesAutoresizingMaskIntoConstraints="NO" id="pQk-fZ-cEQ">
                             <rect key="frame" x="84" y="84" width="312" height="312"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="pQk-fZ-cEQ" secondAttribute="height" multiplier="1:1" id="UJ6-ZW-HOd"/>
@@ -51,6 +51,6 @@
         </view>
     </objects>
     <resources>
-        <image name="2a 1024 transparent.png" width="1024" height="1024"/>
+        <image name="Launch icon" width="1024" height="1024"/>
     </resources>
 </document>

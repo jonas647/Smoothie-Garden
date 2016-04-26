@@ -41,7 +41,6 @@
         NSMutableArray *tempLocalizedKeys = [[NSMutableArray alloc]init];
         for (NSString *tempNutrientKey in tempKeys) {
             
-            NSLog(@"Setting up localized keys");
             //Set an object that's the master key for the localized key
             NSString *localizedKey = [self localizedNameIn:[self currentLanguage] forNutrient:tempNutrientKey];
             if (localizedKey != nil) {

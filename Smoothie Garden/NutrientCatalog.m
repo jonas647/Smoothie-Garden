@@ -51,8 +51,6 @@
         }
     }
     
-    NSLog(@"No matching dictionaries for %@", nutrient);
-    
     return nil;
 }
 

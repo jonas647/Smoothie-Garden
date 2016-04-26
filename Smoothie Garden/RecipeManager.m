@@ -9,10 +9,12 @@
 #import "RecipeManager.h"
 #import "Recipe.h"
 #import "Ingredient.h"
+#import <UIKit/UIKit.h>
 
 @implementation RecipeManager {
     
     NSArray *recipeMaster;
+    NSDictionary *thumbnailImagesForRecipes;
 }
 
 + (RecipeManager*)sharedInstance {
@@ -33,11 +35,20 @@
             
             //Save the recipes to persistent store (NSUserDefault for now)
             [self saveRecipesToPersistentStore];
+            
         }
         
         //Save the recipe master from the persistent store
         recipeMaster = [self sortRecipesInArray:[self allRecipesFromPersistentStore]];
     
+        //Setup the thumbnail images
+        NSMutableDictionary *tempThumbnailImagesForRecipes = [[NSMutableDictionary alloc]init];
+        for (Recipe *r in recipeMaster) {
+            UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+            [tempThumbnailImagesForRecipes setObject:tempImage forKey:r.recipeName];
+        }
+        
+        thumbnailImagesForRecipes = [NSDictionary dictionaryWithDictionary:tempThumbnailImagesForRecipes];
         
     }
     return self;
@@ -46,6 +57,32 @@
 - (NSArray*) recipesMaster {
     
     return recipeMaster;
+}
+
+
+#pragma mark - Thumbnail images
+- (NSDictionary*) thumbnailImages {
+    
+    return thumbnailImagesForRecipes;
+}
+
+- (UIImage*) createThumbnailForImageWithName:(NSString *)sourceName {
+    
+    UIImage* sourceImage = [UIImage imageNamed:sourceName];
+    if (!sourceImage) {
+        //...
+        NSLog(@"Source image is missing: %@", sourceName);
+    }
+    
+    //Size dependent sizing of the thumbnail to make the loading on older devicer quicker
+    CGSize thumbnailSize = CGSizeMake([[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.width*0.8);
+    
+    UIGraphicsBeginImageContext(thumbnailSize);
+    [sourceImage drawInRect:CGRectMake(0,0,thumbnailSize.width,thumbnailSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 #pragma mark - Persistent Store

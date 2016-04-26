@@ -86,8 +86,7 @@
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.emailCell]]) {
         
         //Open email template
-        //TODO - add proper email address
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:foo@example.com?subject=Smoothie%20Box%20Feedback"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:contact@smoothiebox.eu?subject=Smoothie%20Box%20Feedback"]];
         
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.reviewCell]]) {
         

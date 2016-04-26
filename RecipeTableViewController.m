@@ -26,7 +26,7 @@
 {
     NSArray *allRecipes;
     NSIndexPath *indexOfSelectedObject;
-    NSMutableDictionary *thumbnailImages;
+    NSDictionary *thumbnailImages;
     NSMutableArray *filteredRecipeArray;
     SBActivityIndicatorView *loadingIndicator;
     float imageParallaxEffectFactor;
@@ -37,20 +37,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupSearchController]; //Setup the search controller programmatically since it's not possible in storyboard
-    [self setupActivityIndicator]; //Setup of the activity indicator programmatically
-    [loadingIndicator startActivityIndicator];
-    
-    
-    //Create thumbnail images to display in tableview
-    thumbnailImages = [[NSMutableDictionary alloc]init];
-    for (Recipe *r in [[RecipeManager sharedInstance] recipesMaster]) {
-        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        [thumbnailImages setObject:tempImage forKey:r.recipeName];
-    }
+    [self setupSearchController];  //Setup the search controller programmatically since it's not possible in storyboard
+    //[self setupActivityIndicator]; //Setup of the activity indicator programmatically
+    //[loadingIndicator startActivityIndicator];
     
     //Set the table view array
     [self setupRecipesFromRecipeMaster];
+    
+    //Create thumbnail images to display in tableview
+    thumbnailImages = [[RecipeManager sharedInstance]thumbnailImages];
+    
     
     //How much parallax effect the images will have. The higher the bigger vertical move.
     imageParallaxEffectFactor = 15;
@@ -82,26 +78,25 @@
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
-        
-        titleTextSize = 19;
-        descriptionTextSize = 15;
+        titleTextSize = 18;
+        descriptionTextSize = 14;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
-        titleTextSize = 23;
-        descriptionTextSize = 18;
+        titleTextSize = 21;
+        descriptionTextSize = 16;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
         //Just to test on simulator
-        titleTextSize = 17;
-        descriptionTextSize = 13;
+        titleTextSize = 21;
+        descriptionTextSize = 16;
     } else {
         // If a new device is released before the app is updated
         titleTextSize = 17;
         descriptionTextSize = 13;
     }
-
+    
 }
 
 

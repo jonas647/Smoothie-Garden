@@ -2097,12 +2097,12 @@ blueberries</key>
 				<key>Sorting</key>
 				<integer>2</integer>
 			</dict>
-			<key>Almond Milk</key>
+			<key>Coconut Water</key>
 			<dict>
 				<key>Quantity</key>
 				<real>1.5</real>
 				<key>Type</key>
-				<string>Almond Milk</string>
+				<string>Coconut Water</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>

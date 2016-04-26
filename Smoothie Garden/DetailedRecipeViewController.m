@@ -110,16 +110,16 @@
         
         sizeForByText = 9;
         sizeForSmoothieBoxText = 11;
-        sizeForTitleText = 18;
-        sizeForRecipeDescriptions = 18;
+        sizeForTitleText = 20;
+        sizeForRecipeDescriptions = 17;
         marginBetweenTextCells = 20;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
         sizeForByText = 10;
         sizeForSmoothieBoxText = 13;
-        sizeForTitleText = 22;
-        sizeForRecipeDescriptions = 22;
+        sizeForTitleText = 21;
+        sizeForRecipeDescriptions = 18;
         marginBetweenTextCells = 30;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
@@ -127,17 +127,17 @@
         sizeForByText = 11;
         sizeForSmoothieBoxText = 14;
         sizeForTitleText = 26;
-        sizeForRecipeDescriptions = 26;
+        sizeForRecipeDescriptions = 21;
         marginBetweenTextCells = 35;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
         //Just to test on simulator
-        sizeForByText = 8;
-        sizeForSmoothieBoxText = 10;
-        sizeForTitleText = 20;
-        sizeForRecipeDescriptions = 16;
-        marginBetweenTextCells = 30;
+        sizeForByText = 11;
+        sizeForSmoothieBoxText = 14;
+        sizeForTitleText = 26;
+        sizeForRecipeDescriptions = 21;
+        marginBetweenTextCells = 35;
     } else {
         // If a new device is released before the app is updated
         sizeForByText = 9;
@@ -146,6 +146,17 @@
         sizeForRecipeDescriptions = 18;
         marginBetweenTextCells = 20;
     }
+    
+    ingredientsTableView.estimatedRowHeight = 40;
+    recipeTableView.estimatedRowHeight = 120;
+    longDescriptionTable.estimatedRowHeight = 120;
+    
+    ingredientsTableView.rowHeight = UITableViewAutomaticDimension;
+    recipeTableView.rowHeight = UITableViewAutomaticDimension;
+    longDescriptionTable.rowHeight = UITableViewAutomaticDimension;;
+    
+    
+    
 }
 
 
@@ -283,7 +294,7 @@
         
         //If it's a blank ingredient then make the separator transparent
         if ([recipeIngredientText.text isEqualToString:@""]) {
-            //[separator setTextColor:[UIColor clearColor]];
+            
             [separator setText:@"x"];
             [separator setFont:[UIFont fontWithName:separator.font.fontName size:10]];
         }
@@ -305,19 +316,25 @@
     return cell;
 }
 
+/*
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
     
+    //Add margins to the cell height
+    float constraintMargin = 10+10;
     if ([tableView isEqual:recipeTableView]) {
         //Check the height of the label that populates the cell and resize the cell height after that
         
         UILabel *resizableLabel = (UILabel*)[cell viewWithTag:300];
         
-        //Add margins to the cell height
-        float cellMargin = cell.frame.size.height;
         
-        return [self labelHeightFor:resizableLabel andScreenSize:LABEL_SIZE_LARGE] + cellMargin;
+        
+        
+        
+        return [self labelHeightFor:resizableLabel] + marginBetweenTextCells + constraintMargin;
+        
         
     
     } else if ([tableView isEqual:ingredientsTableView]) {
@@ -329,30 +346,39 @@
         UILabel *ingredientLabel = (UILabel*)[cell viewWithTag:ingredientText];
         UILabel *volumeLabel = (UILabel*)[cell viewWithTag:volumeText];
         
-        float heightForIngredientLabel = [self labelHeightFor:ingredientLabel andScreenSize:LABEL_SIZE_SMALL];
-        float heightForVolumeLabel = [self labelHeightFor:volumeLabel andScreenSize:LABEL_SIZE_SMALL];
+        float heightForIngredientLabel = [self labelHeightFor:ingredientLabel];
+        float heightForVolumeLabel = [self labelHeightFor:volumeLabel];
         
-        float cellMargin = cell.frame.size.height/3;
-        float highestLabel = MAX(heightForIngredientLabel, heightForVolumeLabel) + cellMargin;
+        
+        float highestLabel = MAX(heightForIngredientLabel, heightForVolumeLabel) + constraintMargin;
         return highestLabel;
     } else if ([tableView isEqual:longDescriptionTable]) {
         
         int descriptionText = 101;
         UILabel *descriptionLabel = (UILabel*)[cell viewWithTag:descriptionText];
         
-        float heightForDescriptionLabel = [self labelHeightFor:descriptionLabel andScreenSize:LABEL_SIZE_SMALL];
+        float heightForDescriptionLabel = [self labelHeightFor:descriptionLabel];
         
         //Add margins to the cell height
         float cellMargin = cell.frame.size.height/3;
         
-        return heightForDescriptionLabel + cellMargin;
+        return heightForDescriptionLabel + marginBetweenTextCells + constraintMargin;
         
     }
         return 0;
 
 }
 
-- (float) labelHeightFor: (UILabel*) label andScreenSize: (int) screenSize{
+- (float) heightForCell: (UITableViewCell*) cell {
+    
+    [cell layoutIfNeeded];
+    
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
+}
+
+- (float) labelHeightFor: (UILabel*) label {
+    
     
     //Need to split the width of the label to get a proper height. Not sure why...
     UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, label.frame.size.width/2, CGFLOAT_MAX)];
@@ -361,10 +387,15 @@
     newLabel.text = label.text;
     newLabel.font = [UIFont fontWithName:newLabel.font.fontName size:sizeForRecipeDescriptions];
     [newLabel sizeToFit];
+    [newLabel layoutIfNeeded];
     
+    NSLog(@"Height for label: %f", newLabel.frame.size.height);
     return newLabel.frame.size.height;
     
+   
+ 
 }
+*/
 
 /*
 - (CGFloat) highestCellHeightInTableView: (UITableView*) tableView {

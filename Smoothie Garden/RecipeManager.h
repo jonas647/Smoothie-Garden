@@ -20,4 +20,7 @@
 - (void) removeRecipeFromFavorites:(Recipe*) recipeToRemove;
 - (void) removeAllFavorites;
 
+#pragma mark - Thumbnail images
+- (NSDictionary*) thumbnailImages;
+
 @end

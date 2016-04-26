@@ -146,7 +146,7 @@
 		<key>RecipeName</key>
 		<string>Peanut butter and jelly</string>
 		<key>ShortDescription</key>
-		<string>En proteinrik och matig smoothie som serveras med en frisk hallonsås
+		<string>En proteinrik och matig smoothie som serveras med frisk hallonsås
 </string>
 		<key>LongDescription</key>
 		<array>
@@ -282,8 +282,8 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Pressa apelsein och grapefrukt till juice.</string>
-			<string>Mixa på hög hastighet till krämig konsistens.</string>
+			<string>Pressa apelsin och grapefrukt till juice.</string>
+			<string>Mixa juicen med mango och honung på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe17</key>
@@ -353,6 +353,7 @@
 		<array>
 			<string>Mixa hallon och tillsätt sedan chiafrön och honung. Blanda och låt sylten stå svalt i ca 15 minuter.</string>
 			<string>Mixa övriga ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Fyll glaset till hälften med smoothien.</string>
 			<string>Lägg ett lager av chia- och hallonsylt och häll försiktigt upp resten av smoothien.</string>
 			<string>Drick med sugrör eller ät med sked.</string>
 		</array>
@@ -400,7 +401,7 @@
 		<string>En uppfriskande och krämig smoothie som tillfredsställer sötsuget på ett nyttigt sätt</string>
 		<key>LongDescription</key>
 		<array>
-			<string>En uppfriskande och krämig smoothie som tillfredsställer ditt sötsuget på ett nyttigt sätt.</string>
+			<string>En uppfriskande och krämig smoothie som tillfredsställer ditt sötsug på ett nyttigt sätt.</string>
 		</array>
 		<key>Instructions</key>
 		<array>

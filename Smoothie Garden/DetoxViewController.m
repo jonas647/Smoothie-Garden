@@ -31,7 +31,7 @@
     Recipe *sevenPM;
     
     NSArray *allRecipes;
-    NSMutableDictionary *thumbnailImages;
+    NSDictionary *thumbnailImages;
     NSArray *sectionCategories;
     
     UIView *viewForSelectedButton;
@@ -52,16 +52,7 @@
     
     sectionCategories = @[NINE_AM_SMOOTHIE,TWELVE_AM_SMOOTHIE,FOUR_PM_SMOOTHIE,SEVEN_PM_SMOOTHIE];
     
-    thumbnailImages = [[NSMutableDictionary alloc]init];
-    for (Recipe *r in allRecipes) {
-        UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-        if (tempImage != nil) {
-            [thumbnailImages setObject:tempImage forKey:r.recipeName];
-        } else {
-            NSLog(@"Recipe image is nil");
-        }
-        
-    }
+    thumbnailImages = [[RecipeManager sharedInstance]thumbnailImages];
     
     [self setupDetoxDayFor:@"Day1"];
     
@@ -91,7 +82,7 @@
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
-        titleFontSize = 16;
+        titleFontSize = 17;
         descriptionFontSize = 13;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
@@ -101,13 +92,13 @@
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
-        titleFontSize = 22;
+        titleFontSize = 21;
         descriptionFontSize = 16;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
         //Just to test on simulator
-        titleFontSize = 22;
+        titleFontSize = 21;
         descriptionFontSize = 16;
         
     } else {
@@ -257,7 +248,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    NSLog(@"Number of sections: %i", (int)sectionCategories.count);
+    
     return sectionCategories.count;
 }
 
