@@ -131,9 +131,6 @@
     
     //Remove this to reload the table for liked recipes, but takes a bit longer before user can scroll
     
-    
-     
-    
 }
 
 - (void)didReceiveMemoryWarning {

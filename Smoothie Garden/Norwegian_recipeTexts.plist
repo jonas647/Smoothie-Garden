@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Recipe1</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green kale</string>
+		<key>ShortDescription</key>
+		<string>En kremaktig og forfriskende grønn smoothie som er perfekt før eller etter trening</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En kremaktig og forfriskende grønn smoothie som er perfekt før eller etter trening.</string>
+			<string>Grønnkål og andre mørkegrønne bladgrønnsaker har alkaliserende egenskaper, er rik på antioksidanter og anti-inflammatoriske vises.</string>
+			<string>Legg til hvete gress for ekstra næring.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingrediensene i høy hastighet til en kremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe2</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green rawgurt</string>
+		<key>ShortDescription</key>
+		<string>Et grønt alternativ til tradisjonelle yoghurt</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Et grønt alternativ til tradisjonelle yoghurt.</string>
+			<string>Serveres i en bolle til frokost og topp med friske bær, frukt, nøtter og frø.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingrediensene i høy hastighet til en kremet konsistens.</string>
+			<string>Legg til en skvett vann frosset ingredienser hvis de ikke er blandet.</string>
+		</array>
+	</dict>
+	<key>Recipe3</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Veggie detox</string>
+		<key>ShortDescription</key>
+		<string>Med denne grønne smoothie dekket en stor del av den daglige vegetabilske behovet</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Ved å drikke en grønn smoothie som dette dekket en stor del av den daglige vegetabilske behovet. Kroppen har også lettere å ta opp næringsstoffer fra grønnsaker i blandet form.</string>
+			<string>Legg en kvist av persille for ekstra jern og smak.</string>
+			<string>For en fruktig og søt smak kan avocado byttes mot samme mengde mango.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem sitronsaft ut av sitron.</string>
+			<string>Hakk eple og fjern kjernen.</string>
+			<string>Bland alle ingrediensene i høy hastighet til en kremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe4</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green machine</string>
+		<key>ShortDescription</key>
+		<string>Legge grønne blader i smoothie er en enkel måte å øke det daglige inntaket av grønnsaker</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Legge grønne blader i smoothie er en enkel måte å øke det daglige inntaket av grønnsaker.</string>
+			<string>Mørkegrønne bladene er gode kilder til vitaminer (A, C, K og folat) og mineraler (som jern og kalsium).</string>
+			<string>Boost med spirulina for ekstra næring.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem saft ut av appelsin og lime.</string>
+			<string>Bland alle ingrediensene i høy hastighet til en kremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe5</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Orange is the new black</string>
+		<key>ShortDescription</key>
+		<string>Dette er en skikkelig vitaminbombe som bidrar til å holde unna forkjølelse</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Dette er en skikkelig vitaminbombe som bidrar til å holde unna forkjølelse.</string>
+			<string>Ingefær tilfører litt for å oppvarme smak og har også anti-inflammatoriske egenskaper.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bruk en juicemaskin til gulrot, appelsin, sitron og ingefær.</string>
+			<string>Bland juice med mango i høy hastighet til en kremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe6</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Nordic berries</string>
+		<key>ShortDescription</key>
+		<string>Nordiske bær er vår egen superbær, høy i næringsstoffer og antioksidanter</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Nordiske bær er vår egen superbær, høy i næringsstoffer og antioksidanter</string>
+			<string>Eksperimenter med andre nordiske bær, for eksempel rød eller svart rips, bringebær eller jordbær. Bare bytt bærene i oppskriften mot hva som er i kjøleskapet, fryseren eller i hagen.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingrediensene i høy hastighet til en kremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe7</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Chocolate and raspberry shake</string>
+		<key>ShortDescription</key>
+		<string>Perfekt når du vil ha noe søtt, men fortsatt være sunn</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Sjokolade og bringebær er en uslåelig kombinasjon. Rå kakao inneholder rikelig med antioksidanter, noe som gjør dette smoothie perfekt når du trenger noe søtt og trenger energi, men likevel ønsker å være nyttig.</string>
+			<string>Boost med macapulver som virker forfriskende og bedre konsentrasjon.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingrediensene i høy hastighet til en kremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe8</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blueberry pie</string>
+		<key>ShortDescription</key>
+		<string>Dette antioksidant-rik smoothie smaker som blåbær og gi rikelig energi og ernæring</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Dette antioksidant-rik smoothie smaker som blåbær og gi rikelig energi og ernæring.</string>
+			<string>Boost med chia frø for ekstra fiber og sunt fett som gjør at du holder deg full for lenge.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingrediensene i høy hastighet til en kremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe9</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Peanut butter and jelly</string>
+		<key>ShortDescription</key>
+		<string>Et høyt protein og næringsrik smoothie servert med frisk bringebærsaus</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Den här krämiga och proteinrika smoothien är perfekt efter träningen eller på morgonen när man behöver tillföra kroppen lite extra energi och näring.</string>
+			<string>Den syrliga hallonsåsen kompletterar den krämiga smoothien perfekt. </string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa hallon med honung och häll upp hallonsåsen i ett glas.</string>
+			<string>Mixa resterande ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Häll smoothien försiktigt över hallonsåsen över ett vinklat glas.</string>
+		</array>
+	</dict>
+</dict>
+</plist>

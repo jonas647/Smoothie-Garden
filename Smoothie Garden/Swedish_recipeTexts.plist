@@ -118,7 +118,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Choklad och hallon är en oslagbar kombination. Rå kakao innehåller dessutom rikligt med antioxidanter vilket gör den här smoothien perfekt när du är sugen på något sött och behöver energi men fortfarande vill vara nyttig.</string>
-			<string>Boosta gärna med maccapulver som verkar uppiggande och ökar koncentrationsförmågan.</string>
+			<string>Boosta med maccapulver som verkar uppiggande och ökar koncentrationsförmågan.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -419,13 +419,62 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Egengjord nötmjölk är fantastiskt god och utgör en perfekt vätskebas i smoothies. Den är lätt att göra och kan förvaras i kylskåpet i upp till 3-4 dagar.</string>
-			<string>Använd nötmassan som blir över och använd i en rawfood-dessert. </string>
+			<string>Spara nötmassan som blir över och använd i en rawfood-dessert. </string>
 		</array>
 		<key>Instructions</key>
 		<array>
 			<string>Lägg mandlarna i blöt och förvara dem svalt i 12-48 timmar. Ju längre mandlarna ligger i vattenbadet desto krämigare blir mjölken.</string>
 			<string>Häll av vattnet och skölj mandlarna innan du mixar dem tillsammans med en liter färskt kallt vatten, dadlar och vaniljpulver på hög hastighet i 2-3 minuter.</string>
 			<string>Sila mjölken genom en kökshandduk eller en nötmjölkspåse. Pressa ut så mycket av vätskan som möjligt. Häll upp i en glaskanna och förvara i kylskåpet.</string>
+		</array>
+	</dict>
+	<key>Recipe25</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Yellow Yoga</string>
+		<key>ShortDescription</key>
+		<string>Gurkmeja har starkt antiinflammatoriska och läkande egenskaper</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Den här smoothien har en frisk och krämig smak. Gurkmeja smakar inte mycket men ger drycken en gyllene färg och har dessutom starkt antiinflammatoriska och läkande egenskaper.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa cashewnötter med vatten.</string>
+			<string>Pressa juicen från en apelsin och lägg till övriga ingredienser.</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens. </string>
+		</array>
+	</dict>
+	<key>Recipe26</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blackcurrant vanilla</string>
+		<key>ShortDescription</key>
+		<string>Svarta vinbär har en unik och uppfriskande smak, olik alla andra bär</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Svarta vinbär har en unik och uppfriskande smak, olik alla andra bär. De är också rika på C-vitamin och antioxidanter.</string>
+			<string>Plocka vinbären direkt från trädgården och använd i den här härliga smoothien. </string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens. </string>
+		</array>
+	</dict>
+	<key>Recipe27</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Rhubarb</string>
+		<key>ShortDescription</key>
+		<string>Det här är den perfekta sommardrinken. Lätt, syrlig och frisk</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Det här är den perfekta sommardrinken. Lätt och frisk med den perfekta kombinationen av syrligt och sött.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Använd en råsaftcentrifug till äpplet och rabarbern.</string>
+			<string>Mixa juicen med hallon, mango och lönnsirap på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 </dict>

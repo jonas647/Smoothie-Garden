@@ -17,6 +17,7 @@
 #import "Ingredient.h"
 #import "RecipeManager.h"
 #import "NutrientFactPageViewRootViewController.h"
+#import "RecipeShoppingListViewController.h"
 #import "DeviceHelper.h"
 
 @interface DetailedRecipeViewController ()
@@ -43,6 +44,13 @@
     float sizeForRecipeDescriptions;
     
 }
+
+- (void)viewWillLayoutSubviews {
+    
+    // Call super class to make the views layout. Needed for the in-call status bar to get correct position vs. UIViews
+    [super viewWillLayoutSubviews];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -155,8 +163,6 @@
     recipeTableView.rowHeight = UITableViewAutomaticDimension;
     longDescriptionTable.rowHeight = UITableViewAutomaticDimension;;
     
-    
-    
 }
 
 
@@ -238,16 +244,6 @@
     return zoomRect;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 #pragma mark - Table View Delegate
 
@@ -315,157 +311,6 @@
     
     return cell;
 }
-
-/*
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = (UITableViewCell *)[self tableView:(tableView) cellForRowAtIndexPath:indexPath];
-    
-    //Add margins to the cell height
-    float constraintMargin = 10+10;
-    if ([tableView isEqual:recipeTableView]) {
-        //Check the height of the label that populates the cell and resize the cell height after that
-        
-        UILabel *resizableLabel = (UILabel*)[cell viewWithTag:300];
-        
-        
-        
-        
-        
-        return [self labelHeightFor:resizableLabel] + marginBetweenTextCells + constraintMargin;
-        
-        
-    
-    } else if ([tableView isEqual:ingredientsTableView]) {
-        //Return the size of the cell. All cells are the same height
-        
-        int ingredientText = 200;
-        int volumeText = 201;
-        
-        UILabel *ingredientLabel = (UILabel*)[cell viewWithTag:ingredientText];
-        UILabel *volumeLabel = (UILabel*)[cell viewWithTag:volumeText];
-        
-        float heightForIngredientLabel = [self labelHeightFor:ingredientLabel];
-        float heightForVolumeLabel = [self labelHeightFor:volumeLabel];
-        
-        
-        float highestLabel = MAX(heightForIngredientLabel, heightForVolumeLabel) + constraintMargin;
-        return highestLabel;
-    } else if ([tableView isEqual:longDescriptionTable]) {
-        
-        int descriptionText = 101;
-        UILabel *descriptionLabel = (UILabel*)[cell viewWithTag:descriptionText];
-        
-        float heightForDescriptionLabel = [self labelHeightFor:descriptionLabel];
-        
-        //Add margins to the cell height
-        float cellMargin = cell.frame.size.height/3;
-        
-        return heightForDescriptionLabel + marginBetweenTextCells + constraintMargin;
-        
-    }
-        return 0;
-
-}
-
-- (float) heightForCell: (UITableViewCell*) cell {
-    
-    [cell layoutIfNeeded];
-    
-    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return size.height;
-}
-
-- (float) labelHeightFor: (UILabel*) label {
-    
-    
-    //Need to split the width of the label to get a proper height. Not sure why...
-    UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, label.frame.size.width/2, CGFLOAT_MAX)];
-    newLabel.numberOfLines = 0;
-    newLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    newLabel.text = label.text;
-    newLabel.font = [UIFont fontWithName:newLabel.font.fontName size:sizeForRecipeDescriptions];
-    [newLabel sizeToFit];
-    [newLabel layoutIfNeeded];
-    
-    NSLog(@"Height for label: %f", newLabel.frame.size.height);
-    return newLabel.frame.size.height;
-    
-   
- 
-}
-*/
-
-/*
-- (CGFloat) highestCellHeightInTableView: (UITableView*) tableView {
-    
-    float highestCellHeight = 0;
-    NSMutableArray *cellsInTable = [[NSMutableArray alloc]init];
-    
-     //Iterate all the sections and the rows to find the one with the highest height
-     for (NSInteger j = 0; j < [tableView numberOfSections]; ++j)
-     {
-     NSLog(@"Number of rows in section %i: %i",(int)j, (int)[tableView numberOfRowsInSection:0]);
-     for (NSInteger i = 0; i < [tableView numberOfRowsInSection:j]; ++i)
-     {
-     NSLog(@"Adding row %i from section %i", (int)i,(int)j);
-     NSLog(@"For table view: %@", tableView);
-     if ([tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]]) {
-     [cellsInTable addObject:[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]]];;
-     }
-     
-     }
-     }
-    
-    if ([tableView isEqual:recipeTableView]) {
-        
-    } else if ([tableView isEqual:ingredientsTableView]) {
-        
-    }
-    
-    NSLog(@"number of cells added for %@ %lu", tableView, cellsInTable.count);
-    
-    //For every cell, check the height of the views in the cell
-    for (UITableViewCell *cell in cellsInTable) {
-        //TODO
-        //Make custom cell instead for improved readability
-        float cellHeight = 0;
-        
-        //There are different uiviews in the different tables, therefore check what table it is
-        if ([tableView isEqual:recipeTableView]) {
-            UILabel *resizableLabel = (UILabel*)[cell viewWithTag:300];
-            
-            //Add margins to the cell height
-            float cellMargin = cell.frame.size.height;
-            cellHeight = [self labelHeightFor:resizableLabel andScreenSize:LABEL_SIZE_LARGE] + cellMargin;
-            
-        } else if ([tableView isEqual:ingredientsTableView]) {
-            int ingredientText = 200;
-            int volumeText = 201;
-            
-            UILabel *ingredientLabel = (UILabel*)[cell viewWithTag:ingredientText];
-            UILabel *volumeLabel = (UILabel*)[cell viewWithTag:volumeText];
-            
-            float heightForIngredientLabel = [self labelHeightFor:ingredientLabel andScreenSize:LABEL_SIZE_SMALL];
-            float heightForVolumeLabel = [self labelHeightFor:volumeLabel andScreenSize:LABEL_SIZE_SMALL];
-            
-            //Set the height to the heighest of the labels, they are on one side of the middle button and they can differ in height.
-            cellHeight = MAX(heightForIngredientLabel, heightForVolumeLabel);
-            
-        }
-        
-        if (cellHeight > highestCellHeight) {
-            highestCellHeight = cellHeight;
-        }
-        
-        
-    }
-    
-    return highestCellHeight;
-    
-}
-*/
 
 #pragma mark - Handle Recipe Favorites
 
@@ -572,7 +417,7 @@
     
     UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:acceptText style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         //Open the AppStore link for the user
-        NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/1057010706"];
+        NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.apple.com/us/app/smoothie-box-recipes-detox/id1057010706?l=sv&ls=1&mt=8"];
         if ([[UIApplication sharedApplication]canOpenURL:appStoreUrl]) {
             [[UIApplication sharedApplication]openURL:appStoreUrl];
         }
@@ -616,6 +461,9 @@
         NutrientFactPageViewRootViewController *newVC = (NutrientFactPageViewRootViewController*)[segue destinationViewController];
         newVC.selectedRecipe = self.selectedRecipe;
         
+    } else if ([segueName isEqualToString: @"shoppingListSegue"]) {
+        RecipeShoppingListViewController *newVC = (RecipeShoppingListViewController*) [segue destinationViewController];
+        newVC.selectedRecipe = self.selectedRecipe;
     }
 }
 

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<integer>6</integer>
+	<integer>7</integer>
 	<key>Recipe1</key>
 	<dict>
 		<key>Ingredients</key>
@@ -2356,6 +2356,269 @@ blueberries</key>
 		<integer>23</integer>
 		<key>ImageName</key>
 		<string>Almond Milk</string>
+	</dict>
+	<key>Recipe25</key>
+	<dict>
+		<key>Ingredients</key>
+		<dict>
+			<key>Cashew nuts</key>
+			<dict>
+				<key>Quantity</key>
+				<real>0.5</real>
+				<key>Type</key>
+				<string>Cashew Nut</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>0</integer>
+			</dict>
+			<key>Water</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Water</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>1</integer>
+			</dict>
+			<key>Date</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Orange</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>2</integer>
+			</dict>
+			<key>Frozen Mango</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>2</integer>
+				<key>Type</key>
+				<string>Frozen Mango</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>4</integer>
+			</dict>
+			<key>Turmeric powder</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Turmeric Powder</string>
+				<key>Measurement</key>
+				<string>tsp</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>5</integer>
+			</dict>
+			<key>Coconut milk</key>
+			<dict>
+				<key>Quantity</key>
+				<real>0.5</real>
+				<key>Type</key>
+				<string>Coconut Milk dl</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>6</integer>
+			</dict>
+		</dict>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeType</key>
+		<integer>1</integer>
+		<key>Sorting</key>
+		<integer>-3</integer>
+		<key>ImageName</key>
+		<string>Yellow Yoga</string>
+	</dict>
+	<key>Recipe26</key>
+	<dict>
+		<key>Ingredients</key>
+		<dict>
+			<key>Black currant</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Blackcurrant</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>0</integer>
+			</dict>
+			<key>Frozen Raspberries</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Frozen Raspberries</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>1</integer>
+			</dict>
+			<key>Banana</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Frozen Banana</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>2</integer>
+			</dict>
+			<key>Date</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Date</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>4</integer>
+			</dict>
+			<key>Water</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Water</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>5</integer>
+			</dict>
+			<key>Vanilla Powder</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Vanilla Powder</string>
+				<key>Measurement</key>
+				<string>pinch</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>6</integer>
+			</dict>
+		</dict>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeType</key>
+		<integer>1</integer>
+		<key>Sorting</key>
+		<integer>-2</integer>
+		<key>ImageName</key>
+		<string>Blackcurrant Vanilla</string>
+	</dict>
+	<key>Recipe27</key>
+	<dict>
+		<key>Ingredients</key>
+		<dict>
+			<key>Rhubarb</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>20</integer>
+				<key>Type</key>
+				<string>Rhubarb</string>
+				<key>Measurement</key>
+				<string>cm</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>0</integer>
+			</dict>
+			<key>Apple</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Apple</string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>1</integer>
+			</dict>
+			<key>Raspberries</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Frozen Raspberries</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>2</integer>
+			</dict>
+			<key>Mango</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>Frozen Mango</string>
+				<key>Measurement</key>
+				<string>dl</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>4</integer>
+			</dict>
+			<key>Maple Syrup</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>2</integer>
+				<key>Type</key>
+				<string>Maple Syrup</string>
+				<key>Measurement</key>
+				<string>tsp</string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>5</integer>
+			</dict>
+		</dict>
+		<key>RecipeCategory</key>
+		<integer>0</integer>
+		<key>RecipeType</key>
+		<integer>1</integer>
+		<key>Sorting</key>
+		<integer>-1</integer>
+		<key>ImageName</key>
+		<string>Rhubarb</string>
 	</dict>
 </dict>
 </plist>

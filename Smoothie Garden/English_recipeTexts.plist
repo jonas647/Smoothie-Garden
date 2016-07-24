@@ -423,5 +423,55 @@
 			<string>Press out as much liquid as possible and store the milk in a glass bottle in the fridge.</string>
 		</array>
 	</dict>
+	<key>Recipe25</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Yellow yoga</string>
+		<key>ShortDescription</key>
+		<string>Turmeric has highly anti-inflammatory and healing properties</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This smoothie has a fresh and creamy flavor. Turmeric doesn’t have a lot of flavor but adds a golden colour and has highly anti-inflammatory and healing properties.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix the cashew nuts with fresh cold water in a blender.</string>
+			<string>Squeeze the juice out of the orange and add the rest of the ingredients.</string>
+			<string>Mix on high speed until smooth</string>
+		</array>
+	</dict>
+	<key>Recipe26</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blackcurrant vanilla</string>
+		<key>ShortDescription</key>
+		<string>Blackcurrant has a unique taste and are high in both vitamin C and antioxidants</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Blackcurrant has a unique taste, unlike other berries. They are also high in both vitamin C and antioxidants.</string>
+			<string>Get them straight from the garden or store them in the fridge over winter and use them in this tasty smoothie whenever.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe27</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Rhubarb</string>
+		<key>ShortDescription</key>
+		<string>This is a great summer drink with the perfect combination of sweet and sour. </string>
+		<key>LongDescription</key>
+		<array>
+			<string>This is the perfect combination of tangy rhubarb and sweet berries.</string>
+			<string>Enjoy it in the sun on a hot summer day.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Juice the rhubarb and the apple in a juice extractor.</string>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
 </dict>
 </plist>

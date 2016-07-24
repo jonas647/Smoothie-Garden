@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Language</key>
+	<string>dk</string>
+	<key>Recipe1</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green kale</string>
+		<key>ShortDescription</key>
+		<string>En cremet og forfriskende grøn smoothie, der er perfekt før eller efter en træning</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En cremet og forfriskende grøn smoothie, der er perfekt før eller efter en træning.</string>
+			<string>Grønkål og andre mørke grønne bladgrøntsager har basisk egenskaber, er rig på antioxidanter og anti-inflammatoriske vises.</string>
+			<string>Tilføj hvede græs for ekstra ernæring.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe2</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green rawgurt</string>
+		<key>ShortDescription</key>
+		<string>Et grønt alternativ til en traditionel yoghurt</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Et grønt alternativ til en traditionel yoghurt.</string>
+			<string>Serveres i en skål til morgenmad og top med friske bær, frugt, nødder og frø.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+			<string>Tilføj et stænk af vand på de frosne ingredienser hvis de ikke bliver blandet.</string>
+		</array>
+	</dict>
+	<key>Recipe3</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Veggie detox</string>
+		<key>ShortDescription</key>
+		<string>Med denne grønne smoothie dækkede et stort del af den daglige vegetabilske behov</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Ved at drikke en grøn smoothie, at dette dækkede en stor del af de daglige vegetabilske behov. Kroppen finder det også lettere at tage op næringsstoffer fra grøntsagerne i blandet form.</string>
+			<string>Tilføj en kvist persille for ekstra jern og smag.</string>
+			<string>For en frugtagtig og sød smag avocadoer kan veksles til den samme mængde mango.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem citron til saft.</string>
+			<string>Hak æble og fjerne kernen.</string>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe4</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green machine</string>
+		<key>ShortDescription</key>
+		<string>Tilføjelse grønne blade i smoothie er en nem måde at øge den daglige indtagelse af grøntsager</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Tilføjelse grønne blade i smoothie er en nem måde at øge den daglige indtagelse af grøntsager.</string>
+			<string>Mørkegrønne blade er gode kilder til vitaminer (A, C, K og folat) og mineraler (som jern og calcium).</string>
+			<string>Boost med spirulina for ekstra ernæring.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem appelsin og lime til saft.</string>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe5</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Orange is the new black</string>
+		<key>ShortDescription</key>
+		<string>Dette er en reel vitamin bombe, der hjælper med at holde væk forkølelse</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Dette er en reel vitamin bombe, der hjælper med at holde væk forkølelse.</string>
+			<string>Ingefær tilføjer lidt at opvarme smag og har også antiinflammatoriske egenskaber.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Brug en saftpresser til gulerod, appelsin, citron og ingefær.</string>
+			<string>Bland saft med mango ved høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe6</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Nordic berries</string>
+		<key>ShortDescription</key>
+		<string>Nordiske bær er vores egen superbær høj i næringsstoffer og antioxidanter</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Nordiske bær er vores egen superbær høj i næringsstoffer og antioxidanter.</string>
+			<string>Eksperimenter med andre nordiske bær, for eksempel rød eller solbær, hindbær eller jordbær. Du skal blot erstatte bærrene i opskriften mod, hvad der er i køleskabet, fryseren eller i haven.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe7</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Chocolate and raspberry shake</string>
+		<key>ShortDescription</key>
+		<string>Perfekt når du vil have noget sødt, men stadig være sund</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Chokolade og hindbær er en uovertruffen kombination. Rå kakao indeholder masser af antioxidanter, hvilket gør denne smoothie perfekt, når du kræver noget sødt og har brug for energi, men stadig ønsker at være nyttig.</string>
+			<string>Boost venligst med macca pulver, der synes forfriskende og forbedret koncentration.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe8</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blueberry pie</string>
+		<key>ShortDescription</key>
+		<string>Denne antioxidant-rige smoothie smager som blåbær og giver rigelig energi og ernæring</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Denne antioxidant-rige smoothie smager som blåbær tærte og giver rigelig energi og næring. </string>
+			<string>Boost med chiafrø for ekstra fiber og sunde fedtstoffer, der gør du holder dig fuld længe.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe9</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Peanut butter and jelly</string>
+		<key>ShortDescription</key>
+		<string>En højt proteinindhold og nærende smoothie serveret med frisk hindbær sauce</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Denne cremet og rig på protein smoothie er perfekt efter træning eller om morgenen, når du har brug for at bringe din krop lidt ekstra energi og næringsstoffer.</string>
+			<string>Den tærte hindbær sauce supplerer de cremede smoothies perfekt.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland hindbær med honning og hæld sovs i et glas.</string>
+			<string>Bland de resterende ingredienser på høj hastighed til den cremede konsistens.</string>
+			<string>Hæld smoothie forsigtigt over hindbær sovs over en vinklet glas.</string>
+		</array>
+	</dict>
+	<key>Recipe10</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Unbeetable</string>
+		<key>ShortDescription</key>
+		<string>Roer er kendt for deres anti-inflammatoriske og detoxende egenskaber</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Roer er kendt for deres anti-inflammatoriske og detoxende egenskaber og smager fantastisk med tærte æble og citron i denne rubinrød smoothie.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Brug en saftpresser til rødbeder, æble og citron.</string>
+			<string>Bland saften med hindbær, jordbær og banan på høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe11</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Raspberry kick</string>
+		<key>ShortDescription</key>
+		<string>En rigtig vitamin boost med en frisk og sommerlig smag</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Dette er en reel vitamin boost med en frisk og sommerlig smag. Drik den varm og solrig sommerdag eller blot når du har brug for lidt ekstra energi.</string>
+			<string>For at variere smagen kan mynte erstattes af ingefær.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem appelsin og lime til saft.</string>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe12</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blue belly bliss</string>
+		<key>ShortDescription</key>
+		<string>Denne mørkeblå smoothie er maven bedste ven</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Denne mørkeblå smoothie er maven bedste ven, og kan indtages til morgenmad eller mellem måltiderne.</string>
+			<string>Psyllium indeholder mængder af vandopløselige fibre, der sammen med de blommer skal mave til at fungere.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe13</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Layered blueberry and chia smoothie</string>
+		<key>ShortDescription</key>
+		<string>Et blåbær og chia smoothie fyldt med vitaminer, antioxidanter, fibre og sunde fedtstoffer</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Denne blåbær og chia smoothie er den perfekte morgenmad. Med vitaminer, antioxidanter, fibre og sunde fedtstoffer giver den perfekte start på dagen.</string>
+			<string>Suge chiafrø i mandelmælk natten før og opbevare i køleskabet, så du sparer værdifuld tid om morgenen.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Suge chiafrø i mandelmælk. Bland godt med en hånd piskeris eller skeen. Lad det stå i ti minutter og blandes igen, således at ingen klumper forbliver.</string>
+			<string>Tilføj eventuelt flere chiafrø eller mandelmælk. Chiapuddingen bør ikke være for tynd.</string>
+			<string>Efter yderligere 10 minutter er chiapuddingen klart, men det er også muligt at forberede dette natten før og opbevare i køleskabet.</string>
+			<string>Blend banan, hindbær, blåbær, mandelmælk og honning på høj hastighed til en cremet konsistens.</string>
+			<string>Lag chiapuddingen med blåbær smoothie i et fad eller et glas.</string>
+			<string>Top med dine foretrukne frugter og bær. Spis med en ske.</string>
+		</array>
+	</dict>
+	<key>Recipe14</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Passion for chia</string>
+		<key>ShortDescription</key>
+		<string>En sød og frugtagtig smoothie lagdelt med cremet og tangy passionsfrugt chiapudding</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En sød og frugtagtig smoothie lagdelt med cremet og tangy passionsfrugt chiapudding.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Suge chiafrø i mandelmælk. Bland godt med en hånd piskeris eller skeen. Lad det stå i ti minutter og blandes igen, således at ingen klumper forbliver.</string>
+			<string>Tilføj eventuelt flere chiafrø eller mandelmælk. Chiapuddingen bør ikke være for tynd.</string>
+			<string>Efter yderligere 10 minutter er chiapuddingen klart, men det er også muligt at forberede dette natten før og opbevare i køleskabet.</string>
+			<string>Blend banan, mango, hindbær, mandelmælk og honning på høj hastighed til en cremet konsistens.</string>
+			<string>Lag chiapuddingen med smoothie i et fad eller et glas.</string>
+			<string>Top med dine foretrukne frugter og bær. Spis med en ske.</string>
+		</array>
+	</dict>
+	<key>Recipe15</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Strawberry nicecream with a raspberry swirl</string>
+		<key>ShortDescription</key>
+		<string>En cremet og sød smoothie, der er umuligt at stoppe med at spise - ligesom is</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En cremet og sød smoothie, der er umuligt at stoppe med at spise - ligesom is.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland hindbær og honning til en hindbær sovs.</string>
+			<string>Bland bananer, jordbær og kokosmælk ved høj hastighed til den cremet og tyk konsistens.</string>
+			<string>Hæld jordbær smoothie af hindbær sovs i et glas. Træk en ske fra bunden af glasset og opad i cirkler at skabe en smuk vortex.</string>
+		</array>
+	</dict>
+	<key>Recipe16</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Mango and grapefruit detox</string>
+		<key>ShortDescription</key>
+		<string>Øger både metabolisme og immunsystemet</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En sund smoothie som øger både metabolisme og immunsystemet.</string>
+			<string>Grapefrugt tærte og bitre toner gifter godt med de sødere frugter og skaber en spændende og mere voksen smag.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem appelsin og grapefrugt til saft.</string>
+			<string>Bland saften med mango og honning på høj hastighed til den cremede konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe17</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Mango rosehip</string>
+		<key>ShortDescription</key>
+		<string>En cremet og sund smoothie fyldt med C-vitamin</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Dette er en cremet og sund smoothie pakket med vitamin C.</string>
+			<string>Hyben har en frisk og syrlig smag, der blander godt med sødme af banan og mango.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem appelsin til saft.</string>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe18</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Valentine</string>
+		<key>ShortDescription</key>
+		<string>Styrke immunforsvaret og give din krop masser af ernæring, energi og vitaminer med denne søde-tærte smoothie</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Styrke immunforsvaret og give din krop masser af ernæring, energi og vitaminer med denne søde-tærte smoothie.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe19</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Sweet raspberry pie</string>
+		<key>ShortDescription</key>
+		<string>Rig på proteiner, vitaminer og sunde fedtstoffer</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Kanel er kendt for sine sundhedsfremmende egenskaber. Krydderiet synes eksempel antihypertensive og har antibakterielle egenskaber.</string>
+			<string>Desuden smoothie er rig på proteiner, vitaminer og sunde fedtstoffer, der gør du holder dig fuld længe.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland mango og honning til en mango sovs.</string>
+			<string>Bland alle andre ingredienser ved høj hastighed til en cremet konsistens.</string>
+			<string>Hæld smoothie forsigtigt over mango sovs i en skrå glas og drik med det samme.</string>
+		</array>
+	</dict>
+	<key>Recipe20</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Cashew and raspberry smoothie</string>
+		<key>ShortDescription</key>
+		<string>Perfekt som et opsving efter træning eller som en solid og overdådig morgenmad</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Perfekt som et opsving efter træning eller som en solid og overdådig morgenmad.</string>
+			<string>Sørg for at gøre lidt ekstra chiasylt, mens du er på det, og spiser pandekager, grød eller toast.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland hindbær og derefter tilføje chiafrøn og honning. Bland og lad stå i et køligt marmelade i ca. 15 minutter.</string>
+			<string>Blend de resterende ingredienser ved høj hastighed til en cremet konsistens.</string>
+			<string>Fyld glasset halvt med smoothies.</string>
+			<string>Tilføj et lag af Chia og hindbær marmelade, og omhyggeligt hæld resten af smoothie.</string>
+			<string>Drik med halm eller spise med en ske.</string>
+		</array>
+	</dict>
+	<key>Recipe21</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Tropical passion</string>
+		<key>ShortDescription</key>
+		<string>En tropisk gul smoothie fuld af vitaminer og mineraler, der er gode for hår, hud og negle</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En tropisk gul smoothie fuld af vitaminer og mineraler, der er gode for hår, hud og negle.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Scoop ud passionsfrugt i et glas.</string>
+			<string>Blend de resterende ingredienser ved høj hastighed til en cremet konsistens.</string>
+			<string>Hæld smoothie af passionsfrugt.</string>
+		</array>
+	</dict>
+	<key>Recipe22</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Acai bowl</string>
+		<key>ShortDescription</key>
+		<string>Acai skåle er både godt og fyldt med vitaminer og antioxidanter</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Acai skåle er både godt og fyldt med vitaminer og antioxidanter.</string>
+			<string>Meget af det sjove af smoothie skåle er topping hvor de valg er uendelige. Eksperimenter med nøddesmør, frø, friske bær og frugter.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Lad den frosne banan forlade ved stuetemperatur i et par minutter.</string>
+			<string>Bland alle ingredienser ved høj hastighed til den cremet og tyk konsistens.</string>
+			<string>Serveres med valgfri toppings.</string>
+		</array>
+	</dict>
+	<key>Recipe23</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Raspberry and coconut smoothie</string>
+		<key>ShortDescription</key>
+		<string>En forfriskende og cremet smoothie, der tilfredsstiller din søde tand på en sund måde</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En forfriskende og cremet smoothie, der tilfredsstiller din søde tand på en sund måde</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Klem appelsin til saft.</string>
+			<string>Bland alle ingredienser ved høj hastighed til den cremet og tyk konsistens.</string>
+			<string>Top med friske hindbær og ristede kokos flager.</string>
+		</array>
+	</dict>
+	<key>Recipe24</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Almond milk</string>
+		<key>ShortDescription</key>
+		<string>Hjemmelavet nøddemælk er forbløffende god, et perfekt flydende base i smoothies</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Hjemmelavet nøddemælk er forbløffende god, et perfekt flydende base i smoothies. Det er let at lave og kan opbevares i køleskabet i op til 3-4 dage.</string>
+			<string>Spare nøddemassen tilovers og bruge i en raw food dessert.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Soak mandlerne i vand i 12-48 timer. Dæk dem med omkring en tomme af vand og gemme dem i køleskabet. Jo længere de suge mere cremet mælk vil få.</string>
+			<string>Hæld vandet fra og skyl møtrikkerne før blande dem med en liter frisk koldt vand, datoer og vanille pulver på høj hastighed i 2-3 minutter.</string>
+			<string>Silan mælken gennem et viskestykke eller en nötmjölkspåse. Pres så meget væske som muligt. Hæld i et glas kande og opbevares i køleskabet.</string>
+		</array>
+	</dict>
+	<key>Recipe25</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Yellow Yoga</string>
+		<key>ShortDescription</key>
+		<string>Gurkemeje har stærke anti-inflammatoriske og helende egenskaber</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Denne smoothie har en frisk og cremet smag. Gurkemeje har ikke megen smag, men tilføjer en gylden farve og har meget anti-inflammatoriske og helende egenskaber</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland cashew med vand.</string>
+			<string>Pres saften af en appelsin og tilsæt de øvrige ingredienser.</string>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe26</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Blackcurrant vanilla</string>
+		<key>ShortDescription</key>
+		<string>Solbær har en unik og forfriskende smag, i modsætning til alle andre bær</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Solbær har en unik og forfriskende smag, i modsætning til alle andre bær. De er også rige på C-vitamin og antioxidanter.</string>
+			<string>Pluk korender direkte fra haven og bruge i dette fantastiske smoothie.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe27</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Rhubarb</string>
+		<key>ShortDescription</key>
+		<string>Dette er den perfekte sommer drink. Lys, syrlig og frisk</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Dette er den perfekte sommer drink. Let og frisk med den perfekte kombination af syrlig og sød.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Brug en saftpresser til æble og rabarber.</string>
+			<string>Bland saften med hindbær, mango og ahornsirup ved høj hastighed til den cremede konsistens.</string>
+		</array>
+	</dict>
+</dict>
+</plist>

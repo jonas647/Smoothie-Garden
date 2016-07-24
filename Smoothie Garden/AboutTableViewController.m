@@ -91,7 +91,7 @@
     } else if ([indexPath isEqual:[tableView indexPathForCell:self.reviewCell]]) {
         
         //Open AppStore
-        NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/1057010706"];
+        NSURL *appStoreUrl = [NSURL URLWithString:@"https://itunes.apple.com/us/app/smoothie-box-recipes-detox/id1057010706?l=sv&ls=1&mt=8"];
         if ([[UIApplication sharedApplication]canOpenURL:appStoreUrl]) {
             [[UIApplication sharedApplication]openURL:appStoreUrl];
         }

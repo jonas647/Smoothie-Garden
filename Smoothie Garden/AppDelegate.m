@@ -11,6 +11,7 @@
 //#import <Google/Analytics.h>
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
+#import "DeviceHelper.h"
 
 /** Google Analytics configuration constants **/
 static NSString *const kGaPropertyId = @"UA-51056320-4"; // Placeholder property ID.
@@ -148,6 +149,11 @@ static int const kGaDispatchPeriod = 20;
     //TODO
     //Check Country, If English then set measurement as US customary units at start (if hans't been set earlier)
     
+    //Use storyboard based on device
+    //UIStoryboard *storyBoardToUse = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
+    //self.window.rootViewController = [storyBoardToUse instantiateInitialViewController];
+
+
     return YES;
 }
 
