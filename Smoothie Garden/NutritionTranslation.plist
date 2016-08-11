@@ -8,12 +8,24 @@
 		<string>Carbohydrate</string>
 		<key>sv</key>
 		<string>Kolhydrater</string>
+		<key>da</key>
+		<string>Kulhydrater</string>
+		<key>no</key>
+		<string>Karbohydrater</string>
+		<key>de</key>
+		<string>Kohlenhydrate</string>
 	</dict>
 	<key>Fat</key>
 	<dict>
 		<key>en</key>
 		<string>Fat</string>
 		<key>sv</key>
+		<string>Fett</string>
+		<key>da</key>
+		<string>Fedt</string>
+		<key>no</key>
+		<string>Fett</string>
+		<key>de</key>
 		<string>Fett</string>
 	</dict>
 	<key>Protein</key>
@@ -22,6 +34,12 @@
 		<string>Protein</string>
 		<key>sv</key>
 		<string>Protein</string>
+		<key>da</key>
+		<string>Protein</string>
+		<key>no</key>
+		<string>Protein</string>
+		<key>de</key>
+		<string>Protein</string>
 	</dict>
 	<key>Energy</key>
 	<dict>
@@ -29,13 +47,25 @@
 		<string>Energy</string>
 		<key>sv</key>
 		<string>Energi</string>
+		<key>da</key>
+		<string>Energi</string>
+		<key>no</key>
+		<string>Energi</string>
+		<key>de</key>
+		<string>Energie</string>
 	</dict>
 	<key>Iron, Fe</key>
 	<dict>
 		<key>en</key>
 		<string>Iron, Fe</string>
 		<key>sv</key>
-		<string>Järn</string>
+		<string>Järn, Fe</string>
+		<key>da</key>
+		<string>Jern, Fe</string>
+		<key>no</key>
+		<string>Jern, Fe</string>
+		<key>de</key>
+		<string>Eisen, Fe</string>
 	</dict>
 	<key>Calcium, Ca</key>
 	<dict>
@@ -43,12 +73,24 @@
 		<string>Calcium, Ca</string>
 		<key>sv</key>
 		<string>Kalcium, Ca</string>
+		<key>da</key>
+		<string>Calcium, Ca</string>
+		<key>no</key>
+		<string>Kalsium, Ca</string>
+		<key>de</key>
+		<string>Kalzium, Ca</string>
 	</dict>
 	<key>Magnesium, Mg</key>
 	<dict>
 		<key>en</key>
 		<string>Magnesium, Mg</string>
 		<key>sv</key>
+		<string>Magnesium, Mg</string>
+		<key>da</key>
+		<string>Magnesium, Mg</string>
+		<key>no</key>
+		<string>Magnesium, Mg</string>
+		<key>de</key>
 		<string>Magnesium, Mg</string>
 	</dict>
 	<key>Phosphorus, P</key>
@@ -57,19 +99,37 @@
 		<string>Phosphorus, P</string>
 		<key>sv</key>
 		<string>Fosfor, P</string>
+		<key>da</key>
+		<string>Fosfor, P</string>
+		<key>no</key>
+		<string>Fosfor, P</string>
+		<key>de</key>
+		<string>Phosphor, P</string>
 	</dict>
 	<key>Potassium, K</key>
 	<dict>
 		<key>en</key>
 		<string>Potassium, K</string>
 		<key>sv</key>
-		<string>Potassium, K</string>
+		<string>Kalium, K</string>
+		<key>da</key>
+		<string>Kalium, K</string>
+		<key>no</key>
+		<string>Kalium, K</string>
+		<key>de</key>
+		<string>Kalium, K</string>
 	</dict>
 	<key>Sodium, Na</key>
 	<dict>
 		<key>en</key>
 		<string>Sodium, Na</string>
 		<key>sv</key>
+		<string>Natrium, Na</string>
+		<key>da</key>
+		<string>Natrium, Na</string>
+		<key>no</key>
+		<string>Natrium, Na</string>
+		<key>de</key>
 		<string>Natrium, Na</string>
 	</dict>
 	<key>Zinc, Zn</key>
@@ -78,12 +138,24 @@
 		<string>Zink, Zn</string>
 		<key>sv</key>
 		<string>Zink, Zn</string>
+		<key>da</key>
+		<string>Zink, Zn</string>
+		<key>no</key>
+		<string>Zink, Zn</string>
+		<key>de</key>
+		<string>Zink, Zn</string>
 	</dict>
 	<key>Vitamin C</key>
 	<dict>
 		<key>en</key>
 		<string>Vitamin C</string>
 		<key>sv</key>
+		<string>Vitamin C</string>
+		<key>da</key>
+		<string>Vitamin C</string>
+		<key>no</key>
+		<string>Vitamin C</string>
+		<key>de</key>
 		<string>Vitamin C</string>
 	</dict>
 	<key>Thiamin</key>
@@ -92,12 +164,24 @@
 		<string>Thiamin</string>
 		<key>sv</key>
 		<string>Tiamin</string>
+		<key>da</key>
+		<string>Thiamin</string>
+		<key>no</key>
+		<string>tiamin</string>
+		<key>de</key>
+		<string>Thiamin</string>
 	</dict>
 	<key>Riboflavin</key>
 	<dict>
 		<key>en</key>
 		<string>Riboflavin</string>
 		<key>sv</key>
+		<string>Riboflavin</string>
+		<key>da</key>
+		<string>Riboflavin</string>
+		<key>no</key>
+		<string>Riboflavin</string>
+		<key>de</key>
 		<string>Riboflavin</string>
 	</dict>
 	<key>Niacin</key>
@@ -106,6 +190,12 @@
 		<string>Niacin</string>
 		<key>sv</key>
 		<string>Niacin</string>
+		<key>da</key>
+		<string>Niacin</string>
+		<key>no</key>
+		<string>Niacin</string>
+		<key>de</key>
+		<string>Niacin</string>
 	</dict>
 	<key>Vitamin B-6</key>
 	<dict>
@@ -113,12 +203,24 @@
 		<string>Vitamin B-6</string>
 		<key>sv</key>
 		<string>Vitamin B-6</string>
+		<key>da</key>
+		<string>Vitamin B-6</string>
+		<key>no</key>
+		<string>Vitamin B-6</string>
+		<key>de</key>
+		<string>Vitamin B-6</string>
 	</dict>
 	<key>Folate, DFE</key>
 	<dict>
 		<key>en</key>
 		<string>Folate, DFE</string>
 		<key>sv</key>
+		<string>Folsyra</string>
+		<key>da</key>
+		<string>Folat</string>
+		<key>no</key>
+		<string>Folat</string>
+		<key>de</key>
 		<string>Folat</string>
 	</dict>
 	<key>Vitamin B-12</key>
@@ -127,12 +229,24 @@
 		<string>Vitamin B-12</string>
 		<key>sv</key>
 		<string>Vitamin B-12</string>
+		<key>da</key>
+		<string>Vitamin B-12</string>
+		<key>no</key>
+		<string>Vitamin B-12</string>
+		<key>de</key>
+		<string>Vitamin B-12</string>
 	</dict>
 	<key>Vitamin A, RAE</key>
 	<dict>
 		<key>en</key>
 		<string>Vitamin A, RAE</string>
 		<key>sv</key>
+		<string>Vitamin A, RAE</string>
+		<key>da</key>
+		<string>Vitamin A, RAE</string>
+		<key>no</key>
+		<string>Vitamin A, RAE</string>
+		<key>de</key>
 		<string>Vitamin A, RAE</string>
 	</dict>
 	<key>Vitamin A, IU	</key>
@@ -141,12 +255,24 @@
 		<string>Vitamin A, IU</string>
 		<key>sv</key>
 		<string>Vitamin A, IU</string>
+		<key>da</key>
+		<string>Vitamin A, IU</string>
+		<key>no</key>
+		<string>Vitamin A, IU</string>
+		<key>de</key>
+		<string>Vitamin A, IU</string>
 	</dict>
 	<key>Vitamin D (D2 + D3)</key>
 	<dict>
 		<key>en</key>
 		<string>Vitamin D (D2 + D3)</string>
 		<key>sv</key>
+		<string>Vitamin D (D2 + D3)</string>
+		<key>da</key>
+		<string>Vitamin D (D2 + D3)</string>
+		<key>no</key>
+		<string>Vitamin D (D2 + D3)</string>
+		<key>de</key>
 		<string>Vitamin D (D2 + D3)</string>
 	</dict>
 	<key>Vitamin D</key>
@@ -155,6 +281,12 @@
 		<string>Vitamin D</string>
 		<key>sv</key>
 		<string>Vitamin D</string>
+		<key>da</key>
+		<string>Vitamin D</string>
+		<key>no</key>
+		<string>Vitamin D</string>
+		<key>de</key>
+		<string>Vitamin D</string>
 	</dict>
 	<key>Fatty acids, total saturated</key>
 	<dict>
@@ -162,6 +294,12 @@
 		<string>Fatty acids, total saturated</string>
 		<key>sv</key>
 		<string>Fettsyror, totalt mättade</string>
+		<key>da</key>
+		<string>Fedtsyrer, alt mættet</string>
+		<key>no</key>
+		<string>Fettsyrer, totalt mettet</string>
+		<key>de</key>
+		<string>Fettsäuren, insgesamt gesättigten</string>
 	</dict>
 	<key>Fatty acids, total monounsaturated</key>
 	<dict>
@@ -169,6 +307,12 @@
 		<string>Fatty acids, total monounsaturated</string>
 		<key>sv</key>
 		<string>Fettsyror, totalt enkelomättade</string>
+		<key>da</key>
+		<string>Fedtsyrer, total enkeltumættet</string>
+		<key>no</key>
+		<string>Fettsyrer, totalt enumettet</string>
+		<key>de</key>
+		<string>Fettsäuren, total einfach ungesättigte</string>
 	</dict>
 	<key>Fatty acids, total polyunsaturated</key>
 	<dict>
@@ -176,13 +320,25 @@
 		<string>Fatty acids, total polyunsaturated</string>
 		<key>sv</key>
 		<string>Fettsyror, totalt fleromättade</string>
+		<key>da</key>
+		<string>Fedtsyrer, total flerumættede</string>
+		<key>no</key>
+		<string>Fettsyrer, totalt flerumettet</string>
+		<key>de</key>
+		<string>Fettsäuren, total mehrereungesättigten</string>
 	</dict>
 	<key>Fatty acids, total trans</key>
 	<dict>
 		<key>en</key>
-		<string>Fatty acids, total trans</string>
+		<string>Fatty acids, total trans fat</string>
 		<key>sv</key>
 		<string>Fettsyror, transfett</string>
+		<key>da</key>
+		<string>Fedtsyrer, transfedt</string>
+		<key>no</key>
+		<string>Fettsyrer, transfett</string>
+		<key>de</key>
+		<string>Fettsäuren, Trans-Fettsäuren</string>
 	</dict>
 	<key>Cholesterol</key>
 	<dict>
@@ -190,12 +346,24 @@
 		<string>Cholesterol</string>
 		<key>sv</key>
 		<string>Kolesterol</string>
+		<key>da</key>
+		<string>Kolesterol</string>
+		<key>no</key>
+		<string>Kolesterol</string>
+		<key>de</key>
+		<string>Cholesterin</string>
 	</dict>
 	<key>Vitamin E</key>
 	<dict>
 		<key>en</key>
 		<string>Vitamin E</string>
 		<key>sv</key>
+		<string>Vitamin E</string>
+		<key>da</key>
+		<string>Vitamin E</string>
+		<key>no</key>
+		<string>Vitamin E</string>
+		<key>de</key>
 		<string>Vitamin E</string>
 	</dict>
 	<key>Vitamin K</key>
@@ -204,6 +372,12 @@
 		<string>Vitamin K</string>
 		<key>sv</key>
 		<string>Vitamin K</string>
+		<key>da</key>
+		<string>Vitamin K</string>
+		<key>no</key>
+		<string>Vitamin K</string>
+		<key>de</key>
+		<string>Vitamin K</string>
 	</dict>
 	<key>Fiber</key>
 	<dict>
@@ -211,6 +385,12 @@
 		<string>Fiber</string>
 		<key>sv</key>
 		<string>Fiber</string>
+		<key>da</key>
+		<string>Fiber</string>
+		<key>no</key>
+		<string>Fiber</string>
+		<key>de</key>
+		<string>Faser</string>
 	</dict>
 	<key>Sugar</key>
 	<dict>
@@ -218,6 +398,12 @@
 		<string>Sugar</string>
 		<key>sv</key>
 		<string>Socker</string>
+		<key>da</key>
+		<string>Sukker</string>
+		<key>no</key>
+		<string>Sukker</string>
+		<key>de</key>
+		<string>Zucker</string>
 	</dict>
 </dict>
 </plist>

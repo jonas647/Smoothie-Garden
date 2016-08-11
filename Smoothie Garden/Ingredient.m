@@ -88,7 +88,7 @@
         ingredientText = [[thisIngredients objectForKey:@"Singularis"]objectForKey:language];
     }
     if (ingredientText == nil) {
-        NSLog(@"No translation for %@", ingredient);
+        //NSLog(@"No translation for %@", ingredient);
         return ingredient;
     }
 
@@ -258,7 +258,7 @@
                     
                     
                 }else {
-                NSLog(@"%@ is no NSDictionary", [nutrientsDictionary objectForKey:dic]);
+                //NSLog(@"%@ is no NSDictionary", [nutrientsDictionary objectForKey:dic]);
             
             }
             
@@ -268,7 +268,7 @@
         }
     
     } else {
-        NSLog(@"No dictionary for: %@", self.type);
+        //NSLog(@"No dictionary for: %@", self.type);
     }
     
     
@@ -277,7 +277,7 @@
         
         self.nutrients = [[NutrientCatalog alloc]initWithDictionary:nutrientParentDictionary];
     } else {
-        NSLog(@"No nutrients for %@", self.type);
+        //NSLog(@"No nutrients for %@", self.type);
     }
     
     
@@ -469,5 +469,24 @@
     
 }
 
+/*
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone {
+    
+    Ingredient *newIngredient = [[[self class] allocWithZone:zone] init];
+    newIngredient.measure = [_measure copyWithZone:zone];
+    newIngredient.type = [_type copyWithZone:zone];
+    newIngredient.quantity = [_quantity copyWithZone:zone];
+    newIngredient.text = [_type copyWithZone:zone];
+    newIngredient.searchString = [_type copyWithZone:zone];
+    newIngredient.optional = [_type copyWithZone:zone];
+    newIngredient.sorting = [_type copyWithZone:zone];
+    newIngredient.nutrients = [_type copyWithZone:zone];
+    
+    return newIngredient;
+    
+}
+*/
 
 @end

@@ -437,6 +437,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Den här smoothien har en frisk och krämig smak. Gurkmeja smakar inte mycket men ger drycken en gyllene färg och har dessutom starkt antiinflammatoriska och läkande egenskaper.</string>
+			<string>För färre kalorier kan du använda en kokosmjölk med mindre fett.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -464,12 +465,12 @@
 	<key>Recipe27</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Rhubarb</string>
+		<string>Tangy Rhubarb</string>
 		<key>ShortDescription</key>
 		<string>Det här är den perfekta sommardrinken. Lätt, syrlig och frisk</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Det här är den perfekta sommardrinken. Lätt och frisk med den perfekta kombinationen av syrligt och sött.</string>
+			<string>Det här är den perfekta sommardrinken. Lätt och frisk med en oemotståndlig kombination av syrligt och sött.</string>
 		</array>
 		<key>Instructions</key>
 		<array>

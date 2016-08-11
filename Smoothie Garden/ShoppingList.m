@@ -102,17 +102,18 @@ if ([self shouldUpdateRecipePersistentStore]) {
         }
     }
     
-    NSLog(@"%i items added to shopping list", (int)currentShoppingList.count);
-    
     [self saveShoppingListToPersistentStore];
 
 }
 
 - (void) removeShoppingListItemAtIndex:(NSUInteger)index{
     
-    [currentShoppingList removeObjectAtIndex:index];
+    if (currentShoppingList.count - 1 >= index) {
+        [currentShoppingList removeObjectAtIndex:index];
+        
+        [self saveShoppingListToPersistentStore];
+    }
     
-    [self saveShoppingListToPersistentStore];
 }
 
 - (void) clearShoppingList {

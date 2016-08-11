@@ -432,6 +432,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>This smoothie has a fresh and creamy flavor. Turmeric doesn’t have a lot of flavor but adds a golden colour and has highly anti-inflammatory and healing properties.</string>
+			<string>For less calories, use a skinnier coconut milk.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -459,7 +460,7 @@
 	<key>Recipe27</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Rhubarb</string>
+		<string>Tangy Rhubarb</string>
 		<key>ShortDescription</key>
 		<string>This is a great summer drink with the perfect combination of sweet and sour. </string>
 		<key>LongDescription</key>

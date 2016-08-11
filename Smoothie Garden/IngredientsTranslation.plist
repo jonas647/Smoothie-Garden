@@ -10,6 +10,12 @@
 			<string>banan</string>
 			<key>en</key>
 			<string>banana</string>
+			<key>da</key>
+			<string>banan</string>
+			<key>no</key>
+			<string>banan</string>
+			<key>de</key>
+			<string>banane</string>
 		</dict>
 		<key>Pluralis</key>
 		<dict>
@@ -17,6 +23,12 @@
 			<string>bananer</string>
 			<key>en</key>
 			<string>bananas</string>
+			<key>da</key>
+			<string>bananer</string>
+			<key>no</key>
+			<string>bananer</string>
+			<key>de</key>
+			<string>bananen</string>
 		</dict>
 	</dict>
 	<key>Frozen Banana</key>
@@ -27,6 +39,12 @@
 			<string>fryst banan</string>
 			<key>en</key>
 			<string>frozen banana</string>
+			<key>da</key>
+			<string>frosne banan</string>
+			<key>no</key>
+			<string>frosne banan</string>
+			<key>de</key>
+			<string>gefrorene banan</string>
 		</dict>
 		<key>Pluralis</key>
 		<dict>
@@ -34,6 +52,12 @@
 			<string>frysta bananer</string>
 			<key>en</key>
 			<string>frozen bananas</string>
+			<key>da</key>
+			<string>frosne bananer</string>
+			<key>no</key>
+			<string>frosne bananer</string>
+			<key>de</key>
+			<string>gefrorene bananen</string>
 		</dict>
 	</dict>
 	<key>Avocado</key>
@@ -44,12 +68,24 @@
 			<string>avokado</string>
 			<key>en</key>
 			<string>avocado</string>
+			<key>da</key>
+			<string>avocadoer</string>
+			<key>no</key>
+			<string>avokado</string>
+			<key>de</key>
+			<string>avocados</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
 			<string>avokado</string>
 			<key>en</key>
+			<string>avocado</string>
+			<key>da</key>
+			<string>avocado</string>
+			<key>no</key>
+			<string>avokado</string>
+			<key>de</key>
 			<string>avocado</string>
 		</dict>
 	</dict>
@@ -61,12 +97,24 @@
 			<string>mango</string>
 			<key>en</key>
 			<string>mango</string>
+			<key>da</key>
+			<string>mango</string>
+			<key>no</key>
+			<string>mango</string>
+			<key>de</key>
+			<string>mango</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
 			<string>mango</string>
 			<key>en</key>
+			<string>mango</string>
+			<key>da</key>
+			<string>mango</string>
+			<key>no</key>
+			<string>mango</string>
+			<key>de</key>
 			<string>mango</string>
 		</dict>
 	</dict>
@@ -78,6 +126,12 @@
 			<string>fryst mango</string>
 			<key>en</key>
 			<string>frozen mango</string>
+			<key>da</key>
+			<string>frosne mango</string>
+			<key>no</key>
+			<string>frosne mango</string>
+			<key>de</key>
+			<string>gefrorene mango</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -85,6 +139,12 @@
 			<string>fryst mango</string>
 			<key>en</key>
 			<string>frozen mango</string>
+			<key>da</key>
+			<string>frosne mango</string>
+			<key>no</key>
+			<string>frosne mango</string>
+			<key>de</key>
+			<string>gefrorene mango</string>
 		</dict>
 	</dict>
 	<key>Lemon Juice</key>
@@ -95,6 +155,12 @@
 			<string>citronjuice</string>
 			<key>en</key>
 			<string>lemon juice</string>
+			<key>da</key>
+			<string>citronsaft</string>
+			<key>no</key>
+			<string>sitronsaft</string>
+			<key>de</key>
+			<string>zitronensaft</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -102,6 +168,12 @@
 			<string>citronjuice</string>
 			<key>en</key>
 			<string>lemon juice</string>
+			<key>da</key>
+			<string>citronsaft</string>
+			<key>no</key>
+			<string>sitronsaft</string>
+			<key>de</key>
+			<string>zitronensaft</string>
 		</dict>
 	</dict>
 	<key>Lemon</key>
@@ -112,6 +184,12 @@
 			<string>citroner</string>
 			<key>en</key>
 			<string>lemons</string>
+			<key>da</key>
+			<string>citroner</string>
+			<key>no</key>
+			<string>sitroner</string>
+			<key>de</key>
+			<string>zitronen</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -119,6 +197,12 @@
 			<string>citron</string>
 			<key>en</key>
 			<string>lemon</string>
+			<key>da</key>
+			<string>citron</string>
+			<key>no</key>
+			<string>sitron</string>
+			<key>de</key>
+			<string>zitronen</string>
 		</dict>
 	</dict>
 	<key>Spinach</key>
@@ -129,6 +213,12 @@
 			<string>spenat</string>
 			<key>en</key>
 			<string>spinach</string>
+			<key>da</key>
+			<string>spinat</string>
+			<key>no</key>
+			<string>spinat</string>
+			<key>de</key>
+			<string>spinat</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -136,6 +226,12 @@
 			<string>spenat</string>
 			<key>en</key>
 			<string>spinach</string>
+			<key>da</key>
+			<string>spinat</string>
+			<key>no</key>
+			<string>spinat</string>
+			<key>de</key>
+			<string>spinat</string>
 		</dict>
 	</dict>
 	<key>Cucumber</key>
@@ -146,6 +242,12 @@
 			<string>gurka</string>
 			<key>en</key>
 			<string>cucumber</string>
+			<key>da</key>
+			<string>agurk</string>
+			<key>no</key>
+			<string>agurk</string>
+			<key>de</key>
+			<string>gurke</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -153,6 +255,12 @@
 			<string>gurka</string>
 			<key>en</key>
 			<string>cucumber</string>
+			<key>da</key>
+			<string>agurk</string>
+			<key>no</key>
+			<string>agurk</string>
+			<key>de</key>
+			<string>gurke</string>
 		</dict>
 	</dict>
 	<key>Apple</key>
@@ -163,6 +271,12 @@
 			<string>äpplen</string>
 			<key>en</key>
 			<string>apples</string>
+			<key>da</key>
+			<string>æbler</string>
+			<key>no</key>
+			<string>epler</string>
+			<key>de</key>
+			<string>äpfel</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -170,6 +284,12 @@
 			<string>äpple</string>
 			<key>en</key>
 			<string>apple</string>
+			<key>da</key>
+			<string>æble</string>
+			<key>no</key>
+			<string>eple</string>
+			<key>de</key>
+			<string>apfel</string>
 		</dict>
 	</dict>
 	<key>Apple, Chopped</key>
@@ -180,6 +300,12 @@
 			<string>äpplen (hackade utan kärnhus)</string>
 			<key>en</key>
 			<string>apples (chopped without seeds)</string>
+			<key>da</key>
+			<string>æbler (hakket uden kerner)</string>
+			<key>no</key>
+			<string></string>
+			<key>de</key>
+			<string>äpfel (gehackt kernlos)</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -187,6 +313,12 @@
 			<string>äpple (hackat utan kärnhus)</string>
 			<key>en</key>
 			<string>apple (chopped without seeds)</string>
+			<key>da</key>
+			<string>æble (hakket uden kerner)</string>
+			<key>no</key>
+			<string></string>
+			<key>de</key>
+			<string>apfel (gehackt kernlos)</string>
 		</dict>
 	</dict>
 	<key>Parsley</key>
@@ -197,6 +329,12 @@
 			<string>persilja</string>
 			<key>en</key>
 			<string>parsley</string>
+			<key>da</key>
+			<string>persille</string>
+			<key>no</key>
+			<string>persille</string>
+			<key>de</key>
+			<string>petersilie</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -204,6 +342,12 @@
 			<string>persilja</string>
 			<key>en</key>
 			<string>parsley</string>
+			<key>da</key>
+			<string>persille</string>
+			<key>no</key>
+			<string>persille</string>
+			<key>de</key>
+			<string>petersilie</string>
 		</dict>
 	</dict>
 	<key>Carrot</key>
@@ -214,6 +358,12 @@
 			<string>morötter</string>
 			<key>en</key>
 			<string>carrots</string>
+			<key>da</key>
+			<string>gulerødder</string>
+			<key>no</key>
+			<string>gulrøtter</string>
+			<key>de</key>
+			<string>karotte</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -221,6 +371,12 @@
 			<string>morot</string>
 			<key>en</key>
 			<string>carrot</string>
+			<key>da</key>
+			<string>gulerod</string>
+			<key>no</key>
+			<string>gulrot</string>
+			<key>de</key>
+			<string>möhren</string>
 		</dict>
 	</dict>
 	<key>Orange</key>
@@ -231,12 +387,24 @@
 			<string>apelsiner</string>
 			<key>en</key>
 			<string>oranges</string>
+			<key>da</key>
+			<string>appelsiner</string>
+			<key>no</key>
+			<string>appelsiner</string>
+			<key>de</key>
+			<string>orangen</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
 			<string>apelsin</string>
 			<key>en</key>
+			<string>orange</string>
+			<key>da</key>
+			<string>appelsin</string>
+			<key>no</key>
+			<string>appelsin</string>
+			<key>de</key>
 			<string>orange</string>
 		</dict>
 	</dict>
@@ -248,6 +416,12 @@
 			<string>ingefära</string>
 			<key>en</key>
 			<string>ginger</string>
+			<key>da</key>
+			<string>ingefær</string>
+			<key>no</key>
+			<string>ingefær</string>
+			<key>de</key>
+			<string>ingwer</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -255,6 +429,12 @@
 			<string>ingefära</string>
 			<key>en</key>
 			<string>ginger</string>
+			<key>da</key>
+			<string>ingefær</string>
+			<key>no</key>
+			<string>ingefær</string>
+			<key>de</key>
+			<string>ingwer</string>
 		</dict>
 	</dict>
 	<key>Blueberries</key>
@@ -265,6 +445,12 @@
 			<string>frysta blåbär</string>
 			<key>en</key>
 			<string>frozen blueberries</string>
+			<key>da</key>
+			<string>frosne blåbær</string>
+			<key>no</key>
+			<string>frosne blåbær</string>
+			<key>de</key>
+			<string>gefrorene heidelbeeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -272,6 +458,12 @@
 			<string>frysta blåbär</string>
 			<key>en</key>
 			<string>frozen blueberries</string>
+			<key>da</key>
+			<string>frosne blåbær</string>
+			<key>no</key>
+			<string>frosne blåbær</string>
+			<key>de</key>
+			<string>gefrorene heidelbeeren</string>
 		</dict>
 	</dict>
 	<key>Blackberries</key>
@@ -282,6 +474,12 @@
 			<string>frysta björnbär</string>
 			<key>en</key>
 			<string>frozen blackberries</string>
+			<key>da</key>
+			<string>frosne brombær</string>
+			<key>no</key>
+			<string>frosne bjørnebær</string>
+			<key>de</key>
+			<string>gefrorene brombeeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -289,6 +487,12 @@
 			<string>frysta björnbär</string>
 			<key>en</key>
 			<string>frozen blackberries</string>
+			<key>da</key>
+			<string>frosne brombær</string>
+			<key>no</key>
+			<string>frosne bjørnebær</string>
+			<key>de</key>
+			<string>gefrorene brombeeren</string>
 		</dict>
 	</dict>
 	<key>Lingonberries</key>
@@ -299,6 +503,12 @@
 			<string>frysta lingon</string>
 			<key>en</key>
 			<string>frozen lingonberries</string>
+			<key>da</key>
+			<string>frosne tranebær</string>
+			<key>no</key>
+			<string>frosne tyttebær</string>
+			<key>de</key>
+			<string>gefrorenen preiselbeeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -306,6 +516,12 @@
 			<string>frysta lingon</string>
 			<key>en</key>
 			<string>frozen lingonberries</string>
+			<key>da</key>
+			<string>frosne tranebær</string>
+			<key>no</key>
+			<string>frosne tyttebær</string>
+			<key>de</key>
+			<string>gefrorenen preiselbeeren</string>
 		</dict>
 	</dict>
 	<key>Almond</key>
@@ -316,6 +532,12 @@
 			<string>mandlar</string>
 			<key>en</key>
 			<string>almonds</string>
+			<key>da</key>
+			<string>mandler</string>
+			<key>no</key>
+			<string>mandler</string>
+			<key>de</key>
+			<string>mandeln</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -323,6 +545,12 @@
 			<string>mandlar</string>
 			<key>en</key>
 			<string>almonds</string>
+			<key>da</key>
+			<string>mandler</string>
+			<key>no</key>
+			<string>mandler</string>
+			<key>de</key>
+			<string>mandeln</string>
 		</dict>
 	</dict>
 	<key>Date</key>
@@ -333,6 +561,12 @@
 			<string>medjool-dadlar</string>
 			<key>en</key>
 			<string>medjool dates</string>
+			<key>da</key>
+			<string>medjool datoer</string>
+			<key>no</key>
+			<string>medjool datoer</string>
+			<key>de</key>
+			<string>medjool-daten</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -340,6 +574,12 @@
 			<string>medjool-dadel</string>
 			<key>en</key>
 			<string>medjool date</string>
+			<key>da</key>
+			<string>medjool dato</string>
+			<key>no</key>
+			<string>medjool dato</string>
+			<key>de</key>
+			<string>medjool-datteln</string>
 		</dict>
 	</dict>
 	<key>Raspberries</key>
@@ -350,6 +590,12 @@
 			<string>hallon</string>
 			<key>en</key>
 			<string>raspberries</string>
+			<key>da</key>
+			<string>hindbær</string>
+			<key>no</key>
+			<string>bringebær</string>
+			<key>de</key>
+			<string>himbeeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -357,6 +603,12 @@
 			<string>hallon</string>
 			<key>en</key>
 			<string>raspberries</string>
+			<key>da</key>
+			<string>hindbær</string>
+			<key>no</key>
+			<string>bringebær</string>
+			<key>de</key>
+			<string>himbeeren</string>
 		</dict>
 	</dict>
 	<key>Frozen Raspberries</key>
@@ -367,6 +619,12 @@
 			<string>frysta hallon</string>
 			<key>en</key>
 			<string>frozen raspberries</string>
+			<key>da</key>
+			<string>frosne hindbær</string>
+			<key>no</key>
+			<string>frosne bringebær</string>
+			<key>de</key>
+			<string>gefrorene himbeeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -374,6 +632,12 @@
 			<string>frysta hallon</string>
 			<key>en</key>
 			<string>frozen raspberries</string>
+			<key>da</key>
+			<string>frosne hindbær</string>
+			<key>no</key>
+			<string>frosne bringebær</string>
+			<key>de</key>
+			<string>gefrorene himbeeren</string>
 		</dict>
 	</dict>
 	<key>Raw Cacao</key>
@@ -384,6 +648,12 @@
 			<string>raw kakao nibs</string>
 			<key>en</key>
 			<string>raw cacao nibs</string>
+			<key>da</key>
+			<string>raw kakao nibs</string>
+			<key>no</key>
+			<string>raw kakao nibs</string>
+			<key>de</key>
+			<string>raw kakao nibs</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -391,6 +661,12 @@
 			<string>raw kakao nibs</string>
 			<key>en</key>
 			<string>raw cacao nibs</string>
+			<key>da</key>
+			<string>raw kakao nibs</string>
+			<key>no</key>
+			<string>raw kakao nibs</string>
+			<key>de</key>
+			<string>raw kakao nibs</string>
 		</dict>
 	</dict>
 	<key>Macca Powder</key>
@@ -398,16 +674,28 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>macca-pulver</string>
+			<string>maca-pulver</string>
 			<key>en</key>
-			<string>macca powder</string>
+			<string>maca powder</string>
+			<key>da</key>
+			<string>maca-pulver</string>
+			<key>no</key>
+			<string>maca-pulver</string>
+			<key>de</key>
+			<string>maca-pulver</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>macca-pulver</string>
+			<string>maca-pulver</string>
 			<key>en</key>
-			<string>macca powder</string>
+			<string>maca powder</string>
+			<key>da</key>
+			<string>maca-pulver</string>
+			<key>no</key>
+			<string>maca-pulver</string>
+			<key>de</key>
+			<string>maca-pulver</string>
 		</dict>
 	</dict>
 	<key>Oat</key>
@@ -418,6 +706,12 @@
 			<string>havre</string>
 			<key>en</key>
 			<string>oat</string>
+			<key>da</key>
+			<string>havre</string>
+			<key>no</key>
+			<string>havre</string>
+			<key>de</key>
+			<string>hafer</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -425,6 +719,12 @@
 			<string>havre</string>
 			<key>en</key>
 			<string>oat</string>
+			<key>da</key>
+			<string>havre</string>
+			<key>no</key>
+			<string>havre</string>
+			<key>de</key>
+			<string>hafer</string>
 		</dict>
 	</dict>
 	<key>Agave</key>
@@ -435,12 +735,24 @@
 			<string>agave</string>
 			<key>en</key>
 			<string>agave</string>
+			<key>da</key>
+			<string>agave</string>
+			<key>no</key>
+			<string>agave</string>
+			<key>de</key>
+			<string>agave</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
 			<string>agave</string>
 			<key>en</key>
+			<string>agave</string>
+			<key>da</key>
+			<string>agave</string>
+			<key>no</key>
+			<string>agave</string>
+			<key>de</key>
 			<string>agave</string>
 		</dict>
 	</dict>
@@ -452,6 +764,12 @@
 			<string>jordnötssmör</string>
 			<key>en</key>
 			<string>peanut butter</string>
+			<key>da</key>
+			<string>jordnøddesmør</string>
+			<key>no</key>
+			<string>peanøttsmør</string>
+			<key>de</key>
+			<string>erdnussbutter</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -459,6 +777,12 @@
 			<string>jordnötssmör</string>
 			<key>en</key>
 			<string>peanut butter</string>
+			<key>da</key>
+			<string>jordnøddesmør</string>
+			<key>no</key>
+			<string>peanøttsmør</string>
+			<key>de</key>
+			<string>erdnussbutter</string>
 		</dict>
 	</dict>
 	<key>Roasted Coconut Flakes</key>
@@ -469,6 +793,12 @@
 			<string>rostade kokosflingor</string>
 			<key>en</key>
 			<string>roasted coconut flakes</string>
+			<key>da</key>
+			<string>ristet kokosmel</string>
+			<key>no</key>
+			<string>ristede kokos flager</string>
+			<key>de</key>
+			<string>geröstete kokosnuss</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -476,6 +806,12 @@
 			<string>rostade kokosflingor</string>
 			<key>en</key>
 			<string>roasted coconut flakes</string>
+			<key>da</key>
+			<string>ristet kokosmel</string>
+			<key>no</key>
+			<string>ristede kokos flager</string>
+			<key>de</key>
+			<string>geröstete kokosnuss</string>
 		</dict>
 	</dict>
 	<key>Honey</key>
@@ -486,6 +822,12 @@
 			<string>honung</string>
 			<key>en</key>
 			<string>honey</string>
+			<key>da</key>
+			<string>honning</string>
+			<key>no</key>
+			<string>honning</string>
+			<key>de</key>
+			<string>honig</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -493,6 +835,12 @@
 			<string>honung</string>
 			<key>en</key>
 			<string>honey</string>
+			<key>da</key>
+			<string>honning</string>
+			<key>no</key>
+			<string>honning</string>
+			<key>de</key>
+			<string>honig</string>
 		</dict>
 	</dict>
 	<key>Beet</key>
@@ -503,6 +851,12 @@
 			<string>rödbetor</string>
 			<key>en</key>
 			<string>beets</string>
+			<key>da</key>
+			<string>roer</string>
+			<key>no</key>
+			<string>rødbeter</string>
+			<key>de</key>
+			<string>rote-beten</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -510,6 +864,12 @@
 			<string>rödbeta</string>
 			<key>en</key>
 			<string>beet</string>
+			<key>da</key>
+			<string>roer</string>
+			<key>no</key>
+			<string>rødbeter</string>
+			<key>de</key>
+			<string>rote-bete</string>
 		</dict>
 	</dict>
 	<key>Strawberries</key>
@@ -520,6 +880,12 @@
 			<string>frysta jordgubbar</string>
 			<key>en</key>
 			<string>frozen strawberries</string>
+			<key>da</key>
+			<string>frosne jordbær</string>
+			<key>no</key>
+			<string>frosne jordbær</string>
+			<key>de</key>
+			<string>gefrorene erdbeeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -527,6 +893,12 @@
 			<string>frysta jordgubbar</string>
 			<key>en</key>
 			<string>frozen strawberries</string>
+			<key>da</key>
+			<string>frosne jordbær</string>
+			<key>no</key>
+			<string>frosne jordbær</string>
+			<key>de</key>
+			<string>gefrorene erdbeeren</string>
 		</dict>
 	</dict>
 	<key>Apple Juice</key>
@@ -537,6 +909,12 @@
 			<string>äppeljuice</string>
 			<key>en</key>
 			<string>appel juice</string>
+			<key>da</key>
+			<string>æblesaft</string>
+			<key>no</key>
+			<string>eplejuice</string>
+			<key>de</key>
+			<string>apfelsaft</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -544,6 +922,12 @@
 			<string>äppeljuice</string>
 			<key>en</key>
 			<string>appel juice</string>
+			<key>da</key>
+			<string>æblesaft</string>
+			<key>no</key>
+			<string>eplejuice</string>
+			<key>de</key>
+			<string>apfelsaft</string>
 		</dict>
 	</dict>
 	<key>Lime</key>
@@ -554,6 +938,12 @@
 			<string>lime</string>
 			<key>en</key>
 			<string>lime</string>
+			<key>da</key>
+			<string>lime</string>
+			<key>no</key>
+			<string>lime</string>
+			<key>de</key>
+			<string></string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -561,6 +951,12 @@
 			<string>lime</string>
 			<key>en</key>
 			<string>lime</string>
+			<key>da</key>
+			<string>lime</string>
+			<key>no</key>
+			<string>lime</string>
+			<key>de</key>
+			<string></string>
 		</dict>
 	</dict>
 	<key>Gojiberries</key>
@@ -571,6 +967,12 @@
 			<string>torkade gojibär</string>
 			<key>en</key>
 			<string>dried gojiberries</string>
+			<key>da</key>
+			<string>tørret wolfberry</string>
+			<key>no</key>
+			<string>tørket wolfberry</string>
+			<key>de</key>
+			<string>getrocknet goji beeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -578,6 +980,12 @@
 			<string>torkade gojibär</string>
 			<key>en</key>
 			<string>dried gojiberries</string>
+			<key>da</key>
+			<string>tørret wolfberry</string>
+			<key>no</key>
+			<string>tørket wolfberry</string>
+			<key>de</key>
+			<string>getrocknet goji beeren</string>
 		</dict>
 	</dict>
 	<key>Dried Plums</key>
@@ -588,6 +996,12 @@
 			<string>torkade plommon</string>
 			<key>en</key>
 			<string>dried plums</string>
+			<key>da</key>
+			<string>svisker</string>
+			<key>no</key>
+			<string>svisker</string>
+			<key>de</key>
+			<string>backpflaumen</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -595,6 +1009,12 @@
 			<string>torkat plommon</string>
 			<key>en</key>
 			<string>dried plum</string>
+			<key>da</key>
+			<string>sveske</string>
+			<key>no</key>
+			<string>sviske</string>
+			<key>de</key>
+			<string>backpflaume</string>
 		</dict>
 	</dict>
 	<key>Psyllium Seeds</key>
@@ -605,6 +1025,12 @@
 			<string>psylliumfrön</string>
 			<key>en</key>
 			<string>psyllium seeds</string>
+			<key>da</key>
+			<string>psyllium frø</string>
+			<key>no</key>
+			<string>psyllium frø</string>
+			<key>de</key>
+			<string>psylliumsamen</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -612,6 +1038,12 @@
 			<string>psylliumfrö</string>
 			<key>en</key>
 			<string>psyllium seed</string>
+			<key>da</key>
+			<string>psyllium frø</string>
+			<key>no</key>
+			<string>psyllium frø</string>
+			<key>de</key>
+			<string>psylliumsamen</string>
 		</dict>
 	</dict>
 	<key>Passion Fruit</key>
@@ -622,6 +1054,12 @@
 			<string>passionsfrukt</string>
 			<key>en</key>
 			<string>passion fruits</string>
+			<key>da</key>
+			<string>passionsfrugt</string>
+			<key>no</key>
+			<string>pasjonsfrukt</string>
+			<key>de</key>
+			<string>maracujas</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -629,6 +1067,12 @@
 			<string>passionsfrukt</string>
 			<key>en</key>
 			<string>passion fruit</string>
+			<key>da</key>
+			<string>passionsfrugt</string>
+			<key>no</key>
+			<string>pasjonsfrukt</string>
+			<key>de</key>
+			<string>maracuja</string>
 		</dict>
 	</dict>
 	<key>Coconut Milk dl</key>
@@ -636,16 +1080,28 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>kokosmjölk</string>
+			<string>kokosmjölk (18%)</string>
 			<key>en</key>
-			<string>coconut milk</string>
+			<string>coconut milk (full fat)</string>
+			<key>da</key>
+			<string>kokosmælk</string>
+			<key>no</key>
+			<string>kokosmelk</string>
+			<key>de</key>
+			<string>kokosmilch</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>kokosmjölk</string>
+			<string>kokosmjölk (18%)</string>
 			<key>en</key>
-			<string>coconut milk</string>
+			<string>coconut milk (full fat)</string>
+			<key>da</key>
+			<string>kokosmælk</string>
+			<key>no</key>
+			<string>kokosmelk</string>
+			<key>de</key>
+			<string>kokosmilch</string>
 		</dict>
 	</dict>
 	<key>Coconut Milk tbsp</key>
@@ -653,16 +1109,28 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>kokosmjölk</string>
+			<string>kokosmjölk (18%)</string>
 			<key>en</key>
-			<string>coconut milk</string>
+			<string>coconut milk (full fat)</string>
+			<key>da</key>
+			<string>kokosmælk</string>
+			<key>no</key>
+			<string>kokosmelk</string>
+			<key>de</key>
+			<string>kokosmilch</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>kokosmjölk</string>
+			<string>kokosmjölk (18%)</string>
 			<key>en</key>
-			<string>coconut milk</string>
+			<string>coconut milk (full fat)</string>
+			<key>da</key>
+			<string>kokosmælk</string>
+			<key>no</key>
+			<string>kokosmelk</string>
+			<key>de</key>
+			<string>kokosmilch</string>
 		</dict>
 	</dict>
 	<key>Grapefruit</key>
@@ -673,6 +1141,12 @@
 			<string>grapefrukt</string>
 			<key>en</key>
 			<string>grape fruits</string>
+			<key>da</key>
+			<string>grapefrugt</string>
+			<key>no</key>
+			<string>grapefrukt</string>
+			<key>de</key>
+			<string>grapefruits</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -680,6 +1154,12 @@
 			<string>grapefrukt</string>
 			<key>en</key>
 			<string>grape fruit</string>
+			<key>da</key>
+			<string>grapefrugt</string>
+			<key>no</key>
+			<string>grapefrukt</string>
+			<key>de</key>
+			<string>grapefruit</string>
 		</dict>
 	</dict>
 	<key>Rosehip Powder</key>
@@ -690,6 +1170,12 @@
 			<string>nyponskalspulver</string>
 			<key>en</key>
 			<string>rosehip powder</string>
+			<key>da</key>
+			<string>hyben pulver</string>
+			<key>no</key>
+			<string>nype pulver</string>
+			<key>de</key>
+			<string>hagebuttenpulver</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -697,6 +1183,12 @@
 			<string>nyponskalspulver</string>
 			<key>en</key>
 			<string>rosehip powder</string>
+			<key>da</key>
+			<string>hyben pulver</string>
+			<key>no</key>
+			<string>nype pulver</string>
+			<key>de</key>
+			<string>hagebuttenpulver</string>
 		</dict>
 	</dict>
 	<key>Cherries</key>
@@ -707,6 +1199,12 @@
 			<string>körsbär</string>
 			<key>en</key>
 			<string>cherries</string>
+			<key>da</key>
+			<string>kirsebær</string>
+			<key>no</key>
+			<string>kirsebær</string>
+			<key>de</key>
+			<string>kirschen</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -714,6 +1212,12 @@
 			<string>körsbär</string>
 			<key>en</key>
 			<string>cherry</string>
+			<key>da</key>
+			<string>kirsebær</string>
+			<key>no</key>
+			<string>kirsebær</string>
+			<key>de</key>
+			<string>kirschen</string>
 		</dict>
 	</dict>
 	<key>Cashew Nut</key>
@@ -724,6 +1228,12 @@
 			<string>cashewnötter</string>
 			<key>en</key>
 			<string>cashew nuts</string>
+			<key>da</key>
+			<string>cashew</string>
+			<key>no</key>
+			<string>cashew</string>
+			<key>de</key>
+			<string>kaschunuss</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -731,6 +1241,12 @@
 			<string>cashewnötter</string>
 			<key>en</key>
 			<string>cashew nuts</string>
+			<key>da</key>
+			<string>cashew</string>
+			<key>no</key>
+			<string>cashew</string>
+			<key>de</key>
+			<string>kaschunuss</string>
 		</dict>
 	</dict>
 	<key>Coconut Oil</key>
@@ -741,6 +1257,12 @@
 			<string>kallpressad kokosolja</string>
 			<key>en</key>
 			<string>virgin coconut oil</string>
+			<key>da</key>
+			<string>koldpresset kokosolie</string>
+			<key>no</key>
+			<string>kaldpresset kokosolje</string>
+			<key>de</key>
+			<string>kaltgepresstes kokosöl</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -748,6 +1270,12 @@
 			<string>kallpressad kokosolja</string>
 			<key>en</key>
 			<string>virgin coconut oil</string>
+			<key>da</key>
+			<string>koldpresset kokosolie</string>
+			<key>no</key>
+			<string>kaldpresset kokosolje</string>
+			<key>de</key>
+			<string>kaltgepresstes kokosöl</string>
 		</dict>
 	</dict>
 	<key>Acai</key>
@@ -758,6 +1286,12 @@
 			<string>fryst acai</string>
 			<key>en</key>
 			<string>frozen acai</string>
+			<key>da</key>
+			<string>frosne acai</string>
+			<key>no</key>
+			<string>frosne acai</string>
+			<key>de</key>
+			<string>gefroren acai</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -765,6 +1299,12 @@
 			<string>fryst acai</string>
 			<key>en</key>
 			<string>frozen acai</string>
+			<key>da</key>
+			<string>frosne acai</string>
+			<key>no</key>
+			<string>frosne acai</string>
+			<key>de</key>
+			<string>gefroren acai</string>
 		</dict>
 	</dict>
 	<key>Chia Seeds tbsp</key>
@@ -775,6 +1315,12 @@
 			<string>chiafrön</string>
 			<key>en</key>
 			<string>chia seeds</string>
+			<key>da</key>
+			<string>chia frø</string>
+			<key>no</key>
+			<string>chia frø</string>
+			<key>de</key>
+			<string>chia samen</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -782,6 +1328,12 @@
 			<string>chiafrön</string>
 			<key>en</key>
 			<string>chia seeds</string>
+			<key>da</key>
+			<string>chia frø</string>
+			<key>no</key>
+			<string>chia frø</string>
+			<key>de</key>
+			<string>chia samen</string>
 		</dict>
 	</dict>
 	<key>Chia Seeds dl</key>
@@ -792,6 +1344,12 @@
 			<string>chiafrön</string>
 			<key>en</key>
 			<string>chia seeds</string>
+			<key>da</key>
+			<string>chia frø</string>
+			<key>no</key>
+			<string>chia frø</string>
+			<key>de</key>
+			<string>chia samen</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -799,6 +1357,12 @@
 			<string>chiafrön</string>
 			<key>en</key>
 			<string>chia seeds</string>
+			<key>da</key>
+			<string>chia frø</string>
+			<key>no</key>
+			<string>chia frø</string>
+			<key>de</key>
+			<string>chia samen</string>
 		</dict>
 	</dict>
 	<key>Almond Milk</key>
@@ -809,6 +1373,12 @@
 			<string>mandelmjölk</string>
 			<key>en</key>
 			<string>almond milk</string>
+			<key>da</key>
+			<string>mandelmælk</string>
+			<key>no</key>
+			<string>mandel melk</string>
+			<key>de</key>
+			<string>mandelmilch</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -816,6 +1386,12 @@
 			<string>mandelmjölk</string>
 			<key>en</key>
 			<string>almond milk</string>
+			<key>da</key>
+			<string>mandelmælk</string>
+			<key>no</key>
+			<string>mandel melk</string>
+			<key>de</key>
+			<string>mandelmilch</string>
 		</dict>
 	</dict>
 	<key>Mint Leaves</key>
@@ -826,6 +1402,12 @@
 			<string>myntablad</string>
 			<key>en</key>
 			<string>mint leaves</string>
+			<key>da</key>
+			<string>mynte blade</string>
+			<key>no</key>
+			<string>mynteblader</string>
+			<key>de</key>
+			<string>blätter minze</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -833,6 +1415,12 @@
 			<string>myntablad</string>
 			<key>en</key>
 			<string>mint leaf</string>
+			<key>da</key>
+			<string>mynte blad</string>
+			<key>no</key>
+			<string>mynteblad</string>
+			<key>de</key>
+			<string>blatt minze</string>
 		</dict>
 	</dict>
 	<key>Water</key>
@@ -843,6 +1431,12 @@
 			<string>vatten</string>
 			<key>en</key>
 			<string>water</string>
+			<key>da</key>
+			<string>vand</string>
+			<key>no</key>
+			<string>vann</string>
+			<key>de</key>
+			<string>wasser</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -850,6 +1444,12 @@
 			<string>vatten</string>
 			<key>en</key>
 			<string>water</string>
+			<key>da</key>
+			<string>vand</string>
+			<key>no</key>
+			<string>vann</string>
+			<key>de</key>
+			<string>wasser</string>
 		</dict>
 	</dict>
 	<key>Ice Cubes</key>
@@ -860,6 +1460,12 @@
 			<string>isbitar</string>
 			<key>en</key>
 			<string>ice cubes</string>
+			<key>da</key>
+			<string>isterninger</string>
+			<key>no</key>
+			<string>isbiter</string>
+			<key>de</key>
+			<string>eiswürfel</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -867,6 +1473,12 @@
 			<string>isbit</string>
 			<key>en</key>
 			<string>ice cube</string>
+			<key>da</key>
+			<string>isterning</string>
+			<key>no</key>
+			<string>isbit</string>
+			<key>de</key>
+			<string>eiswürfel</string>
 		</dict>
 	</dict>
 	<key>Vanilla Powder</key>
@@ -877,6 +1489,12 @@
 			<string>vaniljpulver</string>
 			<key>en</key>
 			<string>vanilla powder</string>
+			<key>da</key>
+			<string>vanilje pulver</string>
+			<key>no</key>
+			<string>vanilje pulver</string>
+			<key>de</key>
+			<string>vanillepuder</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -884,6 +1502,12 @@
 			<string>vaniljpulver</string>
 			<key>en</key>
 			<string>vanilla powder</string>
+			<key>da</key>
+			<string>vanilje pulver</string>
+			<key>no</key>
+			<string>vanilje pulver</string>
+			<key>de</key>
+			<string>vanillepuder</string>
 		</dict>
 	</dict>
 	<key>Kale</key>
@@ -894,6 +1518,12 @@
 			<string>grönkål</string>
 			<key>en</key>
 			<string>kale</string>
+			<key>da</key>
+			<string>grønkål</string>
+			<key>no</key>
+			<string>grønnkål</string>
+			<key>de</key>
+			<string>grünkohl</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -901,6 +1531,12 @@
 			<string>grönkål</string>
 			<key>en</key>
 			<string>kale</string>
+			<key>da</key>
+			<string>grønkål</string>
+			<key>no</key>
+			<string>grønnkål</string>
+			<key>de</key>
+			<string>grünkohl</string>
 		</dict>
 	</dict>
 	<key>Wheatgrass</key>
@@ -911,6 +1547,12 @@
 			<string>vetegräs</string>
 			<key>en</key>
 			<string>wheatgrass</string>
+			<key>da</key>
+			<string>hvede græs</string>
+			<key>no</key>
+			<string>hvete gress</string>
+			<key>de</key>
+			<string>weizengras</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -918,6 +1560,12 @@
 			<string>vetegräs</string>
 			<key>en</key>
 			<string>wheatgrass</string>
+			<key>da</key>
+			<string>hvede græs</string>
+			<key>no</key>
+			<string>hvete gress</string>
+			<key>de</key>
+			<string>weizengras</string>
 		</dict>
 	</dict>
 	<key>Buckthorn</key>
@@ -928,6 +1576,12 @@
 			<string>havtorn</string>
 			<key>en</key>
 			<string>buckthorn</string>
+			<key>da</key>
+			<string></string>
+			<key>no</key>
+			<string></string>
+			<key>de</key>
+			<string></string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -945,12 +1599,24 @@
 			<string>spirulina</string>
 			<key>en</key>
 			<string>spirulina</string>
+			<key>da</key>
+			<string>spirulina</string>
+			<key>no</key>
+			<string>spirulina</string>
+			<key>de</key>
+			<string>spirulina</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
 			<string>spirulina</string>
 			<key>en</key>
+			<string>spirulina</string>
+			<key>da</key>
+			<string>spirulina</string>
+			<key>no</key>
+			<string>spirulina</string>
+			<key>de</key>
 			<string>spirulina</string>
 		</dict>
 	</dict>
@@ -962,6 +1628,12 @@
 			<string>kanel</string>
 			<key>en</key>
 			<string>cinnamon</string>
+			<key>da</key>
+			<string>kanel</string>
+			<key>no</key>
+			<string>kanel</string>
+			<key>de</key>
+			<string>zimt</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -969,6 +1641,12 @@
 			<string>kanel</string>
 			<key>en</key>
 			<string>cinnamon</string>
+			<key>da</key>
+			<string>kanel</string>
+			<key>no</key>
+			<string>kanel</string>
+			<key>de</key>
+			<string>zimt</string>
 		</dict>
 	</dict>
 	<key>Cardamom</key>
@@ -979,6 +1657,12 @@
 			<string>kardemumma</string>
 			<key>en</key>
 			<string>cardamom</string>
+			<key>da</key>
+			<string>kardamom</string>
+			<key>no</key>
+			<string>kardemomme</string>
+			<key>de</key>
+			<string>kardamom</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -986,6 +1670,12 @@
 			<string>kardemumma</string>
 			<key>en</key>
 			<string>cardamom</string>
+			<key>da</key>
+			<string>kardamom</string>
+			<key>no</key>
+			<string>kardemomme</string>
+			<key>de</key>
+			<string>kardamom</string>
 		</dict>
 	</dict>
 	<key>Coconut Water</key>
@@ -996,6 +1686,12 @@
 			<string>kokosvatten</string>
 			<key>en</key>
 			<string>coconut water</string>
+			<key>da</key>
+			<string>kokos vand</string>
+			<key>no</key>
+			<string>kokos vann</string>
+			<key>de</key>
+			<string>kokoswasser</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -1003,6 +1699,12 @@
 			<string>kokosvatten</string>
 			<key>en</key>
 			<string>coconut water</string>
+			<key>da</key>
+			<string>kokos vand</string>
+			<key>no</key>
+			<string>kokos vann</string>
+			<key>de</key>
+			<string>kokoswasser</string>
 		</dict>
 	</dict>
 	<key>Turmeric Powder</key>
@@ -1013,6 +1715,12 @@
 			<string>mald gurkmeja</string>
 			<key>en</key>
 			<string>turmeric powder</string>
+			<key>da</key>
+			<string>gurkemeje pulver</string>
+			<key>no</key>
+			<string>gurkemeie pulver</string>
+			<key>de</key>
+			<string>kurkuma pulver</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -1020,6 +1728,12 @@
 			<string>mald gurkmeja</string>
 			<key>en</key>
 			<string>turmeric powder</string>
+			<key>da</key>
+			<string>gurkemeje pulver</string>
+			<key>no</key>
+			<string>gurkemeie pulver</string>
+			<key>de</key>
+			<string>kurkuma pulver</string>
 		</dict>
 	</dict>
 	<key>Blackcurrant</key>
@@ -1029,14 +1743,26 @@
 			<key>sv</key>
 			<string>svarta vinbär</string>
 			<key>en</key>
-			<string>blackcurrant</string>
+			<string>blackcurrants</string>
+			<key>da</key>
+			<string>solbær</string>
+			<key>no</key>
+			<string>solbær</string>
+			<key>de</key>
+			<string>schwarze johannisbeeren</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
 			<string>svarta vinbär</string>
 			<key>en</key>
-			<string>blackcurrant</string>
+			<string>blackcurrants</string>
+			<key>da</key>
+			<string>solbær</string>
+			<key>no</key>
+			<string>solbær</string>
+			<key>de</key>
+			<string>schwarze johannisbeeren</string>
 		</dict>
 	</dict>
 	<key>Maple Syrup</key>
@@ -1047,6 +1773,12 @@
 			<string>lönnsirap</string>
 			<key>en</key>
 			<string>maple syrup</string>
+			<key>da</key>
+			<string>ahornsirup</string>
+			<key>no</key>
+			<string>lønnesirup</string>
+			<key>de</key>
+			<string>ahornsirup</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -1054,6 +1786,12 @@
 			<string>lönnsirap</string>
 			<key>en</key>
 			<string>maple syrup</string>
+			<key>da</key>
+			<string>ahornsirup</string>
+			<key>no</key>
+			<string>lønnesirup</string>
+			<key>de</key>
+			<string>ahornsirup</string>
 		</dict>
 	</dict>
 	<key>Rhubarb</key>
@@ -1064,6 +1802,12 @@
 			<string>rabarber</string>
 			<key>en</key>
 			<string>rhubarb</string>
+			<key>da</key>
+			<string>rabarber</string>
+			<key>no</key>
+			<string>rabarbra</string>
+			<key>de</key>
+			<string>Rhabarber</string>
 		</dict>
 		<key>Singularis</key>
 		<dict>
@@ -1071,6 +1815,12 @@
 			<string>rabarber</string>
 			<key>en</key>
 			<string>rhubarb</string>
+			<key>da</key>
+			<string>rabarber</string>
+			<key>no</key>
+			<string>rabarbra</string>
+			<key>de</key>
+			<string>Rhabarber</string>
 		</dict>
 	</dict>
 </dict>

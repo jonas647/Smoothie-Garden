@@ -17,7 +17,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    ingredients = [NSMutableArray arrayWithArray:_selectedRecipe.ingredients];
+    
+    //Just add the ingredients with a name (there are blanks to add a space between sauce and smoothie ie.)
+    ingredients = [[NSMutableArray alloc]init];
+    for (Ingredient *i in _selectedRecipe.ingredients) {
+        if (![i.type isEqualToString:@""]) {
+            [ingredients addObject:i];
+        }
+    }
+    
     
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
@@ -30,7 +38,6 @@
     
     _recipeImageView.image = [UIImage imageNamed:_selectedRecipe.imageName];
     
-    NSLog(@"Image: %@", _selectedRecipe.recipeName);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,10 +58,22 @@
         UILabel *ingredientTitle = (UILabel*)[cell viewWithTag:101];
         UILabel *ingredientVolume = (UILabel*)[cell viewWithTag:102];
         
+        UIButton *removeIngredientButton = (UIButton*)[cell viewWithTag:103];
+        removeIngredientButton.tag=indexPath.row;
+        [removeIngredientButton addTarget:self
+                   action:@selector(removeIngredientFromShoppingList:) forControlEvents:UIControlEventTouchUpInside];
+        
         Ingredient *activeIngredient = [ingredients objectAtIndex:indexPath.row];
         
         ingredientTitle.text = [activeIngredient stringWithIngredientText];
         ingredientVolume.text = [activeIngredient stringWithQuantityAndMeasure];
+        
+        UIView *buttonView = [cell viewWithTag:104];
+        UIView *circleView = [buttonView viewWithTag:1001];
+        
+        //Set the attributes for the remove button
+        circleView.layer.cornerRadius = circleView.bounds.size.width/2;//Make like view a circle
+        circleView.layer.masksToBounds = YES;
     }
     
     return cell;
@@ -85,6 +104,17 @@
     
     //Pop the viewcontroller from the navigation tree
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) removeIngredientFromShoppingList:(id)sender {
+    
+    CGPoint hitPoint = [sender convertPoint:CGPointZero toView:_shoppingListTableView];
+    NSIndexPath *hitIndex = [_shoppingListTableView indexPathForRowAtPoint:hitPoint];
+    
+    [ingredients removeObjectAtIndex:hitIndex.row];
+    
+    //Update table
+    [_shoppingListTableView reloadData];
 }
 
 @end

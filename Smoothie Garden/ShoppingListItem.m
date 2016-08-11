@@ -16,8 +16,8 @@
     
     if ((self = [super init])) {
     
-        _ingredient = i;
-        
+        _ingredient = [[Ingredient alloc]initWithQuantity:i.quantity andType:i.type andMeasure:i.measure andOptional:i.optional andSorting:i.sorting];
+    
     }
     
     return self;

@@ -40,8 +40,8 @@
     float sizeForByText;
     float sizeForSmoothieBoxText;
     float sizeForTitleText;
-    
     float sizeForRecipeDescriptions;
+    float sizeForShoppingListText;
     
 }
 
@@ -120,6 +120,7 @@
         sizeForSmoothieBoxText = 11;
         sizeForTitleText = 20;
         sizeForRecipeDescriptions = 17;
+        sizeForShoppingListText = 12;
         marginBetweenTextCells = 20;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
@@ -128,6 +129,7 @@
         sizeForSmoothieBoxText = 13;
         sizeForTitleText = 21;
         sizeForRecipeDescriptions = 18;
+        sizeForShoppingListText = 15;
         marginBetweenTextCells = 30;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
@@ -136,6 +138,7 @@
         sizeForSmoothieBoxText = 14;
         sizeForTitleText = 26;
         sizeForRecipeDescriptions = 21;
+        sizeForShoppingListText = 17;
         marginBetweenTextCells = 35;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
@@ -145,6 +148,7 @@
         sizeForSmoothieBoxText = 14;
         sizeForTitleText = 26;
         sizeForRecipeDescriptions = 21;
+        sizeForShoppingListText = 15;
         marginBetweenTextCells = 35;
     } else {
         // If a new device is released before the app is updated
@@ -152,6 +156,7 @@
         sizeForSmoothieBoxText = 11;
         sizeForTitleText = 18;
         sizeForRecipeDescriptions = 18;
+        sizeForShoppingListText = 12;
         marginBetweenTextCells = 20;
     }
     
@@ -192,6 +197,7 @@
     [self setFontSizeForLabel:by size:sizeForByText];
     [self setFontSizeForLabel:smoothieBox size:sizeForSmoothieBoxText];
     [self setFontSizeForLabel:titleName size:sizeForTitleText];
+    [self setFontSizeForLabel:shoppingListButton.titleLabel size:sizeForShoppingListText];
     
     //Set the height constraint of where the title should begin. Below the image.
     [blankBackgroundToTop setConstant:0.8*[UIScreen mainScreen].bounds.size.height];

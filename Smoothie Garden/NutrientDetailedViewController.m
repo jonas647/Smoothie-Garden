@@ -91,7 +91,7 @@
     if ([thisNutrient objectForKey:language]) {
         return [thisNutrient objectForKey:language];
     } else {
-        NSLog(@"No translation for %@", nutrientName);
+        //NSLog(@"No translation for %@", nutrientName);
         return nutrientName;
     }
 }

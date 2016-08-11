@@ -34,6 +34,7 @@
     
     __weak IBOutlet UIView *servingView;
     
+    __weak IBOutlet UIButton *shoppingListButton;
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;

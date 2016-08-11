@@ -11,7 +11,7 @@
 "LOCALIZE_Day 2" = "Day 2";
 "LOCALIZE_Day 3" = "Day 3";
 "LOCALIZE_9 AM" = "9 AM";
-"LOCALIZE_12 AM" = "12 AM";
+"LOCALIZE_12 AM" = "12 PM"; //I think PM is the correct way to say noon
 "LOCALIZE_4 PM" = "4 PM";
 "LOCALIZE_7 PM" = "7 PM";
 "LOCALIZE_Nutrition Facts" = "Nutrition Facts"; //Is this in use?
@@ -34,3 +34,5 @@
 "LOCALIZE_No Purchase Text" = "Unfortunately your purchase couldn't be handled right now. Please try again later.";
 "LOCALIZE_OK" = "OK";
 "LOCALIZE_Optional" = "optional";
+"LOCALIZE_Clean Shopping List - title" = "Clear shopping list";
+"LOCALIZE_Clean Shopping List - text" = "Are you sure you want to remove all items in the shopping list?";

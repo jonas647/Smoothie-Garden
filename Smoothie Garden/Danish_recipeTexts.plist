@@ -431,6 +431,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Denne smoothie har en frisk og cremet smag. Gurkemeje har ikke megen smag, men tilføjer en gylden farve og har meget anti-inflammatoriske og helende egenskaber</string>
+			<string>Hvis du vil have færre kalorier, kan du bruge kokosmælk med mindre fedt.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -448,7 +449,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Solbær har en unik og forfriskende smag, i modsætning til alle andre bær. De er også rige på C-vitamin og antioxidanter.</string>
-			<string>Pluk korender direkte fra haven og bruge i dette fantastiske smoothie.</string>
+			<string>Pluk bær direkte fra haven og bruge i dette fantastiske smoothie.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -458,7 +459,7 @@
 	<key>Recipe27</key>
 	<dict>
 		<key>RecipeName</key>
-		<string>Rhubarb</string>
+		<string>Tangy Rhubarb</string>
 		<key>ShortDescription</key>
 		<string>Dette er den perfekte sommer drink. Lys, syrlig og frisk</string>
 		<key>LongDescription</key>

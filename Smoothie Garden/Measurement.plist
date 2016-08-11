@@ -8,12 +8,24 @@
 		<string>dl</string>
 		<key>sv</key>
 		<string>dl</string>
+		<key>da</key>
+		<string>dl</string>
+		<key>no</key>
+		<string>dl</string>
+		<key>de</key>
+		<string>dl</string>
 	</dict>
 	<key>cm</key>
 	<dict>
 		<key>en</key>
 		<string>cm</string>
 		<key>sv</key>
+		<string>cm</string>
+		<key>da</key>
+		<string>cm</string>
+		<key>no</key>
+		<string>cm</string>
+		<key>de</key>
 		<string>cm</string>
 	</dict>
 	<key>sprig</key>
@@ -22,6 +34,12 @@
 		<string>sprig</string>
 		<key>sv</key>
 		<string>kvist</string>
+		<key>da</key>
+		<string>gren</string>
+		<key>no</key>
+		<string>gren</string>
+		<key>de</key>
+		<string>zweig</string>
 	</dict>
 	<key>tbsp</key>
 	<dict>
@@ -29,6 +47,12 @@
 		<string>tbsp</string>
 		<key>sv</key>
 		<string>msk</string>
+		<key>da</key>
+		<string>spsk</string>
+		<key>no</key>
+		<string>ss</string>
+		<key>de</key>
+		<string>essl</string>
 	</dict>
 	<key>tsp</key>
 	<dict>
@@ -36,6 +60,12 @@
 		<string>tsp</string>
 		<key>sv</key>
 		<string>tsk</string>
+		<key>da</key>
+		<string>tsk</string>
+		<key>no</key>
+		<string>ts</string>
+		<key>de</key>
+		<string>teel</string>
 	</dict>
 	<key>pinch</key>
 	<dict>
@@ -43,12 +73,24 @@
 		<string>pinch</string>
 		<key>sv</key>
 		<string>nypa</string>
+		<key>da</key>
+		<string>knivspids</string>
+		<key>no</key>
+		<string>klype</string>
+		<key>de</key>
+		<string>kneifen</string>
 	</dict>
 	<key>g</key>
 	<dict>
 		<key>en</key>
 		<string>g</string>
 		<key>sv</key>
+		<string>g</string>
+		<key>da</key>
+		<string>g</string>
+		<key>no</key>
+		<string>g</string>
+		<key>de</key>
 		<string>g</string>
 	</dict>
 	<key>cup</key>
@@ -57,6 +99,12 @@
 		<string>cup</string>
 		<key>sv</key>
 		<string>cup</string>
+		<key>da</key>
+		<string>cup</string>
+		<key>no</key>
+		<string>cup</string>
+		<key>de</key>
+		<string>cup</string>
 	</dict>
 	<key>inches</key>
 	<dict>
@@ -64,6 +112,12 @@
 		<string>inches</string>
 		<key>sv</key>
 		<string>tum</string>
+		<key>da</key>
+		<string>inches</string>
+		<key>no</key>
+		<string>inches</string>
+		<key>de</key>
+		<string>inches</string>
 	</dict>
 	<key>leaf</key>
 	<dict>
@@ -71,12 +125,24 @@
 		<string>leaf</string>
 		<key>sv</key>
 		<string>blad</string>
+		<key>da</key>
+		<string>blad</string>
+		<key>no</key>
+		<string>blad</string>
+		<key>de</key>
+		<string>blatt</string>
 	</dict>
 	<key>litre</key>
 	<dict>
 		<key>en</key>
 		<string>l</string>
 		<key>sv</key>
+		<string>l</string>
+		<key>da</key>
+		<string>l</string>
+		<key>no</key>
+		<string>l</string>
+		<key>de</key>
 		<string>l</string>
 	</dict>
 </dict>

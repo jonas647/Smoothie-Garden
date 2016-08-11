@@ -34,3 +34,5 @@
 "LOCALIZE_No Purchase Text" = "Tyvärr kunde inte ditt köp hanteras just nu. Försök igen senare";
 "LOCALIZE_OK" = "OK";
 "LOCALIZE_Optional" = "valfritt";
+"LOCALIZE_Clean Shopping List - title" = "Rensa inköpslista";
+"LOCALIZE_Clean Shopping List - text" = "Är du säker på att du vill ta bort alla ingredienser från inköpslistan?";

@@ -96,19 +96,19 @@
     } else {
         //Check what version of the recipes that are saved
         NSDictionary *recipeDictionary = [self recipeDictionaryFromPlist];
-        
         int versionOfRecipeList = [[recipeDictionary objectForKey:@"Version"]intValue];
         int currentVersion = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"RecipeVersion"];
         
+        //Check what language that the saved recipes has and the current language
         NSString *recipeLanguage = [[NSUserDefaults standardUserDefaults]objectForKey:@"RecipeLanguage"];
         NSString *userLanguage = [self currentLanguage];
         
-        //If the version is lower than the last updated plist then load the recipes
         //If the user language is another than the recipe language. Then load the recipes
-        if (currentVersion < versionOfRecipeList) {
+        //If the version is lower than the last updated plist then load the recipes
+        if (![userLanguage isEqualToString:recipeLanguage]) {
      
             return YES;
-        } else if (![userLanguage isEqualToString:recipeLanguage]) {
+        } else if (currentVersion < versionOfRecipeList) {
          
             return YES;
         } else {
@@ -129,9 +129,10 @@
 
 - (void) saveRecipesToPersistentStore {
     
+    //Get the plist with all the recipe information that's not localized
     NSDictionary *recipeDictionary = [self recipeDictionaryFromPlist];
     
-    //Load all the recipes into array
+    //Load all the recipes into array and add the localized information
     NSArray *recipes = [self allRecipesFromDictionary:recipeDictionary];
     
     //Load the version number
@@ -215,7 +216,7 @@
                 NSLog(@"Sorting missing for %@", name);
             }
             
-            //Update the recipe attribtues from the localized file
+            //Update the recipe attributes from the localized file
             NSDictionary *localizedDescriptionsForNewRecipe = [localizedRecipeDescriptions objectForKey:name];
             
             if ([localizedDescriptionsForNewRecipe objectForKey:@"RecipeName"]) {
@@ -321,10 +322,14 @@
     //Recipe description path depending on localization
     NSString *recipeDescriptionPath;
     
+    NSLog(@"Prefix: %@", [self currentLanguage]);
+    
     if ([currentLanguage hasPrefix:@"sv"]) {
         recipeDescriptionPath = @"Swedish_recipeTexts";
     } else if ([currentLanguage hasPrefix:@"en"]) {
         recipeDescriptionPath = @"English_recipeTexts";
+    } else if ([currentLanguage hasPrefix:@"da"]) {
+        recipeDescriptionPath = @"Danish_recipeTexts";
     } else {
         //English if any other language is the default
         recipeDescriptionPath = @"English_recipeTexts";
@@ -340,6 +345,9 @@
     if ([[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"]!= nil) {
         return [[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"];
     } else {
+        
+        NSLog(@"Language used: %@", [[[NSLocale preferredLanguages] objectAtIndex:0]substringToIndex:2]);
+        
         return [[[NSLocale preferredLanguages] objectAtIndex:0]substringToIndex:2];
     }
     

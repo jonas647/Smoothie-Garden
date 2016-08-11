@@ -32,4 +32,6 @@
 + (void) useMeasurementMethod: (int) measure ;
 + (int) usedMeasure;
 
+//- (id)copyWithZone:(NSZone *)zone;
+
 @end
