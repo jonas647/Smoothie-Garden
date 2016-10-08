@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "RecipeManager.h"
 
-@interface RecipeCollectionViewController : UICollectionViewController
+@interface RecipeCollectionViewController : UICollectionViewController <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
+@property (strong, nonatomic) UISearchController *searchController;
+
 
 @end

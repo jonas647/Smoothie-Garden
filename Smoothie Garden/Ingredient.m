@@ -52,12 +52,19 @@
         //Set the text that should be shown for the ingredient in the recipe
         self.text = [self setupIngredientTextForIngredient:type andPlural:pluralIngredient];
         
-        //Set the search strings by getting the string for the plural/singular that wasn't set to the text for the ingredient and then join that string with the text string
+        //Set the search strings by getting the string for the plural/singular that wasn't set to the text for the ingredient (so that it's possible to search for both singularis and pluralis) and then join that string with the text string
         NSString *pluralSingularString = [self setupIngredientTextForIngredient:type andPlural:!pluralIngredient];
-        NSString *jointString = [NSString stringWithFormat:@"%@ %@", self.text, pluralSingularString];
         
-        //Set the searchable string
-        self.searchString = jointString;
+        
+        //Set the searchable string. If the plural is the same as singular then only one of them needed
+        if ([pluralSingularString isEqualToString:self.text]) {
+            self.searchString = self.text;
+        } else {
+            NSString *jointString = [NSString stringWithFormat:@"%@ %@", self.text, pluralSingularString];
+            self.searchString = jointString;
+        }
+        
+        NSLog(@"Search string: %@", self.searchString);
         
         [self setupNutrientDataFromPlist];
     

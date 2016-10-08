@@ -16,6 +16,6 @@
 @property (nonatomic,strong) Recipe *selectedRecipe;
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 
-
+- (void) refreshUI;
 
 @end

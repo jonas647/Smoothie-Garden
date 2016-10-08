@@ -12,6 +12,9 @@
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "DeviceHelper.h"
+#import "RecipeTableViewController.h"
+#import "DetailedRecipeViewController.h"
+
 
 /** Google Analytics configuration constants **/
 static NSString *const kGaPropertyId = @"UA-51056320-4"; // Placeholder property ID.
@@ -38,6 +41,7 @@ static int const kGaDispatchPeriod = 20;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    /*
     UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
     //Update the colors of where in the app the default color should be used
     
@@ -60,6 +64,7 @@ static int const kGaDispatchPeriod = 20;
     
     [[UITableViewCell appearance].contentView.layer setBorderWidth:2.0f];
     [[UITableViewCell appearance].contentView.layer setBorderColor:mainColor.CGColor];
+    */
     
     //Default font
     //[[UILabel appearance] setFont:[UIFont fontWithName:@"Verdana" size:10.0f]];
@@ -99,6 +104,7 @@ static int const kGaDispatchPeriod = 20;
     
     //Google Analytics
     
+    
     //If the analytics key hasn't been touched (first app launch) then set it to enabled
     BOOL analyticsEnabled;
     if(![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:@"AnalyticsEnabled"]){
@@ -107,23 +113,13 @@ static int const kGaDispatchPeriod = 20;
     } else
         analyticsEnabled = [[NSUserDefaults standardUserDefaults]boolForKey:@"AnalyticsEnabled"];
     
+    
     if (analyticsEnabled) {
         //Since the key is null if the user hasn't disabled the analytics we need to invert the bool
    
-        
-        //If the user has enabled the analytics (or hasn't touched to analytics toggle)
-        
-        // Configure tracker from GoogleService-Info.plist.
+        NSLog(@"Remember to activate GA when releasing app");
         /*
-        NSError *configureError;
-        [[GGLContext sharedInstance] configureWithError:&configureError];
-        NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
-        
-        // Optional: configure GAI options.
-        GAI *gai = [GAI sharedInstance];
-        gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
-        gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release (TODO)
-        */
+        //If the user has enabled the analytics (or hasn't touched to analytics toggle)
         
         //Doing this initiliazation so that I can activate bitcode (Google/Analytics doesn't include this but GoogleAnalytics does...)
         // Optional: automatically send uncaught exceptions to Google Analytics.
@@ -135,12 +131,11 @@ static int const kGaDispatchPeriod = 20;
         //[GAI sharedInstance].debug = YES;
         // Create tracker instance.
         [[GAI sharedInstance]trackerWithTrackingId:kGaPropertyId];
-
-        
+        */
     } else {
         NSLog(@"Analytics disabled");
     }
-    
+
     //End of Google Analytics
     
     //App Review start-up
@@ -150,9 +145,8 @@ static int const kGaDispatchPeriod = 20;
     //Check Country, If English then set measurement as US customary units at start (if hans't been set earlier)
     
     //Use storyboard based on device
-    //UIStoryboard *storyBoardToUse = [UIStoryboard storyboardWithName:@"iPad" bundle:nil];
-    //self.window.rootViewController = [storyBoardToUse instantiateInitialViewController];
-
+    UIStoryboard *storyBoardToUse = [UIStoryboard storyboardWithName:@"Universal" bundle:nil];
+    self.window.rootViewController = [storyBoardToUse instantiateInitialViewController];
 
     return YES;
 }

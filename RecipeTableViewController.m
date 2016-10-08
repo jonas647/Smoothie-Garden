@@ -20,6 +20,7 @@
 @interface RecipeTableViewController ()
 
 
+
 @end
 
 @implementation RecipeTableViewController
@@ -32,10 +33,22 @@
     float imageParallaxEffectFactor;
     float titleTextSize;
     float descriptionTextSize;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Handle the uisplitview
+    if ([self splitViewController]) {
+        NSLog(@"Split view active");
+        
+        NSArray *viewControllers = [[self splitViewController]viewControllers];
+        self.delegate = (DetailedRecipeViewController*)[[viewControllers objectAtIndex:viewControllers.count-1]topViewController];
+        
+        NSLog(@"Delegate: %@", self.delegate);
+    }
+    
     
     [self setupSearchController];  //Setup the search controller programmatically since it's not possible in storyboard
     //[self setupActivityIndicator]; //Setup of the activity indicator programmatically
@@ -96,6 +109,9 @@
         titleTextSize = 17;
         descriptionTextSize = 13;
     }
+    
+    //Set the first recipe in the list as the recipe to show
+    [self.delegate didSelectRecipe:[_recipes firstObject]];
     
 }
 
@@ -450,12 +466,36 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
+    //Splitviewcontroller
+    /*
+    Recipe *selectedRecipe = [_recipes objectAtIndex:indexPath.row];
+    
+    if (_delegate) {
+        NSLog(@"Send selected recipe: %@ to: %@",selectedRecipe.recipeName , _delegate);
+        [_delegate didSelectRecipe:selectedRecipe];
+    }
+    */
+    /*
+    NSLog(@"Crash?");
+    UINavigationController *detailedNavController = [self.splitViewController viewControllers][1];
+    DetailedRecipeViewController *recipeDetailController = (DetailedRecipeViewController*)[detailedNavController viewControllers][1];
+    NSLog(@"1");
+    [recipeDetailController selectedRecipe:selectedRecipe];
+    
+    NSLog(@"2");
+    
     //Save the index of the touched object so that we can reload that row when coming back from detailed view
     indexOfSelectedObject = indexPath;
+    */
     
+    
+    //Perform segue to detailed recipe view
     [self performSegueWithIdentifier:@"showRecipeSegue" sender:[self.tableView cellForRowAtIndexPath:indexPath]];
     
+    
     //Not in use right now
+    //IAP
     /*
     Recipe* selRecipe = (Recipe*)[self.recipes objectAtIndex:indexPath.row];
     if ([selRecipe isRecipeUnlocked]) {
@@ -529,16 +569,21 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
     
     if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
+        NSLog(@"Segue to detailed controller");
         DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
         vcToPushTo.selectedRecipe = [self.recipes objectAtIndex:indexPath.row];
     
     }
     
+    
 }
+
+
 
 
 @end

@@ -15,6 +15,7 @@
 - (BOOL) isDeviceIphone5;
 - (BOOL) isDeviceIphone6;
 - (BOOL) isDeviceIphone6plus;
+- (BOOL) isDeviceIpad;
 - (BOOL) isDeviceSimulator;
 
 @end

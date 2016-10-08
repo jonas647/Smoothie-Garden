@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  Smoothie Box
+
+  Created by Jonas C Björkell on 2016-02-04.
+  Copyright © 2016 Jonas C Björkell. All rights reserved.
+*/
+
+
+"LOCALIZE_Day 1" = "Dag 1";
+"LOCALIZE_Day 2" = "Dag 2";
+"LOCALIZE_Day 3" = "Dag 3";
+"LOCALIZE_9 AM" = "Morgenmad";
+"LOCALIZE_12 AM" = "Frokost"; //I think PM is the correct way to say noon
+"LOCALIZE_4 PM" = "Eftermiddag";
+"LOCALIZE_7 PM" = "Aften";
+"LOCALIZE_Nutrition Facts" = "Ernæring fakta"; //Is this in use?
+"LOCALIZE_Energy" = "Energi";
+"LOCALIZE_Please rate" = "Rate  Smoothie Box";
+"LOCALIZE_Give Feedback" = "Hvis du kan lide Smoothie Box, bedes du give din feedback og bedøm os. Det hjælper os utroligt meget!";
+"LOCALIZE_No, please don't ask again" = "Nej, spørg ikke igen";
+"LOCALIZE_Later" = "Senere";
+"LOCALIZE_Rate" = "Rate";
+"LOCALIZE_Search" = "Søg efter ingredienser eller smoothie titel";
+"LOCALIZE_Kcal" = "Kcal";
+"LOCALIZE_Protein" = "Protein";
+"LOCALIZE_Fat" = "Fedt";
+"LOCALIZE_Carbohydrate" = "Kulhydrat";
+"LOCALIZE_Carbs" = "Kulhydrat";
+"LOCALIZE_Reset likes" = "Er du sikker på du vil nulstille dine lide opskrifter?";
+"LOCALIZE_Yes" = "Ja";
+"LOCALIZE_No" = "Nej";
+"LOCALIZE_No Purchase Header" = "No Purchase";
+"LOCALIZE_No Purchase Text" = "Unfortunately your purchase couldn't be handled right now. Please try again later.";
+"LOCALIZE_OK" = "OK";
+"LOCALIZE_Optional" = "valgfri";
+"LOCALIZE_Clean Shopping List - title" = "Fjern indkøbsliste";
+"LOCALIZE_Clean Shopping List - text" = "Er du sikker på at du ønsker at fjerne alle elementer på indkøbsliste?";

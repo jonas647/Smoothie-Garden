@@ -10,6 +10,7 @@
 #define IPHONE_5        @[@"iPhone 5 (GSM)",@"iPhone 5 (GSM+CDMA)",@"iPhone 5c (GSM)",@"iPhone 5c (GSM+CDMA)",@"iPhone 5s (GSM)",@"iPhone 5s (GSM+CDMA)"]
 #define IPHONE_6        @[@"iPhone 6", @"iPhone 6s"]
 #define IPHONE_6PLUS    @[@"iPhone 6 Plus", @"iPhone 6s Plus"]
+#define IPAD            @[@"iPad",@"iPad 2 (WiFi)",@"iPad 2 (GSM)",@"iPad 2 (CDMA)",@"iPad 2 (WiFi)",@"iPad Mini (WiFi)",@"iPad Mini (GSM)",@"iPad Mini (GSM+CDMA)",@"iPad 3 (WiFi)",@"iPad 3 (GSM+CDMA)",@"iPad 3 (GSM)",@"iPad 4 (WiFi)",@"iPad 4 (GSM)",@"iPad 4 (GSM+CDMA)",@"iPad Air (WiFi)",@"iPad Air (Cellular)",@"iPad Air",@"iPad Mini 2G (WiFi)",@"iPad Mini 2G (Cellular)",@"iPad Mini 2G",@"iPad Mini 3 (WiFi)",@"iPad Mini 3 (Cellular)",@"iPad Mini 3 (China)",@"iPad Air 2 (WiFi)",@"iPad Air 2 (Cellular)"]
 
 #import "DeviceHelper.h"
 #import <sys/sysctl.h>
@@ -121,6 +122,12 @@
 - (BOOL) isDeviceIphone6plus {
     
     return [self isCurrentPlatform:IPHONE_6PLUS];
+    
+}
+
+- (BOOL) isDeviceIpad {
+    
+    return [self isCurrentPlatform:IPAD];
     
 }
 

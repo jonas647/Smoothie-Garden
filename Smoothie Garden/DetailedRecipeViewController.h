@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
+#import "DetailedRecipeViewController.h"
 
-@interface DetailedRecipeViewController : UIViewController <UIScrollViewDelegate>
+@protocol DetailedRecipeViewControllerDelegate
+
+- (void) didSelectRecipe: (Recipe*) selectedRecipe;
+
+@end
+
+@interface DetailedRecipeViewController : UIViewController <UIScrollViewDelegate, DetailedRecipeViewControllerDelegate>
 {
     __weak IBOutlet UIView *contentView;
     
@@ -35,9 +42,13 @@
     __weak IBOutlet UIView *servingView;
     
     __weak IBOutlet UIButton *shoppingListButton;
+
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;
+
+
+-(void)selectedRecipe:(Recipe *)newRecipe;
 
 //- (IBAction)likeRecipe:(id)sender;
 

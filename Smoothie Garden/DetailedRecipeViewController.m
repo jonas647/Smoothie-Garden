@@ -43,6 +43,8 @@
     float sizeForRecipeDescriptions;
     float sizeForShoppingListText;
     
+    //Keep track of the containerview with image and
+    NutrientFactPageViewRootViewController *nutrientContainerView;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -54,40 +56,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     
-    ingredients = self.selectedRecipe.ingredients;
-    recipeInstructions = self.selectedRecipe.instructions;
-    recipeDescriptions = self.selectedRecipe.longDescription;
-    
-    //If the recipe is one of the favorites, then make the like button selected
-    if ([[RecipeManager sharedInstance]isRecipeFavorite:self.selectedRecipe]) {
-        [rightBarButton setSelected:YES];
-    }
+    //No recipe will be shown on startup when having the split view controller so no need for populating any values.
+    [self refreshUI];
     
     //Remove the title text from the back button (in the Detailed nutrient table view controller)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    
-    //Setup right bar button with custom image
-    UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-    rightBarButton = customButton;
-    
-    UIImage *buttonImage = [UIImage imageNamed:@"Heart Outline"];
-    UIImage *selectedButtonImage = [UIImage imageNamed:@"Heart Filled"];
-    [customButton setBackgroundImage:buttonImage  forState:UIControlStateNormal];
-    [customButton setBackgroundImage:selectedButtonImage  forState:UIControlStateSelected];
-    [customButton addTarget:self action:@selector(likeRecipe) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView: customButton];
-    
-    self.navigationItem.rightBarButtonItem = barButtonItem;
-    
-    //If the recipe is liked then make the like button selected
-    if (self.selectedRecipe.favorite) {
-        [customButton setSelected:YES];
-    }
-    
     
     //Hide the navigation bar
     self.navigationController.navigationBar.translucent = YES;
@@ -97,21 +71,6 @@
     
     //The like button needs to be touchable to start with
     isLikeButtonTouchable = YES;
-    
-    //Report to analytics
-    [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:[NSString stringWithFormat:@"Recipe %@", _selectedRecipe.recipeName]];
-    
-    //Ask for review
-    if ([AppReviewHelper shouldShowReviewAlert]) {
-        
-        [self performSelector:@selector(showReviewAlertToUser) withObject:nil afterDelay:0.5f];
-        
-    }
-    
-    //Hide the servings view if almond milk is shown since this is for one liter
-    if ([self.selectedRecipe.recipeName isEqualToString:@"Almond milk"]) {
-        servingView.hidden = YES;
-    }
     
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
@@ -141,15 +100,23 @@
         sizeForShoppingListText = 17;
         marginBetweenTextCells = 35;
         
+    } else if ([[DeviceHelper sharedInstance] isDeviceIpad]) {
+        
+        sizeForByText = 13;
+        sizeForSmoothieBoxText = 16;
+        sizeForTitleText = 38;
+        sizeForRecipeDescriptions = 30;
+        sizeForShoppingListText = 17;
+        marginBetweenTextCells = 40;
+        
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
-        //Just to test on simulator
-        sizeForByText = 11;
-        sizeForSmoothieBoxText = 14;
-        sizeForTitleText = 26;
-        sizeForRecipeDescriptions = 21;
-        sizeForShoppingListText = 15;
-        marginBetweenTextCells = 35;
+        sizeForByText = 13;
+        sizeForSmoothieBoxText = 16;
+        sizeForTitleText = 28;
+        sizeForRecipeDescriptions = 24;
+        sizeForShoppingListText = 17;
+        marginBetweenTextCells = 80;
     } else {
         // If a new device is released before the app is updated
         sizeForByText = 9;
@@ -170,6 +137,15 @@
     
 }
 
+- (void) viewDidDisappear:(BOOL)animated {
+    
+    [super viewDidDisappear:animated];
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 
 - (void) viewDidLayoutSubviews {
     
@@ -208,6 +184,73 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) refreshUI {
+    
+    NSLog(@"Refresh UI");
+    
+    ingredients = self.selectedRecipe.ingredients;
+    recipeInstructions = self.selectedRecipe.instructions;
+    recipeDescriptions = self.selectedRecipe.longDescription;
+    //Setup right bar button with custom image
+    UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    rightBarButton = customButton;
+    
+    UIImage *buttonImage = [UIImage imageNamed:@"Heart Outline"];
+    UIImage *selectedButtonImage = [UIImage imageNamed:@"Heart Filled"];
+    [customButton setBackgroundImage:buttonImage  forState:UIControlStateNormal];
+    [customButton setBackgroundImage:selectedButtonImage  forState:UIControlStateSelected];
+    [customButton addTarget:self action:@selector(likeRecipe) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView: customButton];
+    
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+    
+    //If the recipe is liked then make the like button selected
+    if (self.selectedRecipe.favorite) {
+        [customButton setSelected:YES];
+    }
+    
+    //If the recipe is one of the favorites, then make the like button selected
+    if ([[RecipeManager sharedInstance]isRecipeFavorite:self.selectedRecipe]) {
+        [rightBarButton setSelected:YES];
+    }
+    
+    //Hide the servings view if almond milk is shown since this is for one liter
+    if ([self.selectedRecipe.recipeName isEqualToString:@"Almond milk"]) {
+        servingView.hidden = YES;
+    }
+    
+    //Report to analytics
+    [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:[NSString stringWithFormat:@"Recipe %@", _selectedRecipe.recipeName]];
+    
+    //Ask for review
+    if ([AppReviewHelper shouldShowReviewAlert]) {
+        
+        [self performSelector:@selector(showReviewAlertToUser) withObject:nil afterDelay:0.5f];
+        
+    }
+    
+    //ADDITIONS
+    //The title of the view should be the recipe title
+    titleName.text = self.selectedRecipe.recipeName;
+    
+    [self viewDidLayoutSubviews];
+    
+    /*
+    [ingredientsTableView reloadData];
+    [longDescriptionTable reloadData];
+    [recipeTableView reloadData];
+    */
+    nutrientContainerView.selectedRecipe = self.selectedRecipe;
+    [nutrientContainerView refreshUI];
+    
+    /*
+    UINavigationItem *navItem = [self navigationItem];
+    [navItem setLeftBarButtonItem:barButtonItem animated:YES];
+     */
+    
 }
 
 #pragma mark - Update font sizes
@@ -454,6 +497,42 @@
     
 }
 
+#pragma mark - Selected recipe delegate
+
+-(void)selectedRecipe:(Recipe *)newRecipe {
+    
+    [self setSelectedRecipe:newRecipe];
+    [self viewDidLoad];
+    
+    NSLog(@"Changing selected recipe to: %@", newRecipe.recipeName);
+    
+    /*
+    if (_selectedRecipe != newRecipe) {
+        [self refreshUI];
+        
+        [self viewDidLoad];
+        
+    }
+    
+    */
+    
+}
+
+#pragma mark - Detailed recipe view delegate
+
+-(void)didSelectRecipe:(Recipe *)selectedRecipe {
+    
+    if (selectedRecipe != self.selectedRecipe) {
+    
+        [self setSelectedRecipe:selectedRecipe];
+        
+        NSLog(@"Selected recipe in detail view is now: %@", selectedRecipe.recipeName);
+        [self refreshUI];
+    
+    }
+    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -462,15 +541,20 @@
     // Pass the selected object to the new view controller.
     
     //Set the recipe to show nutrients for in the nutrition view controller
+    //Also sets the recipe image
     NSString * segueName = segue.identifier;
     if ([segueName isEqualToString: @"embedNutritionSegue"]) {
         NutrientFactPageViewRootViewController *newVC = (NutrientFactPageViewRootViewController*)[segue destinationViewController];
         newVC.selectedRecipe = self.selectedRecipe;
+        
+        //Save the nutrient view to be able to refresh view with changed recipes
+        nutrientContainerView = newVC;
         
     } else if ([segueName isEqualToString: @"shoppingListSegue"]) {
         RecipeShoppingListViewController *newVC = (RecipeShoppingListViewController*) [segue destinationViewController];
         newVC.selectedRecipe = self.selectedRecipe;
     }
 }
+
 
 @end
