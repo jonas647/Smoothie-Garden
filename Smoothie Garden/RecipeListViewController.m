@@ -73,6 +73,12 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     [self.searchController.searchBar sizeToFit];
 }
 
+- (void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self.searchController.searchBar sizeToFit];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
