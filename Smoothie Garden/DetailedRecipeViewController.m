@@ -10,15 +10,24 @@
 #define LABEL_SIZE_SMALL 2
 #define LABEL_SIZE_TINY 3
 
+#define NUTRITION_CALORIES @"Energy"
+#define NUTRITION_FAT @"Fat"
+#define NUTRITION_PROTEIN @"Protein"
+#define NUTRITION_CARBOHYDRATE @"Carbohydrate"
+
 #import "DetailedRecipeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SBGoogleAnalyticsHelper.h"
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "RecipeManager.h"
-#import "NutrientFactPageViewRootViewController.h"
+//#import "NutrientFactPageViewRootViewController.h"
 #import "RecipeShoppingListViewController.h"
 #import "DeviceHelper.h"
+#import "NutrientCollectionViewCell.h"
+#import "RecipeImageViewController.h"
+
+
 
 @interface DetailedRecipeViewController ()
 
@@ -43,9 +52,9 @@
     float sizeForRecipeDescriptions;
     float sizeForShoppingListText;
     
-    //Keep track of the containerview with image and
-    NutrientFactPageViewRootViewController *nutrientContainerView;
 }
+
+static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
 - (void)viewWillLayoutSubviews {
     
@@ -133,7 +142,9 @@
     
     ingredientsTableView.rowHeight = UITableViewAutomaticDimension;
     recipeTableView.rowHeight = UITableViewAutomaticDimension;
-    longDescriptionTable.rowHeight = UITableViewAutomaticDimension;;
+    longDescriptionTable.rowHeight = UITableViewAutomaticDimension;
+    
+    //Set the localized version of the disclaimer text
     
 }
 
@@ -236,20 +247,7 @@
     //The title of the view should be the recipe title
     titleName.text = self.selectedRecipe.recipeName;
     
-    [self viewDidLayoutSubviews];
-    
-    /*
-    [ingredientsTableView reloadData];
-    [longDescriptionTable reloadData];
-    [recipeTableView reloadData];
-    */
-    nutrientContainerView.selectedRecipe = self.selectedRecipe;
-    [nutrientContainerView refreshUI];
-    
-    /*
-    UINavigationItem *navItem = [self navigationItem];
-    [navItem setLeftBarButtonItem:barButtonItem animated:YES];
-     */
+    //[self viewDidLayoutSubviews];
     
 }
 
@@ -533,6 +531,126 @@
     
 }
 
+/*
+- (void) setupCollectionView {
+    //UICollectionview flow layout
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    
+    float itemWidth = [self widthForItem];
+    float itemHeight = itemWidth * 0.8;
+    
+    flow.itemSize = CGSizeMake(itemWidth, itemHeight);
+    flow.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flow.minimumInteritemSpacing = 1;
+    flow.minimumLineSpacing = 1;
+    
+    [self.recipeCollectionView reloadData];
+    self.recipeCollectionView.collectionViewLayout = flow;
+}
+
+- (float) widthForItem {
+    
+    if (self.view.frame.size.width >= 1024) {
+        return self.view.frame.size.width/4 - 3;
+        
+    } else if (self.view.frame.size.width >= 768) {
+        return self.view.frame.size.width/3 - 2;
+        
+    } else if (self.view.frame.size.width >= 375) {
+        return self.view.frame.size.width/2 -1;
+        
+    } else {
+        return self.view.frame.size.width;
+    }
+}
+*/
+
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
+    return 1;
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return 4;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NutrientCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    }
+    
+    int row = (int)indexPath.row;
+    
+    //Present the most interesting nutrients facts
+    
+    switch (row) {
+        case 0:
+            cell.nutrientType.text = NSLocalizedString(@"LOCALIZE_Kcal", nil);
+            cell.nutrientValue.text = [_selectedRecipe volumeForNutrient:NUTRITION_CALORIES asRoundedValue:YES];
+            break;
+        case 1:
+            cell.nutrientType.text = NSLocalizedString(@"LOCALIZE_Carbs", nil);
+            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CARBOHYDRATE];
+            break;
+        case 2:
+            cell.nutrientType.text = NSLocalizedString(NUTRITION_PROTEIN, nil);
+            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
+            break;
+        case 3:
+            cell.nutrientType.text = NSLocalizedString(@"LOCALIZE_Fat", nil);
+            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
+            break;
+        default:
+            break;
+    }
+    
+    return cell;
+}
+
+/*
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    float itemWidth = [self widthForItem];
+    float itemHeight = itemWidth * 0.8;
+    return CGSizeMake(itemWidth, itemHeight);
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.recipeCollectionView performBatchUpdates:nil completion:nil];
+}
+ 
+ 
+ - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+ 
+ return CGSizeMake(self.view.frame.size.width/2.04, self.view.frame.size.height*0.25);
+ 
+ }
+ */
+
+#pragma mark <UICollectionViewDelegate>
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        
+        reusableview = [collectionView dequeueReusableCellWithReuseIdentifier:@"Header" forIndexPath:indexPath];
+    }
+    
+    return reusableview;
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -543,12 +661,9 @@
     //Set the recipe to show nutrients for in the nutrition view controller
     //Also sets the recipe image
     NSString * segueName = segue.identifier;
-    if ([segueName isEqualToString: @"embedNutritionSegue"]) {
-        NutrientFactPageViewRootViewController *newVC = (NutrientFactPageViewRootViewController*)[segue destinationViewController];
+    if ([segueName isEqualToString: @"recipeImage"]) {
+        RecipeImageViewController *newVC = (RecipeImageViewController*)[segue destinationViewController];
         newVC.selectedRecipe = self.selectedRecipe;
-        
-        //Save the nutrient view to be able to refresh view with changed recipes
-        nutrientContainerView = newVC;
         
     } else if ([segueName isEqualToString: @"shoppingListSegue"]) {
         RecipeShoppingListViewController *newVC = (RecipeShoppingListViewController*) [segue destinationViewController];
