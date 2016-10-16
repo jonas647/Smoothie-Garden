@@ -56,12 +56,13 @@
 
 static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
+/*
 - (void)viewWillLayoutSubviews {
     
     // Call super class to make the views layout. Needed for the in-call status bar to get correct position vs. UIViews
     [super viewWillLayoutSubviews];
 }
-
+*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -148,6 +149,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
 }
 
+/*
 - (void) viewDidDisappear:(BOOL)animated {
     
     [super viewDidDisappear:animated];
@@ -157,6 +159,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
+*/
 
 - (void) viewDidLayoutSubviews {
     
@@ -246,8 +249,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     //ADDITIONS
     //The title of the view should be the recipe title
     titleName.text = self.selectedRecipe.recipeName;
-    
-    //[self viewDidLayoutSubviews];
     
 }
 

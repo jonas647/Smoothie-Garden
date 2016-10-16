@@ -95,7 +95,7 @@
                                             <outlet property="likedRecipe" destination="y1b-MT-9c5" id="BFP-fp-yVJ"/>
                                             <outlet property="recipeHeader" destination="nhm-3h-G0x" id="s4s-Xl-OX8"/>
                                             <outlet property="recipeImage" destination="dpC-uY-4ri" id="Ywa-oR-gaY"/>
-                                            <segue destination="Dje-es-kgl" kind="show" identifier="showRecipeSegue" id="3JC-6C-Su1"/>
+                                            <segue destination="Dje-es-kgl" kind="show" identifier="showRecipeSegue" id="Gwa-as-Agv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -161,7 +161,7 @@
                                                     <constraint firstAttribute="height" secondItem="PC2-ZV-OGY" secondAttribute="width" multiplier="4:5" id="CRV-g9-og3"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="cg1-5r-Zjg" kind="embed" identifier="embedNutritionSegue" id="itN-5U-ga3"/>
+                                                    <segue destination="cg1-5r-Zjg" kind="embed" identifier="recipeImage" id="itN-5U-ga3"/>
                                                 </connections>
                                             </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqb-s2-FAI" userLabel="Blank Background">
@@ -638,7 +638,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chocolate and Raspberry Shake" translatesAutoresizingMaskIntoConstraints="NO" id="tHk-ZJ-UDd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yellow Yoga" translatesAutoresizingMaskIntoConstraints="NO" id="tHk-ZJ-UDd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                             </imageView>
                         </subviews>
@@ -2420,9 +2420,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1517.5"/>
                                         <subviews>
                                             <containerView opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-Nx-bZV">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="479.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" secondItem="3Ss-Nx-bZV" secondAttribute="width" multiplier="4:5" id="NdR-Wq-sjK"/>
+                                                    <constraint firstAttribute="height" secondItem="3Ss-Nx-bZV" secondAttribute="width" multiplier="4:5" priority="800" id="NdR-Wq-sjK"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="Dkw-bS-hMQ" kind="embed" identifier="recipeImage" id="5n9-Pi-fHU"/>
@@ -2938,8 +2938,8 @@
                                     <outlet property="delegate" destination="Dje-es-kgl" id="8Ye-KN-Uo5"/>
                                 </connections>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJC-Sv-3DX" userLabel="LikeView">
-                                <rect key="frame" x="180" y="64" width="240" height="240"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJC-Sv-3DX" userLabel="LikeView">
+                                <rect key="frame" x="180" y="20" width="240" height="240"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart Filled" translatesAutoresizingMaskIntoConstraints="NO" id="OXV-3M-aCR">
                                         <rect key="frame" x="60" y="60" width="120" height="120"/>
@@ -3025,19 +3025,21 @@
                         <viewControllerLayoutGuide type="bottom" id="IfA-1A-4Id"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WHK-9b-2An">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="479.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Yellow Yoga" translatesAutoresizingMaskIntoConstraints="NO" id="dyS-3j-9xB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="480.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dyS-3j-9xB" firstAttribute="top" secondItem="WHK-9b-2An" secondAttribute="top" id="3K0-ky-XKq"/>
                             <constraint firstItem="IfA-1A-4Id" firstAttribute="top" secondItem="dyS-3j-9xB" secondAttribute="bottom" id="Cfm-Ph-frc"/>
                             <constraint firstItem="dyS-3j-9xB" firstAttribute="top" secondItem="6Fn-dw-iwa" secondAttribute="bottom" id="Qbe-Mt-Xhs"/>
                             <constraint firstAttribute="trailing" secondItem="dyS-3j-9xB" secondAttribute="trailing" id="Rkx-r9-Xmz"/>
                             <constraint firstItem="dyS-3j-9xB" firstAttribute="top" secondItem="6Fn-dw-iwa" secondAttribute="bottom" id="V4j-PA-RFp"/>
+                            <constraint firstItem="dyS-3j-9xB" firstAttribute="top" secondItem="6Fn-dw-iwa" secondAttribute="bottom" id="ee4-Gp-Gac"/>
                             <constraint firstItem="dyS-3j-9xB" firstAttribute="leading" secondItem="WHK-9b-2An" secondAttribute="leading" id="kPn-JH-toq"/>
                             <constraint firstItem="dyS-3j-9xB" firstAttribute="top" secondItem="6Fn-dw-iwa" secondAttribute="bottom" id="qbA-Jm-JZS"/>
                         </constraints>
@@ -3045,6 +3047,8 @@
                             <mask key="constraints">
                                 <exclude reference="Qbe-Mt-Xhs"/>
                                 <exclude reference="V4j-PA-RFp"/>
+                                <exclude reference="ee4-Gp-Gac"/>
+                                <exclude reference="qbA-Jm-JZS"/>
                             </mask>
                         </variation>
                     </view>
