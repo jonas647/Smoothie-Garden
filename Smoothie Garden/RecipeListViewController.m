@@ -176,17 +176,27 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     if (cell == nil) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     }
+    
     Recipe *sRecipe = [recipes objectAtIndex:indexPath.row];
     
-    // Configure the cell
-    cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
-    cell.recipeHeader.text = sRecipe.recipeName;
-    cell.recipeDescription.text = sRecipe.shortDescription;
+    //[cell setRecipeImage:nil]; // since they are reused, prevents showing an old image
     
-    //If the recipe isn't liked, don't show the heart icon
-    if (!sRecipe.favorite) {
-        cell.likedRecipe.hidden = YES;
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Configure the cell
+        UIImage *recipeImage = [thumbnailImages objectForKey:sRecipe.recipeName];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [cell.recipeImage setImage:recipeImage];
+            cell.recipeHeader.text = sRecipe.recipeName;
+            cell.recipeDescription.text = sRecipe.shortDescription;
+            
+            //If the recipe isn't liked, don't show the heart icon
+            if (!sRecipe.favorite) {
+                cell.likedRecipe.hidden = YES;
+            }
+            
+        });
+    });
     
     return cell;
 }

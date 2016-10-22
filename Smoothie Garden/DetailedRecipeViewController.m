@@ -576,7 +576,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 4;
+    return self.selectedRecipe.allNutrientKeys.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -588,8 +588,14 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     int row = (int)indexPath.row;
     
+    cell.nutrientType.text = [self.selectedRecipe.allNutrientKeys objectAtIndex:indexPath.row];
+    cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:cell.nutrientType.text];
+    cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:cell.nutrientType.text];
+
+
     //Present the most interesting nutrients facts
     
+    /*
     switch (row) {
         case 0:
             cell.nutrientType.text = NSLocalizedString(@"LOCALIZE_Kcal", nil);
@@ -609,7 +615,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
             break;
         default:
             break;
-    }
+    }*/
     
     return cell;
 }
