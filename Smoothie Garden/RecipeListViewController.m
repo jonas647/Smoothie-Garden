@@ -12,6 +12,7 @@
 #import "Recipe.h"
 #import "DetailedRecipeViewController.h"
 #import "SWRevealViewController.h"
+#import "TraitCollectionOverrideViewController.h"
 
 @interface RecipeListViewController () {
     
@@ -353,12 +354,11 @@ static NSString * const reuseIdentifier = @"RecipeCell";
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
  
-     if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
-         //NSIndexPath *indexPath = (NSIndexPath*)sender;
+     if ([segue.destinationViewController isKindOfClass:[TraitCollectionOverrideViewController class]]) {
  
          NSIndexPath *indexPath = [self.recipeCollectionView indexPathForCell:sender];
  
-         DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
+         TraitCollectionOverrideViewController *vcToPushTo = (TraitCollectionOverrideViewController*)segue.destinationViewController;
          vcToPushTo.selectedRecipe = [recipes objectAtIndex:indexPath.row];
      }
  }

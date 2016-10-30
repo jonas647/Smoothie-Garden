@@ -95,7 +95,7 @@
                                             <outlet property="likedRecipe" destination="y1b-MT-9c5" id="BFP-fp-yVJ"/>
                                             <outlet property="recipeHeader" destination="nhm-3h-G0x" id="s4s-Xl-OX8"/>
                                             <outlet property="recipeImage" destination="dpC-uY-4ri" id="Ywa-oR-gaY"/>
-                                            <segue destination="Dje-es-kgl" kind="show" identifier="showRecipeSegue" id="Gwa-as-Agv"/>
+                                            <segue destination="m45-bt-xIm" kind="show" identifier="showRecipeSegue" id="xUX-iX-Xy1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -136,6 +136,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bp6-PS-Hmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1439" y="-80"/>
+        </scene>
+        <!--Trait Collection Override View Controller-->
+        <scene sceneID="hvQ-hu-Tqc">
+            <objects>
+                <viewController id="m45-bt-xIm" customClass="TraitCollectionOverrideViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y4E-Fu-bMT"/>
+                        <viewControllerLayoutGuide type="bottom" id="FuC-Jx-Jg8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yd3-gE-bCE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUd-hg-odk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="Dje-es-kgl" kind="embed" identifier="detailedRecipe" id="sLa-d6-XnS"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PUd-hg-odk" firstAttribute="top" secondItem="y4E-Fu-bMT" secondAttribute="bottom" id="aDg-dn-mZl"/>
+                            <constraint firstItem="PUd-hg-odk" firstAttribute="leading" secondItem="Yd3-gE-bCE" secondAttribute="leading" id="giJ-pr-bSj"/>
+                            <constraint firstAttribute="trailing" secondItem="PUd-hg-odk" secondAttribute="trailing" id="obG-Ib-Yc6"/>
+                            <constraint firstItem="PUd-hg-odk" firstAttribute="top" secondItem="Yd3-gE-bCE" secondAttribute="top" id="pLd-ga-Zum"/>
+                            <constraint firstItem="FuC-Jx-Jg8" firstAttribute="top" secondItem="PUd-hg-odk" secondAttribute="bottom" id="pMp-Jf-dVZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aDg-dn-mZl"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="PUd-hg-odk"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="aDg-dn-mZl"/>
+                                <include reference="giJ-pr-bSj"/>
+                                <include reference="obG-Ib-Yc6"/>
+                                <include reference="pLd-ga-Zum"/>
+                                <include reference="pMp-Jf-dVZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="PUd-hg-odk" id="plx-U2-pPv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9g-1V-ARH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="677"/>
         </scene>
         <!--Detailed Recipe View Controller-->
         <scene sceneID="I3f-iX-ys9">
@@ -2931,7 +2984,7 @@
                                 </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJC-Sv-3DX" userLabel="LikeView">
-                                <rect key="frame" x="180" y="64" width="240" height="240"/>
+                                <rect key="frame" x="180" y="0.0" width="240" height="240"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart Filled" translatesAutoresizingMaskIntoConstraints="NO" id="OXV-3M-aCR">
                                         <rect key="frame" x="60" y="60" width="120" height="120"/>
@@ -3006,7 +3059,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEm-2Q-gNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="1257"/>
+            <point key="canvasLocation" x="1438.5" y="2526"/>
         </scene>
         <!--Recipe Image View Controller-->
         <scene sceneID="ECy-5W-DIk">
@@ -3270,6 +3323,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gH-qV-zj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2219" y="1940"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WqQ-Wm-bye">
+            <objects>
+                <viewController id="2vi-Wo-U5i" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GRf-J4-o4n"/>
+                        <viewControllerLayoutGuide type="bottom" id="xJ4-Me-flr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oPY-jn-gvt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yx-Jk-j0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

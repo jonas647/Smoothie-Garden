@@ -29,6 +29,7 @@
 
 
 
+
 @interface DetailedRecipeViewController ()
 
 @end
@@ -66,6 +67,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"Detailed recipe view controller view did load: %@", self.selectedRecipe);
     
     //No recipe will be shown on startup when having the split view controller so no need for populating any values.
     [self refreshUI];
@@ -586,8 +589,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     }
     
-    int row = (int)indexPath.row;
-    
     cell.nutrientType.text = [self.selectedRecipe.allNutrientKeys objectAtIndex:indexPath.row];
     cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:cell.nutrientType.text];
     cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:cell.nutrientType.text];
@@ -677,6 +678,5 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         newVC.selectedRecipe = self.selectedRecipe;
     }
 }
-
 
 @end
