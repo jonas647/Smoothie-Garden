@@ -621,16 +621,26 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     return cell;
 }
 
-/*
+
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    float itemWidth = [self widthForItem];
-    float itemHeight = itemWidth * 0.8;
+    float itemWidth;
+    
+    if (self.view.frame.size.width <= 375) {
+        itemWidth = 100;
+    } else if (self.view.frame.size.width <= 414) {
+        itemWidth = self.view.frame.size.width / 4.5;
+    } else {
+        itemWidth = self.view.frame.size.width / 6.5;
+    }
+    
+    
+    float itemHeight = itemWidth * 1.25;
     return CGSizeMake(itemWidth, itemHeight);
 }
-
+/*
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self.recipeCollectionView performBatchUpdates:nil completion:nil];
