@@ -43,6 +43,8 @@
     
     __weak IBOutlet UIButton *shoppingListButton;
 
+    __weak IBOutlet NSLayoutConstraint *titleToTop;
+    __weak IBOutlet NSLayoutConstraint *servingsViewToTop;
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;

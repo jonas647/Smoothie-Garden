@@ -68,8 +68,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"Detailed recipe view controller view did load: %@", self.selectedRecipe);
-    
     //No recipe will be shown on startup when having the split view controller so no need for populating any values.
     [self refreshUI];
     
@@ -193,7 +191,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     [self setFontSizeForLabel:shoppingListButton.titleLabel size:sizeForShoppingListText];
     
     //Set the height constraint of where the title should begin. Below the image.
-    [blankBackgroundToTop setConstant:0.8*[UIScreen mainScreen].bounds.size.height];
+    [servingsViewToTop setConstant:0.8*[UIScreen mainScreen].bounds.size.height];
     
 }
 
@@ -204,9 +202,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 }
 
 - (void) refreshUI {
-    
-    NSLog(@"Refresh UI");
-    
+        
     ingredients = self.selectedRecipe.ingredients;
     recipeInstructions = self.selectedRecipe.instructions;
     recipeDescriptions = self.selectedRecipe.longDescription;
