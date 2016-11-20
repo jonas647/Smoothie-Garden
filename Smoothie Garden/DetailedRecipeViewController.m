@@ -173,6 +173,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     [recipeTableView layoutIfNeeded];
     [longDescriptionTable layoutIfNeeded];
     
+    [nutrientCollectionViewHeightConstraint setConstant:nutrientCollectionView.collectionViewLayout.collectionViewContentSize.height];
+    
     //Set the likeview attributes (shows when a recipe is liked)
     likeView.layer.cornerRadius = likeView.bounds.size.width/2;//Make like view a circle
     likeView.alpha = 0.0;//Make like view hidden until the recipe is liked
@@ -180,6 +182,10 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     //The title of the view should be the recipe title
     titleName.text = self.selectedRecipe.recipeName;
+    
+    //Set values for the top bar that's shown when image/title not on screen
+    topBarTitle.text = self.selectedRecipe.recipeName;
+    topBarImage.image = [UIImage imageNamed:self.selectedRecipe.imageName];
     
     //Change font size based on screen size. If another screen, then just go with what the storyboard says
     UILabel *by = [self.view viewWithTag:400];
@@ -663,6 +669,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     return reusableview;
 }
+
 
 
 #pragma mark - Navigation

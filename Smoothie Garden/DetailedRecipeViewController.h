@@ -26,6 +26,9 @@
     __weak IBOutlet UILabel *titleName;
     __weak IBOutlet UIView *recipeImageView;
     
+    __weak IBOutlet UIImageView *topBarImage;
+    __weak IBOutlet UILabel *topBarTitle;
+    
     __weak IBOutlet NSLayoutConstraint *ingredientsHeightConstraint;
     __weak IBOutlet NSLayoutConstraint *recipeTableViewHeightConstraint;
     
@@ -45,6 +48,11 @@
 
     __weak IBOutlet NSLayoutConstraint *titleToTop;
     __weak IBOutlet NSLayoutConstraint *servingsViewToTop;
+    
+    __weak IBOutlet UICollectionView *nutrientCollectionView;
+    __weak IBOutlet NSLayoutConstraint *nutrientCollectionViewHeightConstraint;
+    
+    
 }
 
 @property (nonatomic, strong) Recipe *selectedRecipe;
