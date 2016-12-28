@@ -265,7 +265,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Mixa hallon och honung till en hallonsås.</string>
-			<string>Mixa bananer, jordgubbar och kokosmjölk på hög hastighet till krämig och tjock konsistens.</string>
+			<string>Mixa banan, jordgubbar och kokosmjölk på hög hastighet till krämig och tjock konsistens.</string>
 			<string>Häll jordgubbssmoothien över hallonsåsen i ett glas. Dra en sked från botten av glaset och uppåt i cirklar för att skapa en vacker virvel.</string>
 		</array>
 	</dict>
@@ -476,6 +476,56 @@
 		<array>
 			<string>Använd en råsaftcentrifug till äpplet och rabarbern.</string>
 			<string>Mixa juicen med hallon, mango och lönnsirap på hög hastighet till krämig konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe28</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Beloved basil</string>
+		<key>ShortDescription</key>
+		<string>Basilikan är den hemliga ingrediensen som får den här enkla smoothien att lyfta!</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Kombinationen av färsk basilika och jordgubbar gör den här smoothien till en somrig favorit som kan avnjutas året runt!</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+		</array>
+	</dict>
+	<key>Recipe29</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green hydrate</string>
+		<key>ShortDescription</key>
+		<string>En grön favorit som när och återfuktar kroppen!</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En återfuktande grön smoothie som fungerar perfekt som återställare efter träningen eller en lite för trevlig utekväll.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+		</array>
+	</dict>
+	<key>Recipe30</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Breakfast club</string>
+		<key>ShortDescription</key>
+		<string>En perfekt fukostsmoothie i fyra lager.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Den här bowlen består av 4 goda lager: en sötsyrlig blåbärskompott, mättande chiapudding, krämig fruktsmoothie och frasig granolatopping.</string>
+			<string>Allt går att förbereda innan och förvara i kylen förutom smoothien som bör mixas precis innan servering.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Börja med att blanda färska eller tinade blåbär och honung med en sked.</string>
+			<string>Blötlägg 0,5 dl chiafrön i 1,5 dl mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår. Efter ytterligare 10 minuter i kylen är chiapuddingen klar.</string>
+			<string>Mixa sedan banan, jordgubbar, blåbär, dadel och mjölk på hög hastighet till tjock och krämig konsistens.</string>
+			<string>Servera i glas eller i skål med honung och blåbär i botten, ett lager av chiapudding, följt av smoothien och toppa slutligen med granola.</string>
+			<string>Njut av smoothien med sked!</string>
 		</array>
 	</dict>
 </dict>

@@ -20,14 +20,12 @@
 {
     __weak IBOutlet UIView *contentView;
     
+    __weak IBOutlet UILabel *caloriesText;
     __weak IBOutlet UIView *statusbarBackground;
     __weak IBOutlet UIView *titleBackground;
     __weak IBOutlet UITableView *ingredientsTableView;
     __weak IBOutlet UILabel *titleName;
     __weak IBOutlet UIView *recipeImageView;
-    
-    __weak IBOutlet UIImageView *topBarImage;
-    __weak IBOutlet UILabel *topBarTitle;
     
     __weak IBOutlet NSLayoutConstraint *ingredientsHeightConstraint;
     __weak IBOutlet NSLayoutConstraint *recipeTableViewHeightConstraint;

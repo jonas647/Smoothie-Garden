@@ -37,19 +37,39 @@
             [self saveRecipesToPersistentStore];
             
         }
+        NSLog(@"Recipes saved to persistent store");
         
         //Save the recipe master from the persistent store
         recipeMaster = [self sortRecipesInArray:[self allRecipesFromPersistentStore]];
+        
+        NSLog(@"recipe master setup");
     
         //Setup the thumbnail images
         NSMutableDictionary *tempThumbnailImagesForRecipes = [[NSMutableDictionary alloc]init];
         for (Recipe *r in recipeMaster) {
-            UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
-            [tempThumbnailImagesForRecipes setObject:tempImage forKey:r.recipeName];
+            
+            
+            //TODO check if file exist instead
+            if (r.imageName != nil) {
+                NSLog(@"Set image to %@", r.recipeName);
+                UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
+                
+                NSLog(@"temp image: %@", tempImage);
+                
+                [tempThumbnailImagesForRecipes setObject:tempImage forKey:r.recipeName];
+                NSLog(@"image added");
+            } else {
+                NSLog(@"Name missing for %@", r);
+            }
+            
+            
         }
+        
+        NSLog(@"thumbnails setup");
         
         thumbnailImagesForRecipes = [NSDictionary dictionaryWithDictionary:tempThumbnailImagesForRecipes];
         
+        NSLog(@"Recipe manager finished");
     }
     return self;
 }
@@ -96,25 +116,33 @@
     } else {
         //Check what version of the recipes that are saved
         NSDictionary *recipeDictionary = [self recipeDictionaryFromPlist];
-        int versionOfRecipeList = [[recipeDictionary objectForKey:@"Version"]intValue];
-        int currentVersion = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"RecipeVersion"];
         
-        //Check what language that the saved recipes has and the current language
-        NSString *recipeLanguage = [[NSUserDefaults standardUserDefaults]objectForKey:@"RecipeLanguage"];
-        NSString *userLanguage = [self currentLanguage];
-        
-        //If the user language is another than the recipe language. Then load the recipes
-        //If the version is lower than the last updated plist then load the recipes
-        if (![userLanguage isEqualToString:recipeLanguage]) {
-     
-            return YES;
-        } else if (currentVersion < versionOfRecipeList) {
-         
-            return YES;
+        if (recipeDictionary) {
+            
+            int versionOfRecipeList = [[recipeDictionary objectForKey:@"Version"]intValue];
+            int currentVersion = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"RecipeVersion"];
+            
+            //Check what language that the saved recipes has and the current language
+            NSString *recipeLanguage = [[NSUserDefaults standardUserDefaults]objectForKey:@"RecipeLanguage"];
+            NSString *userLanguage = [self currentLanguage];
+            
+            //If the user language is another than the recipe language. Then load the recipes
+            //If the version is lower than the last updated plist then load the recipes
+            if (![userLanguage isEqualToString:recipeLanguage]) {
+                
+                return YES;
+            } else if (currentVersion < versionOfRecipeList) {
+                
+                return YES;
+            } else {
+                
+                return NO;
+            }
         } else {
-       
+            NSLog(@"Recipe plist file doesn't exist");
             return NO;
         }
+        
     }
 }
 
@@ -183,6 +211,8 @@
     
     //The plist with the recipe translation depending on the language of the device
     NSDictionary *localizedRecipeDescriptions = [self localizedRecipeDescriptions];
+    
+    NSLog(@"LocalizedRecipeDescriptions");
     
     NSMutableArray *tempRecipes = [[NSMutableArray alloc] init];
     

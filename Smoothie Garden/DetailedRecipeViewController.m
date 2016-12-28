@@ -146,6 +146,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     recipeTableView.rowHeight = UITableViewAutomaticDimension;
     longDescriptionTable.rowHeight = UITableViewAutomaticDimension;
     
+    caloriesText.text = [NSString stringWithFormat:@"Energy in this smoothie: %@",[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
+    
     //Set the localized version of the disclaimer text
     
 }
@@ -183,10 +185,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     //The title of the view should be the recipe title
     titleName.text = self.selectedRecipe.recipeName;
     
-    //Set values for the top bar that's shown when image/title not on screen
-    topBarTitle.text = self.selectedRecipe.recipeName;
-    topBarImage.image = [UIImage imageNamed:self.selectedRecipe.imageName];
-    
     //Change font size based on screen size. If another screen, then just go with what the storyboard says
     UILabel *by = [self.view viewWithTag:400];
     UILabel *smoothieBox = [self.view viewWithTag:401];
@@ -197,7 +195,10 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     [self setFontSizeForLabel:shoppingListButton.titleLabel size:sizeForShoppingListText];
     
     //Set the height constraint of where the title should begin. Below the image.
-    [servingsViewToTop setConstant:0.8*[UIScreen mainScreen].bounds.size.height];
+    [titleToTop setConstant:0.75*[UIScreen mainScreen].bounds.size.width];
+    [servingsViewToTop setConstant:titleToTop.constant + titleBackground.frame.size.height*1.1];
+    
+    
     
 }
 
@@ -638,9 +639,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         itemWidth = self.view.frame.size.width / 6.5;
     }
     
-    
-    float itemHeight = itemWidth * 1.25;
-    return CGSizeMake(itemWidth, itemHeight);
+    return CGSizeMake(itemWidth, nutrientCollectionView.frame.size.height*0.85);
 }
 /*
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation

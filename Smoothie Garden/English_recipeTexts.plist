@@ -263,7 +263,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Blend the raspberries with honey to a raspberry sauce.</string>
-			<string>Mix bananas, strawberries and coconut milk in a blender on high speed until smooth. Consistency should be thick and creamy.</string>
+			<string>Mix banana, strawberries and coconut milk in a blender on high speed until smooth. Consistency should be thick and creamy.</string>
 			<string>Pour the strawberry nicecream oven the raspberry sauce in a glass or in a bowl. Stir with a spoon to create a beautiful swirl</string>
 		</array>
 	</dict>
@@ -472,6 +472,58 @@
 		<array>
 			<string>Juice the rhubarb and the apple in a juice extractor.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe28</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Beloved basil</string>
+		<key>ShortDescription</key>
+		<string>Fresh basil and strawberries is a lovely summery combination that can be enjoyed all year around in this delicious smoothie.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>The fresh basil is the secret ingredient that makes this simple smoothie pop and it tastes amazing together with strawberries.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe29</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green hydrate</string>
+		<key>ShortDescription</key>
+		<string>A green favourite that nourishes and hydrates your body.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>A green favourite that nourishes and hydrates your body.</string>
+			<string>A perfect pick me up after a workout or in between meals when some extra energy is needed. </string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Mix all the ingredients in a blender on high speed until smooth.</string>
+		</array>
+	</dict>
+	<key>Recipe30</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Breakfast club</string>
+		<key>ShortDescription</key>
+		<string>A four layer delicious breakfast bowl.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>This bowl has four delicious layers: honey infused blueberries, creamy chia pudding, fresh blueberry smoothie and crunchy granola.</string>
+			<string>A perfect pick me up after a workout or in between meals when some extra energy is needed. </string>
+			<string>Everything can be prepared in advance except the smoothie that should be mixed right before serving.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Start by blending fresh or defrosted blueberries and honey with a spoon.</string>
+			<string>Stir 0,5 dl chia seeds with 1,5 dl almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes.</string>
+			<string>In another bowl; mix banana, strawberries, blueberries, date and milk on high speed until smooth.</string>
+			<string>Put the blended blueberries and honey at the bottom of a glass or bowl followed by a layer of chia pudding. Add the smoothie as the third layer and top with the granola.</string>
+			<string>Enjoy with a spoon!</string>
 		</array>
 	</dict>
 </dict>
