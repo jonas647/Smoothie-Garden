@@ -25,6 +25,10 @@
     __weak IBOutlet UIView *titleBackground;
     __weak IBOutlet UITableView *ingredientsTableView;
     __weak IBOutlet UILabel *titleName;
+    __weak IBOutlet UILabel *byText;
+    __weak IBOutlet UILabel *smoothieBoxText;
+    
+    
     __weak IBOutlet UIView *recipeImageView;
     
     __weak IBOutlet NSLayoutConstraint *ingredientsHeightConstraint;
@@ -49,6 +53,14 @@
     
     __weak IBOutlet UICollectionView *nutrientCollectionView;
     __weak IBOutlet NSLayoutConstraint *nutrientCollectionViewHeightConstraint;
+    
+    
+    __weak IBOutlet UIView *titleBackgroundCopy;
+    
+    __weak IBOutlet UILabel *titleCopy;
+    __weak IBOutlet UILabel *byCopy;
+    __weak IBOutlet UILabel *smoothieBoxCopy;
+    
     
     
 }

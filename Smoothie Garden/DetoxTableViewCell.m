@@ -11,6 +11,7 @@
 @implementation DetoxTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     
     UIView *bgColorView = [[UIView alloc] init];

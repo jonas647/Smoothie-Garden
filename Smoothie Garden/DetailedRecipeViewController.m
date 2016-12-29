@@ -21,7 +21,6 @@
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "RecipeManager.h"
-//#import "NutrientFactPageViewRootViewController.h"
 #import "RecipeShoppingListViewController.h"
 #import "DeviceHelper.h"
 #import "NutrientCollectionViewCell.h"
@@ -146,7 +145,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     recipeTableView.rowHeight = UITableViewAutomaticDimension;
     longDescriptionTable.rowHeight = UITableViewAutomaticDimension;
     
-    caloriesText.text = [NSString stringWithFormat:@"Energy in this smoothie: %@",[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
+    caloriesText.text = [NSString stringWithFormat:@"Total Energy: %@",[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
     
     //Set the localized version of the disclaimer text
     
@@ -186,22 +185,37 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     titleName.text = self.selectedRecipe.recipeName;
     
     //Change font size based on screen size. If another screen, then just go with what the storyboard says
-    UILabel *by = [self.view viewWithTag:400];
-    UILabel *smoothieBox = [self.view viewWithTag:401];
     
-    [self setFontSizeForLabel:by size:sizeForByText];
-    [self setFontSizeForLabel:smoothieBox size:sizeForSmoothieBoxText];
+    [self setFontSizeForLabel:byText size:sizeForByText];
+    [self setFontSizeForLabel:smoothieBoxText size:sizeForSmoothieBoxText];
     [self setFontSizeForLabel:titleName size:sizeForTitleText];
+    
+    [self setFontSizeForLabel:byCopy size:sizeForByText];
+    [self setFontSizeForLabel:smoothieBoxCopy size:sizeForSmoothieBoxText];
+    [self setFontSizeForLabel:titleCopy size:sizeForTitleText];
+    
     [self setFontSizeForLabel:shoppingListButton.titleLabel size:sizeForShoppingListText];
     
     //Set the height constraint of where the title should begin. Below the image.
     [titleToTop setConstant:0.75*[UIScreen mainScreen].bounds.size.width];
     [servingsViewToTop setConstant:titleToTop.constant + titleBackground.frame.size.height*1.1];
     
-    
-    
 }
 
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    //Check so that it's the scrollview and not the collection view showing the nutrients
+    
+    if (![scrollView isKindOfClass:[UICollectionView class]] ) {
+        //When the title background leaves screen show the hidden title background
+        if (scrollView.contentOffset.y >= titleBackground.frame.origin.y) {
+            
+            [titleBackgroundCopy setHidden:NO];
+        } else if (scrollView.contentOffset.y <= titleBackground.frame.origin.y) {
+            [titleBackgroundCopy setHidden:YES];
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -255,6 +269,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     //ADDITIONS
     //The title of the view should be the recipe title
     titleName.text = self.selectedRecipe.recipeName;
+    titleCopy.text = self.selectedRecipe.recipeName;
     
 }
 
