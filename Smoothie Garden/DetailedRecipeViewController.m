@@ -14,6 +14,7 @@
 #define NUTRITION_FAT @"Fat"
 #define NUTRITION_PROTEIN @"Protein"
 #define NUTRITION_CARBOHYDRATE @"Carbohydrate"
+#define NUTRITION_FIBER @"Fiber"
 
 #import "DetailedRecipeViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -40,6 +41,7 @@
     NSArray  *recipeInstructions;
     NSArray *recipeDescriptions;
     NSArray *ingredients;
+    NSArray *nutrientTypes;
     float latestContentOffset;
     BOOL isLikeButtonTouchable;
     
@@ -147,7 +149,20 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     caloriesText.text = [NSString stringWithFormat:@"Total Energy: %@",[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
     
-    //Set the localized version of the disclaimer text
+    
+    //Setup an array with the objects that will be populated manually to be first objects in nutrient objects
+    
+    NSArray *manualNutrientFacts = @[NUTRITION_FAT, NUTRITION_FIBER, NUTRITION_PROTEIN, NUTRITION_CARBOHYDRATE, NUTRITION_CALORIES];
+    
+    //Set the nutrient values to be shown
+    NSMutableArray *tempNutrients = [[NSMutableArray alloc]init];
+    for (NSString *nutrient in self.selectedRecipe.allNutrientKeys) {
+        if (![manualNutrientFacts containsObject:nutrient]) {
+            [tempNutrients addObject:nutrient];
+        }
+    }
+    
+    nutrientTypes = [NSArray arrayWithArray:tempNutrients];
     
 }
 
@@ -597,7 +612,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.selectedRecipe.allNutrientKeys.count;
+    return nutrientTypes.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -607,34 +622,34 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     }
     
-    cell.nutrientType.text = [self.selectedRecipe.allNutrientKeys objectAtIndex:indexPath.row];
-    cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:cell.nutrientType.text];
-    cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:cell.nutrientType.text];
-
-
     //Present the most interesting nutrients facts
     
-    /*
-    switch (row) {
+    switch (indexPath.row) {
         case 0:
-            cell.nutrientType.text = NSLocalizedString(@"LOCALIZE_Kcal", nil);
-            cell.nutrientValue.text = [_selectedRecipe volumeForNutrient:NUTRITION_CALORIES asRoundedValue:YES];
+            cell.nutrientType.text = NSLocalizedString(NUTRITION_CARBOHYDRATE, nil);
+            //cell.nutrientValue.text = [_selectedRecipe volumeForNutrient:NUTRITION_CARBOHYDRATE asRoundedValue:YES];
             break;
         case 1:
-            cell.nutrientType.text = NSLocalizedString(@"LOCALIZE_Carbs", nil);
-            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CARBOHYDRATE];
+            cell.nutrientType.text = NSLocalizedString(NUTRITION_FAT, nil);
+            //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
             break;
         case 2:
             cell.nutrientType.text = NSLocalizedString(NUTRITION_PROTEIN, nil);
-            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
+            //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
             break;
         case 3:
-            cell.nutrientType.text = NSLocalizedString(@"LOCALIZE_Fat", nil);
-            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
+            cell.nutrientType.text = NSLocalizedString(NUTRITION_FIBER, nil);
+            //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FIBER];
             break;
         default:
+            //After the manual nutrient facts start picking the ones that are in the array for nutrients to show
+            cell.nutrientType.text = [nutrientTypes objectAtIndex:indexPath.row - 4];
             break;
-    }*/
+    }
+    
+    
+    cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:cell.nutrientType.text];
+    cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:cell.nutrientType.text];
     
     return cell;
 }
