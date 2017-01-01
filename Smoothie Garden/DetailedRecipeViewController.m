@@ -69,6 +69,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"1 - view did load");
+    
     //No recipe will be shown on startup when having the split view controller so no need for populating any values.
     [self refreshUI];
     
@@ -180,6 +182,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
 - (void) viewDidLayoutSubviews {
     
+    NSLog(@"2 - view did layout subviews");
+    
     //Update the height constraints to fit the contents
     ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
     recipeTableViewHeightConstraint.constant = recipeTableView.contentSize.height;
@@ -216,6 +220,31 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     [servingsViewToTop setConstant:titleToTop.constant + titleBackground.frame.size.height*1.1];
     
 }
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    //change constraints
+    
+    NSLog(@"3 - view will transition");
+    
+    [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+    
+    //Update the height constraints to fit the contents
+    ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
+    recipeTableViewHeightConstraint.constant = recipeTableView.contentSize.height;
+    longDescriptionTableHeightConstraint.constant = longDescriptionTable.contentSize.height;
+    
+    [ingredientsTableView layoutIfNeeded];
+    [recipeTableView layoutIfNeeded];
+    [longDescriptionTable layoutIfNeeded];
+    
+    [nutrientCollectionViewHeightConstraint setConstant:nutrientCollectionView.collectionViewLayout.collectionViewContentSize.height];
+    
+        NSLog(@"4 - view completed transition");
+    }];
+}
+ 
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     
