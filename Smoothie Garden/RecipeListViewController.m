@@ -19,6 +19,7 @@
     NSArray *recipes;
     NSArray *allRecipes;
     NSDictionary *thumbnailImages;
+    NSIndexPath *indexOfSelectedObject;
     
 }
 
@@ -72,6 +73,24 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     [super viewDidAppear:animated];
     
     [self.searchController.searchBar sizeToFit];
+    
+    NSLog(@"Update collection view at %@", indexOfSelectedObject);
+    //Update the uitableviewcell that was presented (if returning from detail view
+    if (indexOfSelectedObject) {
+        
+        NSLog(@"Update collection view");
+        
+        [self.recipeCollectionView performBatchUpdates:^{
+            //operations like delete
+            [self.recipeCollectionView deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexOfSelectedObject]];
+            [self.recipeCollectionView insertItemsAtIndexPaths:[NSArray arrayWithObject:indexOfSelectedObject]];
+        } completion:^(BOOL finished) {
+            // call something when ready
+            //Nothing special to call
+        }
+         ];
+    }
+    
 }
 
 - (void) viewDidLayoutSubviews {
@@ -200,6 +219,12 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     });
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Set the selected object so that the cell can be updated when returning to collection view
+    indexOfSelectedObject = indexPath;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView

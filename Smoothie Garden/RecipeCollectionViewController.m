@@ -80,6 +80,15 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    //Reset the navigation bar, set back to being shown
+    //Is hidden in the detailed recipe view
+    [self.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -344,6 +353,8 @@ static NSString * const reuseIdentifier = @"RecipeCell";
 {
     [self.collectionView performBatchUpdates:nil completion:nil];
 }
+
+
 
 /*
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -12,7 +12,7 @@
 
 @protocol DetailedRecipeViewControllerDelegate
 
-- (void) didSelectRecipe: (Recipe*) selectedRecipe;
+//- (void) didSelectRecipe: (Recipe*) selectedRecipe;
 
 @end
 
@@ -39,12 +39,9 @@
     
     
     __weak IBOutlet NSLayoutConstraint *recipeImageViewHeight;
-    __weak IBOutlet NSLayoutConstraint *blankBackgroundToTop;
     
     __weak IBOutlet UITableView *longDescriptionTable;
     __weak IBOutlet NSLayoutConstraint *longDescriptionTableHeightConstraint;
-    
-    __weak IBOutlet UIView *servingView;
     
     __weak IBOutlet UIButton *shoppingListButton;
 
@@ -54,6 +51,8 @@
     __weak IBOutlet UICollectionView *nutrientCollectionView;
     __weak IBOutlet NSLayoutConstraint *nutrientCollectionViewHeightConstraint;
     
+    
+    __weak IBOutlet NSLayoutConstraint *navigationBariPadHeightConstraint;
     
     __weak IBOutlet UIView *titleBackgroundCopy;
     
@@ -69,6 +68,8 @@
 
 
 -(void)selectedRecipe:(Recipe *)newRecipe;
+-(BOOL)isRecipeLiked;
+-(void)likeRecipe;
 
 //- (IBAction)likeRecipe:(id)sender;
 

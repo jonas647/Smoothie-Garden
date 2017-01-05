@@ -324,10 +324,7 @@
     [cell.recipeTitle sizeToFit];
     [cell.recipeDescription sizeToFit];
     
-    //Removed this since it's taking to long and not efficient for the app to create UIImage here
-    //cell.recipeImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", recipeForRow.imageName]];
-    
-    //Instead get the UIImage from memory, stored in a NSDictionary
+    //Get the UIImage from memory, stored in a NSDictionary
     cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
     
     //Not in use since IAP isn't active

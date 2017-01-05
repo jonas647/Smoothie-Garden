@@ -14,7 +14,11 @@
 
 @end
 
-@implementation TraitCollectionOverrideViewController
+@implementation TraitCollectionOverrideViewController {
+    
+    DetailedRecipeViewController *recipeController;
+    UIButton *rightButton;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +31,24 @@
     UIImage *tempImage = [[UIImage alloc]init];
     [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
 
+    //Add right bar button
+    UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    
+     UIImage *buttonImage = [UIImage imageNamed:@"Heart Outline"];
+     UIImage *selectedButtonImage = [UIImage imageNamed:@"Heart Filled"];
+     [customButton setBackgroundImage:buttonImage  forState:UIControlStateNormal];
+     [customButton setBackgroundImage:selectedButtonImage  forState:UIControlStateSelected];
+     [customButton addTarget:self action:@selector(rightButtonSelected) forControlEvents:UIControlEventTouchUpInside];
+     
+     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView: customButton];
+     
+     self.navigationItem.rightBarButtonItem = barButtonItem;
+    rightButton = customButton;
+    
+    //Check if recipe is liked and if so show the right bar button as liked
+    if ([recipeController isRecipeLiked]) {
+        [rightButton setSelected:YES];
+    }
 }
 
 - (void)setUpReferenceSizeClasses {
@@ -65,6 +87,19 @@
     
 }
 
+- (void) rightButtonSelected {
+    
+    if (recipeController) {
+        [rightButton setSelected:![recipeController isRecipeLiked]];
+        [recipeController likeRecipe];
+        
+        
+    } else {
+        NSLog(@"Child view controller not initialized");
+    }
+    
+    
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -76,6 +111,8 @@
     if ([segueName isEqualToString: @"detailedRecipe"]) {
         DetailedRecipeViewController *newVC = (DetailedRecipeViewController*)[segue destinationViewController];
         newVC.selectedRecipe = self.selectedRecipe;
+        
+        recipeController = newVC;
         
     }
     

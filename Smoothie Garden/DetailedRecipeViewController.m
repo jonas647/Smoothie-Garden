@@ -69,8 +69,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"1 - view did load");
-    
     //No recipe will be shown on startup when having the split view controller so no need for populating any values.
     [self refreshUI];
     
@@ -119,7 +117,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         sizeForByText = 13;
         sizeForSmoothieBoxText = 16;
         sizeForTitleText = 38;
-        sizeForRecipeDescriptions = 30;
+        sizeForRecipeDescriptions = 24;
         sizeForShoppingListText = 17;
         marginBetweenTextCells = 40;
         
@@ -148,6 +146,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     ingredientsTableView.rowHeight = UITableViewAutomaticDimension;
     recipeTableView.rowHeight = UITableViewAutomaticDimension;
     longDescriptionTable.rowHeight = UITableViewAutomaticDimension;
+    
+    //navigationBariPadHeightConstraint.constant = self.navigationController.navigationBar.frame.size.height;
     
     caloriesText.text = [NSString stringWithFormat:@"Total Energy: %@",[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
     
@@ -181,8 +181,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 */
 
 - (void) viewDidLayoutSubviews {
-    
-    NSLog(@"2 - view did layout subviews");
     
     //Update the height constraints to fit the contents
     ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
@@ -226,8 +224,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     //change constraints
     
-    NSLog(@"3 - view will transition");
-    
     [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
     
     //Update the height constraints to fit the contents
@@ -241,7 +237,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     [nutrientCollectionViewHeightConstraint setConstant:nutrientCollectionView.collectionViewLayout.collectionViewContentSize.height];
     
-        NSLog(@"4 - view completed transition");
     }];
 }
  
@@ -275,6 +270,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     rightBarButton = customButton;
     
+    /*
     UIImage *buttonImage = [UIImage imageNamed:@"Heart Outline"];
     UIImage *selectedButtonImage = [UIImage imageNamed:@"Heart Filled"];
     [customButton setBackgroundImage:buttonImage  forState:UIControlStateNormal];
@@ -284,6 +280,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView: customButton];
     
     self.navigationItem.rightBarButtonItem = barButtonItem;
+    */
+    
     
     //If the recipe is liked then make the like button selected
     if (self.selectedRecipe.favorite) {
@@ -296,9 +294,11 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     }
     
     //Hide the servings view if almond milk is shown since this is for one liter
+    /*
     if ([self.selectedRecipe.recipeName isEqualToString:@"Almond milk"]) {
         servingView.hidden = YES;
     }
+     */
     
     //Report to analytics
     [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:[NSString stringWithFormat:@"Recipe %@", _selectedRecipe.recipeName]];
@@ -427,6 +427,11 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
 #pragma mark - Handle Recipe Favorites
 
+- (BOOL) isRecipeLiked {
+    
+    return [[RecipeManager sharedInstance]isRecipeFavorite:self.selectedRecipe];
+}
+
 - (void) likeRecipe {
   
     
@@ -435,7 +440,9 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         return;
     }
     
-    if (!rightBarButton.selected) {
+    BOOL dislike = [self isRecipeLiked];
+    
+    if (!dislike) {
         
         //Add recipe to the favorites. Run in background thread
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -443,21 +450,15 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
             
         });
         
-        //Change the like button to selected
-        rightBarButton.selected = YES;
-        
         //Report the event to analytics
         [SBGoogleAnalyticsHelper userLikedRecipeName:_selectedRecipe.recipeName];
         
-    } else if (rightBarButton.selected){
+    } else if (dislike){
         //Remove recipe from favorites in background thread
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [[RecipeManager sharedInstance]removeRecipeFromFavorites:self.selectedRecipe];
             
         });
-        
-        //Change the like button to unselected
-        rightBarButton.selected = NO;
         
         //Report to analytics
         [SBGoogleAnalyticsHelper userDislikedRecipeName:_selectedRecipe.recipeName];
@@ -467,7 +468,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     isLikeButtonTouchable = NO;
     
     //Animate like if the like button is selected
-    [self animateLike:rightBarButton.selected];
+    [self animateLike:!dislike];
     
 }
 
@@ -583,7 +584,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 }
 
 #pragma mark - Detailed recipe view delegate
-
+/*
 -(void)didSelectRecipe:(Recipe *)selectedRecipe {
     
     if (selectedRecipe != self.selectedRecipe) {
@@ -596,7 +597,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     }
     
 }
-
+*/
 /*
 - (void) setupCollectionView {
     //UICollectionview flow layout

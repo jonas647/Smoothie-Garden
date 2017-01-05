@@ -110,9 +110,6 @@
         descriptionTextSize = 13;
     }
     
-    //Set the first recipe in the list as the recipe to show
-    [self.delegate didSelectRecipe:[_recipes firstObject]];
-    
 }
 
 
