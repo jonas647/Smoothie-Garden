@@ -43,9 +43,6 @@
     NSArray *ingredients;
     NSArray *nutrientTypes;
     float latestContentOffset;
-    BOOL isLikeButtonTouchable;
-    
-    UIButton *rightBarButton;
     
     float marginBetweenTextCells;
     float sizeForByText;
@@ -80,9 +77,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];
     UIImage *tempImage = [[UIImage alloc]init];
     [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
-    
-    //The like button needs to be touchable to start with
-    isLikeButtonTouchable = YES;
     
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
@@ -267,38 +261,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     recipeInstructions = self.selectedRecipe.instructions;
     recipeDescriptions = self.selectedRecipe.longDescription;
     //Setup right bar button with custom image
-    UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-    rightBarButton = customButton;
-    
-    /*
-    UIImage *buttonImage = [UIImage imageNamed:@"Heart Outline"];
-    UIImage *selectedButtonImage = [UIImage imageNamed:@"Heart Filled"];
-    [customButton setBackgroundImage:buttonImage  forState:UIControlStateNormal];
-    [customButton setBackgroundImage:selectedButtonImage  forState:UIControlStateSelected];
-    [customButton addTarget:self action:@selector(likeRecipe) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView: customButton];
-    
-    self.navigationItem.rightBarButtonItem = barButtonItem;
-    */
-    
-    
-    //If the recipe is liked then make the like button selected
-    if (self.selectedRecipe.favorite) {
-        [customButton setSelected:YES];
-    }
-    
-    //If the recipe is one of the favorites, then make the like button selected
-    if ([[RecipeManager sharedInstance]isRecipeFavorite:self.selectedRecipe]) {
-        [rightBarButton setSelected:YES];
-    }
-    
-    //Hide the servings view if almond milk is shown since this is for one liter
-    /*
-    if ([self.selectedRecipe.recipeName isEqualToString:@"Almond milk"]) {
-        servingView.hidden = YES;
-    }
-     */
     
     //Report to analytics
     [SBGoogleAnalyticsHelper reportScreenToAnalyticsWithName:[NSString stringWithFormat:@"Recipe %@", _selectedRecipe.recipeName]];
@@ -434,12 +396,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 
 - (void) likeRecipe {
   
-    
-    if (!isLikeButtonTouchable) {
-        //If the like button isn't touchable, then don't do anything
-        return;
-    }
-    
+
     BOOL dislike = [self isRecipeLiked];
     
     if (!dislike) {
@@ -463,9 +420,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         //Report to analytics
         [SBGoogleAnalyticsHelper userDislikedRecipeName:_selectedRecipe.recipeName];
     }
-    
-    //Set the like button to not touchable to make the user not press it to often, causing animation to mess up
-    isLikeButtonTouchable = NO;
     
     //Animate like if the like button is selected
     [self animateLike:!dislike];
@@ -509,7 +463,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
           {
             //Move back the likeView to the starting position for the next time the animation is used
               likeView.frame = originalRect;
-              isLikeButtonTouchable = YES; //Set back to yes to be able to toggle like button
+              
           }];
      }];
     

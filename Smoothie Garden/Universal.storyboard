@@ -613,7 +613,7 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="706" y="-1799"/>
+            <point key="canvasLocation" x="721" y="-1683"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="hRP-tK-eBa">
@@ -635,7 +635,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQc-fv-jGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="-80"/>
+            <point key="canvasLocation" x="-569" y="-80"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ekw-Ds-qud">
@@ -748,7 +748,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIC-IM-fpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-1799"/>
+            <point key="canvasLocation" x="-47" y="-1683"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2e6-6H-VXA">
@@ -1054,7 +1054,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7l-6R-smL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="-3135"/>
+            <point key="canvasLocation" x="720" y="-2987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qeD-Aa-b8P">
@@ -2549,7 +2549,7 @@
         <image name="shoppingList" width="422" height="275"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zma-vl-Bhd"/>
+        <segue reference="r8f-kv-2Xw"/>
         <segue reference="xUX-iX-Xy1"/>
     </inferredMetricsTieBreakers>
 </document>
