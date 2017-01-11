@@ -74,11 +74,8 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     
     [self.searchController.searchBar sizeToFit];
     
-    NSLog(@"Update collection view at %@", indexOfSelectedObject);
     //Update the uitableviewcell that was presented (if returning from detail view
     if (indexOfSelectedObject) {
-        
-        NSLog(@"Update collection view");
         
         [self.recipeCollectionView performBatchUpdates:^{
             //operations like delete
@@ -135,12 +132,16 @@ static NSString * const reuseIdentifier = @"RecipeCell";
 - (float) widthForItem {
     
     if (self.view.frame.size.width >= 1024) {
+        //iPad in landscape
         return self.view.frame.size.width/4 - 3;
         
-    } else if (self.view.frame.size.width >= 768) {
+    } else if (self.view.frame.size.width >= 736) {
+        //iPad in portrait
+        //iPhone plus
         return self.view.frame.size.width/3 - 2;
         
-    } else if (self.view.frame.size.width >= 375) {
+    } else if (self.view.frame.size.width >= 667) {
+        //iPhone 6/7 in portrait - shouldn't be possible to flip landscape for this phone
         return self.view.frame.size.width/2 -1;
         
     } else {
@@ -213,6 +214,11 @@ static NSString * const reuseIdentifier = @"RecipeCell";
             //If the recipe isn't liked, don't show the heart icon
             if (!sRecipe.favorite) {
                 cell.likedRecipe.hidden = YES;
+                
+                NSLog(@"%@ not liked", sRecipe.recipeName);
+            } else {
+                cell.likedRecipe.hidden = NO;
+                NSLog(@"%@  liked", sRecipe.recipeName);
             }
             
         });

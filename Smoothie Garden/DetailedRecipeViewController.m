@@ -66,6 +66,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     //No recipe will be shown on startup when having the split view controller so no need for populating any values.
     [self refreshUI];
     
@@ -99,9 +100,9 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
-        sizeForByText = 11;
-        sizeForSmoothieBoxText = 14;
-        sizeForTitleText = 26;
+        sizeForByText = 14;
+        sizeForSmoothieBoxText = 18;
+        sizeForTitleText = 32;
         sizeForRecipeDescriptions = 21;
         sizeForShoppingListText = 17;
         marginBetweenTextCells = 35;
@@ -168,14 +169,20 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     [super viewDidDisappear:animated];
     
 }
-
+*/
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+ 
+ //Set the height constraint for the "fake" navigation bar + the size of the status bar
+    float navigationBarHeight = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+ 
+ navigationBariPadHeightConstraint.constant = navigationBarHeight;
+    
 }
-*/
+
 
 - (void) viewDidLayoutSubviews {
-    
+ 
     //Update the height constraints to fit the contents
     ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
     recipeTableViewHeightConstraint.constant = recipeTableView.contentSize.height;
@@ -645,12 +652,15 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 {
     float itemWidth;
     
-    if (self.view.frame.size.width <= 375) {
-        itemWidth = 100;
-    } else if (self.view.frame.size.width <= 414) {
+    if (self.view.frame.size.width <= 414) {
         itemWidth = self.view.frame.size.width / 4.5;
     } else {
         itemWidth = self.view.frame.size.width / 6.5;
+    }
+    
+    //Make 100 the smallest size
+    if (itemWidth < 95) {
+        itemWidth = 95;
     }
     
     return CGSizeMake(itemWidth, nutrientCollectionView.frame.size.height*0.85);

@@ -437,7 +437,7 @@
 			<string>ingwer</string>
 		</dict>
 	</dict>
-	<key>Blueberries</key>
+	<key>Frozen Blueberries</key>
 	<dict>
 		<key>Pluralis</key>
 		<dict>
@@ -464,6 +464,35 @@
 			<string>frosne blåbær</string>
 			<key>de</key>
 			<string>gefrorene heidelbeeren</string>
+		</dict>
+	</dict>
+	<key>Blueberries</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>blåbär</string>
+			<key>en</key>
+			<string>blueberries</string>
+			<key>da</key>
+			<string>blåbær</string>
+			<key>no</key>
+			<string>blåbær</string>
+			<key>de</key>
+			<string>heidelbeeren</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>blåbär</string>
+			<key>en</key>
+			<string>blueberries</string>
+			<key>da</key>
+			<string>blåbær</string>
+			<key>no</key>
+			<string>blåbær</string>
+			<key>de</key>
+			<string>heidelbeeren</string>
 		</dict>
 	</dict>
 	<key>Blackberries</key>
@@ -558,9 +587,9 @@
 		<key>Pluralis</key>
 		<dict>
 			<key>sv</key>
-			<string>medjool-dadlar</string>
+			<string>mjuka dadlar</string>
 			<key>en</key>
-			<string>medjool dates</string>
+			<string>soft dates</string>
 			<key>da</key>
 			<string>medjool datoer</string>
 			<key>no</key>
@@ -571,9 +600,9 @@
 		<key>Singularis</key>
 		<dict>
 			<key>sv</key>
-			<string>medjool-dadel</string>
+			<string>mjuk dadel</string>
 			<key>en</key>
-			<string>medjool date</string>
+			<string>soft date</string>
 			<key>da</key>
 			<string>medjool dato</string>
 			<key>no</key>
@@ -931,6 +960,35 @@
 		</dict>
 	</dict>
 	<key>Lime</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>lime</string>
+			<key>en</key>
+			<string>lime</string>
+			<key>da</key>
+			<string>lime</string>
+			<key>no</key>
+			<string>lime</string>
+			<key>de</key>
+			<string></string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>lime</string>
+			<key>en</key>
+			<string>lime</string>
+			<key>da</key>
+			<string>lime</string>
+			<key>no</key>
+			<string>lime</string>
+			<key>de</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>Lime juice</key>
 	<dict>
 		<key>Pluralis</key>
 		<dict>
@@ -1423,6 +1481,35 @@
 			<string>blatt minze</string>
 		</dict>
 	</dict>
+	<key>Basil Leaves</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>basilikablad</string>
+			<key>en</key>
+			<string>basil leaves</string>
+			<key>da</key>
+			<string>basilikum blade</string>
+			<key>no</key>
+			<string>basilikumblader</string>
+			<key>de</key>
+			<string>basilikumblätter</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>basilikablad</string>
+			<key>en</key>
+			<string>basil leaf</string>
+			<key>da</key>
+			<string>basilikumblad</string>
+			<key>no</key>
+			<string>basilikumblad</string>
+			<key>de</key>
+			<string>basilikumblad</string>
+		</dict>
+	</dict>
 	<key>Water</key>
 	<dict>
 		<key>Pluralis</key>
@@ -1821,6 +1908,64 @@
 			<string>rabarbra</string>
 			<key>de</key>
 			<string>Rhabarber</string>
+		</dict>
+	</dict>
+	<key>Pineapple</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>ananas</string>
+			<key>en</key>
+			<string>pineapple</string>
+			<key>da</key>
+			<string>ananas</string>
+			<key>no</key>
+			<string>ananas</string>
+			<key>de</key>
+			<string>ananas</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>ananas</string>
+			<key>en</key>
+			<string>pineapple</string>
+			<key>da</key>
+			<string>ananas</string>
+			<key>no</key>
+			<string>ananas</string>
+			<key>de</key>
+			<string>ananas</string>
+		</dict>
+	</dict>
+	<key>Granola</key>
+	<dict>
+		<key>Pluralis</key>
+		<dict>
+			<key>sv</key>
+			<string>granola</string>
+			<key>en</key>
+			<string>granola</string>
+			<key>da</key>
+			<string>granola</string>
+			<key>no</key>
+			<string>granola</string>
+			<key>de</key>
+			<string>granola</string>
+		</dict>
+		<key>Singularis</key>
+		<dict>
+			<key>sv</key>
+			<string>granola</string>
+			<key>en</key>
+			<string>granola</string>
+			<key>da</key>
+			<string>granola</string>
+			<key>no</key>
+			<string>granola</string>
+			<key>de</key>
+			<string>granola</string>
 		</dict>
 	</dict>
 </dict>

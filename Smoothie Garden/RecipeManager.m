@@ -51,13 +51,11 @@
             
             //TODO check if file exist instead
             if (r.imageName != nil) {
-                NSLog(@"Set image to %@", r.recipeName);
+              
                 UIImage *tempImage = [self createThumbnailForImageWithName:r.imageName];
                 
-                NSLog(@"temp image: %@", tempImage);
-                
                 [tempThumbnailImagesForRecipes setObject:tempImage forKey:r.recipeName];
-                NSLog(@"image added");
+              
             } else {
                 NSLog(@"Name missing for %@", r);
             }
@@ -65,11 +63,8 @@
             
         }
         
-        NSLog(@"thumbnails setup");
-        
         thumbnailImagesForRecipes = [NSDictionary dictionaryWithDictionary:tempThumbnailImagesForRecipes];
         
-        NSLog(@"Recipe manager finished");
     }
     return self;
 }
