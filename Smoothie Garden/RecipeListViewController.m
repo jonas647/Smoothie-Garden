@@ -140,7 +140,7 @@ static NSString * const reuseIdentifier = @"RecipeCell";
         //iPhone plus
         return self.view.frame.size.width/3 - 2;
         
-    } else if (self.view.frame.size.width >= 667) {
+    } else if (self.view.frame.size.width >= 320) {
         //iPhone 6/7 in portrait - shouldn't be possible to flip landscape for this phone
         return self.view.frame.size.width/2 -1;
         

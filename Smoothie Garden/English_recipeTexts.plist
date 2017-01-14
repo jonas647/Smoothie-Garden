@@ -383,7 +383,6 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Have the frozen banana in room temperature for a few minutes.</string>
 			<string>Mix all the ingredients in a blender on high speed until smooth. Add topping before serving. </string>
 		</array>
 	</dict>
@@ -497,8 +496,8 @@
 		<string>A green favourite that nourishes and hydrates your body.</string>
 		<key>LongDescription</key>
 		<array>
-			<string>A green favourite that nourishes and hydrates your body.</string>
-			<string>A perfect pick me up after a workout or in between meals when some extra energy is needed. </string>
+			<string>A green favourite that nourishes and hydrates your body. The perfect pick me up after a workout or in between meals when some extra energy is needed. </string>
+			<string>Coconut water has a high electrolyte content which regulates the body fluid balance.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -513,8 +512,7 @@
 		<string>A four layer delicious breakfast bowl.</string>
 		<key>LongDescription</key>
 		<array>
-			<string>This bowl has four delicious layers: honey infused blueberries, creamy chia pudding, fresh blueberry smoothie and crunchy granola.</string>
-			<string>A perfect pick me up after a workout or in between meals when some extra energy is needed. </string>
+			<string>This bowl has four delicious layers; honey infused blueberries, creamy chia pudding, fresh blueberry smoothie and crunchy granola.</string>
 			<string>Everything can be prepared in advance except the smoothie that should be mixed right before serving.</string>
 		</array>
 		<key>Instructions</key>
@@ -523,7 +521,6 @@
 			<string>Stir 0,5 dl chia seeds with 1,5 dl almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes.</string>
 			<string>In another bowl; mix banana, strawberries, blueberries, date and milk on high speed until smooth.</string>
 			<string>Put the blended blueberries and honey at the bottom of a glass or bowl followed by a layer of chia pudding. Add the smoothie as the third layer and top with the granola.</string>
-			<string>Enjoy with a spoon!</string>
 		</array>
 	</dict>
 </dict>

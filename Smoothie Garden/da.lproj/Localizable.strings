@@ -27,6 +27,7 @@
 "LOCALIZE_Fat" = "Fedt";
 "LOCALIZE_Carbohydrate" = "Kulhydrat";
 "LOCALIZE_Carbs" = "Kulhydrat";
+"LOCALIZE_Fiber" = "Fiber";
 "LOCALIZE_Reset likes" = "Er du sikker på du vil nulstille dine lide opskrifter?";
 "LOCALIZE_Yes" = "Ja";
 "LOCALIZE_No" = "Nej";
@@ -36,3 +37,4 @@
 "LOCALIZE_Optional" = "valgfri";
 "LOCALIZE_Clean Shopping List - title" = "Fjern indkøbsliste";
 "LOCALIZE_Clean Shopping List - text" = "Er du sikker på at du ønsker at fjerne alle elementer på indkøbsliste?";
+"LOCALIZE_Total Energy" = "Energi: ";

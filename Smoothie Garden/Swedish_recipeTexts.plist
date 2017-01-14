@@ -49,7 +49,7 @@
 		<array>
 			<string>Genom att dricka en grön smoothie som den här täcks en stor del av det dagliga grönsaksbehovet. Kroppen har dessutom lättare att ta upp näringen från grönsaker i mixad form.</string>
 			<string>Tillsätt en kvist persilja för extra järn och smak. </string>
-			<string>För en fruktig och söt smak kan avokadon bytas ut mot samma mängd mango.</string>
+			<string>För en fruktig och lite sötare smak kan avokadon bytas ut mot samma mängd mango.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -73,7 +73,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Pressa apelsin och lime till juice.</string>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Mixa juicen med övriga ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe5</key>
@@ -191,7 +191,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Pressa apelsin och lime till juice.</string>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
+			<string>Mixa juicen med övriga ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe12</key>
@@ -219,7 +219,7 @@
 		<string>En blåbärs- och chiasmoothie fylld med vitaminer, antioxidanter, fibrer och nyttiga fetter</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Den här blåbärs- och chiasmoothien är den perfekta frukosten. Med vitaminer, antioxidanter, fibrer och nyttiga fetter ger den en perfekt start på dagen.</string>
+			<string>Med vitaminer, antioxidanter, fibrer och nyttiga fetter ger den här blåbärs och chiasmoothien perfekt start på dagen.</string>
 			<string>Blötlägg chiafrön i mandelmjölk kvällen innan och förvara i kylskåpet så sparar du värdefull tid på morgonen.</string>
 		</array>
 		<key>Instructions</key>
@@ -301,7 +301,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Pressa apelsin till juice.</string>
-			<string>Mixa på hög hastighet till krämig konsistens.</string>
+			<string>Mixa juicen med övriga ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe18</key>
@@ -316,7 +316,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa på hög hastighet till krämig konsistens.</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe19</key>
@@ -388,7 +388,6 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Låt den frusna bananen ligga i rumstemperatur i några minuter.</string>
 			<string>Mixa alla ingredienser på hög hastighet till krämig och tjock konsistens. </string>
 			<string>Servera med valfri topping.</string>
 		</array>
@@ -406,7 +405,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Pressa apelsin till juice.</string>
-			<string>Mixa alla ingredienser på hög hastighet till krämig och tjock konsistens. </string>
+			<string>Mixa juicen med övriga ingredienser på hög hastighet till krämig och tjock konsistens. </string>
 			<string>Toppa med färska hallon och rostade kokosflingor.</string>
 		</array>
 	</dict>
@@ -437,7 +436,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Den här smoothien har en frisk och krämig smak. Gurkmeja smakar inte mycket men ger drycken en gyllene färg och har dessutom starkt antiinflammatoriska och läkande egenskaper.</string>
-			<string>För färre kalorier kan du använda en kokosmjölk med mindre fett.</string>
+			<string>För en lättare variant kan kokosmjölk med mindre fett användas.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -455,7 +454,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>Svarta vinbär har en unik och uppfriskande smak, olik alla andra bär. De är också rika på C-vitamin och antioxidanter.</string>
-			<string>Plocka vinbären direkt från trädgården och använd i den här härliga smoothien. </string>
+			<string>Plocka vinbären direkt från trädgården och använd i den här smakrika smoothien. </string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -490,7 +489,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens</string>
+			<string>Mixa alla ingredienser på hög hastighet till krämig konsistens.</string>
 		</array>
 	</dict>
 	<key>Recipe29</key>
@@ -502,6 +501,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>En återfuktande grön smoothie som fungerar perfekt som återställare efter träningen eller en lite för trevlig utekväll.</string>
+			<string>Kokosvatten innehåller elektrolyterna kalium och natrium som tillsammans reglerar kroppens salt- och vätskebalans.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -516,7 +516,7 @@
 		<string>En perfekt fukostsmoothie i fyra lager.</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Den här bowlen består av 4 goda lager: en sötsyrlig blåbärskompott, mättande chiapudding, krämig fruktsmoothie och frasig granolatopping.</string>
+			<string>Den här bowlen består av 4 goda lager; en sötsyrlig blåbärskompott, mättande chiapudding, krämig fruktsmoothie och frasig granolatopping.</string>
 			<string>Allt går att förbereda innan och förvara i kylen förutom smoothien som bör mixas precis innan servering.</string>
 		</array>
 		<key>Instructions</key>
@@ -524,8 +524,7 @@
 			<string>Börja med att blanda färska eller tinade blåbär och honung med en sked.</string>
 			<string>Blötlägg 0,5 dl chiafrön i 1,5 dl mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår. Efter ytterligare 10 minuter i kylen är chiapuddingen klar.</string>
 			<string>Mixa sedan banan, jordgubbar, blåbär, dadel och mjölk på hög hastighet till tjock och krämig konsistens.</string>
-			<string>Servera i glas eller i skål med honung och blåbär i botten, ett lager av chiapudding, följt av smoothien och toppa slutligen med granola.</string>
-			<string>Njut av smoothien med sked!</string>
+			<string>Servera i glas eller i skål med honung och blåbärsblandningen i botten. Lägg på ett lager av chiapudding och häll sedan över smoothien. Avsluta med granola på toppen.</string>
 		</array>
 	</dict>
 </dict>

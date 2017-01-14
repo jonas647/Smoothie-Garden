@@ -382,7 +382,6 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Lad den frosne banan forlade ved stuetemperatur i et par minutter.</string>
 			<string>Bland alle ingredienser ved høj hastighed til den cremet og tyk konsistens.</string>
 			<string>Serveres med valgfri toppings.</string>
 		</array>
@@ -470,6 +469,56 @@
 		<array>
 			<string>Brug en saftpresser til æble og rabarber.</string>
 			<string>Bland saften med hindbær, mango og ahornsirup ved høj hastighed til den cremede konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe28</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Beloved basil</string>
+		<key>ShortDescription</key>
+		<string>Basilikaen er den hemmelige ingrediens, der gør denne enkle smoothie til at løfte!</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Kombinationen af frisk basilikum og jordbær gør denne smoothie til en sommer favorit, der kan nydes hele året rundt!</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe29</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Green hydrate</string>
+		<key>ShortDescription</key>
+		<string>En grøn favorit, når og fugter kroppen!</string>
+		<key>LongDescription</key>
+		<array>
+			<string>En fugtende grøn smoothie, der fungerer perfekt som en restaurator efter træning, eller lidt for nice aften.</string>
+			<string>Coconut vand indeholder elektrolytter kalium og natrium, der tilsammen regulerer kroppens salt- og vandbalance.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Bland alle ingredienser med høj hastighed til en cremet konsistens.</string>
+		</array>
+	</dict>
+	<key>Recipe30</key>
+	<dict>
+		<key>RecipeName</key>
+		<string>Breakfast club</string>
+		<key>ShortDescription</key>
+		<string>En perfekt fukostsmoothie i fire lejer.</string>
+		<key>LongDescription</key>
+		<array>
+			<string>Denne bowl består af fire gode lejer; en sursød blåbær kompot, påfyldning chiapudding, cremet frugt smoothie og sprød granolatopping.</string>
+			<string>Alt kommer til at forberede før og opbevares i køleskabet undtagen smoothie, som skal blandes lige før servering.</string>
+		</array>
+		<key>Instructions</key>
+		<array>
+			<string>Start med at blande friske eller optøede blåbær og honning med en ske.</string>
+			<string>Suge 0,5 kopper chiafrø i 1,5 kopper mandelmælk. Bland godt med en hånd piskeris eller skeen. Lad det stå i ti minutter og blandes igen, således at der ikke klumper tilbage. Efter yderligere 10 minutter i køleskabet er chiapuddingen færdig.</string>
+			<string>Bland derefter banan, jordbær, blåbær, dadel og mælk ved høj hastighed til den tyk og cremet konsistens.</string>
+			<string>Serveres i et glas eller skål af honning og blåbær blandingen i bunden. Læg et lag chiapudding og derefter hæld smoothie. Afslut med granola på toppen.</string>
 		</array>
 	</dict>
 </dict>

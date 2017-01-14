@@ -144,7 +144,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     //navigationBariPadHeightConstraint.constant = self.navigationController.navigationBar.frame.size.height;
     
-    caloriesText.text = [NSString stringWithFormat:@"Total Energy: %@",[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
+    caloriesText.text = [NSString stringWithFormat:@"%@%@",NSLocalizedString(@"LOCALIZE_Total Energy", nil),[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
     
     
     //Setup an array with the objects that will be populated manually to be first objects in nutrient objects
@@ -179,7 +179,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
  navigationBariPadHeightConstraint.constant = navigationBarHeight;
     
 }
-
 
 - (void) viewDidLayoutSubviews {
  
@@ -615,21 +614,26 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     //Present the most interesting nutrients facts
     
+    NSString *localizedCarbs = [NSString stringWithFormat:@"LOCALIZE_%@", NUTRITION_CARBOHYDRATE];
+    NSString *localizedFat = [NSString stringWithFormat:@"LOCALIZE_%@", NUTRITION_FAT];
+    NSString *localizedProtein = [NSString stringWithFormat:@"LOCALIZE_%@", NUTRITION_PROTEIN];
+    NSString *localizedFiber = [NSString stringWithFormat:@"LOCALIZE_%@", NUTRITION_FIBER];
+    
     switch (indexPath.row) {
         case 0:
-            cell.nutrientType.text = NSLocalizedString(NUTRITION_CARBOHYDRATE, nil);
+            cell.nutrientType.text = NSLocalizedString(localizedCarbs, nil);
             //cell.nutrientValue.text = [_selectedRecipe volumeForNutrient:NUTRITION_CARBOHYDRATE asRoundedValue:YES];
             break;
         case 1:
-            cell.nutrientType.text = NSLocalizedString(NUTRITION_FAT, nil);
+            cell.nutrientType.text = NSLocalizedString(localizedFat, nil);
             //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
             break;
         case 2:
-            cell.nutrientType.text = NSLocalizedString(NUTRITION_PROTEIN, nil);
+            cell.nutrientType.text = NSLocalizedString(localizedProtein, nil);
             //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
             break;
         case 3:
-            cell.nutrientType.text = NSLocalizedString(NUTRITION_FIBER, nil);
+            cell.nutrientType.text = NSLocalizedString(localizedFiber, nil);
             //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FIBER];
             break;
         default:

@@ -27,6 +27,7 @@
 "LOCALIZE_Fat" = "Fat";
 "LOCALIZE_Carbohydrate" = "Carbohydrate";
 "LOCALIZE_Carbs" = "Carbs";
+"LOCALIZE_Fiber" = "Fiber";
 "LOCALIZE_Reset likes" = "Are you sure you want to reset your liked recipes?";
 "LOCALIZE_Yes" = "Yes";
 "LOCALIZE_No" = "No";
@@ -36,3 +37,4 @@
 "LOCALIZE_Optional" = "optional";
 "LOCALIZE_Clean Shopping List - title" = "Clear shopping list";
 "LOCALIZE_Clean Shopping List - text" = "Are you sure you want to remove all items in the shopping list?";
+"LOCALIZE_Total Energy" = "Total energy: ";

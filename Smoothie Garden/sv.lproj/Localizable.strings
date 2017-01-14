@@ -27,6 +27,7 @@
 "LOCALIZE_Fat" = "Fett";
 "LOCALIZE_Carbohydrate" = "Kolhydrater";
 "LOCALIZE_Carbs" = "Kolhydrater";
+"LOCALIZE_Fiber" = "Fiber";
 "LOCALIZE_Reset likes" = "Vill du återställa gillade recept?";
 "LOCALIZE_Yes" = "Ja";
 "LOCALIZE_No" = "Nej";
@@ -36,3 +37,4 @@
 "LOCALIZE_Optional" = "valfritt";
 "LOCALIZE_Clean Shopping List - title" = "Rensa inköpslista";
 "LOCALIZE_Clean Shopping List - text" = "Är du säker på att du vill ta bort alla ingredienser från inköpslistan?";
+"LOCALIZE_Total Energy" = "Energi: ";

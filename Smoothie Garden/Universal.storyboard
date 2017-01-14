@@ -1335,7 +1335,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-Zg-aYt" userLabel="Content view">
-                                        <rect key="frame" x="0.0" y="0.0" width="800" height="856.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="866.66666666666663"/>
                                         <subviews>
                                             <containerView opaque="NO" clipsSubviews="YES" tag="1000" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-Nx-bZV">
                                                 <rect key="frame" x="5" y="5" width="360" height="288"/>
@@ -1352,10 +1352,10 @@
                                                 </connections>
                                             </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvF-VY-FJz" userLabel="Description View">
-                                                <rect key="frame" x="5" y="434" width="360" height="105"/>
+                                                <rect key="frame" x="5" y="434" width="360" height="115"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQN-1b-7we" userLabel="Rectangle Box">
-                                                        <rect key="frame" x="5" y="5" width="350" height="95"/>
+                                                        <rect key="frame" x="5" y="5" width="350" height="105"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d9u-zv-gdn" userLabel="Long Description">
                                                                 <rect key="frame" x="5" y="15" width="340" height="75"/>
@@ -1395,7 +1395,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="d9u-zv-gdn" secondAttribute="bottom" constant="5" id="7LV-2h-yRV"/>
+                                                            <constraint firstAttribute="bottom" secondItem="d9u-zv-gdn" secondAttribute="bottom" constant="15" id="7LV-2h-yRV"/>
                                                             <constraint firstAttribute="trailing" secondItem="d9u-zv-gdn" secondAttribute="trailing" constant="5" id="KJv-vq-ZOn"/>
                                                             <constraint firstItem="d9u-zv-gdn" firstAttribute="top" secondItem="rQN-1b-7we" secondAttribute="top" constant="15" id="Mtv-QS-B3H"/>
                                                             <constraint firstItem="d9u-zv-gdn" firstAttribute="centerY" secondItem="rQN-1b-7we" secondAttribute="centerY" id="Ndd-GQ-bKh"/>
@@ -1421,13 +1421,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfc-QT-2GL" userLabel="Ingredients View">
-                                                <rect key="frame" x="365" y="0.0" width="435" height="193"/>
+                                                <rect key="frame" x="365" y="0.0" width="435" height="203"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bwf-Rl-XGe" userLabel="Rectangle Box">
-                                                        <rect key="frame" x="5" y="5" width="425" height="183"/>
+                                                        <rect key="frame" x="5" y="5" width="425" height="193"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b25-Hd-hz7" userLabel="Ingredients table">
-                                                                <rect key="frame" x="5" y="10" width="415" height="75"/>
+                                                                <rect key="frame" x="5" y="15" width="415" height="75"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="75" id="7C2-dO-OaO"/>
@@ -1490,7 +1490,7 @@
                                                                 </connections>
                                                             </tableView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGY-33-TrF" userLabel="Shopping list View">
-                                                                <rect key="frame" x="5" y="100" width="415" height="73"/>
+                                                                <rect key="frame" x="5" y="105" width="415" height="73"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fWp-1S-m9g">
                                                                         <rect key="frame" x="143.66666666666663" y="0.0" width="129" height="58"/>
@@ -1532,12 +1532,12 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="VGY-33-TrF" secondAttribute="trailing" constant="5" id="1CK-sK-fnS"/>
-                                                            <constraint firstItem="b25-Hd-hz7" firstAttribute="top" secondItem="Bwf-Rl-XGe" secondAttribute="top" constant="10" id="26Q-Xu-GzI"/>
+                                                            <constraint firstItem="b25-Hd-hz7" firstAttribute="top" secondItem="Bwf-Rl-XGe" secondAttribute="top" constant="15" id="26Q-Xu-GzI"/>
                                                             <constraint firstItem="VGY-33-TrF" firstAttribute="leading" secondItem="Bwf-Rl-XGe" secondAttribute="leading" constant="5" id="HgD-bC-9yJ"/>
                                                             <constraint firstItem="b25-Hd-hz7" firstAttribute="leading" secondItem="Bwf-Rl-XGe" secondAttribute="leading" constant="5" id="KQf-UO-LZN"/>
                                                             <constraint firstAttribute="trailing" secondItem="b25-Hd-hz7" secondAttribute="trailing" constant="5" id="REx-XP-6eE"/>
                                                             <constraint firstItem="VGY-33-TrF" firstAttribute="top" secondItem="b25-Hd-hz7" secondAttribute="bottom" constant="15" id="TF0-4L-fte"/>
-                                                            <constraint firstAttribute="bottom" secondItem="VGY-33-TrF" secondAttribute="bottom" constant="10" id="YjZ-7X-Qkn"/>
+                                                            <constraint firstAttribute="bottom" secondItem="VGY-33-TrF" secondAttribute="bottom" constant="15" id="YjZ-7X-Qkn"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -1554,10 +1554,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onq-eG-e5k" userLabel="Instructions View">
-                                                <rect key="frame" x="365" y="193" width="435" height="129"/>
+                                                <rect key="frame" x="365" y="203" width="435" height="134"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSb-vD-dwx" userLabel="Rectangle Box">
-                                                        <rect key="frame" x="5" y="5" width="425" height="119"/>
+                                                        <rect key="frame" x="5" y="5" width="425" height="124"/>
                                                         <subviews>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VpL-yV-rN6">
                                                                 <rect key="frame" x="5" y="15" width="415" height="94"/>
@@ -1607,7 +1607,7 @@
                                                         <constraints>
                                                             <constraint firstItem="VpL-yV-rN6" firstAttribute="top" secondItem="pSb-vD-dwx" secondAttribute="top" constant="15" id="HqG-Bf-alb"/>
                                                             <constraint firstItem="VpL-yV-rN6" firstAttribute="leading" secondItem="pSb-vD-dwx" secondAttribute="leading" constant="5" id="WNR-24-K8u"/>
-                                                            <constraint firstAttribute="bottom" secondItem="VpL-yV-rN6" secondAttribute="bottom" constant="10" id="cdG-oS-iJB"/>
+                                                            <constraint firstAttribute="bottom" secondItem="VpL-yV-rN6" secondAttribute="bottom" constant="15" id="cdG-oS-iJB"/>
                                                             <constraint firstAttribute="trailing" secondItem="VpL-yV-rN6" secondAttribute="trailing" constant="5" id="lXX-ja-nd8"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -1625,7 +1625,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcV-wf-fjL" userLabel="Nutrient view">
-                                                <rect key="frame" x="5" y="539" width="790" height="267.66666666666663"/>
+                                                <rect key="frame" x="5" y="549" width="790" height="267.66666666666663"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xx-GV-4EI" userLabel="Rectangle Box">
                                                         <rect key="frame" x="5" y="5" width="780" height="257.66666666666663"/>
@@ -2222,6 +2222,9 @@
                                 <include reference="7CV-4A-kNV"/>
                                 <include reference="Ar4-To-tRt"/>
                                 <include reference="lEa-nP-bor"/>
+                                <exclude reference="3NF-6L-fY3"/>
+                                <exclude reference="Mdj-F1-hcZ"/>
+                                <exclude reference="RBu-Jp-cb8"/>
                                 <include reference="BB1-nO-rTL"/>
                                 <include reference="mk9-wy-Kax"/>
                                 <include reference="yzw-N7-4uy"/>
