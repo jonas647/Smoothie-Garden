@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bp6-PS-Hmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="-80"/>
+            <point key="canvasLocation" x="1374" y="-81"/>
         </scene>
         <!--Trait Collection Override View Controller-->
         <scene sceneID="hvQ-hu-Tqc">
@@ -151,11 +151,11 @@
                         <viewControllerLayoutGuide type="bottom" id="FuC-Jx-Jg8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yd3-gE-bCE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUd-hg-odk">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <connections>
                                     <segue destination="Dje-es-kgl" kind="embed" identifier="detailedRecipe" id="sLa-d6-XnS"/>
                                 </connections>
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9g-1V-ARH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="677"/>
+            <point key="canvasLocation" x="646" y="1255"/>
         </scene>
         <!--About-->
         <scene sceneID="jit-qk-Gcg">
@@ -1038,7 +1038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krj-EN-wmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392" y="-3799"/>
+            <point key="canvasLocation" x="2045" y="-3817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cdq-nt-JNc">
@@ -2271,7 +2271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEm-2Q-gNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4" y="1419"/>
+            <point key="canvasLocation" x="655" y="2503"/>
         </scene>
         <!--Recipe Image View Controller-->
         <scene sceneID="ECy-5W-DIk">
@@ -2315,7 +2315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R24-r3-ab0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504" y="1344"/>
+            <point key="canvasLocation" x="1524" y="1754"/>
         </scene>
         <!--Recipe Shopping List View Controller-->
         <scene sceneID="fXO-F2-Hsb">
@@ -2534,7 +2534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gH-qV-zj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="2041"/>
+            <point key="canvasLocation" x="1703" y="2648"/>
         </scene>
     </scenes>
     <resources>
@@ -2555,6 +2555,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zma-vl-Bhd"/>
-        <segue reference="xUX-iX-Xy1"/>
+        <segue reference="ILB-YX-hlh"/>
     </inferredMetricsTieBreakers>
 </document>

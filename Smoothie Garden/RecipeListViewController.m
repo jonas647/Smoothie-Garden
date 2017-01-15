@@ -215,10 +215,8 @@ static NSString * const reuseIdentifier = @"RecipeCell";
             if (!sRecipe.favorite) {
                 cell.likedRecipe.hidden = YES;
                 
-                NSLog(@"%@ not liked", sRecipe.recipeName);
             } else {
                 cell.likedRecipe.hidden = NO;
-                NSLog(@"%@  liked", sRecipe.recipeName);
             }
             
         });

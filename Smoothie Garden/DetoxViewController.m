@@ -20,7 +20,7 @@
 #import "DetoxTableViewCell.h"
 #import "SBGoogleAnalyticsHelper.h"
 #import "SWRevealViewController.h"
-#import "DetailedRecipeViewController.h"
+#import "TraitCollectionOverrideViewController.h"
 #import "DeviceHelper.h"
 
 @interface DetoxViewController ()
@@ -129,11 +129,6 @@
     
     //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    
     
 }
 
@@ -387,11 +382,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
+    if ([segue.destinationViewController isKindOfClass:[TraitCollectionOverrideViewController class]]) {
         
-        DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
-        vcToPushTo.selectedRecipe = (Recipe*)sender;
+        TraitCollectionOverrideViewController *vcToPushTo = (TraitCollectionOverrideViewController*)segue.destinationViewController;
         
+        Recipe *recipeToShow = (Recipe*) sender;
+        
+        NSLog(@"%@ selected", recipeToShow.recipeName);
+        
+        vcToPushTo.selectedRecipe = recipeToShow;
+        
+    } else {
+        NSLog(@"Segue to: %@", [segue destinationViewController]);
     }
     
 }

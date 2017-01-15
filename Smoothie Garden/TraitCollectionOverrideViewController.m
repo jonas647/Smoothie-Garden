@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"Setting up recipe: %@", self.selectedRecipe);
+    
     [self setUpReferenceSizeClasses];
     
     //Hide the navigation bar
