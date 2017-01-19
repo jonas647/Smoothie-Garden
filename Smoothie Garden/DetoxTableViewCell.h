@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @interface DetoxTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 @property (weak, nonatomic) IBOutlet UILabel *recipeTitle;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDescription;
+@property (strong, nonatomic) Recipe *selectedRecipe;
 
 
 @end

@@ -20,7 +20,7 @@
 #import "DetoxTableViewCell.h"
 #import "SBGoogleAnalyticsHelper.h"
 #import "SWRevealViewController.h"
-#import "TraitCollectionOverrideViewController.h"
+#import "DetailedRecipeViewController.h"
 #import "DeviceHelper.h"
 
 @interface DetoxViewController ()
@@ -110,6 +110,7 @@
 }
 
 - (void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     
     //Set the introduction text font based on device
     self.introductionText.font = [UIFont fontWithName:self.introductionText.font.fontName size:titleFontSize+2];
@@ -158,7 +159,7 @@
     //Update the background colors for the parent view of the button
     [self changeBackgroundColorOfButtonWhenSelected:day];
     
-    [_tableView reloadData];
+    //[_tableView reloadData];
 }
 
 - (void) changeBackgroundColorOfButtonWhenSelected: (NSString*) day {
@@ -278,9 +279,19 @@
     Recipe *recipeToShow = [self recipeForCategory:category];
     
     
+    // Configure the cell...
+    cell.selectedRecipe = recipeToShow;
     
-    return [self customCellForRecipe:recipeToShow inTableView:tableView withTableViewCellIdentifier:tableCellIdentifier];
+    cell.recipeTitle.text = recipeToShow.recipeName;
+    cell.recipeDescription.text = recipeToShow.shortDescription;
     
+    cell.recipeTitle.font = [UIFont fontWithName:cell.recipeTitle.font.fontName size:titleFontSize];
+    cell.recipeDescription.font = [UIFont fontWithName:cell.recipeDescription.font.fontName size:descriptionFontSize];
+    
+    //Get the UIImage from memory, stored in a NSDictionary
+    cell.recipeImage.image = [thumbnailImages objectForKey:recipeToShow.recipeName];
+    
+    return cell;
 }
 
 - (Recipe*) recipeForCategory: (NSString*) category {
@@ -297,51 +308,6 @@
         recipeToReturn = sevenPM;
     }
     return recipeToReturn;
-    
-}
-
-- (DetoxTableViewCell*) customCellForRecipe: (Recipe*) sRecipe inTableView: (UITableView*) tableView withTableViewCellIdentifier: (NSString*) cellIdentifier {
-    
-    DetoxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    // Configure the cell...
-    
-    if (cell == nil) {
-        cell = [[DetoxTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    cell.recipeTitle.text = sRecipe.recipeName;
-    cell.recipeDescription.text = sRecipe.shortDescription;
-    
-    cell.recipeTitle.font = [UIFont fontWithName:cell.recipeTitle.font.fontName size:titleFontSize];
-    cell.recipeDescription.font = [UIFont fontWithName:cell.recipeDescription.font.fontName size:descriptionFontSize];
-    
-    [cell.recipeTitle sizeToFit];
-    [cell.recipeDescription sizeToFit];
-    
-    //Get the UIImage from memory, stored in a NSDictionary
-    cell.recipeImage.image = [thumbnailImages objectForKey:sRecipe.recipeName];
-    
-    //Not in use since IAP isn't active
-    /*
-    //Check if the IAP has been purchased and if recipes should be unlocked
-    //If the recipe is of type 0 then it's a free recipe, no need to check for IAP
-    BOOL isRecipeUnlocked = [sRecipe isRecipeUnlocked];
-    
-    
-    //Use alpha value to make the unlocked recipes transparent
-    float alphaValue;
-    if (!isRecipeUnlocked) {
-        
-        alphaValue = 0.18;
-        
-    } else if (isRecipeUnlocked) {
-        alphaValue = 1;
-    }
-    
-    [cell.recipeImage setAlpha:alphaValue];
-    */
-    return cell;
     
 }
 
@@ -375,6 +341,11 @@
     } else if ([sender tag] == 3) {
         [self setupDetoxDayFor:@"Day3"];
     }
+    
+    //Reload table in order to set correct frames for all views
+    [self.tableView setNeedsLayout];
+    [self.tableView layoutIfNeeded];
+    [self.tableView reloadData];
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -382,19 +353,14 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.destinationViewController isKindOfClass:[TraitCollectionOverrideViewController class]]) {
+    
+    if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
         
-        TraitCollectionOverrideViewController *vcToPushTo = (TraitCollectionOverrideViewController*)segue.destinationViewController;
+        DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
         
-        Recipe *recipeToShow = (Recipe*) sender;
+        vcToPushTo.selectedRecipe = (Recipe*)sender;
         
-        NSLog(@"%@ selected", recipeToShow.recipeName);
-        
-        vcToPushTo.selectedRecipe = recipeToShow;
-        
-    } else {
-        NSLog(@"Segue to: %@", [segue destinationViewController]);
-    }
+    } 
     
 }
 

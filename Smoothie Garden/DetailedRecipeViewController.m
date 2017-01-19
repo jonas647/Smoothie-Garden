@@ -622,29 +622,31 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     switch (indexPath.row) {
         case 0:
             cell.nutrientType.text = NSLocalizedString(localizedCarbs, nil);
-            //cell.nutrientValue.text = [_selectedRecipe volumeForNutrient:NUTRITION_CARBOHYDRATE asRoundedValue:YES];
+            cell.nutrientValue.text = [_selectedRecipe volumeForNutrient:NUTRITION_CARBOHYDRATE asRoundedValue:YES];
+            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_CARBOHYDRATE];
             break;
         case 1:
             cell.nutrientType.text = NSLocalizedString(localizedFat, nil);
-            //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
+            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
+            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_FAT];
             break;
         case 2:
             cell.nutrientType.text = NSLocalizedString(localizedProtein, nil);
-            //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
+            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
+            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_PROTEIN];
             break;
         case 3:
             cell.nutrientType.text = NSLocalizedString(localizedFiber, nil);
-            //cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FIBER];
+            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FIBER];
+            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_FIBER];
             break;
         default:
             //After the manual nutrient facts start picking the ones that are in the array for nutrients to show
             cell.nutrientType.text = [nutrientTypes objectAtIndex:indexPath.row - 4];
+            cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:cell.nutrientType.text];
+            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:cell.nutrientType.text];
             break;
     }
-    
-    
-    cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:cell.nutrientType.text];
-    cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:cell.nutrientType.text];
     
     return cell;
 }
