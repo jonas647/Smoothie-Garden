@@ -20,6 +20,8 @@
     //Set the image of the selected recipe
     NSString *recipeImageName = _selectedRecipe.imageName;
     _recipeImage.image = [UIImage imageNamed:recipeImageName];
+    _recipeImageIpad.image = [UIImage imageNamed:recipeImageName];
+    
     
 }
 

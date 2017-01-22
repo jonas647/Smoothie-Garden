@@ -66,26 +66,28 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     //No recipe will be shown on startup when having the split view controller so no need for populating any values.
     [self refreshUI];
     
     //Remove the title text from the back button (in the Detailed nutrient table view controller)
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    //Not relevant since this is removed
+    //self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     //Hide the navigation bar
+    /*
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];
     UIImage *tempImage = [[UIImage alloc]init];
     [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
+    */
     
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
         sizeForByText = 9;
         sizeForSmoothieBoxText = 11;
-        sizeForTitleText = 20;
-        sizeForRecipeDescriptions = 17;
+        sizeForTitleText = 16;
+        sizeForRecipeDescriptions = 13;
         sizeForShoppingListText = 12;
         marginBetweenTextCells = 20;
         
@@ -118,12 +120,12 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
-        sizeForByText = 13;
-        sizeForSmoothieBoxText = 16;
-        sizeForTitleText = 28;
-        sizeForRecipeDescriptions = 24;
+        sizeForByText = 14;
+        sizeForSmoothieBoxText = 18;
+        sizeForTitleText = 32;
+        sizeForRecipeDescriptions = 21;
         sizeForShoppingListText = 17;
-        marginBetweenTextCells = 80;
+        marginBetweenTextCells = 35;
     } else {
         // If a new device is released before the app is updated
         sizeForByText = 9;
@@ -176,7 +178,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
  //Set the height constraint for the "fake" navigation bar + the size of the status bar
     float navigationBarHeight = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
  
- navigationBariPadHeightConstraint.constant = navigationBarHeight;
+ 
+    navigationBariPadHeightConstraint.constant = navigationBarHeight;
     
 }
 
@@ -226,18 +229,18 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
     
-    //Update the height constraints to fit the contents
-    ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
-    recipeTableViewHeightConstraint.constant = recipeTableView.contentSize.height;
-    longDescriptionTableHeightConstraint.constant = longDescriptionTable.contentSize.height;
-    
-    [ingredientsTableView layoutIfNeeded];
-    [recipeTableView layoutIfNeeded];
-    [longDescriptionTable layoutIfNeeded];
-    
-    [nutrientCollectionViewHeightConstraint setConstant:nutrientCollectionView.collectionViewLayout.collectionViewContentSize.height];
-    
-    }];
+        //Update the height constraints to fit the contents
+        ingredientsHeightConstraint.constant = ingredientsTableView.contentSize.height;
+        recipeTableViewHeightConstraint.constant = recipeTableView.contentSize.height;
+        longDescriptionTableHeightConstraint.constant = longDescriptionTable.contentSize.height;
+        
+        [ingredientsTableView layoutIfNeeded];
+        [recipeTableView layoutIfNeeded];
+        [longDescriptionTable layoutIfNeeded];
+        
+        [nutrientCollectionViewHeightConstraint setConstant:nutrientCollectionView.collectionViewLayout.collectionViewContentSize.height];
+        
+        }];
 }
  
 
@@ -671,6 +674,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
     return CGSizeMake(itemWidth, nutrientCollectionView.frame.size.height*0.85);
 }
+
 /*
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {

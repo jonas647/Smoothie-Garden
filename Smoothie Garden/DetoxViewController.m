@@ -21,6 +21,7 @@
 #import "SBGoogleAnalyticsHelper.h"
 #import "SWRevealViewController.h"
 #import "DetailedRecipeViewController.h"
+#import "TraitCollectionOverrideViewController.h"
 #import "DeviceHelper.h"
 
 @interface DetoxViewController ()
@@ -47,6 +48,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Needed not to show the navigation bar as black for a second when returning from recipe
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    
     //Load here to show user view before recipes are fully loaded
     allRecipes = [[RecipeManager sharedInstance]recipesMaster];
     
@@ -56,9 +60,9 @@
     
     [self setupDetoxDayFor:@"Day1"];
     
-    _tableView.frame = [self newFrameForUIView:_tableView];
-    [_tableViewHeightConstraint setConstant:_tableView.frame.size.height];
-        
+    //CGRect tempFrame = [self newFrameForUIView:_tableView];
+    //[_tableViewHeightConstraint setConstant:tempFrame.size.height + 100];
+    
     if (self.revealViewController != nil) {
         
         [self.view addGestureRecognizer:[self.revealViewController panGestureRecognizer]];
@@ -82,31 +86,47 @@
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
-        titleFontSize = 17;
+        titleFontSize = 16;
         descriptionFontSize = 13;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
-        titleFontSize = 18;
-        descriptionFontSize = 14;
+        titleFontSize = 20;
+        descriptionFontSize = 18;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
-        titleFontSize = 21;
-        descriptionFontSize = 16;
+        titleFontSize = 24;
+        descriptionFontSize = 21;
+        
+    } else if ([[DeviceHelper sharedInstance] isDeviceIpad]) {
+        
+        //Just to test on simulator
+        titleFontSize = 25;
+        descriptionFontSize = 24;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
         //Just to test on simulator
-        titleFontSize = 21;
-        descriptionFontSize = 16;
+        titleFontSize = 24;
+        descriptionFontSize = 21;
         
-    } else {
+    }  else {
         
         // If a new device is released before the app is updated
         titleFontSize = 14;
         descriptionFontSize = 10;
     }
+    
+    //Update table view height dynamically
+    self.tableView.estimatedRowHeight = 180;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    [self.tableView reloadData];
+    [self.tableView layoutIfNeeded];
+    
+    self.tableViewHeightConstraint.constant = self.tableView.contentSize.height + 250;
+    
 }
 
 - (void) viewDidLayoutSubviews {
@@ -130,6 +150,9 @@
     
     //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    
+    
+    
     
 }
 
@@ -354,9 +377,9 @@
     // Pass the selected object to the new view controller.
     
     
-    if ([segue.destinationViewController isKindOfClass:[DetailedRecipeViewController class]]) {
+    if ([segue.destinationViewController isKindOfClass:[TraitCollectionOverrideViewController class]]) {
         
-        DetailedRecipeViewController *vcToPushTo = (DetailedRecipeViewController*)segue.destinationViewController;
+        TraitCollectionOverrideViewController *vcToPushTo = (TraitCollectionOverrideViewController*)segue.destinationViewController;
         
         vcToPushTo.selectedRecipe = (Recipe*)sender;
         

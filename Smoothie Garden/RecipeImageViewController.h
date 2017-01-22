@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
 @property (nonatomic, strong) Recipe *selectedRecipe;
+@property (weak, nonatomic) IBOutlet UIImageView *recipeImageIpad;
 
 @end

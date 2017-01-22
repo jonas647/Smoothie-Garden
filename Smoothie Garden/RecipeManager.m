@@ -37,12 +37,9 @@
             [self saveRecipesToPersistentStore];
             
         }
-        NSLog(@"Recipes saved to persistent store");
         
         //Save the recipe master from the persistent store
         recipeMaster = [self sortRecipesInArray:[self allRecipesFromPersistentStore]];
-        
-        NSLog(@"recipe master setup");
     
         //Setup the thumbnail images
         NSMutableDictionary *tempThumbnailImagesForRecipes = [[NSMutableDictionary alloc]init];
@@ -370,8 +367,6 @@
     if ([[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"]!= nil) {
         return [[NSUserDefaults standardUserDefaults]objectForKey:@"selectedLanguage"];
     } else {
-        
-        NSLog(@"Language used: %@", [[[NSLocale preferredLanguages] objectAtIndex:0]substringToIndex:2]);
         
         return [[[NSLocale preferredLanguages] objectAtIndex:0]substringToIndex:2];
     }

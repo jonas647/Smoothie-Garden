@@ -64,8 +64,6 @@
             self.searchString = jointString;
         }
         
-        NSLog(@"Search string: %@", self.searchString);
-        
         [self setupNutrientDataFromPlist];
     
     }
