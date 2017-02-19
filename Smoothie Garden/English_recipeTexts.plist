@@ -216,14 +216,12 @@
 		<string>This layered blueberry and chia smoothie is great served as breakfast and will give you a perfect start of the day</string>
 		<key>LongDescription</key>
 		<array>
-			<string>This layered blueberry and chia smoothie is great served as breakfast and will give you a perfect start of the day. Have the soaked chia seeds prepared in the fridge to save some valuable time in the morning.</string>
-			<string>Top with your favourite berries, fruits, nuts and seeds.</string>
+			<string>This layered blueberry and chia smoothie is great served as breakfast and will give you a perfect start of the day.  Top with your favourite berries, fruits, nuts and seeds. </string>
+			<string>Have the soaked chia seeds prepared in the fridge to save some valuable time in the morning.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Soak chia seeds with almond milk and stir with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps.</string>
-			<string>If needed, add more chia seeds or almond milk. The consistency shouldn&apos;t be runny.</string>
-			<string>The chia pudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
+			<string>Stir chia seeds with almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes.</string>
 			<string>Mix banana, raspberries, blueberries, almond milk and honey in a blender on high speed until smooth</string>
 			<string>Layer the soaked chia seeds with the blueberry smoothie in a bowl or a in a glass.</string>
 			<string>Add your favorite fruits and berries as topping. Eat with a spoon.</string>
@@ -242,9 +240,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Soak chia seeds with almond milk and stir with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps.</string>
-			<string>If needed, add more chia seeds or almond milk. The consistency shouldn&apos;t be runny.</string>
-			<string>The chia pudding is ready after another 10 minutes but can also be stored in the fridge over night.</string>
+			<string>Stir chia seeds and almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes.</string>
 			<string>Mix banana, mango, raspberries, almond milk and honey in a blender on high speed until smooth.</string>
 			<string>Layer the soaked chia seeds with the smoothie and the passion fruit in a bowl or a in a glass.</string>
 			<string>Add your favorite fruits and berries as topping. Eat with a spoon.</string>
@@ -330,7 +326,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Mix the mango with the honey to a mango sauce.</string>
-			<string>Mix the rest of the ingredients in a blender on high speed until smooth.</string>
+			<string>Mix all the other ingredients separately in a blender on high speed until smooth.</string>
 			<string>Gently pour the smoothie over the mango sauce.</string>
 		</array>
 	</dict>
@@ -347,8 +343,8 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Mix the raspberries and add the chia seeds and honey. Let the raspberry jam set for 15 minutes.</string>
-			<string>Mix all the other ingredients in a blender on high speed until smooth.</string>
+			<string>Mix raspberries and add the chia seeds and honey. Let the raspberry jam set for 15 minutes.</string>
+			<string>Mix all the other ingredients separately in a blender on high speed until smooth.</string>
 			<string>Fill a glass halfway with the smoothie and then add a layer of raspberry jam before filling the glass with the rest of the smoothie.</string>
 			<string>Drink it with a straw or eat with a spoon.</string>
 		</array>
@@ -431,7 +427,7 @@
 		<key>LongDescription</key>
 		<array>
 			<string>This smoothie has a fresh and creamy flavor. Turmeric doesn’t have a lot of flavor but adds a golden colour and has highly anti-inflammatory and healing properties.</string>
-			<string>For less calories, use a skinnier coconut milk.</string>
+			<string>For a lighter version, use a skinnier coconut milk.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -448,8 +444,8 @@
 		<string>Blackcurrant has a unique taste and are high in both vitamin C and antioxidants</string>
 		<key>LongDescription</key>
 		<array>
-			<string>Blackcurrant has a unique taste, unlike other berries. They are also high in both vitamin C and antioxidants.</string>
-			<string>Get them straight from the garden or store them in the fridge over winter and use them in this tasty smoothie whenever.</string>
+			<string>Blackcurrant has a unique taste, unlike any other berry. They are also high in both vitamin C and antioxidants.</string>
+			<string>Pick them straight from the garden and use them in this tasty smoothie.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -481,7 +477,7 @@
 		<string>Fresh basil and strawberries is a lovely summery combination that can be enjoyed all year around in this delicious smoothie.</string>
 		<key>LongDescription</key>
 		<array>
-			<string>The fresh basil is the secret ingredient that makes this simple smoothie pop and it tastes amazing together with strawberries.</string>
+			<string>Fresh basil is the secret ingredient that makes this simple smoothie pop and it tastes amazing together with strawberries.</string>
 		</array>
 		<key>Instructions</key>
 		<array>
@@ -518,7 +514,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Start by blending fresh or defrosted blueberries and honey with a spoon.</string>
-			<string>Stir 0,5 dl chia seeds with 1,5 dl almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes.</string>
+			<string>Stir chia seeds and almond milk with a spoon or a hand mixer. Stir again after 10 minutes and make sure there are no lumps. The chiapudding is ready after another 10 minutes.</string>
 			<string>In another bowl; mix banana, strawberries, blueberries, date and milk on high speed until smooth.</string>
 			<string>Put the blended blueberries and honey at the bottom of a glass or bowl followed by a layer of chia pudding. Add the smoothie as the third layer and top with the granola.</string>
 		</array>

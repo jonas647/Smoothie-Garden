@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<integer>11</integer>
+	<integer>12</integer>
 	<key>Recipe1</key>
 	<dict>
 		<key>Ingredients</key>
@@ -1310,12 +1310,12 @@ blueberries</key>
 	<dict>
 		<key>Ingredients</key>
 		<dict>
-			<key>chiaseeds</key>
+			<key>almond milk</key>
 			<dict>
 				<key>Quantity</key>
-				<real>0.5</real>
+				<real>1.5</real>
 				<key>Type</key>
-				<string>Chia Seeds dl</string>
+				<string>Almond Milk</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -1323,12 +1323,12 @@ blueberries</key>
 				<key>Sorting</key>
 				<integer>0</integer>
 			</dict>
-			<key>almond milk</key>
+			<key>chiaseeds</key>
 			<dict>
 				<key>Quantity</key>
-				<real>1.5</real>
+				<real>0.5</real>
 				<key>Type</key>
-				<string>Almond Milk</string>
+				<string>Chia Seeds dl</string>
 				<key>Measurement</key>
 				<string>dl</string>
 				<key>Optional</key>
@@ -2950,6 +2950,19 @@ blueberries</key>
 				<false/>
 				<key>Sorting</key>
 				<integer>10</integer>
+			</dict>
+			<key>Blank3</key>
+			<dict>
+				<key>Quantity</key>
+				<integer>0</integer>
+				<key>Type</key>
+				<string></string>
+				<key>Measurement</key>
+				<string></string>
+				<key>Optional</key>
+				<false/>
+				<key>Sorting</key>
+				<integer>11</integer>
 			</dict>
 			<key>Granola</key>
 			<dict>

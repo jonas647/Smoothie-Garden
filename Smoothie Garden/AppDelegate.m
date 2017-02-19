@@ -117,8 +117,8 @@ static int const kGaDispatchPeriod = 20;
     if (analyticsEnabled) {
         //Since the key is null if the user hasn't disabled the analytics we need to invert the bool
    
-        NSLog(@"Remember to activate GA when releasing app");
-        /*
+        //NSLog(@"Remember to activate GA when releasing app");
+        
         //If the user has enabled the analytics (or hasn't touched to analytics toggle)
         
         //Doing this initiliazation so that I can activate bitcode (Google/Analytics doesn't include this but GoogleAnalytics does...)
@@ -131,7 +131,7 @@ static int const kGaDispatchPeriod = 20;
         //[GAI sharedInstance].debug = YES;
         // Create tracker instance.
         [[GAI sharedInstance]trackerWithTrackingId:kGaPropertyId];
-        */
+        
     } else {
         NSLog(@"Analytics disabled");
     }

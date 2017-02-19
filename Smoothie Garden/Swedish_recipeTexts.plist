@@ -224,9 +224,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Blötlägg chiafrön i mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår.</string>
-			<string>Tillsätt eventuellt mer chiafrön eller mandelmjölk. Chiapuddingen ska inte vara för rinnig.</string>
-			<string>Efter ytterligare 10 minuter är chiapuddingen klar men den går också att förbereda redan kvällen innan och förvara i kylen.</string>
+			<string>Blötlägg chiafrön i mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår. Efter ytterligare 10 minuter i kylen är chiapuddingen klar.</string>
 			<string>Mixa banan, hallon, blåbär, mandelmjölk och honung på hög hastighet till krämig konsistens.</string>
 			<string>Varva chiapuddingen med blåbärssmoothien i en skål eller i ett glas.</string>
 			<string>Toppa med dina favoritfrukter och bär. Ät med sked.</string>
@@ -244,9 +242,7 @@
 		</array>
 		<key>Instructions</key>
 		<array>
-			<string>Blötlägg chiafrön i mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår.</string>
-			<string>Tillsätt eventuellt mer chiafrön eller mandelmjölk. Chiapuddingen ska inte vara för rinnig.</string>
-			<string>Efter ytterligare 10 minuter är chiapuddingen klar men den går också att förbereda redan kvällen innan och förvara i kylen.</string>
+			<string>Blötlägg chiafrön i mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår. Efter ytterligare 10 minuter i kylen är chiapuddingen klar.</string>
 			<string>Mixa banan, mango, hallon, mandelmjölk och honung på hög hastighet till krämig konsistens.</string>
 			<string>Varva chiapudding med passionsfrukt och smoothie i en skål eller i ett glas.</string>
 			<string>Toppa med dina favoritfrukter och bär, ät med sked!</string>
@@ -522,7 +518,7 @@
 		<key>Instructions</key>
 		<array>
 			<string>Börja med att blanda färska eller tinade blåbär och honung med en sked.</string>
-			<string>Blötlägg 0,5 dl chiafrön i 1,5 dl mandelmjölk. Blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår. Efter ytterligare 10 minuter i kylen är chiapuddingen klar.</string>
+			<string>Blötlägg chiafrön i mandelmjölk och blanda noggrant med handvisp eller med sked. Låt stå i tio minuter och blanda igen så att inga klumpar kvarstår. Efter ytterligare 10 minuter i kylen är chiapuddingen klar.</string>
 			<string>Mixa sedan banan, jordgubbar, blåbär, dadel och mjölk på hög hastighet till tjock och krämig konsistens.</string>
 			<string>Servera i glas eller i skål med honung och blåbärsblandningen i botten. Lägg på ett lager av chiapudding och häll sedan över smoothien. Avsluta med granola på toppen.</string>
 		</array>

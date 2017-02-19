@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetoxViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface DetoxViewController : UIViewController
 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewHeightConstraint;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *introductionText;
 
 @property (weak, nonatomic) IBOutlet UIView *day1View;

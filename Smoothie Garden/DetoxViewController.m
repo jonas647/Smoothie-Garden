@@ -17,7 +17,7 @@
 #import "DetoxViewController.h"
 #import "Recipe.h"
 #import "RecipeManager.h"
-#import "DetoxTableViewCell.h"
+#import "DetoxCollectionViewCell.h"
 #import "SBGoogleAnalyticsHelper.h"
 #import "SWRevealViewController.h"
 #import "DetailedRecipeViewController.h"
@@ -39,9 +39,14 @@
     
     float titleFontSize;
     float descriptionFontSize;
+    
 }
 
+
+
 @end
+
+static NSString * const reuseIdentifier = @"DetoxCollectionViewCell";
 
 @implementation DetoxViewController
 
@@ -87,22 +92,22 @@
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
         titleFontSize = 16;
-        descriptionFontSize = 13;
+        descriptionFontSize = 14;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
         titleFontSize = 20;
-        descriptionFontSize = 18;
+        descriptionFontSize = 19;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
         titleFontSize = 24;
-        descriptionFontSize = 21;
+        descriptionFontSize = 22;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIpad]) {
         
         //Just to test on simulator
-        titleFontSize = 25;
+        titleFontSize = 26;
         descriptionFontSize = 24;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
@@ -114,18 +119,10 @@
     }  else {
         
         // If a new device is released before the app is updated
-        titleFontSize = 14;
-        descriptionFontSize = 10;
+        titleFontSize = 18;
+        descriptionFontSize = 16;
     }
     
-    //Update table view height dynamically
-    self.tableView.estimatedRowHeight = 180;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    [self.tableView reloadData];
-    [self.tableView layoutIfNeeded];
-    
-    self.tableViewHeightConstraint.constant = self.tableView.contentSize.height + 250;
     
 }
 
@@ -134,7 +131,11 @@
     
     //Set the introduction text font based on device
     self.introductionText.font = [UIFont fontWithName:self.introductionText.font.fontName size:titleFontSize+2];
-    //[self.introductionText sizeToFit];
+    
+    [self.collectionView reloadData];
+    [self.collectionView layoutIfNeeded];
+    
+    self.collectionViewHeightConstraint.constant = self.collectionView.contentSize.height;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -149,10 +150,7 @@
     
     
     //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    
-    
-    
+    //[self.collectionView deselectRowAtIndexPath:[self.collectionView indexPathForSelectedRow] animated:YES];
     
 }
 
@@ -212,27 +210,16 @@
     
 }
 
+/*
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString* selectedCategory = [sectionCategories objectAtIndex: indexPath.section];
     Recipe *selectedRecipe = [self recipeForCategory:selectedCategory];
     [self performSegueWithIdentifier:@"showDetoxRecipeSegue" sender:selectedRecipe];
     
-    /*
-     Not in use now since IAP not active
-    NSString* selectedCategory = [sectionCategories objectAtIndex: indexPath.section];
-    Recipe *selectedRecipe = [self recipeForCategory:selectedCategory];
-
-    if ([selectedRecipe isRecipeUnlocked]) {
-        //Move to screen that shows the recipe
-        [self performSegueWithIdentifier:@"showDetoxRecipeSegue" sender:selectedRecipe];
-    } else if (![selectedRecipe isRecipeUnlocked]) {
-        //Move to screen for in app purchases
-        [self performSegueWithIdentifier:@"InAppPurchaseDetoxSegue" sender:nil];
-    }
     
-    */
 }
+ */
 
 - (Recipe*) recipeWithRecipeName: (NSString*) name {
     
@@ -263,7 +250,7 @@
 
 
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //#warning Potentially incomplete method implementation.
     // Return the number of sections.
@@ -316,6 +303,8 @@
     
     return cell;
 }
+ 
+ */
 
 - (Recipe*) recipeForCategory: (NSString*) category {
     
@@ -366,16 +355,104 @@
     }
     
     //Reload table in order to set correct frames for all views
-    [self.tableView setNeedsLayout];
-    [self.tableView layoutIfNeeded];
-    [self.tableView reloadData];
+    //[self.collectionView setNeedsLayout];
+    //[self.collectionView layoutIfNeeded];
+    [self.collectionView reloadData];
 }
+
+#pragma mark UICollection view
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
+    return 1;
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return 4;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    DetoxCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    }
+    
+    NSString* category = [sectionCategories objectAtIndex: indexPath.row];
+    Recipe *recipeToShow = [self recipeForCategory:category];
+    
+    
+    // Configure the cell...
+
+    cell.headerLabel.text = NSLocalizedString(category, nil);
+    cell.recipeTitle.text = recipeToShow.recipeName;
+    cell.recipeTitle.font = [UIFont fontWithName:cell.recipeTitle.font.fontName size:titleFontSize];
+    
+    //Get the UIImage from memory, stored in a NSDictionary
+    cell.imageView.image = [thumbnailImages objectForKey:recipeToShow.recipeName];
+    
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    float itemWidth;
+    
+    if (self.view.frame.size.width <= 414) {
+        itemWidth = self.view.frame.size.width;
+    } else {
+        itemWidth = self.view.frame.size.width / 2 - 1;
+    }
+    
+    return CGSizeMake(itemWidth, itemWidth*0.85);
+}
+ 
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Recipe *tempRecipe;
+    
+    switch (indexPath.row) {
+        case 0:
+            tempRecipe = nineAM;
+            break;
+        case 1:
+            tempRecipe = twelveAM;
+            break;
+        case 2:
+            tempRecipe = fourPM;
+            break;
+        case 3:
+            tempRecipe = sevenPM;
+            break;
+        default:
+            break;
+    }
+    
+    [self performSegueWithIdentifier:@"showDetoxRecipeSegue" sender:tempRecipe];
+}
+
+
+
+#pragma mark - Story board segue
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
     
     if ([segue.destinationViewController isKindOfClass:[TraitCollectionOverrideViewController class]]) {
         

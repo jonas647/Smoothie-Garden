@@ -6,10 +6,29 @@
 //  Copyright © 2016 Jonas C Björkell. All rights reserved.
 //
 
+//Change to this in the future
+//TODO
+/*
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define IS_ZOOMED (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+*/
+
 #define IPHONE_4        @[@"iPhone 4",@"Verizon iPhone 4",@"iPhone 4S"]
-#define IPHONE_5        @[@"iPhone 5 (GSM)",@"iPhone 5 (GSM+CDMA)",@"iPhone 5c (GSM)",@"iPhone 5c (GSM+CDMA)",@"iPhone 5s (GSM)",@"iPhone 5s (GSM+CDMA)"]
-#define IPHONE_6        @[@"iPhone 6", @"iPhone 6s"]
-#define IPHONE_6PLUS    @[@"iPhone 6 Plus", @"iPhone 6s Plus"]
+#define IPHONE_5        @[@"iPhone 5 (GSM)",@"iPhone 5 (GSM+CDMA)",@"iPhone 5c (GSM)",@"iPhone 5c (GSM+CDMA)",@"iPhone 5s (GSM)",@"iPhone 5s (GSM+CDMA)", @"iPhone SE"]
+#define IPHONE_6        @[@"iPhone 6", @"iPhone 6s", @"iPhone 7", @"iPhone9,3"]
+#define IPHONE_6PLUS    @[@"iPhone 6 Plus", @"iPhone 6s Plus", @"iPhone 7 Plus"]
 #define IPAD            @[@"iPad",@"iPad 2 (WiFi)",@"iPad 2 (GSM)",@"iPad 2 (CDMA)",@"iPad 2 (WiFi)",@"iPad Mini (WiFi)",@"iPad Mini (GSM)",@"iPad Mini (GSM+CDMA)",@"iPad 3 (WiFi)",@"iPad 3 (GSM+CDMA)",@"iPad 3 (GSM)",@"iPad 4 (WiFi)",@"iPad 4 (GSM)",@"iPad 4 (GSM+CDMA)",@"iPad Air (WiFi)",@"iPad Air (Cellular)",@"iPad Air",@"iPad Mini 2G (WiFi)",@"iPad Mini 2G (Cellular)",@"iPad Mini 2G",@"iPad Mini 3 (WiFi)",@"iPad Mini 3 (Cellular)",@"iPad Mini 3 (China)",@"iPad Air 2 (WiFi)",@"iPad Air 2 (Cellular)"]
 
 #import "DeviceHelper.h"
@@ -47,6 +66,11 @@
     if ([platform isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
     if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
     if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
+    if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
+    if ([platform isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
+    if ([platform isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
+    if ([platform isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
+    if ([platform isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
     if ([platform isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
@@ -84,6 +108,7 @@
     if ([platform isEqualToString:@"x86_64"])       return @"Simulator";
     
     return platform;
+    
 }
 
 - (BOOL) isCurrentPlatform: (NSArray*) devices {

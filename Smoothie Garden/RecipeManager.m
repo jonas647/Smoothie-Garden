@@ -350,9 +350,11 @@
         recipeDescriptionPath = @"Swedish_recipeTexts";
     } else if ([currentLanguage hasPrefix:@"en"]) {
         recipeDescriptionPath = @"English_recipeTexts";
-    } else if ([currentLanguage hasPrefix:@"da"]) {
+    } /*else if ([currentLanguage hasPrefix:@"da"]) {
+       Not using danish yet
+       
         recipeDescriptionPath = @"Danish_recipeTexts";
-    } else {
+    } */else {
         //English if any other language is the default
         recipeDescriptionPath = @"English_recipeTexts";
     }

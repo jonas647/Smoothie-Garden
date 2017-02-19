@@ -142,7 +142,7 @@
     
     //Initialize a number formatter
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc]init];
-    numberFormatter.locale = [NSLocale currentLocale];// this ensures the right separator behavior
+    numberFormatter.locale = [NSLocale currentLocale];// this ensures the right separator behavior (comma vs dot)
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     numberFormatter.usesGroupingSeparator = YES;
     
@@ -158,10 +158,15 @@
     //Final string to show to the user as quantity
     NSString *quantityString;
     
-    //If quantity smaller than one it's always rounded to closest 0,5. so smaller than one means 0,5. Will show as 1/2 instead
+    //If quantity smaller than one it's always rounded to closest 1/2, 1/4, 1/5 (using1/5 for chia/almond milk)
+    
     if (qty == 0) {
         quantityString = @"";
-    } else if (qty < 1) {
+    } else if (qty > 0 && qty <= 0.22) {
+        quantityString = @"1/5";
+    } else if (qty > 0 && qty < 0.3) {
+        quantityString = @"1/4";
+    } else if (qty > 0.3 && qty < 1) {
         quantityString = @"1/2";
     } else {
         quantityString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:qty]];

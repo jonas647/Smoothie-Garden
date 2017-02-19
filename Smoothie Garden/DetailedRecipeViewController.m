@@ -42,6 +42,7 @@
     NSArray *recipeDescriptions;
     NSArray *ingredients;
     NSArray *nutrientTypes;
+    NSArray *localizedNutrientKeys;
     float latestContentOffset;
     
     float marginBetweenTextCells;
@@ -50,6 +51,8 @@
     float sizeForTitleText;
     float sizeForRecipeDescriptions;
     float sizeForShoppingListText;
+    float sizeForNutrientType;
+    float sizeForNutrientValue;
     
 }
 
@@ -84,48 +87,58 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
-        sizeForByText = 9;
-        sizeForSmoothieBoxText = 11;
-        sizeForTitleText = 16;
-        sizeForRecipeDescriptions = 13;
+        sizeForByText = 10;
+        sizeForSmoothieBoxText = 12;
+        sizeForTitleText = 18;
+        sizeForRecipeDescriptions = 15;
         sizeForShoppingListText = 12;
+        sizeForNutrientType = 12;
+        sizeForNutrientValue = 18;
         marginBetweenTextCells = 20;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
         sizeForByText = 10;
         sizeForSmoothieBoxText = 13;
-        sizeForTitleText = 21;
+        sizeForTitleText = 24;
         sizeForRecipeDescriptions = 18;
         sizeForShoppingListText = 15;
+        sizeForNutrientType = 15;
+        sizeForNutrientValue = 20;
         marginBetweenTextCells = 30;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
         sizeForByText = 14;
         sizeForSmoothieBoxText = 18;
-        sizeForTitleText = 32;
-        sizeForRecipeDescriptions = 21;
+        sizeForTitleText = 28;
+        sizeForRecipeDescriptions = 20;
         sizeForShoppingListText = 17;
+        sizeForNutrientType = 16;
+        sizeForNutrientValue = 24;
         marginBetweenTextCells = 35;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIpad]) {
         
         sizeForByText = 13;
         sizeForSmoothieBoxText = 16;
-        sizeForTitleText = 38;
+        sizeForTitleText = 36;
         sizeForRecipeDescriptions = 24;
         sizeForShoppingListText = 17;
+        sizeForNutrientType = 16;
+        sizeForNutrientValue = 26;
         marginBetweenTextCells = 40;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
-        sizeForByText = 14;
-        sizeForSmoothieBoxText = 18;
-        sizeForTitleText = 32;
-        sizeForRecipeDescriptions = 21;
-        sizeForShoppingListText = 17;
-        marginBetweenTextCells = 35;
+        sizeForByText = 10;
+        sizeForSmoothieBoxText = 13;
+        sizeForTitleText = 24;
+        sizeForRecipeDescriptions = 18;
+        sizeForShoppingListText = 15;
+        sizeForNutrientType = 14;
+        sizeForNutrientValue = 20;
+        marginBetweenTextCells = 30;
     } else {
         // If a new device is released before the app is updated
         sizeForByText = 9;
@@ -133,6 +146,8 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         sizeForTitleText = 18;
         sizeForRecipeDescriptions = 18;
         sizeForShoppingListText = 12;
+        sizeForNutrientType = 16;
+        sizeForNutrientValue = 12;
         marginBetweenTextCells = 20;
     }
     
@@ -147,21 +162,59 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     //navigationBariPadHeightConstraint.constant = self.navigationController.navigationBar.frame.size.height;
     
     caloriesText.text = [NSString stringWithFormat:@"%@%@",NSLocalizedString(@"LOCALIZE_Total Energy", nil),[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
-    
+    caloriesText.font = [UIFont fontWithName:caloriesText.font.fontName size:sizeForRecipeDescriptions];
     
     //Setup an array with the objects that will be populated manually to be first objects in nutrient objects
     
     NSArray *manualNutrientFacts = @[NUTRITION_FAT, NUTRITION_FIBER, NUTRITION_PROTEIN, NUTRITION_CARBOHYDRATE, NUTRITION_CALORIES];
     
-    //Set the nutrient values to be shown
-    NSMutableArray *tempNutrients = [[NSMutableArray alloc]init];
-    for (NSString *nutrient in self.selectedRecipe.allNutrientKeys) {
-        if (![manualNutrientFacts containsObject:nutrient]) {
-            [tempNutrients addObject:nutrient];
-        }
-    }
     
-    nutrientTypes = [NSArray arrayWithArray:tempNutrients];
+    //Set the nutrient values to be shown
+    //Handle localization for nutrients if english isn't used on the phone
+    
+    //Remove energy as that's shown at the top as "Kcal"
+    NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
+    [tempKeys removeObject:@"Energy"];
+    [tempKeys removeObjectsInArray:manualNutrientFacts];
+    
+    if (![[self currentLanguage] isEqualToString: @"en"] ) {
+        
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        NSMutableArray *tempLocalizedKeys = [[NSMutableArray alloc]init];
+        for (NSString *tempNutrientKey in tempKeys) {
+            
+            //Set an object that's the master key for the localized key
+            NSString *localizedKey = [self localizedNameIn:[self currentLanguage] forNutrient:tempNutrientKey];
+            if (localizedKey != nil) {
+                [dic setObject:tempNutrientKey forKey:localizedKey];
+                
+            } else {
+                NSLog(@"Localized key not available for: %@", tempNutrientKey);
+                [dic setObject:tempNutrientKey forKey:tempNutrientKey];
+            }
+            //Add the localized key
+            [tempLocalizedKeys addObject:localizedKey];
+            
+        }
+        
+        //Create the localized sorted array
+        localizedNutrientKeys = [tempLocalizedKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        
+        //Sort the master key in the same order as localized key
+        NSMutableArray *tempMasterKeys = [[NSMutableArray alloc]init];
+        for (NSString *localizedKey in localizedNutrientKeys) {
+            
+            NSString *masterKey = [dic objectForKey:localizedKey];
+            [tempMasterKeys addObject:masterKey];
+        }
+        
+        nutrientTypes = [NSArray arrayWithArray:tempMasterKeys];
+    } else {
+        
+        //Sort the array of keys alphabetically
+        nutrientTypes = [tempKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    }
+
     
 }
 
@@ -288,6 +341,35 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     
 }
 
+//Should move this to localization handler
+//TODO
+- (NSString*) currentLanguage {
+    
+    //Identify the language of the device
+    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
+    //Return the two first characters, ie. "en"
+    return [currentLanguage substringToIndex:2];
+    
+}
+
+- (NSString*) localizedNameIn: (NSString*) language forNutrient: (NSString*) nutrientName {
+    
+    //Get the plist that has all the nutrient names
+    NSString *filepathToNutrients = [[NSBundle mainBundle] pathForResource:@"NutritionTranslation" ofType:@"plist"];
+    NSDictionary *nutrientTextDictionary = [NSDictionary dictionaryWithContentsOfFile:filepathToNutrients];
+    
+    //Dictionary of the specific nutrient
+    NSDictionary *thisNutrient = [nutrientTextDictionary objectForKey:nutrientName];
+    
+    if ([thisNutrient objectForKey:language]) {
+        return [thisNutrient objectForKey:language];
+    } else {
+        //NSLog(@"No translation for %@", nutrientName);
+        return nutrientName;
+    }
+}
+
 #pragma mark - Update font sizes
 
 - (void) setFontSizeForLabel: (UILabel*) label size: (float) size {
@@ -365,6 +447,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         UILabel *separator = (UILabel*)[cell viewWithTag:202];
     
         Ingredient *ingredientForRow = [ingredients objectAtIndex:indexPath.row];
+
     
         recipeQtyMeasure.text = [ingredientForRow stringWithQuantityAndMeasure];
         recipeQtyMeasure.font = [UIFont fontWithName:recipeQtyMeasure.font.fontName size:sizeForRecipeDescriptions];
@@ -376,6 +459,9 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         if ([recipeIngredientText.text isEqualToString:@""]) {
             
             [separator setText:@"x"];
+            [separator setFont:[UIFont fontWithName:separator.font.fontName size:10]];
+        } else {
+            [separator setText:@"\u2022"]; //display a dot
             [separator setFont:[UIFont fontWithName:separator.font.fontName size:10]];
         }
         
@@ -594,7 +680,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     }
 }
 */
-
+ 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -622,37 +708,52 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     NSString *localizedProtein = [NSString stringWithFormat:@"LOCALIZE_%@", NUTRITION_PROTEIN];
     NSString *localizedFiber = [NSString stringWithFormat:@"LOCALIZE_%@", NUTRITION_FIBER];
     
+    NSString *nonLocalizedNutrient = [nutrientTypes objectAtIndex:indexPath.row];
+    
     switch (indexPath.row) {
         case 0:
             cell.nutrientType.text = NSLocalizedString(localizedCarbs, nil);
-            cell.nutrientValue.text = [_selectedRecipe volumeForNutrient:NUTRITION_CARBOHYDRATE asRoundedValue:YES];
-            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_CARBOHYDRATE];
+            cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_CARBOHYDRATE];
+            cell.percentOfDailyIntake.text = [NSString stringWithFormat:@"%@*", [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_CARBOHYDRATE]];
             break;
         case 1:
             cell.nutrientType.text = NSLocalizedString(localizedFat, nil);
             cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FAT];
-            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_FAT];
+            cell.percentOfDailyIntake.text = [NSString stringWithFormat:@"%@*",[self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_FAT]];
             break;
         case 2:
             cell.nutrientType.text = NSLocalizedString(localizedProtein, nil);
             cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_PROTEIN];
-            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_PROTEIN];
+            cell.percentOfDailyIntake.text = [NSString stringWithFormat:@"%@*",[self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_PROTEIN]];
             break;
         case 3:
             cell.nutrientType.text = NSLocalizedString(localizedFiber, nil);
             cell.nutrientValue.text = [_selectedRecipe volumeStringForNutrient:NUTRITION_FIBER];
-            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_FIBER];
+            cell.percentOfDailyIntake.text = [NSString stringWithFormat:@"%@*",[self.selectedRecipe percentOfDailyIntakeFor:NUTRITION_FIBER]];
             break;
         default:
             //After the manual nutrient facts start picking the ones that are in the array for nutrients to show
-            cell.nutrientType.text = [nutrientTypes objectAtIndex:indexPath.row - 4];
-            cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:cell.nutrientType.text];
-            cell.percentOfDailyIntake.text = [self.selectedRecipe percentOfDailyIntakeFor:cell.nutrientType.text];
+           
+            //If there's a localized key then show that, otherwise go for the english
+            if ([localizedNutrientKeys objectAtIndex:indexPath.row]) {
+                cell.nutrientType.text  = [localizedNutrientKeys objectAtIndex:indexPath.row];
+            } else {
+                cell.nutrientType.text  = [nutrientTypes objectAtIndex:indexPath.row];
+            }
+            
+            cell.nutrientValue.text = [self.selectedRecipe volumeStringForNutrient:nonLocalizedNutrient];
+            cell.percentOfDailyIntake.text = [NSString stringWithFormat:@"%@*",[self.selectedRecipe percentOfDailyIntakeFor:nonLocalizedNutrient]];
             break;
     }
     
+    cell.nutrientType.font = [UIFont fontWithName:cell.nutrientType.font.fontName size:sizeForNutrientType];
+    cell.nutrientValue.font = [UIFont fontWithName:cell.nutrientValue.font.fontName size:sizeForNutrientValue];
+    cell.percentOfDailyIntake.font = [UIFont fontWithName:cell.percentOfDailyIntake.font.fontName size:sizeForNutrientType];
+    
     return cell;
 }
+
+#pragma mark - Size of the cells
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
@@ -689,6 +790,15 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
  }
  */
 
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+/*
 #pragma mark <UICollectionViewDelegate>
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -704,6 +814,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
 }
 
 
+*/
 
 #pragma mark - Navigation
 
