@@ -143,7 +143,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         // If a new device is released before the app is updated
         sizeForByText = 9;
         sizeForSmoothieBoxText = 11;
-        sizeForTitleText = 18;
+        sizeForTitleText = 20;
         sizeForRecipeDescriptions = 18;
         sizeForShoppingListText = 12;
         sizeForNutrientType = 16;

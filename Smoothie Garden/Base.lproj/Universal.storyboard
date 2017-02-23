@@ -1824,7 +1824,7 @@
                                                         <rect key="frame" x="5" y="0.0" width="790" height="131"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ubC-HR-jMu" userLabel="Title">
-                                                                <rect key="frame" x="35" y="25" width="720" height="38"/>
+                                                                <rect key="frame" x="40" y="25" width="710" height="38"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1844,7 +1844,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="ubC-HR-jMu" secondAttribute="trailing" constant="35" id="3SN-uz-yTn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ubC-HR-jMu" secondAttribute="trailing" constant="40" id="3SN-uz-yTn"/>
                                                             <constraint firstAttribute="trailing" secondItem="MmW-it-cN7" secondAttribute="trailing" constant="5" id="INv-Sf-W0S"/>
                                                             <constraint firstItem="uMN-ps-bsb" firstAttribute="leading" secondItem="j42-O3-MpK" secondAttribute="leading" constant="5" id="P9Z-oU-FaQ"/>
                                                             <constraint firstAttribute="bottom" secondItem="MmW-it-cN7" secondAttribute="bottom" constant="10" id="brn-A1-7x5"/>
@@ -1853,7 +1853,7 @@
                                                             <constraint firstItem="ubC-HR-jMu" firstAttribute="top" secondItem="j42-O3-MpK" secondAttribute="top" constant="25" id="jkC-6a-aW9"/>
                                                             <constraint firstItem="uMN-ps-bsb" firstAttribute="top" secondItem="ubC-HR-jMu" secondAttribute="bottom" constant="5" id="n6e-fa-bTA"/>
                                                             <constraint firstItem="MmW-it-cN7" firstAttribute="top" secondItem="uMN-ps-bsb" secondAttribute="bottom" constant="5" id="s4Z-ij-JZp"/>
-                                                            <constraint firstItem="ubC-HR-jMu" firstAttribute="leading" secondItem="j42-O3-MpK" secondAttribute="leading" constant="35" id="w31-5J-Zcb"/>
+                                                            <constraint firstItem="ubC-HR-jMu" firstAttribute="leading" secondItem="j42-O3-MpK" secondAttribute="leading" constant="40" id="w31-5J-Zcb"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -2076,7 +2076,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smoothie name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTF-8z-sDK" userLabel="Title">
-                                                <rect key="frame" x="35" y="25" width="720" height="38"/>
+                                                <rect key="frame" x="40" y="25" width="710" height="38"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2097,7 +2097,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="vTF-8z-sDK" firstAttribute="top" secondItem="gNa-Re-r5W" secondAttribute="top" constant="25" id="0Sg-bI-unA"/>
-                                            <constraint firstAttribute="trailing" secondItem="vTF-8z-sDK" secondAttribute="trailing" constant="35" id="Dz6-mW-Ovo"/>
+                                            <constraint firstAttribute="trailing" secondItem="vTF-8z-sDK" secondAttribute="trailing" constant="40" id="Dz6-mW-Ovo"/>
                                             <constraint firstItem="Y9m-cL-UF6" firstAttribute="leading" secondItem="gNa-Re-r5W" secondAttribute="leading" constant="5" id="HTZ-Wp-dqA"/>
                                             <constraint firstAttribute="trailing" secondItem="ilB-z7-KEt" secondAttribute="trailing" id="JV2-XX-brE"/>
                                             <constraint firstAttribute="trailing" secondItem="Y9m-cL-UF6" secondAttribute="trailing" constant="5" id="ObE-2B-IyZ"/>
@@ -2108,7 +2108,7 @@
                                             <constraint firstItem="XPe-8p-rds" firstAttribute="leading" secondItem="gNa-Re-r5W" secondAttribute="leading" constant="5" id="eX0-oQ-RZp"/>
                                             <constraint firstItem="XPe-8p-rds" firstAttribute="top" secondItem="vTF-8z-sDK" secondAttribute="bottom" constant="5" id="hnk-E4-Hre"/>
                                             <constraint firstItem="ilB-z7-KEt" firstAttribute="leading" secondItem="gNa-Re-r5W" secondAttribute="leading" id="lvR-dd-h4g"/>
-                                            <constraint firstItem="vTF-8z-sDK" firstAttribute="leading" secondItem="gNa-Re-r5W" secondAttribute="leading" constant="35" id="roE-Gx-g4P"/>
+                                            <constraint firstItem="vTF-8z-sDK" firstAttribute="leading" secondItem="gNa-Re-r5W" secondAttribute="leading" constant="40" id="roE-Gx-g4P"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">

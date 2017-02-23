@@ -91,23 +91,23 @@ static NSString * const reuseIdentifier = @"DetoxCollectionViewCell";
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
-        titleFontSize = 16;
-        descriptionFontSize = 14;
+        titleFontSize = 18;
+        descriptionFontSize = 15;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6]) {
         
-        titleFontSize = 20;
-        descriptionFontSize = 19;
+        titleFontSize = 24;
+        descriptionFontSize = 18;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIphone6plus]) {
         
-        titleFontSize = 24;
-        descriptionFontSize = 22;
+        titleFontSize = 28;
+        descriptionFontSize = 20;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceIpad]) {
         
         //Just to test on simulator
-        titleFontSize = 26;
+        titleFontSize = 36;
         descriptionFontSize = 24;
         
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
@@ -119,8 +119,8 @@ static NSString * const reuseIdentifier = @"DetoxCollectionViewCell";
     }  else {
         
         // If a new device is released before the app is updated
-        titleFontSize = 18;
-        descriptionFontSize = 16;
+        titleFontSize = 20;
+        descriptionFontSize = 18;
     }
     
     
