@@ -53,7 +53,7 @@ static NSString * const reuseIdentifier = @"DetoxCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Needed not to show the navigation bar as black for a second when returning from recipe
+    //This is needed not to show the navigation bar as black for a second when returning from recipe
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     
     //Load here to show user view before recipes are fully loaded
@@ -64,9 +64,6 @@ static NSString * const reuseIdentifier = @"DetoxCollectionViewCell";
     thumbnailImages = [[RecipeManager sharedInstance]thumbnailImages];
     
     [self setupDetoxDayFor:@"Day1"];
-    
-    //CGRect tempFrame = [self newFrameForUIView:_tableView];
-    //[_tableViewHeightConstraint setConstant:tempFrame.size.height + 100];
     
     if (self.revealViewController != nil) {
         
@@ -88,7 +85,7 @@ static NSString * const reuseIdentifier = @"DetoxCollectionViewCell";
     //UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
     //[self.navigationController.navigationBar setBackgroundColor:mainColor];
     
-    //Set the text sizes depending on device
+    //Set the text sizes depending on device, hard coded for now
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
         titleFontSize = 18;
@@ -141,13 +138,10 @@ static NSString * const reuseIdentifier = @"DetoxCollectionViewCell";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
     //Reset the navigation bar, set back to being shown
     //Is hidden in the detailed recipe view
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.translucent = NO;
-    
-    
     
     //Remove the selection of the previously selected table cell. Make the deselection here to show the user the previously selected cell with a short "blink".
     //[self.collectionView deselectRowAtIndexPath:[self.collectionView indexPathForSelectedRow] animated:YES];

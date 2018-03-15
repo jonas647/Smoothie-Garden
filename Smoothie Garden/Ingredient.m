@@ -331,7 +331,7 @@
     if ([self isMeasureTypeConverted]) {
         
         float metricMeasure = qty;
-        float usMeasure;
+        float usMeasure = qty;
         NSString *newMeasureType = measureType;
         
         if ([measureType isEqualToString:METRIC_deciliter]) {

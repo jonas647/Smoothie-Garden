@@ -6,6 +6,8 @@
 //  Copyright © 2015 Jonas C Björkell. All rights reserved.
 //
 
+//This is not in use right now since no IAP available
+
 #import "SBIAPHelper.h"
 
 @implementation SBIAPHelper

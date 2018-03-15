@@ -11,7 +11,7 @@
 @interface RecipeCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
-@property (weak, nonatomic) IBOutlet UILabel *recipeDescription;
+@property (weak, nonatomic) IBOutlet UILabel *recipeDescription; //Not used in current layout
 @property (weak, nonatomic) IBOutlet UILabel *recipeHeader;
 @property (weak, nonatomic) IBOutlet UIButton *likedRecipe;
 

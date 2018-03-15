@@ -6,7 +6,7 @@
 //  Copyright © 2015 Jonas C Björkell. All rights reserved.
 //
 
-#import "sidebarTableViewController.h"
+#import "SideBarTableViewController.h"
 #import "SWRevealViewController.h"
 
 @interface sidebarTableViewController ()

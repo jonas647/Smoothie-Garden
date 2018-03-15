@@ -12,7 +12,6 @@
 #import "AppReviewHelper.h"
 #import "Ingredient.h"
 #import "DeviceHelper.h"
-#import "RecipeTableViewController.h"
 #import "DetailedRecipeViewController.h"
 
 
@@ -28,79 +27,13 @@ static int const kGaDispatchPeriod = 20;
 
 @implementation AppDelegate
 {
-    /*
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-     */
+   
     
 }
 
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    /*
-    UIColor *mainColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    //Update the colors of where in the app the default color should be used
-    
-    [[UINavigationBar appearance] setBarTintColor:mainColor];
-    [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-  
-    [[UINavigationBar appearance] setBarTintColor:mainColor];
-
-    [[UINavigationBar appearance] setTitleTextAttributes: @{
-                                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:16.0f],
-                                                            }];
-    
-    //Remove the top shadow line
-    //[[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
-    //Remove the bottom shadow line
-    //[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
-    [[UITableViewCell appearance].contentView.layer setBorderWidth:2.0f];
-    [[UITableViewCell appearance].contentView.layer setBorderColor:mainColor.CGColor];
-    */
-    
-    //Default font
-    //[[UILabel appearance] setFont:[UIFont fontWithName:@"Verdana" size:10.0f]];
-    
-    //Tab bar items
-    /*
-    [[UITabBar appearance] setTintColor:secondaryColor];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor darkGrayColor], NSForegroundColorAttributeName,
-                                                       nil] forState:UIControlStateNormal];
-    */
-
-    
-    //Appearance of the page control
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor blackColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    pageControl.backgroundColor = [UIColor clearColor];
-    pageControl.alpha = 1;
-    
-    [self.window setTintColor:[UIColor blackColor]];
-    
-    //Get the in app purchases from the in app purchase helper singleton
-    //Load it here so that the purchases are available when the user tries to buy the IAP
-    
-    //For now inactivating this since IAP will be replaced by premium app
-    //[[SBIAPHelper sharedInstance] unlockIAP:@"basicRecipes_01"];
-    
-    /*
-    [[SBIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
-        if (success) {
-            _iTunesPurchases = [NSArray arrayWithArray:products];
-            //array gets populated with skproduct objects
-        }
-    }];
-    */
     
     //Google Analytics
     

@@ -31,13 +31,7 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     UIImage *image = [UIImage imageNamed:@"SmoothieBox"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    //Set the table view array
+    //Populate the table view with recipe data
     [self setupRecipesFromRecipeMaster];
     
     //Create thumbnail images to display in tableview
@@ -59,8 +53,6 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     
     [self.collectionView reloadData];
     self.collectionView.collectionViewLayout = flow;
-    
-    
     
     //This is needed for the reveal controller to work
     SWRevealViewController *revealController = [self revealViewController];
@@ -106,8 +98,6 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     self.searchController.searchBar.delegate = self;
     self.searchController.delegate = self;
     
-    //Set the background color of the search bar to a lighter color
-    
     [self.searchController.searchBar setTintColor:[UIColor darkGrayColor]];
     [self.searchController.searchBar setBarTintColor:[UIColor whiteColor]];
     
@@ -115,7 +105,6 @@ static NSString * const reuseIdentifier = @"RecipeCell";
     
     self.searchController.searchBar.placeholder = NSLocalizedString(@"LOCALIZE_Search", @"Search for recipe or ingredient");
     
-    //self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
 
 }
@@ -166,6 +155,7 @@ static NSString * const reuseIdentifier = @"RecipeCell";
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     
     //Called when the search result should be updated
+    //Needs to be refactored and simplified
     
     //Get the search text
     NSString *searchText = searchController.searchBar.text;
@@ -282,16 +272,27 @@ static NSString * const reuseIdentifier = @"RecipeCell";
 
 - (float) widthForItem {
     
+    //Depending on screen size show different number of items. Hard coded for now.
+    
     if (self.view.frame.size.width >= 1024) {
+        
+        //Show 4 recipe images on the bigger screens
+        //-3 for space between items
         return self.view.frame.size.width/4 - 3;
         
-    } else if (self.view.frame.size.width >= 768) {
+    } else if (self.view.frame.size.width >= 750) {
+        
+        //Show 3 recipe images on the + phones
+        //-2 for space between items
         return self.view.frame.size.width/3 - 2;
         
     } else if (self.view.frame.size.width >= 375) {
-        return self.view.frame.size.width/2 -1;
+        // 2 images on the smaller phones
+        //-1 for space between items
+        return self.view.frame.size.width/2 - 1;
         
     } else {
+        //1 image on the smallest phones. iPhone 5 size.
         return self.view.frame.size.width;
     }
 }

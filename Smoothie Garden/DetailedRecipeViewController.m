@@ -100,7 +100,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
         
         sizeForByText = 10;
         sizeForSmoothieBoxText = 13;
-        sizeForTitleText = 24;
+        sizeForTitleText = 23;
         sizeForRecipeDescriptions = 18;
         sizeForShoppingListText = 15;
         sizeForNutrientType = 15;
@@ -132,22 +132,22 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     } else if ([[DeviceHelper sharedInstance] isDeviceSimulator]) {
         
         sizeForByText = 10;
-        sizeForSmoothieBoxText = 13;
-        sizeForTitleText = 24;
-        sizeForRecipeDescriptions = 18;
-        sizeForShoppingListText = 15;
-        sizeForNutrientType = 14;
-        sizeForNutrientValue = 20;
-        marginBetweenTextCells = 30;
+        sizeForSmoothieBoxText = 12;
+        sizeForTitleText = 18;
+        sizeForRecipeDescriptions = 15;
+        sizeForShoppingListText = 12;
+        sizeForNutrientType = 12;
+        sizeForNutrientValue = 18;
+        marginBetweenTextCells = 20;
     } else {
         // If a new device is released before the app is updated
-        sizeForByText = 9;
-        sizeForSmoothieBoxText = 11;
-        sizeForTitleText = 20;
-        sizeForRecipeDescriptions = 18;
+        sizeForByText = 10;
+        sizeForSmoothieBoxText = 12;
+        sizeForTitleText = 18;
+        sizeForRecipeDescriptions = 15;
         sizeForShoppingListText = 12;
-        sizeForNutrientType = 16;
-        sizeForNutrientValue = 12;
+        sizeForNutrientType = 12;
+        sizeForNutrientValue = 18;
         marginBetweenTextCells = 20;
     }
     
