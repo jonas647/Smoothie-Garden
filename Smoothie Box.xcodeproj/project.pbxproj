@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B52619BE96A0D5ED9D309735 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE1532BDE143C021168AE4D /* libPods.a */; };
+		7B415D1C8077FDA4CC91A2B9 /* libPods-Smoothie Box.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3301CE767066881341BA49EF /* libPods-Smoothie Box.a */; };
 		DF0769E81C20CAD30022E1D5 /* NutrientCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0769E71C20CAD30022E1D5 /* NutrientCatalog.m */; };
 		DF0932181CABB768000C5FC2 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0932171CABB768000C5FC2 /* DeviceHelper.m */; };
 		DF10DD2B1E4134E800E5489D /* NutrientCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DF10DD2A1E4134E800E5489D /* NutrientCollectionViewFlowLayout.m */; };
@@ -68,10 +68,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4714D359697AD8C993B859D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9F5F3F8209D07FCCE8E442AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B00C00EAC09F1F80F173C98A /* libPods-Smoothie Garden.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smoothie Garden.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDE1532BDE143C021168AE4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3301CE767066881341BA49EF /* libPods-Smoothie Box.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smoothie Box.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5833F5DB6613EEA6A640055A /* Pods-Smoothie Box.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smoothie Box.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smoothie Box/Pods-Smoothie Box.debug.xcconfig"; sourceTree = "<group>"; };
+		6FE08D861A5E12A66D94FE76 /* Pods-Smoothie Box.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smoothie Box.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smoothie Box/Pods-Smoothie Box.release.xcconfig"; sourceTree = "<group>"; };
 		DF0769E61C20CAD30022E1D5 /* NutrientCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutrientCatalog.h; sourceTree = "<group>"; };
 		DF0769E71C20CAD30022E1D5 /* NutrientCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutrientCatalog.m; sourceTree = "<group>"; };
 		DF0932161CABB768000C5FC2 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
@@ -183,7 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52619BE96A0D5ED9D309735 /* libPods.a in Frameworks */,
+				7B415D1C8077FDA4CC91A2B9 /* libPods-Smoothie Box.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,17 +194,16 @@
 			children = (
 				DFB7F3071C53852900E496CC /* CoreData.framework */,
 				DF6CDEAD1C40FE8D000CDBBE /* libGoogleAnalytics.a */,
-				B00C00EAC09F1F80F173C98A /* libPods-Smoothie Garden.a */,
-				BDE1532BDE143C021168AE4D /* libPods.a */,
+				3301CE767066881341BA49EF /* libPods-Smoothie Box.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		72EBDB55965BCCE0F062A1DA /* Pods */ = {
+		D0A5B565E3A5D77FDB6CB5FC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9F5F3F8209D07FCCE8E442AC /* Pods.debug.xcconfig */,
-				4714D359697AD8C993B859D7 /* Pods.release.xcconfig */,
+				5833F5DB6613EEA6A640055A /* Pods-Smoothie Box.debug.xcconfig */,
+				6FE08D861A5E12A66D94FE76 /* Pods-Smoothie Box.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -430,7 +428,7 @@
 				DFCB1DB81B6E4B5C009FCAA3 /* Smoothie Garden */,
 				DFCB1DB71B6E4B5C009FCAA3 /* Products */,
 				5929EEF1197FDFAAE9F1A671 /* Frameworks */,
-				72EBDB55965BCCE0F062A1DA /* Pods */,
+				D0A5B565E3A5D77FDB6CB5FC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -569,12 +567,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFCB1DDC1B6E4B5C009FCAA3 /* Build configuration list for PBXNativeTarget "Smoothie Box" */;
 			buildPhases = (
-				6C7A10493A34D77E3C8066C3 /* Check Pods Manifest.lock */,
+				D3E4FA3055B43D5C9BBB0A5B /* [CP] Check Pods Manifest.lock */,
 				DFCB1DB21B6E4B5C009FCAA3 /* Sources */,
 				DFCB1DB31B6E4B5C009FCAA3 /* Frameworks */,
 				DFCB1DB41B6E4B5C009FCAA3 /* Resources */,
-				76CB97C5578029E21A60391A /* Embed Pods Frameworks */,
-				ABAD69990963222ECFBF218D /* Copy Pods Resources */,
+				31BEEE89F5AC5DE431EC7A3E /* [CP] Embed Pods Frameworks */,
+				90F018ED6435C3695CB2524D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -657,49 +655,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6C7A10493A34D77E3C8066C3 /* Check Pods Manifest.lock */ = {
+		31BEEE89F5AC5DE431EC7A3E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smoothie Box/Pods-Smoothie Box-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76CB97C5578029E21A60391A /* Embed Pods Frameworks */ = {
+		90F018ED6435C3695CB2524D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smoothie Box/Pods-Smoothie Box-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABAD69990963222ECFBF218D /* Copy Pods Resources */ = {
+		D3E4FA3055B43D5C9BBB0A5B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smoothie Box-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -877,7 +878,7 @@
 		};
 		DFCB1DDD1B6E4B5C009FCAA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F5F3F8209D07FCCE8E442AC /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 5833F5DB6613EEA6A640055A /* Pods-Smoothie Box.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -899,7 +900,7 @@
 		};
 		DFCB1DDE1B6E4B5C009FCAA3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4714D359697AD8C993B859D7 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6FE08D861A5E12A66D94FE76 /* Pods-Smoothie Box.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
