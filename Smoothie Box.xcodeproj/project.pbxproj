@@ -61,22 +61,11 @@
 		DFCB1DBF1B6E4B5C009FCAA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DBE1B6E4B5C009FCAA3 /* AppDelegate.m */; };
 		DFCB1DCA1B6E4B5C009FCAA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */; };
 		DFCB1DCD1B6E4B5C009FCAA3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */; };
-		DFCB1DD91B6E4B5C009FCAA3 /* Smoothie_GardenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */; };
 		DFD08BEA1C48493B00DA0DD3 /* DetoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD08BE91C48493B00DA0DD3 /* DetoxViewController.m */; };
 		DFE67BF21C315A0600FD82F5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DFE67BF11C315A0600FD82F5 /* Podfile */; };
 		DFE933E31C4A66ED00A20597 /* Detox.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFE933E21C4A66ED00A20597 /* Detox.plist */; };
 		DFF852B61BCD76C90009093F /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF852B51BCD76C90009093F /* SettingsTableViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DFCB1DD31B6E4B5C009FCAA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFCB1DAE1B6E4B5C009FCAA3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DFCB1DB51B6E4B5C009FCAA3;
-			remoteInfo = "Smoothie Garden";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4714D359697AD8C993B859D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,9 +170,6 @@
 		DFCB1DBE1B6E4B5C009FCAA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFCB1DCC1B6E4B5C009FCAA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		DFCB1DD21B6E4B5C009FCAA3 /* Smoothie BoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smoothie BoxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFCB1DD71B6E4B5C009FCAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smoothie_GardenTests.m; sourceTree = "<group>"; };
 		DFD08BE81C48493B00DA0DD3 /* DetoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetoxViewController.h; sourceTree = "<group>"; };
 		DFD08BE91C48493B00DA0DD3 /* DetoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetoxViewController.m; sourceTree = "<group>"; };
 		DFE67BF11C315A0600FD82F5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -198,13 +184,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52619BE96A0D5ED9D309735 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFCB1DCF1B6E4B5C009FCAA3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +428,6 @@
 				DF47B7A81E4D15FA00B91269 /* Default-568h@2x.png */,
 				DFE67BF11C315A0600FD82F5 /* Podfile */,
 				DFCB1DB81B6E4B5C009FCAA3 /* Smoothie Garden */,
-				DFCB1DD51B6E4B5C009FCAA3 /* Smoothie GardenTests */,
 				DFCB1DB71B6E4B5C009FCAA3 /* Products */,
 				5929EEF1197FDFAAE9F1A671 /* Frameworks */,
 				72EBDB55965BCCE0F062A1DA /* Pods */,
@@ -460,7 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				DFCB1DB61B6E4B5C009FCAA3 /* Smoothie Box.app */,
-				DFCB1DD21B6E4B5C009FCAA3 /* Smoothie BoxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -490,23 +467,6 @@
 				DF75DFC71B85CB4D00200D89 /* Images */,
 				DFCB1DBB1B6E4B5C009FCAA3 /* main.m */,
 				DF47B7AC1E4D9AC600B91269 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DFCB1DD51B6E4B5C009FCAA3 /* Smoothie GardenTests */ = {
-			isa = PBXGroup;
-			children = (
-				DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */,
-				DFCB1DD61B6E4B5C009FCAA3 /* Supporting Files */,
-			);
-			path = "Smoothie GardenTests";
-			sourceTree = "<group>";
-		};
-		DFCB1DD61B6E4B5C009FCAA3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DFCB1DD71B6E4B5C009FCAA3 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -625,24 +585,6 @@
 			productReference = DFCB1DB61B6E4B5C009FCAA3 /* Smoothie Box.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DFCB1DD11B6E4B5C009FCAA3 /* Smoothie BoxTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DFCB1DDF1B6E4B5C009FCAA3 /* Build configuration list for PBXNativeTarget "Smoothie BoxTests" */;
-			buildPhases = (
-				DFCB1DCE1B6E4B5C009FCAA3 /* Sources */,
-				DFCB1DCF1B6E4B5C009FCAA3 /* Frameworks */,
-				DFCB1DD01B6E4B5C009FCAA3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DFCB1DD41B6E4B5C009FCAA3 /* PBXTargetDependency */,
-			);
-			name = "Smoothie BoxTests";
-			productName = "Smoothie GardenTests";
-			productReference = DFCB1DD21B6E4B5C009FCAA3 /* Smoothie BoxTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -662,10 +604,6 @@
 							};
 						};
 					};
-					DFCB1DD11B6E4B5C009FCAA3 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = DFCB1DB51B6E4B5C009FCAA3;
-					};
 				};
 			};
 			buildConfigurationList = DFCB1DB11B6E4B5C009FCAA3 /* Build configuration list for PBXProject "Smoothie Box" */;
@@ -684,7 +622,6 @@
 			projectRoot = "";
 			targets = (
 				DFCB1DB51B6E4B5C009FCAA3 /* Smoothie Box */,
-				DFCB1DD11B6E4B5C009FCAA3 /* Smoothie BoxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -714,13 +651,6 @@
 				DFC60E231C6DFD8400893AA5 /* Measurement.plist in Resources */,
 				DF21A6981BFA8665002F63D1 /* GoogleService-Info.plist in Resources */,
 				DF5CE2191E2BE65000A8F5C5 /* Universal.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFCB1DD01B6E4B5C009FCAA3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,23 +749,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFCB1DCE1B6E4B5C009FCAA3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFCB1DD91B6E4B5C009FCAA3 /* Smoothie_GardenTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DFCB1DD41B6E4B5C009FCAA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFCB1DB51B6E4B5C009FCAA3 /* Smoothie Box */;
-			targetProxy = DFCB1DD31B6E4B5C009FCAA3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DF5CE21B1E2BE65000A8F5C5 /* Universal.storyboard */ = {
@@ -973,10 +887,7 @@
 				INFOPLIST_FILE = "Smoothie Garden/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/GoogleAnalytics/Libraries",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "BreakingHabits.smoothie-box";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -998,51 +909,12 @@
 				INFOPLIST_FILE = "Smoothie Garden/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/GoogleAnalytics/Libraries",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "BreakingHabits.smoothie-box";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smoothie Garden/Smoothie Box-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DFCB1DE01B6E4B5C009FCAA3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Smoothie GardenTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Drive-Blind-Studios.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smoothie Garden.app/Smoothie Garden";
-			};
-			name = Debug;
-		};
-		DFCB1DE11B6E4B5C009FCAA3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Smoothie GardenTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Drive-Blind-Studios.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smoothie Garden.app/Smoothie Garden";
 			};
 			name = Release;
 		};
@@ -1063,15 +935,6 @@
 			buildConfigurations = (
 				DFCB1DDD1B6E4B5C009FCAA3 /* Debug */,
 				DFCB1DDE1B6E4B5C009FCAA3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DFCB1DDF1B6E4B5C009FCAA3 /* Build configuration list for PBXNativeTarget "Smoothie BoxTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DFCB1DE01B6E4B5C009FCAA3 /* Debug */,
-				DFCB1DE11B6E4B5C009FCAA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
