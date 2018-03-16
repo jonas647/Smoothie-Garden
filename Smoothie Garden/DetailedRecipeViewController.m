@@ -72,18 +72,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     //No recipe will be shown on startup when having the split view controller so no need for populating any values.
     [self refreshUI];
     
-    //Remove the title text from the back button (in the Detailed nutrient table view controller)
-    //Not relevant since this is removed
-    //self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    
-    //Hide the navigation bar
-    /*
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];
-    UIImage *tempImage = [[UIImage alloc]init];
-    [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
-    */
-    
     //Set the text sizes depending on device
     if ([[DeviceHelper sharedInstance] isDeviceIphone4] || [[DeviceHelper sharedInstance] isDeviceIphone5]) {
         
@@ -159,8 +147,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     recipeTableView.rowHeight = UITableViewAutomaticDimension;
     longDescriptionTable.rowHeight = UITableViewAutomaticDimension;
     
-    //navigationBariPadHeightConstraint.constant = self.navigationController.navigationBar.frame.size.height;
-    
     caloriesText.text = [NSString stringWithFormat:@"%@%@",NSLocalizedString(@"LOCALIZE_Total Energy", nil),[_selectedRecipe volumeStringForNutrient:NUTRITION_CALORIES]];
     caloriesText.font = [UIFont fontWithName:caloriesText.font.fontName size:sizeForRecipeDescriptions];
     
@@ -172,7 +158,7 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
     //Set the nutrient values to be shown
     //Handle localization for nutrients if english isn't used on the phone
     
-    //Remove energy as that's shown at the top as "Kcal"
+    //Remove energy from the list with all nutrient data as that's shown at the top as "Kcal"
     NSMutableArray *tempKeys = [NSMutableArray arrayWithArray:[self.selectedRecipe allNutrientKeys]];
     [tempKeys removeObject:@"Energy"];
     [tempKeys removeObjectsInArray:manualNutrientFacts];
@@ -230,7 +216,6 @@ static NSString * const reuseIdentifier = @"NutrientCollectionViewCell";
  
  //Set the height constraint for the "fake" navigation bar + the size of the status bar
     float navigationBarHeight = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
- 
  
     navigationBariPadHeightConstraint.constant = navigationBarHeight;
     

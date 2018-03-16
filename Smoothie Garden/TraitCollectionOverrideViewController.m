@@ -24,14 +24,13 @@
     [super viewDidLoad];
     
     [self setUpReferenceSizeClasses];
-    
-    //Hide the navigation bar
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.navigationBar.shadowImage = [[UIImage alloc]init];
-    UIImage *tempImage = [[UIImage alloc]init];
-    [self.navigationController.navigationBar setBackgroundImage:tempImage forBarMetrics:UIBarMetricsDefault];
 
-    //Add right bar button
+    //TODO
+    //Not working after xcode upgrade to make the navigation bar transparent, need to analyze why
+    //For now disable the like button as it doesn't look good when it's in the non-transparent navigation bar
+    
+    //Add like button as right bar button in the navigation bar
+    /*
     UIButton *customButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     
      UIImage *buttonImage = [UIImage imageNamed:@"Heart Outline"];
@@ -42,8 +41,20 @@
      
      UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView: customButton];
      
-     self.navigationItem.rightBarButtonItem = barButtonItem;
+    self.navigationItem.rightBarButtonItem = barButtonItem;
     rightButton = customButton;
+    
+    
+    //Hide the navigation bar but show the buttons
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+ 
+     */
     
     //Check if recipe is liked and if so show the right bar button as liked
     if ([recipeController isRecipeLiked]) {
@@ -63,6 +74,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     _willTransitionToPortrait = self.view.frame.size.height > self.view.frame.size.width;
 }
 
@@ -93,12 +105,7 @@
         [rightButton setSelected:![recipeController isRecipeLiked]];
         [recipeController likeRecipe];
         
-        
-    } else {
-        NSLog(@"Child view controller not initialized");
     }
-    
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

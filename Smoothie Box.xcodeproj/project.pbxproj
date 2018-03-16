@@ -1,0 +1,1082 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B52619BE96A0D5ED9D309735 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE1532BDE143C021168AE4D /* libPods.a */; };
+		DF0769E81C20CAD30022E1D5 /* NutrientCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0769E71C20CAD30022E1D5 /* NutrientCatalog.m */; };
+		DF0932181CABB768000C5FC2 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0932171CABB768000C5FC2 /* DeviceHelper.m */; };
+		DF10DD2B1E4134E800E5489D /* NutrientCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DF10DD2A1E4134E800E5489D /* NutrientCollectionViewFlowLayout.m */; };
+		DF16455F1D41359C0021BCC5 /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = DF16455E1D41359C0021BCC5 /* ShoppingList.m */; };
+		DF1645621D4135DD0021BCC5 /* ShoppingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1645611D4135DD0021BCC5 /* ShoppingListItem.m */; };
+		DF1645691D4359210021BCC5 /* ShoppingListManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1645681D4359210021BCC5 /* ShoppingListManagerViewController.m */; };
+		DF16456C1D43595D0021BCC5 /* RecipeShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF16456B1D43595D0021BCC5 /* RecipeShoppingListViewController.m */; };
+		DF21A6981BFA8665002F63D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF21A6971BFA8665002F63D1 /* GoogleService-Info.plist */; };
+		DF2B70271CD49935007383DE /* Norwegian_recipeTexts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF2B70261CD49935007383DE /* Norwegian_recipeTexts.plist */; };
+		DF379A3A1BA8B9C00092EA47 /* ContentHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */; };
+		DF432F351C0399C400A42F07 /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = DF432F341C0399C400A42F07 /* Ingredient.m */; };
+		DF471DEB1BCA848B0002EC8B /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DEA1BCA848B0002EC8B /* SidebarViewController.m */; };
+		DF471DEE1BCA8D2D0002EC8B /* SideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DED1BCA8D2D0002EC8B /* SideBarTableViewController.m */; };
+		DF471DF11BCC531A0002EC8B /* SidebarDetailedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DF01BCC531A0002EC8B /* SidebarDetailedTableViewController.m */; };
+		DF471DFC1BCC5E8E0002EC8B /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF471DFB1BCC5E8E0002EC8B /* AboutTableViewController.m */; };
+		DF47B7A91E4D15FA00B91269 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF47B7A81E4D15FA00B91269 /* Default-568h@2x.png */; };
+		DF47B7B01E58488600B91269 /* DetoxCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF47B7AF1E58488600B91269 /* DetoxCollectionViewCell.m */; };
+		DF48ECE51C1DFF9B00EF809D /* NutritionInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF48ECE41C1DFF9B00EF809D /* NutritionInformation.plist */; };
+		DF49CA6C1C32C35800B9808A /* NutrientDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF49CA6B1C32C35800B9808A /* NutrientDetailedViewController.m */; };
+		DF5824481BFC67A80032106C /* GoogleAnalyticsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5824471BFC67A80032106C /* GoogleAnalyticsHelper.m */; };
+		DF58244B1BFC6B0E0032106C /* SBGoogleAnalyticsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF58244A1BFC6B0E0032106C /* SBGoogleAnalyticsHelper.m */; };
+		DF5CE2191E2BE65000A8F5C5 /* Universal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5CE21B1E2BE65000A8F5C5 /* Universal.storyboard */; };
+		DF6C77D11C0B2C3E005A8E1C /* AppReviewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6C77D01C0B2C3E005A8E1C /* AppReviewHelper.m */; };
+		DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF75DFD01B85E40100200D89 /* SWRevealViewController.m */; };
+		DF773A901C8C2A5D0046E3DE /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = DF773A8F1C8C2A5D0046E3DE /* AppIcon.appiconset */; };
+		DF802EF31BF8A11300FA96EE /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF802EF21BF8A11300FA96EE /* IAPHelper.m */; };
+		DF802EF61BF8A3E900FA96EE /* SBIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF802EF51BF8A3E900FA96EE /* SBIAPHelper.m */; };
+		DF802F011BF8E7EF00FA96EE /* SBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF802F001BF8E7EF00FA96EE /* SBActivityIndicatorView.m */; };
+		DF87EA1F1E131726003E54A0 /* Recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF87EA1E1E131726003E54A0 /* Recipes.plist */; };
+		DF87EA231E131F63003E54A0 /* Danish_recipeTexts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF87EA201E131F63003E54A0 /* Danish_recipeTexts.plist */; };
+		DF87EA241E131F63003E54A0 /* English_recipeTexts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF87EA211E131F63003E54A0 /* English_recipeTexts.plist */; };
+		DF87EA251E131F63003E54A0 /* Swedish_recipeTexts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF87EA221E131F63003E54A0 /* Swedish_recipeTexts.plist */; };
+		DF9C5BEA1B778CD900B46B9D /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5BE91B778CD900B46B9D /* Recipe.m */; };
+		DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */; };
+		DF9CE8691C3D4A0C00F84139 /* RecommendedDailyIntake.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF9CE8681C3D4A0C00F84139 /* RecommendedDailyIntake.plist */; };
+		DF9EA2441D7AC4AA00360710 /* RecipeSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9EA2431D7AC4AA00360710 /* RecipeSplitViewController.m */; };
+		DFA505C71D03013900EC3388 /* RecipeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA505C61D03013900EC3388 /* RecipeCollectionViewController.m */; };
+		DFA505CA1D03051C00EC3388 /* RecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA505C91D03051C00EC3388 /* RecipeCollectionViewCell.m */; };
+		DFA70C291DA8DDED005BA440 /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA70C281DA8DDED005BA440 /* RecipeListViewController.m */; };
+		DFA70C2C1DAA5119005BA440 /* NutrientCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA70C2B1DAA5119005BA440 /* NutrientCollectionViewCell.m */; };
+		DFA70C2F1DACB74E005BA440 /* RecipeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA70C2E1DACB74E005BA440 /* RecipeImageViewController.m */; };
+		DFABD4EE1DC49D2400706D80 /* TraitCollectionOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFABD4ED1DC49D2400706D80 /* TraitCollectionOverrideViewController.m */; };
+		DFAD1EC91C84E8B800A48690 /* RecipeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAD1EC81C84E8B800A48690 /* RecipeManager.m */; };
+		DFB7BE2B1C6290E30055BFE1 /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DFB7BE2A1C6290E30055BFE1 /* sv.lproj */; };
+		DFB7BE301C63EDCE0055BFE1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFB7BE321C63EDCE0055BFE1 /* Localizable.strings */; };
+		DFC30BFD1C144942002E6CED /* UILabel+LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC30BFC1C144942002E6CED /* UILabel+LabelHeight.m */; };
+		DFC60E1D1C692A0A00893AA5 /* IngredientsTranslation.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFC60E1C1C692A0A00893AA5 /* IngredientsTranslation.plist */; };
+		DFC60E211C6BCC2500893AA5 /* NutritionTranslation.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFC60E201C6BCC2500893AA5 /* NutritionTranslation.plist */; };
+		DFC60E231C6DFD8400893AA5 /* Measurement.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFC60E221C6DFD8400893AA5 /* Measurement.plist */; };
+		DFCB1DBC1B6E4B5C009FCAA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DBB1B6E4B5C009FCAA3 /* main.m */; };
+		DFCB1DBF1B6E4B5C009FCAA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DBE1B6E4B5C009FCAA3 /* AppDelegate.m */; };
+		DFCB1DCA1B6E4B5C009FCAA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */; };
+		DFCB1DCD1B6E4B5C009FCAA3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */; };
+		DFCB1DD91B6E4B5C009FCAA3 /* Smoothie_GardenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */; };
+		DFD08BEA1C48493B00DA0DD3 /* DetoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD08BE91C48493B00DA0DD3 /* DetoxViewController.m */; };
+		DFE67BF21C315A0600FD82F5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DFE67BF11C315A0600FD82F5 /* Podfile */; };
+		DFE933E31C4A66ED00A20597 /* Detox.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFE933E21C4A66ED00A20597 /* Detox.plist */; };
+		DFF852B61BCD76C90009093F /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF852B51BCD76C90009093F /* SettingsTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFCB1DD31B6E4B5C009FCAA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFCB1DAE1B6E4B5C009FCAA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFCB1DB51B6E4B5C009FCAA3;
+			remoteInfo = "Smoothie Garden";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4714D359697AD8C993B859D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9F5F3F8209D07FCCE8E442AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B00C00EAC09F1F80F173C98A /* libPods-Smoothie Garden.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smoothie Garden.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE1532BDE143C021168AE4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF0769E61C20CAD30022E1D5 /* NutrientCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutrientCatalog.h; sourceTree = "<group>"; };
+		DF0769E71C20CAD30022E1D5 /* NutrientCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutrientCatalog.m; sourceTree = "<group>"; };
+		DF0932161CABB768000C5FC2 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		DF0932171CABB768000C5FC2 /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
+		DF10DD291E4134E800E5489D /* NutrientCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutrientCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		DF10DD2A1E4134E800E5489D /* NutrientCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutrientCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		DF16455D1D41359C0021BCC5 /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
+		DF16455E1D41359C0021BCC5 /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
+		DF1645601D4135DD0021BCC5 /* ShoppingListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListItem.h; sourceTree = "<group>"; };
+		DF1645611D4135DD0021BCC5 /* ShoppingListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListItem.m; sourceTree = "<group>"; };
+		DF1645671D4359210021BCC5 /* ShoppingListManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListManagerViewController.h; sourceTree = "<group>"; };
+		DF1645681D4359210021BCC5 /* ShoppingListManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListManagerViewController.m; sourceTree = "<group>"; };
+		DF16456A1D43595D0021BCC5 /* RecipeShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeShoppingListViewController.h; sourceTree = "<group>"; };
+		DF16456B1D43595D0021BCC5 /* RecipeShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeShoppingListViewController.m; sourceTree = "<group>"; };
+		DF1B65751C706CE500033D9E /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DF21A6971BFA8665002F63D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF2B70261CD49935007383DE /* Norwegian_recipeTexts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Norwegian_recipeTexts.plist; sourceTree = "<group>"; };
+		DF2B70681CDB8539007383DE /* Smoothie Box-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smoothie Box-Bridging-Header.h"; sourceTree = "<group>"; };
+		DF316ACC1D5C97F6007964D7 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DF316ACD1D5C97F6007964D7 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DF379A381BA8B9C00092EA47 /* ContentHeightTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentHeightTextView.h; sourceTree = "<group>"; };
+		DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentHeightTextView.m; sourceTree = "<group>"; };
+		DF432F331C0399C400A42F07 /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredient.h; sourceTree = "<group>"; };
+		DF432F341C0399C400A42F07 /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredient.m; sourceTree = "<group>"; };
+		DF471DE91BCA848B0002EC8B /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		DF471DEA1BCA848B0002EC8B /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		DF471DEC1BCA8D2D0002EC8B /* SideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewController.h; sourceTree = "<group>"; };
+		DF471DED1BCA8D2D0002EC8B /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewController.m; sourceTree = "<group>"; };
+		DF471DEF1BCC531A0002EC8B /* SidebarDetailedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarDetailedTableViewController.h; sourceTree = "<group>"; };
+		DF471DF01BCC531A0002EC8B /* SidebarDetailedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarDetailedTableViewController.m; sourceTree = "<group>"; };
+		DF471DFA1BCC5E8E0002EC8B /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
+		DF471DFB1BCC5E8E0002EC8B /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
+		DF47B7A81E4D15FA00B91269 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DF47B7AC1E4D9AC600B91269 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF47B7AE1E58488600B91269 /* DetoxCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetoxCollectionViewCell.h; sourceTree = "<group>"; };
+		DF47B7AF1E58488600B91269 /* DetoxCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetoxCollectionViewCell.m; sourceTree = "<group>"; };
+		DF48ECE41C1DFF9B00EF809D /* NutritionInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NutritionInformation.plist; sourceTree = "<group>"; };
+		DF49CA6A1C32C35800B9808A /* NutrientDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutrientDetailedViewController.h; sourceTree = "<group>"; };
+		DF49CA6B1C32C35800B9808A /* NutrientDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutrientDetailedViewController.m; sourceTree = "<group>"; };
+		DF5824461BFC67A80032106C /* GoogleAnalyticsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleAnalyticsHelper.h; sourceTree = "<group>"; };
+		DF5824471BFC67A80032106C /* GoogleAnalyticsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAnalyticsHelper.m; sourceTree = "<group>"; };
+		DF5824491BFC6B0E0032106C /* SBGoogleAnalyticsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGoogleAnalyticsHelper.h; sourceTree = "<group>"; };
+		DF58244A1BFC6B0E0032106C /* SBGoogleAnalyticsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBGoogleAnalyticsHelper.m; sourceTree = "<group>"; };
+		DF5CE21D1E2BE65700A8F5C5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Universal.strings; sourceTree = "<group>"; };
+		DF5CE21E1E2BE67000A8F5C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Universal.storyboard; sourceTree = "<group>"; };
+		DF5CE21F1E2BE68100A8F5C5 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Universal.strings; sourceTree = "<group>"; };
+		DF6C77CF1C0B2C3E005A8E1C /* AppReviewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppReviewHelper.h; sourceTree = "<group>"; };
+		DF6C77D01C0B2C3E005A8E1C /* AppReviewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppReviewHelper.m; sourceTree = "<group>"; };
+		DF6CDEAD1C40FE8D000CDBBE /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Pods/GoogleAnalytics/Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		DF75DFCF1B85E40100200D89 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		DF75DFD01B85E40100200D89 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DF773A8F1C8C2A5D0046E3DE /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		DF802EF11BF8A11300FA96EE /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		DF802EF21BF8A11300FA96EE /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		DF802EF41BF8A3E900FA96EE /* SBIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBIAPHelper.h; sourceTree = "<group>"; };
+		DF802EF51BF8A3E900FA96EE /* SBIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBIAPHelper.m; sourceTree = "<group>"; };
+		DF802EFF1BF8E7EF00FA96EE /* SBActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBActivityIndicatorView.h; sourceTree = "<group>"; };
+		DF802F001BF8E7EF00FA96EE /* SBActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBActivityIndicatorView.m; sourceTree = "<group>"; };
+		DF87EA1E1E131726003E54A0 /* Recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Recipes.plist; sourceTree = "<group>"; };
+		DF87EA201E131F63003E54A0 /* Danish_recipeTexts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Danish_recipeTexts.plist; sourceTree = "<group>"; };
+		DF87EA211E131F63003E54A0 /* English_recipeTexts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = English_recipeTexts.plist; sourceTree = "<group>"; };
+		DF87EA221E131F63003E54A0 /* Swedish_recipeTexts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Swedish_recipeTexts.plist; sourceTree = "<group>"; };
+		DF9C5BE81B778CD900B46B9D /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		DF9C5BE91B778CD900B46B9D /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		DF9C5BEB1B77980100B46B9D /* DetailedRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRecipeViewController.h; sourceTree = "<group>"; };
+		DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedRecipeViewController.m; sourceTree = "<group>"; };
+		DF9CE8681C3D4A0C00F84139 /* RecommendedDailyIntake.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecommendedDailyIntake.plist; sourceTree = "<group>"; };
+		DF9EA2421D7AC4AA00360710 /* RecipeSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeSplitViewController.h; sourceTree = "<group>"; };
+		DF9EA2431D7AC4AA00360710 /* RecipeSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeSplitViewController.m; sourceTree = "<group>"; };
+		DFA505C51D03013900EC3388 /* RecipeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewController.h; sourceTree = "<group>"; };
+		DFA505C61D03013900EC3388 /* RecipeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewController.m; sourceTree = "<group>"; };
+		DFA505C81D03051C00EC3388 /* RecipeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewCell.h; sourceTree = "<group>"; };
+		DFA505C91D03051C00EC3388 /* RecipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewCell.m; sourceTree = "<group>"; };
+		DFA70C271DA8DDED005BA440 /* RecipeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListViewController.h; sourceTree = "<group>"; };
+		DFA70C281DA8DDED005BA440 /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
+		DFA70C2A1DAA5119005BA440 /* NutrientCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutrientCollectionViewCell.h; sourceTree = "<group>"; };
+		DFA70C2B1DAA5119005BA440 /* NutrientCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutrientCollectionViewCell.m; sourceTree = "<group>"; };
+		DFA70C2D1DACB74E005BA440 /* RecipeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeImageViewController.h; sourceTree = "<group>"; };
+		DFA70C2E1DACB74E005BA440 /* RecipeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeImageViewController.m; sourceTree = "<group>"; };
+		DFABD4EC1DC49D2400706D80 /* TraitCollectionOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraitCollectionOverrideViewController.h; sourceTree = "<group>"; };
+		DFABD4ED1DC49D2400706D80 /* TraitCollectionOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraitCollectionOverrideViewController.m; sourceTree = "<group>"; };
+		DFAD1EC71C84E8B800A48690 /* RecipeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeManager.h; sourceTree = "<group>"; };
+		DFAD1EC81C84E8B800A48690 /* RecipeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeManager.m; sourceTree = "<group>"; };
+		DFB7BE291C628E4E0055BFE1 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DFB7BE2A1C6290E30055BFE1 /* sv.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sv.lproj; sourceTree = "<group>"; };
+		DFB7BE311C63EDCE0055BFE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFB7F3071C53852900E496CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DFC30BFB1C144942002E6CED /* UILabel+LabelHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeight.h"; sourceTree = "<group>"; };
+		DFC30BFC1C144942002E6CED /* UILabel+LabelHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeight.m"; sourceTree = "<group>"; };
+		DFC60E1C1C692A0A00893AA5 /* IngredientsTranslation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IngredientsTranslation.plist; sourceTree = "<group>"; };
+		DFC60E201C6BCC2500893AA5 /* NutritionTranslation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NutritionTranslation.plist; sourceTree = "<group>"; };
+		DFC60E221C6DFD8400893AA5 /* Measurement.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Measurement.plist; sourceTree = "<group>"; };
+		DFCB1DB61B6E4B5C009FCAA3 /* Smoothie Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smoothie Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCB1DBB1B6E4B5C009FCAA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DFCB1DBD1B6E4B5C009FCAA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DFCB1DBE1B6E4B5C009FCAA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DFCB1DCC1B6E4B5C009FCAA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DFCB1DD21B6E4B5C009FCAA3 /* Smoothie BoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smoothie BoxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCB1DD71B6E4B5C009FCAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Smoothie_GardenTests.m; sourceTree = "<group>"; };
+		DFD08BE81C48493B00DA0DD3 /* DetoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetoxViewController.h; sourceTree = "<group>"; };
+		DFD08BE91C48493B00DA0DD3 /* DetoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetoxViewController.m; sourceTree = "<group>"; };
+		DFE67BF11C315A0600FD82F5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DFE933E21C4A66ED00A20597 /* Detox.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Detox.plist; sourceTree = "<group>"; };
+		DFF852B41BCD76C90009093F /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		DFF852B51BCD76C90009093F /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DFCB1DB31B6E4B5C009FCAA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52619BE96A0D5ED9D309735 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCB1DCF1B6E4B5C009FCAA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5929EEF1197FDFAAE9F1A671 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFB7F3071C53852900E496CC /* CoreData.framework */,
+				DF6CDEAD1C40FE8D000CDBBE /* libGoogleAnalytics.a */,
+				B00C00EAC09F1F80F173C98A /* libPods-Smoothie Garden.a */,
+				BDE1532BDE143C021168AE4D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72EBDB55965BCCE0F062A1DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F3F8209D07FCCE8E442AC /* Pods.debug.xcconfig */,
+				4714D359697AD8C993B859D7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DF0932151CABB736000C5FC2 /* DeviceHandler */ = {
+			isa = PBXGroup;
+			children = (
+				DF0932161CABB768000C5FC2 /* DeviceHelper.h */,
+				DF0932171CABB768000C5FC2 /* DeviceHelper.m */,
+			);
+			name = DeviceHandler;
+			sourceTree = "<group>";
+		};
+		DF1645631D4160600021BCC5 /* Shopping List */ = {
+			isa = PBXGroup;
+			children = (
+				DF1645671D4359210021BCC5 /* ShoppingListManagerViewController.h */,
+				DF1645681D4359210021BCC5 /* ShoppingListManagerViewController.m */,
+				DF16456A1D43595D0021BCC5 /* RecipeShoppingListViewController.h */,
+				DF16456B1D43595D0021BCC5 /* RecipeShoppingListViewController.m */,
+			);
+			name = "Shopping List";
+			sourceTree = "<group>";
+		};
+		DF1B65701C6F27E100033D9E /* Ingredient */ = {
+			isa = PBXGroup;
+			children = (
+				DFC60E1C1C692A0A00893AA5 /* IngredientsTranslation.plist */,
+			);
+			name = Ingredient;
+			sourceTree = "<group>";
+		};
+		DF1B65711C6F27EA00033D9E /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				DFC60E201C6BCC2500893AA5 /* NutritionTranslation.plist */,
+				DF48ECE41C1DFF9B00EF809D /* NutritionInformation.plist */,
+			);
+			name = Nutrition;
+			sourceTree = "<group>";
+		};
+		DF1B65721C6F27EF00033D9E /* Daily intake */ = {
+			isa = PBXGroup;
+			children = (
+				DF9CE8681C3D4A0C00F84139 /* RecommendedDailyIntake.plist */,
+			);
+			name = "Daily intake";
+			sourceTree = "<group>";
+		};
+		DF1B65731C6F27FA00033D9E /* Measurement */ = {
+			isa = PBXGroup;
+			children = (
+				DFC60E221C6DFD8400893AA5 /* Measurement.plist */,
+			);
+			name = Measurement;
+			sourceTree = "<group>";
+		};
+		DF1B65741C6F281200033D9E /* Detox */ = {
+			isa = PBXGroup;
+			children = (
+				DFE933E21C4A66ED00A20597 /* Detox.plist */,
+			);
+			name = Detox;
+			sourceTree = "<group>";
+		};
+		DF21A6991BFA8949002F63D1 /* Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				DF5824461BFC67A80032106C /* GoogleAnalyticsHelper.h */,
+				DF5824471BFC67A80032106C /* GoogleAnalyticsHelper.m */,
+				DF5824491BFC6B0E0032106C /* SBGoogleAnalyticsHelper.h */,
+				DF58244A1BFC6B0E0032106C /* SBGoogleAnalyticsHelper.m */,
+			);
+			name = "Google Analytics";
+			sourceTree = "<group>";
+		};
+		DF2B70671CDB84FF007383DE /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DFA70C271DA8DDED005BA440 /* RecipeListViewController.h */,
+				DFA70C281DA8DDED005BA440 /* RecipeListViewController.m */,
+				DF2B70681CDB8539007383DE /* Smoothie Box-Bridging-Header.h */,
+				DFA505C51D03013900EC3388 /* RecipeCollectionViewController.h */,
+				DFA505C61D03013900EC3388 /* RecipeCollectionViewController.m */,
+				DFA505C81D03051C00EC3388 /* RecipeCollectionViewCell.h */,
+				DFA505C91D03051C00EC3388 /* RecipeCollectionViewCell.m */,
+			);
+			name = UICollectionView;
+			sourceTree = "<group>";
+		};
+		DF63989C1B8CDD6900C3E966 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				DF471DE91BCA848B0002EC8B /* SidebarViewController.h */,
+				DF471DEA1BCA848B0002EC8B /* SidebarViewController.m */,
+				DF471DEC1BCA8D2D0002EC8B /* SideBarTableViewController.h */,
+				DF471DED1BCA8D2D0002EC8B /* SideBarTableViewController.m */,
+				DF471DEF1BCC531A0002EC8B /* SidebarDetailedTableViewController.h */,
+				DF471DF01BCC531A0002EC8B /* SidebarDetailedTableViewController.m */,
+				DF471DFA1BCC5E8E0002EC8B /* AboutTableViewController.h */,
+				DF471DFB1BCC5E8E0002EC8B /* AboutTableViewController.m */,
+				DFF852B41BCD76C90009093F /* SettingsTableViewController.h */,
+				DFF852B51BCD76C90009093F /* SettingsTableViewController.m */,
+			);
+			name = Sidebar;
+			sourceTree = "<group>";
+		};
+		DF75DFC71B85CB4D00200D89 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DF773A8F1C8C2A5D0046E3DE /* AppIcon.appiconset */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DF75DFCE1B85E3E900200D89 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF75DFCF1B85E40100200D89 /* SWRevealViewController.h */,
+				DF75DFD01B85E40100200D89 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		DF802EF01BF8A0C600FA96EE /* In App Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				DF802EF11BF8A11300FA96EE /* IAPHelper.h */,
+				DF802EF21BF8A11300FA96EE /* IAPHelper.m */,
+				DF802EF41BF8A3E900FA96EE /* SBIAPHelper.h */,
+				DF802EF51BF8A3E900FA96EE /* SBIAPHelper.m */,
+			);
+			name = "In App Purchases";
+			sourceTree = "<group>";
+		};
+		DF9C5BE71B778CBA00B46B9D /* Custom Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DFDE726C1C37F3960026DD7F /* Custom Components */,
+				DFC30BF71C143D08002E6CED /* Custom Categories */,
+				DFDE726D1C37F3A00026DD7F /* Custom UIViewControllers */,
+				DFDE726B1C37F3790026DD7F /* Custom NSObjects */,
+				DFDE726A1C37F3690026DD7F /* Custom UIViews */,
+			);
+			name = "Custom Objects";
+			sourceTree = "<group>";
+		};
+		DF9CE8641C3D225C00F84139 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				DF9C5BEB1B77980100B46B9D /* DetailedRecipeViewController.h */,
+				DF9C5BEC1B77980100B46B9D /* DetailedRecipeViewController.m */,
+				DFA70C2D1DACB74E005BA440 /* RecipeImageViewController.h */,
+				DFA70C2E1DACB74E005BA440 /* RecipeImageViewController.m */,
+				DFABD4EC1DC49D2400706D80 /* TraitCollectionOverrideViewController.h */,
+				DFABD4ED1DC49D2400706D80 /* TraitCollectionOverrideViewController.m */,
+			);
+			name = Recipe;
+			sourceTree = "<group>";
+		};
+		DF9CE8651C3D226100F84139 /* Nutrient */ = {
+			isa = PBXGroup;
+			children = (
+				DF49CA6A1C32C35800B9808A /* NutrientDetailedViewController.h */,
+				DF49CA6B1C32C35800B9808A /* NutrientDetailedViewController.m */,
+				DFA70C2A1DAA5119005BA440 /* NutrientCollectionViewCell.h */,
+				DFA70C2B1DAA5119005BA440 /* NutrientCollectionViewCell.m */,
+				DF10DD291E4134E800E5489D /* NutrientCollectionViewFlowLayout.h */,
+				DF10DD2A1E4134E800E5489D /* NutrientCollectionViewFlowLayout.m */,
+			);
+			name = Nutrient;
+			sourceTree = "<group>";
+		};
+		DF9EA2411D7AC47C00360710 /* UISplitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF9EA2421D7AC4AA00360710 /* RecipeSplitViewController.h */,
+				DF9EA2431D7AC4AA00360710 /* RecipeSplitViewController.m */,
+			);
+			name = UISplitViewController;
+			sourceTree = "<group>";
+		};
+		DFC30BF71C143D08002E6CED /* Custom Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DFC30BFB1C144942002E6CED /* UILabel+LabelHeight.h */,
+				DFC30BFC1C144942002E6CED /* UILabel+LabelHeight.m */,
+			);
+			name = "Custom Categories";
+			sourceTree = "<group>";
+		};
+		DFC60E241C6DFD9000893AA5 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				DF1B65741C6F281200033D9E /* Detox */,
+				DF1B65731C6F27FA00033D9E /* Measurement */,
+				DF1B65721C6F27EF00033D9E /* Daily intake */,
+				DF1B65711C6F27EA00033D9E /* Nutrition */,
+				DF1B65701C6F27E100033D9E /* Ingredient */,
+				DFC60E251C6DFDDC00893AA5 /* Recipe */,
+			);
+			name = Plists;
+			sourceTree = "<group>";
+		};
+		DFC60E251C6DFDDC00893AA5 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				DF87EA1E1E131726003E54A0 /* Recipes.plist */,
+				DF87EA201E131F63003E54A0 /* Danish_recipeTexts.plist */,
+				DF87EA211E131F63003E54A0 /* English_recipeTexts.plist */,
+				DF87EA221E131F63003E54A0 /* Swedish_recipeTexts.plist */,
+				DF2B70261CD49935007383DE /* Norwegian_recipeTexts.plist */,
+			);
+			name = Recipe;
+			sourceTree = "<group>";
+		};
+		DFCB1DAD1B6E4B5C009FCAA3 = {
+			isa = PBXGroup;
+			children = (
+				DF47B7A81E4D15FA00B91269 /* Default-568h@2x.png */,
+				DFE67BF11C315A0600FD82F5 /* Podfile */,
+				DFCB1DB81B6E4B5C009FCAA3 /* Smoothie Garden */,
+				DFCB1DD51B6E4B5C009FCAA3 /* Smoothie GardenTests */,
+				DFCB1DB71B6E4B5C009FCAA3 /* Products */,
+				5929EEF1197FDFAAE9F1A671 /* Frameworks */,
+				72EBDB55965BCCE0F062A1DA /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		DFCB1DB71B6E4B5C009FCAA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFCB1DB61B6E4B5C009FCAA3 /* Smoothie Box.app */,
+				DFCB1DD21B6E4B5C009FCAA3 /* Smoothie BoxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DFCB1DB81B6E4B5C009FCAA3 /* Smoothie Garden */ = {
+			isa = PBXGroup;
+			children = (
+				DFB7BE2A1C6290E30055BFE1 /* sv.lproj */,
+				DFDE726E1C37F3AE0026DD7F /* Open APIs */,
+				DF9C5BE71B778CBA00B46B9D /* Custom Objects */,
+				DFCB1DBD1B6E4B5C009FCAA3 /* AppDelegate.h */,
+				DFCB1DBE1B6E4B5C009FCAA3 /* AppDelegate.m */,
+				DF5CE21B1E2BE65000A8F5C5 /* Universal.storyboard */,
+				DFCB1DC91B6E4B5C009FCAA3 /* Images.xcassets */,
+				DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */,
+				DFCB1DB91B6E4B5C009FCAA3 /* Supporting Files */,
+				DF21A6971BFA8665002F63D1 /* GoogleService-Info.plist */,
+				DFB7BE321C63EDCE0055BFE1 /* Localizable.strings */,
+			);
+			path = "Smoothie Garden";
+			sourceTree = "<group>";
+		};
+		DFCB1DB91B6E4B5C009FCAA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFC60E241C6DFD9000893AA5 /* Plists */,
+				DF75DFC71B85CB4D00200D89 /* Images */,
+				DFCB1DBB1B6E4B5C009FCAA3 /* main.m */,
+				DF47B7AC1E4D9AC600B91269 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFCB1DD51B6E4B5C009FCAA3 /* Smoothie GardenTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFCB1DD81B6E4B5C009FCAA3 /* Smoothie_GardenTests.m */,
+				DFCB1DD61B6E4B5C009FCAA3 /* Supporting Files */,
+			);
+			path = "Smoothie GardenTests";
+			sourceTree = "<group>";
+		};
+		DFCB1DD61B6E4B5C009FCAA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFCB1DD71B6E4B5C009FCAA3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFD08BE71C48491F00DA0DD3 /* Detox */ = {
+			isa = PBXGroup;
+			children = (
+				DFD08BE81C48493B00DA0DD3 /* DetoxViewController.h */,
+				DFD08BE91C48493B00DA0DD3 /* DetoxViewController.m */,
+				DF47B7AE1E58488600B91269 /* DetoxCollectionViewCell.h */,
+				DF47B7AF1E58488600B91269 /* DetoxCollectionViewCell.m */,
+			);
+			name = Detox;
+			sourceTree = "<group>";
+		};
+		DFDE726A1C37F3690026DD7F /* Custom UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				DF802EFF1BF8E7EF00FA96EE /* SBActivityIndicatorView.h */,
+				DF802F001BF8E7EF00FA96EE /* SBActivityIndicatorView.m */,
+			);
+			name = "Custom UIViews";
+			sourceTree = "<group>";
+		};
+		DFDE726B1C37F3790026DD7F /* Custom NSObjects */ = {
+			isa = PBXGroup;
+			children = (
+				DFAD1EC71C84E8B800A48690 /* RecipeManager.h */,
+				DFAD1EC81C84E8B800A48690 /* RecipeManager.m */,
+				DF9C5BE81B778CD900B46B9D /* Recipe.h */,
+				DF9C5BE91B778CD900B46B9D /* Recipe.m */,
+				DF432F331C0399C400A42F07 /* Ingredient.h */,
+				DF432F341C0399C400A42F07 /* Ingredient.m */,
+				DF0769E61C20CAD30022E1D5 /* NutrientCatalog.h */,
+				DF0769E71C20CAD30022E1D5 /* NutrientCatalog.m */,
+				DF16455D1D41359C0021BCC5 /* ShoppingList.h */,
+				DF16455E1D41359C0021BCC5 /* ShoppingList.m */,
+				DF1645601D4135DD0021BCC5 /* ShoppingListItem.h */,
+				DF1645611D4135DD0021BCC5 /* ShoppingListItem.m */,
+			);
+			name = "Custom NSObjects";
+			sourceTree = "<group>";
+		};
+		DFDE726C1C37F3960026DD7F /* Custom Components */ = {
+			isa = PBXGroup;
+			children = (
+				DF0932151CABB736000C5FC2 /* DeviceHandler */,
+				DFDE726F1C37F3D50026DD7F /* App Review Helper */,
+				DF21A6991BFA8949002F63D1 /* Google Analytics */,
+				DF802EF01BF8A0C600FA96EE /* In App Purchases */,
+			);
+			name = "Custom Components";
+			sourceTree = "<group>";
+		};
+		DFDE726D1C37F3A00026DD7F /* Custom UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF9EA2411D7AC47C00360710 /* UISplitViewController */,
+				DF2B70671CDB84FF007383DE /* UICollectionView */,
+				DFDE72701C37F46D0026DD7F /* Detailed View Controllers */,
+				DF63989C1B8CDD6900C3E966 /* Sidebar */,
+				DF379A381BA8B9C00092EA47 /* ContentHeightTextView.h */,
+				DF379A391BA8B9C00092EA47 /* ContentHeightTextView.m */,
+			);
+			name = "Custom UIViewControllers";
+			sourceTree = "<group>";
+		};
+		DFDE726E1C37F3AE0026DD7F /* Open APIs */ = {
+			isa = PBXGroup;
+			children = (
+				DF75DFCE1B85E3E900200D89 /* SWRevealViewController */,
+			);
+			name = "Open APIs";
+			sourceTree = "<group>";
+		};
+		DFDE726F1C37F3D50026DD7F /* App Review Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DF6C77CF1C0B2C3E005A8E1C /* AppReviewHelper.h */,
+				DF6C77D01C0B2C3E005A8E1C /* AppReviewHelper.m */,
+			);
+			name = "App Review Helper";
+			sourceTree = "<group>";
+		};
+		DFDE72701C37F46D0026DD7F /* Detailed View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF1645631D4160600021BCC5 /* Shopping List */,
+				DFD08BE71C48491F00DA0DD3 /* Detox */,
+				DF9CE8651C3D226100F84139 /* Nutrient */,
+				DF9CE8641C3D225C00F84139 /* Recipe */,
+			);
+			name = "Detailed View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DFCB1DB51B6E4B5C009FCAA3 /* Smoothie Box */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCB1DDC1B6E4B5C009FCAA3 /* Build configuration list for PBXNativeTarget "Smoothie Box" */;
+			buildPhases = (
+				6C7A10493A34D77E3C8066C3 /* Check Pods Manifest.lock */,
+				DFCB1DB21B6E4B5C009FCAA3 /* Sources */,
+				DFCB1DB31B6E4B5C009FCAA3 /* Frameworks */,
+				DFCB1DB41B6E4B5C009FCAA3 /* Resources */,
+				76CB97C5578029E21A60391A /* Embed Pods Frameworks */,
+				ABAD69990963222ECFBF218D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smoothie Box";
+			productName = "Smoothie Garden";
+			productReference = DFCB1DB61B6E4B5C009FCAA3 /* Smoothie Box.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DFCB1DD11B6E4B5C009FCAA3 /* Smoothie BoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFCB1DDF1B6E4B5C009FCAA3 /* Build configuration list for PBXNativeTarget "Smoothie BoxTests" */;
+			buildPhases = (
+				DFCB1DCE1B6E4B5C009FCAA3 /* Sources */,
+				DFCB1DCF1B6E4B5C009FCAA3 /* Frameworks */,
+				DFCB1DD01B6E4B5C009FCAA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFCB1DD41B6E4B5C009FCAA3 /* PBXTargetDependency */,
+			);
+			name = "Smoothie BoxTests";
+			productName = "Smoothie GardenTests";
+			productReference = DFCB1DD21B6E4B5C009FCAA3 /* Smoothie BoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DFCB1DAE1B6E4B5C009FCAA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Jonas C Björkell";
+				TargetAttributes = {
+					DFCB1DB51B6E4B5C009FCAA3 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = T5REB3NMBY;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
+					DFCB1DD11B6E4B5C009FCAA3 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = DFCB1DB51B6E4B5C009FCAA3;
+					};
+				};
+			};
+			buildConfigurationList = DFCB1DB11B6E4B5C009FCAA3 /* Build configuration list for PBXProject "Smoothie Box" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				sv,
+				da,
+			);
+			mainGroup = DFCB1DAD1B6E4B5C009FCAA3;
+			productRefGroup = DFCB1DB71B6E4B5C009FCAA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DFCB1DB51B6E4B5C009FCAA3 /* Smoothie Box */,
+				DFCB1DD11B6E4B5C009FCAA3 /* Smoothie BoxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DFCB1DB41B6E4B5C009FCAA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFE67BF21C315A0600FD82F5 /* Podfile in Resources */,
+				DF87EA251E131F63003E54A0 /* Swedish_recipeTexts.plist in Resources */,
+				DF773A901C8C2A5D0046E3DE /* AppIcon.appiconset in Resources */,
+				DF87EA231E131F63003E54A0 /* Danish_recipeTexts.plist in Resources */,
+				DF2B70271CD49935007383DE /* Norwegian_recipeTexts.plist in Resources */,
+				DF47B7A91E4D15FA00B91269 /* Default-568h@2x.png in Resources */,
+				DFB7BE2B1C6290E30055BFE1 /* sv.lproj in Resources */,
+				DFE933E31C4A66ED00A20597 /* Detox.plist in Resources */,
+				DF87EA1F1E131726003E54A0 /* Recipes.plist in Resources */,
+				DF48ECE51C1DFF9B00EF809D /* NutritionInformation.plist in Resources */,
+				DFB7BE301C63EDCE0055BFE1 /* Localizable.strings in Resources */,
+				DFCB1DCD1B6E4B5C009FCAA3 /* LaunchScreen.xib in Resources */,
+				DFC60E211C6BCC2500893AA5 /* NutritionTranslation.plist in Resources */,
+				DFC60E1D1C692A0A00893AA5 /* IngredientsTranslation.plist in Resources */,
+				DF87EA241E131F63003E54A0 /* English_recipeTexts.plist in Resources */,
+				DF9CE8691C3D4A0C00F84139 /* RecommendedDailyIntake.plist in Resources */,
+				DFCB1DCA1B6E4B5C009FCAA3 /* Images.xcassets in Resources */,
+				DFC60E231C6DFD8400893AA5 /* Measurement.plist in Resources */,
+				DF21A6981BFA8665002F63D1 /* GoogleService-Info.plist in Resources */,
+				DF5CE2191E2BE65000A8F5C5 /* Universal.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCB1DD01B6E4B5C009FCAA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C7A10493A34D77E3C8066C3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		76CB97C5578029E21A60391A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABAD69990963222ECFBF218D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DFCB1DB21B6E4B5C009FCAA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF0769E81C20CAD30022E1D5 /* NutrientCatalog.m in Sources */,
+				DF9C5BEA1B778CD900B46B9D /* Recipe.m in Sources */,
+				DF58244B1BFC6B0E0032106C /* SBGoogleAnalyticsHelper.m in Sources */,
+				DF379A3A1BA8B9C00092EA47 /* ContentHeightTextView.m in Sources */,
+				DFCB1DBF1B6E4B5C009FCAA3 /* AppDelegate.m in Sources */,
+				DF1645691D4359210021BCC5 /* ShoppingListManagerViewController.m in Sources */,
+				DF432F351C0399C400A42F07 /* Ingredient.m in Sources */,
+				DF6C77D11C0B2C3E005A8E1C /* AppReviewHelper.m in Sources */,
+				DFC30BFD1C144942002E6CED /* UILabel+LabelHeight.m in Sources */,
+				DFA70C291DA8DDED005BA440 /* RecipeListViewController.m in Sources */,
+				DF9EA2441D7AC4AA00360710 /* RecipeSplitViewController.m in Sources */,
+				DF471DEE1BCA8D2D0002EC8B /* SideBarTableViewController.m in Sources */,
+				DF9C5BED1B77980100B46B9D /* DetailedRecipeViewController.m in Sources */,
+				DF471DEB1BCA848B0002EC8B /* SidebarViewController.m in Sources */,
+				DF1645621D4135DD0021BCC5 /* ShoppingListItem.m in Sources */,
+				DFD08BEA1C48493B00DA0DD3 /* DetoxViewController.m in Sources */,
+				DF0932181CABB768000C5FC2 /* DeviceHelper.m in Sources */,
+				DF802EF31BF8A11300FA96EE /* IAPHelper.m in Sources */,
+				DFF852B61BCD76C90009093F /* SettingsTableViewController.m in Sources */,
+				DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */,
+				DFAD1EC91C84E8B800A48690 /* RecipeManager.m in Sources */,
+				DF16455F1D41359C0021BCC5 /* ShoppingList.m in Sources */,
+				DF49CA6C1C32C35800B9808A /* NutrientDetailedViewController.m in Sources */,
+				DF802EF61BF8A3E900FA96EE /* SBIAPHelper.m in Sources */,
+				DF47B7B01E58488600B91269 /* DetoxCollectionViewCell.m in Sources */,
+				DF10DD2B1E4134E800E5489D /* NutrientCollectionViewFlowLayout.m in Sources */,
+				DFA505CA1D03051C00EC3388 /* RecipeCollectionViewCell.m in Sources */,
+				DF471DFC1BCC5E8E0002EC8B /* AboutTableViewController.m in Sources */,
+				DFA70C2F1DACB74E005BA440 /* RecipeImageViewController.m in Sources */,
+				DF802F011BF8E7EF00FA96EE /* SBActivityIndicatorView.m in Sources */,
+				DFABD4EE1DC49D2400706D80 /* TraitCollectionOverrideViewController.m in Sources */,
+				DFA505C71D03013900EC3388 /* RecipeCollectionViewController.m in Sources */,
+				DFCB1DBC1B6E4B5C009FCAA3 /* main.m in Sources */,
+				DFA70C2C1DAA5119005BA440 /* NutrientCollectionViewCell.m in Sources */,
+				DF16456C1D43595D0021BCC5 /* RecipeShoppingListViewController.m in Sources */,
+				DF471DF11BCC531A0002EC8B /* SidebarDetailedTableViewController.m in Sources */,
+				DF5824481BFC67A80032106C /* GoogleAnalyticsHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFCB1DCE1B6E4B5C009FCAA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFCB1DD91B6E4B5C009FCAA3 /* Smoothie_GardenTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFCB1DD41B6E4B5C009FCAA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFCB1DB51B6E4B5C009FCAA3 /* Smoothie Box */;
+			targetProxy = DFCB1DD31B6E4B5C009FCAA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF5CE21B1E2BE65000A8F5C5 /* Universal.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF5CE21D1E2BE65700A8F5C5 /* da */,
+				DF5CE21E1E2BE67000A8F5C5 /* Base */,
+				DF5CE21F1E2BE68100A8F5C5 /* sv */,
+			);
+			name = Universal.storyboard;
+			sourceTree = "<group>";
+		};
+		DFB7BE321C63EDCE0055BFE1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFB7BE311C63EDCE0055BFE1 /* Base */,
+				DF1B65751C706CE500033D9E /* sv */,
+				DF316ACD1D5C97F6007964D7 /* da */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DFCB1DCB1B6E4B5C009FCAA3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFCB1DCC1B6E4B5C009FCAA3 /* Base */,
+				DFB7BE291C628E4E0055BFE1 /* sv */,
+				DF316ACC1D5C97F6007964D7 /* da */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DFCB1DDA1B6E4B5C009FCAA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFCB1DDB1B6E4B5C009FCAA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DFCB1DDD1B6E4B5C009FCAA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F5F3F8209D07FCCE8E442AC /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = "Smoothie Garden/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics/Libraries",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "BreakingHabits.smoothie-box";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smoothie Garden/Smoothie Box-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DFCB1DDE1B6E4B5C009FCAA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4714D359697AD8C993B859D7 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = "Smoothie Garden/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics/Libraries",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "BreakingHabits.smoothie-box";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smoothie Garden/Smoothie Box-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DFCB1DE01B6E4B5C009FCAA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Smoothie GardenTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Drive-Blind-Studios.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smoothie Garden.app/Smoothie Garden";
+			};
+			name = Debug;
+		};
+		DFCB1DE11B6E4B5C009FCAA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Smoothie GardenTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Drive-Blind-Studios.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smoothie Garden.app/Smoothie Garden";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DFCB1DB11B6E4B5C009FCAA3 /* Build configuration list for PBXProject "Smoothie Box" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCB1DDA1B6E4B5C009FCAA3 /* Debug */,
+				DFCB1DDB1B6E4B5C009FCAA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCB1DDC1B6E4B5C009FCAA3 /* Build configuration list for PBXNativeTarget "Smoothie Box" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCB1DDD1B6E4B5C009FCAA3 /* Debug */,
+				DFCB1DDE1B6E4B5C009FCAA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFCB1DDF1B6E4B5C009FCAA3 /* Build configuration list for PBXNativeTarget "Smoothie BoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFCB1DE01B6E4B5C009FCAA3 /* Debug */,
+				DFCB1DE11B6E4B5C009FCAA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DFCB1DAE1B6E4B5C009FCAA3 /* Project object */;
+}
