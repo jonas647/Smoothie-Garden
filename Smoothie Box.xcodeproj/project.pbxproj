@@ -32,7 +32,6 @@
 		DF5CE2191E2BE65000A8F5C5 /* Universal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5CE21B1E2BE65000A8F5C5 /* Universal.storyboard */; };
 		DF6C77D11C0B2C3E005A8E1C /* AppReviewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6C77D01C0B2C3E005A8E1C /* AppReviewHelper.m */; };
 		DF75DFD11B85E40100200D89 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF75DFD01B85E40100200D89 /* SWRevealViewController.m */; };
-		DF773A901C8C2A5D0046E3DE /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = DF773A8F1C8C2A5D0046E3DE /* AppIcon.appiconset */; };
 		DF802EF31BF8A11300FA96EE /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF802EF21BF8A11300FA96EE /* IAPHelper.m */; };
 		DF802EF61BF8A3E900FA96EE /* SBIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF802EF51BF8A3E900FA96EE /* SBIAPHelper.m */; };
 		DF802F011BF8E7EF00FA96EE /* SBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF802F001BF8E7EF00FA96EE /* SBActivityIndicatorView.m */; };
@@ -122,7 +121,6 @@
 		DF6CDEAD1C40FE8D000CDBBE /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Pods/GoogleAnalytics/Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
 		DF75DFCF1B85E40100200D89 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DF75DFD01B85E40100200D89 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		DF773A8F1C8C2A5D0046E3DE /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		DF802EF11BF8A11300FA96EE /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		DF802EF21BF8A11300FA96EE /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		DF802EF41BF8A3E900FA96EE /* SBIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBIAPHelper.h; sourceTree = "<group>"; };
@@ -311,14 +309,6 @@
 			name = Sidebar;
 			sourceTree = "<group>";
 		};
-		DF75DFC71B85CB4D00200D89 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				DF773A8F1C8C2A5D0046E3DE /* AppIcon.appiconset */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		DF75DFCE1B85E3E900200D89 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,7 +452,6 @@
 			isa = PBXGroup;
 			children = (
 				DFC60E241C6DFD9000893AA5 /* Plists */,
-				DF75DFC71B85CB4D00200D89 /* Images */,
 				DFCB1DBB1B6E4B5C009FCAA3 /* main.m */,
 				DF47B7AC1E4D9AC600B91269 /* Info.plist */,
 			);
@@ -631,7 +620,6 @@
 			files = (
 				DFE67BF21C315A0600FD82F5 /* Podfile in Resources */,
 				DF87EA251E131F63003E54A0 /* Swedish_recipeTexts.plist in Resources */,
-				DF773A901C8C2A5D0046E3DE /* AppIcon.appiconset in Resources */,
 				DF87EA231E131F63003E54A0 /* Danish_recipeTexts.plist in Resources */,
 				DF2B70271CD49935007383DE /* Norwegian_recipeTexts.plist in Resources */,
 				DF47B7A91E4D15FA00B91269 /* Default-568h@2x.png in Resources */,
